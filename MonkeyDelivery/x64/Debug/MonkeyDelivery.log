@@ -1,4 +1,2 @@
-﻿  Game.cpp
-C:\Users\migue\Documents\Proyectos2\TheUnnamedGame\MonkeyDelivery\Game.cpp(22,15): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
-C:\Users\migue\Documents\Proyectos2\TheUnnamedGame\MonkeyDelivery\Game.cpp(50,15): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+﻿  MonkeyDelivery.cpp
   MonkeyDelivery.vcxproj -> C:\Users\migue\Documents\Proyectos2\TheUnnamedGame\MonkeyDelivery\x64\Debug\MonkeyDelivery.exe
