@@ -1,1 +1,3 @@
 C:\Users\migue\Documents\Proyectos2\TheUnnamedGame\MonkeyDelivery\x64\Debug\MonkeyDelivery.exe
+C:\Users\RaulK\Documents\GitHub\TheUnnamedGame\MonkeyDelivery\x64\Debug\MonkeyDelivery.exe
+C:\Users\RaulK\Documents\GitHub\TheUnnamedGame\MonkeyDelivery\x64\Debug\MonkeyDelivery.pdb
