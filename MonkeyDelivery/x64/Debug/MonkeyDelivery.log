@@ -1,2 +1,2 @@
 ﻿  MonkeyDelivery.cpp
-  MonkeyDelivery.vcxproj -> C:\Users\migue\Documents\Proyectos2\TheUnnamedGame\MonkeyDelivery\x64\Debug\MonkeyDelivery.exe
+LINK : fatal error LNK1104: no se puede abrir el archivo 'SDL2.lib'
