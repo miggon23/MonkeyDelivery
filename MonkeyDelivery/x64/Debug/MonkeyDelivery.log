@@ -1,2 +1,1 @@
-﻿     Creando biblioteca C:\Users\RaulK\Documents\GitHub\TheUnnamedGame\MonkeyDelivery\x64\Debug\MonkeyDelivery.lib y objeto C:\Users\RaulK\Documents\GitHub\TheUnnamedGame\MonkeyDelivery\x64\Debug\MonkeyDelivery.exp
-  MonkeyDelivery.vcxproj -> C:\Users\RaulK\Documents\GitHub\TheUnnamedGame\MonkeyDelivery\x64\Debug\MonkeyDelivery.exe
+﻿LINK : fatal error LNK1104: no se puede abrir el archivo 'libtmxlite-s-d.lib'
