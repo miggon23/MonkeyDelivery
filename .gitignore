@@ -1,7 +1,3 @@
-*.VC.db
-*.VC.db-shm
-*.VC.db-wal
-*.VC.opendb
 
 # Prerequisites
 *.d
@@ -119,3 +115,4 @@ __pycache__/
 
 *.db
 MonkeyDelivery/.vs/MonkeyDelivery/v16/.suo
+MonkeyDelivery/.vs/MonkeyDelivery/v16/Browse.VC.db
