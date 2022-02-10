@@ -117,3 +117,5 @@ __pycache__/
 
 
 
+*.db
+MonkeyDelivery/.vs/MonkeyDelivery/v16/.suo
