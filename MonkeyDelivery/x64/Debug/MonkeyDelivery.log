@@ -1,2 +1,2 @@
-﻿  MonkeyDelivery.cpp
+﻿MonkeyDelivery.obj : warning LNK4205: falta información de depuración actual de '' para hacer referencia al módulo; se vinculará el objeto sin tener en cuenta información de depuración
   MonkeyDelivery.vcxproj -> C:\Users\RaulK\Documents\GitHub\TheUnnamedGame\MonkeyDelivery\MonkeyDelivery\x64\Debug\MonkeyDelivery.exe
