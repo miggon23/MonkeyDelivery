@@ -16,6 +16,30 @@
     <Filter Include="Archivos de origen\Pruebas">
       <UniqueIdentifier>{6171a5fd-aa1b-4a38-8e49-d5f967122679}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Archivos de origen\Control">
+      <UniqueIdentifier>{1fc68293-6df9-420a-9eb8-571466d90fd8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Control">
+      <UniqueIdentifier>{e971ffc2-0ec4-4bfb-b64c-3b676c771ad4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Logic">
+      <UniqueIdentifier>{6f170ce4-1f44-4504-ae5c-cb63e49cebe1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Logic">
+      <UniqueIdentifier>{4e8754e6-cedc-4794-bbca-70ec7efd68af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Control\States">
+      <UniqueIdentifier>{3e9b5ee7-9fe8-4853-9bd8-cd5350bab9e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Control\States">
+      <UniqueIdentifier>{29052c31-f95e-45a1-8788-e51de24c6fe3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Control\View">
+      <UniqueIdentifier>{bd15d2d9-439d-430e-bf44-61c421bde07b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\View">
+      <UniqueIdentifier>{5103c68f-4f27-462d-aa36-af20bef4a481}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -30,10 +54,52 @@
     <ClInclude Include="MonkeyDelivery.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
+    <ClInclude Include="Src\Control\ViewController.h">
+      <Filter>Archivos de encabezado\Control</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Control\States\StateMachine.h">
+      <Filter>Archivos de encabezado\Control\States</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Control\States\State.h">
+      <Filter>Archivos de encabezado\Control\States</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Logic\Game.h">
+      <Filter>Archivos de encabezado\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\View\Texture.h">
+      <Filter>Archivos de encabezado\Control\View</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\View\TextureContainer.h">
+      <Filter>Archivos de encabezado\Control\View</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Control\States\TestingState.h">
+      <Filter>Archivos de encabezado\Control\States</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MonkeyDelivery.cpp">
       <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Control\States\State.cpp">
+      <Filter>Archivos de origen\Control\States</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Control\States\StateMachine.cpp">
+      <Filter>Archivos de origen\Control\States</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Control\ViewController.cpp">
+      <Filter>Archivos de origen\Control</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Logic\Game.cpp">
+      <Filter>Archivos de origen\Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\View\Texture.cpp">
+      <Filter>Archivos de origen\View</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\View\TextureContainer.cpp">
+      <Filter>Archivos de origen\View</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Control\States\TestingState.cpp">
+      <Filter>Archivos de origen\Control\States</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

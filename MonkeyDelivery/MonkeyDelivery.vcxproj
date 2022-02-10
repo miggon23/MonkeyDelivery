@@ -80,7 +80,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>SDL2_mixer-2.0.4\include;SDL2-2.0.20\include;$(IncludePath)</IncludePath>
+    <IncludePath>SDL2_image-2.0.1\include;SDL2_mixer-2.0.4\include;SDL2-2.0.20\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -120,13 +120,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>Box2D\include;TiledMap\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>SDL2_image-2.0.1\include;Box2D\include;TiledMap\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>TiledMap\lib;Box2D\lib;SDL2_mixer-2.0.4\lib\x64;SDL2-2.0.20\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>box2d.lib;SDL2.lib;SDL2main.lib;SDL2_mixer.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>TiledMap\lib;Box2D\lib;SDL2_image-2.0.1\lib\x64;SDL2_mixer-2.0.4\lib\x64;SDL2-2.0.20\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>box2d.lib;SDL2.lib;SDL2main.lib;SDL2_mixer.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -152,10 +152,24 @@
     <ClInclude Include="framework.h" />
     <ClInclude Include="MonkeyDelivery.h" />
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="Src\Control\States\State.h" />
+    <ClInclude Include="Src\Control\States\StateMachine.h" />
+    <ClInclude Include="Src\Control\States\TestingState.h" />
+    <ClInclude Include="Src\Control\ViewController.h" />
+    <ClInclude Include="Src\Logic\Game.h" />
+    <ClInclude Include="Src\View\Texture.h" />
+    <ClInclude Include="Src\View\TextureContainer.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MonkeyDelivery.cpp" />
+    <ClCompile Include="Src\Control\States\State.cpp" />
+    <ClCompile Include="Src\Control\States\StateMachine.cpp" />
+    <ClCompile Include="Src\Control\States\TestingState.cpp" />
+    <ClCompile Include="Src\Control\ViewController.cpp" />
+    <ClCompile Include="Src\Logic\Game.cpp" />
+    <ClCompile Include="Src\View\Texture.cpp" />
+    <ClCompile Include="Src\View\TextureContainer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="MonkeyDelivery.rc" />

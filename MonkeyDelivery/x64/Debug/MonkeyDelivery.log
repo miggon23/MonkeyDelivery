@@ -1,2 +1,11 @@
-﻿MonkeyDelivery.obj : warning LNK4205: falta información de depuración actual de '' para hacer referencia al módulo; se vinculará el objeto sin tener en cuenta información de depuración
-  MonkeyDelivery.vcxproj -> C:\Users\RaulK\Documents\GitHub\TheUnnamedGame\MonkeyDelivery\MonkeyDelivery\x64\Debug\MonkeyDelivery.exe
+﻿  MonkeyDelivery.cpp
+C:\Users\Eli Todd\Documents\2º DESARROLLO DE VIDEOJUEGOS\Proyectos 2\MonkeyDelivery\MonkeyDelivery\MonkeyDelivery.cpp(14,15): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+  State.cpp
+  StateMachine.cpp
+  TestingState.cpp
+  ViewController.cpp
+  Game.cpp
+  Texture.cpp
+  TextureContainer.cpp
+  Generando código...
+  MonkeyDelivery.vcxproj -> C:\Users\Eli Todd\Documents\2º DESARROLLO DE VIDEOJUEGOS\Proyectos 2\MonkeyDelivery\MonkeyDelivery\x64\Debug\MonkeyDelivery.exe
