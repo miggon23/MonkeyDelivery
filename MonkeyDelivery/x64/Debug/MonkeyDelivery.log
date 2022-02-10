@@ -1,1 +1,2 @@
-﻿LINK : fatal error LNK1104: no se puede abrir el archivo 'libtmxlite-s-d.lib'
+﻿  MonkeyDelivery.cpp
+  MonkeyDelivery.vcxproj -> C:\Users\RaulK\Documents\GitHub\TheUnnamedGame\MonkeyDelivery\MonkeyDelivery\x64\Debug\MonkeyDelivery.exe
