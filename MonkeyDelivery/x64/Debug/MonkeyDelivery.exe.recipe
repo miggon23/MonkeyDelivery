@@ -1,11 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project>
-  <ProjectOutputs>
-    <ProjectOutput>
-      <FullPath>C:\Users\Eli Todd\Documents\2º DESARROLLO DE VIDEOJUEGOS\Proyectos 2\MonkeyDelivery\MonkeyDelivery\x64\Debug\MonkeyDelivery.exe</FullPath>
-    </ProjectOutput>
-  </ProjectOutputs>
-  <ContentFiles />
-  <SatelliteDlls />
-  <NonRecipeFileRefs />
+  <ProjectOutputs>C:\Users\adrim\OneDrive\Escritorio\2ºCARRERA\ASIG.SEGUNDO\2ºCUATRI\MonkeyDelivery\MonkeyDelivery\x64\Debug\MonkeyDelivery.exe</ProjectOutputs>
+  <ContentFiles></ContentFiles>
+  <SatelliteDlls></SatelliteDlls>
+  <NonRecipeFileRefs></NonRecipeFileRefs>
 </Project>

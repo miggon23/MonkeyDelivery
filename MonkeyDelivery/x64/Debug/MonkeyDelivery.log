@@ -1,11 +1,3 @@
 ﻿  MonkeyDelivery.cpp
-C:\Users\Eli Todd\Documents\2º DESARROLLO DE VIDEOJUEGOS\Proyectos 2\MonkeyDelivery\MonkeyDelivery\MonkeyDelivery.cpp(14,15): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
-  State.cpp
-  StateMachine.cpp
-  TestingState.cpp
-  ViewController.cpp
-  Game.cpp
-  Texture.cpp
-  TextureContainer.cpp
-  Generando código...
-  MonkeyDelivery.vcxproj -> C:\Users\Eli Todd\Documents\2º DESARROLLO DE VIDEOJUEGOS\Proyectos 2\MonkeyDelivery\MonkeyDelivery\x64\Debug\MonkeyDelivery.exe
+C:\Users\adrim\OneDrive\Escritorio\2ºCARRERA\ASIG.SEGUNDO\2ºCUATRI\MonkeyDelivery\MonkeyDelivery\MonkeyDelivery.cpp(16,15): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+  MonkeyDelivery.vcxproj -> C:\Users\adrim\OneDrive\Escritorio\2ºCARRERA\ASIG.SEGUNDO\2ºCUATRI\MonkeyDelivery\MonkeyDelivery\x64\Debug\MonkeyDelivery.exe
