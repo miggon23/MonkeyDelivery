@@ -10,6 +10,7 @@
 #include"../Control/States/StateMachine.h"
 #include "../View/Texture.h"
 #include "../View/TextureContainer.h"
+#include "Player.h"
 
 using namespace std;
 
@@ -22,6 +23,7 @@ private:
 
     TextureContainer* textureContainer;
     SDL_Renderer* renderer = nullptr;
+    Player* player=nullptr;
 
 public:
   
@@ -33,8 +35,8 @@ public:
 
     void setUserExit();
     bool isUserExit();
-
-
+    void draw();
+    Point2D<int> getOrigin();
     int getWindowWidth();
     int getWindowHeight();
 

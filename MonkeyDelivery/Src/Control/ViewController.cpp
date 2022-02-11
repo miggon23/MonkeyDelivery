@@ -4,11 +4,11 @@
 
 ViewController::ViewController(Game* _game) {
     game = _game;
-    //std::cout << "[DEBUG] frame duration: " << frameDuration() << " ms" << endl;
+    std::cout << "[DEBUG] frame duration: " << frameDuration() << " ms" << endl;
     initSDL();
-
-    //game->setRenderer(renderer);
-    //game->loadTextures();
+    
+    game->setRenderer(renderer);
+    game->loadTextures();
     //game->setState(new MenuState(game));
 }
 
@@ -62,6 +62,7 @@ void ViewController::initSDL() {
         SDL_WINDOW_SHOWN);
 
     renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+
     if (window == nullptr || renderer == nullptr)
         throw string("Error creating SDL window or renderer");
 

@@ -1,6 +1,7 @@
 #include "Player.h"
 Player::Player(Game* game) :GameObject(game) {
-
+	texture = nullptr;
+	setTexture(monkeyTexture);
 }
 
 void Player::Move(double speed)

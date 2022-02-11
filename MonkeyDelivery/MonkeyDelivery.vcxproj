@@ -159,6 +159,8 @@
     <ClInclude Include="Src\Logic\Game.h" />
     <ClInclude Include="Src\Logic\GameObject.h" />
     <ClInclude Include="Src\Logic\Player.h" />
+    <ClInclude Include="Src\Utils\Vector2D.h" />
+    <ClInclude Include="Src\View\Box.h" />
     <ClInclude Include="Src\View\Texture.h" />
     <ClInclude Include="Src\View\TextureContainer.h" />
     <ClInclude Include="targetver.h" />

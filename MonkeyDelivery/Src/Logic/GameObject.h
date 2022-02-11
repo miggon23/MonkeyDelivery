@@ -1,22 +1,18 @@
 #ifndef MONKEYDELIVERY_GAMEOBJECT_H
 #define MONKEYDELIVERY_GAMEOBJECT_H
 
-// TODO: add includes
-//#include "../Game.h"
-
-//#include "../../Utils/Vector2D.h"
-//#include "../../View/Texture.h"
-//#include "../../View/Box.h"
-//#include "../../View/TextureContainer.h"
 #include "../View/TextureContainer.h"
 #include "../View/Texture.h"
+#include "../Utils/Vector2D.h"
+#include "../View/Box.h"
 
 
 class Game;
 
 class GameObject {
 
-   
+    Point2D<double> position_;
+    int w = 20, h = 20;
 
 protected:
     Game* game;
@@ -33,7 +29,10 @@ public:
         game = nullptr;
         texture = nullptr;
     };
-
+    int getX() { return position_.getX(); };
+    int getY() { return position_.getY(); };
+    int getWidth() { return w; };
+    int getHeight() { return h; };
     virtual void draw();
     virtual void update() = 0;
 

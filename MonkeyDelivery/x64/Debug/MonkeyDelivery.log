@@ -1,12 +1,81 @@
 ﻿  MonkeyDelivery.cpp
-C:\Users\adrim\OneDrive\Escritorio\2ºCARRERA\ASIG.SEGUNDO\2ºCUATRI\MonkeyDelivery\MonkeyDelivery\MonkeyDelivery.cpp(15,15): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+C:\Users\ADRIAN\Desktop\2.Carrera\2ºCUATRI\MonkeyDelivery\MonkeyDelivery\Src\Logic\GameObject.h(32,39): warning C4244: 'return': conversión de 'T' a 'int'; posible pérdida de datos
+          with
+          [
+              T=double
+          ]
+C:\Users\ADRIAN\Desktop\2.Carrera\2ºCUATRI\MonkeyDelivery\MonkeyDelivery\Src\Logic\GameObject.h(33,39): warning C4244: 'return': conversión de 'T' a 'int'; posible pérdida de datos
+          with
+          [
+              T=double
+          ]
+C:\Users\ADRIAN\Desktop\2.Carrera\2ºCUATRI\MonkeyDelivery\MonkeyDelivery\MonkeyDelivery.cpp(15,15): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
   State.cpp
-  StateMachine.cpp
+C:\Users\ADRIAN\Desktop\2.Carrera\2ºCUATRI\MonkeyDelivery\MonkeyDelivery\Src\Logic\GameObject.h(32,39): warning C4244: 'return': conversión de 'T' a 'int'; posible pérdida de datos
+          with
+          [
+              T=double
+          ]
+C:\Users\ADRIAN\Desktop\2.Carrera\2ºCUATRI\MonkeyDelivery\MonkeyDelivery\Src\Logic\GameObject.h(33,39): warning C4244: 'return': conversión de 'T' a 'int'; posible pérdida de datos
+          with
+          [
+              T=double
+          ]
   TestingState.cpp
+C:\Users\ADRIAN\Desktop\2.Carrera\2ºCUATRI\MonkeyDelivery\MonkeyDelivery\Src\Logic\GameObject.h(32,39): warning C4244: 'return': conversión de 'T' a 'int'; posible pérdida de datos
+          with
+          [
+              T=double
+          ]
+C:\Users\ADRIAN\Desktop\2.Carrera\2ºCUATRI\MonkeyDelivery\MonkeyDelivery\Src\Logic\GameObject.h(33,39): warning C4244: 'return': conversión de 'T' a 'int'; posible pérdida de datos
+          with
+          [
+              T=double
+          ]
   ViewController.cpp
+C:\Users\ADRIAN\Desktop\2.Carrera\2ºCUATRI\MonkeyDelivery\MonkeyDelivery\Src\Logic\GameObject.h(32,39): warning C4244: 'return': conversión de 'T' a 'int'; posible pérdida de datos
+          with
+          [
+              T=double
+          ]
+C:\Users\ADRIAN\Desktop\2.Carrera\2ºCUATRI\MonkeyDelivery\MonkeyDelivery\Src\Logic\GameObject.h(33,39): warning C4244: 'return': conversión de 'T' a 'int'; posible pérdida de datos
+          with
+          [
+              T=double
+          ]
   Game.cpp
-  Texture.cpp
+C:\Users\ADRIAN\Desktop\2.Carrera\2ºCUATRI\MonkeyDelivery\MonkeyDelivery\Src\Logic\GameObject.h(32,39): warning C4244: 'return': conversión de 'T' a 'int'; posible pérdida de datos
+          with
+          [
+              T=double
+          ]
+C:\Users\ADRIAN\Desktop\2.Carrera\2ºCUATRI\MonkeyDelivery\MonkeyDelivery\Src\Logic\GameObject.h(33,39): warning C4244: 'return': conversión de 'T' a 'int'; posible pérdida de datos
+          with
+          [
+              T=double
+          ]
+  GameObject.cpp
+C:\Users\ADRIAN\Desktop\2.Carrera\2ºCUATRI\MonkeyDelivery\MonkeyDelivery\Src\Logic\GameObject.h(32,39): warning C4244: 'return': conversión de 'T' a 'int'; posible pérdida de datos
+          with
+          [
+              T=double
+          ]
+C:\Users\ADRIAN\Desktop\2.Carrera\2ºCUATRI\MonkeyDelivery\MonkeyDelivery\Src\Logic\GameObject.h(33,39): warning C4244: 'return': conversión de 'T' a 'int'; posible pérdida de datos
+          with
+          [
+              T=double
+          ]
+  Player.cpp
+C:\Users\ADRIAN\Desktop\2.Carrera\2ºCUATRI\MonkeyDelivery\MonkeyDelivery\Src\Logic\GameObject.h(32,39): warning C4244: 'return': conversión de 'T' a 'int'; posible pérdida de datos
+          with
+          [
+              T=double
+          ]
+C:\Users\ADRIAN\Desktop\2.Carrera\2ºCUATRI\MonkeyDelivery\MonkeyDelivery\Src\Logic\GameObject.h(33,39): warning C4244: 'return': conversión de 'T' a 'int'; posible pérdida de datos
+          with
+          [
+              T=double
+          ]
   TextureContainer.cpp
   Generando código...
-  LINK : no se encontró C:\Users\adrim\OneDrive\Escritorio\2ºCARRERA\ASIG.SEGUNDO\2ºCUATRI\MonkeyDelivery\MonkeyDelivery\x64\Debug\MonkeyDelivery.exe o no lo generó el último vínculo incremental; ejecutando vínculo completo
-  MonkeyDelivery.vcxproj -> C:\Users\adrim\OneDrive\Escritorio\2ºCARRERA\ASIG.SEGUNDO\2ºCUATRI\MonkeyDelivery\MonkeyDelivery\x64\Debug\MonkeyDelivery.exe
+  MonkeyDelivery.vcxproj -> C:\Users\ADRIAN\Desktop\2.Carrera\2ºCUATRI\MonkeyDelivery\MonkeyDelivery\x64\Debug\MonkeyDelivery.exe

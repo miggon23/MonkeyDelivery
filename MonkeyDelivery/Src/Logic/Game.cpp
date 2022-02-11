@@ -21,6 +21,15 @@ bool Game::isUserExit() {
     return doExit;
 }
 
+void Game::draw()
+{
+    player->draw();
+
+}
+Point2D<int> Game::getOrigin() {
+    return { int(-(player->getX() - player->getWidth())), 0 };
+}
+
 int Game::getWindowWidth() {
     return width;
 }

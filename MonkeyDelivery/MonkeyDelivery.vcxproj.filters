@@ -40,6 +40,9 @@
     <Filter Include="Archivos de origen\View">
       <UniqueIdentifier>{5103c68f-4f27-462d-aa36-af20bef4a481}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Archivos de encabezado\Utils">
+      <UniqueIdentifier>{c3c8f211-5438-4064-aa0f-c475f4c25496}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -80,6 +83,12 @@
     </ClInclude>
     <ClInclude Include="Src\Logic\GameObject.h">
       <Filter>Archivos de encabezado\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Utils\Vector2D.h">
+      <Filter>Archivos de encabezado\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\View\Box.h">
+      <Filter>Archivos de encabezado\Control\View</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
