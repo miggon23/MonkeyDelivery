@@ -8,7 +8,7 @@ using namespace std;
 const string IMAGES_PATH = "../Images/";
 
 enum TextureName {
-    carTexture
+    monkeyTexture
 };
 
 const int NUM_TEXTURES = 1;
@@ -20,7 +20,7 @@ typedef struct {
 
 
 const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
-{ {"car.png",1,1}
+{ {"monkeyPrueba.png",1,1}
 };
 
 

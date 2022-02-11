@@ -75,6 +75,12 @@
     <ClInclude Include="Src\Control\States\TestingState.h">
       <Filter>Archivos de encabezado\Control\States</Filter>
     </ClInclude>
+    <ClInclude Include="Src\Logic\Player.h">
+      <Filter>Archivos de encabezado\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Logic\GameObject.h">
+      <Filter>Archivos de encabezado\Logic</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MonkeyDelivery.cpp">
@@ -100,6 +106,12 @@
     </ClCompile>
     <ClCompile Include="Src\Control\States\TestingState.cpp">
       <Filter>Archivos de origen\Control\States</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Logic\Player.cpp">
+      <Filter>Archivos de origen\Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Logic\GameObject.cpp">
+      <Filter>Archivos de origen\Logic</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

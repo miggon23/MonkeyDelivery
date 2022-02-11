@@ -6,8 +6,7 @@
 
 #include "Src/Logic/Game.h"
 #include "Src/Control/ViewController.h"
-//#include "../Logic/Game.h"
-//#include "Control/ViewController.h"
+
 
 using namespace std;
 
