@@ -6,6 +6,7 @@ ViewController::ViewController(Game* _game) {
     game = _game;
     std::cout << "[DEBUG] frame duration: " << frameDuration() << " ms" << endl;
     initSDL();
+    //IMG_Init(IMG_INIT_PNG);
     
     game->setRenderer(renderer);
     game->loadTextures();

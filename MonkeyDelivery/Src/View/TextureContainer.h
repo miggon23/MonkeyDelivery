@@ -5,7 +5,7 @@
 
 using namespace std;
 
-const string IMAGES_PATH = "../images/";
+const string IMAGES_PATH = "./Images/";
 
 enum TextureName {
     monkeyTexture

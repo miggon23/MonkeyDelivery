@@ -80,11 +80,13 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>SDL2_image-2.0.1\include;SDL2_mixer-2.0.4\include;SDL2-2.0.20\include;$(IncludePath)</IncludePath>
+    <IncludePath>SDL2_image-2.0.1\include;SDL2_mixer-2.0.4\include;SDL2-2.0.20\include;$(IncludePath);SDL2_image-2.0.5\include</IncludePath>
+    <LibraryPath>SDL2_image-2.0.5\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>SDL2_mixer-2.0.4\include;SDL2-2.0.20\include;$(IncludePath)</IncludePath>
+    <IncludePath>SDL2_mixer-2.0.4\include;SDL2-2.0.20\include;$(IncludePath);SDL2_image-2.0.5\include</IncludePath>
+    <LibraryPath>SDL2_image-2.0.5\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -125,7 +127,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>TiledMap\lib;Box2D\lib;SDL2_image-2.0.1\lib\x64;SDL2_mixer-2.0.4\lib\x64;SDL2-2.0.20\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>SDL2_image.lib;TiledMap\lib;Box2D\lib;SDL2_image-2.0.1\lib\x64;SDL2_mixer-2.0.4\lib\x64;SDL2-2.0.20\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>box2d.lib;SDL2.lib;SDL2main.lib;SDL2_mixer.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -144,7 +146,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>TiledMap\lib;Box2D\lib;SDL2_mixer-2.0.4\lib\x64;SDL2-2.0.20\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>SDL2_image.lib;TiledMap\lib;Box2D\lib;SDL2_mixer-2.0.4\lib\x64;SDL2-2.0.20\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>libtmxlite-s-d.lib;box2d.lib;SDL2.lib;SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
