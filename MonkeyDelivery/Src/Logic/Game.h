@@ -33,12 +33,17 @@ public:
 
     string getGameName();
 
+    void start();
+    void update();
+
     void setUserExit();
     bool isUserExit();
     void draw();
     Point2D<int> getOrigin();
     int getWindowWidth();
     int getWindowHeight();
+
+    void move(pair<double, double> speed) { player->move(speed); };
 
     // rendering
     void setRenderer(SDL_Renderer* renderer);

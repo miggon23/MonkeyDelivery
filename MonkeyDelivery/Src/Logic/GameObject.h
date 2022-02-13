@@ -31,13 +31,16 @@ public:
     };
     int getX() { return position_.getX(); };
     int getY() { return position_.getY(); };
+    void setPosition(double x, double y);
+    Point2D<double> getPosition() { return position_; }
+    void setDimension(double width, double height);
     int getWidth() { return w; };
     int getHeight() { return h; };
     virtual void draw();
     virtual void update() = 0;
 
     virtual SDL_Rect getCollider();
-
+    SDL_Rect getCenter();
   
 };
 #endif 

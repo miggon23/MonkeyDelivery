@@ -154,6 +154,10 @@
     <ClInclude Include="framework.h" />
     <ClInclude Include="MonkeyDelivery.h" />
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="Src\Control\Command.h" />
+    <ClInclude Include="Src\Control\CommandFactory.h" />
+    <ClInclude Include="Src\Control\CommandMove.h" />
+    <ClInclude Include="Src\Control\CommandMoveV.h" />
     <ClInclude Include="Src\Control\States\State.h" />
     <ClInclude Include="Src\Control\States\StateMachine.h" />
     <ClInclude Include="Src\Control\States\TestingState.h" />
@@ -169,6 +173,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MonkeyDelivery.cpp" />
+    <ClCompile Include="Src\Control\Command.cpp" />
+    <ClCompile Include="Src\Control\CommandFactory.cpp" />
+    <ClCompile Include="Src\Control\CommandMove.cpp" />
+    <ClCompile Include="Src\Control\CommandMoveV.cpp" />
     <ClCompile Include="Src\Control\States\State.cpp" />
     <ClCompile Include="Src\Control\States\StateMachine.cpp" />
     <ClCompile Include="Src\Control\States\TestingState.cpp" />

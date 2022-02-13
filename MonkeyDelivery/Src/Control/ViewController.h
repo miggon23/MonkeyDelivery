@@ -1,7 +1,7 @@
 #pragma once
 
 #include "SDL.h"
-
+#include "CommandFactory.h"
 #include <string>
 
 
@@ -14,6 +14,7 @@ private:
     Game* game;
     SDL_Window* window = nullptr;
     SDL_Renderer* renderer = nullptr;
+    CommandFactory* commandFactory;
 
     void initSDL();
 public:

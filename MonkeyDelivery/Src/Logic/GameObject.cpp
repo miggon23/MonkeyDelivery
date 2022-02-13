@@ -21,6 +21,25 @@ SDL_Rect GameObject::getCollider() {
              getHeight() };
 }
 
+SDL_Rect GameObject::getCenter()
+{
+    return { int(getX()) + game->getOrigin().getX(),
+            int(getY()) + game->getOrigin().getY() ,
+            10, 10 };
+}
+
+
+void GameObject::setPosition(double x, double y)
+{
+    
+    position_= Point2D<double>(x, y);
+}
+
+void GameObject::setDimension(double width, double height)
+{
+    w = width;
+    h = height;
+}
 
 void GameObject::draw()
 {

@@ -13,6 +13,16 @@ string Game::getGameName() {
     return name;
 }
 
+void Game::start()
+{
+    player = new Player(this); //Creacion del jugador
+}
+
+void Game::update()
+{
+    player->update();
+}
+
 void Game::setUserExit() {
     doExit = true;
 }

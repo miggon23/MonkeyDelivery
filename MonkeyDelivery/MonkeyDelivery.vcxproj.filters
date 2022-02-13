@@ -90,6 +90,18 @@
     <ClInclude Include="Src\View\Box.h">
       <Filter>Archivos de encabezado\Control\View</Filter>
     </ClInclude>
+    <ClInclude Include="Src\Control\Command.h">
+      <Filter>Archivos de encabezado\Control</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Control\CommandFactory.h">
+      <Filter>Archivos de encabezado\Control</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Control\CommandMove.h">
+      <Filter>Archivos de encabezado\Control</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Control\CommandMoveV.h">
+      <Filter>Archivos de encabezado\Control</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MonkeyDelivery.cpp">
@@ -121,6 +133,18 @@
     </ClCompile>
     <ClCompile Include="Src\Logic\GameObject.cpp">
       <Filter>Archivos de origen\Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Control\Command.cpp">
+      <Filter>Archivos de origen\Control</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Control\CommandFactory.cpp">
+      <Filter>Archivos de origen\Control</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Control\CommandMove.cpp">
+      <Filter>Archivos de origen\Control</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Control\CommandMoveV.cpp">
+      <Filter>Archivos de origen\Control</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

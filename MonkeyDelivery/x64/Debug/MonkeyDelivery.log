@@ -1,81 +1,12 @@
-﻿  MonkeyDelivery.cpp
-C:\Users\RaulK\Documents\GitHub\TheUnnamedGame\MonkeyDelivery\MonkeyDelivery\Src\Logic\GameObject.h(32,39): warning C4244: 'return': conversión de 'T' a 'int'; posible pérdida de datos
+﻿  ViewController.cpp
+C:\Users\sarai\Documents\UCM\2º CUATRI\PROYECTO II\TheUnnamedGame\MonkeyDelivery\Src\Logic\GameObject.h(32,39): warning C4244: 'return': conversión de 'T' a 'int'; posible pérdida de datos
           with
           [
               T=double
           ]
-C:\Users\RaulK\Documents\GitHub\TheUnnamedGame\MonkeyDelivery\MonkeyDelivery\Src\Logic\GameObject.h(33,39): warning C4244: 'return': conversión de 'T' a 'int'; posible pérdida de datos
+C:\Users\sarai\Documents\UCM\2º CUATRI\PROYECTO II\TheUnnamedGame\MonkeyDelivery\Src\Logic\GameObject.h(33,39): warning C4244: 'return': conversión de 'T' a 'int'; posible pérdida de datos
           with
           [
               T=double
           ]
-C:\Users\RaulK\Documents\GitHub\TheUnnamedGame\MonkeyDelivery\MonkeyDelivery\MonkeyDelivery.cpp(15,15): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
-  State.cpp
-C:\Users\RaulK\Documents\GitHub\TheUnnamedGame\MonkeyDelivery\MonkeyDelivery\Src\Logic\GameObject.h(32,39): warning C4244: 'return': conversión de 'T' a 'int'; posible pérdida de datos
-          with
-          [
-              T=double
-          ]
-C:\Users\RaulK\Documents\GitHub\TheUnnamedGame\MonkeyDelivery\MonkeyDelivery\Src\Logic\GameObject.h(33,39): warning C4244: 'return': conversión de 'T' a 'int'; posible pérdida de datos
-          with
-          [
-              T=double
-          ]
-  TestingState.cpp
-C:\Users\RaulK\Documents\GitHub\TheUnnamedGame\MonkeyDelivery\MonkeyDelivery\Src\Logic\GameObject.h(32,39): warning C4244: 'return': conversión de 'T' a 'int'; posible pérdida de datos
-          with
-          [
-              T=double
-          ]
-C:\Users\RaulK\Documents\GitHub\TheUnnamedGame\MonkeyDelivery\MonkeyDelivery\Src\Logic\GameObject.h(33,39): warning C4244: 'return': conversión de 'T' a 'int'; posible pérdida de datos
-          with
-          [
-              T=double
-          ]
-  ViewController.cpp
-C:\Users\RaulK\Documents\GitHub\TheUnnamedGame\MonkeyDelivery\MonkeyDelivery\Src\Logic\GameObject.h(32,39): warning C4244: 'return': conversión de 'T' a 'int'; posible pérdida de datos
-          with
-          [
-              T=double
-          ]
-C:\Users\RaulK\Documents\GitHub\TheUnnamedGame\MonkeyDelivery\MonkeyDelivery\Src\Logic\GameObject.h(33,39): warning C4244: 'return': conversión de 'T' a 'int'; posible pérdida de datos
-          with
-          [
-              T=double
-          ]
-  Game.cpp
-C:\Users\RaulK\Documents\GitHub\TheUnnamedGame\MonkeyDelivery\MonkeyDelivery\Src\Logic\GameObject.h(32,39): warning C4244: 'return': conversión de 'T' a 'int'; posible pérdida de datos
-          with
-          [
-              T=double
-          ]
-C:\Users\RaulK\Documents\GitHub\TheUnnamedGame\MonkeyDelivery\MonkeyDelivery\Src\Logic\GameObject.h(33,39): warning C4244: 'return': conversión de 'T' a 'int'; posible pérdida de datos
-          with
-          [
-              T=double
-          ]
-  GameObject.cpp
-C:\Users\RaulK\Documents\GitHub\TheUnnamedGame\MonkeyDelivery\MonkeyDelivery\Src\Logic\GameObject.h(32,39): warning C4244: 'return': conversión de 'T' a 'int'; posible pérdida de datos
-          with
-          [
-              T=double
-          ]
-C:\Users\RaulK\Documents\GitHub\TheUnnamedGame\MonkeyDelivery\MonkeyDelivery\Src\Logic\GameObject.h(33,39): warning C4244: 'return': conversión de 'T' a 'int'; posible pérdida de datos
-          with
-          [
-              T=double
-          ]
-  Player.cpp
-C:\Users\RaulK\Documents\GitHub\TheUnnamedGame\MonkeyDelivery\MonkeyDelivery\Src\Logic\GameObject.h(32,39): warning C4244: 'return': conversión de 'T' a 'int'; posible pérdida de datos
-          with
-          [
-              T=double
-          ]
-C:\Users\RaulK\Documents\GitHub\TheUnnamedGame\MonkeyDelivery\MonkeyDelivery\Src\Logic\GameObject.h(33,39): warning C4244: 'return': conversión de 'T' a 'int'; posible pérdida de datos
-          with
-          [
-              T=double
-          ]
-  TextureContainer.cpp
-  Generando código...
-  MonkeyDelivery.vcxproj -> C:\Users\RaulK\Documents\GitHub\TheUnnamedGame\MonkeyDelivery\MonkeyDelivery\x64\Debug\MonkeyDelivery.exe
+  MonkeyDelivery.vcxproj -> C:\Users\sarai\Documents\UCM\2º CUATRI\PROYECTO II\TheUnnamedGame\MonkeyDelivery\x64\Debug\MonkeyDelivery.exe

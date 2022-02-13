@@ -12,12 +12,14 @@ private:
 	float fieldOfView_;
 public:
 	Player(Game* game);
-	void Move(double speed);
-	void Sleep();
-	void GetScared(int amount);
-	void DrainEnergy(int amount);
-	void RecoverEnergy(int amount);
-	void RecoverFear(int amount);
+
+	void update() override;
+	void move(pair<double, double> speed);
+	void sleep();
+	void getScared(int amount);
+	void drainEnergy(int amount);
+	void recoverEnergy(int amount);
+	void recoverFear(int amount);
 
 };
 
