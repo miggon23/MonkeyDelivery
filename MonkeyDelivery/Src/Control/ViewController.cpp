@@ -51,10 +51,8 @@ void ViewController::clearBackground() {
 
 
 void ViewController::handleEvents() {
-    //game->getState()->handleEvents();
-    
     SDL_Event event;
-    while (0 < SDL_PeepEvents(&event, 2, SDL_GETEVENT, SDL_FIRSTEVENT, SDL_LASTEVENT))
+    while (SDL_PollEvent(&event))
     {
         Command* command = commandFactory->getCommand(event);
         if (command != nullptr) {

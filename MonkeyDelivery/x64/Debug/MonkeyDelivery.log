@@ -1,12 +1,12 @@
 ﻿  ViewController.cpp
-C:\Users\sarai\Documents\UCM\2º CUATRI\PROYECTO II\TheUnnamedGame\MonkeyDelivery\Src\Logic\GameObject.h(32,39): warning C4244: 'return': conversión de 'T' a 'int'; posible pérdida de datos
+C:\MonkeyDelivery\MonkeyDelivery\Src\Logic\GameObject.h(32,39): warning C4244: 'return': conversión de 'T' a 'int'; posible pérdida de datos
           with
           [
               T=double
           ]
-C:\Users\sarai\Documents\UCM\2º CUATRI\PROYECTO II\TheUnnamedGame\MonkeyDelivery\Src\Logic\GameObject.h(33,39): warning C4244: 'return': conversión de 'T' a 'int'; posible pérdida de datos
+C:\MonkeyDelivery\MonkeyDelivery\Src\Logic\GameObject.h(33,39): warning C4244: 'return': conversión de 'T' a 'int'; posible pérdida de datos
           with
           [
               T=double
           ]
-  MonkeyDelivery.vcxproj -> C:\Users\sarai\Documents\UCM\2º CUATRI\PROYECTO II\TheUnnamedGame\MonkeyDelivery\x64\Debug\MonkeyDelivery.exe
+  MonkeyDelivery.vcxproj -> C:\MonkeyDelivery\MonkeyDelivery\x64\Debug\MonkeyDelivery.exe
