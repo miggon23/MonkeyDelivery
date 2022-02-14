@@ -11,7 +11,7 @@ ViewController::ViewController(Game* _game) {
     IMG_Init(IMG_INIT_PNG);
     
     game->setRenderer(renderer);
-    //game->loadTextures();
+    game->loadTextures();
     commandFactory = new CommandFactory(game);
     commandFactory->add(new CommandMove());
     commandFactory->add(new CommandMoveV());
