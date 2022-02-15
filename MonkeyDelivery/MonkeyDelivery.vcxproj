@@ -80,8 +80,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>SDL2_image-2.0.1\include;SDL2_mixer-2.0.4\include;SDL2-2.0.20\include;$(IncludePath);SDL2_image-2.0.5\include</IncludePath>
-    <LibraryPath>SDL2_image-2.0.5\lib\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>SDL2_image-2.0.5\include;SDL2_mixer-2.0.4\include;SDL2-2.0.20\include;$(IncludePath);SDL2_image-2.0.5\include</IncludePath>
+    <LibraryPath>$(SolutionDir)SDL2-2.0.20\lib\x64;$(SolutionDir)SDL2_mixer-2.0.4\lib\x64;$(SolutionDir)SDL2_image-2.0.5\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
