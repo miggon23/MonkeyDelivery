@@ -1,0 +1,13 @@
+﻿  MonkeyDelivery.cpp
+C:\Users\Eli Todd\Documents\2º DESARROLLO DE VIDEOJUEGOS\Proyectos 2\MonkeyDelivery\MonkeyDelivery\Src\Logic\GameObject.h(32,39): warning C4244: 'return': conversión de 'T' a 'int'; posible pérdida de datos
+          with
+          [
+              T=double
+          ]
+C:\Users\Eli Todd\Documents\2º DESARROLLO DE VIDEOJUEGOS\Proyectos 2\MonkeyDelivery\MonkeyDelivery\Src\Logic\GameObject.h(33,39): warning C4244: 'return': conversión de 'T' a 'int'; posible pérdida de datos
+          with
+          [
+              T=double
+          ]
+C:\Users\Eli Todd\Documents\2º DESARROLLO DE VIDEOJUEGOS\Proyectos 2\MonkeyDelivery\MonkeyDelivery\MonkeyDelivery.cpp(17,15): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+  MonkeyDelivery.vcxproj -> C:\Users\Eli Todd\Documents\2º DESARROLLO DE VIDEOJUEGOS\Proyectos 2\MonkeyDelivery\MonkeyDelivery\x64\Debug\MonkeyDelivery.exe
