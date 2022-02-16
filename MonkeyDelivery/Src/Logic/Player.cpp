@@ -1,12 +1,14 @@
 #include "Player.h"
 Player::Player(Game* game) :GameObject(game) {
+	this->game = game;
 	texture = nullptr;
-	//setTexture(monkeyTexture);
+	setTexture(monkeyTexture);
 	energy_ = 80;
 	fear_ = 0;
 	walkingSpeed_ = 3;
 	runningSpeed_ = 5;
-	setPosition(0, 0);
+	setPosition(100, 100);
+	setDimension(50, 50);
 }
 
 void Player::update()
@@ -42,4 +44,9 @@ void Player::recoverEnergy(int amount)
 
 void Player::recoverFear(int amount)
 {
+}
+void Player::draw()
+{
+	drawTexture(texture);
+	cout << "simio";
 }

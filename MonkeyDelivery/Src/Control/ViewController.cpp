@@ -33,6 +33,7 @@ void ViewController::run() {
             game->update();
             //game->getState()->update();
             //game->getState()->draw();
+            game->draw();
             SDL_RenderPresent(renderer);
             startTime = SDL_GetTicks();
         }

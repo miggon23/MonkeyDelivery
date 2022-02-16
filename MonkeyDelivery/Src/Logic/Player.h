@@ -20,6 +20,7 @@ public:
 	void drainEnergy(int amount);
 	void recoverEnergy(int amount);
 	void recoverFear(int amount);
+	void draw() override;
 
 };
 
