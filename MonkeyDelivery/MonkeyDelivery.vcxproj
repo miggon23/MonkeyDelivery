@@ -155,6 +155,7 @@
     <ClInclude Include="MonkeyDelivery.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="Src\Control\Command.h" />
+    <ClInclude Include="Src\Control\CommandExit.h" />
     <ClInclude Include="Src\Control\CommandFactory.h" />
     <ClInclude Include="Src\Control\CommandMove.h" />
     <ClInclude Include="Src\Control\CommandMoveV.h" />
@@ -174,6 +175,7 @@
   <ItemGroup>
     <ClCompile Include="MonkeyDelivery.cpp" />
     <ClCompile Include="Src\Control\Command.cpp" />
+    <ClCompile Include="Src\Control\CommandExit.cpp" />
     <ClCompile Include="Src\Control\CommandFactory.cpp" />
     <ClCompile Include="Src\Control\CommandMove.cpp" />
     <ClCompile Include="Src\Control\CommandMoveV.cpp" />

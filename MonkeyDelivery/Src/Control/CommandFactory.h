@@ -1,7 +1,7 @@
 #pragma once
 #include "Command.h"
 #include "../Logic/Game.h"
-
+#include "CommandExit.h"
 
 class CommandFactory
 {

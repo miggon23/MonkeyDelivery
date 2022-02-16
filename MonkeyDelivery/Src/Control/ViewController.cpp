@@ -15,6 +15,7 @@ ViewController::ViewController(Game* _game) {
     commandFactory = new CommandFactory(game);
     commandFactory->add(new CommandMove());
     commandFactory->add(new CommandMoveV());
+    commandFactory->add(new CommandExit());
     //game->setState(new MenuState(game));
 }
 
@@ -24,7 +25,7 @@ void ViewController::run() {
 
     game->start(); //Inicio del juego
     //!game->getState()->doQuit()
-    while (true) {
+    while (!game->isUserExit()) {
 
         frameTime = SDL_GetTicks() - startTime;
 
