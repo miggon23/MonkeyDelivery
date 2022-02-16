@@ -56,11 +56,14 @@ void ViewController::handleEvents() {
     SDL_Event event;
     while (SDL_PollEvent(&event))
     {
-        Command* command = commandFactory->getCommand(event);
-        if (command != nullptr) {
-            command->execute();
-            break;
+        vector<Command*> commands = commandFactory->getCommand(event);
+        for (auto command:commands)
+        {
+            if (command != nullptr) {
+                command->execute();
+            }
         }
+        break;
     }
 }
 
