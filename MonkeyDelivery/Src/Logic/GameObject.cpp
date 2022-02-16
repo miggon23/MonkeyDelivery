@@ -2,8 +2,8 @@
 #include "../Logic/Game.h"
 
 void GameObject::drawTexture(Texture* texture) {
-    int dX = game->getOrigin().getX();
-    int dY = game->getOrigin().getY();
+    int dX =/* game->getOrigin().*/getX();
+    int dY = /*game->getOrigin().*/getY();
 
     SDL_Rect c = getCollider();
     SDL_Rect textureBox = { c.x + dX, c.y + dY, c.w, c.h };

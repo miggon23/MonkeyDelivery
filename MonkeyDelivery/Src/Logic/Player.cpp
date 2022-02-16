@@ -8,7 +8,7 @@ Player::Player(Game* game) :GameObject(game) {
 	walkingSpeed_ = 3;
 	runningSpeed_ = 5;
 	setPosition(100, 100);
-	setDimension(50, 50);
+	setDimension(100, 100);
 }
 
 void Player::update()
@@ -48,5 +48,4 @@ void Player::recoverFear(int amount)
 void Player::draw()
 {
 	drawTexture(texture);
-	cout << "simio";
 }
