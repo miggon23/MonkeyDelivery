@@ -5,6 +5,7 @@ Player::Player(Game* game) :GameObject(game) {
 	setTexture(monkeyTexture);
 	energy_ = 80;
 	fear_ = 0;
+	money_ = 0;
 	walkingSpeed_ = 3;
 	runningSpeed_ = 5;
 	setPosition(100, 100);
@@ -45,6 +46,17 @@ void Player::recoverEnergy(int amount)
 void Player::recoverFear(int amount)
 {
 }
+
+void Player::getMoney(int amount)
+{
+	money_ += amount;
+}
+
+void Player::removeMoney(int amount)
+{
+	money_ -= amount;
+}
+
 void Player::draw()
 {
 	drawTexture(texture);
