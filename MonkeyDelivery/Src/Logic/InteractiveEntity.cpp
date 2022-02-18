@@ -1,9 +1,26 @@
 #include "InteractiveEntity.h"
 #include "../Logic/Game.h"
 
+InteractiveEntity::InteractiveEntity(Game* game) : GameObject(game) {
+    this->game = game;
+    texture = nullptr;
+    setTexture(monkeyTexture);
+    setPosition(60, 60);
+    setDimension(100, 100);
+
+}
+void InteractiveEntity::update()
+{
+    if(collide(game->getPlayer()->getCollider()))
+        cout<<"COLLISION"<<endl;
+        
+}
+void InteractiveEntity::draw()
+{
+    drawTexture(texture);
+    drawDebug();
+}
 
 bool InteractiveEntity::collide(SDL_Rect other) {
-    // DEBERÍA FUNCIONAR Y NO FUNCIONA
-    //return SDL_HasIntersection(&getCollider(), &other);
-    return false;
+    return (SDL_HasIntersection(&this->getCollider(), &other));
 }

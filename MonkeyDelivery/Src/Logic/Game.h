@@ -11,6 +11,7 @@
 #include "../View/Texture.h"
 #include "../View/TextureContainer.h"
 #include "Player.h"
+#include "InteractiveEntity.h"
 
 using namespace std;
 
@@ -24,6 +25,7 @@ private:
     TextureContainer* textureContainer;
     SDL_Renderer* renderer = nullptr;
     Player* player=nullptr;
+    InteractiveEntity* iE = nullptr;
 
 public:
   
@@ -50,6 +52,9 @@ public:
     void loadTextures();
     Texture* getTexture(TextureName name);
     SDL_Renderer* getRenderer();
+    Player* getPlayer() {
+        return player;
+    }
 };
 
 

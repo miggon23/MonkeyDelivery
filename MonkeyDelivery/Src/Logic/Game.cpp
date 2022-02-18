@@ -18,11 +18,13 @@ string Game::getGameName() {
 void Game::start()
 {
     player = new Player(this); //Creacion del jugador
+    iE = new InteractiveEntity(this);
 }
 
 void Game::update()
 {
     player->update();
+    iE->update();
 }
 
 void Game::setUserExit() {
@@ -36,6 +38,8 @@ bool Game::isUserExit() {
 void Game::draw()
 {
     player->draw();
+    iE->draw();
+   
 
 }
 Point2D<int> Game::getOrigin() {
