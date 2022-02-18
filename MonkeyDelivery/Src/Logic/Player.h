@@ -1,17 +1,27 @@
 #include "GameObject.h"
+#include "energyLevel.h"
+
 class Game;
 
 class Player: public GameObject {
 private:
-	float energy_;
 	float fear_;
 	float walkingSpeed_;
 	float runningSpeed_;
 	//Mission activeMission_
 	int money_;
 	float fieldOfView_;
+	//Energy boolean
+	float energy_;
+	float maxEnergy_;
+	int cont_;
+	int maxCont_;
+	int isMoving_;
+	energyLevel* energyLevel_ = nullptr;
+
 public:
 	Player(Game* game);
+	~Player();
 
 	void update() override;
 	void move(pair<double, double> speed);

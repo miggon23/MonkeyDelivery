@@ -163,6 +163,7 @@
     <ClInclude Include="Src\Control\States\StateMachine.h" />
     <ClInclude Include="Src\Control\States\TestingState.h" />
     <ClInclude Include="Src\Control\ViewController.h" />
+    <ClInclude Include="Src\Logic\energyLevel.h" />
     <ClInclude Include="Src\Logic\Game.h" />
     <ClInclude Include="Src\Logic\GameObject.h" />
     <ClInclude Include="Src\Logic\Player.h" />
@@ -184,6 +185,7 @@
     <ClCompile Include="Src\Control\States\StateMachine.cpp" />
     <ClCompile Include="Src\Control\States\TestingState.cpp" />
     <ClCompile Include="Src\Control\ViewController.cpp" />
+    <ClCompile Include="Src\Logic\energyLevel.cpp" />
     <ClCompile Include="Src\Logic\Game.cpp" />
     <ClCompile Include="Src\Logic\GameObject.cpp" />
     <ClCompile Include="Src\Logic\Player.cpp" />

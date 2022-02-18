@@ -9,6 +9,7 @@ void GameObject::drawTexture(Texture* texture) {
     SDL_Rect textureBox = { c.x + dX, c.y + dY, c.w, c.h };
     texture->render(textureBox);
 }
+
 void GameObject::setTexture(TextureName textureName)
 {
     this->texture = game->getTexture(textureName);

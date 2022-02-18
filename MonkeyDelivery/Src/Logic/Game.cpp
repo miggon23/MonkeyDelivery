@@ -7,6 +7,8 @@ Game::Game(string n, int w, int h) : name(n), width(w), height(h), doExit(false)
 
 Game::~Game() {
     cout << "[DEBUG] deleting game" << endl;
+    delete player;
+    delete textureContainer;
 }
 
 string Game::getGameName() {
