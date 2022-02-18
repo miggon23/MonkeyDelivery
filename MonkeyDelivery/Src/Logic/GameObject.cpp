@@ -57,7 +57,6 @@ void GameObject::draw()
 }
 
 bool GameObject::collide(SDL_Rect other) {
-    // DEBERÍA FUNCIONAR Y NO FUNCIONA
-    //return SDL_HasIntersection(&getCollider(), &other);
-    return false;
+    auto c = getCollider();
+    return SDL_HasIntersection(&c, &other);
 }

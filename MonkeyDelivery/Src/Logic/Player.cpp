@@ -82,5 +82,4 @@ void Player::draw()
 	drawDebug();
 	energyLevel_->draw();
 	energyLevel_->drawDebug();
-
 }
