@@ -22,5 +22,6 @@ void InteractiveEntity::draw()
 }
 
 bool InteractiveEntity::collide(SDL_Rect other) {
-    return (SDL_HasIntersection(&this->getCollider(), &other));
+    auto c = this->getCollider();
+    return (SDL_HasIntersection(&c, &other));
 }
