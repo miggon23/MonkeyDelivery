@@ -4,17 +4,18 @@ class Game;
 class energyLevel: public GameObject {
 private:
 	
-	int place_;
+	float place_;
+	float energy_;
+	float maxEnergy_;
+
 
 public:
 	energyLevel(Game* game);
-	~energyLevel() {};
+	~energyLevel() { };
 
 	void update() override {};
-	void changeWidth(int change);
+	void drain(float energyDrained);
 	void draw() override;
-
-	
 
 };
 

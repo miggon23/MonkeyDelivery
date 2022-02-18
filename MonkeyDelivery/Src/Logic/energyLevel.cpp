@@ -2,24 +2,26 @@
 
 energyLevel::energyLevel(Game* game) :GameObject(game) {
 	this->game = game;
-	texture = nullptr;
-	place_ = 75;
+
+	place_ = 50;
+	energy_ = 200;
+	maxEnergy_ = 200;
 	setTexture(energyLevelTexture);
 	setPosition(place_, 10);
-	setDimension(250, 100);
+	setDimension(200, 20);
 }
 
-void energyLevel::changeWidth(int change)
+void energyLevel::drain(float energyDrained)
 {
-	setDimension(160 - change, 100);
-
-	/*
-	if (this->getX() < 75)
-		place_ += 2;
-	else place_ -= 2;
-	*/
-
-	setPosition(place_, 10);
+	energy_ -= energyDrained;
+	if (energy_ > 0) {
+		setDimension(energy_, 20);
+		setPosition(50 - (energyDrained/2), 10);
+	}
+	else {
+		// avisa al player de que está sin energía
+		cout << "ME DUERMO" << endl;
+	}
 }
 
 

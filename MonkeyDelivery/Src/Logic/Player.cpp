@@ -4,17 +4,16 @@ Player::Player(Game* game) :GameObject(game) {
 	this->game = game;
 	texture = nullptr;
 	setTexture(monkeyTexture);
-	maxEnergy_ = 80;
-	energy_ = maxEnergy_;
+
 	fear_ = 0;
 	money_ = 0;
 	walkingSpeed_ = 3;
 	runningSpeed_ = 5;
-	cont_ = 1;
-	maxCont_ = 2;
-	isMoving_ = 2;
-	setPosition(100, 100);
+	walkingEnergy_ = 2;
+
+	setPosition(15, 100);
 	setDimension(100, 100);
+
 	energyLevel_ = new energyLevel(game);
 }
 
@@ -26,10 +25,6 @@ Player::~Player()
 
 void Player::update()
 {
-	drainEnergy(-1);
-	energyLevel_->draw();
-	energyLevel_->changeWidth( (maxEnergy_ - energy_)*2 );
-
 }
 
 /// <summary>
@@ -39,8 +34,10 @@ void Player::update()
 void Player::move(pair<double, double> speed)
 {
 	setPosition(getX() + speed.first*walkingSpeed_, getY() + speed.second*walkingSpeed_);
-	drainEnergy(-isMoving_);
-	//cout << "POSICION:" << getX() << "," << getY() << endl;
+	drainEnergy(walkingEnergy_);
+
+	//cout << "POSICION PLAYER:" << getX() << "," << getY() << endl;
+	//cout << "POSICION BARRA:" << energyLevel_->getX() << "," << energyLevel_->getY() << endl;
 	
 }
 
@@ -58,12 +55,7 @@ void Player::getScared(int amount)
 /// <param name="amount"> cantidad que se le va añadir a energy_
 void Player::drainEnergy(int amount)
 {
-	cont_ += 1;
-
-	if (cont_ == maxCont_ && energy_ != 0) {
-		energy_ += amount;
-		cont_ = 1;
-	}
+	energyLevel_->drain(amount);
 }
 
 void Player::recoverEnergy(int amount)
@@ -87,4 +79,8 @@ void Player::removeMoney(int amount)
 void Player::draw()
 {
 	drawTexture(texture);
+	drawDebug();
+	energyLevel_->draw();
+	energyLevel_->drawDebug();
+
 }

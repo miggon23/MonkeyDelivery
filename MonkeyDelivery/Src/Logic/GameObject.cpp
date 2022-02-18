@@ -6,7 +6,7 @@ void GameObject::drawTexture(Texture* texture) {
     int dY = /*game->getOrigin().*/getY();
 
     SDL_Rect c = getCollider();
-    SDL_Rect textureBox = { c.x + dX, c.y + dY, c.w, c.h };
+    SDL_Rect textureBox = { c.x , c.y , c.w, c.h };
     texture->render(textureBox);
 }
 
@@ -15,9 +15,17 @@ void GameObject::setTexture(TextureName textureName)
     this->texture = game->getTexture(textureName);
 }
 
+void GameObject::drawDebug()
+{
+    SDL_Rect c = { getX(), getY(),
+         getWidth(), getHeight() };
+    Box(c, RED).render(game->getRenderer());
+    //Box(getCenter(), BLUE).render(game->getRenderer());
+}
+
 SDL_Rect GameObject::getCollider() {
-    return { int(getX() - getWidth() / 2),
-             int(getY() - getHeight() / 2),
+    return { int(getX()),
+             int(getY()),
              getWidth(),
              getHeight() };
 }
@@ -48,3 +56,8 @@ void GameObject::draw()
     cout << "simio";
 }
 
+bool GameObject::collide(SDL_Rect other) {
+    // DEBERÍA FUNCIONAR Y NO FUNCIONA
+    //return SDL_HasIntersection(&getCollider(), &other);
+    return false;
+}

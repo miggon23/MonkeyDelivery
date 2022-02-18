@@ -39,8 +39,11 @@ public:
     virtual void draw();
     virtual void update() = 0;
 
+    void drawDebug();
+
     virtual SDL_Rect getCollider();
     SDL_Rect getCenter();
+    bool collide(SDL_Rect other);
   
 };
 #endif 

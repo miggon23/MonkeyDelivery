@@ -11,12 +11,9 @@ private:
 	//Mission activeMission_
 	int money_;
 	float fieldOfView_;
-	//Energy boolean
-	float energy_;
-	float maxEnergy_;
-	int cont_;
-	int maxCont_;
-	int isMoving_;
+
+	// ENERGY BAR 
+	int walkingEnergy_;
 	energyLevel* energyLevel_ = nullptr;
 
 public:
