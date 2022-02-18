@@ -166,6 +166,7 @@
     <ClInclude Include="Src\Logic\energyLevel.h" />
     <ClInclude Include="Src\Logic\Game.h" />
     <ClInclude Include="Src\Logic\GameObject.h" />
+    <ClInclude Include="Src\Logic\InteractiveEntity.h" />
     <ClInclude Include="Src\Logic\Player.h" />
     <ClInclude Include="Src\Utils\Singleton.h" />
     <ClInclude Include="Src\Utils\Vector2D.h" />
@@ -188,6 +189,7 @@
     <ClCompile Include="Src\Logic\energyLevel.cpp" />
     <ClCompile Include="Src\Logic\Game.cpp" />
     <ClCompile Include="Src\Logic\GameObject.cpp" />
+    <ClCompile Include="Src\Logic\InteractiveEntity.cpp" />
     <ClCompile Include="Src\Logic\Player.cpp" />
     <ClCompile Include="Src\View\Texture.cpp" />
     <ClCompile Include="Src\View\TextureContainer.cpp" />
