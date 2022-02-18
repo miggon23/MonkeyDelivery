@@ -19,8 +19,8 @@ Player::Player(Game* game) :GameObject(game) {
 
 Player::~Player()
 {
-	energyLevel_ = nullptr;
 	delete energyLevel_;
+	energyLevel_ = nullptr;
 }
 
 void Player::update()
