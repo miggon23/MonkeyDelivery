@@ -35,7 +35,7 @@ void Player::move(pair<double, double> speed)
 {
 	if(!isRunning) setPosition(getX() + speed.first*walkingSpeed_, getY() + speed.second*walkingSpeed_);
 	else setPosition(getX() + speed.first * runningSpeed_, getY() + speed.second * runningSpeed_);
-	//drainEnergy(walkingEnergy_);
+	drainEnergy(walkingEnergy_);
 
 	//cout << "POSICION PLAYER:" << getX() << "," << getY() << endl;
 	//cout << "POSICION BARRA:" << energyLevel_->getX() << "," << energyLevel_->getY() << endl;
