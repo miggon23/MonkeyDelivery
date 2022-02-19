@@ -3,6 +3,7 @@
 #include "States/TestingState.h"
 #include "CommandMove.h"
 #include "CommandMoveV.h"
+#include "CommandInteract.h"
 
 ViewController::ViewController(Game* _game) {
     game = _game;
@@ -16,6 +17,7 @@ ViewController::ViewController(Game* _game) {
     commandFactory->add(new CommandMove());
     commandFactory->add(new CommandMoveV());
     commandFactory->add(new CommandExit());
+    commandFactory->add(new CommandInteract());
     //game->setState(new MenuState(game));
 }
 

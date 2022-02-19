@@ -157,6 +157,7 @@
     <ClInclude Include="Src\Control\Command.h" />
     <ClInclude Include="Src\Control\CommandExit.h" />
     <ClInclude Include="Src\Control\CommandFactory.h" />
+    <ClInclude Include="Src\Control\CommandInteract.h" />
     <ClInclude Include="Src\Control\CommandMove.h" />
     <ClInclude Include="Src\Control\CommandMoveV.h" />
     <ClInclude Include="Src\Control\States\State.h" />
@@ -167,6 +168,8 @@
     <ClInclude Include="Src\Logic\Game.h" />
     <ClInclude Include="Src\Logic\GameObject.h" />
     <ClInclude Include="Src\Logic\InteractiveEntity.h" />
+    <ClInclude Include="Src\Logic\Mission.h" />
+    <ClInclude Include="Src\Logic\MissionManager.h" />
     <ClInclude Include="Src\Logic\Player.h" />
     <ClInclude Include="Src\Utils\Singleton.h" />
     <ClInclude Include="Src\Utils\Vector2D.h" />
@@ -180,6 +183,7 @@
     <ClCompile Include="Src\Control\Command.cpp" />
     <ClCompile Include="Src\Control\CommandExit.cpp" />
     <ClCompile Include="Src\Control\CommandFactory.cpp" />
+    <ClCompile Include="Src\Control\CommandInteract.cpp" />
     <ClCompile Include="Src\Control\CommandMove.cpp" />
     <ClCompile Include="Src\Control\CommandMoveV.cpp" />
     <ClCompile Include="Src\Control\States\State.cpp" />
@@ -190,6 +194,8 @@
     <ClCompile Include="Src\Logic\Game.cpp" />
     <ClCompile Include="Src\Logic\GameObject.cpp" />
     <ClCompile Include="Src\Logic\InteractiveEntity.cpp" />
+    <ClCompile Include="Src\Logic\Mission.cpp" />
+    <ClCompile Include="Src\Logic\MissionManager.cpp" />
     <ClCompile Include="Src\Logic\Player.cpp" />
     <ClCompile Include="Src\View\Texture.cpp" />
     <ClCompile Include="Src\View\TextureContainer.cpp" />

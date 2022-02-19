@@ -83,3 +83,16 @@ void Player::draw()
 	energyLevel_->draw();
 	energyLevel_->drawDebug();
 }
+
+
+
+//se le pasa una cantidad de dinero al player
+//si la cantidad es negativa se entiende que es para una compra y se devuelve un bool como confirmacion
+//en caso contrario solo se le añade el dinero al actual del jugador
+bool Player::moneyChange(int money)
+{
+	if (money < 0 && money_ < money) return false;
+	
+	money_ += money;
+	return true;
+}

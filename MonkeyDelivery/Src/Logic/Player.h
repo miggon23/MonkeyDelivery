@@ -31,6 +31,9 @@ public:
 	void removeMoney(int amount);
 	void draw() override;
 
+	//economy
+	bool moneyChange(int money);
+
 };
 
 

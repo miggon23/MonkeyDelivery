@@ -12,6 +12,8 @@
 #include "../View/TextureContainer.h"
 #include "Player.h"
 #include "InteractiveEntity.h"
+#include "Mission.h"
+#include "MissionManager.h"
 
 using namespace std;
 
@@ -24,8 +26,10 @@ private:
 
     TextureContainer* textureContainer;
     SDL_Renderer* renderer = nullptr;
-    Player* player=nullptr;
+    Player* player = nullptr;
     InteractiveEntity* iE = nullptr;
+    MissionManager* missions_ = nullptr;
+    
 
 public:
   
@@ -55,6 +59,10 @@ public:
     Player* getPlayer() {
         return player;
     }
+
+    // missions
+    bool changeMoneyPlayer(int money);
+    void interactions();
 };
 
 
