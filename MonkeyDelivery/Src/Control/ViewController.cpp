@@ -15,7 +15,7 @@ ViewController::ViewController(Game* _game) {
     game->loadTextures();
     commandFactory = new CommandFactory(game);
     commandFactory->add(new CommandMove());
-    commandFactory->add(new CommandMoveV());
+   // commandFactory->add(new CommandMoveV());
     commandFactory->add(new CommandExit());
     commandFactory->add(new CommandInteract());
     //game->setState(new MenuState(game));
@@ -56,7 +56,7 @@ void ViewController::clearBackground() {
 
 void ViewController::handleEvents() {
     SDL_Event event;
-    while (SDL_PollEvent(&event))
+   /* while (SDL_PollEvent(&event))
     {
         vector<Command*> commands = commandFactory->getCommand(event);
         for (auto command:commands)
@@ -66,7 +66,23 @@ void ViewController::handleEvents() {
             }
         }
         break;
+    }*/
+    while (SDL_PollEvent(&event) != 0)
+    {
+        GetFrameEvents().push_back(event);        
     }
+    for (auto e:GetFrameEvents())
+    {
+        vector<Command*> commands = commandFactory->getCommand(e);
+        for (auto command : commands)
+        {
+            if (command != nullptr) {
+                command->execute();
+            }
+        }
+    }
+    
+    GetFrameEvents().clear();
 }
 
 

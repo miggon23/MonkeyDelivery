@@ -11,8 +11,8 @@ InteractiveEntity::InteractiveEntity(Game* game) : GameObject(game) {
 }
 void InteractiveEntity::update()
 {
-    if(collide(game->getPlayer()->getCollider()))
-        cout<<"COLLISION"<<endl;
+    if (collide(game->getPlayer()->getCollider()));
+       // cout<<"COLLISION"<<endl;
         
 }
 void InteractiveEntity::draw()

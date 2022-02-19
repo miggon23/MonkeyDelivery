@@ -36,7 +36,7 @@ void Player::move(pair<double, double> speed)
 	setPosition(getX() + speed.first*walkingSpeed_, getY() + speed.second*walkingSpeed_);
 	drainEnergy(walkingEnergy_);
 
-	//cout << "POSICION PLAYER:" << getX() << "," << getY() << endl;
+	cout << "POSICION PLAYER:" << getX() << "," << getY() << endl;
 	//cout << "POSICION BARRA:" << energyLevel_->getX() << "," << energyLevel_->getY() << endl;
 	
 }

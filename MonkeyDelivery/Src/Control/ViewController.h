@@ -26,6 +26,12 @@ public:
     void handleEvents();
     void clearBackground();
 
+    std::vector<SDL_Event>& GetFrameEvents()
+    {
+        static std::vector<SDL_Event> frame_events;
+        return frame_events;
+    }
+
     unsigned int frameDuration();
 };
 

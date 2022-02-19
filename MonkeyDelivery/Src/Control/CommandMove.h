@@ -3,7 +3,7 @@
 
 class CommandMove :public Command {
 
-	int dir=0;
+	int dir=0,dirV=0;
 public:
 	CommandMove() {};
 	~CommandMove()=default;
