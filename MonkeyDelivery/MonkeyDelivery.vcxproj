@@ -159,7 +159,7 @@
     <ClInclude Include="Src\Control\CommandFactory.h" />
     <ClInclude Include="Src\Control\CommandInteract.h" />
     <ClInclude Include="Src\Control\CommandMove.h" />
-    <ClInclude Include="Src\Control\CommandMoveV.h" />
+    <ClInclude Include="Src\Control\CommandRun.h" />
     <ClInclude Include="Src\Control\States\State.h" />
     <ClInclude Include="Src\Control\States\StateMachine.h" />
     <ClInclude Include="Src\Control\States\TestingState.h" />
@@ -185,7 +185,7 @@
     <ClCompile Include="Src\Control\CommandFactory.cpp" />
     <ClCompile Include="Src\Control\CommandInteract.cpp" />
     <ClCompile Include="Src\Control\CommandMove.cpp" />
-    <ClCompile Include="Src\Control\CommandMoveV.cpp" />
+    <ClCompile Include="Src\Control\CommandRun.cpp" />
     <ClCompile Include="Src\Control\States\State.cpp" />
     <ClCompile Include="Src\Control\States\StateMachine.cpp" />
     <ClCompile Include="Src\Control\States\TestingState.cpp" />

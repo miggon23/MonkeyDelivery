@@ -99,9 +99,6 @@
     <ClInclude Include="Src\Control\CommandMove.h">
       <Filter>Archivos de encabezado\Control</Filter>
     </ClInclude>
-    <ClInclude Include="Src\Control\CommandMoveV.h">
-      <Filter>Archivos de encabezado\Control</Filter>
-    </ClInclude>
     <ClInclude Include="Src\Control\CommandExit.h">
       <Filter>Archivos de encabezado\Control</Filter>
     </ClInclude>
@@ -121,6 +118,9 @@
       <Filter>Archivos de encabezado\Logic</Filter>
     </ClInclude>
     <ClInclude Include="Src\Control\CommandInteract.h">
+      <Filter>Archivos de encabezado\Control</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Control\CommandRun.h">
       <Filter>Archivos de encabezado\Control</Filter>
     </ClInclude>
   </ItemGroup>
@@ -164,9 +164,6 @@
     <ClCompile Include="Src\Control\CommandMove.cpp">
       <Filter>Archivos de origen\Control</Filter>
     </ClCompile>
-    <ClCompile Include="Src\Control\CommandMoveV.cpp">
-      <Filter>Archivos de origen\Control</Filter>
-    </ClCompile>
     <ClCompile Include="Src\Control\CommandExit.cpp">
       <Filter>Archivos de origen\Control</Filter>
     </ClCompile>
@@ -183,6 +180,9 @@
       <Filter>Archivos de origen\Logic</Filter>
     </ClCompile>
     <ClCompile Include="Src\Control\CommandInteract.cpp">
+      <Filter>Archivos de origen\Control</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Control\CommandRun.cpp">
       <Filter>Archivos de origen\Control</Filter>
     </ClCompile>
   </ItemGroup>

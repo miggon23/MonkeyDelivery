@@ -49,16 +49,16 @@ public:
     int getWindowWidth();
     int getWindowHeight();
 
-    void move(pair<double, double> speed) { player->move(speed); };
+    //Player movement
+    inline void move(pair<double, double> speed) { player->move(speed); };
+    inline void setIsRunning(bool run) { player->setIsRunning(run); };
 
     // rendering
     void setRenderer(SDL_Renderer* renderer);
     void loadTextures();
     Texture* getTexture(TextureName name);
     SDL_Renderer* getRenderer();
-    Player* getPlayer() {
-        return player;
-    }
+    inline Player* getPlayer() { return player; }
 
     // missions
     bool changeMoneyPlayer(int money);

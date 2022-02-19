@@ -2,8 +2,9 @@
 #include "../Logic/Game.h"
 #include "States/TestingState.h"
 #include "CommandMove.h"
-#include "CommandMoveV.h"
 #include "CommandInteract.h"
+#include "CommandRun.h"
+
 
 ViewController::ViewController(Game* _game) {
     game = _game;
@@ -15,9 +16,9 @@ ViewController::ViewController(Game* _game) {
     game->loadTextures();
     commandFactory = new CommandFactory(game);
     commandFactory->add(new CommandMove());
-   // commandFactory->add(new CommandMoveV());
     commandFactory->add(new CommandExit());
     commandFactory->add(new CommandInteract());
+    commandFactory->add(new CommandRun());
     //game->setState(new MenuState(game));
 }
 
@@ -54,37 +55,32 @@ void ViewController::clearBackground() {
 }
 
 
+vector<SDL_Event>& ViewController::GetFrameEvents()
+{
+    static vector<SDL_Event> frame_events;
+    return frame_events;
+}
+
 void ViewController::handleEvents() {
     SDL_Event event;
-   /* while (SDL_PollEvent(&event))
-    {
-        vector<Command*> commands = commandFactory->getCommand(event);
-        for (auto command:commands)
-        {
-            if (command != nullptr) {
-                command->execute();
-            }
-        }
-        break;
-    }*/
+    //Registra los eventos
     while (SDL_PollEvent(&event) != 0)
     {
         GetFrameEvents().push_back(event);        
     }
-    for (auto e:GetFrameEvents())
+    for (auto e:GetFrameEvents()) //Ejecutamos los executes de los comandos de los eventos registrados
     {
         vector<Command*> commands = commandFactory->getCommand(e);
-        for (auto command : commands)
+        for (auto i:commands)
         {
-            if (command != nullptr) {
-                command->execute();
+            if (i != nullptr) {
+                  i->execute();
             }
         }
     }
     
-    GetFrameEvents().clear();
+    GetFrameEvents().clear(); //Vaciar el vector de eventos y que no se acumulen
 }
-
 
 uint32_t ViewController::frameDuration() {
     return 1000 / FRAME_RATE;
