@@ -120,9 +120,6 @@
     <ClInclude Include="Src\Control\CommandInteract.h">
       <Filter>Archivos de encabezado\Control</Filter>
     </ClInclude>
-    <ClInclude Include="Src\Control\CommandRun.h">
-      <Filter>Archivos de encabezado\Control</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MonkeyDelivery.cpp">
@@ -180,9 +177,6 @@
       <Filter>Archivos de origen\Logic</Filter>
     </ClCompile>
     <ClCompile Include="Src\Control\CommandInteract.cpp">
-      <Filter>Archivos de origen\Control</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\CommandRun.cpp">
       <Filter>Archivos de origen\Control</Filter>
     </ClCompile>
   </ItemGroup>
