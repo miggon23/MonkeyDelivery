@@ -10,10 +10,14 @@ const string IMAGES_PATH = "../Images/";
 enum TextureName {
     monkeyTexture,
     energyTexture,
-    energyLevelTexture
+    energyLevelTexture,
+    back1,back2,
+    front1,front2,front3,
+    idle1,idle2,idle3,idle4,idle5,
+    side1,side2,side3,side4,side5
 };
 
-const int NUM_TEXTURES = 3;
+const int NUM_TEXTURES = 18;
 
 typedef struct {
     string filename;
@@ -24,7 +28,22 @@ typedef struct {
 const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
 { {"monkeyPrueba.png",1,1},
   {"energy.png",1,1},
-  {"energyLevel.png",1,1}
+  {"energyLevel.png",1,1},
+  {"animaciones mono/back1.png",1,1},
+  {"animaciones mono/back2.png",1,1},
+  {"animaciones mono/front1.png",1,1},
+  {"animaciones mono/front2.png",1,1},
+  {"animaciones mono/front3.png",1,1},
+  {"animaciones mono/idle1.png",1,1},
+  {"animaciones mono/idle2.png",1,1},
+  {"animaciones mono/idle3.png",1,1},
+  {"animaciones mono/idle4.png",1,1},
+  {"animaciones mono/idle5.png",1,1},
+  {"animaciones mono/side1.png",1,1},
+  {"animaciones mono/side2.png",1,1},
+  {"animaciones mono/side3.png",1,1},
+  {"animaciones mono/side4.png",1,1},
+  {"animaciones mono/side5.png",1,1}
 };
 
 

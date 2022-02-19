@@ -2,9 +2,11 @@
 
 Player::Player(Game* game) :GameObject(game) {
 	this->game = game;
+	
 	texture = nullptr;
 	setTexture(monkeyTexture);
 
+	//inicializacion de variables
 	fear_ = 0;
 	money_ = 0;
 	walkingSpeed_ = 3;

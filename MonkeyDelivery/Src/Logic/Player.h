@@ -1,43 +1,63 @@
 #include "GameObject.h"
 #include "energyLevel.h"
-
 class Game;
+enum Animations { QUIETO, CORRER };//EN PROCESO <NO TOCAR>
 
 class Player: public GameObject {
 private:
-
-	bool isRunning=false;
+	
+#pragma region Movement/Fear
+	bool isRunning = false;
 	float fear_;
 	float walkingSpeed_;
 	float runningSpeed_;
-	//Mission activeMission_
+#pragma endregion
+
+#pragma region Mission activeMission	
 	int money_;
 	float fieldOfView_;
+#pragma endregion
 
-	// ENERGY BAR 
+#pragma region Energy
 	int walkingEnergy_;
 	energyLevel* energyLevel_ = nullptr;
+#pragma endregion
+
+#pragma region Animations	
+	Animations animations;
+	int indicatorTexture;
+#pragma endregion	
 
 public:
+	
 	Player(Game* game);
 	~Player();
 
 	void update() override;
+	void draw() override;
 	void sleep();
-	void getScared(int amount);
+
+#pragma region Energy
 	void drainEnergy(int amount);
 	void recoverEnergy(int amount);
-	void recoverFear(int amount);
-	void draw() override;
+#pragma endregion
 
-	//Movement
+#pragma region Fear
+	void getScared(int amount);
+	void recoverFear(int amount);
+#pragma endregion
+
+#pragma region Movement
 	void move(pair<double, double> speed);
 	inline void setIsRunning(bool run) { isRunning = run; };
+#pragma endregion
 
-	//economy
+#pragma region economy
 	bool moneyChange(int money);
 	void getMoney(int amount);
 	void removeMoney(int amount);
+#pragma endregion
+
 };
 
 

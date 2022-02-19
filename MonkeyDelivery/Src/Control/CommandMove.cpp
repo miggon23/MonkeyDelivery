@@ -32,7 +32,7 @@ bool CommandMove::parse(SDL_Event& event)
 		}
 	}
 	//Reseteos
-	else if (event.type == SDL_KEYUP) {
+	if (event.type == SDL_KEYUP) {
 		SDL_Keycode key = event.key.keysym.sym;
 		//Movimiento Horizontal
 		if (key == SDLK_d || key == SDLK_a) {
