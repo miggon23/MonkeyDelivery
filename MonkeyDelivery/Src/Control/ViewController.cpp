@@ -1,6 +1,8 @@
 #include "ViewController.h"
 #include "../Logic/Game.h"
-#include "States/TestingState.h"
+
+#include "States/MenuState.h"
+
 #include "CommandMove.h"
 #include "CommandRun.h"
 #include "CommandInteract.h"
@@ -19,7 +21,7 @@ ViewController::ViewController(Game* _game) {
     commandFactory->add(new CommandExit());
     commandFactory->add(new CommandInteract());
     commandFactory->add(new CommandRun());
-    //game->setState(new MenuState(game));
+    game->setState(new MenuState(game));
 }
 
 void ViewController::run() {
@@ -31,21 +33,20 @@ void ViewController::run() {
     while (!game->isUserExit()) {
 
         frameTime = SDL_GetTicks() - startTime;
+        handleEvents();
 
         if (frameTime >= frameDuration()) {
             clearBackground();
             game->update();
-            //game->getState()->update();
-            //game->getState()->draw();
-            game->draw();
+            game->getState()->update();
+            game->getState()->draw();
+           // game->draw();
             SDL_RenderPresent(renderer);
             startTime = SDL_GetTicks();
         }
         else {
             SDL_Delay(frameDuration() - frameTime);
         }
-
-        handleEvents();
     }
 }
 

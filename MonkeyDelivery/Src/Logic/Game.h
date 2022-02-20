@@ -10,8 +10,12 @@
 #include"../Control/States/StateMachine.h"
 #include "../View/Texture.h"
 #include "../View/TextureContainer.h"
+
+#include "../View/Font.h"
+
 #include "Player.h"
 #include "InteractiveEntity.h"
+
 #include "Mission.h"
 #include "MissionManager.h"
 
@@ -30,6 +34,7 @@ private:
     InteractiveEntity* iE = nullptr;
     MissionManager* missions_ = nullptr;
     
+    Font* font_;
 
 public:
   
@@ -59,6 +64,8 @@ public:
     Texture* getTexture(TextureName name);
     SDL_Renderer* getRenderer();
     inline Player* getPlayer() { return player; }
+    void renderText(string text, int x, int y, SDL_Color color = { 0,0,0 }); // Escribir una sola línea
+    void renderText(vector<string> text, int x, int y, int incX, int incY, SDL_Color color = { 0,0,0 }); // Escribir varias líneas
 
     // missions
     bool changeMoneyPlayer(int money);

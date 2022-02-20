@@ -2,6 +2,7 @@
 
 Game::Game(string n, int w, int h) : name(n), width(w), height(h), doExit(false)
 {    
+    font_ = new Font("../Images/Monospace.ttf", 12);
 }
 
 Game::~Game() {
@@ -10,6 +11,7 @@ Game::~Game() {
     delete iE;
     delete textureContainer;
     delete missions_;
+    delete font_;
 }
 
 string Game::getGameName() {
@@ -18,6 +20,7 @@ string Game::getGameName() {
 
 void Game::start()
 {
+
     player = new Player(this); //Creacion del jugador
     iE = new InteractiveEntity(this);
 
@@ -75,6 +78,20 @@ Texture* Game::getTexture(TextureName name) {
 
 SDL_Renderer* Game::getRenderer() {
     return renderer;
+}
+
+void Game::renderText(string text, int x, int y, SDL_Color color)
+{
+    font_->render(renderer, text.c_str(), x, y, color);
+}
+
+void Game::renderText(vector<string> text, int x, int y, int incX, int incY, SDL_Color color)
+{
+    for (int i = 0; i < text.size(); ++i) {
+        font_->render(renderer, text[i].c_str(), x, y, color);
+        x += incX;
+        y += incY;
+    }
 }
 
 //economy
