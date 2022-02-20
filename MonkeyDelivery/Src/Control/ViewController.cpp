@@ -3,10 +3,6 @@
 
 #include "States/MenuState.h"
 
-#include "CommandMove.h"
-#include "CommandRun.h"
-#include "CommandInteract.h"
-
 
 ViewController::ViewController(Game* _game) {
     game = _game;
@@ -16,20 +12,14 @@ ViewController::ViewController(Game* _game) {
     
     game->setRenderer(renderer);
     game->loadTextures();
-    commandFactory = new CommandFactory(game);
-    commandFactory->add(new CommandMove());
-    commandFactory->add(new CommandExit());
-    commandFactory->add(new CommandInteract());
-    commandFactory->add(new CommandRun());
+
     game->setState(new MenuState(game));
 }
 
 void ViewController::run() {
     uint32_t startTime = 0;
     uint32_t frameTime;
-
-    game->start(); //Inicio del juego
-    //!game->getState()->doQuit()
+    
     while (!game->isUserExit()) {
 
         frameTime = SDL_GetTicks() - startTime;
@@ -37,10 +27,9 @@ void ViewController::run() {
 
         if (frameTime >= frameDuration()) {
             clearBackground();
-            game->update();
-            /*game->getState()->update();
-            game->getState()->draw();*/
-            game->draw();
+
+            game->getState()->update();
+            game->getState()->draw();
             SDL_RenderPresent(renderer);
             startTime = SDL_GetTicks();
         }
@@ -63,24 +52,7 @@ vector<SDL_Event>& ViewController::GetFrameEvents()
 }
 
 void ViewController::handleEvents() {
-    SDL_Event event;
-    //Registra los eventos
-    while (SDL_PollEvent(&event) != 0)
-    {
-        GetFrameEvents().push_back(event);        
-    }
-    for (auto e:GetFrameEvents()) //Ejecutamos los executes de los comandos de los eventos registrados
-    {
-        vector<Command*> commands = commandFactory->getCommand(e);
-        for (auto i:commands)
-        {
-            if (i != nullptr) {
-                  i->execute();
-            }
-        }
-    }
-    
-    GetFrameEvents().clear(); //Vaciar el vector de eventos y que no se acumulen
+    game->getState()->handleEvents();
 }
 
 uint32_t ViewController::frameDuration() {
@@ -111,6 +83,4 @@ ViewController::~ViewController() {
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);
     SDL_Quit();
-    delete commandFactory;
-    commandFactory = nullptr;
 }

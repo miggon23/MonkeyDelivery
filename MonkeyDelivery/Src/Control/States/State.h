@@ -1,7 +1,7 @@
 #pragma once
 
 #include <string>
-//#include "../../Control/Commands/CommandFactory.h"
+#include "../CommandFactory.h"
 
 class Game;
 using namespace std;
@@ -9,7 +9,7 @@ using namespace std;
 class State {
 protected:
     Game* game = nullptr;
-    //CommandFactory* commandFactory = nullptr;
+    CommandFactory* commandFactory = nullptr;
 
    // Uint32 initTime;
     unsigned int initTime;
@@ -17,12 +17,13 @@ protected:
     unsigned int totalTime;
 public:
     State(Game* game) : game(game) {
-        //commandFactory = new CommandFactory(game);
+        commandFactory = new CommandFactory(game);
     };
 
     virtual ~State() {
-        //delete commandFactory;
+        delete commandFactory;
     };
+
     virtual void update() = 0;
     virtual void draw() = 0;
     virtual void next() = 0;

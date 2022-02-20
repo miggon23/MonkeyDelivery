@@ -17,13 +17,15 @@ public:
             delete c;
         cout << "COMANDOS ELIMINADOS" << endl;
     }
-    vector<Command*> getCommand(SDL_Event& event) {
+
+    Command* getCommand(SDL_Event& event) {
         vector<Command*>executeCommands;
         for (auto c : availableCommands) {
-            if (c->parse(event)) executeCommands.push_back(c);
+            if (c->parse(event)) return c;
         }
-        return executeCommands;
+        return nullptr;
     }
+
     void add(Command* c) {
         c->bind(game);
         availableCommands.push_back(c);

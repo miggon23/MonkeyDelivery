@@ -1,8 +1,8 @@
-#include "Game.h"
+#include "Game.h" 
 
 Game::Game(string n, int w, int h) : name(n), width(w), height(h), doExit(false)
 {    
-    font_ = new Font("../Images/Monospace.ttf", 12);
+    font_ = new Font("../Images/TheMoon.ttf", 50);
 }
 
 Game::~Game() {
@@ -46,8 +46,6 @@ void Game::draw()
 {
     player->draw();
     iE->draw();
-   
-
 }
 Point2D<int> Game::getOrigin() {
     return { int(-(player->getX() - player->getWidth())), 0 };

@@ -13,11 +13,11 @@ bool State::doQuit() {
 void State::handleEvents() {
     SDL_Event event;
     while (SDL_PollEvent(&event)) {
-        //Command* command = commandFactory->getCommand(event);
-        /*if (command != nullptr) {
+        Command* command = commandFactory->getCommand(event);
+        if (command != nullptr) {
             command->execute();
             break;
-        }*/
+        }
     }
 }
 

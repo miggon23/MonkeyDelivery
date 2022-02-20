@@ -132,8 +132,17 @@
     <ClInclude Include="Src\Control\States\MenuState.h">
       <Filter>Archivos de encabezado\Control\States</Filter>
     </ClInclude>
-    <ClInclude Include="Src\View\Font.h">
+    <ClInclude Include="Src\Control\NextStateCommand.h">
       <Filter>Archivos de encabezado\Control\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\View\Font.h">
+      <Filter>Archivos de encabezado\Control\View</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Control\States\PlayingState.h">
+      <Filter>Archivos de encabezado\Control\States</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Control\States\GameOverState.h">
+      <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -199,6 +208,15 @@
     </ClCompile>
     <ClCompile Include="Src\Control\States\MenuState.cpp">
       <Filter>Archivos de origen\Control\States</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Control\NextStateCommand.cpp">
+      <Filter>Archivos de origen\Control\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Control\States\PlayingState.cpp">
+      <Filter>Archivos de origen\Control\States</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Control\States\GameOverState.cpp">
+      <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
