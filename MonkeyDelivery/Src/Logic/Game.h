@@ -33,6 +33,7 @@ private:
     Player* player = nullptr;
     InteractiveEntity* iE = nullptr;
     MissionManager* missions_ = nullptr;
+    vector<GameObject*> gameObjects_;
     
     Font* font_;
 
@@ -43,6 +44,8 @@ public:
     ~Game();
 
     string getGameName();
+
+    void add(GameObject* gameObject);
 
     void start();
     void update();
