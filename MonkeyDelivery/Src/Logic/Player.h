@@ -49,7 +49,7 @@ public:
 
 #pragma region Movement
 	void move(pair<double, double> speed);
-	inline void setIsRunning(bool run) { isRunning = run; };
+	inline void setIsRunning(bool run) { isRunning = run; std::cout << "RUNNING CHANGED TO: " << isRunning << endl; };
 #pragma endregion
 
 #pragma region economy

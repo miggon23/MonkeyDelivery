@@ -2,6 +2,7 @@
 #include "../Logic/Game.h"
 #include "States/TestingState.h"
 #include "CommandMove.h"
+#include "CommandRun.h"
 #include "CommandInteract.h"
 
 
@@ -17,6 +18,7 @@ ViewController::ViewController(Game* _game) {
     commandFactory->add(new CommandMove());
     commandFactory->add(new CommandExit());
     commandFactory->add(new CommandInteract());
+    commandFactory->add(new CommandRun());
     //game->setState(new MenuState(game));
 }
 

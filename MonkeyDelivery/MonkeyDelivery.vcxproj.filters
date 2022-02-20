@@ -43,6 +43,12 @@
     <Filter Include="Archivos de encabezado\Utils">
       <UniqueIdentifier>{c3c8f211-5438-4064-aa0f-c475f4c25496}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Archivos de origen\Control\Commands">
+      <UniqueIdentifier>{b4165878-8f88-4256-80e4-04867ed511b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Control\Commands">
+      <UniqueIdentifier>{131e3d1e-be91-4d95-9559-bbc27290919e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -90,18 +96,6 @@
     <ClInclude Include="Src\View\Box.h">
       <Filter>Archivos de encabezado\Control\View</Filter>
     </ClInclude>
-    <ClInclude Include="Src\Control\Command.h">
-      <Filter>Archivos de encabezado\Control</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Control\CommandFactory.h">
-      <Filter>Archivos de encabezado\Control</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Control\CommandMove.h">
-      <Filter>Archivos de encabezado\Control</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Control\CommandExit.h">
-      <Filter>Archivos de encabezado\Control</Filter>
-    </ClInclude>
     <ClInclude Include="Src\Utils\Singleton.h">
       <Filter>Archivos de encabezado\Utils</Filter>
     </ClInclude>
@@ -117,8 +111,23 @@
     <ClInclude Include="Src\Logic\MissionManager.h">
       <Filter>Archivos de encabezado\Logic</Filter>
     </ClInclude>
+    <ClInclude Include="Src\Control\Command.h">
+      <Filter>Archivos de encabezado\Control\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Control\CommandExit.h">
+      <Filter>Archivos de encabezado\Control\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Control\CommandFactory.h">
+      <Filter>Archivos de encabezado\Control\Commands</Filter>
+    </ClInclude>
     <ClInclude Include="Src\Control\CommandInteract.h">
-      <Filter>Archivos de encabezado\Control</Filter>
+      <Filter>Archivos de encabezado\Control\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Control\CommandMove.h">
+      <Filter>Archivos de encabezado\Control\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Control\CommandRun.h">
+      <Filter>Archivos de encabezado\Control\Commands</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -152,18 +161,6 @@
     <ClCompile Include="Src\Logic\GameObject.cpp">
       <Filter>Archivos de origen\Logic</Filter>
     </ClCompile>
-    <ClCompile Include="Src\Control\Command.cpp">
-      <Filter>Archivos de origen\Control</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\CommandFactory.cpp">
-      <Filter>Archivos de origen\Control</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\CommandMove.cpp">
-      <Filter>Archivos de origen\Control</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\CommandExit.cpp">
-      <Filter>Archivos de origen\Control</Filter>
-    </ClCompile>
     <ClCompile Include="Src\Logic\energyLevel.cpp">
       <Filter>Archivos de origen\Logic</Filter>
     </ClCompile>
@@ -176,8 +173,23 @@
     <ClCompile Include="Src\Logic\MissionManager.cpp">
       <Filter>Archivos de origen\Logic</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Control\Command.cpp">
+      <Filter>Archivos de origen\Control\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Control\CommandExit.cpp">
+      <Filter>Archivos de origen\Control\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Control\CommandFactory.cpp">
+      <Filter>Archivos de origen\Control\Commands</Filter>
+    </ClCompile>
     <ClCompile Include="Src\Control\CommandInteract.cpp">
-      <Filter>Archivos de origen\Control</Filter>
+      <Filter>Archivos de origen\Control\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Control\CommandMove.cpp">
+      <Filter>Archivos de origen\Control\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Control\CommandRun.cpp">
+      <Filter>Archivos de origen\Control\Commands</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

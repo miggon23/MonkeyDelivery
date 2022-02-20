@@ -56,5 +56,5 @@ bool CommandMove::parse(SDL_Event& event)
 void CommandMove::execute()
 {
 	game->move(pair<double, double>(dir, dirV)); //Movimiento del player
-	game->setIsRunning(isRunning); //Indica si el player corre o no
+	//game->setIsRunning(isRunning); //Indica si el player corre o no
 }
