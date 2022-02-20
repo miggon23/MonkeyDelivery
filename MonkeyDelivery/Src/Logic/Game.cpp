@@ -3,9 +3,16 @@
 Game::Game(string n, int w, int h) : name(n), width(w), height(h), doExit(false)
 {    
     font_ = new Font("../Images/TheMoon.ttf", 50);
+    
 }
 
 Game::~Game() {
+    
+    for (int i = 0; i < gameObjects_.size(); i++)
+    {
+        delete gameObjects_[i];
+    }
+    gameObjects_.clear();
     cout << "[DEBUG] deleting game" << endl;
     delete player;
     delete iE;
@@ -18,19 +25,22 @@ string Game::getGameName() {
     return name;
 }
 
+void Game::add(GameObject* gameObject) {//añadir gO al vector
+    gameObjects_.push_back(gameObject);
+}
 void Game::start()
 {
     player = new Player(this); //Creacion del jugador
-    iE = new InteractiveEntity(this);
+    add(new InteractiveEntity(this));
 
     missions_ = new MissionManager(this);
-    missions_->AddMission(new Mission(missions_, iE, 100, 100, 10));
+    missions_->AddMission(new Mission(missions_, gameObjects_[0], 100, 100, 10));
 }
 
 void Game::update()
 {
     player->update();
-    iE->update();
+    gameObjects_[0]->update();
 }
 
 void Game::setUserExit() {
@@ -44,7 +54,7 @@ bool Game::isUserExit() {
 void Game::draw()
 {
     player->draw();
-    iE->draw();
+    gameObjects_[0]->draw();
 }
 Point2D<int> Game::getOrigin() {
     return { int(-(player->getX() - player->getWidth())), 0 };
@@ -109,13 +119,14 @@ void Game::interactions()
 vector<GameObject*> Game::getCollisions(SDL_Rect rect)
 {
     vector<GameObject*>interactEnt;
-    //for (int i = 0; i < interactEnt.size(); i++)
-    //{
-    //    if(interactEnt[i]->collide())
-    //}
-    //return interactEnt;
-    if(iE->collide(rect)){
-        interactEnt.push_back(iE);
+    
+    // for que recorre el vector de gameobjects
+    for (int i = 0; i < gameObjects_.size(); i++)
+    {
+        if(gameObjects_[i]->isInteractive() && gameObjects_[i]->collide(rect)){
+            interactEnt.push_back(gameObjects_[i]);
+        }
     }
+    
     return interactEnt;
 };

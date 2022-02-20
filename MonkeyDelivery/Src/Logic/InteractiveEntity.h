@@ -15,5 +15,7 @@ public:
     void draw() override;
 
     bool collide(SDL_Rect other);
+
+    bool isInteractive();
   
 };

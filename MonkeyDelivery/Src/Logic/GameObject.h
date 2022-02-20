@@ -38,6 +38,8 @@ public:
     int getHeight() { return h; };
     virtual void draw();
     virtual void update() = 0;
+    // adri y simona: pasa distinguir entre interactuables
+    virtual bool isInteractive() { return false; };
 
     void drawDebug();
 

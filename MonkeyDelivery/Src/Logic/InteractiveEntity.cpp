@@ -15,6 +15,7 @@ void InteractiveEntity::update()
        // cout<<"COLLISION"<<endl;
         
 }
+
 void InteractiveEntity::draw()
 {
     drawTexture(texture);
@@ -24,4 +25,8 @@ void InteractiveEntity::draw()
 bool InteractiveEntity::collide(SDL_Rect other) {
     auto c = this->getCollider();
     return (SDL_HasIntersection(&c, &other));
+}
+
+bool InteractiveEntity::isInteractive() {
+    return true;
 }
