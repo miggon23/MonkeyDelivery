@@ -15,10 +15,11 @@ enum TextureName {
     front1,front2,front3,
     idle1,idle2,idle3,idle4,idle5,
     side1,side2,side3,side4,side5,
-    woodPanel
+    woodPanel,
+    missionPanel
 };
 
-const int NUM_TEXTURES = 19;
+const int NUM_TEXTURES = 20;
 
 typedef struct {
     string filename;
@@ -46,6 +47,7 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
   {"animaciones mono/side4.png",1,1},
   {"animaciones mono/side5.png",1,1},
   {"decorations/woodpanel.png",1,1},
+  {"decorations/missionpanel.png",1,1}
 };
 
 

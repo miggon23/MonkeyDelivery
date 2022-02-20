@@ -1,5 +1,6 @@
 #include "PauseState.h"
 #include "../PauseCommand.h"
+#include "../CommandExit.h"
 
 PauseState::PauseState(Game* game) : State(game)
 {
@@ -9,6 +10,7 @@ PauseState::PauseState(Game* game) : State(game)
 void PauseState::update()
 {
 	commandFactory->add(new PauseCommand());
+	commandFactory->add(new CommandExit());
 }
 
 void PauseState::draw()

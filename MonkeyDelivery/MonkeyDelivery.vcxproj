@@ -164,6 +164,7 @@
     <ClInclude Include="Src\Control\PauseCommand.h" />
     <ClInclude Include="Src\Control\States\GameOverState.h" />
     <ClInclude Include="Src\Control\States\MenuState.h" />
+    <ClInclude Include="Src\Control\States\MissionSelectionState.h" />
     <ClInclude Include="Src\Control\States\PauseState.h" />
     <ClInclude Include="Src\Control\States\PlayingState.h" />
     <ClInclude Include="Src\Control\States\State.h" />
@@ -197,6 +198,7 @@
     <ClCompile Include="Src\Control\PauseCommand.cpp" />
     <ClCompile Include="Src\Control\States\GameOverState.cpp" />
     <ClCompile Include="Src\Control\States\MenuState.cpp" />
+    <ClCompile Include="Src\Control\States\MissionSelectionState.cpp" />
     <ClCompile Include="Src\Control\States\PauseState.cpp" />
     <ClCompile Include="Src\Control\States\PlayingState.cpp" />
     <ClCompile Include="Src\Control\States\State.cpp" />

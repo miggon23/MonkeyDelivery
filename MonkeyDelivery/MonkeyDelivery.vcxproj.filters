@@ -150,6 +150,9 @@
     <ClInclude Include="Src\Control\States\GameOverState.h">
       <Filter>Archivos de encabezado\Control\States</Filter>
     </ClInclude>
+    <ClInclude Include="Src\Control\States\MissionSelectionState.h">
+      <Filter>Archivos de encabezado\Control\States</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MonkeyDelivery.cpp">
@@ -228,6 +231,9 @@
       <Filter>Archivos de origen\Control\States</Filter>
     </ClCompile>
     <ClCompile Include="Src\Control\States\GameOverState.cpp">
+      <Filter>Archivos de origen\Control\States</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Control\States\MissionSelectionState.cpp">
       <Filter>Archivos de origen\Control\States</Filter>
     </ClCompile>
   </ItemGroup>

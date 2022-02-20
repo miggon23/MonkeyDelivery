@@ -1,6 +1,8 @@
 #include "GameObject.h"
 #include "../Logic/Game.h"
 
+#include "../Control/States/MissionSelectionState.h"
+
 void GameObject::drawTexture(Texture* texture) {
     int dX =/* game->getOrigin().*/getX();
     int dY = /*game->getOrigin().*/getY();
@@ -66,4 +68,5 @@ bool GameObject::collide(SDL_Rect other) {
 void GameObject::exampleInter()
 {
     cout << "ejemplo" << endl;
+    //game->setState(new MissionSelectionState(game));
 }
