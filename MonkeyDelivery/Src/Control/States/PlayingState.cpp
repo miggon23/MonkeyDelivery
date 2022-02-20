@@ -1,12 +1,15 @@
 #include "PlayingState.h"
 
-#include "../NextStateCommand.h"
 #include "../../Logic/Game.h"
 
+//#include "../NextStateCommand.h"
 #include "../CommandMove.h"
 #include "../CommandRun.h"
 #include "../CommandInteract.h"
 #include "../CommandExit.h"
+#include "../PauseCommand.h"
+
+#include "../States/MenuState.h"
 
 PlayingState::PlayingState(Game* game) : State(game) {
     registerCommands();
@@ -15,11 +18,12 @@ PlayingState::PlayingState(Game* game) : State(game) {
 
 void PlayingState::registerCommands() {
 
-    commandFactory->add(new NextStateCommand());
+    //commandFactory->add(new NextStateCommand());
     commandFactory->add(new CommandMove());
     commandFactory->add(new CommandExit());
     commandFactory->add(new CommandInteract());
     commandFactory->add(new CommandRun());
+    commandFactory->add(new PauseCommand());
 }
 
 void PlayingState::update() {
@@ -32,6 +36,6 @@ void PlayingState::draw() {
 
 void PlayingState::next() {
     cout << "Next State " << endl;
-    //game->setState(new Level_0_State(game));
+    //game->setState(new MenuState(game));
     delete this;
 }

@@ -18,9 +18,8 @@ bool CommandRun::parse(SDL_Event& event)
 			isRunning = false;
 			return true;
 		}
-		return false;
 	}
-	
+	return false;
 }
 
 void CommandRun::execute()

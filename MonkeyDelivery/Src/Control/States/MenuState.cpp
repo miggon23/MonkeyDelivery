@@ -28,7 +28,7 @@ void MenuState::draw()
 
     vector<string> texts = {
             "Welcome to Monkey Delivery",
-            "Press ENTER to start"
+            "Press SPACE to start"
     };
 
     game->renderText(texts, x, y, 75, 75);

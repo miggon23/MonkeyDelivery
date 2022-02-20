@@ -34,4 +34,6 @@ public:
     virtual void registerCommands() = 0;
 
     virtual void resetInitTime() {};
+
+    vector<SDL_Event>& GetFrameEvents();
 };

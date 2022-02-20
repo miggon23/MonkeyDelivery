@@ -18,8 +18,16 @@ public:
         cout << "COMANDOS ELIMINADOS" << endl;
     }
 
+    /*vector<Command*> getCommand(SDL_Event& event) {
+        vector<Command*> executeCommands;
+        for (auto c : availableCommands) {
+            if (c->parse(event)) executeCommands.push_back(c);
+        }
+        return executeCommands;
+    }*/
+
     Command* getCommand(SDL_Event& event) {
-        vector<Command*>executeCommands;
+        Command* executeCommands;
         for (auto c : availableCommands) {
             if (c->parse(event)) return c;
         }

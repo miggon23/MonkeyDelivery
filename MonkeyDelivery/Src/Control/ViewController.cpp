@@ -2,6 +2,7 @@
 #include "../Logic/Game.h"
 
 #include "States/MenuState.h"
+#include "States/PlayingState.h"
 
 
 ViewController::ViewController(Game* _game) {

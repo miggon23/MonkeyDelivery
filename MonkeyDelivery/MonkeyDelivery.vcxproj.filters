@@ -141,8 +141,14 @@
     <ClInclude Include="Src\Control\States\PlayingState.h">
       <Filter>Archivos de encabezado\Control\States</Filter>
     </ClInclude>
+    <ClInclude Include="Src\Control\PauseCommand.h">
+      <Filter>Archivos de encabezado\Control\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Control\States\PauseState.h">
+      <Filter>Archivos de encabezado\Control\States</Filter>
+    </ClInclude>
     <ClInclude Include="Src\Control\States\GameOverState.h">
-      <Filter>Archivos de encabezado</Filter>
+      <Filter>Archivos de encabezado\Control\States</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -215,8 +221,14 @@
     <ClCompile Include="Src\Control\States\PlayingState.cpp">
       <Filter>Archivos de origen\Control\States</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Control\PauseCommand.cpp">
+      <Filter>Archivos de origen\Control\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Control\States\PauseState.cpp">
+      <Filter>Archivos de origen\Control\States</Filter>
+    </ClCompile>
     <ClCompile Include="Src\Control\States\GameOverState.cpp">
-      <Filter>Archivos de origen</Filter>
+      <Filter>Archivos de origen\Control\States</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

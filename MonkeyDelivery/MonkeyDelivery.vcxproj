@@ -161,8 +161,10 @@
     <ClInclude Include="Src\Control\CommandMove.h" />
     <ClInclude Include="Src\Control\CommandRun.h" />
     <ClInclude Include="Src\Control\NextStateCommand.h" />
+    <ClInclude Include="Src\Control\PauseCommand.h" />
     <ClInclude Include="Src\Control\States\GameOverState.h" />
     <ClInclude Include="Src\Control\States\MenuState.h" />
+    <ClInclude Include="Src\Control\States\PauseState.h" />
     <ClInclude Include="Src\Control\States\PlayingState.h" />
     <ClInclude Include="Src\Control\States\State.h" />
     <ClInclude Include="Src\Control\States\StateMachine.h" />
@@ -192,8 +194,10 @@
     <ClCompile Include="Src\Control\CommandMove.cpp" />
     <ClCompile Include="Src\Control\CommandRun.cpp" />
     <ClCompile Include="Src\Control\NextStateCommand.cpp" />
+    <ClCompile Include="Src\Control\PauseCommand.cpp" />
     <ClCompile Include="Src\Control\States\GameOverState.cpp" />
     <ClCompile Include="Src\Control\States\MenuState.cpp" />
+    <ClCompile Include="Src\Control\States\PauseState.cpp" />
     <ClCompile Include="Src\Control\States\PlayingState.cpp" />
     <ClCompile Include="Src\Control\States\State.cpp" />
     <ClCompile Include="Src\Control\States\StateMachine.cpp" />
