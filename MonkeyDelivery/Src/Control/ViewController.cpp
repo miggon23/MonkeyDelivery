@@ -38,9 +38,9 @@ void ViewController::run() {
         if (frameTime >= frameDuration()) {
             clearBackground();
             game->update();
-            game->getState()->update();
-            game->getState()->draw();
-           // game->draw();
+            /*game->getState()->update();
+            game->getState()->draw();*/
+            game->draw();
             SDL_RenderPresent(renderer);
             startTime = SDL_GetTicks();
         }

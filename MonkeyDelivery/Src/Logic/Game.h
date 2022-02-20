@@ -70,6 +70,7 @@ public:
     // missions
     bool changeMoneyPlayer(int money);
     void interactions();
+    vector<GameObject*>getCollisions(SDL_Rect rect);
 };
 
 

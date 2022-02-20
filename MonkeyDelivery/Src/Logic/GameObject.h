@@ -44,6 +44,6 @@ public:
     virtual SDL_Rect getCollider();
     SDL_Rect getCenter();
     bool collide(SDL_Rect other);
-  
+    void exampleInter();
 };
 #endif 

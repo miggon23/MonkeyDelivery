@@ -107,3 +107,18 @@ void Game::interactions()
 {
     missions_->checkCurrentMission();
 }
+
+//adri y simona: colisiones
+vector<GameObject*> Game::getCollisions(SDL_Rect rect)
+{
+    vector<GameObject*>interactEnt;
+    //for (int i = 0; i < interactEnt.size(); i++)
+    //{
+    //    if(interactEnt[i]->collide())
+    //}
+    //return interactEnt;
+    if(iE->collide(rect)){
+        interactEnt.push_back(iE);
+    }
+    return interactEnt;
+};

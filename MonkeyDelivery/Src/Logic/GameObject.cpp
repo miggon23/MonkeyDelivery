@@ -60,3 +60,10 @@ bool GameObject::collide(SDL_Rect other) {
     auto c = getCollider();
     return SDL_HasIntersection(&c, &other);
 }
+
+// adri y simona: metodo de ejemplo para el interactive
+// no tocar ;)
+void GameObject::exampleInter()
+{
+    cout << "ejemplo" << endl;
+}
