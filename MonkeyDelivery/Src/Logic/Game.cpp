@@ -20,7 +20,6 @@ string Game::getGameName() {
 
 void Game::start()
 {
-
     player = new Player(this); //Creacion del jugador
     iE = new InteractiveEntity(this);
 
