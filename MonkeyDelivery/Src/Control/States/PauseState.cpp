@@ -13,7 +13,7 @@ void PauseState::update()
 
 void PauseState::draw()
 {
-	game->renderText("PAUSED", game->getWindowWidth() / 2 - 50, game->getWindowHeight() / 2 - 50);
+	game->renderText("PAUSED", game->getWindowWidth() / 2 - 75, game->getWindowHeight() / 2 - 50);
 }
 
 void PauseState::next()

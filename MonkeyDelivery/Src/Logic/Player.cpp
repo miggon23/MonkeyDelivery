@@ -11,7 +11,7 @@ Player::Player(Game* game) :GameObject(game) {
 	money_ = 0;
 	walkingSpeed_ = 3;
 	runningSpeed_ = 10;
-	walkingEnergy_ = 2;
+	walkingEnergy_ = 0.5;
 
 	setPosition(15, 100);
 	setDimension(100, 100);
@@ -56,7 +56,7 @@ void Player::getScared(int amount)
 /// Contador para bajar cada maxCont_ amout a energy_
 /// </summary>
 /// <param name="amount"> cantidad que se le va añadir a energy_
-void Player::drainEnergy(int amount)
+void Player::drainEnergy(float amount)
 {
 	energyLevel_->drain(amount);
 }

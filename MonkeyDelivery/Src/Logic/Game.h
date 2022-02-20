@@ -35,6 +35,8 @@ private:
     MissionManager* missions_ = nullptr;
     vector<GameObject*> gameObjects_;
     
+    GameObject* missionsPanel_= nullptr;
+
     Font* font_;
 
 public:

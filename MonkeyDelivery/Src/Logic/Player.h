@@ -19,7 +19,7 @@ private:
 #pragma endregion
 
 #pragma region Energy
-	int walkingEnergy_;
+	float walkingEnergy_;
 	energyLevel* energyLevel_ = nullptr;
 #pragma endregion
 
@@ -38,7 +38,7 @@ public:
 	void sleep();
 
 #pragma region Energy
-	void drainEnergy(int amount);
+	void drainEnergy(float amount);
 	void recoverEnergy(int amount);
 #pragma endregion
 

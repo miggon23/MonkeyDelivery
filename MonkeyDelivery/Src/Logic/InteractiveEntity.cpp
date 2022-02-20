@@ -1,13 +1,13 @@
 #include "InteractiveEntity.h"
 #include "../Logic/Game.h"
 
-InteractiveEntity::InteractiveEntity(Game* game) : GameObject(game) {
+InteractiveEntity::InteractiveEntity(Game* game, TextureName textureName) : GameObject(game) {
     this->game = game;
     texture = nullptr;
-    setTexture(monkeyTexture);
-    setPosition(60, 60);
-    setDimension(100, 100);
+    setTexture(textureName);
 
+    setPosition(200, 80);
+    setDimension(120, 150);
 }
 void InteractiveEntity::update()
 {

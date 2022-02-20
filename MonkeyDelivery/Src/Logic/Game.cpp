@@ -31,10 +31,14 @@ void Game::add(GameObject* gameObject) {//añadir gO al vector
 void Game::start()
 {
     player = new Player(this); //Creacion del jugador
-    add(new InteractiveEntity(this));
+
+
+    missionsPanel_ = new InteractiveEntity(this, woodPanel);
+    add(missionsPanel_);
 
     missions_ = new MissionManager(this);
-    missions_->AddMission(new Mission(missions_, gameObjects_[0], 100, 100, 10));
+    missions_->AddMission(new Mission(missions_, missionsPanel_, 100, 100, 10));
+
 }
 
 void Game::update()
