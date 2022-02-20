@@ -20,7 +20,7 @@ void ViewController::run() {
     uint32_t startTime = 0;
     uint32_t frameTime;
     
-    while (!game->isUserExit()) {
+    while (!game->getState()->doQuit()) {
 
         frameTime = SDL_GetTicks() - startTime;
         handleEvents();
