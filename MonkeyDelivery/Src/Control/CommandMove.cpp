@@ -25,11 +25,6 @@ bool CommandMove::parse(SDL_Event& event)
 			dirV = 1;
 			return true;
 		}
-		//Correr
-		if (key == SDLK_LSHIFT) {
-			isRunning = true;
-			return true;
-		}
 	}
 	//Reseteos
 	if (event.type == SDL_KEYUP) {
@@ -44,11 +39,6 @@ bool CommandMove::parse(SDL_Event& event)
 			dirV = 0;
 			return true;
 		}
-		//Correr
-		if (key == SDLK_LSHIFT) {
-			isRunning = false;
-			return true;
-		}
 	}
 	return false;
 }
@@ -56,5 +46,4 @@ bool CommandMove::parse(SDL_Event& event)
 void CommandMove::execute()
 {
 	game->move(pair<double, double>(dir, dirV)); //Movimiento del player
-	//game->setIsRunning(isRunning); //Indica si el player corre o no
 }
