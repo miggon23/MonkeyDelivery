@@ -18,6 +18,7 @@
 
 #include "Mission.h"
 #include "MissionManager.h"
+#include "UI_Info.h"
 
 using namespace std;
 
@@ -38,6 +39,7 @@ private:
     GameObject* missionsPanel_= nullptr;
 
     Font* font_;
+    UI_Info* info;
 
 public:
   
@@ -62,6 +64,8 @@ public:
     //Player movement
     inline void move(pair<double, double> speed) { player->move(speed); };
     inline void setIsRunning(bool run) { player->setIsRunning(run); };
+    inline void setVelX(double x) { player->setVelX(x); };
+    inline void setVelY(double y) { player->setVelY(y); };
 
     // rendering
     void setRenderer(SDL_Renderer* renderer);
@@ -69,6 +73,7 @@ public:
     Texture* getTexture(TextureName name);
     SDL_Renderer* getRenderer();
     inline Player* getPlayer() { return player; }
+    inline MissionManager* getMissionManager() { return missions_; }
     void renderText(string text, int x, int y, SDL_Color color = { 0,0,0 }); // Escribir una sola línea
     void renderText(vector<string> text, int x, int y, int incX, int incY, SDL_Color color = { 0,0,0 }); // Escribir varias líneas
 

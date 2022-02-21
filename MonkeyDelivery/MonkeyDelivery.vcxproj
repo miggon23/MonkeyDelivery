@@ -178,6 +178,7 @@
     <ClInclude Include="Src\Logic\Mission.h" />
     <ClInclude Include="Src\Logic\MissionManager.h" />
     <ClInclude Include="Src\Logic\Player.h" />
+    <ClInclude Include="Src\Logic\UI_Info.h" />
     <ClInclude Include="Src\Utils\Singleton.h" />
     <ClInclude Include="Src\Utils\Vector2D.h" />
     <ClInclude Include="Src\View\Box.h" />
@@ -212,6 +213,7 @@
     <ClCompile Include="Src\Logic\Mission.cpp" />
     <ClCompile Include="Src\Logic\MissionManager.cpp" />
     <ClCompile Include="Src\Logic\Player.cpp" />
+    <ClCompile Include="Src\Logic\UI_Info.cpp" />
     <ClCompile Include="Src\View\Texture.cpp" />
     <ClCompile Include="Src\View\TextureContainer.cpp" />
   </ItemGroup>

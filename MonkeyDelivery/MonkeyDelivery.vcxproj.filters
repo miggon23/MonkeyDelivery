@@ -153,6 +153,9 @@
     <ClInclude Include="Src\Control\States\MissionSelectionState.h">
       <Filter>Archivos de encabezado\Control\States</Filter>
     </ClInclude>
+    <ClInclude Include="Src\Logic\UI_Info.h">
+      <Filter>Archivos de encabezado\Logic</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MonkeyDelivery.cpp">
@@ -235,6 +238,9 @@
     </ClCompile>
     <ClCompile Include="Src\Control\States\MissionSelectionState.cpp">
       <Filter>Archivos de origen\Control\States</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Logic\UI_Info.cpp">
+      <Filter>Archivos de origen\Logic</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
