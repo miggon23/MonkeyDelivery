@@ -4,6 +4,9 @@ class Game;
 enum Animations { QUIETO, CORRER };//EN PROCESO <NO TOCAR>
 
 class Player: public GameObject {
+
+	friend class UI_Info;
+
 private:
 	
 #pragma region Movement/Fear

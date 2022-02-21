@@ -1,5 +1,6 @@
 #pragma once
 #include <vector>
+#include <string>
 #include "Mission.h"
 
 using namespace std;
@@ -23,5 +24,6 @@ public:
 	Mission* currentMisssion() { return currentMission_; }
 	Game* getGame() { return game_; }
 	
+	string getMissionName();
 };
 

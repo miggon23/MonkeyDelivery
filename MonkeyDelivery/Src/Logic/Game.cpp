@@ -19,6 +19,7 @@ Game::~Game() {
     delete textureContainer;
     delete missions_;
     delete font_;
+    delete info;
 }
 
 string Game::getGameName() {
@@ -37,7 +38,10 @@ void Game::start()
     add(missionsPanel_);
 
     missions_ = new MissionManager(this);
-    missions_->AddMission(new Mission(missions_, missionsPanel_, 100, 100, 10));
+    info = new UI_Info(this);
+
+
+    missions_->AddMission(new Mission(missions_, missionsPanel_, 100, 100, 150, "PruebaMision"));
 
 }
 
@@ -59,6 +63,8 @@ void Game::draw()
 {
     player->draw();
     gameObjects_[0]->draw();
+    //renderText("aaaa", 100, 150, BLACK);
+    info->draw();
 }
 Point2D<int> Game::getOrigin() {
     return { int(-(player->getX() - player->getWidth())), 0 };

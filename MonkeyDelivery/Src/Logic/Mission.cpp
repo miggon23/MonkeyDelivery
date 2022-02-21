@@ -4,13 +4,14 @@
 #include <math.h>
 
 
-Mission::Mission(MissionManager* manager, GameObject* objetive, int maxReward, int minReward, int minDistance)
+Mission::Mission(MissionManager* manager, GameObject* objetive, int maxReward, int minReward, int minDistance, string name)
 {
 	objetive_ = objetive;
 	maxReward_ = maxReward;
 	minReward_ = minReward;
 	minDistance_ = minDistance;
 	manager_ = manager;
+	name_ = name;
 
 }
 

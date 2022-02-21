@@ -18,6 +18,7 @@
 
 #include "Mission.h"
 #include "MissionManager.h"
+#include "UI_Info.h"
 
 using namespace std;
 
@@ -38,6 +39,7 @@ private:
     GameObject* missionsPanel_= nullptr;
 
     Font* font_;
+    UI_Info* info;
 
 public:
   
@@ -69,6 +71,7 @@ public:
     Texture* getTexture(TextureName name);
     SDL_Renderer* getRenderer();
     inline Player* getPlayer() { return player; }
+    inline MissionManager* getMissionManager() { return missions_; }
     void renderText(string text, int x, int y, SDL_Color color = { 0,0,0 }); // Escribir una sola línea
     void renderText(vector<string> text, int x, int y, int incX, int incY, SDL_Color color = { 0,0,0 }); // Escribir varias líneas
 
