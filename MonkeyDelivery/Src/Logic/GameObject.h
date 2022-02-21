@@ -47,5 +47,8 @@ public:
     SDL_Rect getCenter();
     bool collide(SDL_Rect other);
     void exampleInter();
+
+    // COLISIONES
+   // virtual void recievePlayerCollion(Player* player) {};
 };
 #endif 

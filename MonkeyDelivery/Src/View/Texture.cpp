@@ -19,7 +19,7 @@ void Texture::load(string filename, uint numRows, uint numCols) {
 	texture = SDL_CreateTextureFromSurface(renderer, tempSurface);
 	if (texture == nullptr) throw string("Error loading texture: " + filename);
 
-	cout << "[DEBUG] Loading texture... " << filename << endl;
+	//cout << "[DEBUG] Loading texture... " << filename << endl;
 	w = tempSurface->w;
 	h = tempSurface->h;
 	fw = w / numCols;

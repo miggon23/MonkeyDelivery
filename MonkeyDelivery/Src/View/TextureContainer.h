@@ -3,6 +3,8 @@
 #include "Texture.h"
 #include <string>
 
+#include <iostream>
+
 using namespace std;
 
 const string IMAGES_PATH = "../Images/";
@@ -16,10 +18,11 @@ enum TextureName {
     idle1,idle2,idle3,idle4,idle5,
     side1,side2,side3,side4,side5,
     woodPanel,
-    missionPanel
+    missionPanel,
+    tucanTexture
 };
 
-const int NUM_TEXTURES = 20;
+const int NUM_TEXTURES = 21;
 
 typedef struct {
     string filename;
@@ -47,7 +50,8 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
   {"animaciones mono/side4.png",1,1},
   {"animaciones mono/side5.png",1,1},
   {"decorations/woodpanel.png",1,1},
-  {"decorations/missionpanel.png",1,1}
+  {"decorations/missionpanel.png",1,1},
+  {"animals/tucan.png",1,1}
 };
 
 
@@ -57,11 +61,14 @@ class TextureContainer {
     array<Texture*, NUM_TEXTURES> textures;
 
 public:
-    TextureContainer(SDL_Renderer* renderer) {
+    TextureContainer(SDL_Renderer* renderer) { // SIN ARRAYS -> con vector
+        std::cout << "Entrandoo\n";
         for (int i = 0; i < NUM_TEXTURES; i++) {
             const TextureAttributes& attributes = TEXTURE_ATTRIBUTES[i];
             textures[i] = new Texture(renderer, IMAGES_PATH + attributes.filename, attributes.numRows, attributes.numCols);
         }
+        std::cout << "out\n";
+
     }
 
     ~TextureContainer() {

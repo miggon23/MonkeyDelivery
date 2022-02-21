@@ -9,7 +9,7 @@ class InteractiveEntity:public GameObject {
 
 public:
 
-    InteractiveEntity(Game* game, TextureName textureName);
+    InteractiveEntity(Game* game, TextureName textureName, int position);
     
     virtual void update();
     void draw() override;

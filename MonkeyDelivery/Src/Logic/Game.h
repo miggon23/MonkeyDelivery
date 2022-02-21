@@ -42,7 +42,6 @@ private:
     UI_Info* info;
 
 public:
-  
 
     Game(string name, int width, int height);
     ~Game();
@@ -79,6 +78,8 @@ public:
     bool changeMoneyPlayer(int money);
     void interactions();
     vector<GameObject*>getCollisions(SDL_Rect rect);
+    void setActiveMission(Mission* m);
+    InteractiveEntity* getiE();
 };
 
 

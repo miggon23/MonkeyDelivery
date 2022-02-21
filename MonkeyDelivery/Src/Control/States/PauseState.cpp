@@ -9,8 +9,6 @@ PauseState::PauseState(Game* game) : State(game)
 
 void PauseState::update()
 {
-	commandFactory->add(new PauseCommand());
-	commandFactory->add(new CommandExit());
 }
 
 void PauseState::draw()
@@ -24,4 +22,6 @@ void PauseState::next()
 
 void PauseState::registerCommands()
 {
+	commandFactory->add(new PauseCommand());
+	commandFactory->add(new CommandExit());
 }

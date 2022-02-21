@@ -18,7 +18,6 @@ bool PauseCommand::parse(SDL_Event& event)
 
 void PauseCommand::execute()
 {
-	cout << "??" << endl;
 	if (game->getSavedState() == nullptr) {
 		//pause
 		game->saveState(game->getState());

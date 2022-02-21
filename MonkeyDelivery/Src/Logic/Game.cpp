@@ -29,17 +29,20 @@ string Game::getGameName() {
 void Game::add(GameObject* gameObject) {//añadir gO al vector
     gameObjects_.push_back(gameObject);
 }
+
 void Game::start()
 {
     player = new Player(this); //Creacion del jugador
 
+    iE = new InteractiveEntity(this, tucanTexture, 600);
+    //add(iE);
 
-    missionsPanel_ = new InteractiveEntity(this, woodPanel);
+    missionsPanel_ = new InteractiveEntity(this, woodPanel, 200);
     add(missionsPanel_);
 
     missions_ = new MissionManager(this);
-    info = new UI_Info(this);
 
+    info = new UI_Info(this);
 
     missions_->AddMission(new Mission(missions_, missionsPanel_, 100, 100, 150, "PruebaMision"));
 
@@ -139,4 +142,17 @@ vector<GameObject*> Game::getCollisions(SDL_Rect rect)
     }
     
     return interactEnt;
-};
+}
+// Método que recibe una misión para declararla como la actual
+// Se llama cuando se selecciona desde SelectMissionCommand
+void Game::setActiveMission(Mission* m)
+{
+    missions_->AddMission(m);
+}
+
+// devuelve la iE 
+InteractiveEntity* Game::getiE()
+{
+    return iE;
+}
+;
