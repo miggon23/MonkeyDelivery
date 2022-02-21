@@ -41,7 +41,7 @@ void Game::start()
     info = new UI_Info(this);
 
 
-    missions_->AddMission(new Mission(missions_, missionsPanel_, 100, 100, 150, "PruebaMision"));
+    missions_->AddMission(new Mission(missions_, missionsPanel_, 500, 100, 150, 15, "PruebaMision"));
 
 }
 
