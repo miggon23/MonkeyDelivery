@@ -15,7 +15,7 @@ bool SelectMissionCommand::parse(SDL_Event& event)
 void SelectMissionCommand::execute()
 {
 	// Comunicar cuál es la misión seleccionada
-	game->setActiveMission(new Mission(game->getMissionManager(), game->getiE(), 100, 100, 10, "pruebaMision"));
+	game->setActiveMission(new Mission(game->getMissionManager(), game->getiE(), 100, 100, 10, 1000, "Misión 1"));
 	
 	game->setState(new PlayingState(game));
 	delete this;
