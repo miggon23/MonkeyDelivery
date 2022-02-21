@@ -14,6 +14,8 @@ private:
 	float fear_;
 	float walkingSpeed_;
 	float runningSpeed_;
+	double velX = 0;
+	double velY = 0;
 #pragma endregion
 
 #pragma region Mission activeMission	
@@ -53,6 +55,9 @@ public:
 #pragma region Movement
 	void move(pair<double, double> speed);
 	inline void setIsRunning(bool run) { isRunning = run; std::cout << "RUNNING CHANGED TO: " << isRunning << endl; };
+	void setVelX(double x) { velX = x; };
+	void setVelY(double y) { velY = y; };
+
 #pragma endregion
 
 #pragma region economy
