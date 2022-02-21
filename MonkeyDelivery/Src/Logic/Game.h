@@ -63,6 +63,8 @@ public:
     //Player movement
     inline void move(pair<double, double> speed) { player->move(speed); };
     inline void setIsRunning(bool run) { player->setIsRunning(run); };
+    inline void setVelX(double x) { player->setVelX(x); };
+    inline void setVelY(double y) { player->setVelY(y); };
 
     // rendering
     void setRenderer(SDL_Renderer* renderer);

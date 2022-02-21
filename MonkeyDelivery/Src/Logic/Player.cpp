@@ -9,8 +9,8 @@ Player::Player(Game* game) :GameObject(game) {
 	//inicializacion de variables
 	fear_ = 0;
 	money_ = 0;
-	walkingSpeed_ = 3;
-	runningSpeed_ = 10;
+	/*walkingSpeed_ = 3;
+	runningSpeed_ = 10;*/
 	walkingEnergy_ = 0.5;
 
 	setPosition(15, 100);
@@ -27,6 +27,7 @@ Player::~Player()
 
 void Player::update()
 {
+	move(pair<double, double>(velX, velY));
 }
 
 /// <summary>
@@ -35,8 +36,10 @@ void Player::update()
 /// <param name="speed"> La primera componente es la x y la segunda la y</param>
 void Player::move(pair<double, double> speed)
 {
-	if(!isRunning) setPosition(getX() + speed.first*walkingSpeed_, getY() + speed.second*walkingSpeed_);
-	else setPosition(getX() + speed.first * runningSpeed_, getY() + speed.second * runningSpeed_);
+	if (isRunning) { 
+		setPosition(getX() + speed.first*2, getY() + speed.second*2); 
+	}
+	else setPosition(getX() + speed.first, getY() + speed.second);
 	
 	drainEnergy(walkingEnergy_);
 

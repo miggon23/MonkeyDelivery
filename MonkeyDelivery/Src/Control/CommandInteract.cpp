@@ -13,7 +13,7 @@ bool CommandInteract::parse(SDL_Event& event)
 
 void CommandInteract::execute()
 {
-	//game->interactions();
+	game->interactions();
 
 	// adri y simona: lo usamos para la interaccion con los bichos
 	

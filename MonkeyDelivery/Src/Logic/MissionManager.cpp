@@ -36,6 +36,6 @@ string MissionManager::getMissionName()
 	if (currentMission_ != nullptr)
 		return currentMission_->getName();
 	else
-		return "none mission selected";
+		return " ";
 }
 	
