@@ -1,5 +1,6 @@
 #include "MissionSelectionState.h"
 #include "../SelectMissionCommand.h"
+#include "../CommandInteract.h"
 
 MissionSelectionState::MissionSelectionState(Game* game) : State(game)
 {
@@ -28,5 +29,6 @@ void MissionSelectionState::next()
 void MissionSelectionState::registerCommands()
 {
 	commandFactory->add(new CommandExit());
+	commandFactory->add(new CommandInteract());
 	commandFactory->add(new SelectMissionCommand());
 }

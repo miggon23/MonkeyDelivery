@@ -68,5 +68,5 @@ bool GameObject::collide(SDL_Rect other) {
 void GameObject::exampleInter()
 {
     cout << "ejemplo" << endl;
-    game->setState(new MissionSelectionState(game));
+   
 }

@@ -4,9 +4,9 @@
 #include <math.h>
 
 
-Mission::Mission(MissionManager* manager, GameObject* objetive, int maxReward, int minReward, int minDistance, int minTime, string name)
+Mission::Mission(MissionManager* manager, GameObject* objective, int maxReward, int minReward, int minDistance, int minTime, string name)
 {
-	objetive_ = objetive;
+	objective_ = objective;
 	maxReward_ = maxReward;
 	minReward_ = minReward;
 	minDistance_ = minDistance;
@@ -20,7 +20,7 @@ Mission::Mission(MissionManager* manager, GameObject* objetive, int maxReward, i
 
 Mission::~Mission()
 {
-	objetive_ = nullptr;
+	objective_ = nullptr;
 }
 
 void Mission::completeMission()
@@ -34,8 +34,13 @@ void Mission::completeMission()
 
 bool Mission::updateState(GameObject* player)
 {
-	if (abs(player->getX() - objetive_->getX()) + abs(player->getY() - objetive_->getY()) <= minDistance_)
+	/*if (abs(player->getX() - objective_->getX()) + abs(player->getY() - objective_->getY()) <= minDistance_)
 	{
+		completeMission();
+		return true;
+	}*/
+
+	if (player->collide(objective_->getCollider())) {
 		completeMission();
 		return true;
 	}
