@@ -8,7 +8,7 @@ UI_Info::UI_Info(Game* game)
 	font_ = new Font("../Images/TheMoon.ttf", 20);
 	
 }
-UI_Info::~UI_Info()
+UI_Info::~UI_Info()	
 {
 	game = nullptr;
 	delete font_;
@@ -31,11 +31,8 @@ void UI_Info::renderText(vector<string> text, int x, int y, SDL_Color color)
 
 void UI_Info::drawInfo()
 {
-
-	
 	renderText(game->getMissionManager()->getMissionName(), 700, 15, BLACK);
 	renderText(to_string(game->getPlayer()->money_), 700, 45, BLACK);
-
 }
 
 

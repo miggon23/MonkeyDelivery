@@ -65,11 +65,11 @@ bool Game::isUserExit() {
 
 void Game::draw()
 {
-    player->draw();
     gameObjects_[0]->draw();
     gameObjects_[1]->draw();
-    //renderText("aaaa", 100, 150, BLACK);
+    player->draw();
     info->draw();
+    //renderText("aaaa", 100, 150, BLACK);
 }
 Point2D<int> Game::getOrigin() {
     return { int(-(player->getX() - player->getWidth())), 0 };

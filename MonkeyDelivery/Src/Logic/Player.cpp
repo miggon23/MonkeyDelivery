@@ -91,9 +91,9 @@ void Player::removeMoney(int amount)
 void Player::draw()
 {
 	drawTexture(texture);
-	drawDebug();
+	//drawDebug();
 	energyLevel_->draw();
-	energyLevel_->drawDebug();
+	//energyLevel_->drawDebug();
 }
 
 

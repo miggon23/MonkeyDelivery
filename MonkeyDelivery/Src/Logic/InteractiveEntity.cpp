@@ -20,7 +20,7 @@ void InteractiveEntity::update()
 void InteractiveEntity::draw()
 {
     drawTexture(texture);
-    drawDebug();
+   // drawDebug();
 }
 
 bool InteractiveEntity::collide(SDL_Rect other) {
