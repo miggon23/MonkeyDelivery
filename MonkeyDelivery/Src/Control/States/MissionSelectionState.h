@@ -20,6 +20,7 @@ public:
 
 private:
 	Texture* background_;
+	Texture* paper_;
 
 };
 

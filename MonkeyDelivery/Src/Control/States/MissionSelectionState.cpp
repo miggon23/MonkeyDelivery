@@ -5,6 +5,7 @@
 MissionSelectionState::MissionSelectionState(Game* game) : State(game)
 {
 	background_ = game->getTexture(missionPanel);
+	paper_ = game->getTexture(mission1);
 	registerCommands();
 }
 
@@ -16,6 +17,9 @@ void MissionSelectionState::draw()
 {
 	SDL_Rect textureBox = { 0, 0, game->getWindowWidth(), game->getWindowHeight()};
 	background_->render(textureBox);
+	
+	SDL_Rect textureBox2 = { 150, 15, 500, 375};
+	paper_->render(textureBox2);
 }
 
 void MissionSelectionState::update()

@@ -13,12 +13,13 @@ const string IMAGES_PATH = "../Images/";
 enum TextureName {
     monkeyTexture,
     monkeyEyesClosedTexture, // para la presentación del hito, se puede quitar después pq está en el spritesheet
-    spritesheet,
+   // spritesheet,
     energyTexture,
     energyLevelTexture,
     woodPanel,
     missionPanel,
-    tucanTexture
+    tucanTexture,
+    mission1
 };
 
 const int NUM_TEXTURES = 8;
@@ -32,12 +33,13 @@ typedef struct {
 const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
 { {"monkeyPrueba.png",1,1},
   {"animaciones mono/idle3.png",1,1},
-  {"animaciones mono/monkey.png",1,1}, // spritesheet
+ // {"animaciones mono/monkey.png",1,1}, // spritesheet
   {"energy.png",1,1},
   {"energyLevel.png",1,1},
   {"decorations/woodpanel.png",1,1},
   {"decorations/missionpanel.png",1,1},
-  {"animals/tucan.png",1,1}
+  {"animals/tucan.png",1,1},
+  {"decorations/Mision1.png",1,1}
 };
 
 
