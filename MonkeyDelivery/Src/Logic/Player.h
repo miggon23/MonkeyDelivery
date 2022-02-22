@@ -25,6 +25,7 @@ private:
 
 #pragma region Energy
 	float walkingEnergy_;
+	float runningEnergy_;
 	energyLevel* energyLevel_ = nullptr;
 #pragma endregion
 
