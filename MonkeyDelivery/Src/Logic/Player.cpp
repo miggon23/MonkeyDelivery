@@ -12,9 +12,10 @@ Player::Player(Game* game) :GameObject(game) {
 	/*walkingSpeed_ = 3;
 	runningSpeed_ = 10;*/
 	walkingEnergy_ = 0.5;
+	runningEnergy_ = 1.0;
 
 	setPosition(15, 100);
-	setDimension(100, 100);
+	setDimension(90, 100);
 
 	energyLevel_ = new energyLevel(game);
 }
@@ -36,13 +37,16 @@ void Player::update()
 /// <param name="speed"> La primera componente es la x y la segunda la y</param>
 void Player::move(pair<double, double> speed)
 {
-	if (isRunning) { 
-		setPosition(getX() + speed.first*2, getY() + speed.second*2); 
+	if (velX != 0 || velY != 0) {
+		if (isRunning) { 
+			setPosition(getX() + speed.first*2, getY() + speed.second*2); 
+			drainEnergy(runningEnergy_);
+		}
+		else{
+			setPosition(getX() + speed.first, getY() + speed.second);
+			drainEnergy(walkingEnergy_);
+		}
 	}
-	else setPosition(getX() + speed.first, getY() + speed.second);
-	
-	drainEnergy(walkingEnergy_);
-
 	//cout << "POSICION PLAYER:" << getX() << "," << getY() << endl;
 	//cout << "POSICION BARRA:" << energyLevel_->getX() << "," << energyLevel_->getY() << endl;
 }
@@ -61,7 +65,9 @@ void Player::getScared(int amount)
 /// <param name="amount"> cantidad que se le va añadir a energy_
 void Player::drainEnergy(float amount)
 {
-	energyLevel_->drain(amount);
+	if (energyLevel_->drain(amount)) { // se queda dormido porque no tiene energía
+		setTexture(monkeyEyesClosedTexture);
+	}
 }
 
 void Player::recoverEnergy(int amount)
@@ -85,9 +91,9 @@ void Player::removeMoney(int amount)
 void Player::draw()
 {
 	drawTexture(texture);
-	drawDebug();
+	//drawDebug();
 	energyLevel_->draw();
-	energyLevel_->drawDebug();
+	//energyLevel_->drawDebug();
 }
 
 

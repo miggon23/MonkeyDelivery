@@ -15,7 +15,6 @@ Game::~Game() {
     gameObjects_.clear();
     cout << "[DEBUG] deleting game" << endl;
     delete player;
-    delete iE;
     delete textureContainer;
     delete missions_;
     delete font_;
@@ -34,17 +33,18 @@ void Game::start()
 {
     player = new Player(this); //Creacion del jugador
 
-    iE = new InteractiveEntity(this, tucanTexture, 600);
-    //add(iE);
+    iE = new InteractiveEntity(this, tucanTexture, 500, 80);
+    add(iE);
 
-    missionsPanel_ = new InteractiveEntity(this, woodPanel, 200);
+    missionsPanel_ = new InteractiveEntity(this, woodPanel, 200, 80);
+    missionsPanel_->setAsMissionPanel();
     add(missionsPanel_);
 
     missions_ = new MissionManager(this);
 
     info = new UI_Info(this);
 
-    missions_->AddMission(new Mission(missions_, missionsPanel_, 500, 100, 150, 15, "PruebaMision"));
+    //missions_->AddMission(new Mission(missions_, missionsPanel_, 500, 100, 150, 15, "PruebaMision"));
 
 }
 
@@ -52,6 +52,7 @@ void Game::update()
 {
     player->update();
     gameObjects_[0]->update();
+    gameObjects_[1]->update();
 }
 
 void Game::setUserExit() {
@@ -64,10 +65,11 @@ bool Game::isUserExit() {
 
 void Game::draw()
 {
-    player->draw();
     gameObjects_[0]->draw();
-    //renderText("aaaa", 100, 150, BLACK);
+    gameObjects_[1]->draw();
+    player->draw();
     info->draw();
+    //renderText("aaaa", 100, 150, BLACK);
 }
 Point2D<int> Game::getOrigin() {
     return { int(-(player->getX() - player->getWidth())), 0 };

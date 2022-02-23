@@ -14,7 +14,7 @@ public:
 	~energyLevel() { };
 
 	void update() override {};
-	void drain(float energyDrained);
+	bool drain(float energyDrained);
 	void draw() override;
 
 };

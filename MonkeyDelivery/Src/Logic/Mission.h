@@ -15,7 +15,7 @@ private:
 	bool additionalReward_;
 	string name_;
 	MissionManager* manager_ = nullptr;
-	GameObject* objetive_ = nullptr;
+	GameObject* objective_ = nullptr;
 
 public:
 

@@ -1,14 +1,15 @@
 #include "InteractiveEntity.h"
 #include "../Logic/Game.h"
 
-InteractiveEntity::InteractiveEntity(Game* game, TextureName textureName, int position) : GameObject(game) {
+InteractiveEntity::InteractiveEntity(Game* game, TextureName textureName, int positionX, int positionY) : GameObject(game) {
     this->game = game;
     texture = nullptr;
     setTexture(textureName);
 
-    setPosition(position, position - 120);
+    setPosition(positionX, positionY);
     setDimension(120, 150);
 }
+
 void InteractiveEntity::update()
 {
     if (collide(game->getPlayer()->getCollider()));
@@ -19,7 +20,7 @@ void InteractiveEntity::update()
 void InteractiveEntity::draw()
 {
     drawTexture(texture);
-    drawDebug();
+   // drawDebug();
 }
 
 bool InteractiveEntity::collide(SDL_Rect other) {

@@ -14,6 +14,8 @@ class GameObject {
     Point2D<double> position_;
     int w = 20, h = 20;
 
+    bool isMissionPanel_ = false;
+
 protected:
     Game* game;
     Texture* texture;
@@ -47,6 +49,13 @@ public:
     SDL_Rect getCenter();
     bool collide(SDL_Rect other);
     void exampleInter();
+
+    // IDENTIFICAR SI ESTE OBJETO ES EL PANEL DE MISIONES
+    bool isMissionPanel() {
+        return isMissionPanel_;
+    };
+    // SETTEAR ESTE OBJETO COMO PANEL DE MISIONES
+    void setAsMissionPanel() { isMissionPanel_ = true; };
 
     // COLISIONES
    // virtual void recievePlayerCollion(Player* player) {};
