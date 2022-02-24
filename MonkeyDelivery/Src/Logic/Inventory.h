@@ -5,6 +5,7 @@
 using namespace std;
 
 class InventoryObject;
+class Game;
 
 class Inventory
 {
@@ -12,8 +13,10 @@ private:
 	const int INVENTORY_SIZE = 6;
 	vector<InventoryObject*> inventory_;
 	InventoryObject* missionObject;
+
+	Game* game_;
 public:
-	Inventory();
+	Inventory(Game* game);
 	~Inventory();
 
 	bool addObject(InventoryObject* iO);

@@ -44,6 +44,8 @@ void Game::start()
 
     info = new UI_Info(this);
 
+    inventory_ = new Inventory(this);
+
     //missions_->AddMission(new Mission(missions_, missionsPanel_, 500, 100, 150, 15, "PruebaMision"));
 
 }
@@ -158,5 +160,10 @@ void Game::setActiveMission(Mission* m)
 InteractiveEntity* Game::getiE()
 {
     return iE;
+}
+
+void Game::useInventory(int slot)
+{
+    inventory_->useObject(slot);
 }
 ;

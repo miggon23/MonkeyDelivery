@@ -19,6 +19,7 @@
 #include "Mission.h"
 #include "MissionManager.h"
 #include "UI_Info.h"
+#include "Inventory.h"
 
 using namespace std;
 
@@ -37,6 +38,8 @@ private:
     vector<GameObject*> gameObjects_;
     
     GameObject* missionsPanel_= nullptr;
+    
+    Inventory* inventory_ = nullptr;
 
     Font* font_;
     UI_Info* info;
@@ -82,6 +85,9 @@ public:
     vector<GameObject*>getCollisions(SDL_Rect rect);
     void setActiveMission(Mission* m);
     InteractiveEntity* getiE();
+
+    //Inventory
+    void useInventory(int slot);
 };
 
 

@@ -1,7 +1,7 @@
 #include "Inventory.h"
 #include "InventoryObject.h"
 
-Inventory::Inventory()
+Inventory::Inventory(Game* game) : game_(game)
 {
 	inventory_.resize(INVENTORY_SIZE);
 	for (int i = 0; i < inventory_.size(); i++) {
@@ -51,6 +51,13 @@ bool Inventory::addMisionObject(InventoryObject* io)
 
 void Inventory::useObject(int indexObject)
 {
+	//Si el objeto es de un solo uso (useObject() devuelve true)
+	//Lo eliminamos
+	//Si no había que eliminarlo, no se hace nada
+	if (inventory_[indexObject]->useObject()) //useObject() devuelve un booleano!!
+	{
+		removeObject(indexObject);
+	}
 }
 
 void Inventory::removeObject(int indexObject)
