@@ -156,6 +156,15 @@
     <ClInclude Include="Src\Logic\UI_Info.h">
       <Filter>Archivos de encabezado\Logic</Filter>
     </ClInclude>
+    <ClInclude Include="Src\Control\SelectMissionCommand.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Logic\Inventory.h">
+      <Filter>Archivos de encabezado\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Logic\InventoryObject.h">
+      <Filter>Archivos de encabezado\Logic</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MonkeyDelivery.cpp">
@@ -241,6 +250,15 @@
     </ClCompile>
     <ClCompile Include="Src\Logic\UI_Info.cpp">
       <Filter>Archivos de origen\Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Control\SelectMissionCommand.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Logic\Inventory.cpp">
+      <Filter>Archivos de origen\Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Logic\InventoryObject.cpp">
+      <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -51,8 +51,10 @@ void Game::start()
 void Game::update()
 {
     player->update();
-    gameObjects_[0]->update();
-    gameObjects_[1]->update();
+
+    for (int i = 0; i < gameObjects_.size(); i++) {
+        gameObjects_[i]->update();
+    }
 }
 
 void Game::setUserExit() {
