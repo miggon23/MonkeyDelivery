@@ -19,6 +19,7 @@ Game::~Game() {
     delete missions_;
     delete font_;
     delete info;
+
 }
 
 string Game::getGameName() {
@@ -43,8 +44,6 @@ void Game::start()
     missions_ = new MissionManager(this);
 
     info = new UI_Info(this);
-
-    inventory_ = new Inventory(this);
 
     //missions_->AddMission(new Mission(missions_, missionsPanel_, 500, 100, 150, 15, "PruebaMision"));
 
@@ -85,6 +84,11 @@ int Game::getWindowWidth() {
 
 int Game::getWindowHeight() {
     return height;
+}
+
+void Game::useInventory(int slot)
+{
+    player->useObject(slot);
 }
 
 void Game::setRenderer(SDL_Renderer* _renderer) {
@@ -160,10 +164,5 @@ void Game::setActiveMission(Mission* m)
 InteractiveEntity* Game::getiE()
 {
     return iE;
-}
-
-void Game::useInventory(int slot)
-{
-    inventory_->useObject(slot);
 }
 ;

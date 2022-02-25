@@ -8,6 +8,7 @@
 #include "../CommandInteract.h"
 #include "../CommandExit.h"
 #include "../PauseCommand.h"
+#include "../InventoryCommand.h"
 
 #include "../States/MenuState.h"
 
@@ -24,6 +25,7 @@ void PlayingState::registerCommands() {
     commandFactory->add(new CommandInteract());
     commandFactory->add(new CommandRun());
     commandFactory->add(new PauseCommand());
+    commandFactory->add(new InventoryCommand());
 }
 
 void PlayingState::update() {

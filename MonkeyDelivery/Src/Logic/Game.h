@@ -38,8 +38,6 @@ private:
     vector<GameObject*> gameObjects_;
     
     GameObject* missionsPanel_= nullptr;
-    
-    Inventory* inventory_ = nullptr;
 
     Font* font_;
     UI_Info* info;
@@ -68,6 +66,7 @@ public:
     inline void setIsRunning(bool run) { player->setIsRunning(run); };
     inline void setVelX(double x) { player->setVelX(x); };
     inline void setVelY(double y) { player->setVelY(y); };
+    void useInventory(int slot);
 
     // rendering
     void setRenderer(SDL_Renderer* renderer);
@@ -86,8 +85,6 @@ public:
     void setActiveMission(Mission* m);
     InteractiveEntity* getiE();
 
-    //Inventory
-    void useInventory(int slot);
 };
 
 

@@ -1,6 +1,9 @@
+#pragma once
+
 #include "GameObject.h"
 #include "energyLevel.h"
 class Game;
+class Inventory;
 enum Animations { QUIETO, CORRER };//EN PROCESO <NO TOCAR>
 
 class Player: public GameObject {
@@ -8,6 +11,7 @@ class Player: public GameObject {
 	friend class UI_Info;
 
 private:
+	Inventory* inventory_ = nullptr;
 	
 #pragma region Movement/Fear
 	bool isRunning = false;
@@ -67,6 +71,9 @@ public:
 	void removeMoney(int amount);
 #pragma endregion
 
+#pragma region inventory
+	void useObject(int index);
+#pragma endregion
 };
 
 

@@ -1,4 +1,5 @@
 #include "InventoryObject.h"
+#include "Player.h"
 
 InventoryObject::InventoryObject(Game* game) : game_(game)
 {
@@ -15,4 +16,14 @@ InventoryObject::~InventoryObject()
 bool InventoryObject::useObject()
 {
 	return false;
+}
+
+/// <summary>
+/// Añade el Player al InventoryObject para poder utilizar sus métodos cuando se llame a useObject()
+/// Este método debe ser llamado cuando se añada el InventoryObject al innventario
+/// </summary>
+/// <param name="player">Jugador del Game</param>
+void InventoryObject::attachPlayer(Player* player)
+{
+	player_ = player;
 }

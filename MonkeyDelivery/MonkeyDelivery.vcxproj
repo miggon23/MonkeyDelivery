@@ -160,6 +160,7 @@
     <ClInclude Include="Src\Control\CommandInteract.h" />
     <ClInclude Include="Src\Control\CommandMove.h" />
     <ClInclude Include="Src\Control\CommandRun.h" />
+    <ClInclude Include="Src\Control\InventoryCommand.h" />
     <ClInclude Include="Src\Control\NextStateCommand.h" />
     <ClInclude Include="Src\Control\PauseCommand.h" />
     <ClInclude Include="Src\Control\SelectMissionCommand.h" />
@@ -173,6 +174,7 @@
     <ClInclude Include="Src\Control\States\TestingState.h" />
     <ClInclude Include="Src\Control\ViewController.h" />
     <ClInclude Include="Src\Logic\Enemy.h" />
+    <ClInclude Include="Src\Logic\EnergyDrink.h" />
     <ClInclude Include="Src\Logic\energyLevel.h" />
     <ClInclude Include="Src\Logic\Game.h" />
     <ClInclude Include="Src\Logic\GameObject.h" />
@@ -199,6 +201,7 @@
     <ClCompile Include="Src\Control\CommandInteract.cpp" />
     <ClCompile Include="Src\Control\CommandMove.cpp" />
     <ClCompile Include="Src\Control\CommandRun.cpp" />
+    <ClCompile Include="Src\Control\InventoryCommand.cpp" />
     <ClCompile Include="Src\Control\NextStateCommand.cpp" />
     <ClCompile Include="Src\Control\PauseCommand.cpp" />
     <ClCompile Include="Src\Control\SelectMissionCommand.cpp" />
@@ -212,6 +215,7 @@
     <ClCompile Include="Src\Control\States\TestingState.cpp" />
     <ClCompile Include="Src\Control\ViewController.cpp" />
     <ClCompile Include="Src\Logic\Enemy.cpp" />
+    <ClCompile Include="Src\Logic\EnergyDrink.cpp" />
     <ClCompile Include="Src\Logic\energyLevel.cpp" />
     <ClCompile Include="Src\Logic\Game.cpp" />
     <ClCompile Include="Src\Logic\GameObject.cpp" />

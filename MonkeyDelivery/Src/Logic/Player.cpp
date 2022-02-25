@@ -1,4 +1,5 @@
 #include "Player.h"
+#include "Inventory.h"
 
 Player::Player(Game* game) :GameObject(game) {
 	this->game = game;
@@ -18,12 +19,15 @@ Player::Player(Game* game) :GameObject(game) {
 	setDimension(90, 100);
 
 	energyLevel_ = new energyLevel(game);
+	inventory_ = new Inventory(game, this);
 }
 
 Player::~Player()
 {
 	delete energyLevel_;
+	delete inventory_;
 	energyLevel_ = nullptr;
+	inventory_ = nullptr;
 }
 
 void Player::update()
@@ -86,6 +90,11 @@ void Player::getMoney(int amount)
 void Player::removeMoney(int amount)
 {
 	money_ -= amount;
+}
+
+void Player::useObject(int index)
+{
+	inventory_->useObject(index);
 }
 
 void Player::draw()

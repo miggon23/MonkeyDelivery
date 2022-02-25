@@ -1,7 +1,8 @@
 #include "Inventory.h"
 #include "InventoryObject.h"
+#include <iostream>
 
-Inventory::Inventory(Game* game) : game_(game)
+Inventory::Inventory(Game* game, Player* player) : game_(game), player_(player)
 {
 	inventory_.resize(INVENTORY_SIZE);
 	for (int i = 0; i < inventory_.size(); i++) {
@@ -27,8 +28,9 @@ bool Inventory::addObject(InventoryObject* iO)
 	while (inventory_[i] != nullptr)
 		i++;
 
-	//Se añade el objeto
+	//Se añade el objeto y se le asigna el player
 	inventory_[i] = iO;
+	inventory_[i]->attachPlayer(player_);
 }
 
 /// <summary>
@@ -51,6 +53,8 @@ bool Inventory::addMisionObject(InventoryObject* io)
 
 void Inventory::useObject(int indexObject)
 {
+	if (inventory_[indexObject] == nullptr)
+		return;
 	//Si el objeto es de un solo uso (useObject() devuelve true)
 	//Lo eliminamos
 	//Si no había que eliminarlo, no se hace nada

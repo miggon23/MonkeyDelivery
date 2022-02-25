@@ -168,6 +168,12 @@
     <ClInclude Include="Src\Logic\Enemy.h">
       <Filter>Archivos de encabezado\Logic</Filter>
     </ClInclude>
+    <ClInclude Include="Src\Control\InventoryCommand.h">
+      <Filter>Archivos de encabezado\Control\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Logic\EnergyDrink.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MonkeyDelivery.cpp">
@@ -260,10 +266,16 @@
     <ClCompile Include="Src\Logic\Inventory.cpp">
       <Filter>Archivos de origen\Logic</Filter>
     </ClCompile>
-    <ClCompile Include="Src\Logic\InventoryObject.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
     <ClCompile Include="Src\Logic\Enemy.cpp">
+      <Filter>Archivos de origen\Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Control\InventoryCommand.cpp">
+      <Filter>Archivos de origen\Control\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Logic\InventoryObject.cpp">
+      <Filter>Archivos de origen\Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Logic\EnergyDrink.cpp">
       <Filter>Archivos de origen\Logic</Filter>
     </ClCompile>
   </ItemGroup>
