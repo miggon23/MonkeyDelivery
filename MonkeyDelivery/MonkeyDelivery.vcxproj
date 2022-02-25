@@ -173,6 +173,7 @@
     <ClInclude Include="Src\Control\States\StateMachine.h" />
     <ClInclude Include="Src\Control\States\TestingState.h" />
     <ClInclude Include="Src\Control\ViewController.h" />
+    <ClInclude Include="Src\Logic\Bike.h" />
     <ClInclude Include="Src\Logic\Enemy.h" />
     <ClInclude Include="Src\Logic\EnergyDrink.h" />
     <ClInclude Include="Src\Logic\energyLevel.h" />
@@ -214,6 +215,7 @@
     <ClCompile Include="Src\Control\States\StateMachine.cpp" />
     <ClCompile Include="Src\Control\States\TestingState.cpp" />
     <ClCompile Include="Src\Control\ViewController.cpp" />
+    <ClCompile Include="Src\Logic\Bike.cpp" />
     <ClCompile Include="Src\Logic\Enemy.cpp" />
     <ClCompile Include="Src\Logic\EnergyDrink.cpp" />
     <ClCompile Include="Src\Logic\energyLevel.cpp" />

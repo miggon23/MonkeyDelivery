@@ -62,6 +62,8 @@ public:
 	inline void setIsRunning(bool run) { isRunning = run; std::cout << "RUNNING CHANGED TO: " << isRunning << endl; };
 	void setVelX(double x) { velX = x; };
 	void setVelY(double y) { velY = y; };
+	double getVelX() { return velX; };
+	double getVelY() { return velY; };
 
 #pragma endregion
 

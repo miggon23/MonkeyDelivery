@@ -6,7 +6,7 @@ bool InventoryCommand::parse(SDL_Event & event) {
 		SDL_Keycode key = event.key.keysym.sym;
 
 		id = -1;
-		if (key == SDLK_6) id = 0;
+		if (key == SDLK_0) id = 0;
 		if (key == SDLK_1) id = 1;
 		if (key == SDLK_2) id = 2;
 		if (key == SDLK_3) id = 3;

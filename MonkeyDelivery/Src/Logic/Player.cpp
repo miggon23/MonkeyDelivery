@@ -1,5 +1,6 @@
 #include "Player.h"
 #include "Inventory.h"
+#include "Bike.h"
 
 Player::Player(Game* game) :GameObject(game) {
 	this->game = game;
@@ -20,6 +21,7 @@ Player::Player(Game* game) :GameObject(game) {
 
 	energyLevel_ = new energyLevel(game);
 	inventory_ = new Inventory(game, this);
+	inventory_->addObject(new Bike(game));
 }
 
 Player::~Player()
