@@ -177,6 +177,7 @@
     <ClInclude Include="Src\Logic\Enemy.h" />
     <ClInclude Include="Src\Logic\EnergyDrink.h" />
     <ClInclude Include="Src\Logic\energyLevel.h" />
+    <ClInclude Include="Src\Logic\FearLevel.h" />
     <ClInclude Include="Src\Logic\Game.h" />
     <ClInclude Include="Src\Logic\GameObject.h" />
     <ClInclude Include="Src\Logic\InteractiveEntity.h" />
@@ -219,6 +220,7 @@
     <ClCompile Include="Src\Logic\Enemy.cpp" />
     <ClCompile Include="Src\Logic\EnergyDrink.cpp" />
     <ClCompile Include="Src\Logic\energyLevel.cpp" />
+    <ClCompile Include="Src\Logic\FearLevel.cpp" />
     <ClCompile Include="Src\Logic\Game.cpp" />
     <ClCompile Include="Src\Logic\GameObject.cpp" />
     <ClCompile Include="Src\Logic\InteractiveEntity.cpp" />
