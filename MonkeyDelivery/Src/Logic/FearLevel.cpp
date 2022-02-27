@@ -6,23 +6,23 @@ FearLevel::FearLevel(Game* game) :GameObject(game) {
 	place_ = 50;
 	fear_ = 0;
 	maxFear_ = 100;
-	setTexture(energyLevelTexture);
-	setPosition(place_, 10);
+	setTexture(fearLevelTexture);
+	setPosition(place_, 35);
 	setDimension(200, 20);
 }
 
-// Drena energía y devuelve true si se queda a 0
-bool FearLevel::drain(float energyDrained)
+//se asusta y si llega a 100 se desmaya
+bool FearLevel::getScared(int amount)
 {
-	fear_ -= energyDrained;
-	if (fear_ > 0) {
-		setDimension(fear_, 20);
-		setPosition(50 - (energyDrained/2), 10);
+	fear_+= amount;
+	if (fear_ <maxFear_) {
+		setDimension(fear_*2, 20);
+		setPosition(50 - (amount/2), 35);
 		return false;
 	}
 	else {
-		// avisa al player de que está sin energía
-		//cout << "ME DUERMO" << endl;
+		/* avisa al player de que está sin energía
+		cout << "ME DESMAYO SOY UN CAGUETA" << endl;*/
 		return true;
 	}
 }

@@ -2,6 +2,7 @@
 
 #include "GameObject.h"
 #include "energyLevel.h"
+#include "FearLevel.h";
 class Game;
 class Inventory;
 enum Animations { QUIETO, CORRER };//EN PROCESO <NO TOCAR>
@@ -31,6 +32,7 @@ private:
 	float walkingEnergy_;
 	float runningEnergy_;
 	energyLevel* energyLevel_ = nullptr;
+	FearLevel* fearLevel_ = nullptr;
 #pragma endregion
 
 #pragma region Animations	

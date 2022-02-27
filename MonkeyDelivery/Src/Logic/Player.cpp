@@ -20,6 +20,7 @@ Player::Player(Game* game) :GameObject(game) {
 	setDimension(90, 100);
 
 	energyLevel_ = new energyLevel(game);
+	fearLevel_ = new FearLevel(game);
 	inventory_ = new Inventory(game, this);
 	inventory_->addObject(new Bike(game));
 }
@@ -27,14 +28,17 @@ Player::Player(Game* game) :GameObject(game) {
 Player::~Player()
 {
 	delete energyLevel_;
+	delete fearLevel_;
 	delete inventory_;
 	energyLevel_ = nullptr;
+	fearLevel_ = nullptr;
 	inventory_ = nullptr;
 }
 
 void Player::update()
 {
 	move(pair<double, double>(velX, velY));
+	getScared(1);//pruebas
 }
 
 /// <summary>
@@ -63,6 +67,8 @@ void Player::sleep()
 
 void Player::getScared(int amount)
 {
+	if (fearLevel_->getScared(amount))
+		setTexture(monkeyEyesClosedTexture);
 }
 
 /// <summary>
@@ -104,6 +110,7 @@ void Player::draw()
 	drawTexture(texture);
 	//drawDebug();
 	energyLevel_->draw();
+	fearLevel_->draw();
 	//energyLevel_->drawDebug();
 }
 

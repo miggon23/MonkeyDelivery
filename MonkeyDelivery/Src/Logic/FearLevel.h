@@ -14,7 +14,7 @@ public:
 	~FearLevel() { };
 
 	void update() override {};
-	bool drain(float energyDrained);
+	bool getScared(int amount);
 	void draw() override;
 
 };
