@@ -5,6 +5,7 @@ Enemy::Enemy(Game* game,int Aleatorio, Point2D<int>centroRadio):GameObject(game)
 	Vector2D<double> x = zone.genratePoint();
 	setPosition(x.getX(),x.getY());
 	setTexture(monkeyEyesClosedTexture);
+	setAlive(true);
 }
 
 void Enemy::move(double speed)
@@ -34,6 +35,5 @@ void Enemy::update()
 
 void Enemy::draw()
 {
-	if(alive)
 		drawTexture(texture);
 }
