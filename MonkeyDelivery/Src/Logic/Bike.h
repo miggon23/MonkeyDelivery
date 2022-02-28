@@ -9,8 +9,7 @@ private:
 	bool active;
 	double speedMult;
 public:
-	Bike(Game* game);
-	~Bike();
+	Bike();
 
 	bool useObject() override;
 };

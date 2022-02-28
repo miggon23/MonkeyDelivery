@@ -1,14 +1,6 @@
 #include "InventoryObject.h"
 #include "Player.h"
 
-InventoryObject::InventoryObject(Game* game) : game_(game)
-{
-}
-
-InventoryObject::~InventoryObject()
-{
-}
-
 /// <summary>
 /// Método virtual que realiza el uso del objeto y devuelve si el objeto es deshechable(true) o reutilizable
 /// </summary>

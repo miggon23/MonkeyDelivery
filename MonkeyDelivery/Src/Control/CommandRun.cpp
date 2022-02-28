@@ -24,5 +24,7 @@ bool CommandRun::parse(SDL_Event& event)
 
 void CommandRun::execute()
 {
+	//Mejor que el player no sepa nada del comando, cambiar la velocidad desde aquí mejor
+	//  y tener una velocidad inicial del player por si hay que volver a ella
     game->setIsRunning(isRunning); //Indica si el player corre o no
 }

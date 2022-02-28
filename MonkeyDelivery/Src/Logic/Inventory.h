@@ -5,7 +5,6 @@
 using namespace std;
 
 class InventoryObject;
-class Game;
 class Player;
 
 class Inventory
@@ -15,15 +14,14 @@ private:
 	vector<InventoryObject*> inventory_;
 	InventoryObject* missionObject;
 	Player* player_;
-	Game* game_;
 public:
-	Inventory(Game* game, Player* player);
+	Inventory(Player* player);
 	~Inventory();
 
 	bool addObject(InventoryObject* iO);
 	bool addMisionObject(InventoryObject* io);
 
-	void useObject(int indexObject);
+	bool useObject(int indexObject);
 
 	void removeObject(int indexObject);
 	void removeMisionObject();

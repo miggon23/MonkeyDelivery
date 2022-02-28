@@ -2,12 +2,8 @@
 #include "InventoryObject.h"
 #include <iostream>
 
-Inventory::Inventory(Game* game, Player* player) : game_(game), player_(player)
+Inventory::Inventory(Player* player) : player_(player)
 {
-	inventory_.resize(INVENTORY_SIZE);
-	for (int i = 0; i < inventory_.size(); i++) {
-		inventory_[i] = nullptr;
-	}
 	missionObject = nullptr;
 }
 
@@ -21,19 +17,16 @@ bool Inventory::addObject(InventoryObject* iO)
 	//Comprobamos que el inventario no esté lleno
 	if (inventoryFull())
 		return false;
-	int i = 0;
-
-	//Se posiciona en el primer espacio de inventario que está vacío
-	while (inventory_[i] != nullptr)
-		i++;
-
+	
 	//Se añade el objeto y se le asigna el player
-	inventory_[i] = iO;
-	inventory_[i]->attachPlayer(player_);
+	inventory_.push_back(iO);
+	iO->attachPlayer(player_);
+
+	return true;
 }
 
 /// <summary>
-/// Añade el paquete de entrega al slot reservado para ello en el inentario. Si ya tiene uno,
+/// Añade el paquete de entrega al slot reservado para ello en el inventario. Si ya tiene uno,
 /// significa que aún no ha terminado la misión por lo que el método te dice si el jugador ha entregado el 
 /// paquete o no. Útil para no solapar misiones
 /// </summary>
@@ -50,11 +43,11 @@ bool Inventory::addMisionObject(InventoryObject* io)
 		return false;
 }
 
-void Inventory::useObject(int indexObject)
+bool Inventory::useObject(int indexObject)
 {
-	// queréis devolver si más?
-	if (inventory_[indexObject] == nullptr)
-		return;
+	//Devuelve false si el objeto no pudo ser utilizado
+	if (indexObject >= inventory_.size())
+		return false;
 	//Si el objeto es de un solo uso (useObject() devuelve true)
 	//Lo eliminamos
 	//Si no había que eliminarlo, no se hace nada
@@ -62,12 +55,13 @@ void Inventory::useObject(int indexObject)
 	{
 		removeObject(indexObject);
 	}
+	return true;
 }
 
 void Inventory::removeObject(int indexObject)
 {
 	delete inventory_[indexObject];
-	inventory_[indexObject] = nullptr;
+	inventory_.erase(inventory_.begin() + indexObject);
 }
 
 void Inventory::removeMisionObject()
@@ -97,13 +91,13 @@ void Inventory::clearInventory()
 /// <returns>True si el inventario está lleno</returns>
 bool Inventory::inventoryFull() {
 	
-	int i = 0;
-	// error grave, saca elementos del vector
-	while (i < inventory_.size() && inventory_[i] != nullptr)
-		i++;
-	return i == inventory_.size();
+	//int i = 0;
+	//// error grave, saca elementos del vector
+	//while (i < inventory_.size() && inventory_[i] != nullptr)
+	//	i++;
+	//return i == inventory_.size();
 	// queréis esto:
-	//return inventory_.size() == inventory_.INVENTORY_SIZE;
+	return inventory_.size() == INVENTORY_SIZE;
 }
 
 

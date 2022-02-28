@@ -1,12 +1,8 @@
 #include "Bike.h"
 #include "Player.h"
 
-Bike::Bike(Game* game) : speedMult(1.2), active(false), InventoryObject(game)
+Bike::Bike() : active(false), speedMult(1.2)
 {
-}
-
-Bike::~Bike() {
-
 }
 
 bool Bike::useObject() {
@@ -20,5 +16,5 @@ bool Bike::useObject() {
 	}
 	cout << endl;
 	active = !active;
-	return false; //devolvemos false indicando que el objeto no deve destruirse tras usarlo
+	return false; //devolvemos false indicando que el objeto no debe destruirse tras ser usado
 }

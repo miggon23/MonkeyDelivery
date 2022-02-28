@@ -21,8 +21,8 @@ Player::Player(Game* game) :GameObject(game) {
 
 	energyLevel_ = new energyLevel(game);
 	fearLevel_ = new FearLevel(game);
-	inventory_ = new Inventory(game, this);
-	inventory_->addObject(new Bike(game));
+	inventory_ = new Inventory(this);
+	inventory_->addObject(new Bike());
 }
 
 Player::~Player()
