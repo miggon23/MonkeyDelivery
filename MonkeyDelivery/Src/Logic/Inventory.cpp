@@ -14,7 +14,6 @@ Inventory::Inventory(Game* game, Player* player) : game_(game), player_(player)
 Inventory::~Inventory()
 {
 	clearInventory();
-	delete this;
 }
 
 bool Inventory::addObject(InventoryObject* iO)
@@ -53,6 +52,7 @@ bool Inventory::addMisionObject(InventoryObject* io)
 
 void Inventory::useObject(int indexObject)
 {
+	// queréis devolver si más?
 	if (inventory_[indexObject] == nullptr)
 		return;
 	//Si el objeto es de un solo uso (useObject() devuelve true)
@@ -79,9 +79,9 @@ void Inventory::removeMisionObject()
 
 void Inventory::clearInventory()
 {
-	for (int i = 0; i < inventory_.size(); i++) {
-		delete inventory_[i];
-		inventory_[i] = nullptr;
+	// iteradores
+	for (auto gO : inventory_) {
+		delete gO;
 	}
 
 	if (missionObject != nullptr) {
@@ -98,9 +98,12 @@ void Inventory::clearInventory()
 bool Inventory::inventoryFull() {
 	
 	int i = 0;
+	// error grave, saca elementos del vector
 	while (i < inventory_.size() && inventory_[i] != nullptr)
 		i++;
 	return i == inventory_.size();
+	// queréis esto:
+	//return inventory_.size() == inventory_.INVENTORY_SIZE;
 }
 
 
