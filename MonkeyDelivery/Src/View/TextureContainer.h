@@ -18,7 +18,7 @@ enum TextureName {
     energyLevelTexture,
     fearLevelTexture,
     woodPanel,
-    missionPanel,
+    missionPanelTexture,
     tucanTexture,
     mission1
 };

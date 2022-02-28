@@ -156,9 +156,6 @@
     <ClInclude Include="Src\Logic\UI_Info.h">
       <Filter>Archivos de encabezado\Logic</Filter>
     </ClInclude>
-    <ClInclude Include="Src\Control\SelectMissionCommand.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
     <ClInclude Include="Src\Logic\Inventory.h">
       <Filter>Archivos de encabezado\Logic</Filter>
     </ClInclude>
@@ -171,9 +168,6 @@
     <ClInclude Include="Src\Control\InventoryCommand.h">
       <Filter>Archivos de encabezado\Control\Commands</Filter>
     </ClInclude>
-    <ClInclude Include="Src\Logic\EnergyDrink.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
     <ClInclude Include="Src\Logic\Bike.h">
       <Filter>Archivos de encabezado\Logic</Filter>
     </ClInclude>
@@ -181,6 +175,15 @@
       <Filter>Archivos de encabezado\Logic</Filter>
     </ClInclude>
     <ClInclude Include="Src\Logic\SpawnZone.h">
+      <Filter>Archivos de encabezado\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Control\SelectMissionCommand.h">
+      <Filter>Archivos de encabezado\Control\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Logic\MissionsPanel.h">
+      <Filter>Archivos de encabezado\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Logic\EnergyDrink.h">
       <Filter>Archivos de encabezado\Logic</Filter>
     </ClInclude>
   </ItemGroup>
@@ -269,9 +272,6 @@
     <ClCompile Include="Src\Logic\UI_Info.cpp">
       <Filter>Archivos de origen\Logic</Filter>
     </ClCompile>
-    <ClCompile Include="Src\Control\SelectMissionCommand.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
     <ClCompile Include="Src\Logic\Inventory.cpp">
       <Filter>Archivos de origen\Logic</Filter>
     </ClCompile>
@@ -295,6 +295,12 @@
     </ClCompile>
     <ClCompile Include="Src\Logic\SpawnZone.cpp">
       <Filter>Archivos de origen\Control\States</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Logic\MissionsPanel.cpp">
+      <Filter>Archivos de origen\Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Control\SelectMissionCommand.cpp">
+      <Filter>Archivos de origen\Control\Commands</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

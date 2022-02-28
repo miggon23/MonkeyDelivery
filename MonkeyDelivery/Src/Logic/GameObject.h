@@ -8,6 +8,7 @@
 
 
 class Game;
+class Player; // para hacer onPlayerCollision
 
 class GameObject {
 
@@ -57,7 +58,7 @@ public:
     // SETTEAR ESTE OBJETO COMO PANEL DE MISIONES
     void setAsMissionPanel() { isMissionPanel_ = true; };
 
-    // COLISIONES
-   // virtual void recievePlayerCollion(Player* player) {};
+    // INTERACCIONES
+    virtual void onPlayerInteraction(Player* player) {};
 };
 #endif 
