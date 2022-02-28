@@ -21,6 +21,8 @@
 #include "UI_Info.h"
 #include "Inventory.h"
 
+#include "Enemy.h"
+
 using namespace std;
 
 class Game : public StateMachine {

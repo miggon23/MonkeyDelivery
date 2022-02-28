@@ -1,5 +1,6 @@
 #pragma once
 #include "GameObject.h"
+#include "SpawnZone.h"
 class Enemy : public GameObject
 {
 private:
@@ -8,10 +9,10 @@ private:
 	bool alive;
 	int scariness;
 	float dieTime;
-
+	SpawnZone zone;
 public:
 
-	Enemy(Game* game);
+	Enemy(Game* game, int Aleatorio,Point2D<int>centroRadio);
 	~Enemy() {};
 
 	void move(double speed);
@@ -21,6 +22,9 @@ public:
 	inline bool isAlive() { return alive; };
 	inline void setAlive(bool l) { alive = l; };
 
-	virtual void onCollision();
+	void spawn();
+	void onCollision();
+	void  update() override;
+	void draw() override;
 };
 

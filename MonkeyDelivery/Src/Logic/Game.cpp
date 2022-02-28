@@ -44,7 +44,10 @@ void Game::start()
     missions_ = new MissionManager(this);
 
     info = new UI_Info(this);
-
+    Enemy* e = new Enemy(this, 20, Point2D<int>(200, 80));
+    
+    gameObjects_.push_back(e);
+   
     //missions_->AddMission(new Mission(missions_, missionsPanel_, 500, 100, 150, 15, "PruebaMision"));
 
 }
@@ -68,8 +71,11 @@ bool Game::isUserExit() {
 
 void Game::draw()
 {
-    gameObjects_[0]->draw();
-    gameObjects_[1]->draw();
+   /* gameObjects_[0]->draw();
+    gameObjects_[1]->draw();*/
+    for (int i = 0; i < gameObjects_.size(); i++) {
+        gameObjects_[i]->draw();
+    }
     player->draw();
     info->draw();
     //renderText("aaaa", 100, 150, BLACK);
