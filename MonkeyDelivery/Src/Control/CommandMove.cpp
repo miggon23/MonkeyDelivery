@@ -6,26 +6,26 @@ bool CommandMove::parse(SDL_Event& event)
 
 	if (state[SDL_SCANCODE_A]) {
 		//dir = -1;
-		game->setVelX(-3);
+		game->setPlayerDirX(-1);
 		//game->move(pair<double, double>(dir, 0));
 	}
 	else if (state[SDL_SCANCODE_D]) {
 		//dir = 1;
-		game->setVelX(3);
+		game->setPlayerDirX(1);
 		//game->move(pair<double, double>(dir, 0));
 	}
-	else game->setVelX(0);
+	else game->setPlayerDirX(0);
 	if (state[SDL_SCANCODE_S]) {
 		/*dirV = 1;
 		game->move(pair<double, double>(0, dirV));*/
-		game->setVelY(3);
+		game->setPlayerDirY(1);
 	}
 	else if (state[SDL_SCANCODE_W]) {
 		/*dirV = -1;
 		game->move(pair<double, double>(0, dirV));*/
-		game->setVelY(-3);
+		game->setPlayerDirY(-1);
 	}
-	else game->setVelY(0);
+	else game->setPlayerDirY(0);
 	return false;
 }
 

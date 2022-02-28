@@ -68,6 +68,8 @@ public:
     inline void setIsRunning(bool run) { player->setIsRunning(run); };
     inline void setVelX(double x) { player->setVelX(x); };
     inline void setVelY(double y) { player->setVelY(y); };
+    inline void setPlayerDirX(int x) { player->setDirX(x); };
+    inline void setPlayerDirY(int y) { player->setDirY(y); };
     void useInventory(int slot);
 
     // rendering

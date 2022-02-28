@@ -1,6 +1,6 @@
 #include "Player.h"
 #include "Inventory.h"
-#include "Bike.h"
+#include "Bike.h"<
 
 Player::Player(Game* game) :GameObject(game) {
 	this->game = game;
@@ -15,6 +15,8 @@ Player::Player(Game* game) :GameObject(game) {
 	runningSpeed_ = 10;*/
 	walkingEnergy_ = 0.5;
 	runningEnergy_ = 1.0;
+
+	resetVelocity(); //Se inicializa al valor de INIT_VEL_X e ..._Y
 
 	setPosition(15, 100);
 	setDimension(90, 100);
@@ -37,7 +39,7 @@ Player::~Player()
 
 void Player::update()
 {
-	move(pair<double, double>(velX, velY));
+	move();
 	getScared(1);//pruebas
 }
 
@@ -47,7 +49,8 @@ void Player::update()
 /// <param name="speed"> La primera componente es la x y la segunda la y</param>
 void Player::move(pair<double, double> speed)
 {
-	if (velX != 0 || velY != 0) {
+
+	/*if (velX != 0 || velY != 0) {
 		if (isRunning) { 
 			setPosition(getX() + speed.first*2, getY() + speed.second*2); 
 			drainEnergy(runningEnergy_);
@@ -56,9 +59,34 @@ void Player::move(pair<double, double> speed)
 			setPosition(getX() + speed.first, getY() + speed.second);
 			drainEnergy(walkingEnergy_);
 		}
-	}
+	}*/
 	//cout << "POSICION PLAYER:" << getX() << "," << getY() << endl;
 	//cout << "POSICION BARRA:" << energyLevel_->getX() << "," << energyLevel_->getY() << endl;
+}
+
+void Player::move()
+{
+	double speedX = velX_ * dirX_;
+	double speedY = velY_ * dirY_;
+
+	if (isRunning) { //Esto se puede implementar desde el runCommand, evitando que el jugador tenga muchos estados como el de corriendo
+		speedX *= 2;
+		speedY *= 2;
+		drainEnergy(walkingEnergy_);
+	}
+	else
+		drainEnergy(walkingEnergy_);
+
+	//HAY QUE NORMALIZAR EL VECTOR
+	setPosition(getX() + speedX, getY() + speedY);
+}
+
+/// <summary>
+/// Resetea la velocidad del jugador a la de por defecto (sin modificaciones)
+/// </summary>
+void Player::resetVelocity()
+{
+	setVel(INIT_VEL_X, INIT_VEL_Y);
 }
 
 void Player::sleep()

@@ -3,6 +3,7 @@
 #include "GameObject.h"
 #include "energyLevel.h"
 #include "FearLevel.h";
+
 class Game;
 class Inventory;
 enum Animations { QUIETO, CORRER };//EN PROCESO <NO TOCAR>
@@ -15,12 +16,16 @@ private:
 	Inventory* inventory_ = nullptr;
 	
 #pragma region Movement/Fear
+	const double INIT_VEL_X = 3.0; //Velocidad base (sin modificaciones que mantiene el player
+	const double INIT_VEL_Y = 3.0;
 	bool isRunning = false;
 	float fear_;
 	float walkingSpeed_;
 	float runningSpeed_;
-	double velX = 0;
-	double velY = 0;
+	double velX_ = 0; //velocidad actual del jugador
+	double velY_ = 0;
+	int dirX_ = 0; // 1, 0 o -1
+	int dirY_ = 0; // 1, 0 o -1
 #pragma endregion
 
 #pragma region Mission activeMission	
@@ -61,11 +66,18 @@ public:
 
 #pragma region Movement
 	void move(pair<double, double> speed);
+	void move();
 	inline void setIsRunning(bool run) { isRunning = run; std::cout << "RUNNING CHANGED TO: " << isRunning << endl; };
-	void setVelX(double x) { velX = x; };
-	void setVelY(double y) { velY = y; };
-	double getVelX() { return velX; };
-	double getVelY() { return velY; };
+	inline void setVelX(double x) { velX_ = x; };
+	inline void setVelY(double y) { velY_ = y; };
+	inline void setVel(double x, double y) { velX_ = x; velY_ = y; };
+	void resetVelocity();
+	inline double getVelX() { return velX_; };
+	inline double getVelY() { return velY_; };
+
+	inline void setDirX(int x) { dirX_ = x; };
+	inline void setDirY(int y) { dirY_ = y; };
+	inline void setDir(int x, int y) { dirX_ = x; dirY_ = y; };
 
 #pragma endregion
 
