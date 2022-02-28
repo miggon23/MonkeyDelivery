@@ -8,9 +8,13 @@ Game::Game(string n, int w, int h) : name(n), width(w), height(h), doExit(false)
 
 Game::~Game() {
     
-    for (int i = 0; i < gameObjects_.size(); i++)
-    {
-        delete gameObjects_[i];
+    //for (int i = 0; i < gameObjects_.size(); i++)
+    //{
+    //    delete gameObjects_[i];
+    //}
+
+    for (auto go : gameObjects_) {
+        delete go;
     }
     gameObjects_.clear();
     cout << "[DEBUG] deleting game" << endl;
@@ -53,6 +57,7 @@ void Game::update()
 {
     player->update();
 
+    // iteradores!
     for (int i = 0; i < gameObjects_.size(); i++) {
         gameObjects_[i]->update();
     }
@@ -68,6 +73,8 @@ bool Game::isUserExit() {
 
 void Game::draw()
 {
+
+    // 0 y 1????
     gameObjects_[0]->draw();
     gameObjects_[1]->draw();
     player->draw();
@@ -117,6 +124,7 @@ void Game::renderText(string text, int x, int y, SDL_Color color)
 
 void Game::renderText(vector<string> text, int x, int y, int incX, int incY, SDL_Color color)
 {
+    // iterador
     for (int i = 0; i < text.size(); ++i) {
         font_->render(renderer, text[i].c_str(), x, y, color);
         x += incX;

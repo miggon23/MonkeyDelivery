@@ -8,7 +8,7 @@ class CommandExit : public Command {
 public:
 
 
-    CommandExit() {};
+    //CommandExit() {};
     ~CommandExit() = default;
     bool parse(SDL_Event& event) override;
     void execute() override;

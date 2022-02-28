@@ -19,10 +19,10 @@ public:
 	~MissionManager();
 
 	void AddMission(Mission* mission);
-	void checkCurrentMission();
+	void checkCurrentMission();  
 
-	Mission* currentMisssion() { return currentMission_; }
-	Game* getGame() { return game_; }
+	inline Mission* currentMisssion() { return currentMission_; }
+	inline Game* getGame() { return game_; }
 	
 	string getMissionName();
 };
