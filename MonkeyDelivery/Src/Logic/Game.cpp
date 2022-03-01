@@ -19,7 +19,7 @@ Game::~Game() {
     delete missions_;
     delete font_;
     delete info;
-
+    delete missionsPanel_;
 }
 
 string Game::getGameName() {
@@ -37,9 +37,7 @@ void Game::start()
     iE = new InteractiveEntity(this, tucanTexture, 500, 80);
     add(iE);
 
-    missionsPanel_ = new InteractiveEntity(this, woodPanel, 200, 80);
-    missionsPanel_->setAsMissionPanel();
-    add(missionsPanel_);
+    missionsPanel_ = new MissionsPanel(this);
 
     missions_ = new MissionManager(this);
 

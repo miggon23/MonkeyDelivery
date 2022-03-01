@@ -173,6 +173,8 @@
     <ClInclude Include="Src\Control\States\StateMachine.h" />
     <ClInclude Include="Src\Control\States\TestingState.h" />
     <ClInclude Include="Src\Control\ViewController.h" />
+    <ClInclude Include="Src\json\JSON.h" />
+    <ClInclude Include="Src\json\JSONValue.h" />
     <ClInclude Include="Src\Logic\Bike.h" />
     <ClInclude Include="Src\Logic\Enemy.h" />
     <ClInclude Include="Src\Logic\EnergyDrink.h" />
@@ -218,6 +220,8 @@
     <ClCompile Include="Src\Control\States\StateMachine.cpp" />
     <ClCompile Include="Src\Control\States\TestingState.cpp" />
     <ClCompile Include="Src\Control\ViewController.cpp" />
+    <ClCompile Include="Src\json\JSON.cpp" />
+    <ClCompile Include="Src\json\JSONValue.cpp" />
     <ClCompile Include="Src\Logic\Bike.cpp" />
     <ClCompile Include="Src\Logic\Enemy.cpp" />
     <ClCompile Include="Src\Logic\EnergyDrink.cpp" />
@@ -243,6 +247,9 @@
   <ItemGroup>
     <Image Include="MonkeyDelivery.ico" />
     <Image Include="small.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Images\config\resources.json" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

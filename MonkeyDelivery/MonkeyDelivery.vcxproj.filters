@@ -186,6 +186,12 @@
     <ClInclude Include="Src\Logic\EnergyDrink.h">
       <Filter>Archivos de encabezado\Logic</Filter>
     </ClInclude>
+    <ClInclude Include="Src\json\JSON.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\json\JSONValue.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MonkeyDelivery.cpp">
@@ -302,6 +308,12 @@
     <ClCompile Include="Src\Control\SelectMissionCommand.cpp">
       <Filter>Archivos de origen\Control\Commands</Filter>
     </ClCompile>
+    <ClCompile Include="Src\json\JSON.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\json\JSONValue.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="MonkeyDelivery.rc">
@@ -315,5 +327,8 @@
     <Image Include="MonkeyDelivery.ico">
       <Filter>Archivos de recursos</Filter>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Images\config\resources.json" />
   </ItemGroup>
 </Project>

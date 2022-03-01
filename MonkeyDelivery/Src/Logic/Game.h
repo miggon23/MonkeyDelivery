@@ -23,6 +23,8 @@
 
 #include "Enemy.h"
 
+#include "MissionsPanel.h"
+
 using namespace std;
 
 class Game : public StateMachine {
@@ -39,7 +41,7 @@ private:
     MissionManager* missions_ = nullptr;
     vector<GameObject*> gameObjects_;
     
-    GameObject* missionsPanel_= nullptr;
+    MissionsPanel* missionsPanel_= nullptr;
 
     Font* font_;
     UI_Info* info;
