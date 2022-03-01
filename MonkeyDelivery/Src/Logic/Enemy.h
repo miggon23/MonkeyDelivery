@@ -9,10 +9,13 @@ private:
 	bool alive;
 	int scariness;
 	float dieTime;
+	int limitPointLeft;
+	int limitPointRight;
 	SpawnZone zone;
+
 public:
 
-	Enemy(Game* game, int Aleatorio,Point2D<int>centroRadio);
+	Enemy(Game* game, int Aleatorio, Point2D<int>centroRadio);
 	~Enemy() {};
 
 	void move(double speed);

@@ -2,8 +2,8 @@
 
 Enemy::Enemy(Game* game,int Aleatorio, Point2D<int>centroRadio):GameObject(game){
 	zone =  SpawnZone(Aleatorio, centroRadio);
-	Vector2D<double> x = zone.genratePoint();
-	setPosition(x.getX(),x.getY());
+	Vector2D<double> randomPos = zone.genratePoint();
+	setPosition(randomPos.getX(),randomPos.getY());
 	setTexture(monkeyEyesClosedTexture);
 	setAlive(true);
 }
@@ -21,8 +21,10 @@ void Enemy::die()
 void Enemy::spawn()
 {
 	setAlive(true);
-	Vector2D<double> x = zone.genratePoint();
-	setPosition(x.getX(), x.getY());
+	Vector2D<double> randomPos = zone.genratePoint();
+	setPosition(randomPos.getX(), randomPos.getY());
+	limitPointLeft = getX() - 100;
+	limitPointRight = getY() + 100;
 }
 
 void Enemy::onCollision()

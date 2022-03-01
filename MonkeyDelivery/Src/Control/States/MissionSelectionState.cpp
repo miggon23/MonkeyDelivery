@@ -4,7 +4,7 @@
 
 MissionSelectionState::MissionSelectionState(Game* game) : State(game)
 {
-	background_ = game->getTexture(missionPanel);
+	background_ = game->getTexture(missionPanelTexture);
 	paper_ = game->getTexture(mission1);
 	registerCommands();
 }
@@ -12,6 +12,8 @@ MissionSelectionState::MissionSelectionState(Game* game) : State(game)
 MissionSelectionState::~MissionSelectionState()
 {
 }
+
+
 
 void MissionSelectionState::draw()
 {

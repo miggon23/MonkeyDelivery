@@ -8,6 +8,10 @@ MissionsPanel::MissionsPanel(Game* game) : GameObject(game)
 	setTexture(missionPanelTexture);
 }
 
+MissionsPanel::~MissionsPanel()
+{
+}
+
 void MissionsPanel::onPlayerInteraction(Player* player)
 {
 	if (game->getSavedState() == nullptr) {
