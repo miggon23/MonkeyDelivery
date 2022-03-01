@@ -45,7 +45,8 @@ void Game::start()
 
     info = new UI_Info(this);
     Enemy* e = new Enemy(this, 20, Point2D<int>(200, 80));
-    
+    e->addCheckPoint(Point2D<double>(275, 80));
+    e->addCheckPoint(Point2D<double>(400, 50));
     gameObjects_.push_back(e);
    
     //missions_->AddMission(new Mission(missions_, missionsPanel_, 500, 100, 150, 15, "PruebaMision"));

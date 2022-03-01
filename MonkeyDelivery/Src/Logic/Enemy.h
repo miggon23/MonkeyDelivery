@@ -9,10 +9,10 @@ private:
 	bool alive;
 	int scariness;
 	float dieTime;
-	int limitPointLeft;
-	int limitPointRight;
 	SpawnZone zone;
-
+	vector<Point2D<double>> checkpoints;
+	int indexCheckPoint;
+	bool back;
 public:
 
 	Enemy(Game* game, int Aleatorio, Point2D<int>centroRadio);
@@ -24,6 +24,7 @@ public:
 
 	inline bool isAlive() { return alive; };
 	inline void setAlive(bool l) { alive = l; };
+	inline void addCheckPoint(Point2D<double> punto) { checkpoints.push_back(punto); };
 
 	void spawn();
 	void onCollision();
