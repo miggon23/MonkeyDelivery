@@ -22,6 +22,7 @@
 #include "Inventory.h"
 
 #include "Enemy.h"
+#include "Cat.h"
 
 #include "MissionsPanel.h"
 
@@ -33,10 +34,12 @@ private:
     string name;
     bool doExit;
     int width, height;
+    
 
     TextureContainer* textureContainer;
     SDL_Renderer* renderer = nullptr;
     Player* player = nullptr;
+    Cat* cat_ = nullptr;
     InteractiveEntity* iE = nullptr;
     MissionManager* missions_ = nullptr;
     vector<GameObject*> gameObjects_;

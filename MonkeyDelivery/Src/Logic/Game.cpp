@@ -15,6 +15,7 @@ Game::~Game() {
     gameObjects_.clear();
     cout << "[DEBUG] deleting game" << endl;
     delete player;
+    delete cat_;
     delete textureContainer;
     delete missions_;
     delete font_;
@@ -33,7 +34,7 @@ void Game::add(GameObject* gameObject) {//a�adir gO al vector
 void Game::start()
 {
     player = new Player(this); //Creacion del jugador
-
+    cat_ = new Cat(this, 50, getOrigin());
     iE = new InteractiveEntity(this, tucanTexture, 500, 80);
     add(iE);
 
@@ -74,6 +75,7 @@ void Game::draw()
         gO->draw();
     }
     player->draw();
+    cat_->draw();
     info->draw();
 
     missionsPanel_->draw();

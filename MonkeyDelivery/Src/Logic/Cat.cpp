@@ -1,11 +1,11 @@
-#include "Enemy.h"
+#include "Cat.h"
 
-Enemy::Enemy(Game* game,int Aleatorio, Point2D<int>centroRadio):GameObject(game){
+Cat::Cat(Game* game,int Aleatorio, Point2D<int>centroRadio):Enemy(game, 50, centroRadio){
 	zone = SpawnZone(Aleatorio, centroRadio);
 	Vector2D<double> x = zone.genratePoint();
 	std::cout << x.getX() << " " << x.getY();
 	setPosition(x.getX(), x.getY());
-	setTexture(monkeyEyesClosedTexture);
+	setTexture(catTexture);
 	setDimension(90, 100);
 	setAlive(true);
 	indexCheckPoint = 0;
@@ -13,7 +13,7 @@ Enemy::Enemy(Game* game,int Aleatorio, Point2D<int>centroRadio):GameObject(game)
 	back = false;
 }
 
-void Enemy::move(double speed)
+void Cat::move(double speed)
 {
 	if (checkpoints.size() > 1)
 	{
@@ -47,20 +47,21 @@ void Enemy::move(double speed)
 	}
 }
 
-void Enemy::die()
+void Cat::die()
 {
 	setAlive(false);
 }
 
-void Enemy::spawn()
+void Cat::spawn()
 {
 	setAlive(true);
 	Vector2D<double> randomPos = zone.genratePoint();
 	setPosition(randomPos.getX(), randomPos.getY());
 }
 
-void Enemy::onCollision()
+void Cat::onCollision()
 {
+
 }
 
 //void Enemy::update()
