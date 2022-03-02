@@ -1,14 +1,30 @@
 {
   "missions": [
-
-    {"id" :  "Mission01", "level" :  "1", "completed" :  "false",  "image" :  "Images/Missions/Mission01.png", "target" :  "Tucan", "maxmoney" :  "10000", "minmoney" :  "5000", "mintime" :  "100000", "express" :  "false", "special" :  "false" }
-
+    {
+      "id": "Mission01",
+      "completed": "false",
+      "express": "false",
+      "image": "Images/Missions/Mission01.png",
+      "level": "1",
+      "maxmoney": "10000",
+      "minmoney": "5000",
+      "mintime": "100000",
+      "special": "false",
+      "target": "Tucan"
+    },
+    {
+      "id": "Mission02",
+      "level": "1",
+      "completed": "false",
+      "image": "Images/Missions/Mission02.png",
+      "target": "Hippo",
+      "maxmoney": "10000",
+      "minmoney": "5000",
+      "mintime": "100000",
+      "express": "false",
+      "special": "false" 
+    }
   ],
-
-
-
-
-
 
   "fonts" : [
     { "id" : "TheMoon", "file" : "Images/TheMoon.ttf", "size": 16 }

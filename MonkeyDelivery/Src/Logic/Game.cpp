@@ -8,9 +8,9 @@ Game::Game(string n, int w, int h) : name(n), width(w), height(h), doExit(false)
 
 Game::~Game() {
     
-    for (int i = 0; i < gameObjects_.size(); i++)
+    for (auto c : gameObjects_)
     {
-        delete gameObjects_[i];
+        delete c;
     }
     gameObjects_.clear();
     cout << "[DEBUG] deleting game" << endl;
@@ -19,7 +19,7 @@ Game::~Game() {
     delete missions_;
     delete font_;
     delete info;
-    delete missionsPanel_;
+    //delete missionsPanel_; solo poner si no va en el vector de gameobjects
 }
 
 string Game::getGameName() {
@@ -38,6 +38,7 @@ void Game::start()
     add(iE);
 
     missionsPanel_ = new MissionsPanel(this);
+    add(missionsPanel_); 
 
     missions_ = new MissionManager(this);
 
@@ -45,7 +46,7 @@ void Game::start()
     Enemy* e = new Enemy(this, 20, Point2D<int>(200, 80));
     e->addCheckPoint(Point2D<double>(275, 80));
     e->addCheckPoint(Point2D<double>(400, 50));
-    gameObjects_.push_back(e);
+    add(e);
    
     //missions_->AddMission(new Mission(missions_, missionsPanel_, 500, 100, 150, 15, "PruebaMision"));
 
@@ -77,6 +78,8 @@ void Game::draw()
     }
     player->draw();
     info->draw();
+
+    missionsPanel_->draw();
     //renderText("aaaa", 100, 150, BLACK);
 }
 Point2D<int> Game::getOrigin() {
@@ -151,7 +154,8 @@ vector<GameObject*> Game::getCollisions(SDL_Rect rect)
     // for que recorre el vector de gameobjects
     for (int i = 0; i < gameObjects_.size(); i++)
     {
-        if(gameObjects_[i]->isInteractive() && gameObjects_[i]->collide(rect)){
+        // gameObjects_[i]->isInteractive() quitaría esto del if
+        if(gameObjects_[i]->collide(rect)){
             interactEnt.push_back(gameObjects_[i]);
         }
     }

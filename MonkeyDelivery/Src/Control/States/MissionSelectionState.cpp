@@ -1,10 +1,9 @@
 #include "MissionSelectionState.h"
 #include "../SelectMissionCommand.h"
-#include "../CommandInteract.h"
 
 MissionSelectionState::MissionSelectionState(Game* game) : State(game)
 {
-	background_ = game->getTexture(missionPanelTexture);
+	background_ = game->getTexture(woodPanelTexture);
 	paper_ = game->getTexture(mission1);
 	registerCommands();
 }
@@ -35,6 +34,5 @@ void MissionSelectionState::next()
 void MissionSelectionState::registerCommands()
 {
 	commandFactory->add(new CommandExit());
-	commandFactory->add(new CommandInteract());
 	commandFactory->add(new SelectMissionCommand());
 }

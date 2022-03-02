@@ -91,6 +91,7 @@ public:
     void setActiveMission(Mission* m);
     InteractiveEntity* getiE();
 
+    inline MissionsPanel* getMissionsPanel() { return missionsPanel_; };
 };
 
 

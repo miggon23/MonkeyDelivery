@@ -36,7 +36,7 @@ public:
 	void update() override;
 
 	// llamado desde el estado de SeleccionDeMisión, cuando se sale de él
-	void onMissionSelected();
+	void onMissionSelected(string missionId);
 
 	// el map en el que se guarda la info de las misiones
 	inline sdl_resource_table getMissions() {

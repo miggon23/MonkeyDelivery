@@ -1,6 +1,6 @@
 #include "SelectMissionCommand.h"
 #include "./States/PlayingState.h"
-#include "../Logic/Mission.h"
+#include "../Logic/MissionsPanel.h"
 
 bool SelectMissionCommand::parse(SDL_Event& event)
 {
@@ -14,9 +14,5 @@ bool SelectMissionCommand::parse(SDL_Event& event)
 
 void SelectMissionCommand::execute()
 {
-	// Comunicar cuál es la misión seleccionada
-	game->setActiveMission(new Mission(game->getMissionManager(), game->getiE(), 100, 100, 10, 1000, "Primera Misión"));
-	
-	//game->setState(new PlayingState(game));
-	//delete this;
+	game->getMissionsPanel()->onMissionSelected("Mission01"); // este parámetro depende de qué elemento esté seleccionado
 }

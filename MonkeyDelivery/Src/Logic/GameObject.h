@@ -49,7 +49,7 @@ public:
     virtual SDL_Rect getCollider();
     SDL_Rect getCenter();
     bool collide(SDL_Rect other);
-    void exampleInter();
+    void exampleInter(Player* player);
 
     // IDENTIFICAR SI ESTE OBJETO ES EL PANEL DE MISIONES
     bool isMissionPanel() {

@@ -55,7 +55,7 @@ void GameObject::setDimension(double width, double height)
 void GameObject::draw()
 {
     drawTexture(texture);
-    cout << "simio";
+    //cout << "simio";
 }
 
 bool GameObject::collide(SDL_Rect other) {
@@ -65,8 +65,8 @@ bool GameObject::collide(SDL_Rect other) {
 
 // adri y simona: metodo de ejemplo para el interactive
 // no tocar ;)
-void GameObject::exampleInter()
+void GameObject::exampleInter(Player* player)
 {
-    cout << "ejemplo" << endl;
-   
+   // cout << "ejemplo" << endl;
+    onPlayerInteraction(player);
 }
