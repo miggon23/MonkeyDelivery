@@ -7,10 +7,10 @@ Game::Game(string n, int w, int h) : name(n), width(w), height(h), doExit(false)
 }
 
 Game::~Game() {
-    
-    for (auto c : gameObjects_)
+    //usar iteradores
+    for (auto gO : gameObjects_)
     {
-        delete c;
+        delete gO;
     }
     gameObjects_.clear();
     cout << "[DEBUG] deleting game" << endl;
@@ -26,7 +26,7 @@ string Game::getGameName() {
     return name;
 }
 
-void Game::add(GameObject* gameObject) {//añadir gO al vector
+void Game::add(GameObject* gameObject) {//aï¿½adir gO al vector
     gameObjects_.push_back(gameObject);
 }
 
@@ -56,8 +56,8 @@ void Game::update()
 {
     player->update();
 
-    for (int i = 0; i < gameObjects_.size(); i++) {
-        gameObjects_[i]->update();
+    for (auto gO : gameObjects_) {
+        gO->update();
     }
 }
 
@@ -73,8 +73,8 @@ void Game::draw()
 {
    /* gameObjects_[0]->draw();
     gameObjects_[1]->draw();*/
-    for (int i = 0; i < gameObjects_.size(); i++) {
-        gameObjects_[i]->draw();
+    for (auto gO : gameObjects_) {
+        gO->draw();
     }
     player->draw();
     info->draw();
@@ -133,14 +133,14 @@ void Game::renderText(vector<string> text, int x, int y, int incX, int incY, SDL
 }
 
 //economy
-//modifica el dinero del jugador y devulve bool de confirmación en caso de compra
-//actua como enlace al método del jugador
+//modifica el dinero del jugador y devulve bool de confirmaciï¿½n en caso de compra
+//actua como enlace al mï¿½todo del jugador
 bool Game::changeMoneyPlayer(int money)
 {
    return player->moneyChange(money);
 }
 
-//al pulsar el botón de interactuar(space), se relizan los cambios necesarios
+//al pulsar el botï¿½n de interactuar(space), se relizan los cambios necesarios
 void Game::interactions()
 {
     missions_->checkCurrentMission();
@@ -154,7 +154,7 @@ vector<GameObject*> Game::getCollisions(SDL_Rect rect)
     // for que recorre el vector de gameobjects
     for (int i = 0; i < gameObjects_.size(); i++)
     {
-        // gameObjects_[i]->isInteractive() quitaría esto del if
+        // gameObjects_[i]->isInteractive() quitarï¿½a esto del if
         if(gameObjects_[i]->collide(rect)){
             interactEnt.push_back(gameObjects_[i]);
         }
@@ -162,7 +162,7 @@ vector<GameObject*> Game::getCollisions(SDL_Rect rect)
     
     return interactEnt;
 }
-// Método que recibe una misión para declararla como la actual
+// Mï¿½todo que recibe una misiï¿½n para declararla como la actual
 // Se llama cuando se selecciona desde SelectMissionCommand
 void Game::setActiveMission(Mission* m)
 {
