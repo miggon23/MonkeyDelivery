@@ -7,21 +7,23 @@ Bat::Bat(Game* game, int Aleatorio, Point2D<int> centroRadio, int nLoop) : Enemy
 	speed = 1;
 	player_ = game->getPlayer();
 	Point2D<double> inicialPos(getPosition());
+	int move = 10;
 	
 	addCheckPoint(Point2D<double>(inicialPos.getX(), inicialPos.getY()));
-	//std::cout << inicialPos.getX() << "  " << inicialPos.getY() << endl;
-
 	addCheckPoint(Point2D<double>(inicialPos.getX() + 100, inicialPos.getY()-100));
-	std::cout << inicialPos.getX()+100 << "  " << inicialPos.getY()-100 << endl;
-
-	addCheckPoint(Point2D<double>(inicialPos.getX(), inicialPos.getY()-200));
-	std::cout << inicialPos.getX() << "  " << inicialPos.getY()-200 << endl;
-
+	addCheckPoint(Point2D<double>(inicialPos.getX(), inicialPos.getY()-200));	
 	addCheckPoint(Point2D<double>(inicialPos.getX()-100, inicialPos.getY()-100));
-	std::cout << inicialPos.getX()-100 << "  " << inicialPos.getY()-100 << endl;
-
 	addCheckPoint(Point2D<double>(inicialPos.getX(), inicialPos.getY()));
-	std::cout << inicialPos.getX() << "  " << inicialPos.getY() << endl;
+
+	for (int i = 1; i < nLoop; i++)
+	{
+		addCheckPoint(Point2D<double>(inicialPos.getX()+move*i, inicialPos.getY()));
+		addCheckPoint(Point2D<double>(inicialPos.getX() + 100 + move * i, inicialPos.getY() - 100));
+		addCheckPoint(Point2D<double>(inicialPos.getX() + move * i, inicialPos.getY() - 200));
+		addCheckPoint(Point2D<double>(inicialPos.getX() - 100 + move * i, inicialPos.getY() - 100));
+		addCheckPoint(Point2D<double>(inicialPos.getX() + move * i, inicialPos.getY()));
+
+	}
 
 }
 
