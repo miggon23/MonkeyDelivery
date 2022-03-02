@@ -42,7 +42,7 @@ void Enemy::move(double speed)
 				indexCheckPoint = checkpoints.size() - 1;
 				back = true;
 			}
-			std::cout << indexCheckPoint << std::endl;
+			//std::cout << indexCheckPoint << std::endl;
 		}
 
 	}

@@ -22,6 +22,7 @@
 #include "Inventory.h"
 
 #include "Enemy.h"
+#include "Bat.h"
 
 #include "MissionsPanel.h"
 
@@ -42,6 +43,8 @@ private:
     vector<GameObject*> gameObjects_;
     
     MissionsPanel* missionsPanel_= nullptr;
+
+    Bat* bat;
 
     Font* font_;
     UI_Info* info;

@@ -40,6 +40,9 @@ void Game::start()
     missionsPanel_ = new MissionsPanel(this);
     add(missionsPanel_); 
 
+    bat = new Bat(this, 20, Point2D<int>(200, 80), 7);
+    add(bat);
+
     missions_ = new MissionManager(this);
 
     info = new UI_Info(this);
