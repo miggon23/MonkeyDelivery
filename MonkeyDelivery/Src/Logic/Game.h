@@ -47,6 +47,7 @@ private:
     InteractiveEntity* iE_ = nullptr;
     MissionManager* missions_ = nullptr;
     vector<GameObject*> gameObjects_;
+    vector<Enemy*>enemyContainer_;//vector enemigos
     
     MissionsPanel* missionsPanel_= nullptr;
 
@@ -101,6 +102,11 @@ public:
     InteractiveEntity* getiE();
 
     inline MissionsPanel* getMissionsPanel() { return missionsPanel_; };
+
+    //enemies
+    void addEnemies(Enemy* enemy);//añade enemigos al vector
+    void enemiesCreation();//llama al addenemy con cada enemigo que queremos añadir, se llama en start
+
 };
 
 

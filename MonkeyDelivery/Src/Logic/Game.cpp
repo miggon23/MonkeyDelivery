@@ -12,7 +12,11 @@ Game::~Game() {
     {
         delete gO;
     }
+    for (auto enemy : enemyContainer_)
+        delete enemy;
+
     gameObjects_.clear();
+    enemyContainer_.clear();
     cout << "[DEBUG] deleting game" << endl;
     delete player_;
     delete textureContainer_;
@@ -33,20 +37,20 @@ void Game::add(GameObject* gameObject) {//a�adir gO al vector
 void Game::start()
 {
     player_ = new Player(this); //Creacion del jugador
-    cat_ = new Cat(this, 50, getOrigin());
+   
     iE_ = new InteractiveEntity(this, tucanTexture, 500, 80);
     add(iE_);
 
     missionsPanel_ = new MissionsPanel(this);
     add(missionsPanel_); 
 
-    bat_ = new Bat(this, 20, Point2D<int>(200, 80), 7);
-    add(bat_);
+    enemiesCreation();//creacion de enemigos
+    
 
     missions_ = new MissionManager(this);
 
     info = new UI_Info(this);
-    add(cat_);
+   
    
     //missions_->AddMission(new Mission(missions_, missionsPanel_, 500, 100, 150, 15, "PruebaMision"));
 
@@ -60,6 +64,9 @@ void Game::update()
     for (auto gO : gameObjects_) {
         gO->update();
     }
+    for (auto enemy : enemyContainer_)
+        enemy->update();
+    
 }
 
 void Game::setUserExit() {
@@ -77,6 +84,9 @@ void Game::draw()
     for (auto gO : gameObjects_) {
         gO->draw();
     }
+    for (auto enemy : enemyContainer_)
+        enemy->draw();
+
     player_->draw();
     info->draw();
 
@@ -174,5 +184,16 @@ void Game::setActiveMission(Mission* m)
 InteractiveEntity* Game::getiE()
 {
     return iE_;
+}
+void Game::addEnemies(Enemy* enemy)
+{
+    enemyContainer_.push_back(enemy);
+}
+void Game::enemiesCreation()
+{
+    bat_ = new Bat(this, 20, Point2D<int>(200, 80), 7);
+    cat_ = new Cat(this, 50, getOrigin());
+    addEnemies(bat_);
+    addEnemies(cat_);
 }
 ;
