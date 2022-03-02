@@ -15,7 +15,6 @@ Game::~Game() {
     gameObjects_.clear();
     cout << "[DEBUG] deleting game" << endl;
     delete player;
-    delete cat_;
     delete textureContainer;
     delete missions_;
     delete font_;
