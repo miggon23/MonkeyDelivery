@@ -1,4 +1,5 @@
 #include "SpawnZone.h"
+#include <ctime>
 
 SpawnZone::SpawnZone()
 {
