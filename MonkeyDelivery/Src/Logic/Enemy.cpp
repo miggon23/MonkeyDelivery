@@ -64,12 +64,12 @@ void Enemy::onCollision()
 {
 }
 
-void Enemy::update()
-{
-	move(1);
-}
-
-void Enemy::draw()
-{
-		drawTexture(texture);
-}
+//void Enemy::update()
+//{
+//	move(1);
+//}
+//
+//void Enemy::draw()
+//{
+//		drawTexture(texture);
+//}
