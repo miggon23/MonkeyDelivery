@@ -7,10 +7,10 @@ Game::Game(string n, int w, int h) : name(n), width(w), height(h), doExit(false)
 }
 
 Game::~Game() {
-    
-    for (int i = 0; i < gameObjects_.size(); i++)
+    //usar iteradores
+    for (auto gO : gameObjects_)
     {
-        delete gameObjects_[i];
+        delete gO;
     }
     gameObjects_.clear();
     cout << "[DEBUG] deleting game" << endl;
@@ -55,8 +55,8 @@ void Game::update()
 {
     player->update();
 
-    for (int i = 0; i < gameObjects_.size(); i++) {
-        gameObjects_[i]->update();
+    for (auto gO : gameObjects_) {
+        gO->update();
     }
 }
 
@@ -72,8 +72,8 @@ void Game::draw()
 {
    /* gameObjects_[0]->draw();
     gameObjects_[1]->draw();*/
-    for (int i = 0; i < gameObjects_.size(); i++) {
-        gameObjects_[i]->draw();
+    for (auto gO : gameObjects_) {
+        gO->draw();
     }
     player->draw();
     info->draw();
