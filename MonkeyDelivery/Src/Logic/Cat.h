@@ -21,17 +21,7 @@ public:
 	Cat(Game* game, int Aleatorio, Point2D<int>centroRadio);
 	~Cat() {};
 
-	virtual void move(double speed);
-
-	void die();
-
-	inline bool isAlive() { return alive; };
-	inline void setAlive(bool l) { alive = l; };
-	inline void addCheckPoint(Point2D<double> punto) { checkpoints.push_back(punto); };
-
-	void spawn();
-	void onCollision();
-	void update() {};
+	void update() override{move(1);}
 	void draw() override {drawTexture(texture);}
 };
 

@@ -47,7 +47,7 @@ void Game::start()
     missions_ = new MissionManager(this);
 
     info = new UI_Info(this);
-   
+    add(cat_);
    
     //missions_->AddMission(new Mission(missions_, missionsPanel_, 500, 100, 150, 15, "PruebaMision"));
 
@@ -56,6 +56,7 @@ void Game::start()
 void Game::update()
 {
     player->update();
+    //cat_->update();
 
     for (auto gO : gameObjects_) {
         gO->update();
