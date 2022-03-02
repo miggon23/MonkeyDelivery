@@ -3,6 +3,7 @@
 
 Bat::Bat(Game* game, int Aleatorio, Point2D<int> centroRadio, int nLoop) : Enemy(game, Aleatorio, centroRadio)
 {
+	setTexture(batTexture);
 	speed = 1;
 	player_ = game->getPlayer();
 	Point2D<double> inicialPos(getPosition());
