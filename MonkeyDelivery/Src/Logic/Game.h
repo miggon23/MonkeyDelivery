@@ -22,7 +22,11 @@
 #include "Inventory.h"
 
 #include "Enemy.h"
+
 #include "Bat.h"
+
+#include "Cat.h"
+
 
 #include "MissionsPanel.h"
 
@@ -34,10 +38,12 @@ private:
     string name;
     bool doExit;
     int width, height;
+    
 
     TextureContainer* textureContainer;
     SDL_Renderer* renderer = nullptr;
     Player* player = nullptr;
+    Cat* cat_ = nullptr;
     InteractiveEntity* iE = nullptr;
     MissionManager* missions_ = nullptr;
     vector<GameObject*> gameObjects_;
@@ -84,8 +90,8 @@ public:
     SDL_Renderer* getRenderer();
     inline Player* getPlayer() { return player; }
     inline MissionManager* getMissionManager() { return missions_; }
-    void renderText(string text, int x, int y, SDL_Color color = { 0,0,0 }); // Escribir una sola línea
-    void renderText(vector<string> text, int x, int y, int incX, int incY, SDL_Color color = { 0,0,0 }); // Escribir varias líneas
+    void renderText(string text, int x, int y, SDL_Color color = { 0,0,0 }); // Escribir una sola lï¿½nea
+    void renderText(vector<string> text, int x, int y, int incX, int incY, SDL_Color color = { 0,0,0 }); // Escribir varias lï¿½neas
 
     // missions
     bool changeMoneyPlayer(int money);

@@ -192,7 +192,7 @@
     <ClInclude Include="Src\json\JSONValue.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="Src\Logic\Bat.h">
+    <ClInclude Include="Src\Logic\Cat.h">
       <Filter>Archivos de encabezado\Logic</Filter>
     </ClInclude>
   </ItemGroup>
@@ -317,7 +317,7 @@
     <ClCompile Include="Src\json\JSONValue.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="Src\Logic\Bat.cpp">
+    <ClCompile Include="Src\Logic\Cat.cpp">
       <Filter>Archivos de origen\Logic</Filter>
     </ClCompile>
   </ItemGroup>
