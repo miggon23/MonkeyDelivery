@@ -128,6 +128,7 @@ void Player::getMoney(int amount)
 void Player::removeMoney(int amount)
 {
 	money_ -= amount;
+	if (money_ < 0) money_ = 0;
 }
 
 void Player::useObject(int index)
