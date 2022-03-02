@@ -40,17 +40,17 @@ private:
     int width, height;
     
 
-    TextureContainer* textureContainer;
+    TextureContainer* textureContainer_;
     SDL_Renderer* renderer = nullptr;
-    Player* player = nullptr;
+    Player* player_ = nullptr;
     Cat* cat_ = nullptr;
-    InteractiveEntity* iE = nullptr;
+    InteractiveEntity* iE_ = nullptr;
     MissionManager* missions_ = nullptr;
     vector<GameObject*> gameObjects_;
     
     MissionsPanel* missionsPanel_= nullptr;
 
-    Bat* bat;
+    Bat* bat_;
 
     Font* font_;
     UI_Info* info;
@@ -75,12 +75,12 @@ public:
     int getWindowHeight();
 
     //Player movement
-    inline void move(pair<double, double> speed) { player->move(speed); };
-    inline void setIsRunning(bool run) { player->setIsRunning(run); };
-    inline void setVelX(double x) { player->setVelX(x); };
-    inline void setVelY(double y) { player->setVelY(y); };
-    inline void setPlayerDirX(int x) { player->setDirX(x); };
-    inline void setPlayerDirY(int y) { player->setDirY(y); };
+    inline void move(pair<double, double> speed) { player_->move(speed); };
+    inline void setIsRunning(bool run) { player_->setIsRunning(run); };
+    inline void setVelX(double x) { player_->setVelX(x); };
+    inline void setVelY(double y) { player_->setVelY(y); };
+    inline void setPlayerDirX(int x) { player_->setDirX(x); };
+    inline void setPlayerDirY(int y) { player_->setDirY(y); };
     void useInventory(int slot);
 
     // rendering
@@ -88,7 +88,7 @@ public:
     void loadTextures();
     Texture* getTexture(TextureName name);
     SDL_Renderer* getRenderer();
-    inline Player* getPlayer() { return player; }
+    inline Player* getPlayer() { return player_; }
     inline MissionManager* getMissionManager() { return missions_; }
     void renderText(string text, int x, int y, SDL_Color color = { 0,0,0 }); // Escribir una sola l�nea
     void renderText(vector<string> text, int x, int y, int incX, int incY, SDL_Color color = { 0,0,0 }); // Escribir varias l�neas

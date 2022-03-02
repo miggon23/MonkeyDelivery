@@ -14,8 +14,8 @@ Game::~Game() {
     }
     gameObjects_.clear();
     cout << "[DEBUG] deleting game" << endl;
-    delete player;
-    delete textureContainer;
+    delete player_;
+    delete textureContainer_;
     delete missions_;
     delete font_;
     delete info;
@@ -32,16 +32,16 @@ void Game::add(GameObject* gameObject) {//a�adir gO al vector
 
 void Game::start()
 {
-    player = new Player(this); //Creacion del jugador
+    player_ = new Player(this); //Creacion del jugador
     cat_ = new Cat(this, 50, getOrigin());
-    iE = new InteractiveEntity(this, tucanTexture, 500, 80);
-    add(iE);
+    iE_ = new InteractiveEntity(this, tucanTexture, 500, 80);
+    add(iE_);
 
     missionsPanel_ = new MissionsPanel(this);
     add(missionsPanel_); 
 
-    bat = new Bat(this, 20, Point2D<int>(200, 80), 7);
-    add(bat);
+    bat_ = new Bat(this, 20, Point2D<int>(200, 80), 7);
+    add(bat_);
 
     missions_ = new MissionManager(this);
 
@@ -54,7 +54,7 @@ void Game::start()
 
 void Game::update()
 {
-    player->update();
+    player_->update();
     //cat_->update();
 
     for (auto gO : gameObjects_) {
@@ -77,15 +77,14 @@ void Game::draw()
     for (auto gO : gameObjects_) {
         gO->draw();
     }
-    player->draw();
-    cat_->draw();
+    player_->draw();
     info->draw();
 
     missionsPanel_->draw();
     //renderText("aaaa", 100, 150, BLACK);
 }
 Point2D<int> Game::getOrigin() {
-    return { int(-(player->getX() - player->getWidth())), 0 };
+    return { int(-(player_->getX() - player_->getWidth())), 0 };
 }
 
 int Game::getWindowWidth() {
@@ -98,7 +97,7 @@ int Game::getWindowHeight() {
 
 void Game::useInventory(int slot)
 {
-    player->useObject(slot);
+    player_->useObject(slot);
 }
 
 void Game::setRenderer(SDL_Renderer* _renderer) {
@@ -109,11 +108,11 @@ void Game::loadTextures() {
     if (renderer == nullptr)
         throw string("Renderer is null");
 
-    textureContainer = new TextureContainer(renderer);
+    textureContainer_ = new TextureContainer(renderer);
 }
 
 Texture* Game::getTexture(TextureName name) {
-    return textureContainer->getTexture(name);
+    return textureContainer_->getTexture(name);
 }
 
 SDL_Renderer* Game::getRenderer() {
@@ -139,7 +138,7 @@ void Game::renderText(vector<string> text, int x, int y, int incX, int incY, SDL
 //actua como enlace al m�todo del jugador
 bool Game::changeMoneyPlayer(int money)
 {
-   return player->moneyChange(money);
+   return player_->moneyChange(money);
 }
 
 //al pulsar el bot�n de interactuar(space), se relizan los cambios necesarios
@@ -174,6 +173,6 @@ void Game::setActiveMission(Mission* m)
 // devuelve la iE 
 InteractiveEntity* Game::getiE()
 {
-    return iE;
+    return iE_;
 }
 ;
