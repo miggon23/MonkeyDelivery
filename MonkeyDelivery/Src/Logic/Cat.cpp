@@ -11,4 +11,5 @@ Cat::Cat(Game* game,int Aleatorio, Point2D<int>centroRadio):Enemy(game, 50, cent
 	indexCheckPoint = 0;
 	back = false;
 	addCheckPoint(Point2D<double>(100, 100));
+	setFear(0.1);
 }

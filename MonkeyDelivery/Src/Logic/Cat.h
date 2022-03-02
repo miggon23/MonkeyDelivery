@@ -12,6 +12,7 @@ protected:
 	float dieTime;
 	SpawnZone zone;
 	vector<Point2D<double>> checkpoints;
+	double fear_;
 	
 	int indexCheckPoint;
 	bool back;
@@ -23,5 +24,9 @@ public:
 
 	void update() override{move(1);}
 	void draw() override {drawTexture(texture);}
+	/*a continuacion, metodos EN PRUEBAS para el miedo
+	 posteriormente se integraran en enemy
+	*/
+	inline void setFear(double fear) { fear_ = fear; }
 };
 
