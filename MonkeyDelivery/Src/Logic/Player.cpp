@@ -69,13 +69,15 @@ void Player::move()
 	double speedX = velX_ * dirX_;
 	double speedY = velY_ * dirY_;
 
-	if (isRunning) { //Esto se puede implementar desde el runCommand, evitando que el jugador tenga muchos estados como el de corriendo
-		speedX *= 2;
-		speedY *= 2;
-		drainEnergy(walkingEnergy_);
+	if (dirX_ != 0 || dirY_ != 0) {
+		if (isRunning) { //Esto se puede implementar desde el runCommand, evitando que el jugador tenga muchos estados como el de corriendo
+			speedX *= 2;
+			speedY *= 2;
+			drainEnergy(walkingEnergy_);
+		}
+		else
+			drainEnergy(walkingEnergy_);
 	}
-	else
-		drainEnergy(walkingEnergy_);
 
 	//HAY QUE NORMALIZAR EL VECTOR
 	setPosition(getX() + speedX, getY() + speedY);
