@@ -4,10 +4,8 @@
 Enemy::Enemy(Game* game,int Aleatorio, Point2D<int>centroRadio):GameObject(game){
 	zone = SpawnZone(Aleatorio, centroRadio);
 	Vector2D<double> x = zone.genratePoint();
-	std::cout << x.getX() << " " << x.getY();
+	
 	setPosition(x.getX(), x.getY());
-	setTexture(monkeyEyesClosedTexture);
-	setDimension(90, 100);
 	setAlive(true);
 	indexCheckPoint = 0;
 	addCheckPoint(getPosition());

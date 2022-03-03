@@ -3,7 +3,11 @@
 
 Bat::Bat(Game* game, int Aleatorio, Point2D<int> centroRadio, int nLoop) : Enemy(game, Aleatorio, centroRadio)
 {
+	Vector2D<double> x = zone.genratePoint();
+	setPosition(x.getX(), x.getY());
 	setTexture(batTexture);
+	setDimension(90, 100);
+	addCheckPoint(getPosition());
 	speed = 1;
 	player_ = game->getPlayer();
 	Point2D<double> inicialPos(getPosition());
