@@ -22,12 +22,14 @@ enum TextureName {
     tucanTexture,
     catTexture,
     batTexture,
-    mission1,
+    mission1Texture,
+    mission2Texture,
     cama,
     dialogoPrueba
 };
 
-const int NUM_TEXTURES = 13;
+
+const int NUM_TEXTURES = 14;
 
 typedef struct {
     string filename;
@@ -47,6 +49,7 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
   {"animals/tucan.png",1,1},
   {"catPrueba.png",1,1},
   {"batPrueba.png",1,1},
+  {"decorations/Mision1.png",1,1},
   {"decorations/Mision1.png",1,1},
   {"decorations/cama.jpg",1,1},
   {"dialogPrueba.png",1,1},
@@ -83,6 +86,5 @@ public:
     }
 
     Texture* getTexture(TextureName name) const { return textures[name]; };
-
 };
 

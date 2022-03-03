@@ -15,6 +15,8 @@ MissionsPanel::MissionsPanel(Game* game) : GameObject(game)
 	setTexture(missionPanelTexture);
 
 	loadMissions("../Images/config/resources.json");
+
+	currentLevel_ = 1;
 }
 
 MissionsPanel::~MissionsPanel()
@@ -27,10 +29,40 @@ void MissionsPanel::onPlayerInteraction(Player* player)
 {
 	std::cout << "Activating Mission Selection State\n";
 
+	vector<string> missionsSent;
+
+	int a = 0;
+	string b = "Mission";
+	int numMissions = 0;
+
+	switch (currentLevel_) {
+	case 1:
+		a = 1;
+		numMissions = nLevel1_;
+		break;
+	case 2:
+		a = nLevel1_ + 1;
+		numMissions = nLevel2_;
+
+		break;
+	case 3:
+		a = nLevel2_ + 1;
+		numMissions = nLevel3_;
+		break;
+	}
+
+	missionsSent.reserve(numMissions);
+	for (int i = a; i <= numMissions; ++i) {
+		b += to_string(i);
+		missionsSent.push_back(missions_.at(b).imgRoute);
+		//missionsSent.push_back(b);
+		b = "Mission";
+	}
+
 	if (game->getSavedState() == nullptr) {
 		// show pannel
 		game->saveState(game->getState());
-		game->setState(new MissionSelectionState(game));
+		game->setState(new MissionSelectionState(game, missionsSent));
 	}
 }
 
@@ -43,8 +75,14 @@ void MissionsPanel::onMissionSelected(string missionId)
 	std::cout << "Deactivating Mission Selection State\n";
 
 	MissionInfo m = missions_.at(missionId);
+	
+	// spawn Vecino
+	
+
+	// settear la misión como activa
 	currentMission_ = new Mission(game->getMissionManager(), game->getiE(), m.maxMoney, m.minMoney, 10, m.minTime, missionId); 
 	game->setActiveMission(currentMission_); // por la forma en que está gestionado ahora
+	
 	// hide pannel
 	State* tmp = game->getState();
 	State* saved = game->getSavedState();
@@ -54,8 +92,14 @@ void MissionsPanel::onMissionSelected(string missionId)
 	game->clearSavedState();
 	delete tmp;
 
-	// spawn Vecino
 
+}
+
+void MissionsPanel::onMissionCompleted()
+{
+	missions_.at(currentMission_->getName()).completed = true;
+
+	// comprobar si todas las misiones de este nivel están completadas
 }
 
 void MissionsPanel::loadMissions(std::string filename)
@@ -75,6 +119,7 @@ void MissionsPanel::loadMissions(std::string filename)
 			for (auto& v : jValue->AsArray()) {
 				if (v->IsObject()) {
 					JSONObject vObj = v->AsObject();
+
 					std::string key = vObj["id"]->AsString();
 					int level = vObj["level"]->AsNumber();
 					bool isExpress = vObj["express"]->AsBool();
@@ -84,6 +129,21 @@ void MissionsPanel::loadMissions(std::string filename)
 					int maxMoney = vObj["maxmoney"]->AsNumber();
 					int minMoney = vObj["minmoney"]->AsNumber();
 					int minTime = vObj["mintime"]->AsNumber();
+
+					switch (level)
+					{
+					case 1:
+						nLevel1_ += 1;
+						break;
+					case 2:
+						nLevel2_ += 1;
+						break;
+					case 3:
+						nLevel3_ += 1;
+						break;
+					default:
+						break;
+					}
 
 					MissionInfo m = {
 						level,

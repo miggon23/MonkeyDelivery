@@ -6,6 +6,7 @@ class MissionSelectionState : public State
 {
 public:
 	MissionSelectionState(Game* game);
+	MissionSelectionState(Game* game, vector<string> missionImg);
 	~MissionSelectionState();
 
 	void draw() override;
@@ -20,7 +21,9 @@ public:
 
 private:
 	Texture* background_;
-	Texture* paper_;
+
+	vector<Texture*> allTextures_;
+	vector<Texture*> currentTextures_;
 
 };
 

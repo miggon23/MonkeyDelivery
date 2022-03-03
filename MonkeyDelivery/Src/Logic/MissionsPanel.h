@@ -27,7 +27,11 @@ private:
 
 	sdl_resource_table missions_; // Missions map (string -> mission)
 
-
+	// Nº de misiones de cada nivel que hay
+	int nLevel1_;
+	int nLevel2_;
+	int nLevel3_;
+	
 public:
 	MissionsPanel(Game* game);
 	~MissionsPanel();
@@ -37,6 +41,9 @@ public:
 
 	// llamado desde el estado de SeleccionDeMisión, cuando se sale de él
 	void onMissionSelected(string missionId);
+
+	// llamado desde el target (vecino) cuando interactúe y la misión se complete
+	void onMissionCompleted();
 
 	// el map en el que se guarda la info de las misiones
 	inline sdl_resource_table getMissions() {
