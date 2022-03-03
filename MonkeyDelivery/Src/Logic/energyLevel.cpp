@@ -15,6 +15,7 @@ energyLevel::energyLevel(Game* game) :GameObject(game) {
 bool energyLevel::drain(float energyDrained)
 {
 	energy_ -= energyDrained;
+	if (energy_ > maxEnergy_)energy_ = maxEnergy_;
 	if (energy_ > 0) {
 		setDimension(energy_, 20);
 		setPosition(50 - (energyDrained/2), 10);

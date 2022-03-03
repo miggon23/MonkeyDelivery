@@ -39,8 +39,10 @@ Player::~Player()
 
 void Player::update()
 {
-	move();
-	getScared(1);//pruebas
+	//move();
+	//getScared(1);//pruebas
+	if (sleeping)sleep();//si esta durmiendo
+	else move();//si no esta durmiendo habilitanmos el movimiento
 }
 
 /// <summary>
@@ -92,7 +94,28 @@ void Player::resetVelocity()
 }
 
 void Player::sleep()
-{
+{	
+	std::cout << "A MIMIR YA PUTO MONO" << endl;
+	//cambio la textura
+	setTexture(monkeyEyesClosedTexture);
+	draw();
+	getScared(-1);
+	drainEnergy(-1);
+}
+
+void Player::changeSleep()
+{	
+	if (energyLevel_->percentEnergy() <= 20.0||sleeping) {
+		sleeping = !sleeping;
+		//actulizo la textura
+		if (sleeping) {
+			setTexture(monkeyEyesClosedTexture);
+		}
+		else {
+			setTexture(monkeyTexture);
+		}
+		draw();
+	}
 }
 
 void Player::getScared(int amount)

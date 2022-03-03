@@ -27,6 +27,7 @@
 
 #include "Cat.h"
 
+#include "Bed.h"
 
 #include "MissionsPanel.h"
 
@@ -55,6 +56,7 @@ private:
 
     Font* font_;
     UI_Info* info;
+    
 
 public:
 
@@ -107,7 +109,7 @@ public:
     //enemies
     void addEnemies(Enemy* enemy);//añade enemigos al vector
     void enemiesCreation();//llama al addenemy con cada enemigo que queremos añadir, se llama en start
-
+   
 };
 
 

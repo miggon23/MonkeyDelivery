@@ -16,7 +16,7 @@ public:
 	void update() override {};
 	bool drain(float energyDrained);
 	void draw() override;
-
+	inline float percentEnergy() { return (energy_ / maxEnergy_) * 100; };
 };
 
 

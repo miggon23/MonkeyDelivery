@@ -14,7 +14,8 @@ class Player: public GameObject {
 
 private:
 	Inventory* inventory_ = nullptr;
-	
+
+	bool sleeping = false;	
 #pragma region Movement/Fear
 	const double INIT_VEL_X = 3.0; //Velocidad base (sin modificaciones que mantiene el player
 	const double INIT_VEL_Y = 3.0;
@@ -52,8 +53,9 @@ public:
 
 	void update() override;
 	void draw() override;
-	void sleep();
 
+	void sleep();
+	void changeSleep();
 #pragma region Energy
 	void drainEnergy(float amount);
 	void recoverEnergy(int amount);

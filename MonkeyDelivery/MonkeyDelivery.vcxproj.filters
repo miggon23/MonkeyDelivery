@@ -196,6 +196,12 @@
       <Filter>Archivos de encabezado\Logic</Filter>
     </ClInclude>
     <ClInclude Include="Src\Logic\Bat.h">
+<<<<<<< Updated upstream
+=======
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Logic\Bed.h">
+>>>>>>> Stashed changes
       <Filter>Archivos de encabezado\Logic</Filter>
     </ClInclude>
   </ItemGroup>
@@ -324,6 +330,12 @@
       <Filter>Archivos de origen\Logic</Filter>
     </ClCompile>
     <ClCompile Include="Src\Logic\Bat.cpp">
+<<<<<<< Updated upstream
+=======
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Logic\Bed.cpp">
+>>>>>>> Stashed changes
       <Filter>Archivos de origen\Logic</Filter>
     </ClCompile>
   </ItemGroup>
