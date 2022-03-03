@@ -8,7 +8,6 @@ protected:
 
 	double speed;
 	bool alive;
-	int scariness_;
 	float dieTime;
 	SpawnZone zone;
 	vector<Point2D<double>> checkpoints;

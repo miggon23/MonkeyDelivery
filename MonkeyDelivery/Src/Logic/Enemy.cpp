@@ -10,7 +10,7 @@ Enemy::Enemy(Game* game,int Aleatorio, Point2D<int>centroRadio):GameObject(game)
 	indexCheckPoint = 0;
 	addCheckPoint(getPosition());
 	back = false;
-	setScariness(1);
+	//setScariness(0.7);
 }
 
 void Enemy::move(double speed)
@@ -76,7 +76,8 @@ void Enemy::checkDistance()
 		/*if (distanceX < distanceY)
 			game->scare(distanceX*scariness_);
 		else*/
-			game->scare(distanceY*scariness_);
+		/*double d = (distanceY + distanceX) / 2;*/
+			game->scare(distanceX*scariness_);
 	}
 }
 
