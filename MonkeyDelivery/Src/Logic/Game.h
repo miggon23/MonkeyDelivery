@@ -82,6 +82,7 @@ public:
     inline void setVelY(double y) { player_->setVelY(y); };
     inline void setPlayerDirX(int x) { player_->setDirX(x); };
     inline void setPlayerDirY(int y) { player_->setDirY(y); };
+    inline Point2D<double> getPosisitionPlayer() { return player_->getPosition(); };
     void useInventory(int slot);
 
     // rendering

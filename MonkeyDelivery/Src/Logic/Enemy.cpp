@@ -1,4 +1,5 @@
 #include "Enemy.h"
+#include "Game.h"
 
 Enemy::Enemy(Game* game,int Aleatorio, Point2D<int>centroRadio):GameObject(game){
 	zone = SpawnZone(Aleatorio, centroRadio);
@@ -61,6 +62,19 @@ void Enemy::spawn()
 
 void Enemy::onCollision()
 {
+}
+
+void Enemy::checkDistance()
+{
+	int offset = 300;
+	double distanceX = abs(getPosition().getX() - game->getPosisitionPlayer().getX());
+	double distanceY = abs(getPosition().getY() - game->getPosisitionPlayer().getY());
+
+	if (distanceX <= offset && distanceY <= offset) {
+		std::cout << "ATACA" << std::endl;
+		float lemon = distanceX * 300 / 1000 + distanceY * 300 / 1000;
+		//Llamar al mtodo de quitar miedo
+	}
 }
 
 //void Enemy::update()

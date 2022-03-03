@@ -30,6 +30,7 @@ public:
 
 	void spawn();
 	void onCollision();
+	void checkDistance();
 	//void update() override;
 	//void draw() override;
 };
