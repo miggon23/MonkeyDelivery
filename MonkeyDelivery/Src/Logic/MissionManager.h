@@ -2,6 +2,7 @@
 #include <vector>
 #include <string>
 #include "Mission.h"
+#include "../Logic/DialogueBox.h"
 
 using namespace std;
 
@@ -12,10 +13,11 @@ private:
 	Game* game_;
 	vector<Mission*> listMission_;
 	Mission* currentMission_ = nullptr;
+
 	
 public:
 
-	MissionManager(Game* game) : game_(game) {};
+	MissionManager(Game* game);
 	~MissionManager();
 
 	void AddMission(Mission* mission);

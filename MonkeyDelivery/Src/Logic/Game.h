@@ -56,6 +56,9 @@ private:
 
     Font* font_;
     UI_Info* info;
+
+    //prueba cuadro dialogo
+    DialogueBox* dialogueBox_;
     
 
 public:

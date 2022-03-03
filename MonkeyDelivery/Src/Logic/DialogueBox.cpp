@@ -20,8 +20,16 @@ DialogueBox::~DialogueBox()
 	font_ = nullptr;
 }
 
+void DialogueBox::ChangeText(string text)
+{
+	text_ = text;
+}
+
 void DialogueBox::draw()
 {
-	GameObject::draw();
-	font_->render(game->getRenderer(), text_.c_str(), getX() + textPos_.getX(), getY() + textPos_.getY(), color_);
+	if (draw_)
+	{
+		GameObject::draw();
+		font_->render(game->getRenderer(), text_.c_str(), getX() + textPos_.getX(), getY() + textPos_.getY(), color_);
+	}
 }

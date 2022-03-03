@@ -1,10 +1,15 @@
 #include "MissionManager.h"
 #include "Game.h"
 
+MissionManager::MissionManager(Game* game) : game_(game)
+{
+}
+
 MissionManager::~MissionManager()
 {
 	currentMission_ = nullptr;
 	game_ = nullptr;
+	
 
 	for (auto mission : listMission_)
 	{
@@ -18,7 +23,10 @@ void MissionManager::AddMission(Mission* mission)
 	listMission_.push_back(mission);
 
 	if (currentMission_ == nullptr)
-		currentMission_ = mission;
+	{
+		currentMission_ = mission;		
+	}
+		
 }
 
 void MissionManager::checkCurrentMission()
@@ -26,7 +34,10 @@ void MissionManager::checkCurrentMission()
 	if (currentMission_ != nullptr)
 	{
 		if (currentMission_->updateState(game_->getPlayer()))
-			currentMission_ = nullptr;
+		{
+			currentMission_ = nullptr;	
+		}
+			
 	}
 		
 }

@@ -49,6 +49,11 @@ void Game::start()
 
     missions_ = new MissionManager(this);
 
+    dialogueBox_ = new DialogueBox(this, getTexture(dialogoPrueba), new Font("../Images/TheMoon.ttf", 20),
+        Point2D<double>(250, 300), Point2D<double>(200, 100), Point2D<int>(0, 0), "aaaaaaaaaaaaa", BLACK);
+
+    //dialogueBox_->Show();
+
     info = new UI_Info(this);
     auto* x = new Bed(this);
     x->setPosition(500, 300);
@@ -92,6 +97,9 @@ void Game::draw()
     info->draw();
 
     missionsPanel_->draw();
+
+
+    dialogueBox_->draw();
     //renderText("aaaa", 100, 150, BLACK);
 }
 Point2D<int> Game::getOrigin() {

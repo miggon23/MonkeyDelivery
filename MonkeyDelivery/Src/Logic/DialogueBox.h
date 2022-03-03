@@ -25,11 +25,11 @@ public:
 	DialogueBox(Game* game, Texture* backgroundTexture, Font* font, Point2D<double> pos, Point2D<double> size, Point2D<int> textPos, string text, SDL_Color color);
 	~DialogueBox();
 
-
+	void ChangeText(string text);
 	void Show() { draw_ = true; }
 	void Hide() { draw_ = false; }
 
 	void draw() override;
-
+	void update() override {};
 
 };
