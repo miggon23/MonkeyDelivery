@@ -179,6 +179,7 @@
     <ClInclude Include="Src\Logic\Bike.h" />
     <ClInclude Include="Src\Logic\Bed.h" />
     <ClInclude Include="Src\Logic\Cat.h" />
+    <ClInclude Include="Src\Logic\DialogueBox.h" />
     <ClInclude Include="Src\Logic\Enemy.h" />
     <ClInclude Include="Src\Logic\EnergyDrink.h" />
     <ClInclude Include="Src\Logic\energyLevel.h" />
@@ -229,6 +230,7 @@
     <ClCompile Include="Src\Logic\Bike.cpp" />
     <ClCompile Include="Src\Logic\Bed.cpp" />
     <ClCompile Include="Src\Logic\Cat.cpp" />
+    <ClCompile Include="Src\Logic\DialogueBox.cpp" />
     <ClCompile Include="Src\Logic\Enemy.cpp" />
     <ClCompile Include="Src\Logic\EnergyDrink.cpp" />
     <ClCompile Include="Src\Logic\energyLevel.cpp" />

@@ -1,356 +1,110 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Archivos de origen">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Archivos de encabezado">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
-    <Filter Include="Archivos de recursos">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
-    <Filter Include="Archivos de origen\Pruebas">
-      <UniqueIdentifier>{6171a5fd-aa1b-4a38-8e49-d5f967122679}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Archivos de origen\Control">
-      <UniqueIdentifier>{1fc68293-6df9-420a-9eb8-571466d90fd8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Archivos de encabezado\Control">
-      <UniqueIdentifier>{e971ffc2-0ec4-4bfb-b64c-3b676c771ad4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Archivos de encabezado\Logic">
-      <UniqueIdentifier>{6f170ce4-1f44-4504-ae5c-cb63e49cebe1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Archivos de origen\Logic">
-      <UniqueIdentifier>{4e8754e6-cedc-4794-bbca-70ec7efd68af}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Archivos de encabezado\Control\States">
-      <UniqueIdentifier>{3e9b5ee7-9fe8-4853-9bd8-cd5350bab9e4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Archivos de origen\Control\States">
-      <UniqueIdentifier>{29052c31-f95e-45a1-8788-e51de24c6fe3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Archivos de encabezado\Control\View">
-      <UniqueIdentifier>{bd15d2d9-439d-430e-bf44-61c421bde07b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Archivos de origen\View">
-      <UniqueIdentifier>{5103c68f-4f27-462d-aa36-af20bef4a481}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Archivos de encabezado\Utils">
-      <UniqueIdentifier>{c3c8f211-5438-4064-aa0f-c475f4c25496}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Archivos de origen\Control\Commands">
-      <UniqueIdentifier>{b4165878-8f88-4256-80e4-04867ed511b7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Archivos de encabezado\Control\Commands">
-      <UniqueIdentifier>{131e3d1e-be91-4d95-9559-bbc27290919e}</UniqueIdentifier>
-    </Filter>
+    <ClCompile Include="MonkeyDelivery.cpp" />
+    <ClCompile Include="Src\Control\Command.cpp" />
+    <ClCompile Include="Src\Control\CommandExit.cpp" />
+    <ClCompile Include="Src\Control\CommandFactory.cpp" />
+    <ClCompile Include="Src\Control\CommandInteract.cpp" />
+    <ClCompile Include="Src\Control\CommandMove.cpp" />
+    <ClCompile Include="Src\Control\CommandRun.cpp" />
+    <ClCompile Include="Src\Control\InventoryCommand.cpp" />
+    <ClCompile Include="Src\Control\NextStateCommand.cpp" />
+    <ClCompile Include="Src\Control\PauseCommand.cpp" />
+    <ClCompile Include="Src\Control\SelectMissionCommand.cpp" />
+    <ClCompile Include="Src\Control\States\GameOverState.cpp" />
+    <ClCompile Include="Src\Control\States\MenuState.cpp" />
+    <ClCompile Include="Src\Control\States\MissionSelectionState.cpp" />
+    <ClCompile Include="Src\Control\States\PauseState.cpp" />
+    <ClCompile Include="Src\Control\States\PlayingState.cpp" />
+    <ClCompile Include="Src\Control\States\State.cpp" />
+    <ClCompile Include="Src\Control\States\StateMachine.cpp" />
+    <ClCompile Include="Src\Control\States\TestingState.cpp" />
+    <ClCompile Include="Src\Control\ViewController.cpp" />
+    <ClCompile Include="Src\json\JSON.cpp" />
+    <ClCompile Include="Src\json\JSONValue.cpp" />
+    <ClCompile Include="Src\Logic\Bat.cpp" />
+    <ClCompile Include="Src\Logic\Bike.cpp" />
+    <ClCompile Include="Src\Logic\Bed.cpp" />
+    <ClCompile Include="Src\Logic\Cat.cpp" />
+    <ClCompile Include="Src\Logic\Enemy.cpp" />
+    <ClCompile Include="Src\Logic\EnergyDrink.cpp" />
+    <ClCompile Include="Src\Logic\energyLevel.cpp" />
+    <ClCompile Include="Src\Logic\FearLevel.cpp" />
+    <ClCompile Include="Src\Logic\Game.cpp" />
+    <ClCompile Include="Src\Logic\GameObject.cpp" />
+    <ClCompile Include="Src\Logic\InteractiveEntity.cpp" />
+    <ClCompile Include="Src\Logic\Inventory.cpp" />
+    <ClCompile Include="Src\Logic\InventoryObject.cpp" />
+    <ClCompile Include="Src\Logic\Mission.cpp" />
+    <ClCompile Include="Src\Logic\MissionManager.cpp" />
+    <ClCompile Include="Src\Logic\MissionsPanel.cpp" />
+    <ClCompile Include="Src\Logic\Player.cpp" />
+    <ClCompile Include="Src\Logic\SpawnZone.cpp" />
+    <ClCompile Include="Src\Logic\UI_Info.cpp" />
+    <ClCompile Include="Src\View\Texture.cpp" />
+    <ClCompile Include="Src\View\TextureContainer.cpp" />
+    <ClCompile Include="Src\Logic\DialogueBox.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="framework.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="targetver.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="Resource.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="MonkeyDelivery.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Control\ViewController.h">
-      <Filter>Archivos de encabezado\Control</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Control\States\StateMachine.h">
-      <Filter>Archivos de encabezado\Control\States</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Control\States\State.h">
-      <Filter>Archivos de encabezado\Control\States</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Logic\Game.h">
-      <Filter>Archivos de encabezado\Logic</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\View\Texture.h">
-      <Filter>Archivos de encabezado\Control\View</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\View\TextureContainer.h">
-      <Filter>Archivos de encabezado\Control\View</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Control\States\TestingState.h">
-      <Filter>Archivos de encabezado\Control\States</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Logic\Player.h">
-      <Filter>Archivos de encabezado\Logic</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Logic\GameObject.h">
-      <Filter>Archivos de encabezado\Logic</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Utils\Vector2D.h">
-      <Filter>Archivos de encabezado\Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\View\Box.h">
-      <Filter>Archivos de encabezado\Control\View</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Utils\Singleton.h">
-      <Filter>Archivos de encabezado\Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Logic\energyLevel.h">
-      <Filter>Archivos de encabezado\Logic</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Logic\InteractiveEntity.h">
-      <Filter>Archivos de encabezado\Logic</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Logic\Mission.h">
-      <Filter>Archivos de encabezado\Logic</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Logic\MissionManager.h">
-      <Filter>Archivos de encabezado\Logic</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Control\Command.h">
-      <Filter>Archivos de encabezado\Control\Commands</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Control\CommandExit.h">
-      <Filter>Archivos de encabezado\Control\Commands</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Control\CommandFactory.h">
-      <Filter>Archivos de encabezado\Control\Commands</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Control\CommandInteract.h">
-      <Filter>Archivos de encabezado\Control\Commands</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Control\CommandMove.h">
-      <Filter>Archivos de encabezado\Control\Commands</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Control\CommandRun.h">
-      <Filter>Archivos de encabezado\Control\Commands</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Control\States\MenuState.h">
-      <Filter>Archivos de encabezado\Control\States</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Control\NextStateCommand.h">
-      <Filter>Archivos de encabezado\Control\Commands</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\View\Font.h">
-      <Filter>Archivos de encabezado\Control\View</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Control\States\PlayingState.h">
-      <Filter>Archivos de encabezado\Control\States</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Control\PauseCommand.h">
-      <Filter>Archivos de encabezado\Control\Commands</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Control\States\PauseState.h">
-      <Filter>Archivos de encabezado\Control\States</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Control\States\GameOverState.h">
-      <Filter>Archivos de encabezado\Control\States</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Control\States\MissionSelectionState.h">
-      <Filter>Archivos de encabezado\Control\States</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Logic\UI_Info.h">
-      <Filter>Archivos de encabezado\Logic</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Logic\Inventory.h">
-      <Filter>Archivos de encabezado\Logic</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Logic\InventoryObject.h">
-      <Filter>Archivos de encabezado\Logic</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Logic\Enemy.h">
-      <Filter>Archivos de encabezado\Logic</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Control\InventoryCommand.h">
-      <Filter>Archivos de encabezado\Control\Commands</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Logic\Bike.h">
-      <Filter>Archivos de encabezado\Logic</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Logic\FearLevel.h">
-      <Filter>Archivos de encabezado\Logic</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Logic\SpawnZone.h">
-      <Filter>Archivos de encabezado\Logic</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Control\SelectMissionCommand.h">
-      <Filter>Archivos de encabezado\Control\Commands</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Logic\MissionsPanel.h">
-      <Filter>Archivos de encabezado\Logic</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Logic\EnergyDrink.h">
-      <Filter>Archivos de encabezado\Logic</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\json\JSON.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\json\JSONValue.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Logic\Cat.h">
-      <Filter>Archivos de encabezado\Logic</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Logic\Bat.h">
-<<<<<<< Updated upstream
-=======
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Logic\Bed.h">
->>>>>>> Stashed changes
-      <Filter>Archivos de encabezado\Logic</Filter>
-    </ClInclude>
+    <ClInclude Include="framework.h" />
+    <ClInclude Include="MonkeyDelivery.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="Src\Control\Command.h" />
+    <ClInclude Include="Src\Control\CommandExit.h" />
+    <ClInclude Include="Src\Control\CommandFactory.h" />
+    <ClInclude Include="Src\Control\CommandInteract.h" />
+    <ClInclude Include="Src\Control\CommandMove.h" />
+    <ClInclude Include="Src\Control\CommandRun.h" />
+    <ClInclude Include="Src\Control\InventoryCommand.h" />
+    <ClInclude Include="Src\Control\NextStateCommand.h" />
+    <ClInclude Include="Src\Control\PauseCommand.h" />
+    <ClInclude Include="Src\Control\SelectMissionCommand.h" />
+    <ClInclude Include="Src\Control\States\GameOverState.h" />
+    <ClInclude Include="Src\Control\States\MenuState.h" />
+    <ClInclude Include="Src\Control\States\MissionSelectionState.h" />
+    <ClInclude Include="Src\Control\States\PauseState.h" />
+    <ClInclude Include="Src\Control\States\PlayingState.h" />
+    <ClInclude Include="Src\Control\States\State.h" />
+    <ClInclude Include="Src\Control\States\StateMachine.h" />
+    <ClInclude Include="Src\Control\States\TestingState.h" />
+    <ClInclude Include="Src\Control\ViewController.h" />
+    <ClInclude Include="Src\json\JSON.h" />
+    <ClInclude Include="Src\json\JSONValue.h" />
+    <ClInclude Include="Src\Logic\Bat.h" />
+    <ClInclude Include="Src\Logic\Bike.h" />
+    <ClInclude Include="Src\Logic\Bed.h" />
+    <ClInclude Include="Src\Logic\Cat.h" />
+    <ClInclude Include="Src\Logic\Enemy.h" />
+    <ClInclude Include="Src\Logic\EnergyDrink.h" />
+    <ClInclude Include="Src\Logic\energyLevel.h" />
+    <ClInclude Include="Src\Logic\FearLevel.h" />
+    <ClInclude Include="Src\Logic\Game.h" />
+    <ClInclude Include="Src\Logic\GameObject.h" />
+    <ClInclude Include="Src\Logic\InteractiveEntity.h" />
+    <ClInclude Include="Src\Logic\Inventory.h" />
+    <ClInclude Include="Src\Logic\InventoryObject.h" />
+    <ClInclude Include="Src\Logic\Mission.h" />
+    <ClInclude Include="Src\Logic\MissionManager.h" />
+    <ClInclude Include="Src\Logic\MissionsPanel.h" />
+    <ClInclude Include="Src\Logic\Player.h" />
+    <ClInclude Include="Src\Logic\SpawnZone.h" />
+    <ClInclude Include="Src\Logic\UI_Info.h" />
+    <ClInclude Include="Src\Utils\Singleton.h" />
+    <ClInclude Include="Src\Utils\Vector2D.h" />
+    <ClInclude Include="Src\View\Box.h" />
+    <ClInclude Include="Src\View\Font.h" />
+    <ClInclude Include="Src\View\Texture.h" />
+    <ClInclude Include="Src\View\TextureContainer.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="Src\Logic\DialogueBox.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="MonkeyDelivery.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\States\State.cpp">
-      <Filter>Archivos de origen\Control\States</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\States\StateMachine.cpp">
-      <Filter>Archivos de origen\Control\States</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\ViewController.cpp">
-      <Filter>Archivos de origen\Control</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Logic\Game.cpp">
-      <Filter>Archivos de origen\Logic</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\View\Texture.cpp">
-      <Filter>Archivos de origen\View</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\View\TextureContainer.cpp">
-      <Filter>Archivos de origen\View</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\States\TestingState.cpp">
-      <Filter>Archivos de origen\Control\States</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Logic\Player.cpp">
-      <Filter>Archivos de origen\Logic</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Logic\GameObject.cpp">
-      <Filter>Archivos de origen\Logic</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Logic\energyLevel.cpp">
-      <Filter>Archivos de origen\Logic</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Logic\InteractiveEntity.cpp">
-      <Filter>Archivos de origen\Logic</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Logic\Mission.cpp">
-      <Filter>Archivos de origen\Logic</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Logic\MissionManager.cpp">
-      <Filter>Archivos de origen\Logic</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\Command.cpp">
-      <Filter>Archivos de origen\Control\Commands</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\CommandExit.cpp">
-      <Filter>Archivos de origen\Control\Commands</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\CommandFactory.cpp">
-      <Filter>Archivos de origen\Control\Commands</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\CommandInteract.cpp">
-      <Filter>Archivos de origen\Control\Commands</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\CommandMove.cpp">
-      <Filter>Archivos de origen\Control\Commands</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\CommandRun.cpp">
-      <Filter>Archivos de origen\Control\Commands</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\States\MenuState.cpp">
-      <Filter>Archivos de origen\Control\States</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\NextStateCommand.cpp">
-      <Filter>Archivos de origen\Control\Commands</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\States\PlayingState.cpp">
-      <Filter>Archivos de origen\Control\States</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\PauseCommand.cpp">
-      <Filter>Archivos de origen\Control\Commands</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\States\PauseState.cpp">
-      <Filter>Archivos de origen\Control\States</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\States\GameOverState.cpp">
-      <Filter>Archivos de origen\Control\States</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\States\MissionSelectionState.cpp">
-      <Filter>Archivos de origen\Control\States</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Logic\UI_Info.cpp">
-      <Filter>Archivos de origen\Logic</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Logic\Inventory.cpp">
-      <Filter>Archivos de origen\Logic</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Logic\Enemy.cpp">
-      <Filter>Archivos de origen\Logic</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\InventoryCommand.cpp">
-      <Filter>Archivos de origen\Control\Commands</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Logic\InventoryObject.cpp">
-      <Filter>Archivos de origen\Logic</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Logic\EnergyDrink.cpp">
-      <Filter>Archivos de origen\Logic</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Logic\Bike.cpp">
-      <Filter>Archivos de origen\Logic</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Logic\FearLevel.cpp">
-      <Filter>Archivos de origen\Logic</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Logic\SpawnZone.cpp">
-      <Filter>Archivos de origen\Control\States</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Logic\MissionsPanel.cpp">
-      <Filter>Archivos de origen\Logic</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\SelectMissionCommand.cpp">
-      <Filter>Archivos de origen\Control\Commands</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\json\JSON.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\json\JSONValue.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Logic\Cat.cpp">
-      <Filter>Archivos de origen\Logic</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Logic\Bat.cpp">
-<<<<<<< Updated upstream
-=======
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Logic\Bed.cpp">
->>>>>>> Stashed changes
-      <Filter>Archivos de origen\Logic</Filter>
-    </ClCompile>
+    <ResourceCompile Include="MonkeyDelivery.rc" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="MonkeyDelivery.rc">
-      <Filter>Archivos de recursos</Filter>
-    </ResourceCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="small.ico">
-      <Filter>Archivos de recursos</Filter>
-    </Image>
-    <Image Include="MonkeyDelivery.ico">
-      <Filter>Archivos de recursos</Filter>
-    </Image>
+    <Image Include="MonkeyDelivery.ico" />
+    <Image Include="small.ico" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Images\config\resources.json" />
