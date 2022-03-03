@@ -10,6 +10,7 @@ Enemy::Enemy(Game* game,int Aleatorio, Point2D<int>centroRadio):GameObject(game)
 	indexCheckPoint = 0;
 	addCheckPoint(getPosition());
 	back = false;
+	setScariness(1);
 }
 
 void Enemy::move(double speed)
@@ -72,6 +73,10 @@ void Enemy::checkDistance()
 		//std::cout << "ATACA" << std::endl;
 		
 		//Llamar al mtodo de quitar miedo
+		/*if (distanceX < distanceY)
+			game->scare(distanceX*scariness_);
+		else*/
+			game->scare(distanceY*scariness_);
 	}
 }
 

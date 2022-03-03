@@ -8,7 +8,7 @@ protected:
 
 	double speed;
 	bool alive;
-	int scariness;
+	int scariness_;
 	float dieTime;
 	SpawnZone zone;
 	vector<Point2D<double>> checkpoints;
@@ -31,5 +31,6 @@ public:
 	void spawn();
 	void onCollision();
 	void checkDistance();
+	virtual void setScariness(double fear) { scariness_ = fear; }
 };
 

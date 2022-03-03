@@ -198,4 +198,9 @@ void Game::enemiesCreation()
     addEnemies(cat_);
 }
 
+void Game::scare(double scariness)
+{
+    player_->getScared(scariness);
+}
+
 

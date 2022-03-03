@@ -8,5 +8,11 @@ Cat::Cat(Game* game,int Aleatorio, Point2D<int>centroRadio):Enemy(game, 50, cent
 	setTexture(catTexture);
 	setDimension(90, 100);
 	addCheckPoint(Point2D<double>(100, 100));
-	setFear(0.1);
+	//setScariness(1);
+}
+
+void Cat::update()
+{
+	move(1);
+	checkDistance();
 }

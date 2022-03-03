@@ -109,6 +109,7 @@ public:
     //enemies
     void addEnemies(Enemy* enemy);//añade enemigos al vector
     void enemiesCreation();//llama al addenemy con cada enemigo que queremos añadir, se llama en start
+    void scare(double scariness);
    
 };
 
