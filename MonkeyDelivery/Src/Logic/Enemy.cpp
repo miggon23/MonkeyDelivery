@@ -77,7 +77,9 @@ void Enemy::checkDistance()
 			game->scare(distanceX*scariness_);
 		else*/
 		/*double d = (distanceY + distanceX) / 2;*/
-			game->scare(distanceX*scariness_);
+
+		//si no es demasiado por eso se divide entre 8
+			game->scare(distanceX*scariness_/10);
 	}
 }
 

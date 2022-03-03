@@ -1,6 +1,7 @@
 #include "Player.h"
 #include "Inventory.h"
-#include "Bike.h"<
+#include "Bike.h"
+#include "Game.h"
 
 Player::Player(Game* game) :GameObject(game) {
 	this->game = game;
@@ -102,7 +103,7 @@ void Player::sleep()
 	getScared(-1);
 	drainEnergy(-1);
 }
-
+//cambiar la variable de dormir y establecer la textura
 void Player::changeSleep()
 {	
 	if (energyLevel_->percentEnergy() <= 20.0||sleeping) {
@@ -116,6 +117,25 @@ void Player::changeSleep()
 		}
 		draw();
 	}
+	else {
+		boolrenderSleepText = true;
+		timerSleepText = SDL_GetTicks();
+	}
+}
+
+void Player::NoSleepText()
+{
+	int x = game->getWindowWidth() / 2 - 250;
+	int y = game->getWindowHeight() / 2 - 50;
+	//Textos q renderiza
+	vector<string> texts = {
+			"No Puedes Dormir "," ",
+			"Tienes Mucha Energia"
+	};
+
+	game->renderText(texts, x, y, 20, 20);
+	//si ya ha pasado el tiempo desactivo
+	if (SDL_GetTicks() - timerSleepText >= 3000)boolrenderSleepText = false;
 }
 
 void Player::getScared(int amount)
@@ -165,6 +185,7 @@ void Player::draw()
 	//drawDebug();
 	energyLevel_->draw();
 	fearLevel_->draw();
+	if(boolrenderSleepText)NoSleepText();
 	//energyLevel_->drawDebug();
 }
 

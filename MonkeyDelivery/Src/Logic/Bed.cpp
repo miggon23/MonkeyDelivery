@@ -12,7 +12,7 @@ Bed::~Bed()
 void Bed::update()
 {	
 }
-
+//lllamo al metodo para ver si puede dromir
 void Bed::onPlayerInteraction(Player* player){
 	player->changeSleep();
 }

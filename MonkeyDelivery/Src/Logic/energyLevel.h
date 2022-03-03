@@ -16,6 +16,7 @@ public:
 	void update() override {};
 	bool drain(float energyDrained);
 	void draw() override;
+	//porcentaje de enegia que tiene el personaje
 	inline float percentEnergy() { return (energy_ / maxEnergy_) * 100; };
 };
 
