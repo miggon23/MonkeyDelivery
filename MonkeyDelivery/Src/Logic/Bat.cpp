@@ -39,6 +39,7 @@ void Bat::update()
 		onPlayerInteraction(player_);
 	}
 
+	checkDistance();
 }
 
 void Bat::onPlayerInteraction(Player* player)

@@ -22,7 +22,7 @@ public:
 	Cat(Game* game, int Aleatorio, Point2D<int>centroRadio);
 	~Cat() {};
 
-	void update() override{move(1);}
+	inline void update() override { move(1); checkDistance(); }
 	void draw() override {drawTexture(texture);}
 	/*a continuacion, metodos EN PRUEBAS para el miedo
 	 posteriormente se integraran en enemy

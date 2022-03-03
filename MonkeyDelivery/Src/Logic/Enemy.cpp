@@ -71,18 +71,9 @@ void Enemy::checkDistance()
 	double distanceY = abs(getPosition().getY() - game->getPosisitionPlayer().getY());
 
 	if (distanceX <= offset && distanceY <= offset) {
-		std::cout << "ATACA" << std::endl;
-		float lemon = distanceX * 300 / 1000 + distanceY * 300 / 1000;
+		//std::cout << "ATACA" << std::endl;
+		
 		//Llamar al mtodo de quitar miedo
 	}
 }
 
-//void Enemy::update()
-//{
-//	move(1);
-//}
-//
-//void Enemy::draw()
-//{
-//		drawTexture(texture);
-//}
