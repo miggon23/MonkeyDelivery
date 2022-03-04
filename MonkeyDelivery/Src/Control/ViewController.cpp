@@ -20,8 +20,7 @@ ViewController::ViewController(Game* _game) {
 
 void ViewController::run() {
    // uint32_t startTime = 0;
-    //uint32_t frameTime;
-    
+   //uint32_t frameTime;   
     while (!game->getState()->doQuit()) {
         timer_->Update();
        // frameTime = SDL_GetTicks() - startTime;
@@ -91,6 +90,8 @@ void ViewController::initSDL() {
 }
 
 ViewController::~ViewController() {
+    timer_->Release();
+    timer_ = nullptr;
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);
     SDL_Quit();

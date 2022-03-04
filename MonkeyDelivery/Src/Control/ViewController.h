@@ -7,7 +7,7 @@
 
 
 
-const int FRAME_RATE = 120;
+const int FRAME_RATE = 60;
 
 class Game;
 class ViewController {
