@@ -25,7 +25,8 @@ enum TextureName {
     mission1Texture,
     mission2Texture,
     cama,
-    dialogoPrueba
+    dialogoPrueba,
+   
 };
 
 
@@ -52,7 +53,7 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
   {"decorations/Mision1.png",1,1},
   {"decorations/Mision1.png",1,1},
   {"decorations/cama.jpg",1,1},
-  {"dialogPrueba.png",1,1},
+  {"dialogPrueba.png",1,1}  
 };
 
 

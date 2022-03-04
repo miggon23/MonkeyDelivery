@@ -2,6 +2,8 @@
 #include "Inventory.h"
 #include "Bike.h"
 #include "Game.h"
+#include "SDL.h"
+
 
 Player::Player(Game* game) :GameObject(game) {
 	this->game = game;
@@ -138,6 +140,19 @@ void Player::NoSleepText()
 	if (SDL_GetTicks() - timerSleepText >= 3000)boolrenderSleepText = false;
 }
 
+void Player::FadeOut()
+{
+	//SDL_Surface* s;
+	/* Creating the surface. */
+	//s = SDL_CreateRGBSurface(0, game->getWindowWidth(), game->getWindowHeight(), 32, 0, 0, 0, 0);
+	//SDL_FillRect(s, NULL, SDL_MapRGB(s->format, 255, 0, 0));
+	/*auto rect= SDL_Rect(0, game->getWindowHeight(), game->getWindowWeight(), game->getWindowHeight()
+	auto x = Texture(rect);
+	SDL_SetTextureAlphaMod(,50);*/
+	
+
+}
+
 void Player::getScared(int amount)
 {
 	if (fearLevel_->getScared(amount))
@@ -185,7 +200,7 @@ void Player::draw()
 	//drawDebug();
 	energyLevel_->draw();
 	fearLevel_->draw();
-	if(boolrenderSleepText)NoSleepText();
+	if(boolrenderSleepText)NoSleepText();	
 	//energyLevel_->drawDebug();
 }
 

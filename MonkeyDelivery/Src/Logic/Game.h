@@ -38,21 +38,18 @@ class Game : public StateMachine {
 private:
     string name;
     bool doExit;
-    int width, height;
-    
+    int width, height;   
 
     TextureContainer* textureContainer_;
     SDL_Renderer* renderer = nullptr;
     Player* player_ = nullptr;
-    Cat* cat_ = nullptr;
     InteractiveEntity* iE_ = nullptr;
     MissionManager* missions_ = nullptr;
     vector<GameObject*> gameObjects_;
     vector<Enemy*>enemyContainer_;//vector enemigos
     
     MissionsPanel* missionsPanel_= nullptr;
-
-    Bat* bat_;
+    
 
     Font* font_;
     UI_Info* info;

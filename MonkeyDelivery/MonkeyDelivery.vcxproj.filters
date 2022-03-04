@@ -131,6 +131,9 @@
     <ClCompile Include="Src\Control\ViewController.cpp">
       <Filter>Source Files\Control</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Utils\Timer.cpp">
+      <Filter>Source Files\Utils</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -284,6 +287,9 @@
       <Filter>Header Files\Utils</Filter>
     </ClInclude>
     <ClInclude Include="Src\json\JSONValue.h">
+      <Filter>Header Files\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Utils\Timer.h">
       <Filter>Header Files\Utils</Filter>
     </ClInclude>
   </ItemGroup>

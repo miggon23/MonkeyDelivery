@@ -14,18 +14,28 @@ ViewController::ViewController(Game* _game) {
     game->loadTextures();
     
     game->setState(new MenuState(game));
+
+    timer_ = Timer::Instance();
 }
 
 void ViewController::run() {
-    uint32_t startTime = 0;
-    uint32_t frameTime;
+   // uint32_t startTime = 0;
+    //uint32_t frameTime;
     
     while (!game->getState()->doQuit()) {
-
-        frameTime = SDL_GetTicks() - startTime;
+        timer_->Update();
+       // frameTime = SDL_GetTicks() - startTime;
         handleEvents();
 
-        if (frameTime >= frameDuration()) {
+        if (timer_->DeltaTime() >= 1.0f / FRAME_RATE) {
+            printf("DeltaTime: %F\n", timer_->DeltaTime());
+            clearBackground();
+            game->getState()->update();
+            game->getState()->draw();
+            SDL_RenderPresent(renderer);
+            timer_->Reset();
+        }
+       /* if (frameTime >= frameDuration()) {
             clearBackground();
 
             game->getState()->update();
@@ -35,7 +45,7 @@ void ViewController::run() {
         }
         else {
             SDL_Delay(frameDuration() - frameTime);
-        }
+        }*/
     }
 }
 

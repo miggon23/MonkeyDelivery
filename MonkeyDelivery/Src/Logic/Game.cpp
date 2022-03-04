@@ -22,7 +22,7 @@ Game::~Game() {
     delete textureContainer_;
     delete missions_;
     delete font_;
-    delete info;
+    delete info;  
     //delete missionsPanel_; solo poner si no va en el vector de gameobjects
 }
 
@@ -38,6 +38,8 @@ void Game::start()
 {
     player_ = new Player(this); //Creacion del jugador
    
+   
+
     iE_ = new InteractiveEntity(this, tucanTexture, 500, 80);
     add(iE_);
 
@@ -58,6 +60,7 @@ void Game::start()
     auto* x = new Bed(this);
     x->setPosition(500, 300);
     add(x);
+  
     //missions_->AddMission(new Mission(missions_, missionsPanel_, 500, 100, 150, 15, "PruebaMision"));
 
 }
@@ -65,14 +68,15 @@ void Game::start()
 void Game::update()
 {
     player_->update();
-    //cat_->update();
+    
+ 
 
     for (auto gO : gameObjects_) {
         gO->update();
     }
     for (auto enemy : enemyContainer_)
         enemy->update();
-    
+   
 }
 
 void Game::setUserExit() {
@@ -85,8 +89,6 @@ bool Game::isUserExit() {
 
 void Game::draw()
 {
-   /* gameObjects_[0]->draw();
-    gameObjects_[1]->draw();*/
     for (auto gO : gameObjects_) {
         gO->draw();
     }
@@ -199,11 +201,9 @@ void Game::addEnemies(Enemy* enemy)
     enemyContainer_.push_back(enemy);
 }
 void Game::enemiesCreation()
-{
-    bat_ = new Bat(this, 20, Point2D<int>(200, 80), 7);
-    cat_ = new Cat(this, 50, getOrigin());
-    addEnemies(bat_);
-    addEnemies(cat_);
+{  
+    addEnemies(new Cat(this, 50, getOrigin()));
+    addEnemies(new Bat(this, 20, Point2D<int>(200, 80), 7));
 }
 
 void Game::scare(double scariness)
