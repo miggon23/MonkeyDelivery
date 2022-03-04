@@ -28,5 +28,7 @@ public:
 
 	void clearInventory();
 	bool inventoryFull();
+
+	void draw();
 };
 

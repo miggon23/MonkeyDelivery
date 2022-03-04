@@ -100,4 +100,10 @@ bool Inventory::inventoryFull() {
 	return inventory_.size() == INVENTORY_SIZE;
 }
 
+void Inventory::draw() {
+
+}
+
+
+
 

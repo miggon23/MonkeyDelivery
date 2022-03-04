@@ -28,6 +28,7 @@ Player::Player(Game* game) :GameObject(game) {
 	fearLevel_ = new FearLevel(game);
 	inventory_ = new Inventory(this);
 	inventory_->addObject(new Bike());
+	setInventoryVisibility(false);
 }
 
 Player::~Player()
@@ -202,6 +203,8 @@ void Player::draw()
 	fearLevel_->draw();
 	if(boolrenderSleepText)NoSleepText();	
 	//energyLevel_->drawDebug();
+	if (inventoryVisibility)
+		inventory_->draw();
 }
 
 

@@ -14,6 +14,7 @@ class Player: public GameObject {
 
 private:
 	Inventory* inventory_ = nullptr;
+	bool inventoryVisibility;
 
 #pragma region Sleep
 	bool sleeping = false;
@@ -101,6 +102,7 @@ public:
 
 #pragma region inventory
 	void useObject(int index);
+	inline void setInventoryVisibility(bool visible) { inventoryVisibility = visible;  };
 #pragma endregion
 };
 
