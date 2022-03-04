@@ -15,14 +15,21 @@ MissionSelectionState::MissionSelectionState(Game* game) : State(game)
 }
 
 // Constructora cuando cambiemos las texturas
-MissionSelectionState::MissionSelectionState(Game* game, vector<string> missionImg) :  State(game)
+MissionSelectionState::MissionSelectionState(Game* game, vector<pair<string,string>> missionImg) :  State(game)
 {
 	background_ = game->getTexture(woodPanelTexture);	
 
 	// Bucle for que cargue solo las imagenes que se indican en missionImg
 	for (auto a : missionImg) {
-		currentTextures_.push_back(new Texture(game->getRenderer(), a));
+		currentTextures_.push_back(new Texture(game->getRenderer(), a.second));
+		missionData_.push_back(a.first);
 	}
+
+	//currentSelection_ = missionImg[0].first; ->if it's string
+	currentSelection_ = 0;
+
+	box_ = new Texture(game->getRenderer(), "../Images/missions/MissionBorder.png");
+	boxXPos_ = 100;
 
 	registerCommands();
 }
@@ -35,6 +42,7 @@ MissionSelectionState::~MissionSelectionState()
 	for (auto a : currentTextures_) {
 		delete a;
 	}
+	delete box_;
 }
 
 
@@ -59,9 +67,11 @@ void MissionSelectionState::draw()
 	for (auto a : currentTextures_) {
 		SDL_Rect textureBox = { x, 50, 350, 275 };
 		a->render(textureBox);
-		x += 310;
+		x += xInc_;
 	}
 
+	SDL_Rect textureBox2 = { boxXPos_, 50, 350, 275 };
+	box_->render(textureBox2);
 }
 
 void MissionSelectionState::update()
@@ -75,5 +85,23 @@ void MissionSelectionState::next()
 void MissionSelectionState::registerCommands()
 {
 	commandFactory->add(new CommandExit());
-	commandFactory->add(new SelectMissionCommand());
+	commandFactory->add(new SelectMissionCommand(this));
+}
+
+void MissionSelectionState::moveBox(int i)
+{
+	if (i == -1 && currentSelection_ != 0) {
+
+		boxXPos_ += i * xInc_;
+		currentSelection_--;
+	}
+	else if (i == 1 && currentSelection_ != missionData_.size() - 1) {
+		boxXPos_ += i * xInc_;
+		currentSelection_++;
+	}
+}
+
+string MissionSelectionState::getSelectedMission()
+{
+	return missionData_[currentSelection_];
 }

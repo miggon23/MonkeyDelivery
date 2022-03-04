@@ -6,7 +6,7 @@ class MissionSelectionState : public State
 {
 public:
 	MissionSelectionState(Game* game);
-	MissionSelectionState(Game* game, vector<string> missionImg);
+	MissionSelectionState(Game* game, vector<pair<string, string>> missionImg);
 	~MissionSelectionState();
 
 	void draw() override;
@@ -19,11 +19,21 @@ public:
 
 	void registerCommands()override;
 
+	void moveBox(int i);
+	string getSelectedMission();
+
 private:
 	Texture* background_;
 
 	vector<Texture*> allTextures_;
 	vector<Texture*> currentTextures_;
 
+	vector<string> missionData_;
+
+	int currentSelection_; // misión que está seleccionada ahora mismo (en el vector)
+	Texture* box_; // seleccionador
+	int boxXPos_; // posición en la que está el seleccionador
+
+	int xInc_ = 310; // separacion entre cada papel de mision
 };
 

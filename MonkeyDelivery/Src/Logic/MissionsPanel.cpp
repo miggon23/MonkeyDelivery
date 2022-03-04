@@ -29,7 +29,7 @@ void MissionsPanel::onPlayerInteraction(Player* player)
 {
 	std::cout << "Activating Mission Selection State\n";
 
-	vector<string> missionsSent;
+	vector<pair<string, string>> missionsSent;
 
 	int a = 0;
 	string b = "Mission";
@@ -54,7 +54,7 @@ void MissionsPanel::onPlayerInteraction(Player* player)
 	missionsSent.reserve(numMissions);
 	for (int i = a; i <= numMissions; ++i) {
 		b += to_string(i);
-		missionsSent.push_back(missions_.at(b).imgRoute);
+		missionsSent.push_back(make_pair(b, missions_.at(b).imgRoute));
 		//missionsSent.push_back(b);
 		b = "Mission";
 	}
