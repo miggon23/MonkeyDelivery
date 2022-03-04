@@ -8,9 +8,9 @@ MissionSelectionState::MissionSelectionState(Game* game) : State(game)
 	
 	registerCommands();
 
-	// Aquí se cargan todas las texturas de todas las misiones 
-	allTextures_.push_back(game->getTexture(mission1Texture));
-	allTextures_.push_back(game->getTexture(mission2Texture));
+	//// Aquí se cargan todas las texturas de todas las misiones 
+	//allTextures_.push_back(game->getTexture(mission1Texture));
+	//allTextures_.push_back(game->getTexture(mission2Texture));
 	
 }
 
@@ -39,8 +39,8 @@ MissionSelectionState::~MissionSelectionState()
 	for (auto a : allTextures_) {
 		delete a;
 	}
-	for (auto a : currentTextures_) {
-		delete a;
+	for (auto b : currentTextures_) {
+		delete b;
 	}
 	delete box_;
 }

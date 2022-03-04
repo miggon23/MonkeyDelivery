@@ -22,7 +22,7 @@ MissionsPanel::MissionsPanel(Game* game) : GameObject(game)
 MissionsPanel::~MissionsPanel()
 {
 	missions_.clear();
-	//delete currentMission_; cuando se cambie la estructura habrá que poner esto
+	//delete currentMission_;
 }
 
 void MissionsPanel::onPlayerInteraction(Player* player)
