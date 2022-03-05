@@ -22,8 +22,8 @@ protected:
     Texture* texture;
 
     void drawTexture(Texture* texture);
-    void setTexture(TextureName textureName);
 public:
+    void setTexture(TextureName textureName);
 
     GameObject(Game* game) : game(game) {
 

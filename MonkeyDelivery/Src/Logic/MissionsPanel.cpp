@@ -17,6 +17,9 @@ MissionsPanel::MissionsPanel(Game* game) : GameObject(game)
 	loadMissions("../Images/config/resources.json");
 
 	currentLevel_ = 1;
+
+	activeTarget_ = new Target(this, game);
+	game->add(activeTarget_);
 }
 
 MissionsPanel::~MissionsPanel()
@@ -66,6 +69,13 @@ void MissionsPanel::onPlayerInteraction(Player* player)
 	}
 }
 
+void MissionsPanel::drawTarget() {
+
+	if (activeTarget_->getActive()) {
+		activeTarget_->draw();
+	}
+}
+
 void MissionsPanel::update()
 {
 }
@@ -76,13 +86,18 @@ void MissionsPanel::onMissionSelected(string missionId)
 
 	MissionInfo m = missions_.at(missionId);
 	
-	// spawn Vecino
-	
 
 	// settear la misión como activa
-	currentMission_ = new Mission(game->getMissionManager(), game->getiE(), m.maxMoney, m.minMoney, 10, m.minTime, missionId); 
+	currentMission_ = new Mission(game->getMissionManager(), activeTarget_, m.maxMoney, m.minMoney, 10, m.minTime, missionId); 
 	game->setActiveMission(currentMission_); // por la forma en que está gestionado ahora
 	
+	// spawn Vecino
+	activeTarget_->changeActive();
+	activeTarget_->setDimension(120, 150);
+	activeTarget_->setPosition(500, 80);
+	activeTarget_->setTexture(tucanTexture);
+	
+
 	// hide pannel
 	State* tmp = game->getState();
 	State* saved = game->getSavedState();
@@ -91,8 +106,6 @@ void MissionsPanel::onMissionSelected(string missionId)
 	game->setState(saved);
 	game->clearSavedState();
 	delete tmp;
-
-
 }
 
 void MissionsPanel::onMissionCompleted()

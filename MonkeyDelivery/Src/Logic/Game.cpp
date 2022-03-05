@@ -40,8 +40,8 @@ void Game::start()
    
    
 
-    iE_ = new InteractiveEntity(this, tucanTexture, 500, 80);
-    add(iE_);
+    //iE_ = new InteractiveEntity(this, tucanTexture, 500, 80);
+    //add(iE_);
 
     missionsPanel_ = new MissionsPanel(this);
     add(missionsPanel_); 
@@ -59,20 +59,16 @@ void Game::start()
     auto* x = new Bed(this);
     x->setPosition(500, 300);
     add(x);
-  
-  
-
 }
 
 void Game::update()
 {
     player_->update();
-    
- 
 
-    for (auto gO : gameObjects_) {
+    for (auto gO : gameObjects_)
         gO->update();
-    }
+    
+
     for (auto enemy : enemyContainer_)
         enemy->update();
    
@@ -88,9 +84,9 @@ bool Game::isUserExit() {
 
 void Game::draw()
 {
-    for (auto gO : gameObjects_) {
+    for (auto gO : gameObjects_) 
         gO->draw();
-    }
+    
     for (auto enemy : enemyContainer_)
         enemy->draw();
 
@@ -98,7 +94,7 @@ void Game::draw()
     info->draw();
 
     missionsPanel_->draw();
-
+    missionsPanel_->drawTarget();
 
     dialogueBox_->draw();
     //renderText("aaaa", 100, 150, BLACK);

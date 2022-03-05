@@ -2,6 +2,7 @@
 
 #include <string>
 #include "GameObject.h"
+#include "Target.h"
 
 using namespace std;
 class MissionManager;
@@ -15,11 +16,11 @@ private:
 	bool additionalReward_;
 	string name_;
 	MissionManager* manager_ = nullptr;
-	GameObject* objective_ = nullptr;
+	Target* objective_ = nullptr;
 
 public:
 
-	Mission(MissionManager* manager, GameObject* o, int maxReward, int minReward, int minDistance, int minTime, string name);
+	Mission(MissionManager* manager, Target* o, int maxReward, int minReward, int minDistance, int minTime, string name);
 	~Mission();
 
 	//puede ser método interno
@@ -28,6 +29,8 @@ public:
 	bool updateState(GameObject* player);	
 
 	string getName() { return name_; }
+
+	inline Target* objectivegetTarget() { return objective_; };
 
 };
 

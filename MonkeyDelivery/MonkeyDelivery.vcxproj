@@ -195,6 +195,7 @@
     <ClInclude Include="Src\Logic\MissionsPanel.h" />
     <ClInclude Include="Src\Logic\Player.h" />
     <ClInclude Include="Src\Logic\SpawnZone.h" />
+    <ClInclude Include="Src\Logic\Target.h" />
     <ClInclude Include="Src\Logic\UI_Info.h" />
     <ClInclude Include="Src\Utils\Singleton.h" />
     <ClInclude Include="Src\Utils\Timer.h" />
@@ -248,6 +249,7 @@
     <ClCompile Include="Src\Logic\MissionsPanel.cpp" />
     <ClCompile Include="Src\Logic\Player.cpp" />
     <ClCompile Include="Src\Logic\SpawnZone.cpp" />
+    <ClCompile Include="Src\Logic\Target.cpp" />
     <ClCompile Include="Src\Logic\UI_Info.cpp" />
     <ClCompile Include="Src\Utils\Timer.cpp" />
     <ClCompile Include="Src\View\Texture.cpp" />

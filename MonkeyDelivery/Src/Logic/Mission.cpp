@@ -4,7 +4,7 @@
 #include <math.h>
 
 
-Mission::Mission(MissionManager* manager, GameObject* objective, int maxReward, int minReward, int minDistance, int minTime, string name)
+Mission::Mission(MissionManager* manager, Target* objective, int maxReward, int minReward, int minDistance, int minTime, string name)
 {
 	objective_ = objective;
 	maxReward_ = maxReward;

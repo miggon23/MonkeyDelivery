@@ -1,8 +1,8 @@
 #pragma once
 #include "GameObject.h"
 #include "Mission.h"
+#include "Target.h"
 #include <map>
-
 
 struct MissionInfo {
 	int level;
@@ -31,6 +31,9 @@ private:
 	int nLevel1_;
 	int nLevel2_;
 	int nLevel3_;
+
+	// Vecino activo
+	Target* activeTarget_;
 	
 public:
 	MissionsPanel(Game* game);
@@ -38,6 +41,8 @@ public:
 	// Debe activar el estado SeleccionDeMisión con ciertos parámetros que mira en el JSON
 	void onPlayerInteraction(Player* player) override;
 	void update() override;
+
+	void drawTarget();
 
 	// llamado desde el estado de SeleccionDeMisión, cuando se sale de él
 	void onMissionSelected(string missionId);
@@ -51,5 +56,9 @@ public:
 	}
 
 	void loadMissions(std::string filename);
+
+	inline Mission* getCurrentMission() { return currentMission_; };
+
+	inline Target* getTarget() { return activeTarget_; };
 };
 
