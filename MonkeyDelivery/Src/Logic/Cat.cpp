@@ -6,7 +6,7 @@ Cat::Cat(Game* game,int Aleatorio, Point2D<int>centroRadio):Enemy(game, 50, cent
 	std::cout << x.getX() << " " << x.getY();
 	setPosition(x.getX(), x.getY());
 	setTexture(catTexture);
-	setDimension(90, 100);
+	setDimension(70, 80);
 	addCheckPoint(Point2D<double>(100, 100));
 	setScariness(0.1);
 }

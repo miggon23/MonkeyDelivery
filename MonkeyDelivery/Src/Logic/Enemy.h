@@ -30,7 +30,7 @@ public:
 
 	void spawn();
 	void onCollision();
-	void checkDistance();
+	virtual void checkDistance();
 	virtual void setScariness(double fear) { scariness_ = fear; }
 };
 
