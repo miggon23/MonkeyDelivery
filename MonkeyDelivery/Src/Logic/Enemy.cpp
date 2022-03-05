@@ -3,7 +3,7 @@
 
 Enemy::Enemy(Game* game, int Aleatorio, Point2D<int>centroRadio) : GameObject(game){
 	zone = SpawnZone(Aleatorio, centroRadio);
-	Vector2D<double> x = zone.genratePoint();
+	Vector2D<double> x = zone.generatePoint();
 	
 	setPosition(x.getX(), x.getY());
 	setAlive(true);
@@ -55,7 +55,7 @@ void Enemy::die()
 void Enemy::spawn()
 {
 	setAlive(true);
-	Vector2D<double> randomPos = zone.genratePoint();
+	Vector2D<double> randomPos = zone.generatePoint();
 	setPosition(randomPos.getX(), randomPos.getY());
 }
 

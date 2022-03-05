@@ -15,7 +15,7 @@ SpawnZone::~SpawnZone()
 {
 }
 
-Vector2D<double> SpawnZone::genratePoint()
+Vector2D<double> SpawnZone::generatePoint()
 {
 	srand(time(NULL));
 	Point2D<double> pos;

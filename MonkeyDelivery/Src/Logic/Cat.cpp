@@ -2,7 +2,7 @@
 
 Cat::Cat(Game* game,int Aleatorio, Point2D<int>centroRadio):Enemy(game, 50, centroRadio){
 	zone = SpawnZone(Aleatorio, centroRadio);
-	Vector2D<double> x = zone.genratePoint();
+	Vector2D<double> x = zone.generatePoint();
 	std::cout << x.getX() << " " << x.getY();
 	setPosition(x.getX(), x.getY());
 	setTexture(catTexture);

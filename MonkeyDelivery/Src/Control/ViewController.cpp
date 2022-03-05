@@ -27,7 +27,7 @@ void ViewController::run() {
         handleEvents();
 
         if (timer_->DeltaTime() >= 1.0f / FRAME_RATE) {
-            printf("DeltaTime: %F\n", timer_->DeltaTime());
+           
             clearBackground();
             game->getState()->update();
             game->getState()->draw();

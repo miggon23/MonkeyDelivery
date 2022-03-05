@@ -8,6 +8,6 @@ public:
 	SpawnZone();
 	SpawnZone(int radio, Point2D<int> centro);
 	~SpawnZone();
-	Vector2D<double>genratePoint();
+	Vector2D<double>generatePoint();
 };
 
