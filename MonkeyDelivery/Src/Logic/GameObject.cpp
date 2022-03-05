@@ -34,8 +34,8 @@ SDL_Rect GameObject::getCollider() {
 
 SDL_Rect GameObject::getCenter()
 {
-    return { int(getX()) + game->getOrigin().getX(),
-            int(getY()) + game->getOrigin().getY() ,
+    return { int(getX()),
+            int(getY()),
             10, 10 };
 }
 

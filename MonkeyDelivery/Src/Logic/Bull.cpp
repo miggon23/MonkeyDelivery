@@ -48,12 +48,23 @@ void Bull::checkDistance()
 		//Perseguir al jugador
 		//Le persigue hasta estar a 5 de distacia
 		if ((distanceX >= 3 || distanceY >= 3)) {
-
-			if (dX < 0) newX = getPosition().getX() + speed;		//el mono esta a la derecha
-			else if (dX > 0) newX = getPosition().getX() - speed;	//el mono esta a la izquierda
-			if (dY < 0) newY = getPosition().getY() + speed;		//el mono esta por debajo
-			else if (dY > 0) newY = getPosition().getY() - speed;	//el mono esta por encima
-			setPosition(newX, newY);
+			if (distanceX >= 3 && distanceY < 3) {
+				if (dX < 0) newX = getPosition().getX() + speed;
+				else if (dX > 0) newX = getPosition().getX() - speed;
+				setPosition(newX, getY());
+			}
+			else if (distanceY >= 3 && distanceX < 3) {
+				if (dY < 0) newY = getPosition().getY() + speed;
+				else if (dY > 0) newY = getPosition().getY() - speed;
+				setPosition(getX(), newY);
+			}
+			else {
+				if (dX < 0) newX = getPosition().getX() + speed/2.0;		//el mono esta a la derecha
+				else if (dX > 0) newX = getPosition().getX() - speed / 2.0;	//el mono esta a la izquierda
+				if (dY < 0) newY = getPosition().getY() + speed / 2.0;		//el mono esta por debajo
+				else if (dY > 0) newY = getPosition().getY() - speed / 2.0;	//el mono esta por encima
+				setPosition(newX, newY);
+			}
 		}
 		 
 		if (distanceX < 3 && distanceY < 3) stop = true;
