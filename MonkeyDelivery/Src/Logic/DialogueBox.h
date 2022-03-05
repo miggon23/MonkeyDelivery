@@ -21,13 +21,15 @@ private:
 	bool draw_ = false;
 public:
 
-	
-	DialogueBox(Game* game, Texture* backgroundTexture, Font* font, Point2D<double> pos, Point2D<double> size, Point2D<int> textPos, string text, SDL_Color color);
+	//textura nombre, texto por id json
+	DialogueBox(Game* game, string id, Font* font, SDL_Color color, Texture* texture);
 	~DialogueBox();
+	void Load(string filename, string id);
 
 	void ChangeText(string text);
 	void Show() { draw_ = true; }
 	void Hide() { draw_ = false; }
+	
 
 	void draw() override;
 	void update() override {};

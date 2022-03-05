@@ -26,6 +26,18 @@
     }
   ],
 
+  "DialogueBox1": [
+    {
+      "text": "Buenisimas tardes",
+      "x": 250,
+      "y": 300,
+      "width": 200,
+      "height": 100,
+      "xText": 25,
+      "yText": 45     
+    }
+  ],
+
   "fonts" : [
     { "id" : "TheMoon", "file" : "Images/TheMoon.ttf", "size": 16 }
   ],

@@ -51,17 +51,16 @@ void Game::start()
 
     missions_ = new MissionManager(this);
 
-    dialogueBox_ = new DialogueBox(this, getTexture(dialogoPrueba), new Font("../Images/TheMoon.ttf", 20),
-        Point2D<double>(250, 300), Point2D<double>(200, 100), Point2D<int>(0, 0), "aaaaaaaaaaaaa", BLACK);
+    dialogueBox_ = new DialogueBox(this, "DialogueBox1", new Font("../Images/TheMoon.ttf", 20), BLACK, getTexture(dialogoPrueba));
 
-    //dialogueBox_->Show();
+    dialogueBox_->Show();
 
     info = new UI_Info(this);
     auto* x = new Bed(this);
     x->setPosition(500, 300);
     add(x);
   
-    //missions_->AddMission(new Mission(missions_, missionsPanel_, 500, 100, 150, 15, "PruebaMision"));
+  
 
 }
 
