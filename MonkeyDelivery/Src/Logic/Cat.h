@@ -22,7 +22,7 @@ public:
 	~Cat() {};
 
 	void update() override;
-	void draw() override {drawTexture(texture);}
+	inline void draw() override {drawTexture(texture);}
 	/*a continuacion, metodos EN PRUEBAS para el miedo
 	 posteriormente se integraran en enemy
 	*/

@@ -1,7 +1,7 @@
 #include "Enemy.h"
 #include "Game.h"
 
-Enemy::Enemy(Game* game,int Aleatorio, Point2D<int>centroRadio):GameObject(game){
+Enemy::Enemy(Game* game, int Aleatorio, Point2D<int>centroRadio) : GameObject(game){
 	zone = SpawnZone(Aleatorio, centroRadio);
 	Vector2D<double> x = zone.genratePoint();
 	
