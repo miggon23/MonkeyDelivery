@@ -7,28 +7,14 @@ Bat::Bat(Game* game, int Aleatorio, Point2D<int> centroRadio, int nLoop) : Enemy
 	setPosition(x.getX(), x.getY());
 	setTexture(batTexture);
 	setDimension(90, 100);
-	addCheckPoint(getPosition());
+	initialPos = getPosition();
+	
 	speed = 1;
 	player_ = game->getPlayer();
-	Point2D<double> inicialPos(getPosition());
-	int move = 10;
 	
-	addCheckPoint(Point2D<double>(inicialPos.getX(), inicialPos.getY()));
-	addCheckPoint(Point2D<double>(inicialPos.getX() + 100, inicialPos.getY()-100));
-	addCheckPoint(Point2D<double>(inicialPos.getX(), inicialPos.getY()-200));	
-	addCheckPoint(Point2D<double>(inicialPos.getX()-100, inicialPos.getY()-100));
-	addCheckPoint(Point2D<double>(inicialPos.getX(), inicialPos.getY()));
+	loops = nLoop;
 
-	for (int i = 1; i < nLoop; i++)
-	{
-		addCheckPoint(Point2D<double>(inicialPos.getX()+move*i, inicialPos.getY()));
-		addCheckPoint(Point2D<double>(inicialPos.getX() + 100 + move * i, inicialPos.getY() - 100));
-		addCheckPoint(Point2D<double>(inicialPos.getX() + move * i, inicialPos.getY() - 200));
-		addCheckPoint(Point2D<double>(inicialPos.getX() - 100 + move * i, inicialPos.getY() - 100));
-		addCheckPoint(Point2D<double>(inicialPos.getX() + move * i, inicialPos.getY()));
-
-	}
-
+	createCheckPoints();
 }
 
 void Bat::update()
@@ -44,6 +30,27 @@ void Bat::update()
 	}
 
 	checkDistance();
+}
+
+void Bat::createCheckPoints()
+{
+	int move = 10;
+
+	addCheckPoint(initialPos);
+	addCheckPoint(Point2D<double>(initialPos.getX() + 100, initialPos.getY() - 100));
+	addCheckPoint(Point2D<double>(initialPos.getX(), initialPos.getY() - 200));
+	addCheckPoint(Point2D<double>(initialPos.getX() - 100, initialPos.getY() - 100));
+	addCheckPoint(Point2D<double>(initialPos.getX(), initialPos.getY()));
+
+	for (int i = 1; i < loops; i++)
+	{
+		addCheckPoint(Point2D<double>(initialPos.getX() + move * i, initialPos.getY()));
+		addCheckPoint(Point2D<double>(initialPos.getX() + 100 + move * i, initialPos.getY() - 100));
+		addCheckPoint(Point2D<double>(initialPos.getX() + move * i, initialPos.getY() - 200));
+		addCheckPoint(Point2D<double>(initialPos.getX() - 100 + move * i, initialPos.getY() - 100));
+		addCheckPoint(Point2D<double>(initialPos.getX() + move * i, initialPos.getY()));
+
+	}
 }
 
 void Bat::onPlayerInteraction(Player* player)

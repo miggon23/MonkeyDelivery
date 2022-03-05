@@ -202,9 +202,9 @@ void Game::addEnemies(Enemy* enemy)
 }
 void Game::enemiesCreation()
 {  
-    addEnemies(new Cat(this, 50, getOrigin()));
+    addEnemies(new Cat(this, 50, Point2D<int>(100, 100)));
     addEnemies(new Bat(this, 20, Point2D<int>(200, 80), 7));
-    addEnemies(new Bull(this, 35, Point2D<int>(200, 70)));
+    addEnemies(new Bull(this, 35, Point2D<int>(350, 70)));
 }
 
 void Game::scare(double scariness)

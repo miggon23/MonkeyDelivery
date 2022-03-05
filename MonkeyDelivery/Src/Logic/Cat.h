@@ -7,14 +7,8 @@ class Cat : public Enemy
 protected:
 
 	double speed;
-	bool alive;
 	float dieTime;
-	SpawnZone zone;
-	vector<Point2D<double>> checkpoints;
-	
-	
-	int indexCheckPoint;
-	bool back;
+	Point2D<double> initialPos;
 
 public:
 
@@ -22,10 +16,6 @@ public:
 	~Cat() {};
 
 	void update() override;
-	inline void draw() override {drawTexture(texture);}
-	/*a continuacion, metodos EN PRUEBAS para el miedo
-	 posteriormente se integraran en enemy
-	*/
-	
+	void createCheckPoints() override;
 };
 

@@ -11,7 +11,7 @@ public:
 	~Bull() {};
 
 	void update() override;
-	void createCheckPoints();
+	void createCheckPoints() override;
 	void checkDistance() override;
 };
 

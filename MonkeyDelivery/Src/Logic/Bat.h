@@ -3,9 +3,10 @@
 
 class Bat : public Enemy
 {
-
+	Point2D<double> initialPos;
 	int coinLost_;
 	Player* player_;
+	int loops;
 
 public:
 
@@ -13,6 +14,6 @@ public:
 	~Bat() {};
 
 	void update() override;
-
+	void createCheckPoints() override;
 	void onPlayerInteraction(Player* player) override;
 };
