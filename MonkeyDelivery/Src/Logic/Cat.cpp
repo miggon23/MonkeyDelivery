@@ -2,7 +2,6 @@
 
 Cat::Cat(Game* game,int Aleatorio, Point2D<int>centroRadio):Enemy(game, Aleatorio, centroRadio){
 
-	zone = SpawnZone(Aleatorio, centroRadio); //Creacion de la zona de spawn
 	Vector2D<double> zonePoint = zone.generatePoint(); //genera un punto en la zona de spawn
 	setPosition(zonePoint.getX(), zonePoint.getY()); //Coloca al enemigo en ese punto
 	initialPos = getPosition();
