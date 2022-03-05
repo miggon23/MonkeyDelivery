@@ -44,7 +44,7 @@ private:
     SDL_Renderer* renderer = nullptr;
     Player* player_ = nullptr;
     InteractiveEntity* iE_ = nullptr;
-    MissionManager* missions_ = nullptr;
+    //MissionManager* missions_ = nullptr;
     vector<GameObject*> gameObjects_;
     vector<Enemy*>enemyContainer_;//vector enemigos
     
@@ -93,7 +93,7 @@ public:
     Texture* getTexture(TextureName name);
     SDL_Renderer* getRenderer();
     inline Player* getPlayer() { return player_; }
-    inline MissionManager* getMissionManager() { return missions_; }
+   // inline MissionManager* getMissionManager() { return missions_; }
     void renderText(string text, int x, int y, SDL_Color color = { 0,0,0 }); // Escribir una sola l�nea
     void renderText(vector<string> text, int x, int y, int incX, int incY, SDL_Color color = { 0,0,0 }); // Escribir varias l�neas
 

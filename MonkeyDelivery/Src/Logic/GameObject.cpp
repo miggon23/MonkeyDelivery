@@ -55,7 +55,6 @@ void GameObject::setDimension(double width, double height)
 void GameObject::draw()
 {
     drawTexture(texture);
-    //cout << "simio";
 }
 
 bool GameObject::collide(SDL_Rect other) {

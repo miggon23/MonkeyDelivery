@@ -28,3 +28,9 @@ void Target::onPlayerInteraction(Player* player)
 void Target::update()
 {
 }
+
+void Target::draw() {
+	if (active_) {
+		drawTexture(texture);
+	}
+}

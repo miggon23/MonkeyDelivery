@@ -31,7 +31,11 @@ void UI_Info::renderText(vector<string> text, int x, int y, SDL_Color color)
 
 void UI_Info::drawInfo()
 {
-	renderText(game->getMissionManager()->getMissionName(), 700, 15, BLACK);
+	if (game->getMissionsPanel()->getCurrentMission() != nullptr) {
+
+		renderText(game->getMissionsPanel()->getCurrentMission()->getName(), 700, 15, BLACK);
+	}
+	//renderText(game->getMissionManager()->getMissionName(), 700, 15, BLACK);
 	renderText(to_string(game->getPlayer()->money_), 700, 45, BLACK);
 }
 

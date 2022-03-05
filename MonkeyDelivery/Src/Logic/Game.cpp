@@ -20,7 +20,7 @@ Game::~Game() {
     cout << "[DEBUG] deleting game" << endl;
     delete player_;
     delete textureContainer_;
-    delete missions_;
+    //delete missions_;
     delete font_;
     delete info;  
     //delete missionsPanel_; solo poner si no va en el vector de gameobjects
@@ -49,7 +49,7 @@ void Game::start()
     enemiesCreation();//creacion de enemigos
     
 
-    missions_ = new MissionManager(this);
+    //missions_ = new MissionManager(this);
 
     dialogueBox_ = new DialogueBox(this, "DialogueBox1", new Font("../Images/TheMoon.ttf", 20), BLACK, getTexture(dialogoPrueba));
 
@@ -94,7 +94,6 @@ void Game::draw()
     info->draw();
 
     missionsPanel_->draw();
-    missionsPanel_->drawTarget();
 
     dialogueBox_->draw();
     //renderText("aaaa", 100, 150, BLACK);
@@ -160,7 +159,7 @@ bool Game::changeMoneyPlayer(int money)
 //al pulsar el bot�n de interactuar(space), se relizan los cambios necesarios
 void Game::interactions()
 {
-    missions_->checkCurrentMission();
+   // missions_->checkCurrentMission();
 }
 
 //adri y simona: colisiones
@@ -183,7 +182,7 @@ vector<GameObject*> Game::getCollisions(SDL_Rect rect)
 // Se llama cuando se selecciona desde SelectMissionCommand
 void Game::setActiveMission(Mission* m)
 {
-    missions_->AddMission(m);
+ //   missions_->AddMission(m);
 }
 
 // devuelve la iE 

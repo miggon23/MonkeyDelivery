@@ -11,6 +11,7 @@ public:
 
 	void onPlayerInteraction(Player* player) override;
 	void update() override;
+	void draw() override;
 
 	inline void changeActive() {
 		active_ = !active_;

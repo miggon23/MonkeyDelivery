@@ -69,12 +69,6 @@ void MissionsPanel::onPlayerInteraction(Player* player)
 	}
 }
 
-void MissionsPanel::drawTarget() {
-
-	if (activeTarget_->getActive()) {
-		activeTarget_->draw();
-	}
-}
 
 void MissionsPanel::update()
 {
@@ -88,7 +82,7 @@ void MissionsPanel::onMissionSelected(string missionId)
 	
 
 	// settear la misión como activa
-	currentMission_ = new Mission(game->getMissionManager(), activeTarget_, m.maxMoney, m.minMoney, 10, m.minTime, missionId); 
+	currentMission_ = new Mission(activeTarget_, m.maxMoney, m.minMoney, 10, m.minTime, missionId); 
 	game->setActiveMission(currentMission_); // por la forma en que está gestionado ahora
 	
 	// spawn Vecino
@@ -110,7 +104,22 @@ void MissionsPanel::onMissionSelected(string missionId)
 
 void MissionsPanel::onMissionCompleted()
 {
+	// Dar la recompensa
+	int reward = missions_.at(currentMission_->getName()).maxMoney;
+	// Restar dinero
+	/*if (additionalReward_ && SDL_GetTicks() < iniTicks_ + minTime_)
+		reward = maxReward_;*/
+
+	game->changeMoneyPlayer(reward);
+
+	// Marcar la mision como acabada
 	missions_.at(currentMission_->getName()).completed = true;
+	currentMission_->completeMission();
+	delete currentMission_;
+	currentMission_ = nullptr;
+
+	// Despawnear vecino
+	activeTarget_->changeActive();
 
 	// comprobar si todas las misiones de este nivel están completadas
 }

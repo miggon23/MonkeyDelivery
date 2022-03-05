@@ -15,12 +15,12 @@ private:
 	int maxReward_, minReward_, minDistance_, minTime_, iniTicks_;
 	bool additionalReward_;
 	string name_;
-	MissionManager* manager_ = nullptr;
+	// MissionManager* manager_ = nullptr;
 	Target* objective_ = nullptr;
 
 public:
 
-	Mission(MissionManager* manager, Target* o, int maxReward, int minReward, int minDistance, int minTime, string name);
+	Mission(/* MissionManager* manager, */ Target * o, int maxReward, int minReward, int minDistance, int minTime, string name);
 	~Mission();
 
 	//puede ser método interno

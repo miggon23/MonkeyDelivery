@@ -42,8 +42,6 @@ public:
 	void onPlayerInteraction(Player* player) override;
 	void update() override;
 
-	void drawTarget();
-
 	// llamado desde el estado de SeleccionDeMisión, cuando se sale de él
 	void onMissionSelected(string missionId);
 
