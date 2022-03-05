@@ -6,9 +6,9 @@ Bull::Bull(Game* game, int Aleatorio, Point2D<int> centroRadio) : Enemy(game, Al
 	setTexture(bullTexture);
 	Vector2D<double> zonePoint = zone.generatePoint();
 	setPosition(zonePoint.getX(), zonePoint.getY());
-	setDimension(90, 100);
+	setDimension(100, 110);
 	initialPos_ = getPosition();
-	createCheckPoints();
+	//createCheckPoints();
 	stop = false;
 	timer_ = SDL_GetTicks();
 }
@@ -34,31 +34,29 @@ void Bull::createCheckPoints()
 
 void Bull::checkDistance()
 {
-	int offset = 200;
+	int offset = 300;
 	double dX = getPosition().getX() - game->getPosisitionPlayer().getX();
 	double dY = getPosition().getY() - game->getPosisitionPlayer().getY();
 	double distanceX = abs(dX);
 	double distanceY = abs(dY);
 
+	double newX = getPosition().getX(), newY = getPosition().getY();
+	int speed = 5;
 	//Si esta en el rango
-	if (distanceX <= offset && distanceY <= offset) {
-
+	if (distanceX <= offset && distanceY <= offset && !stop) {
+		cout << distanceX << " " << distanceY << endl;
 		//Perseguir al jugador
 		//Le persigue hasta estar a 5 de distacia
-		if (distanceX >= 5 && distanceY >= 5 && !stop) {
-
-			double newX = 0, newY = 0;
-			int speed = 5;
+		if ((distanceX >= 3 || distanceY >= 3)) {
 
 			if (dX < 0) newX = getPosition().getX() + speed;		//el mono esta a la derecha
 			else if (dX > 0) newX = getPosition().getX() - speed;	//el mono esta a la izquierda
 			if (dY < 0) newY = getPosition().getY() + speed;		//el mono esta por debajo
 			else if (dY > 0) newY = getPosition().getY() - speed;	//el mono esta por encima
-
 			setPosition(newX, newY);
 		}
-
-		else stop = true;
+		 
+		if (distanceX < 3 && distanceY < 3) stop = true;
 		//si no es demasiado por eso se divide entre 8
 		game->scare(distanceX * scariness_ / 10);
 	}
