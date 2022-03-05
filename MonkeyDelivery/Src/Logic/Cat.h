@@ -7,7 +7,6 @@ class Cat : public Enemy
 protected:
 
 	double speed;
-	float dieTime;
 	Point2D<double> initialPos;
 
 public:

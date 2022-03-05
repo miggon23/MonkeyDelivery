@@ -4,8 +4,8 @@
 Bull::Bull(Game* game, int Aleatorio, Point2D<int> centroRadio) : Enemy(game, Aleatorio, centroRadio)
 {
 	setTexture(bullTexture);
-	Vector2D<double> x = zone.generatePoint();
-	setPosition(x.getX(), x.getY());
+	Vector2D<double> zonePoint = zone.generatePoint();
+	setPosition(zonePoint.getX(), zonePoint.getY());
 	setDimension(90, 100);
 	initialPos = getPosition();
 	createCheckPoints();
@@ -42,17 +42,12 @@ void Bull::checkDistance()
 			double newX=0, newY=0;
 			int speed = 5;
 
-			if (dX < 0) newX = getPosition().getX() + speed;
-			else if (dX > 0) newX= getPosition().getX() - speed;
-			if (dY < 0) newY = getPosition().getY() + speed;
-			else if (dY > 0) newY = getPosition().getY() - speed;
+			if (dX < 0) newX = getPosition().getX() + speed;		//el mono esta a la derecha
+			else if (dX > 0) newX= getPosition().getX() - speed;	//el mono esta a la izquierda
+			if (dY < 0) newY = getPosition().getY() + speed;		//el mono esta por debajo
+			else if (dY > 0) newY = getPosition().getY() - speed;	//el mono esta por encima
 
 			setPosition(newX, newY);
-
-			//dY < 0 -> el mono esta por debajo
-			//dY > 0 -> el mono esta por encima
-			//dX < 0 ->el mono esta a la derecha
-			//dX > 0 ->el mono esta a la izquierda
 		}
 		
 

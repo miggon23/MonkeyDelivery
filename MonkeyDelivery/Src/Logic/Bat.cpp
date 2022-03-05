@@ -3,8 +3,8 @@
 
 Bat::Bat(Game* game, int Aleatorio, Point2D<int> centroRadio, int nLoop) : Enemy(game, Aleatorio, centroRadio)
 {
-	Vector2D<double> x = zone.generatePoint();
-	setPosition(x.getX(), x.getY());
+	Vector2D<double> zonePoint = zone.generatePoint();
+	setPosition(zonePoint.getX(), zonePoint.getY());
 	setTexture(batTexture);
 	setDimension(90, 100);
 	initialPos = getPosition();
@@ -56,5 +56,4 @@ void Bat::createCheckPoints()
 void Bat::onPlayerInteraction(Player* player)
 {
 	player->removeMoney(1);
-
 }

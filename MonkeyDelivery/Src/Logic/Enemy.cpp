@@ -2,14 +2,11 @@
 #include "Game.h"
 
 Enemy::Enemy(Game* game, int Aleatorio, Point2D<int>centroRadio) : GameObject(game){
-	zone = SpawnZone(Aleatorio, centroRadio);
-	Vector2D<double> x = zone.generatePoint();
-	
-	setPosition(x.getX(), x.getY());
+
+	zone = SpawnZone(Aleatorio, centroRadio); //Creaccion de la zona de spawn
 	setAlive(true);
 	indexCheckPoint = 0;
-	addCheckPoint(getPosition());
-	back = false;
+	back = false; //Boolenao que indica cuando se da la vuelta el enemigo en su patrulla
 	//setScariness(0.7);
 }
 
@@ -54,7 +51,6 @@ void Enemy::die()
 
 void Enemy::spawn()
 {
-	setAlive(true);
 	Vector2D<double> randomPos = zone.generatePoint();
 	setPosition(randomPos.getX(), randomPos.getY());
 }
@@ -70,9 +66,7 @@ void Enemy::checkDistance()
 	double distanceY = abs(getPosition().getY() - game->getPosisitionPlayer().getY());
 
 	if (distanceX <= offset && distanceY <= offset) {
-		//std::cout << "ATACA" << std::endl;
 		
-		//Llamar al mtodo de quitar miedo
 		/*if (distanceX < distanceY)
 			game->scare(distanceX*scariness_);
 		else*/

@@ -27,11 +27,11 @@ public:
 	inline bool isAlive() { return alive; };
 	inline void setAlive(bool l) { alive = l; };
 	inline void addCheckPoint(Point2D<double> punto) { checkpoints.push_back(punto); };
-	virtual void createCheckPoints() = 0;
+	virtual void createCheckPoints() = 0; //Todos los enemigos crearan sus propios puntos de paso en su patrulla
 
 	void spawn();
 	void onCollision();
 	virtual void checkDistance();
-	virtual void setScariness(double fear) { scariness_ = fear; }
+	inline virtual void setScariness(double fear) { scariness_ = fear; }
 };
 
