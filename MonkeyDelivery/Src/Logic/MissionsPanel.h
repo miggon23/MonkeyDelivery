@@ -68,5 +68,7 @@ public:
 	inline int getInitialTicks() { return initialTicks_; };
 	// tiempo que queda de misión (para las express)
 	inline int getTime() { return endTime_ - SDL_GetTicks(); };
+
+	string getMissionImage();
 };
 

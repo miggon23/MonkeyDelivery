@@ -154,6 +154,17 @@ void MissionsPanel::onMissionCompleted()
 	// comprobar si todas las misiones de este nivel están completadas -> tandas de misiones
 }
 
+string MissionsPanel::getMissionImage()
+{
+	if (currentMission_ != nullptr) {
+
+		MissionInfo m = missions_.at(currentMission_->getName());
+		return m.imgRoute;
+	}
+	else
+		return "No Mission Active";
+}
+
 void MissionsPanel::loadMissions(std::string filename)
 {
 	std::unique_ptr<JSONValue> jValueRoot(JSON::ParseFromFile(filename));
@@ -232,3 +243,5 @@ void MissionsPanel::loadMissions(std::string filename)
 		}
 	}
 }
+
+

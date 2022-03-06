@@ -24,6 +24,7 @@ public:
 	void renderText(string text, int x, int y, SDL_Color color);
 	void renderText(vector<string> text, int x, int y, SDL_Color color);
 
+	void renderImage(string imgRoute);
 
 };
 

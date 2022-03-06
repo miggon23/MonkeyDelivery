@@ -29,17 +29,28 @@ void UI_Info::renderText(vector<string> text, int x, int y, SDL_Color color)
 
 }
 
+void UI_Info::renderImage(string imgRoute)
+{
+	Texture* t = new Texture(game->getRenderer(), imgRoute);
+	SDL_Rect rect = {640, 15, 170, 180};
+	t->render(rect);
+	delete t;
+}
+
 void UI_Info::drawInfo()
 {
 	auto* g = game->getMissionsPanel()->getCurrentMission();
 	if (g != nullptr) {
-		renderText(game->getMissionsPanel()->getCurrentMission()->getName(), 700, 15, BLACK);
+		
+		// Para mostrar texto en lugar de imagen
+		/*renderText(game->getMissionsPanel()->getCurrentMission()->getName(), 700, 15, BLACK);
 		if (g->isExpress()) {
 			renderText("Time left ", 700, 35, BLACK);
 			renderText(to_string(game->getMissionsPanel()->getTime()), 700, 50, BLACK);
-		}
+		}*/
+		renderImage(game->getMissionsPanel()->getMissionImage());
 	}
-	renderText("Money  " + to_string(game->getPlayer()->money_), 700, 70, BLACK);
+	renderText("Money  " + to_string(game->getPlayer()->money_), 700, 200, BLACK);
 }
 
 
