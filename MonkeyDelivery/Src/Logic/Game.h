@@ -44,7 +44,6 @@ private:
     SDL_Renderer* renderer = nullptr;
     Player* player_ = nullptr;
     InteractiveEntity* iE_ = nullptr;
-    //MissionManager* missions_ = nullptr;
     vector<GameObject*> gameObjects_;
     vector<Enemy*>enemyContainer_;//vector enemigos
     
@@ -99,11 +98,9 @@ public:
 
     // missions
     bool changeMoneyPlayer(int money);
-    void interactions();
     vector<GameObject*>getCollisions(SDL_Rect rect);
     void setActiveMission(Mission* m);
     InteractiveEntity* getiE();
-
     inline MissionsPanel* getMissionsPanel() { return missionsPanel_; };
 
     //enemies
