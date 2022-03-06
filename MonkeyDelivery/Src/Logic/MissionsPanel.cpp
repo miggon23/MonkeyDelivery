@@ -86,9 +86,9 @@ void MissionsPanel::onMissionSelected(string missionId)
 	game->setActiveMission(currentMission_); // por la forma en que está gestionado ahora para q se muestre en pantalla
 	
 	// spawn Vecino
-	activeTarget_->changeActive();
-	activeTarget_->setDimension(120, 150);
-	activeTarget_->setPosition(500, 80);
+	if (!activeTarget_->isActive()) activeTarget_->changeActive();
+	activeTarget_->setDimension(m.width, m.height);
+	activeTarget_->setPosition(m.xPos, m.yPos);
 	activeTarget_->setTexture(m.target); // m.target
 	
 
@@ -144,13 +144,17 @@ void MissionsPanel::loadMissions(std::string filename)
 
 					std::string key = vObj["id"]->AsString();
 					int level = vObj["level"]->AsNumber();
-					bool isExpress = vObj["express"]->AsBool();
-					bool isSpecial = vObj["special"]->AsBool();
 					std::string imgRoute = vObj["image"]->AsString(); 
-					std::string target = vObj["target"]->AsString(); 
 					int maxMoney = vObj["maxmoney"]->AsNumber();
 					int minMoney = vObj["minmoney"]->AsNumber();
 					int minTime = vObj["mintime"]->AsNumber();
+					std::string target = vObj["target"]->AsString(); 
+					int tX = vObj["targetPositionX"]->AsNumber();
+					int tY = vObj["targetPositionY"]->AsNumber();
+					int tW = vObj["targetWidth"]->AsNumber();
+					int tH = vObj["targetHeight"]->AsNumber();
+					bool isExpress = vObj["express"]->AsBool();
+					bool isSpecial = vObj["special"]->AsBool();
 
 					switch (level)
 					{
@@ -174,6 +178,10 @@ void MissionsPanel::loadMissions(std::string filename)
 						isSpecial,
 						imgRoute,
 						target,
+						tX,
+						tY,
+						tW,
+						tH,
 						maxMoney,
 						minMoney,
 						minTime

@@ -7,8 +7,8 @@ Target::Target(MissionsPanel* mp, Game* g) : GameObject(g), missionsPanel_(mp)
 {
 	active_ = false;
 
-	setDimension(120, 150);
-	setPosition(500, 80);
+	setDimension(1, 1);
+	setPosition(0, 0);
 	//setTexture(tucanTexture);
 
 }
@@ -17,8 +17,8 @@ Target::Target(MissionsPanel* mp, Game* g, string texture) : GameObject(g), miss
 {
 	active_ = false;
 
-	setDimension(120, 150);
-	setPosition(500, 80);
+	setDimension(1, 1);
+	setPosition(0, 0);
 
 	string route = "../Images/animals/" + texture + ".png";
 	myTexture_ = new Texture(g->getRenderer(), route);
@@ -26,6 +26,9 @@ Target::Target(MissionsPanel* mp, Game* g, string texture) : GameObject(g), miss
 
 Target::~Target()
 {
+	game = nullptr;
+	texture = nullptr;
+	missionsPanel_ = nullptr;
 	delete myTexture_;
 }
 

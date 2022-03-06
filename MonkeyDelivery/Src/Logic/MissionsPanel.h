@@ -11,6 +11,10 @@ struct MissionInfo {
 	bool isSpecial;
 	string imgRoute;
 	string target;
+	double xPos;
+	double yPos;
+	double width;
+	double height;
 	int maxMoney;
 	int minMoney;
 	int minTime;

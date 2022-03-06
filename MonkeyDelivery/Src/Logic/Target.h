@@ -18,7 +18,7 @@ public:
 		active_ = !active_;
 	};
 
-	inline bool getActive() {
+	inline bool isActive() {
 		return active_;
 	}
 

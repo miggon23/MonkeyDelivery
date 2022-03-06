@@ -2,27 +2,35 @@
   "missions": [
     {
       "id": "Mission1",
-      "completed": false,
-      "express": false,
-      "image": "../Images/missions/Mission1.png",
       "level": 1,
+      "completed": false,
+      "image": "../Images/missions/Mission1.png",
       "maxmoney": 10000,
       "minmoney": 5000,
       "mintime": 100000,
+      "express": false,
       "special": false,
-      "target": "tucan"
+      "target": "tucan",
+      "targetPositionX": 500,
+      "targetPositionY": 50,
+      "targetWidth": 120,
+      "targetHeight": 180
     },
     {
       "id": "Mission2",
       "level": 1,
       "completed": false,
       "image": "../Images/missions/Mission2.png",
-      "target": "tortuga",
       "maxmoney": 10000,
       "minmoney": 5000,
       "mintime": 100000,
       "express": false,
-      "special": false 
+      "special": false,
+      "target": "tortuga",
+      "targetPositionX": 550,
+      "targetPositionY": 120,
+      "targetWidth": 120,
+      "targetHeight": 140
     }
   ],
 
