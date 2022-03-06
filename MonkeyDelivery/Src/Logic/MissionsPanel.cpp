@@ -10,7 +10,7 @@
 
 MissionsPanel::MissionsPanel(Game* game) : GameObject(game)
 {
-	setPosition(350, 200);
+	setPosition(150, 200);
 	setDimension(120, 150);
 	setTexture(missionPanelTexture);
 
@@ -25,7 +25,7 @@ MissionsPanel::MissionsPanel(Game* game) : GameObject(game)
 MissionsPanel::~MissionsPanel()
 {
 	missions_.clear();
-	//delete currentMission_;
+	delete currentMission_;
 }
 
 void MissionsPanel::onPlayerInteraction(Player* player)
@@ -83,13 +83,13 @@ void MissionsPanel::onMissionSelected(string missionId)
 
 	// settear la misión como activa
 	currentMission_ = new Mission(activeTarget_, m.maxMoney, m.minMoney, 10, m.minTime, missionId); 
-	game->setActiveMission(currentMission_); // por la forma en que está gestionado ahora
+	game->setActiveMission(currentMission_); // por la forma en que está gestionado ahora para q se muestre en pantalla
 	
 	// spawn Vecino
 	activeTarget_->changeActive();
 	activeTarget_->setDimension(120, 150);
 	activeTarget_->setPosition(500, 80);
-	activeTarget_->setTexture(tucanTexture);
+	activeTarget_->setTexture(m.target); // m.target
 	
 
 	// hide pannel

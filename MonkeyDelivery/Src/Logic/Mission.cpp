@@ -28,13 +28,3 @@ void Mission::completeMission()
 	if (additionalReward_ && SDL_GetTicks() < iniTicks_ + minTime_)
 		reward = maxReward_;
 }
-
-bool Mission::updateState(GameObject* player)
-{
-	if (player->collide(objective_->getCollider())) {
-		completeMission();
-		return true;
-	}
-
-	return false;
-}

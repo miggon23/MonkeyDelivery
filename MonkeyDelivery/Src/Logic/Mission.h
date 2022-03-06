@@ -25,11 +25,8 @@ public:
 	//puede ser método interno
 	void completeMission();
 	void cancelAdditinalReward() { additionalReward_ = false; }
-	bool updateState(GameObject* player);	
 
 	string getName() { return name_; }
-
-	inline Target* objectivegetTarget() { return objective_; };
 
 };
 

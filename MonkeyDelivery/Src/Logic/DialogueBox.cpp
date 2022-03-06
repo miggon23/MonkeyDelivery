@@ -22,6 +22,7 @@ DialogueBox::DialogueBox(Game* game, string id, Font* font, SDL_Color color, Tex
 
 DialogueBox::~DialogueBox()
 {	
+	delete font_;
 	font_ = nullptr;
 }
 

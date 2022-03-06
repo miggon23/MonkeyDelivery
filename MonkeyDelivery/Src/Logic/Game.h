@@ -17,7 +17,7 @@
 #include "InteractiveEntity.h"
 
 #include "Mission.h"
-#include "MissionManager.h"
+#include "DialogueBox.h"
 #include "UI_Info.h"
 #include "Inventory.h"
 

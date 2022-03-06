@@ -20,10 +20,11 @@ Game::~Game() {
     cout << "[DEBUG] deleting game" << endl;
     delete player_;
     delete textureContainer_;
-    //delete missions_;
     delete font_;
     delete info;  
     //delete missionsPanel_; solo poner si no va en el vector de gameobjects
+    delete dialogueBox_;
+    delete iE_;
 }
 
 string Game::getGameName() {
@@ -154,12 +155,6 @@ void Game::renderText(vector<string> text, int x, int y, int incX, int incY, SDL
 bool Game::changeMoneyPlayer(int money)
 {
    return player_->moneyChange(money);
-}
-
-//al pulsar el bot�n de interactuar(space), se relizan los cambios necesarios
-void Game::interactions()
-{
-   // missions_->checkCurrentMission();
 }
 
 //adri y simona: colisiones

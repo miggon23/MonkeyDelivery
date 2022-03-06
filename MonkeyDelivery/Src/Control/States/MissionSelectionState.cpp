@@ -65,7 +65,7 @@ void MissionSelectionState::draw()
 
 	int x = 100;
 	for (auto a : currentTextures_) {
-		SDL_Rect textureBox = { x, 50, 350, 275 };
+		textureBox = { x, 50, 350, 275 };
 		a->render(textureBox);
 		x += xInc_;
 	}

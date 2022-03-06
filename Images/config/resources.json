@@ -10,14 +10,14 @@
       "minmoney": 5000,
       "mintime": 100000,
       "special": false,
-      "target": "Tucan"
+      "target": "tucan"
     },
     {
       "id": "Mission2",
       "level": 1,
       "completed": false,
       "image": "../Images/missions/Mission2.png",
-      "target": "Hippo",
+      "target": "tortuga",
       "maxmoney": 10000,
       "minmoney": 5000,
       "mintime": 100000,
