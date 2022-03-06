@@ -38,6 +38,8 @@ private:
 
 	// Vecino activo
 	Target* activeTarget_;
+
+	Uint32 initialTicks_; // valor de los ticks cuando se activó la misión
 	
 public:
 	MissionsPanel(Game* game);

@@ -12,7 +12,7 @@ class Inventory
 private:
 	const int INVENTORY_SIZE = 6;
 	vector<InventoryObject*> inventory_;
-	InventoryObject* missionObject;
+	InventoryObject* missionObject_;
 	Player* player_;
 public:
 	Inventory(Player* player);
@@ -25,6 +25,8 @@ public:
 
 	void removeObject(int indexObject);
 	void removeMisionObject();
+
+	bool hasMissionObject();
 
 	void clearInventory();
 	bool inventoryFull();

@@ -99,7 +99,6 @@ public:
     // missions
     bool changeMoneyPlayer(int money);
     vector<GameObject*>getCollisions(SDL_Rect rect);
-    void setActiveMission(Mission* m);
     InteractiveEntity* getiE();
     inline MissionsPanel* getMissionsPanel() { return missionsPanel_; };
 

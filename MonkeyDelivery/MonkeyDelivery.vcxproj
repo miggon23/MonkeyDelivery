@@ -193,6 +193,7 @@
     <ClInclude Include="Src\Logic\Mission.h" />
     <ClInclude Include="Src\Logic\MissionManager.h" />
     <ClInclude Include="Src\Logic\MissionsPanel.h" />
+    <ClInclude Include="Src\Logic\Package.h" />
     <ClInclude Include="Src\Logic\Player.h" />
     <ClInclude Include="Src\Logic\SpawnZone.h" />
     <ClInclude Include="Src\Logic\Target.h" />
@@ -247,6 +248,7 @@
     <ClCompile Include="Src\Logic\Mission.cpp" />
     <ClCompile Include="Src\Logic\MissionManager.cpp" />
     <ClCompile Include="Src\Logic\MissionsPanel.cpp" />
+    <ClCompile Include="Src\Logic\Package.cpp" />
     <ClCompile Include="Src\Logic\Player.cpp" />
     <ClCompile Include="Src\Logic\SpawnZone.cpp" />
     <ClCompile Include="Src\Logic\Target.cpp" />

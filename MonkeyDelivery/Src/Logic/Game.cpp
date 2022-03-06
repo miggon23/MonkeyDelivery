@@ -173,12 +173,6 @@ vector<GameObject*> Game::getCollisions(SDL_Rect rect)
     
     return interactEnt;
 }
-// M�todo que recibe una misi�n para declararla como la actual
-// Se llama cuando se selecciona desde SelectMissionCommand
-void Game::setActiveMission(Mission* m)
-{
- //   missions_->AddMission(m);
-}
 
 // devuelve la iE 
 InteractiveEntity* Game::getiE()

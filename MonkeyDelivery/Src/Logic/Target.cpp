@@ -9,7 +9,6 @@ Target::Target(MissionsPanel* mp, Game* g) : GameObject(g), missionsPanel_(mp)
 
 	setDimension(1, 1);
 	setPosition(0, 0);
-	//setTexture(tucanTexture);
 
 }
 
@@ -26,20 +25,17 @@ Target::Target(MissionsPanel* mp, Game* g, string texture) : GameObject(g), miss
 
 Target::~Target()
 {
-	game = nullptr;
-	texture = nullptr;
 	missionsPanel_ = nullptr;
 	delete myTexture_;
 }
 
 void Target::onPlayerInteraction(Player* player)
 {
-	/*if (player->tieneElObjeto()) {
-
-	}*/
 	if (active_) {
-
-		missionsPanel_->onMissionCompleted();
+		if (player->hasMissionObject()) {
+			player->removeMissionObject();
+			missionsPanel_->onMissionCompleted();
+		}
 	}
 }
 
@@ -57,6 +53,7 @@ void Target::draw() {
 
 void Target::setTexture(string tex)
 {
+	delete myTexture_;
 	string route = "../Images/animals/" + tex + ".png";
 	myTexture_ = new Texture(game->getRenderer(), route);
 }

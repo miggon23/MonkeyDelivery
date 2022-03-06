@@ -7,6 +7,7 @@
 #include "../Control/States/MissionSelectionState.h"
 #include "../json/JSON.h"
 
+#include "Package.h"
 
 MissionsPanel::MissionsPanel(Game* game) : GameObject(game)
 {
@@ -26,6 +27,7 @@ MissionsPanel::~MissionsPanel()
 {
 	missions_.clear();
 	delete currentMission_;
+	currentMission_ = nullptr;
 }
 
 void MissionsPanel::onPlayerInteraction(Player* player)
@@ -58,7 +60,6 @@ void MissionsPanel::onPlayerInteraction(Player* player)
 	for (int i = a; i <= numMissions; ++i) {
 		b += to_string(i);
 		missionsSent.push_back(make_pair(b, missions_.at(b).imgRoute));
-		//missionsSent.push_back(b);
 		b = "Mission";
 	}
 
@@ -80,16 +81,24 @@ void MissionsPanel::onMissionSelected(string missionId)
 
 	MissionInfo m = missions_.at(missionId);
 	
+	// solo se hace si no había una misión activa, es decir si el vecino no estaba activo
+	if (!activeTarget_->isActive()) { //currentMission_ != nullptr
 
-	// settear la misión como activa
-	currentMission_ = new Mission(activeTarget_, m.maxMoney, m.minMoney, 10, m.minTime, missionId); 
-	game->setActiveMission(currentMission_); // por la forma en que está gestionado ahora para q se muestre en pantalla
+		// settear la misión como activa
+		currentMission_ = new Mission(activeTarget_, m.maxMoney, m.minMoney, 10, m.minTime, missionId); 
+		
+		// comunicarlo al inventario o spawnear el objeto, dependiendo del tipo de misión
+		game->getPlayer()->addMissionObject(new Package);
 	
-	// spawn Vecino
-	if (!activeTarget_->isActive()) activeTarget_->changeActive();
-	activeTarget_->setDimension(m.width, m.height);
-	activeTarget_->setPosition(m.xPos, m.yPos);
-	activeTarget_->setTexture(m.target); // m.target
+		// spawn Vecino
+		activeTarget_->changeActive();
+		activeTarget_->setDimension(m.width, m.height);
+		activeTarget_->setPosition(m.xPos, m.yPos);
+		activeTarget_->setTexture(m.target);
+
+		//iniciar el contador
+		initialTicks_ = SDL_GetTicks();
+	}
 	
 
 	// hide pannel
@@ -104,11 +113,17 @@ void MissionsPanel::onMissionSelected(string missionId)
 
 void MissionsPanel::onMissionCompleted()
 {
+	MissionInfo m = missions_.at(currentMission_->getName());
 	// Dar la recompensa
-	int reward = missions_.at(currentMission_->getName()).maxMoney;
-	// Restar dinero
-	/*if (additionalReward_ && SDL_GetTicks() < iniTicks_ + minTime_)
-		reward = maxReward_;*/
+	int reward = m.maxMoney;
+
+	// Restar dinero si se pasa del tiempo -> Resta 1 oro por segundo que se retrase
+	if (SDL_GetTicks() > initialTicks_ + m.minTime) {
+		reward -= ((SDL_GetTicks() - initialTicks_ - m.minTime) / 1000); // valor de tiempo que se ha pasado del tiempo mínimo
+	}
+
+	// Le aseguro un mínimo de dinero
+	if (reward < m.minMoney) reward = m.minMoney; 
 
 	game->changeMoneyPlayer(reward);
 
@@ -121,7 +136,7 @@ void MissionsPanel::onMissionCompleted()
 	// Despawnear vecino
 	activeTarget_->changeActive();
 
-	// comprobar si todas las misiones de este nivel están completadas
+	// comprobar si todas las misiones de este nivel están completadas -> tandas de misiones
 }
 
 void MissionsPanel::loadMissions(std::string filename)

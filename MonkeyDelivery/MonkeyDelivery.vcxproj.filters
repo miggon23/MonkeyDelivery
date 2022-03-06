@@ -140,6 +140,7 @@
     <ClCompile Include="Src\Logic\Target.cpp">
       <Filter>Source Files\Logic\InteractuableObjects</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Logic\Package.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -304,6 +305,7 @@
     <ClInclude Include="Src\Logic\Target.h">
       <Filter>Header Files\Logic\InteractuableObjects</Filter>
     </ClInclude>
+    <ClInclude Include="Src\Logic\Package.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="MonkeyDelivery.rc" />

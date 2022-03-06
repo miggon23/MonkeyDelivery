@@ -4,6 +4,8 @@
 #include "energyLevel.h"
 #include "FearLevel.h";
 
+#include "InventoryObject.h"
+
 class Game;
 class Inventory;
 enum Animations { QUIETO, CORRER };//EN PROCESO <NO TOCAR>
@@ -103,6 +105,9 @@ public:
 #pragma region inventory
 	void useObject(int index);
 	inline void setInventoryVisibility(bool visible) { inventoryVisibility = visible;  };
+	bool hasMissionObject();
+	void addMissionObject(InventoryObject* p);
+	void removeMissionObject();
 #pragma endregion
 };
 

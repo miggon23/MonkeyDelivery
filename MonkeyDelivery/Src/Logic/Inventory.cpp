@@ -4,7 +4,7 @@
 
 Inventory::Inventory(Player* player) : player_(player)
 {
-	missionObject = nullptr;
+	missionObject_ = nullptr;
 }
 
 Inventory::~Inventory()
@@ -34,9 +34,9 @@ bool Inventory::addObject(InventoryObject* iO)
 /// <returns></returns>
 bool Inventory::addMisionObject(InventoryObject* io)
 {
-	if (missionObject == nullptr)
+	if (missionObject_ == nullptr)
 	{
-		missionObject = io;
+		missionObject_ = io;
 		return true;
 	}
 	else
@@ -66,8 +66,15 @@ void Inventory::removeObject(int indexObject)
 
 void Inventory::removeMisionObject()
 {
-	delete missionObject;
-	missionObject = nullptr;
+	if (missionObject_ != nullptr) {
+		delete missionObject_;
+		missionObject_ = nullptr;
+	}
+}
+
+bool Inventory::hasMissionObject()
+{
+	return missionObject_ != nullptr;
 }
 
 
@@ -78,10 +85,7 @@ void Inventory::clearInventory()
 		delete gO;
 	}
 
-	if (missionObject != nullptr) {
-		delete missionObject;
-		missionObject = nullptr;
-	}
+	removeMisionObject();
 }
 
 /// <summary>

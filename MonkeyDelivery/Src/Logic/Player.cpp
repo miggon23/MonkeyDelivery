@@ -195,6 +195,22 @@ void Player::useObject(int index)
 	inventory_->useObject(index);
 }
 
+bool Player::hasMissionObject()
+{
+	return inventory_->hasMissionObject();
+}
+
+void Player::addMissionObject(InventoryObject* p)
+{
+	inventory_->addMisionObject(p);
+}
+
+void Player::removeMissionObject()
+{
+	inventory_->removeMisionObject();
+}
+
+
 void Player::draw()
 {
 	drawTexture(texture);
