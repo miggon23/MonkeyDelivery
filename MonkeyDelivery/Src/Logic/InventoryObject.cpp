@@ -1,6 +1,11 @@
 #include "InventoryObject.h"
 #include "Player.h"
 
+InventoryObject::~InventoryObject()
+{
+	delete myTexture_;
+}
+
 /// <summary>
 /// Método virtual que realiza el uso del objeto y devuelve si el objeto es deshechable(true) o reutilizable
 /// </summary>
@@ -18,4 +23,10 @@ bool InventoryObject::useObject()
 void InventoryObject::attachPlayer(Player* player)
 {
 	player_ = player;
+}
+
+void InventoryObject::setMyTexture(Texture* tex)
+{
+	if (myTexture_ == nullptr) delete myTexture_;
+	myTexture_ = tex;
 }

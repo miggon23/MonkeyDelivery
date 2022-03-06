@@ -8,7 +8,7 @@
       "maxmoney": 100,
       "minmoney": 50,
       "mintime": 10000,
-      "express": false,
+      "express": true,
       "special": false,
       "target": "tucan",
       "targetPositionX": 500,

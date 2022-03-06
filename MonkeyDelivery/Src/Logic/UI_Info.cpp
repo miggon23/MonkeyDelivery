@@ -31,12 +31,15 @@ void UI_Info::renderText(vector<string> text, int x, int y, SDL_Color color)
 
 void UI_Info::drawInfo()
 {
-	if (game->getMissionsPanel()->getCurrentMission() != nullptr) {
-
+	auto* g = game->getMissionsPanel()->getCurrentMission();
+	if (g != nullptr) {
 		renderText(game->getMissionsPanel()->getCurrentMission()->getName(), 700, 15, BLACK);
+		if (g->isExpress()) {
+			renderText("Time left ", 700, 35, BLACK);
+			renderText(to_string(game->getMissionsPanel()->getTime()), 700, 50, BLACK);
+		}
 	}
-	//renderText(game->getMissionManager()->getMissionName(), 700, 15, BLACK);
-	renderText(to_string(game->getPlayer()->money_), 700, 45, BLACK);
+	renderText("Money  " + to_string(game->getPlayer()->money_), 700, 70, BLACK);
 }
 
 

@@ -11,6 +11,7 @@ Inventory::Inventory(Player* player, SDL_Renderer* renderer) : player_(player)
 	string route = "../Images/ui/inventorybar.png";
 	base_ = new Texture(renderer, route);
 	baseRect_ = {250, 350, 300, 300/6};
+	missionObjectRect_ = {250, 350, 300/6, 300/6};
 }
 
 Inventory::~Inventory()
@@ -114,6 +115,10 @@ bool Inventory::inventoryFull() {
 
 void Inventory::draw() {
 	base_->render(baseRect_);
+															
+	if (hasMissionObject()) { // si hay mission object, renderiza su textura
+		missionObject_->getTexture()->render(missionObjectRect_);
+	}
 }
 
 

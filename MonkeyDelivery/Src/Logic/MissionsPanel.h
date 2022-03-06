@@ -40,6 +40,7 @@ private:
 	Target* activeTarget_;
 
 	Uint32 initialTicks_; // valor de los ticks cuando se activó la misión
+	Uint32 endTime_;
 	
 public:
 	MissionsPanel(Game* game);
@@ -62,7 +63,10 @@ public:
 	void loadMissions(std::string filename);
 
 	inline Mission* getCurrentMission() { return currentMission_; };
-
+		
 	inline Target* getTarget() { return activeTarget_; };
+	inline int getInitialTicks() { return initialTicks_; };
+	// tiempo que queda de misión (para las express)
+	inline int getTime() { return endTime_ - SDL_GetTicks(); };
 };
 

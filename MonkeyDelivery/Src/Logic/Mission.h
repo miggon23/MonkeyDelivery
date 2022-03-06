@@ -1,34 +1,22 @@
 #pragma once
 
 #include <string>
-#include "GameObject.h"
-#include "Target.h"
 
 using namespace std;
-class MissionManager;
 
 
-using namespace std;
 class Mission
 {
 private:
-	int maxReward_, minReward_, minDistance_, minTime_, iniTicks_;
-	bool additionalReward_;
 	string name_;
-	Target* objective_ = nullptr;
+	bool isExpress_;
 
 public:
 
-	Mission(Target * o, int maxReward, int minReward, int minDistance, int minTime, string name);
+	Mission(string name, bool exp);
 	~Mission();
 
-	//puede ser método interno
-	void completeMission();
-	void cancelAdditinalReward() { additionalReward_ = false; }
-
-	void setExpress();
-
-	string getName() { return name_; }
-
+	inline string getName() { return name_; }
+	inline bool isExpress() { return isExpress_; }
 };
 

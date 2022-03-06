@@ -73,6 +73,13 @@ void MissionsPanel::onPlayerInteraction(Player* player)
 
 void MissionsPanel::update()
 {
+	if (currentMission_ != nullptr &&
+		currentMission_->isExpress() &&
+		getTime() <= 0) {
+
+		// terminar misión express
+		onMissionCompleted();
+	}
 }
 
 void MissionsPanel::onMissionSelected(string missionId)
@@ -85,12 +92,14 @@ void MissionsPanel::onMissionSelected(string missionId)
 	if (!activeTarget_->isActive()) { //currentMission_ != nullptr
 
 		// settear la misión como activa
-		currentMission_ = new Mission(activeTarget_, m.maxMoney, m.minMoney, 10, m.minTime, missionId); 
-		if (m.isExpress) currentMission_->setExpress();
+		currentMission_ = new Mission(missionId, m.isExpress); 
 
 		// comunicarlo al inventario o spawnear el objeto, dependiendo del tipo de misión
-		game->getPlayer()->addMissionObject(new Package);
+		game->getPlayer()->addMissionObject(new Package(new Texture(game->getRenderer(), "../Images/objects/package.png")));
 	
+		//Misiones express
+		endTime_ = initialTicks_ + m.minTime;
+
 		// spawn Vecino
 		activeTarget_->changeActive();
 		activeTarget_->setDimension(m.width, m.height);
@@ -119,7 +128,7 @@ void MissionsPanel::onMissionCompleted()
 	int reward = m.maxMoney;
 
 	// Restar dinero si se pasa del tiempo -> Resta 1 oro por segundo que se retrase
-	if (SDL_GetTicks() > initialTicks_ + m.minTime) {
+	if (SDL_GetTicks() > endTime_) {
 		reward -= ((SDL_GetTicks() - initialTicks_ - m.minTime) / 1000); // valor de tiempo que se ha pasado del tiempo mínimo
 	}
 
@@ -130,12 +139,12 @@ void MissionsPanel::onMissionCompleted()
 		reward = m.minMoney;
 	}
 	
+	//endTime_ = 0;
 
 	game->changeMoneyPlayer(reward);
 
 	// Marcar la mision como acabada
 	missions_.at(currentMission_->getName()).completed = true;
-	currentMission_->completeMission();
 	delete currentMission_;
 	currentMission_ = nullptr;
 

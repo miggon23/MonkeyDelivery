@@ -19,6 +19,7 @@ private:
 	//Renderizado
 	Texture* base_;
 	SDL_Rect baseRect_;
+	SDL_Rect missionObjectRect_;
 
 public:
 	Inventory(Player* player, SDL_Renderer* renderer);
