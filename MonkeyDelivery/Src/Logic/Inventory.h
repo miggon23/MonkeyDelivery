@@ -1,6 +1,7 @@
 #pragma once
 
 #include <vector>
+#include "../View/Texture.h"
 
 using namespace std;
 
@@ -14,8 +15,13 @@ private:
 	vector<InventoryObject*> inventory_;
 	InventoryObject* missionObject_;
 	Player* player_;
+
+	//Renderizado
+	Texture* base_;
+	SDL_Rect baseRect_;
+
 public:
-	Inventory(Player* player);
+	Inventory(Player* player, SDL_Renderer* renderer);
 	~Inventory();
 
 	bool addObject(InventoryObject* iO);

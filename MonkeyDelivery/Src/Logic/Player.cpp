@@ -26,9 +26,9 @@ Player::Player(Game* game) :GameObject(game) {
 
 	energyLevel_ = new energyLevel(game);
 	fearLevel_ = new FearLevel(game);
-	inventory_ = new Inventory(this);
+	inventory_ = new Inventory(this, game->getRenderer());
 	inventory_->addObject(new Bike());
-	setInventoryVisibility(false);
+	setInventoryVisibility(true);
 }
 
 Player::~Player()

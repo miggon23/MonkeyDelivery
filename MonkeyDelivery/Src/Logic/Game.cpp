@@ -91,13 +91,14 @@ void Game::draw()
     for (auto enemy : enemyContainer_)
         enemy->draw();
 
-    player_->draw();
     info->draw();
 
     missionsPanel_->draw();
 
     dialogueBox_->draw();
     //renderText("aaaa", 100, 150, BLACK);
+    
+    player_->draw();
 }
 Point2D<int> Game::getOrigin() {
     return { int(-(player_->getX() - player_->getWidth())), 0 };

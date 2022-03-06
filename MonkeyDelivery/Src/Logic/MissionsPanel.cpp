@@ -86,7 +86,8 @@ void MissionsPanel::onMissionSelected(string missionId)
 
 		// settear la misión como activa
 		currentMission_ = new Mission(activeTarget_, m.maxMoney, m.minMoney, 10, m.minTime, missionId); 
-		
+		if (m.isExpress) currentMission_->setExpress();
+
 		// comunicarlo al inventario o spawnear el objeto, dependiendo del tipo de misión
 		game->getPlayer()->addMissionObject(new Package);
 	
@@ -122,8 +123,13 @@ void MissionsPanel::onMissionCompleted()
 		reward -= ((SDL_GetTicks() - initialTicks_ - m.minTime) / 1000); // valor de tiempo que se ha pasado del tiempo mínimo
 	}
 
-	// Le aseguro un mínimo de dinero
-	if (reward < m.minMoney) reward = m.minMoney; 
+	if (m.isExpress && reward < 0) { // si es express y se ha retrasado tanto que el dinero es negativo
+		reward = 0;
+	}
+	else if (reward < m.minMoney) { // si no es express le aseguro un mínimo de dinero
+		reward = m.minMoney;
+	}
+	
 
 	game->changeMoneyPlayer(reward);
 

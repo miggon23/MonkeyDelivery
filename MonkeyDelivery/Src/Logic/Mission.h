@@ -26,6 +26,8 @@ public:
 	void completeMission();
 	void cancelAdditinalReward() { additionalReward_ = false; }
 
+	void setExpress();
+
 	string getName() { return name_; }
 
 };

@@ -1,15 +1,23 @@
 #include "Inventory.h"
 #include "InventoryObject.h"
 #include <iostream>
+#include <SDL_rect.h>
+#include "../View/Texture.h"
 
-Inventory::Inventory(Player* player) : player_(player)
+Inventory::Inventory(Player* player, SDL_Renderer* renderer) : player_(player)
 {
 	missionObject_ = nullptr;
+
+	string route = "../Images/ui/inventorybar.png";
+	base_ = new Texture(renderer, route);
+	baseRect_ = {250, 350, 300, 300/6};
 }
 
 Inventory::~Inventory()
 {
 	clearInventory();
+
+	delete base_;
 }
 
 bool Inventory::addObject(InventoryObject* iO)
@@ -105,7 +113,7 @@ bool Inventory::inventoryFull() {
 }
 
 void Inventory::draw() {
-
+	base_->render(baseRect_);
 }
 
 

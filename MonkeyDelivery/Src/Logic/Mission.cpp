@@ -28,3 +28,7 @@ void Mission::completeMission()
 	if (additionalReward_ && SDL_GetTicks() < iniTicks_ + minTime_)
 		reward = maxReward_;
 }
+
+void Mission::setExpress()
+{
+}
