@@ -19,7 +19,7 @@ Bat::Bat(Game* game, int Aleatorio, Point2D<int> centroRadio, int nLoop) : Enemy
 
 void Bat::update()
 {
-	move(speed);
+	patrol(speed);
 
 	SDL_Rect r1 = player_->getCollider();
 	SDL_Rect r2 = this->getCollider();

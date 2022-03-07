@@ -13,7 +13,7 @@ Cat::Cat(Game* game,int Aleatorio, Point2D<int>centroRadio):Enemy(game, Aleatori
 
 void Cat::update()
 {
-	move(1);
+	patrol(1);
 	checkDistance();
 }
 

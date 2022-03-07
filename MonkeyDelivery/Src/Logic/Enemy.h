@@ -20,7 +20,7 @@ public:
 	Enemy(Game* game, int Aleatorio, Point2D<int>centroRadio);
 	~Enemy() {};
 
-	 void move(double speed);
+	 void patrol(double speed);
 
 	void die();
 

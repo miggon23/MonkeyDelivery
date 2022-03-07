@@ -10,7 +10,7 @@ Enemy::Enemy(Game* game, int Aleatorio, Point2D<int>centroRadio) : GameObject(ga
 	//setScariness(0.7);
 }
 
-void Enemy::move(double speed)
+void Enemy::patrol(double speed)
 {
 	if (checkpoints.size() > 1)
 	{
