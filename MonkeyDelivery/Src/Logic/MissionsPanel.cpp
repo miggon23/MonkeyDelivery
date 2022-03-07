@@ -138,8 +138,6 @@ void MissionsPanel::onMissionCompleted()
 	else if (reward < m.minMoney) { // si no es express le aseguro un mínimo de dinero
 		reward = m.minMoney;
 	}
-	
-	//endTime_ = 0;
 
 	game->changeMoneyPlayer(reward);
 
@@ -150,6 +148,10 @@ void MissionsPanel::onMissionCompleted()
 
 	// Despawnear vecino
 	activeTarget_->changeActive();
+
+	// Quitar paquete
+	game->getPlayer()->removeMissionObject();
+
 
 	// comprobar si todas las misiones de este nivel están completadas -> tandas de misiones
 }
