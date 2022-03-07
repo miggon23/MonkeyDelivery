@@ -150,14 +150,50 @@ void Player::FadeOut()
 	/*auto rect= SDL_Rect(0, game->getWindowHeight(), game->getWindowWeight(), game->getWindowHeight()
 	auto x = Texture(rect);
 	SDL_SetTextureAlphaMod(,50);*/
-	
 
+	/*setTexture(monkeyEyesClosedTexture);
+
+	SDL_Rect screenRectangle = { 0, 0, game->getWindowWidth(), game->getWindowHeight()};
+	SDL_Renderer* renderer = game->getRenderer();
+	SDL_SetRenderDrawBlendMode(renderer, SDL_BLENDMODE_BLEND);
+	SDL_SetRenderDrawColor(renderer, 120, 0, 0, this->alpha);
+	SDL_RenderFillRect(renderer, &screenRectangle);
+	SDL_RenderDrawRect(renderer, &screenRectangle);
+	SDL_Texture* front = SDL_CreateTexture(renderer, SDL_PIXELFORMAT_ARGB32, SDL_TEXTUREACCESS_TARGET, 
+		game->getWindowWidth(), game->getWindowHeight());
+	SDL_SetRenderTarget(renderer, front);
+
+	while(alpha < SDL_ALPHA_OPAQUE)
+	{
+		this->alpha += 1;
+		SDL_SetRenderDrawBlendMode(renderer, SDL_BLENDMODE_BLEND);
+		SDL_SetRenderDrawColor(renderer, 120, 0, 0, this->alpha);
+		SDL_RenderFillRect(renderer, &screenRectangle);
+		SDL_RenderDrawRect(renderer, &screenRectangle);
+		SDL_SetRenderTarget(renderer, front);
+
+	}*/
+
+	//SDL_Surface* s = SDL_CreateRGBSurface(0, game->getWindowWidth(), game->getWindowHeight(), 32, 0, 0, 0, 0);
+
+	//SDL_Texture* t;
+	////t = SDL_CreateTexture(game->getRenderer(), 32, 0, game->getWindowWidth(), game->getWindowHeight());
+	//t = SDL_CreateTextureFromSurface(game->getRenderer(), s);
+	//SDL_SetTextureAlphaMod(t, 255);
+	////SDL_SetRenderDrawColor(game->getRenderer(), 0, 0, 0, 0);
+	//SDL_Texture* front = SDL_CreateTexture(game->getRenderer(), SDL_PIXELFORMAT_ARGB32, SDL_TEXTUREACCESS_TARGET,
+	//	game->getWindowWidth(), game->getWindowHeight());
+	//SDL_SetRenderTarget(game->getRenderer(), front);
+
+	//SDL_SetRenderTarget(renderer, NULL);
+
+	//SDL_RenderClear(renderer);
 }
 
 void Player::getScared(int amount)
 {
 	if (fearLevel_->getScared(amount))
-		setTexture(monkeyEyesClosedTexture);
+		FadeOut();
 }
 
 /// <summary>
@@ -167,7 +203,7 @@ void Player::getScared(int amount)
 void Player::drainEnergy(float amount)
 {
 	if (energyLevel_->drain(amount)) { // se queda dormido porque no tiene energía
-		setTexture(monkeyEyesClosedTexture);
+		FadeOut();
 	}
 }
 

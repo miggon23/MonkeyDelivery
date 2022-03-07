@@ -10,13 +10,15 @@ class Game;
 class Inventory;
 enum Animations { QUIETO, CORRER };//EN PROCESO <NO TOCAR>
 
-class Player: public GameObject {
+class Player : public GameObject {
 
 	friend class UI_Info;
 
 private:
 	Inventory* inventory_ = nullptr;
 	bool inventoryVisibility;
+	bool fade = true;
+	int alpha = SDL_ALPHA_TRANSPARENT;
 
 #pragma region Sleep
 	bool sleeping = false;
@@ -55,7 +57,7 @@ private:
 #pragma endregion	
 
 public:
-	
+
 	Player(Game* game);
 	~Player();
 
@@ -68,7 +70,7 @@ public:
 	void NoSleepText();//si presionas la e pero no puedes dormir para que renderize el texto
 	void FadeOut();
 #pragma endregion
-	
+
 #pragma region Energy
 	void drainEnergy(float amount);
 	void recoverEnergy(int amount);
@@ -104,7 +106,7 @@ public:
 
 #pragma region inventory
 	void useObject(int index);
-	inline void setInventoryVisibility(bool visible) { inventoryVisibility = visible;  };
+	inline void setInventoryVisibility(bool visible) { inventoryVisibility = visible; };
 	bool hasMissionObject();
 	void addMissionObject(InventoryObject* p);
 	void removeMissionObject();
