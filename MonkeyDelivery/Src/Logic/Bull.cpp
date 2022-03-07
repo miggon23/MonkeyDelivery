@@ -1,7 +1,7 @@
 #include "Bull.h"
 #include "Game.h"
 
-Bull::Bull(Game* game, int Aleatorio, Point2D<int> centroRadio) : Enemy(game, Aleatorio, centroRadio)
+Bull::Bull(Game* game, int Aleatorio, Point2D<int> centroRadio, AnimationManager* animation) : Enemy(game, Aleatorio, centroRadio,animation)
 {
 	setTexture(bullTexture);
 	Vector2D<double> zonePoint = zone.generatePoint();

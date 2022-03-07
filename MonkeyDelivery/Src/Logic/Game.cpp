@@ -3,7 +3,7 @@
 Game::Game(string n, int w, int h) : name(n), width(w), height(h), doExit(false)
 {    
     font_ = new Font("../Images/TheMoon.ttf", 50);
-    
+    animationManager = new AnimationManager(this);
 }
 
 Game::~Game() {
@@ -25,6 +25,7 @@ Game::~Game() {
     //delete missionsPanel_; solo poner si no va en el vector de gameobjects
     delete dialogueBox_;
     delete iE_;
+    delete animationManager;
 }
 
 string Game::getGameName() {
@@ -37,7 +38,9 @@ void Game::add(GameObject* gameObject) {//a�adir gO al vector
 
 void Game::start()
 {
-    player_ = new Player(this); //Creacion del jugador
+    animationManager = new AnimationManager(this);
+
+    player_ = new Player(this,animationManager); //Creacion del jugador
    
    
 
@@ -186,9 +189,9 @@ void Game::addEnemies(Enemy* enemy)
 }
 void Game::enemiesCreation()
 {  
-    addEnemies(new Cat(this, 50, Point2D<int>(100, 100)));
-    addEnemies(new Bat(this, 20, Point2D<int>(200, 80), 7));
-    addEnemies(new Bull(this, 35, Point2D<int>(350, 70)));
+    addEnemies(new Cat(this, 50, Point2D<int>(100, 100),animationManager));
+    addEnemies(new Bat(this, 20, Point2D<int>(200, 80), 7,animationManager));
+    addEnemies(new Bull(this, 35, Point2D<int>(350, 70),animationManager));
 }
 
 void Game::scare(double scariness)

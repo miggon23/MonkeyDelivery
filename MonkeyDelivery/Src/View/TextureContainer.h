@@ -26,11 +26,15 @@ enum TextureName {
     mission2Texture,
     cama,
     dialogoPrueba,
-    bullTexture
+    bullTexture,
+    monkeyspritesheet,
+    batspritesheet,
+    bullspritesheet,
+    catspritesheet
 };
 
 
-const int NUM_TEXTURES = 15;
+const int NUM_TEXTURES = 19;
 
 typedef struct {
     string filename;
@@ -54,7 +58,11 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
   {"decorations/Mision1.png",1,1},
   {"decorations/cama.jpg",1,1},
   {"dialogPrueba.png",1,1},
-  {"bull.png",1,1}
+  {"bull.png",1,1},
+  {"animaciones mono/monkey.png",1,1},
+  {"enemies/bat.png",1,1},
+  {"enemies/bull.png",1,1},
+  {"enemies/cat.png",1,1}
 };
 
 

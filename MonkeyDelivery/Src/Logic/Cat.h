@@ -11,10 +11,11 @@ protected:
 
 public:
 
-	Cat(Game* game, int Aleatorio, Point2D<int>centroRadio);
+	Cat(Game* game, int Aleatorio, Point2D<int>centroRadio, AnimationManager* animation);
 	~Cat() {};
 
 	void update() override;
 	void createCheckPoints() override;
+	void draw() override;
 };
 

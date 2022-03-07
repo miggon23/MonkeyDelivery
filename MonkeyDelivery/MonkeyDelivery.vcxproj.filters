@@ -143,6 +143,9 @@
     <ClCompile Include="Src\Logic\Package.cpp">
       <Filter>Source Files\Logic\InteractuableObjects</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Logic\AnimationManager.cpp">
+      <Filter>Source Files\Logic\Managers/Game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -309,6 +312,9 @@
     </ClInclude>
     <ClInclude Include="Src\Logic\Package.h">
       <Filter>Header Files\Logic\InteractuableObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Logic\AnimationManager.h">
+      <Filter>Header Files\Logic\Managers/Game</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

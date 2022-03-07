@@ -5,11 +5,11 @@
 #include "SDL.h"
 
 
-Player::Player(Game* game) :GameObject(game) {
+Player::Player(Game* game, AnimationManager* animation) :GameObject(game),animationManager(animation) {
 	this->game = game;
 	
 	texture = nullptr;
-	setTexture(monkeyTexture);
+	setTexture(monkeyspritesheet);
 
 	//inicializacion de variables
 	fear_ = 0;

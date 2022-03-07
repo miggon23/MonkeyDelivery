@@ -175,6 +175,7 @@
     <ClInclude Include="Src\Control\ViewController.h" />
     <ClInclude Include="Src\json\JSON.h" />
     <ClInclude Include="Src\json\JSONValue.h" />
+    <ClInclude Include="Src\Logic\AnimationManager.h" />
     <ClInclude Include="Src\Logic\Bat.h" />
     <ClInclude Include="Src\Logic\Bike.h" />
     <ClInclude Include="Src\Logic\Bed.h" />
@@ -230,6 +231,7 @@
     <ClCompile Include="Src\Control\ViewController.cpp" />
     <ClCompile Include="Src\json\JSON.cpp" />
     <ClCompile Include="Src\json\JSONValue.cpp" />
+    <ClCompile Include="Src\Logic\AnimationManager.cpp" />
     <ClCompile Include="Src\Logic\Bat.cpp" />
     <ClCompile Include="Src\Logic\Bike.cpp" />
     <ClCompile Include="Src\Logic\Bed.cpp" />

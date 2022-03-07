@@ -19,6 +19,7 @@ class GameObject {
 
 protected:
     Game* game;
+
     Texture* texture;
 
     void drawTexture(Texture* texture);

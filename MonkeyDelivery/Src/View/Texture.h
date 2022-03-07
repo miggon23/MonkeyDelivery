@@ -28,4 +28,44 @@ public:
 
     void load(string filename, uint numRows = 1, uint numCols = 1);
     void render(const SDL_Rect& rect, SDL_RendererFlip flip = SDL_FLIP_NONE) const;
+    // This rendering method corresponds to method SDL_RenderCopyEx.
+    //
+    // Renders part of the texture (src) to a destination rectangle (dest)
+    // with a rotation (angle) around point p (of dest), and flips
+    // according to the value of flip. If 'p'is nullptr, the rotation is done
+    // wrt. the center
+    //
+    inline void render(const SDL_Rect& src, const SDL_Rect& dest, double angle,
+        const SDL_Point* p = nullptr,
+        SDL_RendererFlip flip = SDL_FLIP_NONE) {
+       
+        SDL_RenderCopyEx(renderer, texture, &src, &dest, angle, p, flip);
+    }
+    // This rendering method corresponds to method SDL_RenderCopy.
+    //
+    // Renders part of the texture (src) to a destination rectangle (dest).
+    // It can be implemented by calling the previous render method as well,
+    // but we use SDL_RenderCopy directly since it does less checks so it
+    // saves some checks ...
+    inline void render(const SDL_Rect& src, const SDL_Rect& dest) {
+        SDL_RenderCopy(renderer, texture, &src, &dest);
+    }
+    // render the complete texture at position (x,y).
+    inline void render(int x, int y) {
+        SDL_Rect dest = { x, y, w, h};
+        render(dest);
+    }
+
+    // renders the complete texture at a destination rectangle (dest)
+    inline void render(const SDL_Rect& dest) {
+        SDL_Rect src = { 0, 0, w, h };
+        render(src, dest);
+    }
+
+    // renders the complete texture at a destination rectangle (dest),
+    // with rotation
+    inline void render(const SDL_Rect& dest, float rotation) {
+        SDL_Rect src = { 0, 0, w, h };
+        render(src, dest, rotation);
+    }
 };

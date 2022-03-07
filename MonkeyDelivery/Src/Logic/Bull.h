@@ -10,7 +10,7 @@ private:
 	double speed = 2;
 
 public:
-	Bull(Game* game, int Aleatorio, Point2D<int>centroRadio);
+	Bull(Game* game, int Aleatorio, Point2D<int>centroRadio, AnimationManager* animation);
 	~Bull() {};
 
 	void update() override;

@@ -1,12 +1,13 @@
 #include "Enemy.h"
 #include "Game.h"
 
-Enemy::Enemy(Game* game, int Aleatorio, Point2D<int>centroRadio) : GameObject(game){
-
+Enemy::Enemy(Game* game, int Aleatorio, Point2D<int>centroRadio, AnimationManager* animation) : GameObject(game),animationManager(animation){
+	
 	zone = SpawnZone(Aleatorio, centroRadio); //Creaccion de la zona de spawn
 	setAlive(true);
 	indexCheckPoint = 0;
 	back = false; //Boolenao que indica cuando se da la vuelta el enemigo en su patrulla
+	timerAnimation = SDL_GetTicks();
 	//setScariness(0.7);
 }
 

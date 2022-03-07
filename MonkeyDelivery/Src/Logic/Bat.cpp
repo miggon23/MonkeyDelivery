@@ -1,11 +1,11 @@
 #include "Bat.h"
 #include "Game.h"
 
-Bat::Bat(Game* game, int Aleatorio, Point2D<int> centroRadio, int nLoop) : Enemy(game, Aleatorio, centroRadio)
+Bat::Bat(Game* game, int Aleatorio, Point2D<int> centroRadio, int nLoop, AnimationManager* animation) : Enemy(game, Aleatorio, centroRadio,animation)
 {
 	Vector2D<double> zonePoint = zone.generatePoint();
 	setPosition(zonePoint.getX(), zonePoint.getY());
-	setTexture(batTexture);
+	setTexture(batspritesheet);
 	setDimension(90, 100);
 	initialPos = getPosition();
 	
@@ -13,7 +13,7 @@ Bat::Bat(Game* game, int Aleatorio, Point2D<int> centroRadio, int nLoop) : Enemy
 	player_ = game->getPlayer();
 	
 	loops = nLoop;
-
+	textureRect = { 0,0,animationManager->getWeightBat(),animationManager->getHeightBat() };
 	createCheckPoints();
 }
 
@@ -56,4 +56,8 @@ void Bat::createCheckPoints()
 void Bat::onPlayerInteraction(Player* player)
 {
 	player->removeMoney(1);
+}
+
+void Bat::draw(){
+	animationManager->getFrameImageBat(getCollider(), textureRect, texture,timerAnimation);
 }

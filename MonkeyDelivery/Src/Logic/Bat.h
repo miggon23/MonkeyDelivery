@@ -10,10 +10,11 @@ class Bat : public Enemy
 
 public:
 
-	Bat(Game* game, int Aleatorio, Point2D<int>centroRadio, int nLoop);
+	Bat(Game* game, int Aleatorio, Point2D<int>centroRadio, int nLoop, AnimationManager* animation);
 	~Bat() {};
 
 	void update() override;
 	void createCheckPoints() override;
 	void onPlayerInteraction(Player* player) override;
+	void draw() override;
 };

@@ -2,6 +2,7 @@
 #include "GameObject.h"
 #include "SpawnZone.h"
 
+class AnimationManager;
 class Enemy : public GameObject
 {
 protected:
@@ -15,9 +16,12 @@ protected:
 	int indexCheckPoint;
 	bool back;
 
+	AnimationManager* animationManager;	
+	SDL_Rect textureRect;
+	int timerAnimation;
 public:
 
-	Enemy(Game* game, int Aleatorio, Point2D<int>centroRadio);
+	Enemy(Game* game, int Aleatorio, Point2D<int>centroRadio,AnimationManager* animation);
 	~Enemy() {};
 
 	 void patrol(double speed);

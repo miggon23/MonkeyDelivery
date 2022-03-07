@@ -8,7 +8,7 @@
 
 class Game;
 class Inventory;
-enum Animations { QUIETO, CORRER };//EN PROCESO <NO TOCAR>
+class AnimationManager;
 
 class Player : public GameObject {
 
@@ -52,13 +52,14 @@ private:
 #pragma endregion
 
 #pragma region Animations	
-	Animations animations;
-	int indicatorTexture;
+	AnimationManager* animationManager;
+	int x_, y_;
+	SDL_Rect textureRender;
 #pragma endregion	
 
 public:
 
-	Player(Game* game);
+	Player(Game* game,AnimationManager* animation);
 	~Player();
 
 	void update() override;

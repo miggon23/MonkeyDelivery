@@ -31,6 +31,7 @@
 
 #include "MissionsPanel.h"
 
+#include "AnimationManager.h"
 using namespace std;
 
 class Game : public StateMachine {
@@ -49,6 +50,7 @@ private:
     
     MissionsPanel* missionsPanel_= nullptr;
     
+    AnimationManager* animationManager;
 
     Font* font_;
     UI_Info* info;
