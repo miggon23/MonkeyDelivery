@@ -10,6 +10,7 @@ Bull::Bull(Game* game, int Aleatorio, Point2D<int> centroRadio) : Enemy(game, Al
 	initialPos_ = getPosition();
 	createCheckPoints();
 	stop = true; //Patrulla y no persigue
+	setScariness(0.14);
 }
 
 void Bull::update()
