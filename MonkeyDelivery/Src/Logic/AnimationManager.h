@@ -20,13 +20,20 @@ public:
 	inline AnimationManager() {};
 	inline AnimationManager(Game* game) :game_(game) {		
 	};
-	inline ~AnimationManager() {};
+	inline ~AnimationManager() { cout << "animationManager Deleted" << endl; };
 	inline void getFrameImagePlayer(SDL_Rect player, Texture* tex) {
 		
 	}
 	//MURCIELAGO
 	inline int getWeightBat() { return wBat_; };
 	inline int getHeightBat() { return hBat_; };
+	/// <summary>
+	/// Recortar una imagen del SpriteSheet del murcielago
+	/// </summary>
+	/// <param name="bat">COLLIDER DEL MUERCIELAGO</param>
+	/// <param name="texturaRect">textureRect DEL MURCIELAGO(es una variable es lo q vamos a recortar de la sprite sheet)</param>
+	/// <param name="tex"> Textura del muercielago</param>
+	/// <param name="timer">variable timerAnimation para que me cambie la imagen cada cierto numero de ticks</param>
 	inline void getFrameImageBat(SDL_Rect bat,SDL_Rect &texturaRect, Texture* tex,int &timer) {
 		if (SDL_GetTicks() - timer >= 200) {
 			texturaRect.x += wBat_;
@@ -51,8 +58,7 @@ public:
 			if (texturaRect.y >= 200) {
 				texturaRect.y = 0; 
 			}
-			timer = SDL_GetTicks();
-			cout << texturaRect.x << " " << texturaRect.y << endl;
+			timer = SDL_GetTicks();			
 		}
 		tex->render(texturaRect, cat);
 	}
