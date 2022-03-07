@@ -18,17 +18,23 @@ private:
 	Point2D<int> textPos_;
 	SDL_Color color_;
 
-	bool draw_ = false;
+	const int xPos_ = 300,
+		yPos_ = 250, 
+		width_ = 200, 
+		height_ = 100, 
+		xText_ = 0, 
+		yText_ = 0;
+
+	bool draw_;
 public:
 
 	//textura nombre, texto por id json
-	DialogueBox(Game* game, string id, Font* font, SDL_Color color, Texture* texture);
+	DialogueBox(Game* game);
 	~DialogueBox();
-	void Load(string filename, string id);
-
-	void ChangeText(string text);
-	void Show() { draw_ = true; }
-	void Hide() { draw_ = false; }
+	
+	void changeText(string id);
+	void show() { draw_ = true; }
+	void hide() { draw_ = false; }
 	
 
 	void draw() override;

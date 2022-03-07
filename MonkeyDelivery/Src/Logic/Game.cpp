@@ -52,9 +52,9 @@ void Game::start()
 
     //missions_ = new MissionManager(this);
 
-    dialogueBox_ = new DialogueBox(this, "DialogueBox1", new Font("../Images/TheMoon.ttf", 20), BLACK, getTexture(dialogoPrueba));
-
-    dialogueBox_->Show();
+    dialogueBox_ = new DialogueBox(this);
+    dialogueBox_->changeText("DialogueBox1");
+    dialogueBox_->show();
 
     info = new UI_Info(this);
     auto* x = new Bed(this);

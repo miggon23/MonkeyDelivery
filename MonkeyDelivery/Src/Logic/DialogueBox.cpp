@@ -7,17 +7,18 @@
 #include "../json/JSON.h"
 
 
-DialogueBox::DialogueBox(Game* game, string id, Font* font, SDL_Color color, Texture* texture) : GameObject(game)
+DialogueBox::DialogueBox(Game* game) : GameObject(game)
 {
 	this->game = game;
-	this->texture = texture;
-	
-	Load("../Images/config/resources.json", id);
-
-	font_ = font;	
-	color_ = color;
 
 
+	font_ = new Font("../Images/TheMoon.ttf", 20);
+	texture = game->getTexture(dialogoPrueba);
+	color_ = BLACK;
+
+	setPosition(xPos_, yPos_);
+	setDimension(width_, height_);
+	textPos_ = { xText_, yText_ };
 }
 
 DialogueBox::~DialogueBox()
@@ -26,12 +27,13 @@ DialogueBox::~DialogueBox()
 	font_ = nullptr;
 }
 
-void DialogueBox::Load(string filename, string id)
+void DialogueBox::changeText(string id)
 {
-	std::unique_ptr<JSONValue> jValueRoot(JSON::ParseFromFile(filename));
+	std::unique_ptr<JSONValue> jValueRoot(JSON::ParseFromFile("../Images/config/resources.json"));
+
 
 	if (jValueRoot == nullptr || !jValueRoot->IsObject()) {
-		throw "Something went wrong while load/parsing '" + filename + "'";
+		throw "Something went wrong while load/parsing '../Images/config/resources.json'";
 	}
 
 	JSONObject root = jValueRoot->AsObject();
@@ -46,32 +48,19 @@ void DialogueBox::Load(string filename, string id)
 					JSONObject vObj = v->AsObject();
 
 					text_ = vObj["text"]->AsString();
-					x = vObj["x"]->AsNumber();
-					y = vObj["y"]->AsNumber();
-					width = vObj["width"]->AsNumber();
-					height = vObj["height"]->AsNumber();
-					xText = vObj["xText"]->AsNumber();
-					yText = vObj["yText"]->AsNumber();
 				}
 				else {
-					throw "'missions' array in '" + filename
+					throw "'missions' array in '" + id
 						+ "' includes and invalid value";
 				}
 			}
 
-			setPosition(x, y);
-			setDimension(width, height);
-			textPos_ = { xText, yText };
+			
 		}
 		else {
-			throw "'fonts' is not an array in '" + filename + "'";
+			throw "'fonts' is not an array in '" + id + "'";
 		}
 	}
-}
-
-void DialogueBox::ChangeText(string text)
-{
-	text_ = text;
 }
 
 void DialogueBox::draw()
