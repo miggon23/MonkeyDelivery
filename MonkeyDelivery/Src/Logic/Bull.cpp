@@ -8,20 +8,19 @@ Bull::Bull(Game* game, int Aleatorio, Point2D<int> centroRadio) : Enemy(game, Al
 	setPosition(zonePoint.getX(), zonePoint.getY());
 	setDimension(100, 110);
 	initialPos_ = getPosition();
-	//createCheckPoints();
-	stop = false;
-	timer_ = SDL_GetTicks();
+	createCheckPoints();
+	stop = true; //Patrulla y no persigue
 }
 
 void Bull::update()
 {
-	move(1);
+	if(stop) move(1); //El toro solo patrulla si no persigue 
 	checkDistance();
-	//El toro si ha alcanzado al jugador se espera 1,5 segundos para volver a perseguirlo
-	if (stop && SDL_GetTicks() > timer_ + 1500) {
-		stop = false;
-		timer_ = SDL_GetTicks();
+	//Si han pasado 3 segundos y el toro esta persiguiendo
+	if (!stop && SDL_GetTicks() > timer_ + 3000) {
+		stop = true;
 	}
+	cout << stop << endl;
 }
 
 void Bull::createCheckPoints()
@@ -34,41 +33,39 @@ void Bull::createCheckPoints()
 
 void Bull::checkDistance()
 {
-	int offset = 300;
+	int offset = 300; //rango
 	double dX = getPosition().getX() - game->getPosisitionPlayer().getX();
 	double dY = getPosition().getY() - game->getPosisitionPlayer().getY();
 	double distanceX = abs(dX);
 	double distanceY = abs(dY);
 
 	double newX = getPosition().getX(), newY = getPosition().getY();
-	int speed = 5;
+	int speed = 2;
 	//Si esta en el rango
-	if (distanceX <= offset && distanceY <= offset && !stop) {
-		cout << distanceX << " " << distanceY << endl;
+	if (distanceX <= offset && distanceY <= offset) {
+		stop = false; //Persigo
+		timer_ = SDL_GetTicks();
 		//Perseguir al jugador
-		//Le persigue hasta estar a 5 de distacia
-		if ((distanceX >= 3 || distanceY >= 3)) {
-			if (distanceX >= 3 && distanceY < 3) {
-				if (dX < 0) newX = getPosition().getX() + speed;
-				else if (dX > 0) newX = getPosition().getX() - speed;
-				setPosition(newX, getY());
-			}
-			else if (distanceY >= 3 && distanceX < 3) {
-				if (dY < 0) newY = getPosition().getY() + speed;
-				else if (dY > 0) newY = getPosition().getY() - speed;
-				setPosition(getX(), newY);
-			}
-			else {
-				if (dX < 0) newX = getPosition().getX() + speed/2.0;		//el mono esta a la derecha
-				else if (dX > 0) newX = getPosition().getX() - speed / 2.0;	//el mono esta a la izquierda
-				if (dY < 0) newY = getPosition().getY() + speed / 2.0;		//el mono esta por debajo
-				else if (dY > 0) newY = getPosition().getY() - speed / 2.0;	//el mono esta por encima
-				setPosition(newX, newY);
-			}
-		}
-		 
-		if (distanceX < 3 && distanceY < 3) stop = true;
+		if (dX < 0) newX = getPosition().getX() + speed / 2.0;		//el mono esta a la derecha
+		else if (dX > 0) newX = getPosition().getX() - speed / 2.0;	//el mono esta a la izquierda
+		if (dY < 0) newY = getPosition().getY() + speed / 2.0;		//el mono esta por debajo
+		else if (dY > 0) newY = getPosition().getY() - speed / 2.0;	//el mono esta por encima
+		setPosition(newX, newY);
+		
 		//si no es demasiado por eso se divide entre 8
 		game->scare(distanceX * scariness_ / 10);
 	}
+	else if(SDL_GetTicks() > timer_ + 3000) 
+	{ 
+		stop = true; 
+	}
+	else {
+		if (dX < 0) newX = getPosition().getX() + speed / 2.0;		//el mono esta a la derecha
+		else if (dX > 0) newX = getPosition().getX() - speed / 2.0;	//el mono esta a la izquierda
+		if (dY < 0) newY = getPosition().getY() + speed / 2.0;		//el mono esta por debajo
+		else if (dY > 0) newY = getPosition().getY() - speed / 2.0;	//el mono esta por encima
+		setPosition(newX, newY);
+	}
 }
+//stop=true --> Patrulla y no persigue
+//stop=false -->Persigue y no patrulla

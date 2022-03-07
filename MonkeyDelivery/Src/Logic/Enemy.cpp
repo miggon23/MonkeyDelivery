@@ -51,6 +51,7 @@ void Enemy::die()
 
 void Enemy::spawn()
 {
+	setAlive(true); //Para que cuando reaparezca este vivo
 	Vector2D<double> randomPos = zone.generatePoint();
 	setPosition(randomPos.getX(), randomPos.getY());
 }
