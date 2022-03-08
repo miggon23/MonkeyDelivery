@@ -47,7 +47,7 @@ public:
 		if (SDL_GetTicks() - timer >= 500) {
 			xStaticFront_ += wPlayer_;
 			timer = SDL_GetTicks();
-			cout << "actulizar frame" << endl;
+			//cout << "actulizar frame" << endl;
 		}
 	}
 	inline void getFrameImagePlayer(SDL_Rect player, SDL_Rect& texturaRect, Texture* tex, int& timer,PlayerState state) {
@@ -115,16 +115,18 @@ public:
 	inline int getWidthBull() { return wBull_; };
 	inline int getHeigthBull() { return hBull_; };
 	inline void getFrameImageBull(SDL_Rect bull, SDL_Rect& texturaRect, Texture* tex, int& timer) {
-		if (SDL_GetTicks() - timer >= 200) {
+		if (SDL_GetTicks() - timer >= 500) {
 			texturaRect.x += wBull_;
+			if (texturaRect.y >= 100 && texturaRect.x >= 200) {
+				texturaRect.y = 0; texturaRect.x = 0;
+			}
 			if (texturaRect.x >= 200) {
 				texturaRect.x = 0;
 				texturaRect.y += hBull_;
 			}
-			if (texturaRect.y >= 100 && texturaRect.x >= 100) {
-				texturaRect.y = 0; texturaRect.x = 0;
-			}
+			
 			timer = SDL_GetTicks();
+			
 		}
 		tex->render(texturaRect, bull);
 	};
