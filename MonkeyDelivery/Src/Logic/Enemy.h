@@ -24,7 +24,7 @@ public:
 	Enemy(Game* game, int Aleatorio, Point2D<int>centroRadio,AnimationManager* animation);
 	~Enemy() {};
 
-	 void patrol(double speed);
+	void patrol(double speed);
 
 	void die();
 
@@ -38,4 +38,3 @@ public:
 	virtual void checkDistance();
 	inline virtual void setScariness(double fear) { scariness_ = fear; }
 };
-

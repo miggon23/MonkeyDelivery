@@ -3,7 +3,7 @@
 
 Bull::Bull(Game* game, int Aleatorio, Point2D<int> centroRadio, AnimationManager* animation) : Enemy(game, Aleatorio, centroRadio,animation)
 {
-	setTexture(bullTexture);
+	setTexture(bullspritesheet);
 	Vector2D<double> zonePoint = zone.generatePoint();
 	setPosition(zonePoint.getX(), zonePoint.getY());
 	setDimension(100, 110);
@@ -11,6 +11,8 @@ Bull::Bull(Game* game, int Aleatorio, Point2D<int> centroRadio, AnimationManager
 	createCheckPoints();
 	stop = true; //Patrulla y no persigue
 	setScariness(0.15);
+
+	textureRect = { 0, 0, animationManager->getWidthBull(),animationManager->getHeigthBull() };
 }
 
 void Bull::update()
@@ -64,5 +66,8 @@ void Bull::checkDistance()
 	else  //Si no esta en el rango y han pasado los 3 segundos
 		stop = true; //Dejo de perseguir
 }
-//stop=true --> Patrulla y no persigue
-//stop=false -->Persigue y no patrulla
+
+void Bull::draw()
+{
+	animationManager->getFrameImageBull(getCollider(), textureRect, texture, timerAnimation);
+}

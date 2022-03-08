@@ -13,7 +13,7 @@ Bat::Bat(Game* game, int Aleatorio, Point2D<int> centroRadio, int nLoop, Animati
 	player_ = game->getPlayer();
 	
 	loops = nLoop;
-	textureRect = { 0,0,animationManager->getWeightBat(),animationManager->getHeightBat() };
+	textureRect = { 0,0,animationManager->getWidthBat(),animationManager->getHeightBat() };
 	createCheckPoints();
 }
 

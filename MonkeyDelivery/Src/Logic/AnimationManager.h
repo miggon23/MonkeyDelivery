@@ -24,6 +24,10 @@ private:
 	//Gato
 	int wCat_=100,
 		hCat_=100;
+
+	//Toro
+	int wBull_ = 100,
+		hBull_ = 100;
 	
 public:
 	inline AnimationManager() {};
@@ -69,7 +73,7 @@ public:
 		}
 	}
 	//MURCIELAGO
-	inline int getWeightBat() { return wBat_; };
+	inline int getWidthBat() { return wBat_; };
 	inline int getHeightBat() { return hBat_; };
 	/// <summary>
 	/// Recortar una imagen del SpriteSheet del murcielago
@@ -94,7 +98,7 @@ public:
 		tex->render(texturaRect, bat);		
 	}	
 	//GATO
-	inline int getWeightCat() { return wCat_; };
+	inline int getWidthCat() { return wCat_; };
 	inline int getHeightcat() { return hCat_; };
 	inline void getFrameImageCat(SDL_Rect cat, SDL_Rect& texturaRect, Texture* tex, int& timer) {
 		if (SDL_GetTicks() - timer >= 450) {
@@ -106,5 +110,23 @@ public:
 		}
 		tex->render(texturaRect, cat);		
 	}
+
+	//TORO
+	inline int getWidthBull() { return wBull_; };
+	inline int getHeigthBull() { return hBull_; };
+	inline void getFrameImageBull(SDL_Rect bull, SDL_Rect& texturaRect, Texture* tex, int& timer) {
+		if (SDL_GetTicks() - timer >= 200) {
+			texturaRect.x += wBull_;
+			if (texturaRect.x >= 200) {
+				texturaRect.x = 0;
+				texturaRect.y += hBull_;
+			}
+			if (texturaRect.y >= 100 && texturaRect.x >= 100) {
+				texturaRect.y = 0; texturaRect.x = 0;
+			}
+			timer = SDL_GetTicks();
+		}
+		tex->render(texturaRect, bull);
+	};
 };
 
