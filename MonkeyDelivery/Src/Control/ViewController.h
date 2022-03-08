@@ -17,7 +17,7 @@ private:
     
     SDL_Renderer* renderer = nullptr;
     CommandFactory* commandFactory;
-
+    SDL_Event event;
     Timer* timer_;
 
     void initSDL();
@@ -29,7 +29,8 @@ public:
     void run();
     void handleEvents();
     void clearBackground();
-
+    SDL_Window* getWindow(){ return window; }
+    void setWindow(SDL_Window* w) { window = w; }
     vector<SDL_Event>& GetFrameEvents(); //Vector de eventos, registra mas de 1 por frame
 
     unsigned int frameDuration();

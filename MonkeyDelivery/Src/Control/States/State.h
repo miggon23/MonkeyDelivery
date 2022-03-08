@@ -2,6 +2,7 @@
 
 #include <string>
 #include "../CommandFactory.h"
+#include "../ViewController.h"
 
 class Game;
 using namespace std;
@@ -10,7 +11,7 @@ class State {
 protected:
     Game* game = nullptr;
     CommandFactory* commandFactory = nullptr;
-
+    ViewController* vC_;
    // Uint32 initTime;
     unsigned int initTime;
    // Uint32 totalTime;

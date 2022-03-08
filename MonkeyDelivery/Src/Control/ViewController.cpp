@@ -21,9 +21,12 @@ ViewController::ViewController(Game* _game) {
 void ViewController::run() {
    // uint32_t startTime = 0;
    //uint32_t frameTime;   
+    
     while (!game->getState()->doQuit()) {
         timer_->Update();
        // frameTime = SDL_GetTicks() - startTime;
+
+        
         handleEvents();
 
         if (timer_->DeltaTime() >= 1.0f / FRAME_RATE) {
@@ -33,7 +36,6 @@ void ViewController::run() {
             game->getState()->update();
             game->getState()->draw();
             SDL_RenderPresent(renderer);
-            
         }
        /* if (frameTime >= frameDuration()) {
             clearBackground();
@@ -78,6 +80,7 @@ void ViewController::initSDL() {
         game->getWindowWidth(),
         game->getWindowHeight(),
         SDL_WINDOW_SHOWN);
+    setWindow(window);
 
     renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
     

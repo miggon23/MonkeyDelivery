@@ -1,6 +1,7 @@
 #include "State.h"
 #include "../../Logic/Game.h"
 
+
 bool State::doQuit() {
     bool quit = game->isUserExit();
     if (quit)
@@ -36,6 +37,13 @@ void State::handleEvents() {
             command->execute();
             break;
         }
+        /*if (event.type == SDL_KEYDOWN) {
+            SDL_Keycode key = event.key.keysym.sym;
+            if (key == SDLK_f) {
+                SDL_SetWindowFullscreen(vC_->getWindow(), SDL_WINDOW_FULLSCREEN_DESKTOP);
+            }
+        }*/
+
     }
 }
 
