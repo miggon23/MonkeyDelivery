@@ -79,7 +79,7 @@ void ViewController::initSDL() {
         SDL_WINDOWPOS_CENTERED,
         game->getWindowWidth(),
         game->getWindowHeight(),
-        SDL_WINDOW_SHOWN);
+        SDL_WINDOW_FULLSCREEN_DESKTOP);
     setWindow(window);
 
     renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
