@@ -29,6 +29,8 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game),animat
 	inventory_ = new Inventory(this, game->getRenderer());
 	inventory_->addObject(new Bike());
 	setInventoryVisibility(true);
+	textureRect = { 0,0,1450,1560};
+	timerAnimation = SDL_GetTicks();
 }
 
 Player::~Player()
@@ -101,7 +103,7 @@ void Player::sleep()
 {	
 	std::cout << "A MIMIR YA PUTO MONO" << endl;
 	//cambio la textura
-	setTexture(monkeyEyesClosedTexture);
+	//setTexture(monkeyEyesClosedTexture);
 	draw();
 	getScared(-1);
 	drainEnergy(-1);
@@ -113,10 +115,10 @@ void Player::changeSleep()
 		sleeping = !sleeping;
 		//actulizo la textura
 		if (sleeping) {
-			setTexture(monkeyEyesClosedTexture);
+			//setTexture(monkeyEyesClosedTexture);
 		}
 		else {
-			setTexture(monkeyTexture);
+			//setTexture(monkeyTexture);
 		}
 		draw();
 	}
@@ -249,7 +251,8 @@ void Player::removeMissionObject()
 
 void Player::draw()
 {
-	drawTexture(texture);
+	//drawTexture(texture);
+	animationManager->getFrameImagePlayer(getCollider(), textureRect, texture, timerAnimation, AnimationManager::PlayerState::Static);
 	//drawDebug();
 	energyLevel_->draw();
 	fearLevel_->draw();

@@ -53,8 +53,8 @@ private:
 
 #pragma region Animations	
 	AnimationManager* animationManager;
-	int x_, y_;
-	SDL_Rect textureRender;
+	SDL_Rect textureRect;
+	int timerAnimation;
 #pragma endregion	
 
 public:

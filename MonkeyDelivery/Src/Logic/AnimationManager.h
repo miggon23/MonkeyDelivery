@@ -5,10 +5,19 @@
 class Game;
 class AnimationManager
 {
+public:
+	enum PlayerState { Static = 0, Left, Right, Up, Down };
+private:
 	Game* game_;
-	//Player
-	int wPlayer_=100,
-		hPlayer_=100;	
+	//Player	
+	PlayerState lastPlayerState;
+	int wPlayer_=1475,
+		hPlayer_=1540;
+	int xStaticFront_=0,
+		yStaticFront_= 1600;
+	int xStaticBack_ = 0,
+		yStaticBack = 0;
+
 	//Murcielago	
 	int wBat_ = 100,
 		hBat_ = 100;
@@ -21,8 +30,43 @@ public:
 	inline AnimationManager(Game* game) :game_(game) {		
 	};
 	inline ~AnimationManager() { cout << "animationManager Deleted" << endl; };
-	inline void getFrameImagePlayer(SDL_Rect player, Texture* tex) {
-		
+	//JUGADOR
+	inline void StaticFrame(SDL_Rect player, SDL_Rect& texturaRect, Texture* tex, int& timer) {
+		//accedo a las correspondientes frames
+		texturaRect.x = xStaticFront_;
+		texturaRect.y = yStaticFront_;		
+		if (texturaRect.x >= 3 * wPlayer_) {
+			texturaRect.x = 0;
+			xStaticFront_ = 0;
+		}
+		tex->render(texturaRect, player);
+		if (SDL_GetTicks() - timer >= 500) {
+			xStaticFront_ += wPlayer_;
+			timer = SDL_GetTicks();
+			cout << "actulizar frame" << endl;
+		}
+	}
+	inline void getFrameImagePlayer(SDL_Rect player, SDL_Rect& texturaRect, Texture* tex, int& timer,PlayerState state) {
+		if (lastPlayerState != state) {			
+			xStaticFront_ = 0;			
+			lastPlayerState = state;
+		}
+		switch (state)
+		{
+		case Static:
+			StaticFrame(player,texturaRect,tex,timer);
+			break;
+		case Left:
+			break;
+		case Right:
+			break;
+		case Up:
+			break;
+		case Down:
+			break;
+		default:
+			break;
+		}
 	}
 	//MURCIELAGO
 	inline int getWeightBat() { return wBat_; };
@@ -37,15 +81,15 @@ public:
 	inline void getFrameImageBat(SDL_Rect bat,SDL_Rect &texturaRect, Texture* tex,int &timer) {
 		if (SDL_GetTicks() - timer >= 200) {
 			texturaRect.x += wBat_;
-			if (texturaRect.x >= 200) {
+			if (texturaRect.x >= 200/*&&texturaRect.y<300*/) {
 				texturaRect.x = 0;
 				texturaRect.y += hBat_;
 			}
-			if (texturaRect.y >= 200) {
+			if (texturaRect.y >= 200&& texturaRect.x>=100) {
 				texturaRect.y = 0; texturaRect.x = 0;
 			}
 			timer = SDL_GetTicks();
-			cout << texturaRect.x << " " << texturaRect.y << endl;
+			//cout << texturaRect.x << " " << texturaRect.y << endl;
 		}
 		tex->render(texturaRect, bat);		
 	}	
@@ -60,7 +104,7 @@ public:
 			}
 			timer = SDL_GetTicks();			
 		}
-		tex->render(texturaRect, cat);
+		tex->render(texturaRect, cat);		
 	}
 };
 

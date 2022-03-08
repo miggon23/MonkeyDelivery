@@ -22,6 +22,7 @@ bool energyLevel::drain(float energyDrained)
 		return false;
 	}
 	else {
+		energy_ = 0;
 		// avisa al player de que está sin energía
 		//cout << "ME DUERMO" << endl;
 		return true;
