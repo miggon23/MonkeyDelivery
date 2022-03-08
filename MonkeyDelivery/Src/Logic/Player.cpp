@@ -252,7 +252,7 @@ void Player::removeMissionObject()
 void Player::draw()
 {
 	//drawTexture(texture);
-	animationManager->getFrameImagePlayer(getCollider(), textureRect, texture, timerAnimation, AnimationManager::PlayerState::Down,pair<int,int>(dirX_, dirY_));
+	animationManager->getFrameImagePlayer(getCollider(), textureRect, texture, timerAnimation/*, AnimationManager::PlayerState::Down*/,pair<int,int>(dirX_, dirY_));
 	//drawDebug();
 	energyLevel_->draw();
 	fearLevel_->draw();

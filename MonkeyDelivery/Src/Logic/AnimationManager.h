@@ -6,11 +6,11 @@ class Game;
 class AnimationManager
 {
 public:
-	enum PlayerState { /*Static = 0,*/ Down = 0, Left, Right, Up};
+	enum PlayerState {Sleeping,GoToSleep };
 private:
 	Game* game_;
 	//Player	
-	PlayerState lastPlayerState;
+	//PlayerState lastPlayerState;
 	int wPlayer_=0,
 		hPlayer_=100;
 	pair<int, int> velLast;
@@ -33,66 +33,7 @@ public:
 	//JUGADOR
 	inline int getWidthPlayer() { return wPlayer_+100; };
 	inline int getHeightPlayer() { return hPlayer_; };
-	//inline void StaticFrame(SDL_Rect player, SDL_Rect& texturaRect, Texture* tex, int& timer) {
-	//	texturaRect.y = 0; texturaRect.x = wPlayer_;		
-	//	tex->render(texturaRect, player);
-	//	if (SDL_GetTicks() - timer >= 500) {
-	//		wPlayer_ += 100;
-	//		if (wPlayer_ >= 600) { 
-	//			wPlayer_ = 0; texturaRect.x = 0;
-	//		}			
-	//		timer = SDL_GetTicks();
-	//	}
-	//}
-	//inline void UpFrame(SDL_Rect player, SDL_Rect& texturaRect, Texture* tex, int& timer) {
-	//	texturaRect.y = 100; texturaRect.x = wPlayer_;
-	//	tex->render(texturaRect, player);
-	//	if (SDL_GetTicks() - timer >= 500) {
-	//		wPlayer_ += 100;
-	//		if (wPlayer_ >= 600) {
-	//			wPlayer_ = 0; texturaRect.x = 0;
-	//		}
-	//		timer = SDL_GetTicks();
-	//	}
-	//}
-	//*inline void DownFrame(SDL_Rect player, SDL_Rect& texturaRect, Texture* tex, int& timer) {
-	//	texturaRect.y = 200; texturaRect.x = wPlayer_;
-	//	tex->render(texturaRect, player);
-	//	if (SDL_GetTicks() - timer >= 500) {
-	//		wPlayer_ += 100;
-	//		if (wPlayer_ >= 600) {
-	//			wPlayer_ = 0; texturaRect.x = 0;
-	//		}
-	//		timer = SDL_GetTicks();
-	//	}
-	//}*/
-	//inline void RightFrame(SDL_Rect player, SDL_Rect& texturaRect, Texture* tex, int& timer) {
-	//	texturaRect.y = 500; texturaRect.x = wPlayer_;
-	//	tex->render(texturaRect, player);
-	//	if (SDL_GetTicks() - timer >= 500) {
-	//		wPlayer_ += 100;
-	//		if (wPlayer_ >= 600) {
-	//			wPlayer_ = 0; texturaRect.x = 0;
-	//		}
-	//		timer = SDL_GetTicks();
-	//	}
-	//}
-	//inline void LeftFrame(SDL_Rect player, SDL_Rect& texturaRect, Texture* tex, int& timer) {
-	//	texturaRect.y = 400; texturaRect.x = wPlayer_;
-	//	tex->render(texturaRect, player);
-	//	if (SDL_GetTicks() - timer >= 500) {
-	//		wPlayer_ += 100;
-	//		if (wPlayer_ >= 600) {
-	//			wPlayer_ = 0; texturaRect.x = 0;
-	//		}
-	//		timer = SDL_GetTicks();
-	//	}
-	//}
-	inline void getFrameImagePlayer(SDL_Rect player, SDL_Rect& texturaRect, Texture* tex, int& timer,PlayerState state,pair<int,int>vel) {
-		/*if (lastPlayerState != state) {
-		wPlayer_ = 0;
-		lastPlayerState = state;
-	}*/
+	inline void getFrameImagePlayer(SDL_Rect player, SDL_Rect& texturaRect, Texture* tex, int& timer/*,PlayerState state*/,pair<int,int>vel) {
 		if (velLast.first != vel.first || velLast.second != vel.second) {
 			wPlayer_ = 0;
 			//lastPlayerState = state;
@@ -122,23 +63,7 @@ public:
 		default:
 			break;
 		}
-	/*	switch (state)
-		{		
-		case Left:
-			texturaRect.y = 400;			
-			break;
-		case Right:
-			texturaRect.y = 500;			
-			break;
-		case Up:
-			texturaRect.y = 100;			
-			break;
-		case Down:
-			texturaRect.y = 0;			
-			break;
-		default:
-			break;
-		}*/
+
 	    texturaRect.x = wPlayer_;
 		tex->render(texturaRect, player);
 		if (SDL_GetTicks() - timer >= 500) {
