@@ -74,6 +74,17 @@ public:
 			timer = SDL_GetTicks();
 		}
 	}
+	inline void Sleep(SDL_Rect player, SDL_Rect& texturaRect, Texture* tex, int& timer) {
+		texturaRect.x = 0; texturaRect.y = 600;
+		tex->render(texturaRect, player);
+		if (SDL_GetTicks() - timer >= 500) {
+			wPlayer_ += 100;
+			if (wPlayer_ >= 600) {
+				wPlayer_ = 0; texturaRect.x = 0;
+			}
+			timer = SDL_GetTicks();
+		}
+	}
 	//MURCIELAGO
 	inline int getWidthBat() { return wBat_; };
 	inline int getHeightBat() { return hBat_; };
