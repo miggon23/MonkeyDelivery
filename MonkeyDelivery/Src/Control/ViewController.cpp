@@ -13,7 +13,7 @@ ViewController::ViewController(Game* _game) {
     game->setRenderer(renderer);
     game->loadTextures();
     
-    game->setState(new MenuState(game));
+    game->setState(new MenuState(game,this));
 
     timer_ = Timer::Instance();
 }
@@ -79,7 +79,7 @@ void ViewController::initSDL() {
         SDL_WINDOWPOS_CENTERED,
         game->getWindowWidth(),
         game->getWindowHeight(),
-        SDL_WINDOW_FULLSCREEN_DESKTOP);
+        SDL_WINDOW_SHOWN);
     setWindow(window);
 
     renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);

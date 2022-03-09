@@ -12,7 +12,7 @@
 
 #include "../States/MenuState.h"
 
-PlayingState::PlayingState(Game* game) : State(game) {
+PlayingState::PlayingState(Game* game, ViewController* v) : State(game,v) {
     registerCommands();
     game->start();
 }

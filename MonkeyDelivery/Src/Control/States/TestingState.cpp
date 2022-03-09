@@ -4,7 +4,7 @@
 #include "../../Logic/Game.h"
 
 
-TestingState::TestingState(Game* game) : State(game) {
+TestingState::TestingState(Game* game, ViewController* v) : State(game, v) {
     registerCommands();
 }
 
