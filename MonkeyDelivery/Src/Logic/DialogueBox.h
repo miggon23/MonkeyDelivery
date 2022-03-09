@@ -14,7 +14,7 @@ class DialogueBox : public GameObject
 {
 private:
 	Font* font_;
-	string text_;
+	string text_, currentText_;
 	Point2D<int> textPos_;
 	SDL_Color color_;
 
@@ -23,9 +23,13 @@ private:
 		width_ = 200, 
 		height_ = 100, 
 		xText_ = 0, 
-		yText_ = 0;
+		yText_ = 0,
+		updateTime_ = 50;
 
-	bool draw_;
+	bool draw_, inShow_;
+
+	int lastUpdate_, letterIndex_;
+
 public:
 
 	//textura nombre, texto por id json
@@ -33,7 +37,9 @@ public:
 	~DialogueBox();
 	
 	void changeText(string id);
-	void show() { draw_ = true; }
+	void inShow();
+
+	void show() { draw_ = true; inShow_ = true; }
 	void hide() { draw_ = false; }
 	
 

@@ -48,6 +48,8 @@ void DialogueBox::changeText(string id)
 					JSONObject vObj = v->AsObject();
 
 					text_ = vObj["text"]->AsString();
+					//reinicio de la cadena
+					currentText_ = text_[0];
 				}
 				else {
 					throw "'missions' array in '" + id
@@ -63,11 +65,27 @@ void DialogueBox::changeText(string id)
 	}
 }
 
+void DialogueBox::inShow()
+{
+	if (lastUpdate_ + updateTime_ > SDL_GetTicks())
+		return;
+
+	lastUpdate_ = SDL_GetTicks();
+
+	currentText_ += text_[letterIndex_];
+	letterIndex_++;
+
+	if (currentText_.size() == text_.size())
+		inShow_ = false;
+}
+
 void DialogueBox::draw()
 {
+	if (inShow_) inShow();
+
 	if (draw_)
 	{
 		GameObject::draw();
-		font_->render(game->getRenderer(), text_.c_str(), getX() + textPos_.getX(), getY() + textPos_.getY(), color_);
+		font_->render(game->getRenderer(), currentText_.c_str(), getX() + textPos_.getX(), getY() + textPos_.getY(), color_);
 	}
 }
