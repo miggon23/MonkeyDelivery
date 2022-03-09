@@ -1,3 +1,5 @@
+#pragma once
+
 #include "../Logic/GameObject.h"
 class Game;
 
@@ -12,6 +14,6 @@ public:
 	~Button() { };
 
 	void update() override;
-	virtual void onCursorCollision() {};
+    virtual void onCursorCollision()=0;
 
 };
