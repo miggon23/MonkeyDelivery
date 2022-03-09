@@ -1,6 +1,6 @@
 #include "GameOverState.h"
 
-GameOverState::GameOverState(Game* game) : State(game)
+GameOverState::GameOverState(Game* game, ViewController *v) : State(game, v)
 {
 	registerCommands();
 }

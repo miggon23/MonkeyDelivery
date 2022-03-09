@@ -6,8 +6,9 @@ class GameOverState : public State
 { // CLASE PARA CINEMÁTICA O MODO FINAL DE JUEGO
 private:
 	bool winMessage = false;
+	
 public:
-	GameOverState(Game* game);
+	GameOverState(Game* game, ViewController *v);
 	~GameOverState() = default;
 
 	void update()override;

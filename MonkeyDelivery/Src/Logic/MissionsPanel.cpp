@@ -66,7 +66,9 @@ void MissionsPanel::onPlayerInteraction(Player* player)
 	if (game->getSavedState() == nullptr) {
 		// show pannel
 		game->saveState(game->getState());
-		game->setState(new MissionSelectionState(game, missionsSent));
+
+		// BIGGEST TODO EVER: PLEASE FIX THIS NULLPTR. KITTEN DIE. CHILD DIE. YOU DIE.FIXME WARNING TODO WAR DESTRUCTION
+		game->setState(new MissionSelectionState(game, missionsSent, nullptr));
 	}
 }
 

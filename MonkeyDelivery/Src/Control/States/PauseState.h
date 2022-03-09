@@ -4,7 +4,7 @@
 class PauseState : public State
 {
 public:
-	PauseState(Game* game);
+	PauseState(Game* game, ViewController* v);
 	~PauseState() = default;
 
 	void update()override;

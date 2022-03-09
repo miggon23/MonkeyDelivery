@@ -6,9 +6,10 @@
 
 #include "../States/PlayingState.h"
 
-MenuState::MenuState(Game* game) : State(game)
+MenuState::MenuState(Game* game, ViewController* view) : State(game,view)
 {
     registerCommands();
+    //vC_ = view;
 }
 
 void MenuState::registerCommands()
@@ -37,7 +38,7 @@ void MenuState::draw()
 void MenuState::next()
 {
     cout << "Next State " << endl;
-    game->setState(new PlayingState(game));
+    game->setState(new PlayingState(game, nullptr));
     delete this;
 }
 

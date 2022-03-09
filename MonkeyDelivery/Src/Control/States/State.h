@@ -17,8 +17,10 @@ protected:
    // Uint32 totalTime;
     unsigned int totalTime;
 public:
-    State(Game* game) : game(game) {
+    State(Game* game,ViewController* v) : game(game) {
         commandFactory = new CommandFactory(game);
+        vC_ = v;
+        
     };
 
     virtual ~State() {
