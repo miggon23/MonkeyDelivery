@@ -48,8 +48,16 @@ void DialogueBox::changeText(string id)
 					JSONObject vObj = v->AsObject();
 
 					text_ = vObj["text"]->AsString();
-					//reinicio de la cadena
-					currentText_ = text_[0];
+
+					//reinicio de la cadena con linea inicial
+					textLines_.clear();
+					string s = "";
+					s += text_[0];
+					textLines_.push_back(s);
+					lineIndex_ = letterIndex_ = 1;
+					currentLine_ = 0;
+
+					inShow_ = true;
 				}
 				else {
 					throw "'missions' array in '" + id
@@ -67,16 +75,43 @@ void DialogueBox::changeText(string id)
 
 void DialogueBox::inShow()
 {
+	//actualizacion por tiempo
 	if (lastUpdate_ + updateTime_ > SDL_GetTicks())
 		return;
 
 	lastUpdate_ = SDL_GetTicks();
+	
+	advanceLetter();
+}
 
-	currentText_ += text_[letterIndex_];
+void DialogueBox::advanceLetter()
+{
+	//si la linea a alcanzado su limite
+	if (lineIndex_ >= letterPerLine_ && textLines_[currentLine_][textLines_[currentLine_].size() - 1] == 32)
+	{
+		//añadimos una nueva linea
+		string s = "";
+		textLines_.push_back(s);
+		currentLine_++;
+		lineIndex_ = 0;
+	}
+
+	//suma a la linea actual la nueva letra
+	textLines_[currentLine_] += text_[letterIndex_];
+	//aumento del indice general y el de la linea
 	letterIndex_++;
+	lineIndex_++;
 
-	if (currentText_.size() == text_.size())
+	//si ya no hay mas letras se acaba
+	if (letterIndex_ == text_.size())
 		inShow_ = false;
+}
+
+void DialogueBox::fastShow()
+{
+	if (!inShow_) return;
+
+	while (!inShow_) advanceLetter();
 }
 
 void DialogueBox::draw()
@@ -86,6 +121,10 @@ void DialogueBox::draw()
 	if (draw_)
 	{
 		GameObject::draw();
-		font_->render(game->getRenderer(), currentText_.c_str(), getX() + textPos_.getX(), getY() + textPos_.getY(), color_);
+		for (int i = 0; i < textLines_.size(); i++)
+		{
+			font_->render(game->getRenderer(), textLines_[i].c_str(), getX() + textPos_.getX(), getY() + textPos_.getY() + sizeBtwLines * i, color_);
+		}
+		
 	}
 }
