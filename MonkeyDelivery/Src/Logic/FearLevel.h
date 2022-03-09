@@ -17,6 +17,7 @@ public:
 	bool getScared(int amount);
 	void draw() override;
 
+	inline float percentFear() { return (fear_ / maxFear_) * 100; };
 };
 
 

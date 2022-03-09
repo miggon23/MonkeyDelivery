@@ -29,7 +29,7 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game),animat
 	inventory_ = new Inventory(this, game->getRenderer());
 	inventory_->addObject(new Bike());
 	setInventoryVisibility(true);
-	textureRect = { 0,0,100,100};
+	textureRect = { 0, 0, 100, 100};
 	timerAnimation = SDL_GetTicks();
 }
 
@@ -251,8 +251,11 @@ void Player::removeMissionObject()
 
 void Player::draw()
 {
+	//if (energyLevel_->percentEnergy() <= 20) animationManager->setState(AnimationManager::PlayerState::GoToSleep);
+	if (fearLevel_->percentFear()>=50) 
+		animationManager->setState(AnimationManager::PlayerState::Scared);
 	//drawTexture(texture);
-	animationManager->getFrameImagePlayer(getCollider(), textureRect, texture, timerAnimation/*, AnimationManager::PlayerState::Down*/,pair<int,int>(dirX_, dirY_));
+	animationManager->getFrameImagePlayer(getCollider(), textureRect, texture, timerAnimation/*, AnimationManager::PlayerState::Down*/, AnimationManager::LastDir {dirX_, dirY_});
 	//drawDebug();
 	energyLevel_->draw();
 	fearLevel_->draw();

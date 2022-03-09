@@ -6,14 +6,19 @@ class Game;
 class AnimationManager
 {
 public:
-	enum PlayerState {Sleeping,GoToSleep };
+	enum PlayerState {Sleeping, GoToSleep, Running, Scared };
+
 private:
 	Game* game_;
 	//Player	
-	//PlayerState lastPlayerState;
-	int wPlayer_=0,
+	PlayerState playerState_= Running;
+
+	int limit = 600;
+
+	int wPlayer_=100,
 		hPlayer_=100;
-	pair<int, int> velLast;
+	
+	
 	//Murcielago	
 	int wBat_ = 100,
 		hBat_ = 100;
@@ -26,52 +31,80 @@ private:
 		hBull_ = 100;
 	
 public:
+
+	struct LastDir
+	{
+		int x;
+		int y;
+	};
+	LastDir lastDir;
 	inline AnimationManager() {};
 	inline AnimationManager(Game* game) :game_(game) {		
 	};
 	inline ~AnimationManager() { cout << "animationManager Deleted" << endl; };
 	//JUGADOR
-	inline int getWidthPlayer() { return wPlayer_+100; };
+	inline PlayerState setState(PlayerState state) { return playerState_ = state; };
+	inline int getWidthPlayer() { return wPlayer_; };
 	inline int getHeightPlayer() { return hPlayer_; };
-	inline void getFrameImagePlayer(SDL_Rect player, SDL_Rect& texturaRect, Texture* tex, int& timer/*,PlayerState state*/,pair<int,int>vel) {
-		if (velLast.first != vel.first || velLast.second != vel.second) {
-			wPlayer_ = 0;
-			//lastPlayerState = state;
-			velLast = vel;			
-		}	
-		//las x
-		switch (vel.first)
-		{
-		case 1:
-			texturaRect.y = 500;
-			break;
-		case -1:
-			texturaRect.y = 400;
-			break;
-		default:
-			break;
-		}
-		//las y
-		switch (vel.second)
-		{
-		case 1:
-			texturaRect.y = 0;
-			break;
-		case -1:
-			texturaRect.y = 100;
-			break;
-		default:
-			break;
-		}
 
-	    texturaRect.x = wPlayer_;
-		tex->render(texturaRect, player);
-		if (SDL_GetTicks() - timer >= 500) {
-			wPlayer_ += 100;
-			if (wPlayer_ >= 600) {
-				wPlayer_ = 0; texturaRect.x = 0;
+	inline void getFrameImagePlayer(SDL_Rect player, SDL_Rect& texturaRect, Texture* tex, int& timer/*,PlayerState state*/,  LastDir newDir) {
+
+		if (playerState_ != Sleeping && playerState_ != GoToSleep) {
+			if (lastDir.x != newDir.x || lastDir.y != newDir.y) //Si la direccion cambia (da igual de que componente)
+			{
+				texturaRect.x = 0;
+				lastDir = newDir;
+			}	
+			//las x
+			switch (newDir.x)
+			{
+			case 1: //Derecha
+				texturaRect.y = 500;
+				break;
+			case -1: //Izquierda
+				texturaRect.y = 400;
+				break;
+			default:
+				break;
 			}
-			timer = SDL_GetTicks();
+			//las y
+			switch (newDir.y)
+			{
+			case 1: //Abajo
+				texturaRect.y = 0;
+				break;
+			case -1: //Arriba
+				texturaRect.y = 100;
+				break;
+			default:
+				break;
+			}
+
+			tex->render(texturaRect, player);
+
+			if (SDL_GetTicks() - timer >= 500) {
+				texturaRect.x += 100;
+				if (texturaRect.x >= limit) {
+					texturaRect.x = 0;
+				}
+				timer = SDL_GetTicks();
+			}
+		}
+		else if (playerState_== GoToSleep) {
+			
+		}
+		else if(playerState_== Scared){
+			texturaRect.x = 100;
+			texturaRect.y = 300;
+			tex->render(texturaRect, player);
+
+			if (SDL_GetTicks() - timer >= 500) {
+				texturaRect.x += 100;
+				if (texturaRect.x >= limit) {
+					texturaRect.x = 100;
+				}
+				timer = SDL_GetTicks();
+			}
 		}
 	}
 	inline void Sleep(SDL_Rect player, SDL_Rect& texturaRect, Texture* tex, int& timer) {
