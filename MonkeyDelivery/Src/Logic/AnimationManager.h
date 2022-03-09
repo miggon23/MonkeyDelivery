@@ -12,11 +12,13 @@ private:
 	Game* game_;
 	//Player	
 	PlayerState playerState_= Running;
+	
 
 	int limit = 600;
 
 	int wPlayer_=100,
-		hPlayer_=100;
+		hPlayer_=100,
+		x1=100;
 	
 	
 	//Murcielago	
@@ -49,7 +51,7 @@ public:
 
 	inline void getFrameImagePlayer(SDL_Rect player, SDL_Rect& texturaRect, Texture* tex, int& timer/*,PlayerState state*/,  LastDir newDir) {
 
-		if (playerState_ != Sleeping && playerState_ != GoToSleep) {
+		if (playerState_==Running) {
 			if (lastDir.x != newDir.x || lastDir.y != newDir.y) //Si la direccion cambia (da igual de que componente)
 			{
 				texturaRect.x = 0;
@@ -94,14 +96,15 @@ public:
 			
 		}
 		else if(playerState_== Scared){
-			texturaRect.x = 100;
+			texturaRect.x = x1;
 			texturaRect.y = 300;
 			tex->render(texturaRect, player);
 
 			if (SDL_GetTicks() - timer >= 500) {
-				texturaRect.x += 100;
-				if (texturaRect.x >= limit) {
+				x1 += 100;
+				if (texturaRect.x >= 500) {
 					texturaRect.x = 100;
+					x1 = 100;
 				}
 				timer = SDL_GetTicks();
 			}
