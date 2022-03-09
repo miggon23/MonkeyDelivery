@@ -5,8 +5,15 @@
 #include "../CommandExit.h"
 
 #include "../States/PlayingState.h"
+<<<<<<< Updated upstream
 
 MenuState::MenuState(Game* game, ViewController* view) : State(game,view)
+=======
+#include "../Buttons/Exit.h"
+#include "../Buttons/Start.h"
+#include "../Buttons/Options.h"
+MenuState::MenuState(Game* game) : State(game)
+>>>>>>> Stashed changes
 {
     registerCommands();
     //vC_ = view;

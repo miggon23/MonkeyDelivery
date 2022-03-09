@@ -155,6 +155,9 @@
     <ClInclude Include="MonkeyDelivery.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="Src\Control\Button.h" />
+    <ClInclude Include="Src\Control\Buttons\Exit.h" />
+    <ClInclude Include="Src\Control\Buttons\Options.h" />
+    <ClInclude Include="Src\Control\Buttons\Start.h" />
     <ClInclude Include="Src\Control\Command.h" />
     <ClInclude Include="Src\Control\CommandExit.h" />
     <ClInclude Include="Src\Control\CommandFactory.h" />
@@ -169,6 +172,7 @@
     <ClInclude Include="Src\Control\States\GameOverState.h" />
     <ClInclude Include="Src\Control\States\MenuState.h" />
     <ClInclude Include="Src\Control\States\MissionSelectionState.h" />
+    <ClInclude Include="Src\Control\States\OptionsState.h" />
     <ClInclude Include="Src\Control\States\PauseState.h" />
     <ClInclude Include="Src\Control\States\PlayingState.h" />
     <ClInclude Include="Src\Control\States\State.h" />
@@ -213,6 +217,9 @@
   <ItemGroup>
     <ClCompile Include="MonkeyDelivery.cpp" />
     <ClCompile Include="Src\Control\Button.cpp" />
+    <ClCompile Include="Src\Control\Buttons\Exit.cpp" />
+    <ClCompile Include="Src\Control\Buttons\Options.cpp" />
+    <ClCompile Include="Src\Control\Buttons\Start.cpp" />
     <ClCompile Include="Src\Control\Command.cpp" />
     <ClCompile Include="Src\Control\CommandExit.cpp" />
     <ClCompile Include="Src\Control\CommandFactory.cpp" />
@@ -227,6 +234,7 @@
     <ClCompile Include="Src\Control\States\GameOverState.cpp" />
     <ClCompile Include="Src\Control\States\MenuState.cpp" />
     <ClCompile Include="Src\Control\States\MissionSelectionState.cpp" />
+    <ClCompile Include="Src\Control\States\OptionsState.cpp" />
     <ClCompile Include="Src\Control\States\PauseState.cpp" />
     <ClCompile Include="Src\Control\States\PlayingState.cpp" />
     <ClCompile Include="Src\Control\States\State.cpp" />
