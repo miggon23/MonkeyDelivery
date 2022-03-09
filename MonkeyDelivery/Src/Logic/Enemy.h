@@ -5,6 +5,8 @@
 class AnimationManager;
 class Enemy : public GameObject
 {
+private:
+	Uint32 lastUpdate_;//para timer del miedo
 protected:
 
 	double speed;
