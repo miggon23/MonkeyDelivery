@@ -149,8 +149,22 @@
     <ClCompile Include="Src\Control\Button.cpp">
       <Filter>Source Files\Control</Filter>
     </ClCompile>
+<<<<<<< Updated upstream
     <ClCompile Include="Src\Control\FastTextCommand.cpp">
       <Filter>Source Files\Control\Commands</Filter>
+=======
+    <ClCompile Include="Src\Control\Buttons\Exit.cpp">
+      <Filter>Source Files\Control\Buttons</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Control\Buttons\Options.cpp">
+      <Filter>Source Files\Control\Buttons</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Control\Buttons\Start.cpp">
+      <Filter>Source Files\Control\Buttons</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Control\States\OptionsState.cpp">
+      <Filter>Source Files\Control\States</Filter>
+>>>>>>> Stashed changes
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -325,8 +339,22 @@
     <ClInclude Include="Src\Control\Button.h">
       <Filter>Header Files\Control</Filter>
     </ClInclude>
+<<<<<<< Updated upstream
     <ClInclude Include="Src\Control\FastTextCommand.h">
       <Filter>Header Files\Control\Commands</Filter>
+=======
+    <ClInclude Include="Src\Control\Buttons\Exit.h">
+      <Filter>Header Files\Control\Buttons</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Control\Buttons\Options.h">
+      <Filter>Header Files\Control\Buttons</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Control\Buttons\Start.h">
+      <Filter>Header Files\Control\Buttons</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Control\States\OptionsState.h">
+      <Filter>Header Files\Control\States</Filter>
+>>>>>>> Stashed changes
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -399,6 +427,12 @@
     </Filter>
     <Filter Include="Source Files\Utils">
       <UniqueIdentifier>{ba85a3eb-a68c-492a-93e0-96351463e5cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Control\Buttons">
+      <UniqueIdentifier>{d11b16a8-78c5-4269-96b7-85190663eb07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Control\Buttons">
+      <UniqueIdentifier>{d9fb8927-cac5-4232-8640-4387b1b0d56c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
