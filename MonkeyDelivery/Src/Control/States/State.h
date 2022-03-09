@@ -8,6 +8,7 @@ class Game;
 using namespace std;
 
 class State {
+
 protected:
     Game* game = nullptr;
     CommandFactory* commandFactory = nullptr;
@@ -16,6 +17,8 @@ protected:
     unsigned int initTime;
    // Uint32 totalTime;
     unsigned int totalTime;
+
+    bool isFullscreen = false;
 public:
     State(Game* game,ViewController* v) : game(game) {
         commandFactory = new CommandFactory(game);
