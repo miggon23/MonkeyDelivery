@@ -6,5 +6,5 @@ Options::Options(int x, int y, int w, int h, Game* game) :Button(game, w, h, x, 
 }
 
 void Options::onCursorCollision(){
-	game->setState(new OptionsState(game));
+	game->setState(new OptionsState(game,nullptr));
 }

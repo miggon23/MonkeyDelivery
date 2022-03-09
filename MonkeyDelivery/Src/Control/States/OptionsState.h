@@ -5,7 +5,7 @@
 class OptionsState : public State
 {
 public:
-	OptionsState(Game* game);
+	OptionsState(Game* game,  ViewController* view);
 	~OptionsState() = default;
 
 	void update()override;

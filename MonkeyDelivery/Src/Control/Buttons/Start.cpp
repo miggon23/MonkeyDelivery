@@ -5,5 +5,5 @@ Start::Start(int x, int y, int w, int h, Game* game):Button(game,w,h,x,y){
 }
 
 void Start::onCursorCollision(){
-	game->setState(new PlayingState(game));
+	game->setState(new PlayingState(game,nullptr));
 }

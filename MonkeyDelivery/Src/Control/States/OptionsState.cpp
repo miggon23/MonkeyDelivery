@@ -2,7 +2,8 @@
 #include "../PauseCommand.h"
 #include "../CommandExit.h"
 
-OptionsState::OptionsState(Game* game) : State(game)
+OptionsState::OptionsState(Game* game,  ViewController* view) : State(game, view)
+
 {
 	registerCommands();
 }

@@ -5,15 +5,12 @@
 #include "../CommandExit.h"
 
 #include "../States/PlayingState.h"
-<<<<<<< Updated upstream
-
-MenuState::MenuState(Game* game, ViewController* view) : State(game,view)
-=======
 #include "../Buttons/Exit.h"
 #include "../Buttons/Start.h"
 #include "../Buttons/Options.h"
-MenuState::MenuState(Game* game) : State(game)
->>>>>>> Stashed changes
+
+
+MenuState::MenuState(Game* game, ViewController* view) : State(game,view)
 {
     registerCommands();
     //vC_ = view;
@@ -48,5 +45,3 @@ void MenuState::next()
     game->setState(new PlayingState(game, nullptr));
     delete this;
 }
-
-
