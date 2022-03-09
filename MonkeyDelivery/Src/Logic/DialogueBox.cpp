@@ -56,6 +56,7 @@ void DialogueBox::changeText(string id)
 					textLines_.push_back(s);
 					lineIndex_ = letterIndex_ = 1;
 					currentLine_ = 0;
+					showLetterTime_ = normalUpdateTime_;
 
 					inShow_ = true;
 				}
@@ -76,7 +77,7 @@ void DialogueBox::changeText(string id)
 void DialogueBox::inShow()
 {
 	//actualizacion por tiempo
-	if (lastUpdate_ + updateTime_ > SDL_GetTicks())
+	if (lastUpdate_ + showLetterTime_ > SDL_GetTicks())
 		return;
 
 	lastUpdate_ = SDL_GetTicks();
@@ -111,7 +112,7 @@ void DialogueBox::fastShow()
 {
 	if (!inShow_) return;
 
-	while (!inShow_) advanceLetter();
+	showLetterTime_ = fastUpdateTime_;
 }
 
 void DialogueBox::draw()

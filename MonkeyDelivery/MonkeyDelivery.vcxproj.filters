@@ -149,6 +149,9 @@
     <ClCompile Include="Src\Control\Button.cpp">
       <Filter>Source Files\Control</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Control\FastTextCommand.cpp">
+      <Filter>Source Files\Control\Commands</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -321,6 +324,9 @@
     </ClInclude>
     <ClInclude Include="Src\Control\Button.h">
       <Filter>Header Files\Control</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Control\FastTextCommand.h">
+      <Filter>Header Files\Control\Commands</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

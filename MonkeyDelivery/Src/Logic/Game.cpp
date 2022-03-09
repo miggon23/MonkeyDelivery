@@ -200,4 +200,9 @@ void Game::scare(double scariness)
     player_->getScared(scariness);
 }
 
+void Game::fastDialogue()
+{
+    dialogueBox_->fastShow();
+}
+
 

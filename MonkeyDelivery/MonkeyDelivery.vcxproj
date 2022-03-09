@@ -161,6 +161,7 @@
     <ClInclude Include="Src\Control\CommandInteract.h" />
     <ClInclude Include="Src\Control\CommandMove.h" />
     <ClInclude Include="Src\Control\CommandRun.h" />
+    <ClInclude Include="Src\Control\FastTextCommand.h" />
     <ClInclude Include="Src\Control\InventoryCommand.h" />
     <ClInclude Include="Src\Control\NextStateCommand.h" />
     <ClInclude Include="Src\Control\PauseCommand.h" />
@@ -218,6 +219,7 @@
     <ClCompile Include="Src\Control\CommandInteract.cpp" />
     <ClCompile Include="Src\Control\CommandMove.cpp" />
     <ClCompile Include="Src\Control\CommandRun.cpp" />
+    <ClCompile Include="Src\Control\FastTextCommand.cpp" />
     <ClCompile Include="Src\Control\InventoryCommand.cpp" />
     <ClCompile Include="Src\Control\NextStateCommand.cpp" />
     <ClCompile Include="Src\Control\PauseCommand.cpp" />

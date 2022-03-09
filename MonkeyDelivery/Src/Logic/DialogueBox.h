@@ -27,11 +27,12 @@ private:
 		yText_ = 0,
 		letterPerLine_ = 20,
 		sizeBtwLines = 20,
-		updateTime_ = 50;
+		normalUpdateTime_ = 50,
+		fastUpdateTime_ = 5;
 
 	bool draw_, inShow_;
 
-	int lastUpdate_, letterIndex_, lineIndex_, currentLine_;
+	int lastUpdate_, letterIndex_, lineIndex_, currentLine_, showLetterTime_;
 
 	vector<string> textLines_;
 
