@@ -146,6 +146,9 @@
     <ClCompile Include="Src\Logic\AnimationManager.cpp">
       <Filter>Source Files\Logic\Managers/Game</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Control\Button.cpp">
+      <Filter>Source Files\Control</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -315,6 +318,9 @@
     </ClInclude>
     <ClInclude Include="Src\Logic\AnimationManager.h">
       <Filter>Header Files\Logic\Managers/Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Control\Button.h">
+      <Filter>Header Files\Control</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -154,6 +154,7 @@
     <ClInclude Include="framework.h" />
     <ClInclude Include="MonkeyDelivery.h" />
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="Src\Control\Button.h" />
     <ClInclude Include="Src\Control\Command.h" />
     <ClInclude Include="Src\Control\CommandExit.h" />
     <ClInclude Include="Src\Control\CommandFactory.h" />
@@ -210,6 +211,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MonkeyDelivery.cpp" />
+    <ClCompile Include="Src\Control\Button.cpp" />
     <ClCompile Include="Src\Control\Command.cpp" />
     <ClCompile Include="Src\Control\CommandExit.cpp" />
     <ClCompile Include="Src\Control\CommandFactory.cpp" />
