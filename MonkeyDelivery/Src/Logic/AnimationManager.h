@@ -97,10 +97,10 @@ public:
 		}
 		else if(playerState_== Scared){
 			texturaRect.x = x1;
-			texturaRect.y = 300;
+			texturaRect.y = 200;
 			tex->render(texturaRect, player);
 
-			if (SDL_GetTicks() - timer >= 500) {
+			if (SDL_GetTicks() - timer >= 600) {
 				x1 += 100;
 				if (texturaRect.x >= 500) {
 					texturaRect.x = 100;
