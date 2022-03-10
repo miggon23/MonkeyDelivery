@@ -29,7 +29,7 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game),animat
 	fearLevel_ = new FearLevel(game);
 	inventory_ = new Inventory(this, game->getRenderer());
 	inventory_->addObject(new Bike());
-	inventory_->addObject(new Flashlight());
+	/* auto fL_=*/inventory_->addObject(new Flashlight());
 	setInventoryVisibility(true);
 	textureRect = { 0, 0, 100, 100};
 	timerAnimation = SDL_GetTicks();
