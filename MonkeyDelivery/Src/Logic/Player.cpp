@@ -1,6 +1,7 @@
 #include "Player.h"
 #include "Inventory.h"
 #include "Bike.h"
+#include "Flashlight.h"
 #include "Game.h"
 #include "SDL.h"
 
@@ -28,6 +29,7 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game),animat
 	fearLevel_ = new FearLevel(game);
 	inventory_ = new Inventory(this, game->getRenderer());
 	inventory_->addObject(new Bike());
+	inventory_->addObject(new Flashlight());
 	setInventoryVisibility(true);
 	textureRect = { 0, 0, 100, 100};
 	timerAnimation = SDL_GetTicks();
