@@ -50,13 +50,12 @@ public:
 	inline int getHeightPlayer() { return hPlayer_; };
 
 	inline void getFrameImagePlayer(SDL_Rect player, SDL_Rect& texturaRect, Texture* tex, int& timer/*,PlayerState state*/,  LastDir newDir) {
-
+		if (lastDir.x != newDir.x || lastDir.y != newDir.y){//Si la direccion cambia (da igual de que componente)
+			texturaRect.x = 0;
+			lastDir = newDir;
+		}
 		if (playerState_==Running) {
-			if (lastDir.x != newDir.x || lastDir.y != newDir.y) //Si la direccion cambia (da igual de que componente)
-			{
-				texturaRect.x = 0;
-				lastDir = newDir;
-			}	
+			
 			//las x
 			switch (newDir.x)
 			{
@@ -109,17 +108,25 @@ public:
 				timer = SDL_GetTicks();
 			}
 		}
-	}
-	inline void Sleep(SDL_Rect player, SDL_Rect& texturaRect, Texture* tex, int& timer) {
-		texturaRect.x = 0; texturaRect.y = 600;
-		tex->render(texturaRect, player);
-		if (SDL_GetTicks() - timer >= 500) {
-			wPlayer_ += 100;
-			if (wPlayer_ >= 600) {
-				wPlayer_ = 0; texturaRect.x = 0;
+		else if (playerState_ == Sleeping) {			
+			texturaRect.y = 600;			
+			tex->render(texturaRect, player);
+			if (SDL_GetTicks() - timer >= 400) {	
+				texturaRect.x += 100;
+				if (texturaRect.x >= 200) {
+					texturaRect.x = 0;				
+				}
+				timer = SDL_GetTicks();
+				cout << texturaRect.x << endl;
 			}
-			timer = SDL_GetTicks();
+			
 		}
+	}
+	inline void Sleep() {
+		playerState_ = Sleeping;
+	}
+	inline void WakeUp() {
+		playerState_ = Running;
 	}
 	//MURCIELAGO
 	inline int getWidthBat() { return wBat_; };

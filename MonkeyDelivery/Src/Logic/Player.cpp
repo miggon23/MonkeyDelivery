@@ -101,10 +101,10 @@ void Player::resetVelocity()
 
 void Player::sleep()
 {	
-	std::cout << "A MIMIR YA PUTO MONO" << endl;
+	//std::cout << "A MIMIR YA PUTO MONO" << endl;
 	//cambio la textura
 	//setTexture(monkeyEyesClosedTexture);
-	draw();
+	//draw();
 	getScared(-1);
 	drainEnergy(-1);
 }
@@ -115,12 +115,13 @@ void Player::changeSleep()
 		sleeping = !sleeping;
 		//actulizo la textura
 		if (sleeping) {
-			//setTexture(monkeyEyesClosedTexture);
+			animationManager->Sleep();
 		}
 		else {
-			//setTexture(monkeyTexture);
+			animationManager->WakeUp();
 		}
 		draw();
+
 	}
 	else {
 		boolrenderSleepText = true;
@@ -251,11 +252,14 @@ void Player::removeMissionObject()
 
 void Player::draw()
 {
-	//if (energyLevel_->percentEnergy() <= 20) animationManager->setState(AnimationManager::PlayerState::GoToSleep);
-	if (fearLevel_->percentFear()>=50) 
-		animationManager->setState(AnimationManager::PlayerState::Scared);
-	//drawTexture(texture);
-	animationManager->getFrameImagePlayer(getCollider(), textureRect, texture, timerAnimation/*, AnimationManager::PlayerState::Down*/, AnimationManager::LastDir {dirX_, dirY_});
+	if(!sleeping){
+		//if (energyLevel_->percentEnergy() <= 20) animationManager->setState(AnimationManager::PlayerState::GoToSleep);
+		if (fearLevel_->percentFear()>=50) 
+			animationManager->setState(AnimationManager::PlayerState::Scared);
+		//else if (energyLevel_->percentEnergy() <= 20) animationManager->setState(AnimationManager::PlayerState::GoToSleep);
+	}
+    animationManager->getFrameImagePlayer(getCollider(), textureRect, texture, timerAnimation, AnimationManager::LastDir {dirX_, dirY_});
+
 	//drawDebug();
 	energyLevel_->draw();
 	fearLevel_->draw();
