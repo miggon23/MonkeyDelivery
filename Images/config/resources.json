@@ -31,6 +31,38 @@
       "targetPositionY": 120,
       "targetWidth": 120,
       "targetHeight": 140
+    },
+    {
+      "id": "Mission3",
+      "level": 2,
+      "completed": false,
+      "image": "../Images/missions/Mission1.png",
+      "maxmoney": 100,
+      "minmoney": 50,
+      "mintime": 10000,
+      "express": false,
+      "special": false,
+      "target": "pez",
+      "targetPositionX": 500,
+      "targetPositionY": 50,
+      "targetWidth": 120,
+      "targetHeight": 180
+    },
+    {
+      "id": "Mission4",
+      "level": 2,
+      "completed": false,
+      "image": "../Images/missions/Mission2.png",
+      "maxmoney": 100,
+      "minmoney": 50,
+      "mintime": 10000,
+      "express": false,
+      "special": false,
+      "target": "hipopotamo",
+      "targetPositionX": 550,
+      "targetPositionY": 120,
+      "targetWidth": 120,
+      "targetHeight": 140
     }
   ],
 

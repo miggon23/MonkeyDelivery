@@ -15,12 +15,18 @@ MissionsPanel::MissionsPanel(Game* game) : GameObject(game)
 	setDimension(120, 150);
 	setTexture(missionPanelTexture);
 
-	loadMissions("../Images/config/resources.json");
-
 	currentLevel_ = 1;
+	levels_.reserve(NLEVELS_);
+	for (int i = 0; i <= NLEVELS_; ++i) {
+		levels_.push_back(0);
+		levelsCompleted_.push_back(0);
+	}
 
+	loadMissions("../Images/config/resources.json");
+	
 	activeTarget_ = new Target(this, game);
 	game->add(activeTarget_);
+
 }
 
 MissionsPanel::~MissionsPanel()
@@ -38,7 +44,7 @@ void MissionsPanel::onPlayerInteraction(Player* player)
 
 	int a = 0;
 	string b = "Mission";
-	int numMissions = 0;
+	/*int numMissions = 0;
 
 	switch (currentLevel_) {
 	case 1:
@@ -48,21 +54,32 @@ void MissionsPanel::onPlayerInteraction(Player* player)
 	case 2:
 		a = nLevel1_ + 1;
 		numMissions = nLevel2_;
-
 		break;
 	case 3:
 		a = nLevel2_ + 1;
 		numMissions = nLevel3_;
 		break;
-	}
+	}*/
 
-	missionsSent.reserve(numMissions);
+	// las misiones desde a hasta numMissions son las correspondientes al nivel actual
+	// si no están completas deben mostrarse en el panel
+	/*missionsSent.reserve(numMissions);
 	for (int i = a; i <= numMissions; ++i) {
 		b += to_string(i);
-		missionsSent.push_back(make_pair(b, missions_.at(b).imgRoute));
+		if (!missions_.at(b).completed) {
+			missionsSent.push_back(make_pair(b, missions_.at(b).imgRoute));
+		}
+		b = "Mission";
+	}*/
+
+	missionsSent.reserve(levels_[currentLevel_]);
+	for (int i = levels_[currentLevel_ - 1] + 1; i <= levels_[currentLevel_]; ++i) {
+		b += to_string(i);
+		if (!missions_.at(b).completed) {
+			missionsSent.push_back(make_pair(b, missions_.at(b).imgRoute));
+		}
 		b = "Mission";
 	}
-
 	if (game->getSavedState() == nullptr) {
 		// show pannel
 		game->saveState(game->getState());
@@ -125,7 +142,7 @@ void MissionsPanel::onMissionSelected(string missionId)
 
 void MissionsPanel::onMissionCompleted()
 {
-	MissionInfo m = missions_.at(currentMission_->getName());
+	MissionInfo& m = missions_.at(currentMission_->getName());
 	// Dar la recompensa
 	int reward = m.maxMoney;
 
@@ -144,7 +161,8 @@ void MissionsPanel::onMissionCompleted()
 	game->changeMoneyPlayer(reward);
 
 	// Marcar la mision como acabada
-	missions_.at(currentMission_->getName()).completed = true;
+	m.completed = true;
+
 	delete currentMission_;
 	currentMission_ = nullptr;
 
@@ -154,8 +172,20 @@ void MissionsPanel::onMissionCompleted()
 	// Quitar paquete
 	game->getPlayer()->removeMissionObject();
 
-
 	// comprobar si todas las misiones de este nivel están completadas -> tandas de misiones
+	levelsCompleted_[m.level]++;
+	if (levelsCompleted_[m.level] == levels_[m.level]) {
+		if (currentLevel_ != 3) {
+
+			currentLevel_++;
+		}
+		else {
+			// terminar partida
+		}
+
+	}
+
+	
 }
 
 string MissionsPanel::getMissionImage()
@@ -215,6 +245,8 @@ void MissionsPanel::loadMissions(std::string filename)
 					default:
 						break;
 					}
+
+					levels_[level]++;
 
 					MissionInfo m = {
 						level,
