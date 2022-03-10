@@ -47,7 +47,6 @@ private:
     InteractiveEntity* iE_ = nullptr;
     vector<GameObject*> gameObjects_;
     vector<Enemy*>enemyContainer_;//vector enemigos
-    
     MissionsPanel* missionsPanel_= nullptr;
     
     AnimationManager* animationManager;
@@ -67,10 +66,9 @@ public:
     string getGameName();
 
     void add(GameObject* gameObject);
-
+  
     void start();
-    void update();
-
+    void update();   
     void setUserExit();
     bool isUserExit();
     void draw();

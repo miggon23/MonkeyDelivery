@@ -3,6 +3,7 @@
 
 class MenuState : public State {
     //ViewController* vC_;
+    vector<Button*>buttons;
 public:
 
     MenuState(Game* game,ViewController* view);

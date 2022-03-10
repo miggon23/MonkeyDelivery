@@ -1,6 +1,6 @@
 #include "Button.h"
 
-Button::Button(Game* game, int wight, int height, int x, int y) :GameObject(game) {
+Button::Button(Game* game, int wight, int height, int x, int y, ViewController* v) :GameObject(game),v_(v) {
 
 	setDimension(wight, height);
 	setPosition(x, y);

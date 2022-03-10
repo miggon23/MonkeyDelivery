@@ -3,7 +3,7 @@
 #include <string>
 #include "../CommandFactory.h"
 #include "../ViewController.h"
-
+#include "../Button.h"
 class Game;
 using namespace std;
 
