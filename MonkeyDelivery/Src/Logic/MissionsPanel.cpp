@@ -73,7 +73,7 @@ void MissionsPanel::onPlayerInteraction(Player* player)
 	}*/
 
 	missionsSent.reserve(levels_[currentLevel_]);
-	for (int i = levels_[currentLevel_ - 1] + 1; i <= levels_[currentLevel_]; ++i) {
+	for (int i = levelsCompleted_[currentLevel_ - 1] + 1; i <= levelsCompleted_[currentLevel_ - 1] + levels_[currentLevel_]; ++i) {
 		b += to_string(i);
 		if (!missions_.at(b).completed) {
 			missionsSent.push_back(make_pair(b, missions_.at(b).imgRoute));
@@ -176,16 +176,12 @@ void MissionsPanel::onMissionCompleted()
 	levelsCompleted_[m.level]++;
 	if (levelsCompleted_[m.level] == levels_[m.level]) {
 		if (currentLevel_ != 3) {
-
 			currentLevel_++;
 		}
 		else {
 			// terminar partida
 		}
-
 	}
-
-	
 }
 
 string MissionsPanel::getMissionImage()

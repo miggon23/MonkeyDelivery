@@ -358,6 +358,7 @@
     <ClInclude Include="Src\Logic\Flashlight.h">
       <Filter>Header Files\Logic\InteractuableObjects</Filter>
     </ClInclude>
+    <ClInclude Include="Src\View\checkML.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="MonkeyDelivery.rc" />
