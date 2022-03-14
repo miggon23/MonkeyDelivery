@@ -27,8 +27,7 @@ private:
 #pragma endregion
 
 #pragma region Movement/Fear
-	const double INIT_VEL_X = 3.0; //Velocidad base (sin modificaciones que mantiene el player
-	const double INIT_VEL_Y = 3.0;
+	const double INIT_VEL = 3.0; //Velocidad base (sin modificaciones que mantiene el player
 	bool isRunning = false;
 	float fear_;
 	float walkingSpeed_;
