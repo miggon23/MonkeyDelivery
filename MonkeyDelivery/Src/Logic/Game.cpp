@@ -26,7 +26,7 @@ Game::~Game() {
     delete dialogueBox_;
     delete iE_;
     delete animationManager;
-   
+    delete savedState;
 }
 
 string Game::getGameName() {

@@ -170,10 +170,14 @@
     <ClCompile Include="Src\Logic\Shop.cpp">
       <Filter>Source Files\Logic</Filter>
     </ClCompile>
-    <ClCompile Include="Src\Control\States\ShopState.cpp" />
-    <ClCompile Include="Src\Logic\InteractubaleShop.cpp" />
     <ClCompile Include="Src\Control\InteractDialogueBox.cpp">
       <Filter>Source Files\Control\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Control\States\ShopState.cpp">
+      <Filter>Source Files\Control\States</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Logic\InteractubaleShop.cpp">
+      <Filter>Source Files\Logic\InteractuableObjects</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -370,10 +374,14 @@
     <ClInclude Include="Src\Logic\Shop.h">
       <Filter>Header Files\Logic</Filter>
     </ClInclude>
-    <ClInclude Include="Src\Control\States\ShopState.h" />
-    <ClInclude Include="Src\Logic\InteractuableShop.h" />
     <ClInclude Include="Src\Control\InteractDialogueBoxCommand.h">
       <Filter>Header Files\Control\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Control\States\ShopState.h">
+      <Filter>Header Files\Control\States</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Logic\InteractuableShop.h">
+      <Filter>Header Files\Logic\InteractuableObjects</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
