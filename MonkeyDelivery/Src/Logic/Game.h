@@ -4,8 +4,10 @@
 
 #pragma once
 #include <iostream>
+#include <fstream>
 #include <string>
 #include <vector>
+#include "../TilemapSrc/object.h"
 
 #include"../Control/States/StateMachine.h"
 #include "../View/Texture.h"
@@ -33,6 +35,9 @@
 #include "MissionsPanel.h"
 
 #include "AnimationManager.h"
+
+
+
 using namespace std;
 
 class Game : public StateMachine {
@@ -58,6 +63,10 @@ private:
     //prueba cuadro dialogo
     DialogueBox* dialogueBox_;
     
+    //TILEMAP
+    void loadMap(const char* filename);
+    void drawMap();
+    vector<Object> map;
 
 public:
 
