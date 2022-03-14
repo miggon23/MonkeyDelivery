@@ -159,6 +159,7 @@
     <ClInclude Include="Src\Control\Buttons\Options.h" />
     <ClInclude Include="Src\Control\Buttons\Start.h" />
     <ClInclude Include="Src\Control\Command.h" />
+    <ClInclude Include="Src\Control\CommandClick.h" />
     <ClInclude Include="Src\Control\CommandExit.h" />
     <ClInclude Include="Src\Control\CommandFactory.h" />
     <ClInclude Include="Src\Control\CommandInteract.h" />
@@ -227,6 +228,7 @@
     <ClCompile Include="Src\Control\Buttons\Options.cpp" />
     <ClCompile Include="Src\Control\Buttons\Start.cpp" />
     <ClCompile Include="Src\Control\Command.cpp" />
+    <ClCompile Include="Src\Control\CommandClick.cpp" />
     <ClCompile Include="Src\Control\CommandExit.cpp" />
     <ClCompile Include="Src\Control\CommandFactory.cpp" />
     <ClCompile Include="Src\Control\CommandInteract.cpp" />
