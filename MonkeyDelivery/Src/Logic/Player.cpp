@@ -18,8 +18,9 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game),animat
 	fear_ = 0;
 	money_ = 0;
 	vel_ = 0;
-	/*walkingSpeed_ = 3;
-	runningSpeed_ = 10;*/
+	//walkingSpeed_ = 3;
+	runningSpeedFactor_ = 1.8;
+
 	walkingEnergy_ = 0.5;
 	runningEnergy_ = 1.0;
 	decreasingEnergyLevel_ = walkingEnergy_; // Cambiar esto después a un método set <---
@@ -102,10 +103,15 @@ void Player::move()
 void Player::setIsRunning(bool run)
 {
 	isRunning = run;
-	if (isRunning)
+	if (isRunning) {
 		decreasingEnergyLevel_ = runningEnergy_;
+		setVel(getVel() * runningSpeedFactor_);
+	}
 	else
+	{
 		decreasingEnergyLevel_ = walkingEnergy_;
+		setVel(getVel() / runningSpeedFactor_);
+	}
 
 }
 
@@ -126,6 +132,7 @@ void Player::sleep()
 	getScared(-1);
 	drainEnergy(-1);
 }
+
 //cambiar la variable de dormir y establecer la textura
 void Player::changeSleep()
 {	

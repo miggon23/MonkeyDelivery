@@ -8,7 +8,7 @@ class ShopState : public State
 	int xObj=100, yObj=50, wObj=500, hObj=250;
 	
 public:
-	ShopState(Game* game, ViewController* v);
+	ShopState(Game* game);
 	~ShopState();
 
 	void update()override;

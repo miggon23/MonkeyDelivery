@@ -33,8 +33,8 @@ private:
 	double INIT_VEL_; 
 	bool isRunning = false;
 	float fear_;
-	float walkingSpeed_;
-	float runningSpeed_;
+	float walkingSpeedFactor_; //A esto se le multiplica la velocidad actual
+	float runningSpeedFactor_; // A esto se le multiplica la velocidad actual
 	//Velocidad actual del jugador
 	double vel_;
 	int dirX_ = 0; // 1, 0 o -1

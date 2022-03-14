@@ -2,7 +2,7 @@
 #include "../PauseCommand.h"
 #include "../CommandExit.h"
 
-ShopState::ShopState(Game* game, ViewController *v) : State(game,v){
+ShopState::ShopState(Game* game) : State(game){
 	registerCommands();
 	panelTexture=game->getTexture(shopPanel);
 }
