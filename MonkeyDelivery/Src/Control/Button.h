@@ -9,6 +9,7 @@ private:
 
 	int x_;
 	int y_;
+	SDL_Event* event;
 
 protected:
 	ViewController* v_;
@@ -18,5 +19,6 @@ public:
 
 	void update() override;
     virtual void onCursorCollision()=0;
+	//bool parse(SDL_Event& event);
 
 };
