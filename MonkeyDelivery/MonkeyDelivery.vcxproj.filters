@@ -178,7 +178,7 @@
     <ClCompile Include="Src\Control\CommandClick.cpp">
       <Filter>Source Files\Control\Commands</Filter>
     </ClCompile>
-    <ClCompile Include="Src\TilemapSrc\object.cpp">
+    <ClCompile Include="Src\TilemapSrc\tileObject.cpp">
       <Filter>Source Files\TilemapSrc</Filter>
     </ClCompile>
   </ItemGroup>
@@ -384,7 +384,7 @@
     <ClInclude Include="Src\Control\CommandClick.h">
       <Filter>Header Files\Control\Commands</Filter>
     </ClInclude>
-    <ClInclude Include="Src\TilemapSrc\object.h">
+    <ClInclude Include="Src\TilemapSrc\tileObject.h">
       <Filter>Header Files\TilemapSrc</Filter>
     </ClInclude>
   </ItemGroup>

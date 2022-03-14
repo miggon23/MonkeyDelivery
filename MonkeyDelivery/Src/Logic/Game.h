@@ -7,7 +7,7 @@
 #include <fstream>
 #include <string>
 #include <vector>
-#include "../TilemapSrc/object.h"
+#include "../TilemapSrc/tileObject.h"
 
 #include"../Control/States/StateMachine.h"
 #include "../View/Texture.h"
