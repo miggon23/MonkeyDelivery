@@ -45,7 +45,7 @@ public:
 	void changeText(string id);
 	void inShow();
 
-	void fastShow();
+	void interact();
 
 	void advanceLetter();
 

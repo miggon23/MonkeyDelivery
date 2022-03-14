@@ -1,10 +1,10 @@
 #pragma once
 #include "Command.h"
-class FastTextCommand : public Command
+class InteractDialogueBoxCommand : public Command
 {
 public:
-	FastTextCommand() {};
-	~FastTextCommand() = default;
+	InteractDialogueBoxCommand() {};
+	~InteractDialogueBoxCommand() = default;
 
 	bool parse(SDL_Event & event) override;
 	void execute() override;

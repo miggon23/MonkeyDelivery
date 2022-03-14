@@ -109,6 +109,6 @@ public:
     void scare(double scariness);
 
     //texts
-    void fastDialogue();
+    void interactDialogue();
    
 };

@@ -149,9 +149,6 @@
     <ClCompile Include="Src\Control\Button.cpp">
       <Filter>Source Files\Control</Filter>
     </ClCompile>
-    <ClCompile Include="Src\Control\FastTextCommand.cpp">
-      <Filter>Source Files\Control\Commands</Filter>
-    </ClCompile>
     <ClCompile Include="Src\Control\Buttons\Exit.cpp">
       <Filter>Source Files\Control\Buttons</Filter>
     </ClCompile>
@@ -172,6 +169,11 @@
     </ClCompile>
     <ClCompile Include="Src\Logic\Shop.cpp">
       <Filter>Source Files\Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Control\States\ShopState.cpp" />
+    <ClCompile Include="Src\Logic\InteractubaleShop.cpp" />
+    <ClCompile Include="Src\Control\InteractDialogueBox.cpp">
+      <Filter>Source Files\Control\Commands</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -346,9 +348,6 @@
     <ClInclude Include="Src\Control\Button.h">
       <Filter>Header Files\Control</Filter>
     </ClInclude>
-    <ClInclude Include="Src\Control\FastTextCommand.h">
-      <Filter>Header Files\Control\Commands</Filter>
-    </ClInclude>
     <ClInclude Include="Src\Control\Buttons\Exit.h">
       <Filter>Header Files\Control\Buttons</Filter>
     </ClInclude>
@@ -370,6 +369,11 @@
     </ClInclude>
     <ClInclude Include="Src\Logic\Shop.h">
       <Filter>Header Files\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Control\States\ShopState.h" />
+    <ClInclude Include="Src\Logic\InteractuableShop.h" />
+    <ClInclude Include="Src\Control\InteractDialogueBoxCommand.h">
+      <Filter>Header Files\Control\Commands</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -108,11 +108,11 @@ void DialogueBox::advanceLetter()
 		inShow_ = false;
 }
 
-void DialogueBox::fastShow()
+void DialogueBox::interact()
 {
-	if (!inShow_) return;
-
-	showLetterTime_ = fastUpdateTime_;
+	if (inShow_)
+		showLetterTime_ = fastUpdateTime_;
+	else hide();
 }
 
 void DialogueBox::draw()
