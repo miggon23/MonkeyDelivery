@@ -27,13 +27,14 @@ private:
 #pragma endregion
 
 #pragma region Movement/Fear
-	const double INIT_VEL = 3.0; //Velocidad base (sin modificaciones que mantiene el player
+	//Velocidad base (sin modificaciones que mantiene el player)
+	double INIT_VEL_; 
 	bool isRunning = false;
 	float fear_;
 	float walkingSpeed_;
 	float runningSpeed_;
-	double velX_ = 0; //velocidad actual del jugador
-	double velY_ = 0;
+	//Velocidad actual del jugador
+	double vel_;
 	int dirX_ = 0; // 1, 0 o -1
 	int dirY_ = 0; // 1, 0 o -1
 #pragma endregion
@@ -85,12 +86,9 @@ public:
 	void move(pair<double, double> speed);
 	void move();
 	inline void setIsRunning(bool run) { isRunning = run; std::cout << "RUNNING CHANGED TO: " << isRunning << endl; };
-	inline void setVelX(double x) { velX_ = x; };
-	inline void setVelY(double y) { velY_ = y; };
-	inline void setVel(double x, double y) { velX_ = x; velY_ = y; };
+	inline void setVel(double x) { vel_ = x; };
 	void resetVelocity();
-	inline double getVelX() { return velX_; };
-	inline double getVelY() { return velY_; };
+	inline double getVel() { return vel_; };
 
 	inline void setDirX(int x) { dirX_ = x; };
 	inline void setDirY(int y) { dirY_ = y; };

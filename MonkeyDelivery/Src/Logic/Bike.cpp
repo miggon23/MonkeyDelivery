@@ -7,13 +7,11 @@ Bike::Bike() : active(false), speedMult(2.5)
 
 bool Bike::useObject() {
 	if (!active) {
-		player_->setVelX(player_->getVelX() * speedMult);
-		player_->setVelY(player_->getVelY() * speedMult);
+		player_->setVel(player_->getVel() * speedMult);
 		cout << "Montando en Bici";
 	}
 	else {
-		player_->setVelX(player_->getVelX() / speedMult);
-		player_->setVelY(player_->getVelY() / speedMult);
+		player_->setVel(player_->getVel() / speedMult);
 		cout << "Me bajo de la Bici";
 	}
 	cout << endl;

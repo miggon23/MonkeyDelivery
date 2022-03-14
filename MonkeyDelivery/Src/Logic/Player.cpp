@@ -5,16 +5,18 @@
 #include "Game.h"
 #include "SDL.h"
 
-
 Player::Player(Game* game, AnimationManager* animation) :GameObject(game),animationManager(animation) {
 	this->game = game;
 	
 	texture = nullptr;
 	setTexture(monkeyspritesheet);
 
+	INIT_VEL_ = 3.0;
+
 	//inicializacion de variables
 	fear_ = 0;
 	money_ = 0;
+	vel_ = 0;
 	/*walkingSpeed_ = 3;
 	runningSpeed_ = 10;*/
 	walkingEnergy_ = 0.5;
@@ -81,11 +83,11 @@ void Player::move()
 
 	//Normalizamos el vector para que no se desplaze más en diagonal
 	speed.normalize(); 
-	speed = speed * velX_;
+	speed = speed * vel_;
 
 	if (dirX_ != 0 || dirY_ != 0) {
 		if (isRunning) { //Esto se puede implementar desde el runCommand, evitando que el jugador tenga muchos estados como el de corriendo
-			
+			speed = speed * 1.5;
 			drainEnergy(walkingEnergy_);
 		}
 		else
@@ -101,7 +103,7 @@ void Player::move()
 /// </summary>
 void Player::resetVelocity()
 {
-	setVel(INIT_VEL, INIT_VEL);
+	setVel(INIT_VEL_);
 }
 
 void Player::sleep()

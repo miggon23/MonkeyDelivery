@@ -80,8 +80,7 @@ public:
     //Player movement
     inline void move(pair<double, double> speed) { player_->move(speed); };
     inline void setIsRunning(bool run) { player_->setIsRunning(run); };
-    inline void setVelX(double x) { player_->setVelX(x); };
-    inline void setVelY(double y) { player_->setVelY(y); };
+    inline void setVel(double x) { player_->setVel(x); };
     inline void setPlayerDirX(int x) { player_->setDirX(x); };
     inline void setPlayerDirY(int y) { player_->setDirY(y); };
     inline Point2D<double> getPosisitionPlayer() { return player_->getPosition(); };
