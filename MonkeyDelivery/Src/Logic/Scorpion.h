@@ -15,7 +15,7 @@ public:
 
 	void update() override;
 	void createCheckPoints() override;
-	/*void checkDistance() override;*/
+	void checkDistance() override;
 
 	void draw() override;
 };
