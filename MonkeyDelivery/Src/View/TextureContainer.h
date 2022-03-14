@@ -30,11 +30,12 @@ enum TextureName {
     monkeyspritesheet,
     batspritesheet,
     bullspritesheet,
-    catspritesheet
+    catspritesheet, 
+    scorpionSpritesheet
 };
 
 
-const int NUM_TEXTURES = 19;
+const int NUM_TEXTURES = 20;
 
 typedef struct {
     string filename;
@@ -62,7 +63,8 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
   {"animaciones mono/monkey.png",1,1},
   {"enemies/bat.png",1,1},
   {"enemies/bull.png",1,1},
-  {"enemies/cat.png",1,1}
+  {"enemies/cat.png",1,1},
+  {"enemies/scorpion.png",1,1}
 };
 
 
