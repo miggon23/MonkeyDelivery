@@ -76,13 +76,16 @@ void Player::move(pair<double, double> speed)
 
 void Player::move()
 {
-	double speedX = velX_ * dirX_;
-	double speedY = velY_ * dirY_;
+	Vector2D<double> speed = { (double) dirX_, (double) dirY_};
+	speed.set(dirX_, dirY_);
+
+	//Normalizamos el vector para que no se desplaze más en diagonal
+	speed.normalize(); 
+	speed = speed * velX_;
 
 	if (dirX_ != 0 || dirY_ != 0) {
 		if (isRunning) { //Esto se puede implementar desde el runCommand, evitando que el jugador tenga muchos estados como el de corriendo
-			speedX *= 2;
-			speedY *= 2;
+			
 			drainEnergy(walkingEnergy_);
 		}
 		else
@@ -90,7 +93,7 @@ void Player::move()
 	}
 
 	//HAY QUE NORMALIZAR EL VECTOR
-	setPosition(getX() + speedX, getY() + speedY);
+	setPosition(getX() + speed.getX(), getY() + speed.getY());
 }
 
 /// <summary>
@@ -98,7 +101,7 @@ void Player::move()
 /// </summary>
 void Player::resetVelocity()
 {
-	setVel(INIT_VEL_X, INIT_VEL_Y);
+	setVel(INIT_VEL, INIT_VEL);
 }
 
 void Player::sleep()
@@ -251,6 +254,10 @@ void Player::removeMissionObject()
 	inventory_->removeMisionObject();
 }
 
+void Player::addObjectToInventory(InventoryObject* p)
+{
+	inventory_->addObject(p);
+}
 
 void Player::draw()
 {

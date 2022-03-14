@@ -26,6 +26,7 @@
 #include "Bat.h"
 #include "Cat.h"
 #include "Bull.h"
+#include "Scorpion.h"
 
 #include "Bed.h"
 
@@ -111,6 +112,3 @@ public:
     void fastDialogue();
    
 };
-
-
-
