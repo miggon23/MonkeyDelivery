@@ -175,6 +175,9 @@
     <ClCompile Include="Src\Control\InteractDialogueBox.cpp">
       <Filter>Source Files\Control\Commands</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Control\CommandClick.cpp">
+      <Filter>Source Files\Control\Commands</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -373,6 +376,9 @@
     <ClInclude Include="Src\Control\States\ShopState.h" />
     <ClInclude Include="Src\Logic\InteractuableShop.h" />
     <ClInclude Include="Src\Control\InteractDialogueBoxCommand.h">
+      <Filter>Header Files\Control\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Control\CommandClick.h">
       <Filter>Header Files\Control\Commands</Filter>
     </ClInclude>
   </ItemGroup>
