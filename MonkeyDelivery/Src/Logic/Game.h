@@ -112,6 +112,3 @@ public:
     void fastDialogue();
    
 };
-
-
-
