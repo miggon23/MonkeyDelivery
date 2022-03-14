@@ -12,7 +12,6 @@ class State {
 protected:
     Game* game = nullptr;
     CommandFactory* commandFactory = nullptr;
-    ViewController* vC_;
    // Uint32 initTime;
     unsigned int initTime;
    // Uint32 totalTime;
@@ -20,9 +19,8 @@ protected:
 
     bool isFullscreen = false;
 public:
-    State(Game* game,ViewController* v) : game(game) {
+    State(Game* game) : game(game) {
         commandFactory = new CommandFactory(game);
-        vC_ = v;
         
     };
 

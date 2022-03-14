@@ -21,7 +21,7 @@ void PauseCommand::execute()
 	if (game->getSavedState() == nullptr) {
 		//pause
 		game->saveState(game->getState());
-		game->setState(new PauseState(game, nullptr));
+		game->setState(new PauseState(game));
 	}
 	else {
 		// unpause
