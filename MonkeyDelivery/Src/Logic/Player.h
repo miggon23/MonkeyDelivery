@@ -13,6 +13,7 @@ class AnimationManager;
 class Player : public GameObject {
 
 	friend class UI_Info;
+	enum MovState { WALKING, RUNNING, RIDING };
 
 private:
 	Inventory* inventory_ = nullptr;
@@ -27,6 +28,7 @@ private:
 #pragma endregion
 
 #pragma region Movement/Fear
+	MovState movState_;
 	//Velocidad base (sin modificaciones que mantiene el player)
 	double INIT_VEL_; 
 	bool isRunning = false;
@@ -56,6 +58,8 @@ private:
 	SDL_Rect textureRect;
 	int timerAnimation;
 #pragma endregion	
+
+
 
 public:
 
@@ -93,6 +97,9 @@ public:
 	inline void setDirX(int x) { dirX_ = x; };
 	inline void setDirY(int y) { dirY_ = y; };
 	inline void setDir(int x, int y) { dirX_ = x; dirY_ = y; };
+
+	inline MovState getMovState() { return movState_; };
+	inline void setMovState(MovState m) { movState_ = m; };
 
 #pragma endregion
 
