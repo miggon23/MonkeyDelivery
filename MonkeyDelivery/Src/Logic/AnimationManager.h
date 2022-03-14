@@ -31,6 +31,10 @@ private:
 	//Toro
 	int wBull_ = 100,
 		hBull_ = 100;
+
+	//Escorpion
+	int wScorpion_ = 100,
+		hScorpion_ = 100;
 	
 public:
 
@@ -185,6 +189,24 @@ public:
 			
 		}
 		tex->render(texturaRect, bull);
+	};
+
+	//ESCORPION
+	inline int getWidthScorpion() { return wScorpion_; };
+	inline int getHeigthScorpion() { return hScorpion_; };
+	inline void getFrameImageScorpion(SDL_Rect scorpion, SDL_Rect& texturaRect, Texture* tex, int& timer) {
+		if (SDL_GetTicks() - timer >= 1000) {
+			texturaRect.x += wScorpion_;
+			if (texturaRect.y >= 200 && texturaRect.x >= 200) {
+				texturaRect.y = 0; texturaRect.x = 0;
+			}
+			if (texturaRect.x >= 200) {
+				texturaRect.x = 0;
+				texturaRect.y += hScorpion_;
+			}
+			timer = SDL_GetTicks();
+		}
+		tex->render(texturaRect, scorpion);
 	};
 };
 

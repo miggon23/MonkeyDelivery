@@ -167,6 +167,9 @@
     <ClCompile Include="Src\Logic\Flashlight.cpp">
       <Filter>Source Files\Logic\InteractuableObjects</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Logic\Scorpion.cpp">
+      <Filter>Source Files\Logic\Enemies</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -359,6 +362,9 @@
       <Filter>Header Files\Logic\InteractuableObjects</Filter>
     </ClInclude>
     <ClInclude Include="Src\View\checkML.h" />
+    <ClInclude Include="Src\Logic\Scorpion.h">
+      <Filter>Header Files\Logic\Enemies</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="MonkeyDelivery.rc" />
