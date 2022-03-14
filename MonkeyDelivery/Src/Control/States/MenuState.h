@@ -1,13 +1,17 @@
 #pragma once
+
 #include "State.h"
+#include "../Buttons/Start.h"
 
 class MenuState : public State {
     //ViewController* vC_;
-    vector<Button*>buttons;
+    vector<Button*> buttons;
+    Start* startButton_;
+
 public:
 
     MenuState(Game* game,ViewController* view);
-    ~MenuState() = default;
+    ~MenuState();
 
     void update() override;
     void draw() override;
