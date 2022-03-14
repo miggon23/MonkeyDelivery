@@ -4,7 +4,7 @@ Game::Game(string n, int w, int h) : name(n), width(w), height(h), doExit(false)
 {    
     font_ = new Font("../Images/TheMoon.ttf", 50);
     animationManager = new AnimationManager(this);
-    //loadMap("res/1.level");
+    loadMap("1.level");
 }
 
 Game::~Game() {
@@ -92,7 +92,7 @@ bool Game::isUserExit() {
 //Normal draw for entities(no Tiles)
 void Game::draw()
 {
-    for (auto gO : gameObjects_) 
+    /*for (auto gO : gameObjects_)
         gO->draw();
     
     for (auto enemy : enemyContainer_)
@@ -105,12 +105,13 @@ void Game::draw()
     dialogueBox_->draw();
     //renderText("aaaa", 100, 150, BLACK);
     
-    player_->draw();
+    player_->draw();*/
 }
 
 //Draw de Tiles
 void Game::drawTiles(tileObject o)
 {
+    
     SDL_Rect dest = o.getDest();
     SDL_Rect src = o.getSource();
     SDL_RenderCopyEx(renderer, o.getTex(), &src, &dest, 0, NULL, SDL_FLIP_NONE);
@@ -220,6 +221,7 @@ void Game::interactDialogue()
 
 //TILEMAP
 void Game::loadMap(const char* filename) {
+    std::cout << "Started Loading \n";
     int current, mx, my, mw, mh;
     ifstream in(filename);
     if (!in.is_open()) {
@@ -239,7 +241,7 @@ void Game::loadMap(const char* filename) {
             in >> current;
             if (current != 0) {
                 tileObject tmp;
-                tmp.setImage("res/tileset.png", renderer);
+                tmp.setImage("../TilemapSrc/Spritesheets/TilesetFloor.png", renderer);
                 tmp.setSource((current - 1) * 32, 0, 32, 32);
                 tmp.setDest((j * TILE_SIZE) + mx, (i * TILE_SIZE) + my, TILE_SIZE, TILE_SIZE);
                 if (current == 2 || current == 4) tmp.setSolid(0);

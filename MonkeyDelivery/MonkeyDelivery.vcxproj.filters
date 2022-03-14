@@ -397,6 +397,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Images\config\resources.json" />
+    <None Include="Src\TilemapSrc\1.level">
+      <Filter>Header Files\TilemapSrc</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">
