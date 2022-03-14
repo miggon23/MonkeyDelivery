@@ -49,6 +49,7 @@ private:
 #pragma region Energy
 	float walkingEnergy_;
 	float runningEnergy_;
+	float decreasingEnergyLevel_;
 	energyLevel* energyLevel_ = nullptr;
 	FearLevel* fearLevel_ = nullptr;
 #pragma endregion
@@ -89,7 +90,7 @@ public:
 #pragma region Movement
 	void move(pair<double, double> speed);
 	void move();
-	inline void setIsRunning(bool run) { isRunning = run; std::cout << "RUNNING CHANGED TO: " << isRunning << endl; };
+	void setIsRunning(bool run);
 	inline void setVel(double x) { vel_ = x; };
 	void resetVelocity();
 	inline double getVel() { return vel_; };

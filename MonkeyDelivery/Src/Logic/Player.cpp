@@ -22,6 +22,7 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game),animat
 	runningSpeed_ = 10;*/
 	walkingEnergy_ = 0.5;
 	runningEnergy_ = 1.0;
+	decreasingEnergyLevel_ = walkingEnergy_; // Cambiar esto después a un método set <---
 
 	resetVelocity(); //Se inicializa al valor de INIT_VEL_X e ..._Y
 
@@ -88,15 +89,24 @@ void Player::move()
 
 	if (dirX_ != 0 || dirY_ != 0) {
 		if (isRunning) { //Esto se puede implementar desde el runCommand, evitando que el jugador tenga muchos estados como el de corriendo
-			speed = speed * 1.5;
-			drainEnergy(walkingEnergy_);
+			speed = speed * 1.5;			
 		}
-		else
-			drainEnergy(walkingEnergy_);
+		
+		drainEnergy(decreasingEnergyLevel_);
 	}
 
 	//HAY QUE NORMALIZAR EL VECTOR
 	setPosition(getX() + speed.getX(), getY() + speed.getY());
+}
+
+void Player::setIsRunning(bool run)
+{
+	isRunning = run;
+	if (isRunning)
+		decreasingEnergyLevel_ = runningEnergy_;
+	else
+		decreasingEnergyLevel_ = walkingEnergy_;
+
 }
 
 /// <summary>
@@ -119,7 +129,7 @@ void Player::sleep()
 //cambiar la variable de dormir y establecer la textura
 void Player::changeSleep()
 {	
-	if (energyLevel_->percentEnergy() <= 20.0||sleeping) {
+	if (energyLevel_->percentEnergy() <= 20.0 || sleeping) {
 		sleeping = !sleeping;
 		//actulizo la textura
 		if (sleeping) {
