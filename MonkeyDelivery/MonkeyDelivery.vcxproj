@@ -154,7 +154,6 @@
     <ClInclude Include="framework.h" />
     <ClInclude Include="MonkeyDelivery.h" />
     <ClInclude Include="Resource.h" />
-    <ClInclude Include="Shop.h" />
     <ClInclude Include="Src\Control\Button.h" />
     <ClInclude Include="Src\Control\Buttons\Exit.h" />
     <ClInclude Include="Src\Control\Buttons\Options.h" />
@@ -176,6 +175,7 @@
     <ClInclude Include="Src\Control\States\OptionsState.h" />
     <ClInclude Include="Src\Control\States\PauseState.h" />
     <ClInclude Include="Src\Control\States\PlayingState.h" />
+    <ClInclude Include="Src\Control\States\ShopState.h" />
     <ClInclude Include="Src\Control\States\State.h" />
     <ClInclude Include="Src\Control\States\StateMachine.h" />
     <ClInclude Include="Src\Control\States\TestingState.h" />
@@ -197,6 +197,7 @@
     <ClInclude Include="Src\Logic\Game.h" />
     <ClInclude Include="Src\Logic\GameObject.h" />
     <ClInclude Include="Src\Logic\InteractiveEntity.h" />
+    <ClInclude Include="Src\Logic\InteractuableShop.h" />
     <ClInclude Include="Src\Logic\Inventory.h" />
     <ClInclude Include="Src\Logic\InventoryObject.h" />
     <ClInclude Include="Src\Logic\Mission.h" />
@@ -205,6 +206,7 @@
     <ClInclude Include="Src\Logic\Package.h" />
     <ClInclude Include="Src\Logic\Player.h" />
     <ClInclude Include="Src\Logic\Scorpion.h" />
+    <ClInclude Include="Src\Logic\Shop.h" />
     <ClInclude Include="Src\Logic\SpawnZone.h" />
     <ClInclude Include="Src\Logic\Target.h" />
     <ClInclude Include="Src\Logic\UI_Info.h" />
@@ -220,7 +222,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MonkeyDelivery.cpp" />
-    <ClCompile Include="Shop.cpp" />
     <ClCompile Include="Src\Control\Button.cpp" />
     <ClCompile Include="Src\Control\Buttons\Exit.cpp" />
     <ClCompile Include="Src\Control\Buttons\Options.cpp" />
@@ -242,6 +243,7 @@
     <ClCompile Include="Src\Control\States\OptionsState.cpp" />
     <ClCompile Include="Src\Control\States\PauseState.cpp" />
     <ClCompile Include="Src\Control\States\PlayingState.cpp" />
+    <ClCompile Include="Src\Control\States\ShopState.cpp" />
     <ClCompile Include="Src\Control\States\State.cpp" />
     <ClCompile Include="Src\Control\States\StateMachine.cpp" />
     <ClCompile Include="Src\Control\States\TestingState.cpp" />
@@ -263,6 +265,7 @@
     <ClCompile Include="Src\Logic\Game.cpp" />
     <ClCompile Include="Src\Logic\GameObject.cpp" />
     <ClCompile Include="Src\Logic\InteractiveEntity.cpp" />
+    <ClCompile Include="Src\Logic\InteractubaleShop.cpp" />
     <ClCompile Include="Src\Logic\Inventory.cpp" />
     <ClCompile Include="Src\Logic\InventoryObject.cpp" />
     <ClCompile Include="Src\Logic\Mission.cpp" />
@@ -271,6 +274,7 @@
     <ClCompile Include="Src\Logic\Package.cpp" />
     <ClCompile Include="Src\Logic\Player.cpp" />
     <ClCompile Include="Src\Logic\Scorpion.cpp" />
+    <ClCompile Include="Src\Logic\Shop.cpp" />
     <ClCompile Include="Src\Logic\SpawnZone.cpp" />
     <ClCompile Include="Src\Logic\Target.cpp" />
     <ClCompile Include="Src\Logic\UI_Info.cpp" />

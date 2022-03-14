@@ -9,6 +9,7 @@ private:
 
 	int x_;
 	int y_;
+
 protected:
 	ViewController* v_;
 public:

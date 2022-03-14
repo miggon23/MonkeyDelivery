@@ -12,7 +12,7 @@ const string IMAGES_PATH = "../Images/";
 
 enum TextureName {
     monkeyTexture,
-    monkeyEyesClosedTexture, // para la presentación del hito, se puede quitar después pq está en el spritesheet
+    monkeyEyesClosedTexture, // para la presentaciï¿½n del hito, se puede quitar despuï¿½s pq estï¿½ en el spritesheet
    // spritesheet,
     energyTexture,
     energyLevelTexture,
@@ -30,12 +30,16 @@ enum TextureName {
     monkeyspritesheet,
     batspritesheet,
     bullspritesheet,
-    catspritesheet, 
-    scorpionSpritesheet
+    catspritesheet,
+    startButtonTexture,
+    scorpionSpritesheet,
+    shopTexture
 };
 
 
-const int NUM_TEXTURES = 20;
+const int NUM_TEXTURES = 22;
+
+
 
 typedef struct {
     string filename;
@@ -64,7 +68,9 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
   {"enemies/bat.png",1,1},
   {"enemies/bull.png",1,1},
   {"enemies/cat.png",1,1},
-  {"enemies/scorpion.png",1,1}
+  {"Buttons/startButton.png",1,1},
+  {"enemies/scorpion.png",1,1},
+  {"shop.png",1,1}
 };
 
 

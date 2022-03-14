@@ -111,7 +111,7 @@ public:
 	void addMissionObject(InventoryObject* p);
 	void removeMissionObject();
 
-	bool inventoryFull() { return inventory_->inventoryFull(); }
+	bool inventoryFull();
 	void addObjectToInventory(InventoryObject* p);
 #pragma endregion
 };

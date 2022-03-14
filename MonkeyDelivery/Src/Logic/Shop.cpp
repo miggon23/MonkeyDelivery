@@ -36,6 +36,7 @@ void Shop::addElements(int level)
 	switch (level)
 	{
 	case 1:
+		objects.push_back(new Bike());
 		break;
 	case 2:
 		break;
@@ -49,12 +50,13 @@ void Shop::addElements(int level)
 
 bool Shop::buyObject(int id, int price)
 {
-	///*if (id < objects.size() && player-> && player->changeMoney(price))
-	//{
-	//	objects.erase(objects.begin() + id);
-	//	player->
-	//		return true;
-	//}*/
-	//else return false;
+	if (id < objects.size() && player->inventoryFull() && player->moneyChange(price))
+	{		
+		player->addObjectToInventory(objects[id]);
+		objects.erase(objects.begin() + id);
+
+		return true;
+	}
+	else return false; 
 	
 }
