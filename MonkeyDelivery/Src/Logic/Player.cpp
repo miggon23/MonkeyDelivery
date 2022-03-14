@@ -11,6 +11,7 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game),animat
 	texture = nullptr;
 	setTexture(monkeyspritesheet);
 
+	setMovState(WALKING);
 	INIT_VEL_ = 3.0;
 
 	//inicializacion de variables
