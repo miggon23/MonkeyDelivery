@@ -154,6 +154,7 @@
     <ClInclude Include="framework.h" />
     <ClInclude Include="MonkeyDelivery.h" />
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="Shop.h" />
     <ClInclude Include="Src\Control\Button.h" />
     <ClInclude Include="Src\Control\Buttons\Exit.h" />
     <ClInclude Include="Src\Control\Buttons\Options.h" />
@@ -219,6 +220,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MonkeyDelivery.cpp" />
+    <ClCompile Include="Shop.cpp" />
     <ClCompile Include="Src\Control\Button.cpp" />
     <ClCompile Include="Src\Control\Buttons\Exit.cpp" />
     <ClCompile Include="Src\Control\Buttons\Options.cpp" />

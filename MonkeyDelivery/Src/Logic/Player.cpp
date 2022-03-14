@@ -254,6 +254,10 @@ void Player::removeMissionObject()
 	inventory_->removeMisionObject();
 }
 
+void Player::addObjectToInventory(InventoryObject* p)
+{
+	inventory_->addObject(p);
+}
 
 void Player::draw()
 {
