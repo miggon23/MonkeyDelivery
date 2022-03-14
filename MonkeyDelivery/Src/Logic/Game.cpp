@@ -4,6 +4,7 @@ Game::Game(string n, int w, int h) : name(n), width(w), height(h), doExit(false)
 {    
     font_ = new Font("../Images/TheMoon.ttf", 50);
     animationManager = new AnimationManager(this);
+    //loadMap("res/1.level");
 }
 
 Game::~Game() {
@@ -76,7 +77,8 @@ void Game::update()
 
     for (auto enemy : enemyContainer_)
         enemy->update();
-   
+
+    drawMap();
 }
 
 void Game::setUserExit() {
@@ -87,6 +89,7 @@ bool Game::isUserExit() {
     return doExit;
 }
 
+//Normal draw for entities(no Tiles)
 void Game::draw()
 {
     for (auto gO : gameObjects_) 
@@ -104,6 +107,15 @@ void Game::draw()
     
     player_->draw();
 }
+
+//Draw de Tiles
+void Game::drawTiles(tileObject o)
+{
+    SDL_Rect dest = o.getDest();
+    SDL_Rect src = o.getSource();
+    SDL_RenderCopyEx(renderer, o.getTex(), &src, &dest, 0, NULL, SDL_FLIP_NONE);
+}
+
 Point2D<int> Game::getOrigin() {
     return { int(-(player_->getX() - player_->getWidth())), 0 };
 }
@@ -206,4 +218,40 @@ void Game::interactDialogue()
     dialogueBox_->interact();
 }
 
+//TILEMAP
+void Game::loadMap(const char* filename) {
+    int current, mx, my, mw, mh;
+    ifstream in(filename);
+    if (!in.is_open()) {
+        cout << "Failed to open map file." << endl;
+        return;
+    }
+    in >> mw;
+    in >> mh;
+    in >> mx;
+    in >> my;
+    for (int i = 0; i < mh; i++) {
+        for (int j = 0; j < mw; j++) {
+            if (in.eof()) {
+                cout << "Reached end of map file too soon." << endl;
+                return;
+            }
+            in >> current;
+            if (current != 0) {
+                tileObject tmp;
+                tmp.setImage("res/tileset.png", renderer);
+                tmp.setSource((current - 1) * 32, 0, 32, 32);
+                tmp.setDest((j * TILE_SIZE) + mx, (i * TILE_SIZE) + my, TILE_SIZE, TILE_SIZE);
+                if (current == 2 || current == 4) tmp.setSolid(0);
+                map.push_back(tmp);
+            }
+        }
+    }
+    in.close();
+}
 
+void Game::drawMap() {
+    for (int i = 0; i < map.size(); i++) {
+        drawTiles(map[i]);
+    }
+}

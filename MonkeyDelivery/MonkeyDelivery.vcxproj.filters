@@ -178,6 +178,9 @@
     <ClCompile Include="Src\Control\CommandClick.cpp">
       <Filter>Source Files\Control\Commands</Filter>
     </ClCompile>
+    <ClCompile Include="Src\TilemapSrc\object.cpp">
+      <Filter>Source Files\TilemapSrc</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -381,6 +384,9 @@
     <ClInclude Include="Src\Control\CommandClick.h">
       <Filter>Header Files\Control\Commands</Filter>
     </ClInclude>
+    <ClInclude Include="Src\TilemapSrc\object.h">
+      <Filter>Header Files\TilemapSrc</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="MonkeyDelivery.rc" />
@@ -458,6 +464,12 @@
     </Filter>
     <Filter Include="Source Files\Control\Buttons">
       <UniqueIdentifier>{ecc979b8-3f17-4608-8e80-815df3cb29cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\TilemapSrc">
+      <UniqueIdentifier>{856c1558-74cd-42ec-9bf8-3dedeacee8a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\TilemapSrc">
+      <UniqueIdentifier>{992d8c67-6ade-45a8-8967-85b71538412d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

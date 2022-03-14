@@ -1,3 +1,6 @@
+#ifndef OBJECT_H
+#define OBJECT_H
+
 #include <iostream>
 using namespace std;
 #include <SDL.h>
@@ -20,3 +23,6 @@ SDL_Texture* getTex() const {return tex;}
 void setSolid(bool s) {solid=s;}
 bool getSolid()const {return solid;}
 };
+
+
+#endif //OBJECT_H

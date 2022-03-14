@@ -1,4 +1,4 @@
-#include "object.h"
+#include "tileObject.h"
 
 void tileObject::setDest(int x, int y, int w, int h) {
   dest.x=x;

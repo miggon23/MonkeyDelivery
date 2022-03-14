@@ -37,6 +37,8 @@
 #include "AnimationManager.h"
 
 
+#define TILE_SIZE 16
+
 
 using namespace std;
 
@@ -64,9 +66,8 @@ private:
     DialogueBox* dialogueBox_;
     
     //TILEMAP
-    void loadMap(const char* filename);
-    void drawMap();
-    vector<Object> map;
+   
+    vector<tileObject> map;
 
 public:
 
@@ -119,4 +120,8 @@ public:
     //texts
     void interactDialogue();
    
+    //Tilemap
+    void loadMap(const char* filename);
+    void drawMap();
+    void drawTiles(tileObject o);
 };
