@@ -154,7 +154,6 @@
     <ClInclude Include="framework.h" />
     <ClInclude Include="MonkeyDelivery.h" />
     <ClInclude Include="Resource.h" />
-    <ClInclude Include="Shop.h" />
     <ClInclude Include="Src\Control\Button.h" />
     <ClInclude Include="Src\Control\Buttons\Exit.h" />
     <ClInclude Include="Src\Control\Buttons\Options.h" />
@@ -207,6 +206,7 @@
     <ClInclude Include="Src\Logic\Package.h" />
     <ClInclude Include="Src\Logic\Player.h" />
     <ClInclude Include="Src\Logic\Scorpion.h" />
+    <ClInclude Include="Src\Logic\Shop.h" />
     <ClInclude Include="Src\Logic\SpawnZone.h" />
     <ClInclude Include="Src\Logic\Target.h" />
     <ClInclude Include="Src\Logic\UI_Info.h" />
@@ -222,7 +222,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MonkeyDelivery.cpp" />
-    <ClCompile Include="Shop.cpp" />
     <ClCompile Include="Src\Control\Button.cpp" />
     <ClCompile Include="Src\Control\Buttons\Exit.cpp" />
     <ClCompile Include="Src\Control\Buttons\Options.cpp" />
@@ -275,6 +274,7 @@
     <ClCompile Include="Src\Logic\Package.cpp" />
     <ClCompile Include="Src\Logic\Player.cpp" />
     <ClCompile Include="Src\Logic\Scorpion.cpp" />
+    <ClCompile Include="Src\Logic\Shop.cpp" />
     <ClCompile Include="Src\Logic\SpawnZone.cpp" />
     <ClCompile Include="Src\Logic\Target.cpp" />
     <ClCompile Include="Src\Logic\UI_Info.cpp" />
