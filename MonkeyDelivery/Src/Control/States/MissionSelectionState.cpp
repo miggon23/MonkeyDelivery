@@ -2,7 +2,7 @@
 #include "../SelectMissionCommand.h"
 
 
-MissionSelectionState::MissionSelectionState(Game* game, ViewController* v) : State(game,v)
+MissionSelectionState::MissionSelectionState(Game* game) : State(game)
 {
 	background_ = game->getTexture(woodPanelTexture);
 	
@@ -15,7 +15,7 @@ MissionSelectionState::MissionSelectionState(Game* game, ViewController* v) : St
 }
 
 // Constructora cuando cambiemos las texturas
-MissionSelectionState::MissionSelectionState(Game* game, vector<pair<string,string>> missionImg, ViewController* v) :  State(game,v)
+MissionSelectionState::MissionSelectionState(Game* game, vector<pair<string,string>> missionImg) :  State(game)
 {
 	background_ = game->getTexture(woodPanelTexture);	
 

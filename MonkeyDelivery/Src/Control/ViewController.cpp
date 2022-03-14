@@ -13,7 +13,7 @@ ViewController::ViewController(Game* _game) {
     game->setRenderer(renderer);
     game->loadTextures();
     
-    game->setState(new MenuState(game,this));
+    game->setState(new MenuState(game));
 
     timer_ = Timer::Instance();
 }

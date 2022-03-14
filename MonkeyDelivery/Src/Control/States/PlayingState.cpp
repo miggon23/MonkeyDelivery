@@ -14,7 +14,7 @@
 #include "../States/MenuState.h"
 
 
-PlayingState::PlayingState(Game* game, ViewController* v) : State(game,v) {
+PlayingState::PlayingState(Game* game) : State(game) {
     registerCommands();
     game->start();
 }

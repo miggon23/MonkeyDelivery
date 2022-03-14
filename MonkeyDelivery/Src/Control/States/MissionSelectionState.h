@@ -5,8 +5,8 @@
 class MissionSelectionState : public State
 {
 public:
-	MissionSelectionState(Game* game,  ViewController* v);
-	MissionSelectionState(Game* game, vector<pair<string, string>> missionImg, ViewController* v);
+	MissionSelectionState(Game* game);
+	MissionSelectionState(Game* game, vector<pair<string, string>> missionImg);
 	~MissionSelectionState();
 
 	void draw() override;

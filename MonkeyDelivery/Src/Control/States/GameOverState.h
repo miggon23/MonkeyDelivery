@@ -8,7 +8,7 @@ private:
 	bool winMessage = false;
 	
 public:
-	GameOverState(Game* game, ViewController *v);
+	GameOverState(Game* game);
 	~GameOverState() = default;
 
 	void update()override;

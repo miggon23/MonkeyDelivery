@@ -4,7 +4,7 @@
 class ShopState : public State
 {
 public:
-	ShopState(Game* game, ViewController* v);
+	ShopState(Game* game);
 	~ShopState() = default;
 
 	void update()override;

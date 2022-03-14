@@ -12,10 +12,10 @@
 
 
 
-MenuState::MenuState(Game* game, ViewController* view) : State(game,view){
+MenuState::MenuState(Game* game) : State(game){
     registerCommands();
 
-    startButton_ = new Start(game->getWindowWidth() / 2 - 100 , game->getWindowHeight() - 250, 100, 75,game, view);
+    startButton_ = new Start(game->getWindowWidth() / 2 - 100 , game->getWindowHeight() - 250, 100, 75,game);
     startButton_->setTexture(startButtonTexture);
 
     buttons.push_back(startButton_);
@@ -68,6 +68,6 @@ void MenuState::next()
         b = nullptr;
     }
     cout << "Next State " << endl;
-    game->setState(new PlayingState(game, nullptr));
+    game->setState(new PlayingState(game));
     delete this;
 }

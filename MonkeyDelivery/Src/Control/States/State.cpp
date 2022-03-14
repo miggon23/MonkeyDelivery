@@ -37,28 +37,6 @@ void State::handleEvents() {
             command->execute();
             break;
         }
-        if (event.type == SDL_KEYDOWN) {
-            SDL_Keycode key = event.key.keysym.sym;
-            if (key == SDLK_f) {
-                if (!isFullscreen) {
-                    isFullscreen = !isFullscreen;
-                    int err = SDL_SetWindowFullscreen(vC_->getWindow(), SDL_WINDOW_FULLSCREEN);
-                    if (err) {
-                        const char* e = SDL_GetError();
-                        std::cout << e << std::endl;
-                    }
-                }
-                else {
-                    isFullscreen = !isFullscreen;
-                    int err = SDL_SetWindowFullscreen(vC_->getWindow(), SDL_WINDOW_SHOWN);
-                    if (err) {
-                        const char* e = SDL_GetError();
-                        std::cout << e << std::endl;
-                    }
-                }
-                
-            }
-        }
 
     }
 }
