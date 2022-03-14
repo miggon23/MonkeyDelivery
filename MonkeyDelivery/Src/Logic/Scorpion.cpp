@@ -10,6 +10,7 @@ Scorpion::Scorpion(Game* game, int Aleatorio, Point2D<int> centroRadio, Animatio
 	initialPos_ = getPosition();
 	createCheckPoints();
 	setScariness(0.1);
+	iniPlayerVel = game->getPlayer()->getVel();
 
 	timerAnimation = SDL_GetTicks();
 
@@ -32,18 +33,20 @@ void Scorpion::createCheckPoints()
 
 void Scorpion::checkDistance()
 {
-	int range = 300; //rango
+	int range = 150; //rango
 	double distanceX = abs(getPosition().getX() - game->getPosisitionPlayer().getX()); //distancia en valor absoluto en las x
 	double distanceY = abs(getPosition().getY() - game->getPosisitionPlayer().getY()); //distacia en valor absoluto en las y
+
+	double playerVel = game->getPlayer()->getVel();
 
 	//Si esta en el rango
 	if (distanceX <= range && distanceY <= range) 
 	{
-		//Se establece la velocidad del jugador a una mas lenta
+		if(iniPlayerVel == playerVel) game->setVel(iniPlayerVel/2.0);
 		game->scare(distanceX * scariness_ / 10);
 	}
 	//Si no esta en el rango la velocidad sera normal
-	else {}
+	else { game->setVel(iniPlayerVel); }
 }
 
 void Scorpion::draw()

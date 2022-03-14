@@ -11,7 +11,7 @@ protected:
 public:
     Command() {};
     virtual ~Command() = default;
-    virtual bool parse(SDL_Event & event) = 0;
+    virtual bool parse(SDL_Event& event) = 0;
     virtual void execute() = 0;
     inline void bind(Game * game) {
         this->game = game;

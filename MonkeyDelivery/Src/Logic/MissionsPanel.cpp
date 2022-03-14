@@ -85,7 +85,7 @@ void MissionsPanel::onPlayerInteraction(Player* player)
 		game->saveState(game->getState());
 
 		// BIGGEST TODO EVER: PLEASE FIX THIS NULLPTR. KITTEN DIE. CHILD DIE. YOU DIE.FIXME WARNING TODO WAR DESTRUCTION
-		game->setState(new MissionSelectionState(game, missionsSent, nullptr));
+		game->setState(new MissionSelectionState(game, missionsSent));
 	}
 }
 

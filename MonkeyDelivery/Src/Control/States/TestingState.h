@@ -6,7 +6,7 @@ class TestingState : public State {
 
 public:
 
-    TestingState(Game* game, ViewController* v);
+    TestingState(Game* game);
     ~TestingState() = default;
 
     void update() override;

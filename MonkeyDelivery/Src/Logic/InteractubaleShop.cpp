@@ -17,5 +17,5 @@ void IntectuableShop::update()
 void IntectuableShop::onPlayerInteraction(Player* player){
 	//player->changeSleep();
 	game->saveState(game->getState());
-	game->setState(new ShopState(game,nullptr));
+	game->setState(new ShopState(game));
 }

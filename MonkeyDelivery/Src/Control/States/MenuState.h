@@ -4,13 +4,12 @@
 #include "../Buttons/Start.h"
 
 class MenuState : public State {
-    //ViewController* vC_;
     vector<Button*> buttons;
     Start* startButton_;
 
 public:
 
-    MenuState(Game* game,ViewController* view);
+    MenuState(Game* game);
     ~MenuState();
 
     void update() override;

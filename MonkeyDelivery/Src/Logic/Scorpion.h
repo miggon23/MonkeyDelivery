@@ -8,6 +8,7 @@ private:
 	Point2D<double> initialPos_;
 	int timer_; //Temporizador para el tiempo que el toro tiene stop activo
 	double speed = 2;
+	double iniPlayerVel;
 
 public:
 	Scorpion(Game* game, int Aleatorio, Point2D<int>centroRadio, AnimationManager* animation);
