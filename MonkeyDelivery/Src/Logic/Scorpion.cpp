@@ -30,9 +30,21 @@ void Scorpion::createCheckPoints()
 	addCheckPoint(Point2D<double>(initialPos_.getX() + 190, initialPos_.getY()));
 }
 
-//void Scorpion::checkDistance()
-//{
-//}
+void Scorpion::checkDistance()
+{
+	int range = 300; //rango
+	double distanceX = abs(getPosition().getX() - game->getPosisitionPlayer().getX()); //distancia en valor absoluto en las x
+	double distanceY = abs(getPosition().getY() - game->getPosisitionPlayer().getY()); //distacia en valor absoluto en las y
+
+	//Si esta en el rango
+	if (distanceX <= range && distanceY <= range) 
+	{
+		//Se establece la velocidad del jugador a una mas lenta
+		game->scare(distanceX * scariness_ / 10);
+	}
+	//Si no esta en el rango la velocidad sera normal
+	else {}
+}
 
 void Scorpion::draw()
 {
