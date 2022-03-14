@@ -29,7 +29,7 @@
 #include "Scorpion.h"
 
 #include "Bed.h"
-
+#include "InteractuableShop.h"
 #include "MissionsPanel.h"
 
 #include "AnimationManager.h"

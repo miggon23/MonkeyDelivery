@@ -50,7 +50,7 @@ void Game::start()
 
     missionsPanel_ = new MissionsPanel(this);
     add(missionsPanel_); 
-
+    add (new IntectuableShop(this, 300, 300));
     enemiesCreation();//creacion de enemigos
     
 
