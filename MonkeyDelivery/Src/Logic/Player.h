@@ -122,6 +122,10 @@ public:
 #pragma endregion
 	//linterna
 	SDL_Rect lightZone();
+	bool usingFlashLight=false;
+	void changeFLState(bool f) {
+		usingFlashLight = f;
+	}
 };
 
 
