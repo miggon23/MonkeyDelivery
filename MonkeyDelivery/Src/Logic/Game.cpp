@@ -92,7 +92,7 @@ bool Game::isUserExit() {
 //Normal draw for entities(no Tiles)
 void Game::draw()
 {
-    /*for (auto gO : gameObjects_)
+    for (auto gO : gameObjects_)
         gO->draw();
     
     for (auto enemy : enemyContainer_)
@@ -105,7 +105,7 @@ void Game::draw()
     dialogueBox_->draw();
     //renderText("aaaa", 100, 150, BLACK);
     
-    player_->draw();*/
+    player_->draw();
 }
 
 //Draw de Tiles
