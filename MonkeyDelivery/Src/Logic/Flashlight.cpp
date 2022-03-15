@@ -8,9 +8,11 @@ Flashlight::Flashlight() : active(false)
 bool Flashlight::useObject() {
 	if (!active) {
 		cout << " Hola linternita";
+		player_->changeFLState(true);
 	}
 	else {
 		cout << "Adios linternita";
+		player_->changeFLState(false);
 	}
 	cout << endl;
 	active = !active;
