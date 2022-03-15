@@ -36,6 +36,8 @@
 
 #include "AnimationManager.h"
 
+#include "Shop.h"
+
 
 #define TILE_SIZE 16
 
@@ -68,6 +70,10 @@ private:
     //TILEMAP
    
     vector<tileObject> map;
+
+
+    //Tienda    
+    Shop* shop_;
 
 public:
 
@@ -124,4 +130,7 @@ public:
     void loadMap(const char* filename);
     void drawMap();
     void drawTiles(tileObject o);
+
+    //Tienda
+    Shop* getShop() { return shop_; }
 };

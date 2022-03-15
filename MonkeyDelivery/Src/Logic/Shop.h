@@ -4,8 +4,11 @@
 class Player;
 class InventoryObject;
 class Inventory;
+
 class Shop
 {
+friend class ShopState;
+
 private:
 	std::vector <InventoryObject*> objects;
 	Player* player;
@@ -19,6 +22,8 @@ public:
 	void clearElements();
 	void addElements(int level);
 	bool buyObject(int id, int price);
+
+	int getSize() { return objects.size(); }
 
 };
 

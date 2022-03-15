@@ -56,6 +56,7 @@ void Game::start()
     
 
     //missions_ = new MissionManager(this);
+    shop_ = new Shop(player_);
 
     dialogueBox_ = new DialogueBox(this);
     dialogueBox_->changeText("DialogueBox1");
