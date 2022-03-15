@@ -1,14 +1,14 @@
 #include "Enemy.h"
 #include "Game.h"
 
-Enemy::Enemy(Game* game, int Aleatorio, Point2D<int>centroRadio, AnimationManager* animation) : GameObject(game),animationManager(animation){
-	
+Enemy::Enemy(Game* game, int Aleatorio, Point2D<int>centroRadio, AnimationManager* animation) : GameObject(game), animationManager(animation) {
+
 	zone = SpawnZone(Aleatorio, centroRadio); //Creaccion de la zona de spawn
 	setAlive(true);
 	indexCheckPoint = 0;
 	back = false; //Boolenao que indica cuando se da la vuelta el enemigo en su patrulla
 	timerAnimation = SDL_GetTicks();
-	lastUpdate_= SDL_GetTicks();
+	lastUpdate_ = SDL_GetTicks();
 	//setScariness(0.7);
 }
 
@@ -48,8 +48,11 @@ void Enemy::patrol(double speed)
 
 void Enemy::die()
 {
-	if(collide(game->getPlayer()->lightZone())){}
-	setAlive(false);
+	if (game->getPlayer()->usingFlashLight) {
+		if (collide(game->getPlayer()->lightZone())) {}
+		setAlive(false);
+	}
+
 }
 
 void Enemy::spawn()
@@ -71,16 +74,16 @@ void Enemy::checkDistance()
 	double distanceX = abs(getPosition().getX() - game->getPosisitionPlayer().getX());
 	double distanceY = abs(getPosition().getY() - game->getPosisitionPlayer().getY());
 
-	
+
 	if (distanceX <= offset && distanceY <= offset) {
-		
+
 		/*if (distanceX < distanceY)
 			game->scare(distanceX*scariness_);
 		else*/
 		/*double d = (distanceY + distanceX) / 2;*/
 
 		//si no es demasiado por eso se divide entre 8
-			game->scare(distanceX*scariness_/10);///esto hay que mirarlo
+		game->scare(distanceX * scariness_ / 10);///esto hay que mirarlo
 	}
 	lastUpdate_ = SDL_GetTicks();
 }
