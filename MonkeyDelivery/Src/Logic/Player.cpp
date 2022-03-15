@@ -318,10 +318,10 @@ bool Player::moneyChange(int money)
 	return true;
 }
 //linterna
-SDL_Rect Player::lightZone()
+const SDL_Rect Player::lightZone()
 {
-	return { int(getX() - getWidth()),
-			int(getY() - getHeight()),
+	return { getX(),
+			getY(),
 			getWidth()*2,
 			getHeight()*2 };
 }

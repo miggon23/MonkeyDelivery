@@ -48,6 +48,7 @@ void Enemy::patrol(double speed)
 
 void Enemy::die()
 {
+	if(collide(game->getPlayer()->lightZone())){}
 	setAlive(false);
 }
 

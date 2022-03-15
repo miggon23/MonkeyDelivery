@@ -121,7 +121,7 @@ public:
 	void addObjectToInventory(InventoryObject* p);
 #pragma endregion
 	//linterna
-	SDL_Rect lightZone();
+	const SDL_Rect lightZone();
 	bool usingFlashLight=false;
 	void changeFLState(bool f) {
 		usingFlashLight = f;
