@@ -120,6 +120,8 @@ public:
 	bool inventoryFull();
 	void addObjectToInventory(InventoryObject* p);
 #pragma endregion
+	//linterna
+	SDL_Rect lightZone();
 };
 
 

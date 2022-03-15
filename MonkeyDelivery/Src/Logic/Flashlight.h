@@ -11,6 +11,6 @@ public:
 	Flashlight();
 
 	bool useObject() override;
-	SDL_Rect lightZone();
+	inline bool isOn() { return active; }
 };
 

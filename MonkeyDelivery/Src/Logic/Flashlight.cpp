@@ -17,8 +17,4 @@ bool Flashlight::useObject() {
 	return false; //devolvemos false indicando que el objeto no debe destruirse tras ser usado
 }
 
-SDL_Rect Flashlight::lightZone()
-{
-	return {player_->getX(),player_->getY(),
-		    player_->getWidth()*2,player_->getHeight()*2};
-}
+
