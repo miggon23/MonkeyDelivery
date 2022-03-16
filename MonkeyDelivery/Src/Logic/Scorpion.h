@@ -9,6 +9,9 @@ private:
 	int timer_; //Temporizador para el tiempo que el toro tiene stop activo
 	double speed = 2;
 	double iniPlayerVel;
+	//Usamos un booleano de inRange para saber cuando el jugador entra y sale del rango,
+	//estio onCollisionEnter y onCollisionExit de Unity
+	bool inRange; 
 
 public:
 	Scorpion(Game* game, int Aleatorio, Point2D<int>centroRadio, AnimationManager* animation);

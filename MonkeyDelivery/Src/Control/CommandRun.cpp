@@ -5,7 +5,7 @@ bool CommandRun::parse(SDL_Event& event)
 	if (event.type == SDL_KEYDOWN) {
 		SDL_Keycode key = event.key.keysym.sym;
 
-		if (key == SDLK_LSHIFT) {
+		if (!isRunning && key == SDLK_LSHIFT) { //Para que la velocidad no se acumule
 			isRunning = true;
 			return true;
 		}
@@ -14,7 +14,7 @@ bool CommandRun::parse(SDL_Event& event)
 	if (event.type == SDL_KEYUP) {
 		SDL_Keycode key = event.key.keysym.sym;
 
-		if (key == SDLK_LSHIFT) {
+		if (isRunning && key == SDLK_LSHIFT) { 
 			isRunning = false;
 			return true;
 		}

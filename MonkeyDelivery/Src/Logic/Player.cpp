@@ -99,7 +99,7 @@ void Player::move()
 
 		drainEnergy(decreasingEnergyLevel_);
 	}
-
+	cout << vel_ << endl;
 	//HAY QUE NORMALIZAR EL VECTOR
 	setPosition(getX() + speed.getX(), getY() + speed.getY());
 }

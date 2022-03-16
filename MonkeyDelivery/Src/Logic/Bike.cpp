@@ -1,7 +1,7 @@
 #include "Bike.h"
 #include "Player.h"
 
-Bike::Bike(Texture* tex) : active(false), speedMult(4.0), InventoryObject(tex)
+Bike::Bike(Texture* tex) : active(false), speedMult(2.5), InventoryObject(tex)
 {
 }
 

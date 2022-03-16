@@ -11,6 +11,7 @@ Scorpion::Scorpion(Game* game, int Aleatorio, Point2D<int> centroRadio, Animatio
 	createCheckPoints();
 	setScariness(0.1);
 	iniPlayerVel = game->getPlayer()->getVel();
+	inRange = false;
 
 	timerAnimation = SDL_GetTicks();
 
@@ -33,7 +34,7 @@ void Scorpion::createCheckPoints()
 
 void Scorpion::checkDistance()
 {
-	int range = 150; //rango
+	int range = 50; //rango
 	double distanceX = abs(getPosition().getX() - game->getPosisitionPlayer().getX()); //distancia en valor absoluto en las x
 	double distanceY = abs(getPosition().getY() - game->getPosisitionPlayer().getY()); //distacia en valor absoluto en las y
 
@@ -42,11 +43,24 @@ void Scorpion::checkDistance()
 	//Si esta en el rango
 	if (distanceX <= range && distanceY <= range) 
 	{
-		if(iniPlayerVel == playerVel) game->setVel(iniPlayerVel/2.0);
+		//Si la velocidad del jugador no ha sido reducida, es decir, no había entrado en el rango
+		if (!inRange) { //playerVel > (iniPlayerVel / 2.0) + 0.05
+			game->setVel(playerVel/2.0);
+			inRange = true;
+		}
 		game->scare(distanceX * scariness_ / 10);
 	}
 	//Si no esta en el rango la velocidad sera normal
-	else { game->setVel(iniPlayerVel); }
+	else if (inRange) //<-- En rango aún
+	{
+		game->getPlayer()->setVel(playerVel * 2.0);
+		inRange = false;
+	}
+	//else { 
+	//	
+	//	//game->setVel(iniPlayerVel); // Esto hace que el jugador no pueda correr ni ir en bici ya que resetea la velocidad todo el rato <---
+	//	//iniPlayerVel = game->getPlayer()->getVel();
+	//} 
 }
 
 void Scorpion::draw()
