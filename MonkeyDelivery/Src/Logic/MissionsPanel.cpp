@@ -8,6 +8,7 @@
 #include "../json/JSON.h"
 
 #include "Package.h"
+#include "DialogueBox.h"
 
 MissionsPanel::MissionsPanel(Game* game) : GameObject(game)
 {
@@ -15,6 +16,7 @@ MissionsPanel::MissionsPanel(Game* game) : GameObject(game)
 	setDimension(120, 150);
 	setTexture(missionPanelTexture);
 
+	missionsFinished_ = true;
 	currentLevel_ = 1;
 	levels_.reserve(NLEVELS_);
 	for (int i = 0; i <= NLEVELS_; ++i) {
@@ -38,54 +40,35 @@ MissionsPanel::~MissionsPanel()
 
 void MissionsPanel::onPlayerInteraction(Player* player)
 {
-	std::cout << "Activating Mission Selection State\n";
+	if (!missionsFinished_) {
+		std::cout << "Activating Mission Selection State\n";
 
-	vector<pair<string, string>> missionsSent;
+		vector<pair<string, string>> missionsSent;
 
-	int a = 0;
-	string b = "Mission";
-	/*int numMissions = 0;
+		int a = 0;
+		string b = "Mission";
 
-	switch (currentLevel_) {
-	case 1:
-		a = 1;
-		numMissions = nLevel1_;
-		break;
-	case 2:
-		a = nLevel1_ + 1;
-		numMissions = nLevel2_;
-		break;
-	case 3:
-		a = nLevel2_ + 1;
-		numMissions = nLevel3_;
-		break;
-	}*/
-
-	// las misiones desde a hasta numMissions son las correspondientes al nivel actual
-	// si no están completas deben mostrarse en el panel
-	/*missionsSent.reserve(numMissions);
-	for (int i = a; i <= numMissions; ++i) {
-		b += to_string(i);
-		if (!missions_.at(b).completed) {
-			missionsSent.push_back(make_pair(b, missions_.at(b).imgRoute));
+		missionsSent.reserve(levels_[currentLevel_]);
+		for (int i = levelsCompleted_[currentLevel_ - 1] + 1; i <= levelsCompleted_[currentLevel_ - 1] + levels_[currentLevel_]; ++i) {
+			b += to_string(i);
+			if (!missions_.at(b).completed) {
+				missionsSent.push_back(make_pair(b, missions_.at(b).imgRoute));
+			}
+			b = "Mission";
 		}
-		b = "Mission";
-	}*/
 
-	missionsSent.reserve(levels_[currentLevel_]);
-	for (int i = levelsCompleted_[currentLevel_ - 1] + 1; i <= levelsCompleted_[currentLevel_ - 1] + levels_[currentLevel_]; ++i) {
-		b += to_string(i);
-		if (!missions_.at(b).completed) {
-			missionsSent.push_back(make_pair(b, missions_.at(b).imgRoute));
+		if (game->getSavedState() == nullptr) {
+			// show pannel
+			game->saveState(game->getState());
+
+			game->setState(new MissionSelectionState(game, missionsSent));
 		}
-		b = "Mission";
 	}
-	if (game->getSavedState() == nullptr) {
-		// show pannel
-		game->saveState(game->getState());
-
-		// BIGGEST TODO EVER: PLEASE FIX THIS NULLPTR. KITTEN DIE. CHILD DIE. YOU DIE.FIXME WARNING TODO WAR DESTRUCTION
-		game->setState(new MissionSelectionState(game, missionsSent));
+	else {
+		// mostrar mensaje de que ya no quedan más misiones
+		auto d = new DialogueBox(game);
+		d->changeText("Has terminado todas las misiones. Ve a la oficina.");
+		delete d;
 	}
 }
 
@@ -128,7 +111,6 @@ void MissionsPanel::onMissionSelected(string missionId)
 		//iniciar el contador
 		initialTicks_ = SDL_GetTicks();
 	}
-	
 
 	// hide pannel
 	State* tmp = game->getState();
@@ -180,6 +162,7 @@ void MissionsPanel::onMissionCompleted()
 		}
 		else {
 			// terminar partida
+			missionsFinished_ = true;
 		}
 	}
 }
@@ -227,7 +210,7 @@ void MissionsPanel::loadMissions(std::string filename)
 					bool isExpress = vObj["express"]->AsBool();
 					bool isSpecial = vObj["special"]->AsBool();
 
-					switch (level)
+				/* switch (level)
 					{
 					case 1:
 						nLevel1_ += 1;
@@ -240,7 +223,7 @@ void MissionsPanel::loadMissions(std::string filename)
 						break;
 					default:
 						break;
-					}
+					}*/
 
 					levels_[level]++;
 

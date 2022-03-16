@@ -26,20 +26,20 @@ using sdl_resource_table = std::map<std::string, MissionInfo>;
 class MissionsPanel : public GameObject
 {
 private:
+	bool missionsFinished_;
 	int currentLevel_; // nivel de misiones en el que se está
 	Mission* currentMission_; // Misión activa
 
-	sdl_resource_table missions_; // Missions map (string -> mission)
+	sdl_resource_table missions_; // Missions map (string -> missionInfo)
 
 	// Nº de misiones de cada nivel que hay
-	int nLevel1_;
-	int nLevel2_;
-	int nLevel3_;
+	//int nLevel1_;
+	//int nLevel2_;
+	//int nLevel3_;
 	
 	const int NLEVELS_ = 3;
 	vector<int>levels_;
 	vector<int>levelsCompleted_;
-
 
 	// Vecino activo
 	Target* activeTarget_;

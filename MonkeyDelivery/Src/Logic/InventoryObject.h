@@ -12,6 +12,7 @@ private:
 
 protected:
 	Player* player_ = nullptr;
+	bool isConsumable_ = false;
 
 public:
 	InventoryObject() {};
@@ -23,5 +24,7 @@ public:
 
 	void setMyTexture(Texture* imgRoute);
 	inline Texture* getTexture() { return myTexture_; };
+
+	inline bool isConsumable() { return isConsumable_; };
 };
 

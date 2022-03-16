@@ -80,6 +80,8 @@ public:
 #pragma region Energy
 	void drainEnergy(float amount);
 	void recoverEnergy(int amount);
+	inline float getEnergy() { return energyLevel_->getEnergy(); };
+	inline float getMaxEnergy() { return energyLevel_->getMaxEnergy(); };
 #pragma endregion
 
 #pragma region Fear
