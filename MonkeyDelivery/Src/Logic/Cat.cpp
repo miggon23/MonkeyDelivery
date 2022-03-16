@@ -33,5 +33,5 @@ void Cat::createCheckPoints()
 void Cat::draw()
 {
 	if(isAlive())
-	animationManager->getFrameImageCat(getCollider(), textureRect, texture, timerAnimation);
+		animationManager->getFrameImageCat(getCollider(), textureRect, texture, timerAnimation);
 }

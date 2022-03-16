@@ -35,6 +35,10 @@ private:
 	//Escorpion
 	int wScorpion_ = 100,
 		hScorpion_ = 100;
+
+	//Planta
+	int wPlant_ = 100,
+		hPlant_ = 100;
 	
 public:
 
@@ -195,7 +199,7 @@ public:
 	inline int getWidthScorpion() { return wScorpion_; };
 	inline int getHeigthScorpion() { return hScorpion_; };
 	inline void getFrameImageScorpion(SDL_Rect scorpion, SDL_Rect& texturaRect, Texture* tex, int& timer) {
-		if (SDL_GetTicks() - timer >= 1000) {
+		if (SDL_GetTicks() - timer >= 500) {
 			texturaRect.x += wScorpion_;
 			if (texturaRect.y >= 200 && texturaRect.x >= 200) {
 				texturaRect.y = 0; texturaRect.x = 0;
@@ -207,6 +211,24 @@ public:
 			timer = SDL_GetTicks();
 		}
 		tex->render(texturaRect, scorpion);
+	};
+
+	//PLANTA
+	inline int getWidthPlant() { return wPlant_; };
+	inline int getHeigthPlant() { return hPlant_; };
+	inline void getFrameImagePlant(SDL_Rect plant, SDL_Rect& texturaRect, Texture* tex, int& timer) {
+		if (SDL_GetTicks() - timer >= 500) {
+			texturaRect.x += wPlant_;
+			if (texturaRect.y >= 400 && texturaRect.x >= 100) {
+				texturaRect.y = 0; texturaRect.x = 0;
+			}
+			if (texturaRect.x >= 200) {
+				texturaRect.x = 0;
+				texturaRect.y += hPlant_;
+			}
+			timer = SDL_GetTicks();
+		}
+		tex->render(texturaRect, plant);
 	};
 };
 

@@ -205,6 +205,7 @@
     <ClInclude Include="Src\Logic\MissionManager.h" />
     <ClInclude Include="Src\Logic\MissionsPanel.h" />
     <ClInclude Include="Src\Logic\Package.h" />
+    <ClInclude Include="Src\Logic\Plant.h" />
     <ClInclude Include="Src\Logic\Player.h" />
     <ClInclude Include="Src\Logic\Scorpion.h" />
     <ClInclude Include="Src\Logic\Shop.h" />
@@ -275,6 +276,7 @@
     <ClCompile Include="Src\Logic\MissionManager.cpp" />
     <ClCompile Include="Src\Logic\MissionsPanel.cpp" />
     <ClCompile Include="Src\Logic\Package.cpp" />
+    <ClCompile Include="Src\Logic\Plant.cpp" />
     <ClCompile Include="Src\Logic\Player.cpp" />
     <ClCompile Include="Src\Logic\Scorpion.cpp" />
     <ClCompile Include="Src\Logic\Shop.cpp" />
