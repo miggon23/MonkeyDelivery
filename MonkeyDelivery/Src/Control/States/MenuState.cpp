@@ -3,7 +3,7 @@
 
 #include "../NextStateCommand.h"
 #include "../CommandExit.h"
-
+#include "../CommandClick.h"
 #include "../States/PlayingState.h"
 #include "../Buttons/Exit.h"
 #include "../Buttons/Start.h"
@@ -14,36 +14,21 @@
 
 MenuState::MenuState(Game* game) : State(game){
     registerCommands();
-
-    startButton_ = new Start(game->getWindowWidth() / 2 - 100 , game->getWindowHeight() - 250, 100, 75,game);
-    startButton_->setTexture(startButtonTexture);
-
-    buttons.push_back(startButton_);
-
+    addButton(new Start(game->getWindowWidth() / 2 - 100, game->getWindowHeight() - 250, 100, 75, game));  
+    addButton(new Options(game->getWindowWidth() / 2 - 100, game->getWindowHeight() - 100, 100, 75, game));  
 }
 
-MenuState::~MenuState()
-{
-    for (auto a : buttons)
-    {
-        delete a;
-        a = nullptr; 
-    }
-
+MenuState::~MenuState(){
 }
 
 void MenuState::registerCommands()
 {
+   commandFactory->add(new CommandClick());
    commandFactory->add(new NextStateCommand());
    commandFactory->add(new CommandExit());
 }
 
-void MenuState::update()
-{
-   for (auto b : buttons) {
-        b->update();
-   }
-
+void MenuState::update(){
 }
 
 void MenuState::draw()
@@ -56,14 +41,14 @@ void MenuState::draw()
     };
 
     game->renderText(texts, x, y, 75, 75);
-    for (auto b : buttons) {
+    for (auto b :getButtonsUI()) {
         b->draw();
     }
 }
 
 void MenuState::next()
 {
-    for (auto b : buttons) {
+    for (auto b : buttonsUI) {
         delete b;
         b = nullptr;
     }

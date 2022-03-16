@@ -2,7 +2,6 @@
 
 #include "Command.h"
 #include "../Logic/Game.h"
-
 class CommandClick : public Command {
 
 public:

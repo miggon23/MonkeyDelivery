@@ -43,7 +43,6 @@
 
 
 using namespace std;
-
 class Game : public StateMachine {
 
 private:
@@ -71,7 +70,6 @@ private:
    
     vector<tileObject> map;
 
-
     //Tienda    
     Shop* shop_;
 
@@ -83,7 +81,6 @@ public:
     string getGameName();
 
     void add(GameObject* gameObject);
-  
     void start();
     void update();   
     void setUserExit();

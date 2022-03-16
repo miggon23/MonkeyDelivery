@@ -17,6 +17,8 @@
 PlayingState::PlayingState(Game* game) : State(game) {
     registerCommands();
     game->start();
+
+
 }
 
 void PlayingState::registerCommands() {

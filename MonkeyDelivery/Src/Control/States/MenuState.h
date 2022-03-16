@@ -4,14 +4,10 @@
 #include "../Buttons/Start.h"
 
 class MenuState : public State {
-    vector<Button*> buttons;
-    Start* startButton_;
-
 public:
 
     MenuState(Game* game);
-    ~MenuState();
-
+    ~MenuState();  
     void update() override;
     void draw() override;
     void next() override;

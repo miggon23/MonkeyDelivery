@@ -1,6 +1,6 @@
 #pragma once
-class State;
-
+class State; 
+class Button;
 class StateMachine
 {
 protected:
@@ -13,7 +13,7 @@ public:
 
 	State* getState();
 	State* getSavedState();
-
+	
 	void clearSavedState();
 };
 

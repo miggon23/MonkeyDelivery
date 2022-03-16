@@ -4,6 +4,7 @@
 #include "../CommandFactory.h"
 #include "../ViewController.h"
 #include "../Button.h"
+
 class Game;
 using namespace std;
 
@@ -18,6 +19,7 @@ protected:
     unsigned int totalTime;
 
     bool isFullscreen = false;
+    vector<Button*> buttonsUI;
 public:
     State(Game* game) : game(game) {
         commandFactory = new CommandFactory(game);
@@ -39,5 +41,7 @@ public:
 
     virtual void resetInitTime() {};
 
+    inline vector<Button*> getButtonsUI() { return buttonsUI; };
+    inline void addButton(Button* button) { buttonsUI.push_back(button); };
     vector<SDL_Event>& GetFrameEvents();
 };
