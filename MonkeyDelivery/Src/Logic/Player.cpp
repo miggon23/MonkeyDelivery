@@ -34,9 +34,11 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game),animat
 	energyLevel_ = new energyLevel(game);
 	fearLevel_ = new FearLevel(game);
 	inventory_ = new Inventory(this, game->getRenderer());
+
 	inventory_->addObject(new Bike(new Texture(game->getRenderer(), "../Images/objects/linterna.png")));
 	/* auto fL_=*/inventory_->addObject(new Flashlight(new Texture(game->getRenderer(), "../Images/objects/linterna2.png")));
 	inventory_->addObject(new EnergyDrink(new Texture(game->getRenderer(), "../Images/objects/refresco.png")));
+
 	setInventoryVisibility(true);
 	textureRect = { 0, 0, 100, 100};
 	timerAnimation = SDL_GetTicks();

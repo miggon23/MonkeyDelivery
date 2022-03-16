@@ -36,7 +36,7 @@ void Shop::addElements(int level)
 	switch (level)
 	{
 	case 1:
-		//objects.push_back(new Bike());
+		//objects.push_back(new Bike()); <-- ahora los objetos llevan textura en la constructora para que puedan ser renderizados por el inventario
 		break;
 	case 2:
 		break;

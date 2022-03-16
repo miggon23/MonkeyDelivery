@@ -8,10 +8,10 @@ Inventory::Inventory(Player* player, SDL_Renderer* renderer) : player_(player)
 {
 	missionObject_ = nullptr;
 
-	string route = "../Images/ui/inventorybar.png";
+	string route = "../Images/ui/inventorybar2.png";
 	base_ = new Texture(renderer, route);
-	baseRect_ = {250, 350, 300, 300/6};
-	missionObjectRect_ = {250, 350, 300/6, 300/6};
+	baseRect_ = {200, 350, 360, 300/6};
+	missionObjectRect_ = {205, 360, 300/8, 300/8};
 }
 
 Inventory::~Inventory()
@@ -115,6 +115,7 @@ bool Inventory::inventoryFull() {
 
 void Inventory::draw() {
 	base_->render(baseRect_);
+
 															
 	if (hasMissionObject()) { // si hay mission object, renderiza su textura
 		missionObject_->getTexture()->render(missionObjectRect_);
@@ -122,10 +123,10 @@ void Inventory::draw() {
 
 	int size = inventory_.size();
 	for (int i = 0; i < size; i++) {
-		if (inventory_[i] != nullptr) {
-			SDL_Rect oRect = { 306 + (50 * i), 355, 300 / 8, 300 / 7 };
-			inventory_[i]->getTexture()->render(oRect);
-		}
+	
+		SDL_Rect oRect = { 290 + (48 * i), 355, 300 / 8, 300 / 7 };
+		inventory_[i]->getTexture()->render(oRect);
+		
 	}
 }
 
