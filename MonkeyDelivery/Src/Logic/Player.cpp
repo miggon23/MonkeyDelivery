@@ -324,7 +324,7 @@ bool Player::moneyChange(int money)
 //linterna
 const SDL_Rect Player::lightZone()
 {
-	return { int(getX()),
+	return { int(getX()+50),
 			int(getY()),
 			getWidth(),
 			getHeight()};
