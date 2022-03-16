@@ -306,7 +306,7 @@ void Player::draw()
 	if (inventoryVisibility)
 		inventory_->draw();
 	if(usingFlashLight)
-		Box(lightZone(), BLUE).render(game->getRenderer(), { getX(),getY() });
+		Box(lightZone(), BLUE).render(game->getRenderer());
 }
 
 
@@ -324,10 +324,10 @@ bool Player::moneyChange(int money)
 //linterna
 const SDL_Rect Player::lightZone()
 {
-	return { getX(),
-			getY(),
-			getWidth()*2,
-			getHeight()*2 };
+	return { int(getX()),
+			int(getY()),
+			getWidth(),
+			getHeight()};
 }
 
 
