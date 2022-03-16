@@ -4,9 +4,9 @@
 
 bool EnergyDrink::useObject()
 {
-    player_->recoverEnergy(player_->getMaxEnergy() * 1.2); // aumenta 20%
+    player_->recoverEnergy(player_->getMaxEnergy() * energyBonus_);
     double newVel = player_->getVel();
-    newVel *= 1.15; // aumenta 15 %
+    newVel *= speedBonus_;
     player_->setVel(newVel);
     // en 15 seg. ->
     player_->resetVelocity();
