@@ -9,7 +9,8 @@ private:
 	bool active;
 	double speedMult;
 public:
-	Bike();
+	
+	Bike(Texture* tex);
 
 	bool useObject() override;
 	inline void setBikeSpeedMultiplier(double speed) { speedMult = speed; };

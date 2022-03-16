@@ -8,14 +8,14 @@ class Player;
 class InventoryObject
 {
 private:
-	Texture* myTexture_;
+	Texture* myTexture_ = nullptr;
 
 protected:
 	Player* player_ = nullptr;
 	bool isConsumable_ = false;
 
 public:
-	InventoryObject() {};
+	//InventoryObject() {};
 	InventoryObject(Texture* tex) : myTexture_(tex) {};
 	~InventoryObject();
 
@@ -26,5 +26,6 @@ public:
 	inline Texture* getTexture() { return myTexture_; };
 
 	inline bool isConsumable() { return isConsumable_; };
+	//inline bool hasTexture() { return myTexture_ != nullptr; };
 };
 

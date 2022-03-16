@@ -16,7 +16,7 @@ MissionsPanel::MissionsPanel(Game* game) : GameObject(game)
 	setDimension(120, 150);
 	setTexture(missionPanelTexture);
 
-	missionsFinished_ = true;
+	missionsFinished_ = false;
 	currentLevel_ = 1;
 	levels_.reserve(NLEVELS_);
 	for (int i = 0; i <= NLEVELS_; ++i) {

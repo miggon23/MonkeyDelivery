@@ -2,6 +2,7 @@
 #include "Inventory.h"
 #include "Bike.h"
 #include "Flashlight.h"
+#include "EnergyDrink.h"
 #include "Game.h"
 #include "SDL.h"
 
@@ -33,8 +34,9 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game),animat
 	energyLevel_ = new energyLevel(game);
 	fearLevel_ = new FearLevel(game);
 	inventory_ = new Inventory(this, game->getRenderer());
-	inventory_->addObject(new Bike());
-	/* auto fL_=*/inventory_->addObject(new Flashlight());
+	inventory_->addObject(new Bike(new Texture(game->getRenderer(), "../Images/objects/linterna.png")));
+	/* auto fL_=*/inventory_->addObject(new Flashlight(new Texture(game->getRenderer(), "../Images/objects/linterna2.png")));
+	inventory_->addObject(new EnergyDrink(new Texture(game->getRenderer(), "../Images/objects/refresco.png")));
 	setInventoryVisibility(true);
 	textureRect = { 0, 0, 100, 100};
 	timerAnimation = SDL_GetTicks();
@@ -89,9 +91,9 @@ void Player::move()
 	speed = speed * vel_;
 
 	if (dirX_ != 0 || dirY_ != 0) {
-		if (isRunning) { //Esto se puede implementar desde el runCommand, evitando que el jugador tenga muchos estados como el de corriendo
-			speed = speed * 1.5;			
-		}
+		//if (isRunning) { //Esto se puede implementar desde el runCommand, evitando que el jugador tenga muchos estados como el de corriendo
+		//	speed = speed * 1.5;			
+		//}
 		
 		drainEnergy(decreasingEnergyLevel_);
 	}

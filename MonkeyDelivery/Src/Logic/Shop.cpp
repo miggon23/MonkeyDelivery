@@ -36,7 +36,7 @@ void Shop::addElements(int level)
 	switch (level)
 	{
 	case 1:
-		objects.push_back(new Bike());
+		//objects.push_back(new Bike());
 		break;
 	case 2:
 		break;

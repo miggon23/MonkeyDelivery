@@ -13,7 +13,7 @@ private:
 	const float timeLimit_ = 30000; // 30 seg
 public:
 
-	EnergyDrink() { isConsumable_ = true; };
+	EnergyDrink(Texture* tex);
 	bool useObject() override;
 };
 

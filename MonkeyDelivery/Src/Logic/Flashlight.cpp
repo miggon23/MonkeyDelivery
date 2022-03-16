@@ -1,7 +1,7 @@
 #include "Flashlight.h"
 #include "Player.h"
 
-Flashlight::Flashlight() : active(false)
+Flashlight::Flashlight(Texture* tex) : active(false), InventoryObject(tex)
 {
 }
 

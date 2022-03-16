@@ -28,6 +28,7 @@ Game::~Game() {
     delete iE_;
     delete animationManager;
     delete savedState;
+    delete shop_;
 }
 
 string Game::getGameName() {
@@ -51,7 +52,7 @@ void Game::start()
 
     missionsPanel_ = new MissionsPanel(this);
     add(missionsPanel_); 
-    add (new IntectuableShop(this, 300, 300));
+    add (new IntectuableShop(this, 200, 200));
     enemiesCreation();//creacion de enemigos
     
 
