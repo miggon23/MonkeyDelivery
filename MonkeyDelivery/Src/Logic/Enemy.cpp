@@ -49,10 +49,10 @@ void Enemy::patrol(double speed)
 void Enemy::die()
 {
 	if (game->getPlayer()->usingFlashLight) {
-		if (collide(game->getPlayer()->lightZone())) {}
-		setAlive(false);
+		if (collide(game->getPlayer()->lightZone())) {
+			setAlive(false);
+		}
 	}
-
 }
 
 void Enemy::spawn()
