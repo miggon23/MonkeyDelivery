@@ -324,26 +324,40 @@ bool Player::moneyChange(int money)
 //linterna
 const SDL_Rect Player::lightZone()
 {
-	if (dirX_ == 1) {
-		return { int(getX() + 50),
+	SDL_Rect l{ int(getX() + 50),
+					int(getY()),
+					getWidth(),
+					getHeight()
+	};
+	//ejeX
+	if (dirX_ == 1 /*&& dirY_==0*/) {
+		l = { int(getX() + 50),
 					int(getY()),
 					getWidth(),
 					getHeight() };
 	}
-	else if(dirX_==-1)
+	else if (dirX_ == -1 /*&& dirY_==0*/)
 	{
-		return { int(getX() - 50),
+		l = { int(getX() - 50),
 					int(getY()),
 					getWidth(),
 					getHeight() };
 	}
-	else
+	else if (/*dirX_ == 1 &&*/ dirY_ == -1)
 	{
-		return { int(getX()),
-					int(getY()),
+		l = { int(getX()),
+					int(getY() - 50),
 					getWidth(),
 					getHeight() };
 	}
+	else if (dirY_ == 1)
+	{
+		l = { int(getX()),
+					int(getY() + 50),
+					getWidth(),
+					getHeight() };
+	}
+	return l;
 
 }
 
