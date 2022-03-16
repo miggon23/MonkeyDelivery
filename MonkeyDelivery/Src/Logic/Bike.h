@@ -1,8 +1,6 @@
 #pragma once
 #include "InventoryObject.h"
 
-class Game;
-
 class Bike : public InventoryObject
 {
 private:

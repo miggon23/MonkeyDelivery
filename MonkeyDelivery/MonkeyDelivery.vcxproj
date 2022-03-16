@@ -209,6 +209,7 @@
     <ClInclude Include="Src\Logic\Player.h" />
     <ClInclude Include="Src\Logic\Scorpion.h" />
     <ClInclude Include="Src\Logic\Shop.h" />
+    <ClInclude Include="Src\Logic\Skates.h" />
     <ClInclude Include="Src\Logic\SpawnZone.h" />
     <ClInclude Include="Src\Logic\Target.h" />
     <ClInclude Include="Src\Logic\UI_Info.h" />
@@ -280,6 +281,7 @@
     <ClCompile Include="Src\Logic\Player.cpp" />
     <ClCompile Include="Src\Logic\Scorpion.cpp" />
     <ClCompile Include="Src\Logic\Shop.cpp" />
+    <ClCompile Include="Src\Logic\Skates.cpp" />
     <ClCompile Include="Src\Logic\SpawnZone.cpp" />
     <ClCompile Include="Src\Logic\Target.cpp" />
     <ClCompile Include="Src\Logic\UI_Info.cpp" />

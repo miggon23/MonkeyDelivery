@@ -3,6 +3,7 @@
 #include "Bike.h"
 #include "Flashlight.h"
 #include "EnergyDrink.h"
+#include "Skates.h"
 #include "Game.h"
 #include "SDL.h"
 
@@ -20,7 +21,7 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game), anima
 	money_ = 0;
 	vel_ = 0;
 	//walkingSpeed_ = 3;
-	runningSpeedFactor_ = 1.8;
+	runningSpeedFactor_ = 1.5;
 
 	walkingEnergy_ = 0.5;
 	runningEnergy_ = 1.0;
@@ -35,9 +36,11 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game), anima
 	fearLevel_ = new FearLevel(game);
 	inventory_ = new Inventory(this, game->getRenderer());
 
+	//Obketos de inventario
 	inventory_->addObject(new Bike(new Texture(game->getRenderer(), "../Images/objects/linterna.png")));
 	/* auto fL_=*/inventory_->addObject(new Flashlight(new Texture(game->getRenderer(), "../Images/objects/linterna2.png")));
 	inventory_->addObject(new EnergyDrink(new Texture(game->getRenderer(), "../Images/objects/refresco.png")));
+	//inventory_->addObject(new Skates(new Texture(game->getRenderer(), "../Images/objects/refresco.png")));
 
 	setInventoryVisibility(true);
 	textureRect = { 0, 0, 100, 100 };
