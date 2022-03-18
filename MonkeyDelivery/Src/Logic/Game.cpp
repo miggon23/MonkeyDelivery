@@ -1,10 +1,14 @@
+#include "../../tmxlite-1.2.1/include/tmxlite/Map.hpp"
+#include "../../tmxlite-1.2.1/include/tmxlite/Layer.hpp"
+#include "../../tmxlite-1.2.1/include/tmxlite/TileLayer.hpp"
+#include "../../tmxlite-1.2.1/include/tmxlite/ObjectGroup.hpp"
+#include "../../tmxlite-1.2.1/include/tmxlite/Tileset.hpp"
 #include "Game.h" 
-
 Game::Game(string n, int w, int h) : name(n), width(w), height(h), doExit(false)
 {    
     font_ = new Font("../Images/TheMoon.ttf", 50);
     animationManager = new AnimationManager(this);
-    loadMap("1.level");
+    
 }
 
 Game::~Game() {
@@ -41,6 +45,10 @@ void Game::add(GameObject* gameObject) {//a�adir gO al vector
 
 void Game::start()
 {
+    //loadMap("1.level");
+    loadMap("./TilemapSrc/MainMap.tmx");
+    //loadMap("C:/Users/Eli Todd/Documents/2º DESARROLLO DE VIDEOJUEGOS/Proyectos 2/MonkeyDelivery/MonkeyDelivery/Src/TilemapSrc/zona_shelter.tmx");
+
     animationManager = new AnimationManager(this);
 
     player_ = new Player(this,animationManager); //Creacion del jugador
@@ -223,8 +231,32 @@ void Game::interactDialogue()
 }
 
 //TILEMAP
-void Game::loadMap(const char* filename) {
-    std::cout << "Started Loading \n";
+void Game::loadMap(const string& filename) {
+
+    mapInfo_.tile_map = new tmx::Map();
+    mapInfo_.tile_map->load(filename);
+
+    // obtenemos el tama�o del mapa (en tiles)
+    auto map_dimensions = mapInfo_.tile_map->getTileCount();
+    mapInfo_.rows = map_dimensions.y;
+    mapInfo_.cols = map_dimensions.x;
+
+    // calculamos las dimensiones de los tiles
+    auto tilesize = mapInfo_.tile_map->getTileSize();
+    mapInfo_.tile_width = tilesize.x;
+    mapInfo_.tile_height = tilesize.y;
+
+    //convertir a textura
+    auto rend = renderer;
+    int bgWidth = mapInfo_.tile_width * mapInfo_.cols;
+    int bgHeight = mapInfo_.tile_height * mapInfo_.rows;
+    SDL_Texture* background = SDL_CreateTexture(rend,
+        SDL_PIXELFORMAT_RGBA8888, SDL_TEXTUREACCESS_TARGET,
+        bgWidth,
+        bgHeight
+    );
+
+    /*std::cout << "Started Loading \n";
     int current, mx, my, mw, mh;
     ifstream in(filename);
     if (!in.is_open()) {
@@ -252,7 +284,7 @@ void Game::loadMap(const char* filename) {
             }
         }
     }
-    in.close();
+    in.close();*/
 }
 
 void Game::drawMap() {

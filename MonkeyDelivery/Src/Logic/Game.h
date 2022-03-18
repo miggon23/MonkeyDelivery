@@ -39,14 +39,35 @@
 
 #include "Shop.h"
 
+#include <tmxlite/Map.hpp>
 
 #define TILE_SIZE 16
 
+struct MapInfo {
+    tmx::Map* tile_map;
+    string path_;
+    int rows, cols;
+    int tile_width, tile_height;
+    map<unsigned int, Texture*> tilesets;
+
+    MapInfo() {
+        tile_map = nullptr;
+        path_ = "";
+        rows = cols = tile_width = tile_height = 0;
+    }
+    ~MapInfo() {
+        if (tile_map != nullptr)
+            delete tile_map;
+    }
+};
 
 using namespace std;
 class Game : public StateMachine {
 
 private:
+
+    MapInfo mapInfo_;
+
     string name;
     bool doExit;
     int width, height;   
@@ -68,7 +89,6 @@ private:
     DialogueBox* dialogueBox_;
     
     //TILEMAP
-   
     vector<tileObject> map;
 
     //Tienda    
@@ -125,7 +145,7 @@ public:
     void interactDialogue();
    
     //Tilemap
-    void loadMap(const char* filename);
+    void loadMap(const string& filename);
     void drawMap();
     void drawTiles(tileObject o);
 
