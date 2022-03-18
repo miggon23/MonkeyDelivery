@@ -30,6 +30,7 @@ void Bat::update()
 	}
 
 	checkDistance();
+	die();
 }
 
 void Bat::createCheckPoints()
@@ -59,5 +60,6 @@ void Bat::onPlayerInteraction(Player* player)
 }
 
 void Bat::draw(){
+	if (isAlive())
 	animationManager->getFrameImageBat(getCollider(), textureRect, texture,timerAnimation);
 }

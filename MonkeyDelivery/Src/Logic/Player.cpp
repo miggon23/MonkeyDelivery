@@ -330,35 +330,35 @@ const SDL_Rect Player::lightZone()
 	SDL_Rect l{ int(getX() + 50),
 					int(getY()),
 					getWidth(),
-					getHeight()
+					getHeight()+50
 	};
 	//ejeX
 	if (dirX_ == 1 /*&& dirY_==0*/) {
 		l = { int(getX() + 50),
 					int(getY()),
 					getWidth(),
-					getHeight() };
+					getHeight() + 50 };
 	}
 	else if (dirX_ == -1 /*&& dirY_==0*/)
 	{
 		l = { int(getX() - 50),
 					int(getY()),
 					getWidth(),
-					getHeight() };
+					getHeight() +50 };
 	}
 	else if (/*dirX_ == 1 &&*/ dirY_ == -1)
 	{
 		l = { int(getX()),
 					int(getY() - 50),
 					getWidth(),
-					getHeight() };
+					getHeight() +50 };
 	}
 	else if (dirY_ == 1)
 	{
 		l = { int(getX()),
 					int(getY() + 50),
 					getWidth(),
-					getHeight() };
+					getHeight() +50};
 	}
 	return l;
 

@@ -21,6 +21,7 @@ void Bull::update()
 {
 	if(stop) patrol(1); //El toro solo patrulla si no persigue 
 	checkDistance();
+	die();
 	//Si han pasado 3 segundos y el toro esta persiguiendo
 	if (!stop && SDL_GetTicks() > timer_ + 3000) {
 		stop = true;
@@ -71,5 +72,6 @@ void Bull::checkDistance()
 
 void Bull::draw()
 {
+	if (isAlive())
 	animationManager->getFrameImageBull(getCollider(), textureRect, texture, timerAnimation);
 }

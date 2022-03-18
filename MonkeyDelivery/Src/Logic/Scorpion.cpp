@@ -22,6 +22,7 @@ void Scorpion::update()
 {
 	patrol(1);
 	checkDistance();
+	die();
 }
 
 void Scorpion::createCheckPoints()
@@ -65,5 +66,6 @@ void Scorpion::checkDistance()
 
 void Scorpion::draw()
 {
+	if (isAlive())
 	animationManager->getFrameImageScorpion(getCollider(), textureRect, texture, timerAnimation);
 }

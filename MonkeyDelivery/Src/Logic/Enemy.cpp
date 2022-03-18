@@ -79,10 +79,10 @@ void Enemy::checkDistance()
 			/*if (distanceX < distanceY)
 				game->scare(distanceX*scariness_);
 			else*/
-			/*double d = (distanceY + distanceX) / 2;*/
+			double d = (distanceY + distanceX) / 2;
 
 			//si no es demasiado por eso se divide entre 8
-			game->scare(distanceX * scariness_ / 10);///esto hay que mirarlo
+			game->scare(d * scariness_ / 10);///esto hay que mirarlo
 			lastUpdate_ = SDL_GetTicks();
 		}
 		lastUpdate_ = SDL_GetTicks();

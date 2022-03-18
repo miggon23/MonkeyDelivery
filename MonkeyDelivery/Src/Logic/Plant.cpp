@@ -15,6 +15,7 @@ Plant::Plant(Game* game, int Aleatorio, Point2D<int> centroRadio, AnimationManag
 void Plant::update()
 {
 	checkDistance();
+	die();
 }
 
 void Plant::checkDistance()
@@ -24,5 +25,6 @@ void Plant::checkDistance()
 
 void Plant::draw()
 {
+	if (isAlive())
 	animationManager->getFrameImagePlant(getCollider(), textureRect, texture, timerAnimation);
 }
