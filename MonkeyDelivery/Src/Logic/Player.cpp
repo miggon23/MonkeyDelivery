@@ -20,6 +20,7 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game), anima
 	fear_ = 0;
 	money_ = 0;
 	vel_ = 0;
+	orientation_ = "";
 	//walkingSpeed_ = 3;
 	runningSpeedFactor_ = 1.5;
 
@@ -38,7 +39,7 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game), anima
 
 	//Obketos de inventario
 	inventory_->addObject(new Bike(new Texture(game->getRenderer(), "../Images/objects/linterna.png")));
-	/* auto fL_=*/inventory_->addObject(new Flashlight(new Texture(game->getRenderer(), "../Images/objects/linterna2.png")));
+	inventory_->addObject(new Flashlight(new Texture(game->getRenderer(), "../Images/objects/linterna2.png")));
 	inventory_->addObject(new EnergyDrink(new Texture(game->getRenderer(), "../Images/objects/refresco.png")));
 	//inventory_->addObject(new Skates(new Texture(game->getRenderer(), "../Images/objects/refresco.png")));
 
@@ -332,14 +333,13 @@ const SDL_Rect Player::lightZone()
 					getWidth(),
 					getHeight()+50
 	};
-	SDL_Rect staticZone{0,0,0,0};
 	//ejeX
 	if (dirX_ == 1 /*&& dirY_==0*/) {
 		defaultZone = { int(getX() + 50),
 					int(getY()),
 					getWidth(),
 					getHeight() + 50 };
-		staticZone = defaultZone;
+		setOrientation("right");
 	}
 	else if (dirX_ == -1 /*&& dirY_==0*/)
 	{
@@ -347,7 +347,7 @@ const SDL_Rect Player::lightZone()
 					int(getY()),
 					getWidth(),
 					getHeight() +50 };
-		staticZone = defaultZone;
+		setOrientation("left");
 	}
 	else if (/*dirX_ == 1 &&*/ dirY_ == -1)
 	{
@@ -355,7 +355,7 @@ const SDL_Rect Player::lightZone()
 					int(getY() - 50),
 					getWidth(),
 					getHeight() +50 };
-		staticZone = defaultZone;
+		setOrientation("up");
 	}
 	else if (dirY_ == 1)
 	{
@@ -363,11 +363,36 @@ const SDL_Rect Player::lightZone()
 					int(getY() + 50),
 					getWidth(),
 					getHeight() +50};
-		staticZone = defaultZone;
+		setOrientation("down");
+		
 	}
 	else if(dirX_==0 && dirY_==0)
 	{
-		return staticZone;
+		if (getOrientation() == "left")
+			defaultZone = { int(getX() - 50),
+					int(getY()),
+					getWidth(),
+					getHeight() + 50 };
+		else if (getOrientation() == "right")
+			defaultZone = { int(getX() + 50),
+					int(getY()),
+					getWidth(),
+					getHeight() + 50 };
+		else if (getOrientation() == "up")
+			defaultZone = { int(getX()),
+					int(getY() - 50),
+					getWidth(),
+					getHeight() + 50 };
+		else if (getOrientation() == "down")
+			defaultZone = { int(getX()),
+					int(getY() + 50),
+					getWidth(),
+					getHeight() + 50 };
+		else
+			defaultZone = getCollider();
+
+
+
 	}
 	return defaultZone;
 
