@@ -4,14 +4,7 @@
 class Shop;
 class ShopState : public State
 {
-	Texture* panelTexture;
-	
-	const int xObj=140, yObj=105, wObj=100, hObj=100, xOffset = 160, yOffset = 115,
-		xText = 260, yText = 320;
-	int selected_ = 0;
 
-	Shop* shop_;
-	Font* font_;
 	
 public:
 	ShopState(Game* game);
@@ -28,6 +21,16 @@ public:
 	void registerCommands()override;
 
 	void moveSelected(int to);
+
+private:
+	Texture* panelTexture;
+
+	const int xObj = 128, yObj = 105, wObj = 100, hObj = 100, xOffset = 160, yOffset = 115,
+		xText = 260, yText = 320;
+	int selected_ = 0;
+
+	Shop* shop_;
+	Font* font_;
 };
 
 

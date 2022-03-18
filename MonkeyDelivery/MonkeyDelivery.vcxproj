@@ -170,6 +170,7 @@
     <ClInclude Include="Src\Control\NextStateCommand.h" />
     <ClInclude Include="Src\Control\PauseCommand.h" />
     <ClInclude Include="Src\Control\SelectMissionCommand.h" />
+    <ClInclude Include="Src\Control\ShopCommand.h" />
     <ClInclude Include="Src\Control\States\GameOverState.h" />
     <ClInclude Include="Src\Control\States\MenuState.h" />
     <ClInclude Include="Src\Control\States\MissionSelectionState.h" />
@@ -242,6 +243,7 @@
     <ClCompile Include="Src\Control\NextStateCommand.cpp" />
     <ClCompile Include="Src\Control\PauseCommand.cpp" />
     <ClCompile Include="Src\Control\SelectMissionCommand.cpp" />
+    <ClCompile Include="Src\Control\ShopCommand.cpp" />
     <ClCompile Include="Src\Control\States\GameOverState.cpp" />
     <ClCompile Include="Src\Control\States\MenuState.cpp" />
     <ClCompile Include="Src\Control\States\MissionSelectionState.cpp" />

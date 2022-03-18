@@ -1,6 +1,7 @@
 #include "ShopState.h"
 #include "../PauseCommand.h"
 #include "../CommandExit.h"
+#include "../ShopCommand.h"
 #include "../../Logic/Shop.h"
 
 ShopState::ShopState(Game* game) : State(game){
@@ -56,9 +57,10 @@ void ShopState::draw()
 
 	//renderizado del objeto seleccionado
 
-	rectPanel = { xOffset + xObj * selected_ - 15, yOffset + 3, (int)(wObj*1.3), (int)(hObj * 0.9) };
-	if (selected_ >= 4)
-		rectPanel.y += yObj;
+	if(selected_ < 4)
+		rectPanel = { xOffset + xObj * selected_ - 15, yOffset + 3, (int)(wObj*1.3), (int)(hObj * 0.9) };
+	else
+		rectPanel = { xOffset + xObj * (selected_-4) - 15, yOffset + yObj + 3, (int)(wObj * 1.3), (int)(hObj * 0.9) };
 	
 	game->getTexture(seleccionShopPanel)->render(rectPanel);
 
@@ -75,14 +77,16 @@ void ShopState::registerCommands()
 {
 	commandFactory->add(new PauseCommand());
 	commandFactory->add(new CommandExit());
+	commandFactory->add(new ShopCommand(this));
 }
 
 void ShopState::moveSelected(int to)
 {
-	if (selected_ == shop_->getSize() - 1 && to > 0)
+	//pruebas, sustituir 6 shop_->getSize()-1
+	if (selected_ == 6 - 1 && to > 0)
 		selected_ = 0;
 	else if (selected_ == 0 && to < 0)
-		selected_ = shop_->getSize() - 1;
+		selected_ = 6 - 1;
 	else
 		selected_ += to;
 }

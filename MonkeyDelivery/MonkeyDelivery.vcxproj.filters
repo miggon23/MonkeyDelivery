@@ -187,6 +187,9 @@
     <ClCompile Include="Src\Logic\Skates.cpp">
       <Filter>Source Files\Logic\InteractuableObjects</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Control\ShopCommand.cpp">
+      <Filter>Source Files\Control\Commands</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -398,6 +401,9 @@
     </ClInclude>
     <ClInclude Include="Src\Logic\Skates.h">
       <Filter>Header Files\Logic\InteractuableObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Control\ShopCommand.h">
+      <Filter>Header Files\Control\Commands</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
