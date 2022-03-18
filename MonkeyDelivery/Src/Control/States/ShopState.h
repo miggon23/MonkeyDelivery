@@ -22,6 +22,8 @@ public:
 
 	void moveSelected(int to);
 
+	void buySelected();
+
 private:
 	Texture* panelTexture;
 

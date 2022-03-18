@@ -17,5 +17,6 @@ private:
    
     ShopState* shopState_;
     int moveCursor_;
+    bool buy_ = false;
 };
 

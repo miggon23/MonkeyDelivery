@@ -90,3 +90,9 @@ void ShopState::moveSelected(int to)
 	else
 		selected_ += to;
 }
+
+void ShopState::buySelected()
+{
+	//falta ñadir el precio ya sea en shop o shopstate
+	shop_->buyObject(selected_, 100);
+}
