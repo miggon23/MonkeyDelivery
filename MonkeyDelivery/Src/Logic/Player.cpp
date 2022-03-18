@@ -337,22 +337,22 @@ const SDL_Rect Player::lightZone()
 	if (dirX_ == 1 /*&& dirY_==0*/) {
 		defaultZone = { int(getX() + 50),
 					int(getY()),
-					getWidth(),
-					getHeight() + 50 };
+					getWidth()+ 50,
+					getHeight()  };
 		setOrientation("right");
 	}
 	else if (dirX_ == -1 /*&& dirY_==0*/)
 	{
-		defaultZone = { int(getX() - 50),
+		defaultZone = { int(getX() - 100),
 					int(getY()),
-					getWidth(),
-					getHeight() +50 };
+					getWidth()+50 ,
+					getHeight() };
 		setOrientation("left");
 	}
 	else if (/*dirX_ == 1 &&*/ dirY_ == -1)
 	{
 		defaultZone = { int(getX()),
-					int(getY() - 50),
+					int(getY() - 100),
 					getWidth(),
 					getHeight() +50 };
 		setOrientation("up");
@@ -368,19 +368,19 @@ const SDL_Rect Player::lightZone()
 	}
 	else if(dirX_==0 && dirY_==0)
 	{
-		if (getOrientation() == "left")
-			defaultZone = { int(getX() - 50),
+		if(getOrientation()=="left")
+			defaultZone = { int(getX() - 100),
 					int(getY()),
-					getWidth(),
-					getHeight() + 50 };
-		else if (getOrientation() == "right")
+					getWidth()+ 50,
+					getHeight()  };
+		else if(getOrientation() == "right")
 			defaultZone = { int(getX() + 50),
 					int(getY()),
-					getWidth(),
-					getHeight() + 50 };
+					getWidth()+ 50 ,
+					getHeight() };
 		else if (getOrientation() == "up")
 			defaultZone = { int(getX()),
-					int(getY() - 50),
+					int(getY() - 100),
 					getWidth(),
 					getHeight() + 50 };
 		else if (getOrientation() == "down")
@@ -389,7 +389,7 @@ const SDL_Rect Player::lightZone()
 					getWidth(),
 					getHeight() + 50 };
 		else
-			defaultZone = getCollider();
+			defaultZone=getCollider();
 
 
 
