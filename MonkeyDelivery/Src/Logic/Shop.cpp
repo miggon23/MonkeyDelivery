@@ -4,10 +4,12 @@
 #include "Inventory.h"
 #include "Player.h"
 #include "Bike.h"
+#include "Game.h"
 
-Shop::Shop(Player* player)
+Shop::Shop(Player* player, Game* game)
 {
 	this->player = player;
+	this->game = game;
 }
 
 Shop::~Shop()
@@ -37,7 +39,11 @@ void Shop::addElements(int level)
 	switch (level)
 	{
 	case 1:
-		//objects.push_back(new Bike()); <-- ahora los objetos llevan textura en la constructora para que puedan ser renderizados por el inventario
+		objects.push_back(new Bike(game->getTexture(bullTexture))); //<-- ahora los objetos llevan textura en la constructora para que puedan ser renderizados por el inventario
+		objects.push_back(new Bike(game->getTexture(bullTexture)));
+		objects.push_back(new Bike(game->getTexture(bullTexture)));
+		objects.push_back(new Bike(game->getTexture(bullTexture)));
+		objects.push_back(new Bike(game->getTexture(bullTexture)));
 		break;
 	case 2:
 		break;

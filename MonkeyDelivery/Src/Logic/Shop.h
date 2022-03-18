@@ -4,6 +4,7 @@
 class Player;
 class InventoryObject;
 class Inventory;
+class Game;
 
 class Shop
 {
@@ -12,10 +13,11 @@ friend class ShopState;
 private:
 	std::vector <InventoryObject*> objects;
 	Player* player;
+	Game* game;
 
 public:
 
-	Shop(Player* player);
+	Shop(Player* player, Game* game);
 	~Shop();
 
 	void actualice();

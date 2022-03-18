@@ -40,14 +40,11 @@ void ShopState::draw()
 
 	
 	//pruebas
-	while (i < 2)
+	while (i < 4 && i < shop_->getSize())
 	{
-		game->getTexture(bullTexture)->render({ xOffset + xObj * i, yOffset, wObj, hObj });
+		shop_->objects[i]->getTexture()->render({ xOffset + xObj * i, yOffset, wObj, hObj });
 		i++;
 	}
-	game->getTexture(bullTexture)->render({ xOffset, yOffset + yObj, wObj, hObj });
-	//
-
 	
 	while (i < shop_->getSize())
 	{
@@ -83,10 +80,10 @@ void ShopState::registerCommands()
 void ShopState::moveSelected(int to)
 {
 	//pruebas, sustituir 6 shop_->getSize()-1
-	if (selected_ == 6 - 1 && to > 0)
+	if (selected_ == shop_->getSize() - 1 && to > 0)
 		selected_ = 0;
 	else if (selected_ == 0 && to < 0)
-		selected_ = 6 - 1;
+		selected_ = shop_->getSize() - 1;
 	else
 		selected_ += to;
 }
