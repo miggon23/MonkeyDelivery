@@ -30,7 +30,7 @@ private:
 #pragma region Movement/Fear
 	MovState movState_;
 	//Velocidad base (sin modificaciones que mantiene el player)
-	double INIT_VEL_; 
+	double INIT_VEL_;
 	bool isRunning = false;
 	float fear_;
 	float walkingSpeedFactor_; //A esto se le multiplica la velocidad actual
@@ -59,12 +59,13 @@ private:
 	SDL_Rect textureRect;
 	int timerAnimation;
 #pragma endregion	
-
+	//orientacion para la linterna
+	string orientation_;
 
 
 public:
 
-	Player(Game* game,AnimationManager* animation);
+	Player(Game* game, AnimationManager* animation);
 	~Player();
 
 	void update() override;
@@ -124,10 +125,12 @@ public:
 #pragma endregion
 	//linterna
 	const SDL_Rect lightZone();
-	bool usingFlashLight=false;
+	bool usingFlashLight = false;
 	void changeFLState(bool f) {
 		usingFlashLight = f;
 	}
+	inline void setOrientation(string orien) { orientation_ = orien; }
+	inline string getOrientation() { return orientation_; }
 };
 
 
