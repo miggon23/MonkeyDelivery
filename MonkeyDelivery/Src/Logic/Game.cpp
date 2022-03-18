@@ -3,7 +3,8 @@
 #include "../../tmxlite-1.2.1/include/tmxlite/TileLayer.hpp"
 #include "../../tmxlite-1.2.1/include/tmxlite/ObjectGroup.hpp"
 #include "../../tmxlite-1.2.1/include/tmxlite/Tileset.hpp"
-#include "Game.h" 
+#include "Game.h"
+
 Game::Game(string n, int w, int h) : name(n), width(w), height(h), doExit(false)
 {    
     font_ = new Font("../Images/TheMoon.ttf", 50);
@@ -46,15 +47,22 @@ void Game::add(GameObject* gameObject) {//a�adir gO al vector
 void Game::start()
 {
     //loadMap("1.level");
-    loadMap("./TilemapSrc/MainMap.tmx");
+    
+    //loadMap("./Src/TilemapSrc/MainMap.tmx");
     //loadMap("C:/Users/Eli Todd/Documents/2º DESARROLLO DE VIDEOJUEGOS/Proyectos 2/MonkeyDelivery/MonkeyDelivery/Src/TilemapSrc/zona_shelter.tmx");
+    //string route_ = "../resources/tilemap/zona_shelter.tmx";
+    
+    //string ayuda = "CarlosLeonAyudame";
+    //std::string ayuda;
+
+    mapInfo_.path_ = "..\\..\\resources\\tilemap\\zona_shelter.tmx";
+    //mapInfo_.path_ = "..\\..\\..\\resources\\tilemap\\zona_shelter.tmx";
+    loadMap(mapInfo_.path_);
 
     animationManager = new AnimationManager(this);
 
     player_ = new Player(this,animationManager); //Creacion del jugador
    
-   
-
     //iE_ = new InteractiveEntity(this, tucanTexture, 500, 80);
     //add(iE_);
 
@@ -231,12 +239,12 @@ void Game::interactDialogue()
 }
 
 //TILEMAP
-void Game::loadMap(const string& filename) {
+void Game::loadMap(string const &filename) {
 
     mapInfo_.tile_map = new tmx::Map();
     mapInfo_.tile_map->load(filename);
-
-    // obtenemos el tama�o del mapa (en tiles)
+    
+    // obtenemos el tamaño del mapa (en tiles)
     auto map_dimensions = mapInfo_.tile_map->getTileCount();
     mapInfo_.rows = map_dimensions.y;
     mapInfo_.cols = map_dimensions.x;
@@ -255,6 +263,99 @@ void Game::loadMap(const string& filename) {
         bgWidth,
         bgHeight
     );
+        //SDL_SetTextureBlendMode(fondo, SDL_BLENDMODE_BLEND);
+        //SDL_SetRenderTarget(renderer, fondo);
+
+    //Establecemos los bordes de la camara con respecto al tamaño del tilemap
+        //Camera::mainCamera->setBounds(0, 0, mapInfo_.cols * mapInfo_.tile_width, mapInfo_.rows * mapInfo_.tile_height);
+
+    //Cargamos y almacenamos los tilesets utilizados por el tilemap
+    // (el mapa utiliza el �ndice [gid] del primer tile cargado del tileset como clave)
+    // (para poder cargar los tilesets del archivo .tmx, les ponemos de nombre 
+    // el nombre del archivo sin extension en el .json) 
+      /*  auto& mapTilesets = mapInfo_.tile_map->getTilesets();
+        for (auto& tileset : mapTilesets) {
+            string name = tileset.getName();
+            Texture* texture = &sdlutils().tilesets().find(name)->second;
+            mapInfo_.tilesets.insert(pair<uint, Texture*>(tileset.getFirstGID(), texture));
+        }*/
+
+    // recorremos cada una de las capas (de momento solo las de tiles) del mapa
+    auto& map_layers = mapInfo_.tile_map->getLayers();
+    for (auto& layer : map_layers) {
+        // aqui comprobamos que sea la capa de tiles
+        if (layer->getType() == tmx::Layer::Type::Tile) {
+            // cargamos la capa
+            tmx::TileLayer* tile_layer = dynamic_cast<tmx::TileLayer*>(layer.get());
+
+            // obtenemos sus tiles
+            auto& layer_tiles = tile_layer->getTiles();
+
+            // recorremos todos los tiles para obtener su informacion
+            for (auto y = 0; y < mapInfo_.rows; ++y) {
+                for (auto x = 0; x < mapInfo_.cols; ++x) {
+                    // obtenemos el indice relativo del tile en el mapa de tiles
+                    auto tile_index = x + (y * mapInfo_.rows);
+
+                    // con dicho indice obtenemos el indice del tile dentro de su tileset
+                    auto cur_gid = layer_tiles[tile_index].ID;
+
+                    // si es 0 esta vacio asi que continuamos a la siguiente iteracion
+                    if (cur_gid == 0)
+                        continue;
+
+                    // guardamos el tileset que utiliza este tile (nos quedamos con el tileset cuyo gid sea
+                    // el mas cercano, y a la vez menor, al gid del tile)
+                    auto tset_gid = -1, tsx_file = 0;;
+                    for (auto& ts : mapInfo_.tilesets) {
+                        if (ts.first <= cur_gid) {
+                            tset_gid = ts.first;
+                            tsx_file++;
+                        }
+                        else
+                            break;
+                    }
+
+                    // si no hay tileset v�lido, continuamos a la siguiente iteracion
+                    if (tset_gid == -1)
+                        continue;
+
+                    // normalizamos el �ndice
+                    cur_gid -= tset_gid;
+
+                    // calculamos dimensiones del tileset
+                    auto ts_width = 0;
+                    auto ts_height = 0;
+                    SDL_QueryTexture(mapInfo_.tilesets[tset_gid]->getTexture(),
+                        NULL, NULL, &ts_width, &ts_height);
+
+                    // calculamos el area del tileset que corresponde al dibujo del tile
+                    auto region_x = (cur_gid % (ts_width / mapInfo_.tile_width)) * mapInfo_.tile_width;
+                    auto region_y = (cur_gid / (ts_width / mapInfo_.tile_height)) * mapInfo_.tile_height;
+
+                    // calculamos la posicion del tile
+                    auto x_pos = x * mapInfo_.tile_width;
+                    auto y_pos = y * mapInfo_.tile_height;
+
+                    // metemos el tile
+                    auto tileTex = mapInfo_.tilesets[tset_gid];
+
+                    SDL_Rect src;
+                    src.x = region_x; src.y = region_y;
+                    src.w = mapInfo_.tile_width;
+                    src.h = mapInfo_.tile_height;
+
+                    SDL_Rect dest;
+                    dest.x = x_pos;
+                    dest.y = y_pos;
+                    dest.w = src.w;
+                    dest.h = src.h;
+
+                    mapInfo_.tilesets[tset_gid]->render(src, dest);
+                }
+            }
+        }
+    }
 
     /*std::cout << "Started Loading \n";
     int current, mx, my, mw, mh;
