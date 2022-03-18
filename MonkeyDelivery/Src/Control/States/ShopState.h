@@ -6,9 +6,12 @@ class ShopState : public State
 {
 	Texture* panelTexture;
 	
-	int xObj=140, yObj=105, wObj=100, hObj=100, xOffset = 160, yOffset = 115;
+	const int xObj=140, yObj=105, wObj=100, hObj=100, xOffset = 160, yOffset = 115,
+		xText = 260, yText = 320;
+	int selected_ = 0;
 
 	Shop* shop_;
+	Font* font_;
 	
 public:
 	ShopState(Game* game);
@@ -19,10 +22,12 @@ public:
 	void next()override;
 
 	string getStateName() const {
-		return "Pause state";
+		return "Shop state";
 	};
 
 	void registerCommands()override;
+
+	void moveSelected(int to);
 };
 
 

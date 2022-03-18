@@ -13,6 +13,7 @@ Shop::Shop(Player* player)
 Shop::~Shop()
 {
 	clearElements();
+	player = nullptr;
 }
 
 void Shop::actualice()
