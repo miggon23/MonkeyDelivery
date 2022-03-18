@@ -68,23 +68,25 @@ void Enemy::onCollision()
 
 void Enemy::checkDistance()
 {
-	if (lastUpdate_ + 1000 > SDL_GetTicks())
-		return;
-	int offset = 300;
-	double distanceX = abs(getPosition().getX() - game->getPosisitionPlayer().getX());
-	double distanceY = abs(getPosition().getY() - game->getPosisitionPlayer().getY());
+	if (lastUpdate_ + 1000 < SDL_GetTicks()) {
+		int offset = 300;
+		double distanceX = abs(getPosition().getX() - game->getPosisitionPlayer().getX());
+		double distanceY = abs(getPosition().getY() - game->getPosisitionPlayer().getY());
 
 
-	if (distanceX <= offset && distanceY <= offset) {
+		if (distanceX <= offset && distanceY <= offset) {
 
-		/*if (distanceX < distanceY)
-			game->scare(distanceX*scariness_);
-		else*/
-		/*double d = (distanceY + distanceX) / 2;*/
+			/*if (distanceX < distanceY)
+				game->scare(distanceX*scariness_);
+			else*/
+			/*double d = (distanceY + distanceX) / 2;*/
 
-		//si no es demasiado por eso se divide entre 8
-		game->scare(distanceX * scariness_ / 10);///esto hay que mirarlo
+			//si no es demasiado por eso se divide entre 8
+			game->scare(distanceX * scariness_ / 10);///esto hay que mirarlo
+		}
+		lastUpdate_ = SDL_GetTicks();
 	}
-	lastUpdate_ = SDL_GetTicks();
+
+
 }
 
