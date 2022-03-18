@@ -10,7 +10,7 @@ Bull::Bull(Game* game, int Aleatorio, Point2D<int> centroRadio, AnimationManager
 	initialPos_ = getPosition();
 	createCheckPoints();
 	stop = true; //Patrulla y no persigue
-	setScariness(0.15);
+	//setScariness(0.15);
 
 	timerAnimation = SDL_GetTicks();
 

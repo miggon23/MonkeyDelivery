@@ -83,6 +83,7 @@ void Enemy::checkDistance()
 
 			//si no es demasiado por eso se divide entre 8
 			game->scare(distanceX * scariness_ / 10);///esto hay que mirarlo
+			lastUpdate_ = SDL_GetTicks();
 		}
 		lastUpdate_ = SDL_GetTicks();
 	}
