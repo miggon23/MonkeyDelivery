@@ -29,10 +29,11 @@ void Shop::clearElements()
 {
 	for (auto e : objects2)
 	{
-		delete e.inventoryObject;
-		objects2.erase(objects2.begin());
+		if(e.inventoryObject != nullptr)
+			delete e.inventoryObject;
+		//objects2.erase(objects2.begin());
 	}
-	//objects.clear();
+	objects2.clear();
 }
 
 void Shop::addElements(int level)
@@ -48,9 +49,8 @@ void Shop::addElements(int level)
 
 		objects2.push_back({ new Bike(game->getTexture(bullTexture)),0,0,1,1000}); //<-- ahora los objetos llevan textura en la constructora para que puedan ser renderizados por el inventario
 		objects2.push_back({ new Bike(game->getTexture(bullTexture)),1,0,1,1000});
-		objects2.push_back({ new Bike(game->getTexture(bullTexture)),2,0,1,1000});
+		objects2.push_back({ new Bike(game->getTexture(bullTexture)),2,0,1,1000});		
 		objects2.push_back({ new Bike(game->getTexture(bullTexture)),3,0,1,1000});
-
 		objects2.push_back({ new Bike(game->getTexture(bullTexture)),0,105,1,1000});
 		objects2.push_back({ new Bike(game->getTexture(bullTexture)),1,105,1,1000});
 		objects2.push_back({ new Bike(game->getTexture(bullTexture)),2,105,1,1000});
@@ -68,7 +68,8 @@ void Shop::addElements(int level)
 bool Shop::buyObject(int id, int price)
 {
 	if (id < objects2.size() && objects2[id].stock>0 &&!player->inventoryFull() && player->moneyChange(-price)){	
-		player->addObjectToInventory(objects2[id].inventoryObject);			
+		player->addObjectToInventory(objects2[id].inventoryObject);		
+		objects2[id].inventoryObject = nullptr;
 		objects2[id].stock--;		
 		return true;
 	}

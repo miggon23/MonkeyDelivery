@@ -16,7 +16,6 @@ ShopState::ShopState(Game* game) : State(game){
 
 ShopState::~ShopState()
 {
-	delete panelTexture;
 	shop_->clearElements();
 	panelTexture = nullptr;
 	shop_ = nullptr;
