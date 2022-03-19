@@ -3,7 +3,7 @@
 #include "../CommandExit.h"
 #include "../ShopCommand.h"
 #include "../../Logic/Shop.h"
-
+#include <string>
 ShopState::ShopState(Game* game) : State(game){
 	registerCommands();
 
@@ -16,7 +16,7 @@ ShopState::ShopState(Game* game) : State(game){
 
 ShopState::~ShopState()
 {
-	//delete panelTexture;
+	delete panelTexture;
 	shop_->clearElements();
 	panelTexture = nullptr;
 	shop_ = nullptr;
@@ -33,22 +33,24 @@ void ShopState::draw()
 	
 	SDL_Rect rectPanel = { 0,0,game->getWindowWidth(),game->getWindowHeight() };
 	panelTexture->render(rectPanel);
-
+	std::cout << selected_ << std::endl;
 	int i = 0;
 
 	//renderizado de los objetos
 
 	
 	//pruebas
-	while (i < 4 && i < shop_->getSize())
-	{
-		shop_->objects[i]->getTexture()->render({ xOffset + xObj * i, yOffset, wObj, hObj });
-		i++;
-	}
-	
+	//while (i < 4 && i < shop_->getSize())
+	//{
+	//	//shop_->objects[i]->getTexture()->render({ xOffset + xObj * i, yOffset, wObj, hObj });
+	//	shop_->objects2[i].inventoryObject->getTexture()->render({ xOffset + xObj * shop_->objects2[i].positionRectX, yOffset, wObj, hObj });
+	//	i++;
+	//}	
 	while (i < shop_->getSize())
 	{
-		shop_->objects[i]->getTexture()->render({ xOffset + xObj * (i-4), yOffset + yObj, wObj, hObj });
+		//shop_->objects[i]->getTexture()->render({ xOffset + xObj * (i-4), yOffset + yObj, wObj, hObj });
+		if(shop_->objects2[i].stock>0)
+		shop_->objects2[i].inventoryObject->getTexture()->render({ xOffset + xObj * shop_->objects2[i].positionRectX, yOffset + shop_->objects2[i].positionRectY, wObj, hObj });
 		i++;
 	}
 
@@ -62,7 +64,12 @@ void ShopState::draw()
 	game->getTexture(seleccionShopPanel)->render(rectPanel);
 
 	//renderizado del texto
-	font_->render(game->getRenderer(),"1000", xText, yText, BLACK);
+	if (shop_->objects2.size()>selected_&&shop_->objects2[selected_].stock > 0) {
+		font_->render(game->getRenderer(), std::to_string(shop_->objects2[selected_].price), xText, yText, BLACK);
+	}
+	else {
+		font_->render(game->getRenderer(), " ", xText, yText, BLACK);
+	}
 
 }
 
@@ -77,19 +84,28 @@ void ShopState::registerCommands()
 	commandFactory->add(new ShopCommand(this));
 }
 
-void ShopState::moveSelected(int to)
+void ShopState::moveSelectedX(int to)
 {
 	//pruebas, sustituir 6 shop_->getSize()-1
-	if (selected_ == shop_->getSize() - 1 && to > 0)
-		selected_ = 0;
-	else if (selected_ == 0 && to < 0)
-		selected_ = shop_->getSize() - 1;
-	else
-		selected_ += to;
+	//if (selected_ == shop_->getSize() - 1 && to > 0)
+	//	selected_ = 0;
+	//else if (selected_ == 0 && to < 0)
+	//	selected_ = shop_->getSize() - 1;
+	//else
+	//	selected_ += to;
+	if (selected_ + to < MAX_SELECTED && selected_ + to >= 0)
+		selected_ += to;	
+}
+
+void ShopState::moveSelectedY(int to)
+{
+	if (selected_+MAX_SELECTED/2 * to < MAX_SELECTED  && selected_+ MAX_SELECTED / 2 * to >= 0)
+		selected_=selected_+ MAX_SELECTED / 2 *to ;
 }
 
 void ShopState::buySelected()
 {
 	//falta ñadir el precio ya sea en shop o shopstate
-	shop_->buyObject(selected_, 100);
+	shop_->buyObject(selected_, shop_->objects2[selected_].price);
+
 }

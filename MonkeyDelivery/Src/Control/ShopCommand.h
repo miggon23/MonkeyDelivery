@@ -17,6 +17,7 @@ private:
    
     ShopState* shopState_;
     int moveCursor_;
-    bool buy_ = false;
+    //bool buy_ = false;
+    int interaccion_;// -1=Comprar //0= mov Horizontal  //1= mov Vertical
 };
 

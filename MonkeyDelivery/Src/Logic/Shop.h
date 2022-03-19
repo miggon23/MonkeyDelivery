@@ -5,16 +5,23 @@ class Player;
 class InventoryObject;
 class Inventory;
 class Game;
-
+using namespace std;
+struct elementShop{
+	InventoryObject* inventoryObject;
+	int positionRectX;
+	int positionRectY;
+	int stock;
+	int price;
+};
 class Shop
 {
 friend class ShopState;
 
 private:
-	std::vector <InventoryObject*> objects;
+	vector <InventoryObject*> objects;
+	vector <elementShop> objects2;
 	Player* player;
 	Game* game;
-
 public:
 
 	Shop(Player* player, Game* game);
@@ -25,7 +32,7 @@ public:
 	void addElements(int level);
 	bool buyObject(int id, int price);
 
-	int getSize() { return objects.size(); }
+	int getSize() { return objects2.size(); }
 
 };
 
