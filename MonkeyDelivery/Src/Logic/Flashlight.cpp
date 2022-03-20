@@ -14,6 +14,7 @@ bool Flashlight::useObject() {
 		else {
 			cout << "Adios linternita";
 			player_->changeFLState(false);
+			player_->setOrientation("off");
 		}
 		cout << endl;
 		active = !active;
