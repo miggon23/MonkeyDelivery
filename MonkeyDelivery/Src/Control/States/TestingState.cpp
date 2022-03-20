@@ -9,7 +9,7 @@ TestingState::TestingState(Game* game) : State(game) {
 }
 
 void TestingState::registerCommands() {
-   commandFactory->add(new NextStateCommand());
+ /*  commandFactory->add(new NextStateCommand());*/
 }
 
 void TestingState::update() {

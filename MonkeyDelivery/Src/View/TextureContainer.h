@@ -36,11 +36,12 @@ enum TextureName {
     shopTexture,
     shopPanel,
     seleccionShopPanel,
-    plantSpritesheet
+    plantSpritesheet,
+    optionsButtonTexture
 };
 
 
-const int NUM_TEXTURES = 25;
+const int NUM_TEXTURES = 26;
 
 
 
@@ -76,7 +77,8 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
   {"shop.png",1,1},
   {"shop/panelShop.png",1,1},
   {"shop/seleccion.png",1,1},
-  {"enemies/plant.png",1,1}
+  {"enemies/plant.png",1,1},
+  {"Buttons/options.png",1,1}
 };
 
 

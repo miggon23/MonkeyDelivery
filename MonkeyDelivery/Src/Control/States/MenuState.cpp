@@ -24,7 +24,7 @@ MenuState::~MenuState(){
 void MenuState::registerCommands()
 {
    commandFactory->add(new CommandClick());
-   commandFactory->add(new NextStateCommand());
+   
    commandFactory->add(new CommandExit());
 }
 
