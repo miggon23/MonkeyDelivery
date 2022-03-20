@@ -8,7 +8,7 @@ Enemy::Enemy(Game* game, int Aleatorio, Point2D<int>centroRadio, AnimationManage
 	indexCheckPoint = 0;
 	back = false; //Boolenao que indica cuando se da la vuelta el enemigo en su patrulla
 	timerAnimation = 0;
-	lastUpdate_ = SDL_GetTicks(); 
+	lastUpdate_ = SDL_GetTicks();
 	timeOnFlash_ = SDL_GetTicks();
 	//setScariness(0.7);
 }
@@ -83,26 +83,27 @@ void Enemy::onCollision()
 
 void Enemy::checkDistance()
 {
-	if (lastUpdate_ + 1000 < SDL_GetTicks()) {
-		int offset = 300;
-		double distanceX = abs(getPosition().getX() - game->getPosisitionPlayer().getX());
-		double distanceY = abs(getPosition().getY() - game->getPosisitionPlayer().getY());
+	if (isAlive()) {
+		if (lastUpdate_ + 1000 < SDL_GetTicks()) {
+			int offset = 300;
+			double distanceX = abs(getPosition().getX() - game->getPosisitionPlayer().getX());
+			double distanceY = abs(getPosition().getY() - game->getPosisitionPlayer().getY());
 
 
-		if (distanceX <= offset && distanceY <= offset) {
+			if (distanceX <= offset && distanceY <= offset) {
 
-			/*if (distanceX < distanceY)
-				game->scare(distanceX*scariness_);
-			else*/
-			double d = (distanceY + distanceX) / 2;
+				/*if (distanceX < distanceY)
+					game->scare(distanceX*scariness_);
+				else*/
+				double d = (distanceY + distanceX) / 2;
 
-			//si no es demasiado por eso se divide entre 8
-			game->scare(d * scariness_ / 10);///esto hay que mirarlo
+				//si no es demasiado por eso se divide entre 8
+				game->scare(d * scariness_ / 10);///esto hay que mirarlo
+				lastUpdate_ = SDL_GetTicks();
+			}
 			lastUpdate_ = SDL_GetTicks();
 		}
-		lastUpdate_ = SDL_GetTicks();
 	}
-
 
 }
 
