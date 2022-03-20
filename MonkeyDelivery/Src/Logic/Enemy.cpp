@@ -51,13 +51,17 @@ void Enemy::die()
 {
 	if (game->getPlayer()->usingFlashLight) {
 
+		// se guardan los ticks al colisionar con la luz
 		if (collide(game->getPlayer()->lightZone()) && !collided) {
 			collided = true;
 			timeOnFlash_ = SDL_GetTicks();
 		}
+		// si se sale del collider de la luz se resetea todo 
+		//para que no se muera el enemigo al segundo hit
 		if (!collide(game->getPlayer()->lightZone()) && collided) {
 			collided = false;
 		}
+		// si pasa 5 s en la luz, se muere
 		if (timeOnFlash_ + 5000 < SDL_GetTicks() && collide(game->getPlayer()->lightZone()) && collided) {
 			setAlive(false);
 			collided = false;
