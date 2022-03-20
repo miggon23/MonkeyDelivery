@@ -1,6 +1,6 @@
 #include "Timer.h"
 #include "SDL.h"
-
+#include <iostream>
 Timer* Timer::sInstance = nullptr;
 /// <summary>
 /// Crear la instancia del timer
@@ -31,6 +31,9 @@ void Timer::Reset(){
 void Timer::Update(){
 	mElapsedTicks = SDL_GetTicks()-mStartTicks; //miliseconds
 	mDeltaTime = mElapsedTicks * 0.001f; //seconds
+	std::cout << mTimeScale << std::endl;
+	mTimeScale += mDeltaTime;
+	
 }
 
 Timer::Timer(){

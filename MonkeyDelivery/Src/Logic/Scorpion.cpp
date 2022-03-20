@@ -11,9 +11,7 @@ Scorpion::Scorpion(Game* game, int Aleatorio, Point2D<int> centroRadio, Animatio
 	createCheckPoints();
 	setScariness(0.1);
 	iniPlayerVel = game->getPlayer()->getVel();
-	inRange = false;
-
-	timerAnimation = SDL_GetTicks();
+	inRange = false;	
 
 	textureRect = { 0, 0, animationManager->getWidthScorpion(),animationManager->getHeigthScorpion()};
 }

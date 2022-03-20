@@ -7,7 +7,7 @@ Enemy::Enemy(Game* game, int Aleatorio, Point2D<int>centroRadio, AnimationManage
 	setAlive(true);
 	indexCheckPoint = 0;
 	back = false; //Boolenao que indica cuando se da la vuelta el enemigo en su patrulla
-	timerAnimation = SDL_GetTicks();
+	timerAnimation = 0;
 	lastUpdate_ = SDL_GetTicks();
 	//setScariness(0.7);
 }

@@ -45,7 +45,7 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game), anima
 
 	setInventoryVisibility(true);
 	textureRect = { 0, 0, 100, 100 };
-	timerAnimation = SDL_GetTicks();
+	timerAnimation = 0;
 }
 
 Player::~Player()

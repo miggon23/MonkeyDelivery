@@ -12,7 +12,6 @@ Bull::Bull(Game* game, int Aleatorio, Point2D<int> centroRadio, AnimationManager
 	stop = true; //Patrulla y no persigue
 	//setScariness(0.15);
 
-	timerAnimation = SDL_GetTicks();
 
 	textureRect = { 0, 0, animationManager->getWidthBull(),animationManager->getHeigthBull() };
 }

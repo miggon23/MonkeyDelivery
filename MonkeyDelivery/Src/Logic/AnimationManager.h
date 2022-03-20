@@ -1,7 +1,7 @@
 #pragma once
 #include "../View/Texture.h"
 #include "../View/TextureContainer.h"
-
+#include "../Utils/Timer.h"
 class Game;
 class AnimationManager
 {
@@ -13,7 +13,7 @@ private:
 	//Player	
 	PlayerState playerState_= Running;
 	
-
+	Timer* timer_ = Timer::Instance();	
 	int limit = 600;
 
 	int wPlayer_=100,
@@ -48,10 +48,10 @@ public:
 		int y;
 	};
 	LastDir lastDir;
-	inline AnimationManager() {};
+	inline AnimationManager() {  };
 	inline AnimationManager(Game* game) :game_(game) {		
 	};
-	inline ~AnimationManager() { cout << "animationManager Deleted" << endl; };
+	inline ~AnimationManager() { timer_ = nullptr; cout << "animationManager Deleted" << endl; };
 	//JUGADOR
 	inline PlayerState setState(PlayerState state) { return playerState_ = state; };
 	inline int getWidthPlayer() { return wPlayer_; };
@@ -91,12 +91,12 @@ public:
 
 			tex->render(texturaRect, player);
 
-			if (SDL_GetTicks() - timer >= 500) {
+			if (timer_->TimeScale() - timer >= 20) {
 				texturaRect.x += 100;
 				if (texturaRect.x >= limit) {
 					texturaRect.x = 0;
 				}
-				timer = SDL_GetTicks();
+				timer = timer_->TimeScale();
 			}
 		}
 		else if (playerState_== GoToSleep) {
@@ -107,24 +107,24 @@ public:
 			texturaRect.y = 200;
 			tex->render(texturaRect, player);
 
-			if (SDL_GetTicks() - timer >= 600) {
+			if (timer_->TimeScale() - timer >= 20) {
 				x1 += 100;
 				if (texturaRect.x >= 500) {
 					texturaRect.x = 100;
 					x1 = 100;
 				}
-				timer = SDL_GetTicks();
+				timer = timer_->TimeScale();
 			}
 		}
 		else if (playerState_ == Sleeping) {			
 			texturaRect.y = 600;			
 			tex->render(texturaRect, player);
-			if (SDL_GetTicks() - timer >= 400) {	
+			if (timer_->TimeScale() - timer >= 20) {
 				texturaRect.x += 100;
 				if (texturaRect.x >= 200) {
 					texturaRect.x = 0;				
 				}
-				timer = SDL_GetTicks();
+				timer = timer_->TimeScale();
 				cout << texturaRect.x << endl;
 			}
 			
@@ -147,7 +147,7 @@ public:
 	/// <param name="tex"> Textura del muercielago</param>
 	/// <param name="timer">variable timerAnimation para que me cambie la imagen cada cierto numero de ticks</param>
 	inline void getFrameImageBat(SDL_Rect bat,SDL_Rect &texturaRect, Texture* tex,int &timer) {
-		if (SDL_GetTicks() - timer >= 200) {
+		if (timer_->TimeScale() - timer >= 25) {
 			texturaRect.x += wBat_;
 			if (texturaRect.x >= 200/*&&texturaRect.y<300*/) {
 				texturaRect.x = 0;
@@ -156,7 +156,7 @@ public:
 			if (texturaRect.y >= 200&& texturaRect.x>=100) {
 				texturaRect.y = 0; texturaRect.x = 0;
 			}
-			timer = SDL_GetTicks();
+			timer = timer_->TimeScale();
 			//cout << texturaRect.x << " " << texturaRect.y << endl;
 		}
 		tex->render(texturaRect, bat);		
@@ -165,12 +165,12 @@ public:
 	inline int getWidthCat() { return wCat_; };
 	inline int getHeightcat() { return hCat_; };
 	inline void getFrameImageCat(SDL_Rect cat, SDL_Rect& texturaRect, Texture* tex, int& timer) {
-		if (SDL_GetTicks() - timer >= 450) {
+		if (timer_->TimeScale() - timer >=30) {
 			texturaRect.y += hCat_;			
 			if (texturaRect.y >= 200) {
 				texturaRect.y = 0; 
 			}
-			timer = SDL_GetTicks();			
+			timer = timer_->TimeScale();
 		}
 		tex->render(texturaRect, cat);		
 	}
@@ -179,7 +179,7 @@ public:
 	inline int getWidthBull() { return wBull_; };
 	inline int getHeigthBull() { return hBull_; };
 	inline void getFrameImageBull(SDL_Rect bull, SDL_Rect& texturaRect, Texture* tex, int& timer) {
-		if (SDL_GetTicks() - timer >= 500) {
+		if (timer_->TimeScale() - timer >= 20) {
 			texturaRect.x += wBull_;
 			if (texturaRect.y >= 100 && texturaRect.x >= 200) {
 				texturaRect.y = 0; texturaRect.x = 0;
@@ -189,7 +189,7 @@ public:
 				texturaRect.y += hBull_;
 			}
 			
-			timer = SDL_GetTicks();
+			timer = timer_->TimeScale();
 			
 		}
 		tex->render(texturaRect, bull);
@@ -199,7 +199,7 @@ public:
 	inline int getWidthScorpion() { return wScorpion_; };
 	inline int getHeigthScorpion() { return hScorpion_; };
 	inline void getFrameImageScorpion(SDL_Rect scorpion, SDL_Rect& texturaRect, Texture* tex, int& timer) {
-		if (SDL_GetTicks() - timer >= 500) {
+		if (timer_->TimeScale() - timer >= 20) {
 			texturaRect.x += wScorpion_;
 			if (texturaRect.y >= 200 && texturaRect.x >= 200) {
 				texturaRect.y = 0; texturaRect.x = 0;
@@ -208,7 +208,7 @@ public:
 				texturaRect.x = 0;
 				texturaRect.y += hScorpion_;
 			}
-			timer = SDL_GetTicks();
+			timer = timer_->TimeScale();
 		}
 		tex->render(texturaRect, scorpion);
 	};
@@ -217,7 +217,7 @@ public:
 	inline int getWidthPlant() { return wPlant_; };
 	inline int getHeigthPlant() { return hPlant_; };
 	inline void getFrameImagePlant(SDL_Rect plant, SDL_Rect& texturaRect, Texture* tex, int& timer) {
-		if (SDL_GetTicks() - timer >= 500) {
+		if (timer_->TimeScale() - timer >= 20) {
 			texturaRect.x += wPlant_;
 			if (texturaRect.y >= 400 && texturaRect.x >= 100) {
 				texturaRect.y = 0; texturaRect.x = 0;
@@ -226,7 +226,7 @@ public:
 				texturaRect.x = 0;
 				texturaRect.y += hPlant_;
 			}
-			timer = SDL_GetTicks();
+			timer = timer_->TimeScale();
 		}
 		tex->render(texturaRect, plant);
 	};
