@@ -7,7 +7,7 @@ class Enemy : public GameObject
 {
 private:
 	Uint32 lastUpdate_;//para timer del miedo
-	
+
 protected:
 
 
@@ -19,17 +19,17 @@ protected:
 	vector<Point2D<double>> checkpoints;
 	int indexCheckPoint;
 	bool back;
-
+	int resistence_;
 	bool collided = false;
 
-	AnimationManager* animationManager;	
+	AnimationManager* animationManager;
 	SDL_Rect textureRect;
 	int timerAnimation;
 
 	Uint32 timeOnFlash_;// timer morir enemigo
 public:
 
-	Enemy(Game* game, int Aleatorio, Point2D<int>centroRadio,AnimationManager* animation);
+	Enemy(Game* game, int Aleatorio, Point2D<int>centroRadio, AnimationManager* animation);
 	~Enemy() {};
 
 	void patrol(double speed);
@@ -45,4 +45,5 @@ public:
 	void onCollision();
 	virtual void checkDistance();
 	inline virtual void setScariness(double fear) { scariness_ = fear; }
+	inline virtual void setResistance(int res) { resistence_ = res; }
 };

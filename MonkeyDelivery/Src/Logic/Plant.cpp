@@ -7,7 +7,7 @@ Plant::Plant(Game* game, int Aleatorio, Point2D<int> centroRadio, AnimationManag
 	setPosition(zonePoint.getX(), zonePoint.getY()); //Coloca al enemigo en ese punto
 	setTexture(plantSpritesheet);
 	setDimension(80, 90);
-
+	setResistance(4000);
 	textureRect = { 0, 0, animationManager->getWidthPlant(),animationManager->getHeigthPlant() };
 }
 

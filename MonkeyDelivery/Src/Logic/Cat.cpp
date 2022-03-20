@@ -9,6 +9,7 @@ Cat::Cat(Game* game,int Aleatorio, Point2D<int>centroRadio, AnimationManager* an
 	setDimension(70, 80);
 	createCheckPoints();
 	setScariness(0.1);
+	setResistance(5000);
 	textureRect = { 0,0,animationManager->getWidthCat(),animationManager->getHeightcat() };
 }
 

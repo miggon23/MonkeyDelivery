@@ -11,6 +11,7 @@ Bull::Bull(Game* game, int Aleatorio, Point2D<int> centroRadio, AnimationManager
 	createCheckPoints();
 	stop = true; //Patrulla y no persigue
 	//setScariness(0.15);
+	setResistance(1500);
 
 
 	textureRect = { 0, 0, animationManager->getWidthBull(),animationManager->getHeigthBull() };

@@ -12,7 +12,7 @@ Scorpion::Scorpion(Game* game, int Aleatorio, Point2D<int> centroRadio, Animatio
 	setScariness(0.1);
 	iniPlayerVel = game->getPlayer()->getVel();
 	inRange = false;	
-
+	setResistance(2500);
 	textureRect = { 0, 0, animationManager->getWidthScorpion(),animationManager->getHeigthScorpion()};
 }
 

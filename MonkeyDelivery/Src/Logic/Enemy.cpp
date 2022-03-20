@@ -61,8 +61,8 @@ void Enemy::die()
 		if (!collide(game->getPlayer()->lightZone()) && collided) {
 			collided = false;
 		}
-		// si pasa 5 s en la luz, se muere
-		if (timeOnFlash_ + 5000 < SDL_GetTicks() && collide(game->getPlayer()->lightZone()) && collided) {
+		// si pasa Xs en la luz, se muere
+		if (timeOnFlash_ + resistence_ < SDL_GetTicks() && collide(game->getPlayer()->lightZone()) && collided) {
 			setAlive(false);
 			collided = false;
 		}
