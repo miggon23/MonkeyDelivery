@@ -21,7 +21,8 @@ int main(int argc, char* argv[]) {
         Game* game = new Game("Monkey Delivery", 800, 400);
         ViewController controller(game);
         controller.run();
-        delete game;
+        delete game; 
+        controller.~ViewController();
     }
     catch (const string& e) {
         cout << e;
