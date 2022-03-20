@@ -1,8 +1,3 @@
-#include "../../tmxlite-1.2.1/include/tmxlite/Map.hpp"
-#include "../../tmxlite-1.2.1/include/tmxlite/Layer.hpp"
-#include "../../tmxlite-1.2.1/include/tmxlite/TileLayer.hpp"
-#include "../../tmxlite-1.2.1/include/tmxlite/ObjectGroup.hpp"
-#include "../../tmxlite-1.2.1/include/tmxlite/Tileset.hpp"
 #include "Game.h"
 
 Game::Game(string n, int w, int h) : name(n), width(w), height(h), doExit(false)
@@ -46,23 +41,12 @@ void Game::add(GameObject* gameObject) {//a�adir gO al vector
 
 void Game::start()
 {
-    //loadMap("1.level");
-    
-    //loadMap("./Src/TilemapSrc/MainMap.tmx");
-    //loadMap("C:/Users/Eli Todd/Documents/2º DESARROLLO DE VIDEOJUEGOS/Proyectos 2/MonkeyDelivery/MonkeyDelivery/Src/TilemapSrc/zona_shelter.tmx");
-    //string route_ = "../resources/tilemap/zona_shelter.tmx";
-    
-    //string ayuda = "CarlosLeonAyudame";
-    //std::string ayuda;
-
-    mapInfo_.path_ = "..\\..\\resources\\tilemap\\zona_shelter.tmx";
-    //mapInfo_.path_ = "..\\..\\..\\resources\\tilemap\\zona_shelter.tmx";
-    loadMap(mapInfo_.path_);
+    mapInfo.path = ".\\Src\\TilemapSrc\\MainMap.tmx";
+  //  loadMap(mapInfo.path);
 
     animationManager = new AnimationManager(this);
-
-    player_ = new Player(this,animationManager); //Creacion del jugador
    
+    player_ = new Player(this,animationManager); //Creacion del jugador
     //iE_ = new InteractiveEntity(this, tucanTexture, 500, 80);
     //add(iE_);
 
@@ -110,6 +94,8 @@ bool Game::isUserExit() {
 //Normal draw for entities(no Tiles)
 void Game::draw()
 {
+    drawMap();
+
     for (auto gO : gameObjects_)
         gO->draw();
     
@@ -239,49 +225,50 @@ void Game::interactDialogue()
 }
 
 //TILEMAP
-void Game::loadMap(string const &filename) {
+void Game::loadMap(string const& filename) {
 
-    mapInfo_.tile_map = new tmx::Map();
-    mapInfo_.tile_map->load(filename);
-    
-    // obtenemos el tamaño del mapa (en tiles)
-    auto map_dimensions = mapInfo_.tile_map->getTileCount();
-    mapInfo_.rows = map_dimensions.y;
-    mapInfo_.cols = map_dimensions.x;
+    // Se carga la información del .tmx
+    mapInfo.tile_map = new tmx::Map();
+    mapInfo.tile_map->load(filename);
+   
+    // tamaño del mapa
+    auto map_dimensions = mapInfo.tile_map->getTileCount();
+    mapInfo.rows = map_dimensions.y; 
+    mapInfo.cols = map_dimensions.x;
 
-    // calculamos las dimensiones de los tiles
-    auto tilesize = mapInfo_.tile_map->getTileSize();
-    mapInfo_.tile_width = tilesize.x;
-    mapInfo_.tile_height = tilesize.y;
+    // tamaño de los tiles
+    auto tilesize = mapInfo.tile_map->getTileSize();
+    mapInfo.tile_width = tilesize.x;
+    mapInfo.tile_height = tilesize.y;
 
-    //convertir a textura
+    // convertir a textura
     auto rend = renderer;
-    int bgWidth = mapInfo_.tile_width * mapInfo_.cols;
-    int bgHeight = mapInfo_.tile_height * mapInfo_.rows;
+    int bgWidth = mapInfo.tile_width * mapInfo.cols;
+    int bgHeight = mapInfo.tile_height * mapInfo.rows;
     SDL_Texture* background = SDL_CreateTexture(rend,
         SDL_PIXELFORMAT_RGBA8888, SDL_TEXTUREACCESS_TARGET,
         bgWidth,
         bgHeight
     );
-        //SDL_SetTextureBlendMode(fondo, SDL_BLENDMODE_BLEND);
-        //SDL_SetRenderTarget(renderer, fondo);
+    SDL_SetTextureBlendMode(background, SDL_BLENDMODE_BLEND);
+    SDL_SetRenderTarget(renderer, background);
 
     //Establecemos los bordes de la camara con respecto al tamaño del tilemap
-        //Camera::mainCamera->setBounds(0, 0, mapInfo_.cols * mapInfo_.tile_width, mapInfo_.rows * mapInfo_.tile_height);
+        //Camera::mainCamera->setBounds(0, 0, mapInfo.cols * mapInfo.tile_width, mapInfo.rows * mapInfo.tile_height);
 
     //Cargamos y almacenamos los tilesets utilizados por el tilemap
     // (el mapa utiliza el �ndice [gid] del primer tile cargado del tileset como clave)
     // (para poder cargar los tilesets del archivo .tmx, les ponemos de nombre 
     // el nombre del archivo sin extension en el .json) 
-      /*  auto& mapTilesets = mapInfo_.tile_map->getTilesets();
+    auto& mapTilesets = mapInfo.tile_map->getTilesets();
         for (auto& tileset : mapTilesets) {
             string name = tileset.getName();
-            Texture* texture = &sdlutils().tilesets().find(name)->second;
-            mapInfo_.tilesets.insert(pair<uint, Texture*>(tileset.getFirstGID(), texture));
-        }*/
+            //Texture* texture = &sdlutils().tilesets().find(name)->second;
+            //mapInfo.tilesets.insert(pair<uint, Texture*>(tileset.getFirstGID(), texture));
+        }
 
     // recorremos cada una de las capas (de momento solo las de tiles) del mapa
-    auto& map_layers = mapInfo_.tile_map->getLayers();
+    auto& map_layers = mapInfo.tile_map->getLayers();
     for (auto& layer : map_layers) {
         // aqui comprobamos que sea la capa de tiles
         if (layer->getType() == tmx::Layer::Type::Tile) {
@@ -292,10 +279,10 @@ void Game::loadMap(string const &filename) {
             auto& layer_tiles = tile_layer->getTiles();
 
             // recorremos todos los tiles para obtener su informacion
-            for (auto y = 0; y < mapInfo_.rows; ++y) {
-                for (auto x = 0; x < mapInfo_.cols; ++x) {
+            for (auto y = 0; y < mapInfo.rows; ++y) {
+                for (auto x = 0; x < mapInfo.cols; ++x) {
                     // obtenemos el indice relativo del tile en el mapa de tiles
-                    auto tile_index = x + (y * mapInfo_.rows);
+                    auto tile_index = x + (y * mapInfo.rows);
 
                     // con dicho indice obtenemos el indice del tile dentro de su tileset
                     auto cur_gid = layer_tiles[tile_index].ID;
@@ -307,7 +294,7 @@ void Game::loadMap(string const &filename) {
                     // guardamos el tileset que utiliza este tile (nos quedamos con el tileset cuyo gid sea
                     // el mas cercano, y a la vez menor, al gid del tile)
                     auto tset_gid = -1, tsx_file = 0;;
-                    for (auto& ts : mapInfo_.tilesets) {
+                    for (auto& ts : mapInfo.tilesets) {
                         if (ts.first <= cur_gid) {
                             tset_gid = ts.first;
                             tsx_file++;
@@ -326,24 +313,24 @@ void Game::loadMap(string const &filename) {
                     // calculamos dimensiones del tileset
                     auto ts_width = 0;
                     auto ts_height = 0;
-                    SDL_QueryTexture(mapInfo_.tilesets[tset_gid]->getTexture(),
+                    SDL_QueryTexture(mapInfo.tilesets[tset_gid]->getTexture(),
                         NULL, NULL, &ts_width, &ts_height);
 
                     // calculamos el area del tileset que corresponde al dibujo del tile
-                    auto region_x = (cur_gid % (ts_width / mapInfo_.tile_width)) * mapInfo_.tile_width;
-                    auto region_y = (cur_gid / (ts_width / mapInfo_.tile_height)) * mapInfo_.tile_height;
+                    auto region_x = (cur_gid % (ts_width / mapInfo.tile_width)) * mapInfo.tile_width;
+                    auto region_y = (cur_gid / (ts_width / mapInfo.tile_height)) * mapInfo.tile_height;
 
                     // calculamos la posicion del tile
-                    auto x_pos = x * mapInfo_.tile_width;
-                    auto y_pos = y * mapInfo_.tile_height;
+                    auto x_pos = x * mapInfo.tile_width;
+                    auto y_pos = y * mapInfo.tile_height;
 
                     // metemos el tile
-                    auto tileTex = mapInfo_.tilesets[tset_gid];
+                    auto tileTex = mapInfo.tilesets[tset_gid];
 
                     SDL_Rect src;
                     src.x = region_x; src.y = region_y;
-                    src.w = mapInfo_.tile_width;
-                    src.h = mapInfo_.tile_height;
+                    src.w = mapInfo.tile_width;
+                    src.h = mapInfo.tile_height;
 
                     SDL_Rect dest;
                     dest.x = x_pos;
@@ -351,7 +338,7 @@ void Game::loadMap(string const &filename) {
                     dest.w = src.w;
                     dest.h = src.h;
 
-                    mapInfo_.tilesets[tset_gid]->render(src, dest);
+                    mapInfo.tilesets[tset_gid]->render(src, dest);
                 }
             }
         }

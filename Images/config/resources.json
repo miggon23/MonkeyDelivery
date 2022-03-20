@@ -68,25 +68,36 @@
 
   "DialogueBox1": [
     {
-      "text": "Buenisimas tardes monos y senioras, bienvenido a DocTocs"      
+      "text": "Buenisimas tardes monos y senioras, bienvenido a DocTocs"
     }
   ],
 
-  "fonts" : [
-    { "id" : "TheMoon", "file" : "Images/TheMoon.ttf", "size": 16 }
+  "fonts": [
+    {
+      "id": "TheMoon",
+      "file": "Images/TheMoon.ttf",
+      "size": 16
+    }
   ],
 
   "images": [
 
   ],
-  
-  "messages" : [
-  ],
-  
-  "sounds" : [
+
+  "messages": [
   ],
 
-  "musics" : [
+  "sounds": [
+  ],
+
+  "musics": [
+  ],
+
+  "tilesets": [
+    {
+      "id": "NatureTileset",
+      "file": "../../../Src/TilemapSrc/Tilesets/NatureTileset.tsx"
+    }
   ]
 
 }
