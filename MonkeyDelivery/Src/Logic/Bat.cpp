@@ -56,7 +56,9 @@ void Bat::createCheckPoints()
 
 void Bat::onPlayerInteraction(Player* player)
 {
-	player->removeMoney(1);
+	if (isAlive()) {
+		player->removeMoney(1);
+	}
 }
 
 void Bat::draw(){
