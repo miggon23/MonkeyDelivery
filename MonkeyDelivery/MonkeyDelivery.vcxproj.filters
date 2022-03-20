@@ -194,6 +194,9 @@
       <Filter>Source Files\Logic\InteractuableObjects</Filter>
     </ClCompile>
     <ClCompile Include="MonkeyDelivery.cpp" />
+    <ClCompile Include="Src\Control\Buttons\Back.cpp">
+      <Filter>Source Files\Control\Buttons</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -413,6 +416,9 @@
     <ClInclude Include="Src\Logic\InteractuableShop.h">
       <Filter>Header Files\Logic\InteractuableObjects</Filter>
     </ClInclude>
+    <ClInclude Include="Src\Control\Buttons\Back.h">
+      <Filter>Header Files\Control\Buttons</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="MonkeyDelivery.rc" />
@@ -426,6 +432,7 @@
     <None Include="Src\TilemapSrc\1.level">
       <Filter>Header Files\TilemapSrc</Filter>
     </None>
+    <None Include="resources\tilemap\zona_shelter.tmx" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">

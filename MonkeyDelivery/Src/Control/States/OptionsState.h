@@ -2,6 +2,7 @@
 #include "State.h"
 #include "../../Logic/Game.h"
 #include "../States/MenuState.h"
+
 class OptionsState : public State
 {
 public:
