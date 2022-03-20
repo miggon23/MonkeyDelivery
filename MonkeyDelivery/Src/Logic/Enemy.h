@@ -11,10 +11,6 @@ private:
 protected:
 
 
-	bool collided = false;
-
-
-
 	double speed;
 	bool alive;
 	double scariness_;
@@ -23,6 +19,8 @@ protected:
 	vector<Point2D<double>> checkpoints;
 	int indexCheckPoint;
 	bool back;
+
+	bool collided = false;
 
 	AnimationManager* animationManager;	
 	SDL_Rect textureRect;

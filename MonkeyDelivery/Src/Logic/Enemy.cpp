@@ -50,11 +50,15 @@ void Enemy::patrol(double speed)
 void Enemy::die()
 {
 	if (game->getPlayer()->usingFlashLight) {
+
 		if (collide(game->getPlayer()->lightZone()) && !collided) {
 			collided = true;
 			timeOnFlash_ = SDL_GetTicks();
 		}
-		if (timeOnFlash_ + 5000 < SDL_GetTicks() && collide(game->getPlayer()->lightZone())) {
+		if (!collide(game->getPlayer()->lightZone()) && collided) {
+			collided = false;
+		}
+		if (timeOnFlash_ + 5000 < SDL_GetTicks() && collide(game->getPlayer()->lightZone()) && collided) {
 			setAlive(false);
 			collided = false;
 		}
