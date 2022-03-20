@@ -328,6 +328,9 @@ bool Player::moneyChange(int money)
 //linterna
 const SDL_Rect Player::lightZone()
 {
+	if (isAsleep()) {
+		return{ 0,0,0, 0 };
+	}
 	SDL_Rect defaultZone{ int(getX() + 50),
 					int(getY()),
 					getWidth(),
@@ -390,9 +393,6 @@ const SDL_Rect Player::lightZone()
 					getHeight() + 50 };
 		else
 			defaultZone=getCollider();
-
-
-
 	}
 	return defaultZone;
 
