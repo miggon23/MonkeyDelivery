@@ -208,7 +208,7 @@ void Game::addEnemies(Enemy* enemy)
 void Game::enemiesCreation()
 {  
     addEnemies(new Cat(this, 50, Point2D<int>(100, 100),animationManager));
-    addEnemies(new Bat(this, 20, Point2D<int>(200, 80), 7,animationManager));
+    addEnemies(new Bat(this, 20, Point2D<int>(200, 300), 7,animationManager));
     addEnemies(new Bull(this, 35, Point2D<int>(350, 70),animationManager));
     addEnemies(new Scorpion(this, 80, Point2D<int>(100, 100), animationManager));
     addEnemies(new Plant(this, 60, Point2D<int>(200, 100), animationManager));

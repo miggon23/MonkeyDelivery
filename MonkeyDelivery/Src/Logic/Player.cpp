@@ -395,7 +395,6 @@ const SDL_Rect Player::lightZone()
 			defaultZone=getCollider();
 	}
 	return defaultZone;
-
 }
 
 

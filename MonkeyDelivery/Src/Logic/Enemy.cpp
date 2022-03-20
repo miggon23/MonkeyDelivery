@@ -54,7 +54,7 @@ void Enemy::die()
 			collided = true;
 			timeOnFlash_ = SDL_GetTicks();
 		}
-		if (timeOnFlash_ + 5000 < SDL_GetTicks()) {
+		if (timeOnFlash_ + 5000 < SDL_GetTicks() && collide(game->getPlayer()->lightZone())) {
 			setAlive(false);
 			collided = false;
 		}
