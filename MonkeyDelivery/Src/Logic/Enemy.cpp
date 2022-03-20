@@ -8,7 +8,8 @@ Enemy::Enemy(Game* game, int Aleatorio, Point2D<int>centroRadio, AnimationManage
 	indexCheckPoint = 0;
 	back = false; //Boolenao que indica cuando se da la vuelta el enemigo en su patrulla
 	timerAnimation = 0;
-	lastUpdate_ = SDL_GetTicks();
+	lastUpdate_ = SDL_GetTicks(); 
+	timeOnFlash_ = SDL_GetTicks();
 	//setScariness(0.7);
 }
 
@@ -49,8 +50,13 @@ void Enemy::patrol(double speed)
 void Enemy::die()
 {
 	if (game->getPlayer()->usingFlashLight) {
-		if (collide(game->getPlayer()->lightZone())) {
+		if (collide(game->getPlayer()->lightZone()) && !collided) {
+			collided = true;
+			timeOnFlash_ = SDL_GetTicks();
+		}
+		if (timeOnFlash_ + 5000 < SDL_GetTicks()) {
 			setAlive(false);
+			collided = false;
 		}
 	}
 }
@@ -64,6 +70,7 @@ void Enemy::spawn()
 
 void Enemy::onCollision()
 {
+
 }
 
 void Enemy::checkDistance()

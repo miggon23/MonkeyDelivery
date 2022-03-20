@@ -7,7 +7,13 @@ class Enemy : public GameObject
 {
 private:
 	Uint32 lastUpdate_;//para timer del miedo
+	
 protected:
+
+
+	bool collided = false;
+
+
 
 	double speed;
 	bool alive;
@@ -21,6 +27,8 @@ protected:
 	AnimationManager* animationManager;	
 	SDL_Rect textureRect;
 	int timerAnimation;
+
+	Uint32 timeOnFlash_;// timer morir enemigo
 public:
 
 	Enemy(Game* game, int Aleatorio, Point2D<int>centroRadio,AnimationManager* animation);
@@ -28,7 +36,7 @@ public:
 
 	void patrol(double speed);
 
-	void die();
+	virtual void die();
 
 	inline bool isAlive() { return alive; };
 	inline void setAlive(bool l) { alive = l; };
