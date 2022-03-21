@@ -21,7 +21,7 @@ void PauseState::update()
 void PauseState::draw()
 {
 
-	game->renderText("PAUSED", game->getWindowWidth() / 2 - 65, game->getWindowHeight() / 2 - 150);
+	game->renderText("PAUSED", game->getWindowWidth() / 2 - 65, game->getWindowHeight() / 2 - 170);
 
 	for (auto b : getButtonsUI()) {
 		b->draw();

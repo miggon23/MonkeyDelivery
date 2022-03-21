@@ -4,7 +4,7 @@
 
 Menu::Menu(int x, int y, int w, int h, Game* game) :Button(game, w, h, x, y)
 {
-	setTexture(backButtonTexture);
+	setTexture(menuButtonTexture);
 }
 
 void Menu::onCursorCollision()
