@@ -48,8 +48,9 @@ void ShopState::draw()
 	while (i < shop_->getSize())
 	{
 		//shop_->objects[i]->getTexture()->render({ xOffset + xObj * (i-4), yOffset + yObj, wObj, hObj });
-		if(shop_->objects2[i].stock>0)
-		shop_->objects2[i].inventoryObject->getTexture()->render({ xOffset + xObj * shop_->objects2[i].positionRectX, yOffset + shop_->objects2[i].positionRectY, wObj, hObj });
+		if(shop_->objects[i].stock>0)
+		shop_->objects[i].inventoryObject->getTexture()->render(
+			{ xOffset + xObj * shop_->objects[i].positionRectX, yOffset + shop_->objects[i].positionRectY, wObj, hObj });
 		i++;
 	}
 
@@ -63,11 +64,18 @@ void ShopState::draw()
 	game->getTexture(seleccionShopPanel)->render(rectPanel);
 
 	//renderizado del texto
-	if (shop_->objects2.size()>selected_&&shop_->objects2[selected_].stock > 0) {
-		font_->render(game->getRenderer(), std::to_string(shop_->objects2[selected_].price), xText, yText, BLACK);
+	if (shop_->objects.size()>selected_&&shop_->objects[selected_].stock > 0) {
+		font_->render(game->getRenderer(), std::to_string(shop_->objects[selected_].price), xText, yText, BLACK);
 	}
 	else {
 		font_->render(game->getRenderer(), " ", xText, yText, BLACK);
+	}
+
+	if (closeFailed_)
+	{
+		font_->render(game->getRenderer(), textError_, xText + 150, yText - 5, BLACK);
+		if (SDL_GetTicks() > lastClicked_ + FAIL_TIMESHOWED) 
+			closeFailed_ = false;
 	}
 
 }
@@ -104,7 +112,19 @@ void ShopState::moveSelectedY(int to)
 
 void ShopState::buySelected()
 {
-	//falta ñadir el precio ya sea en shop o shopstate
-	shop_->buyObject(selected_, shop_->objects2[selected_].price);
+	
+	if (!shop_->buyObject(selected_, shop_->objects[selected_].price))
+	{
+		lastClicked_ = SDL_GetTicks();
+
+		if (shop_->inventoryFull())
+			textError_ = "Inventory full";
+		else 
+			textError_ = "Not enough money";
+
+		closeFailed_ = true;
+	}
+	else
+		closeFailed_ = false;
 
 }

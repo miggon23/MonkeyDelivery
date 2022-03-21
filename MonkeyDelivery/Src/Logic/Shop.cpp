@@ -27,13 +27,13 @@ void Shop::actualice()
 
 void Shop::clearElements()
 {
-	for (auto e : objects2)
+	for (auto e : objects)
 	{
 		if(e.inventoryObject != nullptr)
 			delete e.inventoryObject;
 		//objects2.erase(objects2.begin());
 	}
-	objects2.clear();
+	objects.clear();
 }
 
 void Shop::addElements(int level)
@@ -41,19 +41,14 @@ void Shop::addElements(int level)
 	switch (level)
 	{
 	case 1:
-		//objects.push_back(new Bike(game->getTexture(bullTexture))); //<-- ahora los objetos llevan textura en la constructora para que puedan ser renderizados por el inventario
-		//objects.push_back(new Bike(game->getTexture(bullTexture)));
-		//objects.push_back(new Bike(game->getTexture(bullTexture)));
-		//objects.push_back(new Bike(game->getTexture(bullTexture)));
-		//objects.push_back(new Bike(game->getTexture(bullTexture)));
-
-		objects2.push_back({ new Bike(game->getTexture(bullTexture)),0,0,1,1000}); //<-- ahora los objetos llevan textura en la constructora para que puedan ser renderizados por el inventario
-		objects2.push_back({ new Bike(game->getTexture(bullTexture)),1,0,1,1000});
-		objects2.push_back({ new Bike(game->getTexture(bullTexture)),2,0,1,1000});		
-		objects2.push_back({ new Bike(game->getTexture(bullTexture)),3,0,1,1000});
-		objects2.push_back({ new Bike(game->getTexture(bullTexture)),0,105,1,1000});
-		objects2.push_back({ new Bike(game->getTexture(bullTexture)),1,105,1,1000});
-		objects2.push_back({ new Bike(game->getTexture(bullTexture)),2,105,1,1000});
+		
+		objects.push_back({ new Bike(game->getTexture(bullTexture)),0,0,1,1000}); //<-- ahora los objetos llevan textura en la constructora para que puedan ser renderizados por el inventario
+		objects.push_back({ new Bike(game->getTexture(bullTexture)),1,0,1,1000});
+		objects.push_back({ new Bike(game->getTexture(bullTexture)),2,0,1,1000});		
+		objects.push_back({ new Bike(game->getTexture(bullTexture)),3,0,1,1000});
+		objects.push_back({ new Bike(game->getTexture(bullTexture)),0,105,1,1000});
+		objects.push_back({ new Bike(game->getTexture(bullTexture)),1,105,1,1000});
+		objects.push_back({ new Bike(game->getTexture(bullTexture)),2,105,1,1000});
 		break;
 	case 2:
 		break;
@@ -67,11 +62,16 @@ void Shop::addElements(int level)
 
 bool Shop::buyObject(int id, int price)
 {
-	if (id < objects2.size() && objects2[id].stock>0 &&!player->inventoryFull() && player->moneyChange(-price)){	
-		player->addObjectToInventory(objects2[id].inventoryObject);		
-		objects2[id].inventoryObject = nullptr;
-		objects2[id].stock--;		
+	if (id < objects.size() && objects[id].stock>0 &&!player->inventoryFull() && player->moneyChange(-price)){	
+		player->addObjectToInventory(objects[id].inventoryObject);		
+		objects[id].inventoryObject = nullptr;
+		objects[id].stock--;		
 		return true;
 	}
 	else return false; 	
+}
+
+bool Shop::inventoryFull()
+{
+	return player->inventoryFull();
 }

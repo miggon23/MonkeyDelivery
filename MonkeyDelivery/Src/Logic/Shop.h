@@ -17,11 +17,11 @@ class Shop
 {
 friend class ShopState;
 
-private:
-	vector <InventoryObject*> objects;
-	vector <elementShop> objects2;
+private:	
+	vector <elementShop> objects;
 	Player* player;
 	Game* game;
+	
 public:
 
 	Shop(Player* player, Game* game);
@@ -31,8 +31,9 @@ public:
 	void clearElements();
 	void addElements(int level);
 	bool buyObject(int id, int price);
+	bool inventoryFull(); 
 
-	int getSize() { return objects2.size(); }
+	int getSize() { return objects.size(); }
 
 };
 

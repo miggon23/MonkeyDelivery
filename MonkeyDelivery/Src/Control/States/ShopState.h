@@ -27,8 +27,12 @@ private:
 
 	const int xObj = 128, yObj = 105, wObj = 100, hObj = 100, xOffset = 160, yOffset = 115,
 		xText = 260, yText = 320;
-	const int MAX_SELECTED = 8;
-	int selected_ = 0;	
+	const int MAX_SELECTED = 8, FAIL_TIMESHOWED = 3000;
+
+	int selected_ = 0, lastClicked_;	
+	bool closeFailed_ = false;
+	string textError_;
+
 	Shop* shop_;
 	Font* font_;
 };
