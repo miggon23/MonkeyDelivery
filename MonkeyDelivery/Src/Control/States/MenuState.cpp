@@ -9,9 +9,6 @@
 #include "../UI/Buttons/Start.h"
 #include "../UI/Buttons/Options.h"
 
-
-
-
 MenuState::MenuState(Game* game) : State(game){
     registerCommands();
     addButton(new Start(game->getWindowWidth() / 2 - 100, game->getWindowHeight() - 250, 100, 75, game));  
@@ -24,7 +21,6 @@ MenuState::~MenuState(){
 void MenuState::registerCommands()
 {
    commandFactory->add(new CommandClick());
-   
    commandFactory->add(new CommandExit());
 }
 

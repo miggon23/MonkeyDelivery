@@ -181,6 +181,7 @@
     <ClInclude Include="Src\Control\UI\Buttons\Back.h" />
     <ClInclude Include="Src\Control\UI\Buttons\Exit.h" />
     <ClInclude Include="Src\Control\UI\Buttons\Options.h" />
+    <ClInclude Include="Src\Control\UI\Buttons\Pause.h" />
     <ClInclude Include="Src\Control\UI\Buttons\Start.h" />
     <ClInclude Include="Src\Control\UI\Sliders\Slider.h" />
     <ClInclude Include="Src\Control\ViewController.h" />
@@ -255,6 +256,7 @@
     <ClCompile Include="Src\Control\UI\Buttons\Back.cpp" />
     <ClCompile Include="Src\Control\UI\Buttons\Exit.cpp" />
     <ClCompile Include="Src\Control\UI\Buttons\Options.cpp" />
+    <ClCompile Include="Src\Control\UI\Buttons\Pause.cpp" />
     <ClCompile Include="Src\Control\UI\Buttons\Start.cpp" />
     <ClCompile Include="Src\Control\UI\Sliders\Slider.cpp" />
     <ClCompile Include="Src\Control\ViewController.cpp" />
