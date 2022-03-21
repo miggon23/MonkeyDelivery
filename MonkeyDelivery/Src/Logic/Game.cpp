@@ -382,13 +382,14 @@ void Game::loadMap(string const& filename)
                     dest.y = y_pos;
                     dest.w = src.w;
                     dest.h = src.h;
+
                     int tileRot = layer_tiles[tile_index].flipFlags;
-                   
+                    SDL_RendererFlip tileFlip = SDL_FLIP_NONE;
                     if (tileRot %2 == 1) 
                         tileRot = 90;
                     
                     //Multiplicamos por 45 porque esta multiplicado por factor de 45 (lo que devuelve rot)
-                    mapInfo.tilesets[tset_gid]->render(src, dest, tileRot * 45, nullptr, );
+                    mapInfo.tilesets[tset_gid]->render(src, dest, tileRot * 45, nullptr, tileFlip);
                 }
             }
         }
