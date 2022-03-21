@@ -179,7 +179,7 @@
     <ClInclude Include="Src\Control\States\StateMachine.h" />
     <ClInclude Include="Src\Control\States\TestingState.h" />
     <ClInclude Include="Src\Control\UI\Buttons\Back.h" />
-    <ClInclude Include="Src\Control\UI\Buttons\Continue.h" />
+    <ClInclude Include="Src\Control\UI\Buttons\Credits.h" />
     <ClInclude Include="Src\Control\UI\Buttons\Exit.h" />
     <ClInclude Include="Src\Control\UI\Buttons\Menu.h" />
     <ClInclude Include="Src\Control\UI\Buttons\Options.h" />
@@ -258,7 +258,7 @@
     <ClCompile Include="Src\Control\States\StateMachine.cpp" />
     <ClCompile Include="Src\Control\States\TestingState.cpp" />
     <ClCompile Include="Src\Control\UI\Buttons\Back.cpp" />
-    <ClCompile Include="Src\Control\UI\Buttons\Continue.cpp" />
+    <ClCompile Include="Src\Control\UI\Buttons\Credits.cpp" />
     <ClCompile Include="Src\Control\UI\Buttons\Exit.cpp" />
     <ClCompile Include="Src\Control\UI\Buttons\Menu.cpp" />
     <ClCompile Include="Src\Control\UI\Buttons\Options.cpp" />
