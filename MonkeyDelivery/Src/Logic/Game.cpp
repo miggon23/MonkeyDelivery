@@ -134,16 +134,10 @@ void Game::draw()
     int bgHeight = mapInfo.tile_height * mapInfo.rows;
     SDL_Rect r = { 0,0, bgWidth, bgHeight };
 
-    /*SDL_Rect src;
-    src.x = region_x; src.y = region_y;
-    src.w = mapInfo.tile_width;
-    src.h = mapInfo.tile_height;*/
-
-
     //mapInfo.tilesets[tset_gid]->render(src, dest);
     SDL_RenderCopy(renderer, background, NULL, &r);
 
-    /*for (auto gO : gameObjects_)
+    for (auto gO : gameObjects_)
         gO->draw();
     
     for (auto enemy : enemyContainer_)
@@ -154,7 +148,7 @@ void Game::draw()
     missionsPanel_->draw();
 
     dialogueBox_->draw();
-    player_->draw();*/
+    player_->draw();
 }
 
 Point2D<int> Game::getOrigin() {
@@ -321,10 +315,11 @@ void Game::loadMap(string const& filename)
             for (auto y = 0; y < mapInfo.rows; ++y) {
                 for (auto x = 0; x < mapInfo.cols; ++x) {
                     // obtenemos el indice relativo del tile en el mapa de tiles
-                    auto tile_index = x + (y * mapInfo.rows);
+                    auto tile_index = x + (y * mapInfo.cols);
 
                     // con dicho indice obtenemos el indice del tile dentro de su tileset
                     auto cur_gid = layer_tiles[tile_index].ID;
+                    
 
                     // si es 0 esta vacio asi que continuamos a la siguiente iteracion
                     if (cur_gid == 0)
@@ -357,11 +352,22 @@ void Game::loadMap(string const& filename)
 
                     // calculamos el area del tileset que corresponde al dibujo del tile
                     auto region_x = (cur_gid % (ts_width / mapInfo.tile_width)) * mapInfo.tile_width;
-                    auto region_y = (cur_gid / (ts_width / mapInfo.tile_height)) * mapInfo.tile_height;
+                    auto region_y = (cur_gid / (ts_width / mapInfo.tile_width)) * mapInfo.tile_height;
 
                     // calculamos la posicion del tile
                     auto x_pos = x * mapInfo.tile_width;
                     auto y_pos = y * mapInfo.tile_height;
+
+
+                    //bool is_wall = false; // Booleano de control
+                    //// Acceso a las propiedades de una tile dentro de un tileset (.tsx)
+                    //vector<tmx::Property> tile_props = mapInfo.tile_map.getTilesets()[tsx_file - 1].getTiles()[cur_gid].properties;
+                    //if (tile_props.size() > 0) {
+                    //	// Lo separo aqui por si en algun futuro creamos m�s propiedades, realmente habria que hacer una busqueda
+                    //	// de la propiedad y si esta en el vector usarla acorde
+                    //	if (tile_props[0].getName() == "wall")
+                    //		is_wall = tile_props[0].getBoolValue();
+                    //}
 
                     // metemos el tile
                     auto tileTex = mapInfo.tilesets[tset_gid];
@@ -376,103 +382,17 @@ void Game::loadMap(string const& filename)
                     dest.y = y_pos;
                     dest.w = src.w;
                     dest.h = src.h;
-
-                    mapInfo.tilesets[tset_gid]->render(src, dest);
+                    int tileRot = layer_tiles[tile_index].flipFlags;
+                   
+                    if (tileRot %2 == 1) 
+                        tileRot = 90;
+                    
+                    //Multiplicamos por 45 porque esta multiplicado por factor de 45 (lo que devuelve rot)
+                    mapInfo.tilesets[tset_gid]->render(src, dest, tileRot * 45, nullptr, );
                 }
-            }
-        }
-
-        int sceneLoots = 0;
-        // recorremos cada una de las capas (de momento solo las de tiles) del mapa
-        auto& map_layers = mapInfo.tile_map->getLayers();
-        for (auto& layer : map_layers) {
-            // aqui comprobamos que sea la capa de tiles
-            if (layer->getType() == tmx::Layer::Type::Tile) {
-                // cargamos la capa
-                tmx::TileLayer* tile_layer = dynamic_cast<tmx::TileLayer*>(layer.get());
-
-                // obtenemos sus tiles
-                auto& layer_tiles = tile_layer->getTiles();
-
-                // recorremos todos los tiles para obtener su informacion
-                for (auto y = 0; y < mapInfo.rows; ++y) {
-                    for (auto x = 0; x < mapInfo.cols; ++x) {
-                        // obtenemos el indice relativo del tile en el mapa de tiles
-                        auto tile_index = x + (y * mapInfo.cols);
-
-                        // con dicho indice obtenemos el indice del tile dentro de su tileset
-                        auto cur_gid = layer_tiles[tile_index].ID;
-
-                        // si es 0 esta vacio asi que continuamos a la siguiente iteracion
-                        if (cur_gid == 0)
-                            continue;
-
-                        // guardamos el tileset que utiliza este tile (nos quedamos con el tileset cuyo gid sea
-                        // el mas cercano, y a la vez menor, al gid del tile)
-                        auto tset_gid = -1, tsx_file = 0;;
-                        for (auto& ts : mapInfo.tilesets) {
-                            if (ts.first <= cur_gid) {
-                                tset_gid = ts.first;
-                                tsx_file++;
-                            }
-                            else
-                                break;
-                        }
-
-                        // si no hay tileset v�lido, continuamos a la siguiente iteracion
-                        if (tset_gid == -1)
-                            continue;
-
-                        // normalizamos el �ndice
-                        cur_gid -= tset_gid;
-
-                        // calculamos dimensiones del tileset
-                        auto ts_width = 0;
-                        auto ts_height = 0;
-                        SDL_QueryTexture(mapInfo.tilesets[tset_gid]->getTexture(),
-                            NULL, NULL, &ts_width, &ts_height);
-
-                        // calculamos el area del tileset que corresponde al dibujo del tile
-                        auto region_x = (cur_gid % (ts_width / mapInfo.tile_width)) * mapInfo.tile_width;
-                        auto region_y = (cur_gid / (ts_width / mapInfo.tile_width)) * mapInfo.tile_height;
-
-                        // calculamos la posicion del tile
-                        auto x_pos = x * mapInfo.tile_width;
-                        auto y_pos = y * mapInfo.tile_height;
-
-
-                        //bool is_wall = false; // Booleano de control
-                        //// Acceso a las propiedades de una tile dentro de un tileset (.tsx)
-                        //vector<tmx::Property> tile_props = mapInfo.tile_map.getTilesets()[tsx_file - 1].getTiles()[cur_gid].properties;
-                        //if (tile_props.size() > 0) {
-                        //	// Lo separo aqui por si en algun futuro creamos m�s propiedades, realmente habria que hacer una busqueda
-                        //	// de la propiedad y si esta en el vector usarla acorde
-                        //	if (tile_props[0].getName() == "wall")
-                        //		is_wall = tile_props[0].getBoolValue();
-                        //}
-
-                        // metemos el tile
-                        auto tileTex = mapInfo.tilesets[tset_gid];
-
-                        SDL_Rect src;
-                        src.x = region_x; src.y = region_y;
-                        src.w = mapInfo.tile_width;
-                        src.h = mapInfo.tile_height;
-
-                        SDL_Rect dest;
-                        dest.x = width/2;
-                        dest.y = height/2;
-                        dest.w = 50;
-                        dest.h = 50;
-
-                        mapInfo.tilesets[tset_gid]->render(src, dest);
-                    }
-                }
-            }
-            if (layer->getType() == tmx::Layer::Type::Object) {
-                tmx::ObjectGroup* object_layer = dynamic_cast<tmx::ObjectGroup*>(layer.get());
             }
         }
     }
+
     SDL_SetRenderTarget(renderer, nullptr);
 }
