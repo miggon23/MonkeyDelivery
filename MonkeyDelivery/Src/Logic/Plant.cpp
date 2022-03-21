@@ -8,7 +8,8 @@ Plant::Plant(Game* game, int Aleatorio, Point2D<int> centroRadio, AnimationManag
 	setTexture(plantSpritesheet);
 	setDimension(80, 90);
 	setResistance(4000);
-	//setScariness(0.2); necesario el checkCollision
+	lastUpdate_ = SDL_GetTicks();
+	setScariness(0.0); //NO DA MIEDO
 	textureRect = { 0, 0, animationManager->getWidthPlant(),animationManager->getHeigthPlant() };
 }
 
@@ -29,7 +30,19 @@ void Plant::update()
 //}
 void Plant::checkDistance()
 {
+	int range = 200; //rango
+	double distanceX = abs(getPosition().getX() - game->getPosisitionPlayer().getX()); //distancia en valor absoluto en las x
+	double distanceY = abs(getPosition().getY() - game->getPosisitionPlayer().getY()); //distacia en valor absoluto en las y
 
+	if (distanceX <= range && distanceY <= range) {
+
+		game->drainPlayerEnergy(0.2);
+		
+		//Realmente esto no se si comentarlo porque la planta no da miedo, de momento lo dejo
+		if (lastUpdate_ + 1000 < SDL_GetTicks())
+			game->scare(scariness_ );
+		lastUpdate_ = SDL_GetTicks();
+	}
 }
 
 void Plant::draw()

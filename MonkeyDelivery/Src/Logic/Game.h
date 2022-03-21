@@ -117,7 +117,7 @@ public:
     int getWindowWidth();
     int getWindowHeight();
 
-    //Player movement
+    //Player
     inline void move(pair<double, double> speed) { player_->move(speed); };
     inline void setIsRunning(bool run) { player_->setIsRunning(run); };
     inline void setVel(double x) { player_->setVel(x); };
@@ -125,6 +125,7 @@ public:
     inline void setPlayerDirY(int y) { player_->setDirY(y); };
     inline Point2D<double> getPosisitionPlayer() { return player_->getPosition(); };
     void useInventory(int slot);
+    inline void drainPlayerEnergy(float amount) { player_->drainEnergy(amount); };
 
     // rendering
     void setRenderer(SDL_Renderer* renderer);
