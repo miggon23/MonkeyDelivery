@@ -6,6 +6,7 @@ private:
 	
 	unsigned int mStartTicks;
 	unsigned int mElapsedTicks;
+	unsigned int startGame;
 
 	float mDeltaTime;//tiempo en segundos
 	float mTimeScale;//tiempo en milisegundos
@@ -25,7 +26,7 @@ public:
 	/// tiempo en milisegundos/ticks
 	/// </summary>
 	/// <returns></returns>
-	inline float TimeScale() { return mTimeScale; };
+	float TimeScale();
 	void Update();
 
 private:
