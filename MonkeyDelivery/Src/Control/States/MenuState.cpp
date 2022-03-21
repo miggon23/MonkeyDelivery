@@ -5,9 +5,9 @@
 #include "../CommandExit.h"
 #include "../CommandClick.h"
 #include "../States/PlayingState.h"
-#include "../Buttons/Exit.h"
-#include "../Buttons/Start.h"
-#include "../Buttons/Options.h"
+#include "../UI/Buttons/Exit.h"
+#include "../UI/Buttons/Start.h"
+#include "../UI/Buttons/Options.h"
 
 
 

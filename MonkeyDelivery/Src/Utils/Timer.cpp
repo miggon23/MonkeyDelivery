@@ -37,10 +37,8 @@ float Timer::TimeScale(){
 void Timer::Update(){
 	mElapsedTicks = SDL_GetTicks()-mStartTicks; //miliseconds
 	mDeltaTime = mElapsedTicks * 0.001f; //seconds
-	//std::cout << mTimeScale << std::endl;
-	//mTimeScale += mDeltaTime*0.005f;
 	mTimeScale = SDL_GetTicks() - startGame;
-	std::cout << mTimeScale << std::endl;
+	//std::cout << mTimeScale << std::endl;
 }
 
 Timer::Timer(){

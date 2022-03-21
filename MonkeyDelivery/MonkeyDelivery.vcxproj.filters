@@ -148,15 +148,6 @@
     <ClCompile Include="Src\Control\Button.cpp">
       <Filter>Source Files\Control</Filter>
     </ClCompile>
-    <ClCompile Include="Src\Control\Buttons\Exit.cpp">
-      <Filter>Source Files\Control\Buttons</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\Buttons\Options.cpp">
-      <Filter>Source Files\Control\Buttons</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\Buttons\Start.cpp">
-      <Filter>Source Files\Control\Buttons</Filter>
-    </ClCompile>
     <ClCompile Include="Src\Control\States\OptionsState.cpp">
       <Filter>Source Files\Control\States</Filter>
     </ClCompile>
@@ -194,8 +185,17 @@
       <Filter>Source Files\Logic\InteractuableObjects</Filter>
     </ClCompile>
     <ClCompile Include="MonkeyDelivery.cpp" />
-    <ClCompile Include="Src\Control\Buttons\Back.cpp">
-      <Filter>Source Files\Control\Buttons</Filter>
+    <ClCompile Include="Src\Control\UI\Buttons\Back.cpp">
+      <Filter>Source Files\Control\UI\Buttons</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Control\UI\Buttons\Exit.cpp">
+      <Filter>Source Files\Control\UI\Buttons</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Control\UI\Buttons\Options.cpp">
+      <Filter>Source Files\Control\UI\Buttons</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Control\UI\Buttons\Start.cpp">
+      <Filter>Source Files\Control\UI\Buttons</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -370,15 +370,6 @@
     <ClInclude Include="Src\Control\Button.h">
       <Filter>Header Files\Control</Filter>
     </ClInclude>
-    <ClInclude Include="Src\Control\Buttons\Exit.h">
-      <Filter>Header Files\Control\Buttons</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Control\Buttons\Options.h">
-      <Filter>Header Files\Control\Buttons</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Control\Buttons\Start.h">
-      <Filter>Header Files\Control\Buttons</Filter>
-    </ClInclude>
     <ClInclude Include="Src\Control\States\OptionsState.h">
       <Filter>Header Files\Control\States</Filter>
     </ClInclude>
@@ -416,8 +407,17 @@
     <ClInclude Include="Src\Logic\InteractuableShop.h">
       <Filter>Header Files\Logic\InteractuableObjects</Filter>
     </ClInclude>
-    <ClInclude Include="Src\Control\Buttons\Back.h">
-      <Filter>Header Files\Control\Buttons</Filter>
+    <ClInclude Include="Src\Control\UI\Buttons\Back.h">
+      <Filter>Header Files\Control\UI\Buttons</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Control\UI\Buttons\Exit.h">
+      <Filter>Header Files\Control\UI\Buttons</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Control\UI\Buttons\Options.h">
+      <Filter>Header Files\Control\UI\Buttons</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Control\UI\Buttons\Start.h">
+      <Filter>Header Files\Control\UI\Buttons</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -495,17 +495,29 @@
     <Filter Include="Source Files\Utils">
       <UniqueIdentifier>{ba85a3eb-a68c-492a-93e0-96351463e5cd}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Control\Buttons">
-      <UniqueIdentifier>{8c36f894-e4cd-4fc8-a88d-3c3e7d74a4ff}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Control\Buttons">
-      <UniqueIdentifier>{ecc979b8-3f17-4608-8e80-815df3cb29cf}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\TilemapSrc">
       <UniqueIdentifier>{856c1558-74cd-42ec-9bf8-3dedeacee8a1}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\TilemapSrc">
       <UniqueIdentifier>{992d8c67-6ade-45a8-8967-85b71538412d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Control\UI">
+      <UniqueIdentifier>{be0b8170-49dd-43cb-8a83-737372429e57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Control\UI">
+      <UniqueIdentifier>{193c4a2e-e9d5-4af8-9ab4-d8551f3fe81a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Control\UI\Buttons">
+      <UniqueIdentifier>{04f934f8-5a8b-4f1b-8faf-561568f798ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Control\UI\Buttons">
+      <UniqueIdentifier>{f745237f-7074-4cc2-be2c-4b87115b66ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Control\UI\Slider">
+      <UniqueIdentifier>{16451465-8ff3-4630-9fef-f1e05965a710}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Control\UI\Slider">
+      <UniqueIdentifier>{6cc445ec-a5e2-4b11-8c35-fe3010cf64e7}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

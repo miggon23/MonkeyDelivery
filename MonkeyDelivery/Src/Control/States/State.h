@@ -28,6 +28,10 @@ public:
 
     virtual ~State() {
         delete commandFactory;
+        for (auto x : buttonsUI) {
+            delete x;
+            x = nullptr;
+        }
     };
 
     virtual void update() = 0;

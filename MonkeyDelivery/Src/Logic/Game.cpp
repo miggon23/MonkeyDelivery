@@ -42,7 +42,7 @@ void Game::add(GameObject* gameObject) {//a�adir gO al vector
 void Game::start()
 {
     mapInfo.path = ".\\Src\\TilemapSrc\\MainMap.tmx";
-  //  loadMap(mapInfo.path);
+    //loadMap(mapInfo.path);
 
     animationManager = new AnimationManager(this);
    

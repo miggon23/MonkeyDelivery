@@ -155,10 +155,6 @@
     <ClInclude Include="MonkeyDelivery.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="Src\Control\Button.h" />
-    <ClInclude Include="Src\Control\Buttons\Back.h" />
-    <ClInclude Include="Src\Control\Buttons\Exit.h" />
-    <ClInclude Include="Src\Control\Buttons\Options.h" />
-    <ClInclude Include="Src\Control\Buttons\Start.h" />
     <ClInclude Include="Src\Control\Command.h" />
     <ClInclude Include="Src\Control\CommandClick.h" />
     <ClInclude Include="Src\Control\CommandExit.h" />
@@ -182,6 +178,10 @@
     <ClInclude Include="Src\Control\States\State.h" />
     <ClInclude Include="Src\Control\States\StateMachine.h" />
     <ClInclude Include="Src\Control\States\TestingState.h" />
+    <ClInclude Include="Src\Control\UI\Buttons\Back.h" />
+    <ClInclude Include="Src\Control\UI\Buttons\Exit.h" />
+    <ClInclude Include="Src\Control\UI\Buttons\Options.h" />
+    <ClInclude Include="Src\Control\UI\Buttons\Start.h" />
     <ClInclude Include="Src\Control\ViewController.h" />
     <ClInclude Include="Src\json\JSON.h" />
     <ClInclude Include="Src\json\JSONValue.h" />
@@ -229,10 +229,6 @@
   <ItemGroup>
     <ClCompile Include="MonkeyDelivery.cpp" />
     <ClCompile Include="Src\Control\Button.cpp" />
-    <ClCompile Include="Src\Control\Buttons\Back.cpp" />
-    <ClCompile Include="Src\Control\Buttons\Exit.cpp" />
-    <ClCompile Include="Src\Control\Buttons\Options.cpp" />
-    <ClCompile Include="Src\Control\Buttons\Start.cpp" />
     <ClCompile Include="Src\Control\Command.cpp" />
     <ClCompile Include="Src\Control\CommandClick.cpp" />
     <ClCompile Include="Src\Control\CommandExit.cpp" />
@@ -256,6 +252,10 @@
     <ClCompile Include="Src\Control\States\State.cpp" />
     <ClCompile Include="Src\Control\States\StateMachine.cpp" />
     <ClCompile Include="Src\Control\States\TestingState.cpp" />
+    <ClCompile Include="Src\Control\UI\Buttons\Back.cpp" />
+    <ClCompile Include="Src\Control\UI\Buttons\Exit.cpp" />
+    <ClCompile Include="Src\Control\UI\Buttons\Options.cpp" />
+    <ClCompile Include="Src\Control\UI\Buttons\Start.cpp" />
     <ClCompile Include="Src\Control\ViewController.cpp" />
     <ClCompile Include="Src\json\JSON.cpp" />
     <ClCompile Include="Src\json\JSONValue.cpp" />

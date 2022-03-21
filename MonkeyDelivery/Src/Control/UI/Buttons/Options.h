@@ -1,6 +1,6 @@
 #pragma once 
 
-#include "../Button.h"
+#include "../../Button.h"
 class Game;
 
 class Options : public Button {

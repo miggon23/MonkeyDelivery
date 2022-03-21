@@ -1,10 +1,9 @@
 #include "OptionsState.h"
 #include "../PauseCommand.h"
 #include "../CommandExit.h"
-#include "../Buttons/Back.h"
+#include "../UI/Buttons/Back.h"
 
 OptionsState::OptionsState(Game* game) : State(game)
-
 {
 	registerCommands();
 	addButton(new Back(game->getWindowWidth() / 2 - 100, game->getWindowHeight() - 250, 100, 75, game, 1));
