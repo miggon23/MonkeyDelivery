@@ -41,12 +41,7 @@ void Shop::addElements(int level)
 	switch (level)
 	{
 	case 1:
-		//objects.push_back(new Bike(game->getTexture(bullTexture))); //<-- ahora los objetos llevan textura en la constructora para que puedan ser renderizados por el inventario
-		//objects.push_back(new Bike(game->getTexture(bullTexture)));
-		//objects.push_back(new Bike(game->getTexture(bullTexture)));
-		//objects.push_back(new Bike(game->getTexture(bullTexture)));
-		//objects.push_back(new Bike(game->getTexture(bullTexture)));
-
+		
 		objects2.push_back({ new Bike(game->getTexture(bullTexture)),0,0,1,1000}); //<-- ahora los objetos llevan textura en la constructora para que puedan ser renderizados por el inventario
 		objects2.push_back({ new Bike(game->getTexture(bullTexture)),1,0,1,1000});
 		objects2.push_back({ new Bike(game->getTexture(bullTexture)),2,0,1,1000});		

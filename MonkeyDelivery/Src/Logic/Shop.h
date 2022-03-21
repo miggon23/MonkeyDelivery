@@ -22,6 +22,7 @@ private:
 	vector <elementShop> objects2;
 	Player* player;
 	Game* game;
+	
 public:
 
 	Shop(Player* player, Game* game);

@@ -70,6 +70,13 @@ void ShopState::draw()
 		font_->render(game->getRenderer(), " ", xText, yText, BLACK);
 	}
 
+	if (closeFailed_)
+	{
+		font_->render(game->getRenderer(), "Not enough money", xText + 150, yText - 5, BLACK);
+		if (SDL_GetTicks() > lastClicked_ + FAIL_TIMESHOWED) 
+			closeFailed_ = false;
+	}
+
 }
 
 void ShopState::next()
@@ -104,7 +111,13 @@ void ShopState::moveSelectedY(int to)
 
 void ShopState::buySelected()
 {
-	//falta ñadir el precio ya sea en shop o shopstate
-	shop_->buyObject(selected_, shop_->objects2[selected_].price);
+	
+	if (!shop_->buyObject(selected_, shop_->objects2[selected_].price))
+	{
+		lastClicked_ = SDL_GetTicks();
+		closeFailed_ = true;
+	}
+	else
+		closeFailed_ = false;
 
 }
