@@ -100,8 +100,21 @@ public:
 			}
 		}
 		else if (playerState_== GoToSleep) {
-			
+
+			texturaRect.x = x1;
+			texturaRect.y = 300;
+			tex->render(texturaRect, player);
+
+			if (timer_->TimeScale() - timer >= 20) {
+				x1 += 100;
+				if (texturaRect.x >= 500) {
+					texturaRect.x = 100;
+					x1 = 100;
+				}
+				timer = timer_->TimeScale();
+			}
 		}
+
 		else if(playerState_== Scared){
 			texturaRect.x = x1;
 			texturaRect.y = 200;
@@ -127,14 +140,7 @@ public:
 				timer = timer_->TimeScale();
 				cout << texturaRect.x << endl;
 			}
-			
 		}
-	}
-	inline void Sleep() {
-		playerState_ = Sleeping;
-	}
-	inline void WakeUp() {
-		playerState_ = Running;
 	}
 	//MURCIELAGO
 	inline int getWidthBat() { return wBat_; };

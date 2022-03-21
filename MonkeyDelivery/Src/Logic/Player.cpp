@@ -148,13 +148,12 @@ void Player::changeSleep()
 		sleeping = !sleeping;
 		//actulizo la textura
 		if (sleeping) {
-			animationManager->Sleep();
+			animationManager->setState(AnimationManager::PlayerState::Sleeping);
 		}
 		else {
-			animationManager->WakeUp();
+			animationManager->setState(AnimationManager::PlayerState::Running);
 		}
 		draw();
-
 	}
 	else {
 		boolrenderSleepText = true;
@@ -295,10 +294,9 @@ void Player::addObjectToInventory(InventoryObject* p)
 void Player::draw()
 {
 	if (!sleeping) {
-		//if (energyLevel_->percentEnergy() <= 20) animationManager->setState(AnimationManager::PlayerState::GoToSleep);
-		if (fearLevel_->percentFear() >= 50)
+		if (energyLevel_->percentEnergy() <= 20) animationManager->setState(AnimationManager::PlayerState::GoToSleep);
+		else if (fearLevel_->percentFear() >= 50)
 			animationManager->setState(AnimationManager::PlayerState::Scared);
-		//else if (energyLevel_->percentEnergy() <= 20) animationManager->setState(AnimationManager::PlayerState::GoToSleep);
 	}
 	animationManager->getFrameImagePlayer(getCollider(), textureRect, texture, timerAnimation, AnimationManager::LastDir{ dirX_, dirY_ });
 
