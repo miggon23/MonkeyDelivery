@@ -209,6 +209,12 @@
     <ClCompile Include="Src\Control\UI\Buttons\Credits.cpp">
       <Filter>Source Files\Control\UI\Buttons</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Control\UI\Sliders\SliderBase.cpp">
+      <Filter>Source Files\Control\UI\Slider</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Control\UI\Sliders\SliderClick.cpp">
+      <Filter>Source Files\Control\UI\Slider</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -442,6 +448,12 @@
     </ClInclude>
     <ClInclude Include="Src\Control\UI\Buttons\Credits.h">
       <Filter>Header Files\Control\UI\Buttons</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Control\UI\Sliders\SliderBase.h">
+      <Filter>Header Files\Control\UI\Slider</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Control\UI\Sliders\SliderClick.h">
+      <Filter>Header Files\Control\UI\Slider</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
