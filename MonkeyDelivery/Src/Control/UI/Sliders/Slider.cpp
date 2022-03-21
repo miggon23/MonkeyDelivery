@@ -18,5 +18,5 @@ void Slider::draw(){
 }
 
 void Slider::update(){
-	//aqui se valancea lo q haga el slider
+	//aqui se valancea lo q haga el slid+er
 }
