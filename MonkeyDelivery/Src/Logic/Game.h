@@ -44,6 +44,8 @@
 #include "./tmxlite/ObjectGroup.hpp"
 #include "./tmxlite/Tileset.hpp"
 
+#include "../View/Camera.h"
+
 #include "../json/JSON.h"
 
 #define TILE_SIZE 16
@@ -73,8 +75,14 @@ using namespace std;
 class Game : public StateMachine {
 
 private:
-    SDL_Texture* background;
+    SDL_Texture* background_;
     MapInfo mapInfo;
+    tileset_map tilesets_; // textures map (string -> texture)
+    void loadSpriteSheets();
+
+    Camera* mCamera_;
+    const float LERPVALUE_ = 0.2f;
+    void setCamera();
 
     string name;
     bool doExit;
@@ -99,9 +107,7 @@ private:
     //Tienda    
     Shop* shop_;
 
-    //Tileset Temporal
-    void loadSpriteSheets();
-    tileset_map tilesets_; // textures map (string -> texture)
+    
 
 public:
 

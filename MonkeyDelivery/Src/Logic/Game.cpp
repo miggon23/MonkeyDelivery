@@ -37,7 +37,34 @@ void Game::loadSpriteSheets()
     }
 }
 
-Game::Game(string n, int w, int h) : name(n), width(w), height(h), doExit(false)
+void Game::setCamera()
+{
+    Vector2D<float> camera;
+    camera.setX(player_->getX());
+    camera.setY(player_->getY());
+
+    //Keep the camera in bounds
+    if (camera.getX() < 0)
+    {
+        camera.setX(0);
+    }
+    if (camera.getY() < 0)
+    {
+        camera.setY(0);
+    }
+    if (camera.getX() > getWindowWidth() - mCamera_->getWidth())
+    {
+        camera.setX(getWindowWidth() - mCamera_->getWidth());
+    }
+    if (camera.getY() > getWindowHeight() - mCamera_->getHeight())
+    {
+        camera.setY(getWindowHeight() - mCamera_->getHeight());
+    }
+    // Movemos la cámara a la nueva pos
+    mCamera_->Move(camera);
+}
+
+Game::Game(string n, int w, int h) : name(n), width(w), height(h), doExit(false), mCamera_(nullptr)
 {    
     font_ = new Font("../Images/TheMoon.ttf", 50);
     animationManager = new AnimationManager(this);
@@ -59,12 +86,18 @@ Game::~Game() {
     delete textureContainer_;
     delete font_;
     delete info;  
-    //delete missionsPanel_; solo poner si no va en el vector de gameobjects
+    //delete missionsPanel_; //solo poner si no va en el vector de gameobjects
     delete dialogueBox_;
     delete iE_;
     delete animationManager;
     delete savedState;
     delete shop_;
+    delete mCamera_;
+
+    for (auto a : tilesets_) {
+       a.second->free();
+       delete a.second;
+    }
 }
 
 string Game::getGameName() {
@@ -81,6 +114,11 @@ void Game::start()
     mapInfo.path = ".\\Src\\TilemapSrc\\MainMap.tmx";
     loadMap(mapInfo.path);
 
+    // Cámara:
+    Vector2D<float> camPos {0.0, 0.0};
+    //  mCamera_ = new Camera(this, camPos, getWindowWidth(), getWindowHeight());
+    mCamera_ = new Camera(this, camPos, getWindowWidth()*10, getWindowHeight()*10);
+
     animationManager = new AnimationManager(this);
    
     player_ = new Player(this,animationManager); //Creacion del jugador
@@ -92,8 +130,6 @@ void Game::start()
     add (new IntectuableShop(this, 200, 200));
     enemiesCreation();//creacion de enemigos
     
-
-    //missions_ = new MissionManager(this);
     shop_ = new Shop(player_, this);
 
     dialogueBox_ = new DialogueBox(this);
@@ -109,6 +145,8 @@ void Game::start()
 void Game::update()
 {
     player_->update();
+  //  setCamera();
+    
 
     for (auto gO : gameObjects_)
         gO->update();
@@ -130,14 +168,14 @@ bool Game::isUserExit() {
 //Normal draw for entities(no Tiles)
 void Game::draw()
 {
+    // Dibujado del mapa
     int bgWidth = mapInfo.tile_width * mapInfo.cols;
     int bgHeight = mapInfo.tile_height * mapInfo.rows;
-    SDL_Rect r = { 0,0, bgWidth, bgHeight };
+    //SDL_Rect r = { 0,0, bgWidth, bgHeight };
+    SDL_Rect r = mCamera_->renderRect();
+    SDL_RenderCopy(renderer, background_, NULL, &r);
 
-    //mapInfo.tilesets[tset_gid]->render(src, dest);
-    SDL_RenderCopy(renderer, background, NULL, &r);
-
-    for (auto gO : gameObjects_)
+   for (auto gO : gameObjects_)
         gO->draw();
     
     for (auto enemy : enemyContainer_)
@@ -275,16 +313,16 @@ void Game::loadMap(string const& filename)
     auto rend = renderer;
     int bgWidth = mapInfo.tile_width * mapInfo.cols;
     int bgHeight = mapInfo.tile_height * mapInfo.rows;
-    //SDL_Texture* background = SDL_CreateTexture(rend,
-    background = SDL_CreateTexture(rend,
+    //SDL_Texture* background_ = SDL_CreateTexture(rend,
+    background_ = SDL_CreateTexture(rend,
 
         SDL_PIXELFORMAT_RGBA8888, SDL_TEXTUREACCESS_TARGET,
         bgWidth,
         bgHeight
     );
     SDL_RenderClear(renderer);
-    SDL_SetTextureBlendMode(background, SDL_BLENDMODE_BLEND);
-    SDL_SetRenderTarget(renderer, background);
+    SDL_SetTextureBlendMode(background_, SDL_BLENDMODE_BLEND);
+    SDL_SetRenderTarget(renderer, background_);
     
 
     //Establecemos los bordes de la camara con respecto al tamaño del tilemap
@@ -385,11 +423,10 @@ void Game::loadMap(string const& filename)
 
                     int tileRot = layer_tiles[tile_index].flipFlags;
                     SDL_RendererFlip tileFlip = SDL_FLIP_NONE;
-                    if (tileRot %2 == 1) 
-                        tileRot = 90;
-                    
+
                     //Multiplicamos por 45 porque esta multiplicado por factor de 45 (lo que devuelve rot)
                     mapInfo.tilesets[tset_gid]->render(src, dest, tileRot * 45, nullptr, tileFlip);
+
                 }
             }
         }

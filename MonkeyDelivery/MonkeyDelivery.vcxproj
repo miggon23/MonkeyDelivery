@@ -227,6 +227,7 @@
     <ClInclude Include="Src\Utils\Timer.h" />
     <ClInclude Include="Src\Utils\Vector2D.h" />
     <ClInclude Include="Src\View\Box.h" />
+    <ClInclude Include="Src\View\Camera.h" />
     <ClInclude Include="Src\View\checkML.h" />
     <ClInclude Include="Src\View\Font.h" />
     <ClInclude Include="Src\View\Texture.h" />
@@ -305,6 +306,7 @@
     <ClCompile Include="Src\Logic\Target.cpp" />
     <ClCompile Include="Src\Logic\UI_Info.cpp" />
     <ClCompile Include="Src\Utils\Timer.cpp" />
+    <ClCompile Include="Src\View\Camera.cpp" />
     <ClCompile Include="Src\View\Texture.cpp" />
     <ClCompile Include="Src\View\TextureContainer.cpp" />
   </ItemGroup>
@@ -333,7 +335,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Images\config\resources.json" />
-    <None Include="resources\tilemap\zona_shelter.tmx" />
     <None Include="Src\TilemapSrc\1.level" />
     <None Include="Src\TilemapSrc\Spritesheets\TilesetRelief.psd" />
     <None Include="Src\TilemapSrc\Tilesets\FloorTileset.tsx" />
