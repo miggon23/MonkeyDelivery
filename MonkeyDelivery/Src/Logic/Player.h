@@ -132,6 +132,7 @@ public:
 	inline void setOrientation(string orien) { orientation_ = orien; }
 	inline string getOrientation() { return orientation_; }
 	inline bool isAsleep() { return sleeping; }
+	bool flashLOn=false;
 };
 
 

@@ -104,7 +104,7 @@ void Player::move()
 
 		drainEnergy(decreasingEnergyLevel_);
 	}
-	
+
 	//HAY QUE NORMALIZAR EL VECTOR
 	setPosition(getX() + speed.getX(), getY() + speed.getY());
 }
@@ -150,10 +150,19 @@ void Player::changeSleep()
 		//actulizo la textura
 		if (sleeping) {
 			animationManager->setState(AnimationManager::PlayerState::Sleeping);
-			usingFlashLight = false;
+			if (usingFlashLight) {
+				usingFlashLight = false;
+				flashLOn = true;
+				setOrientation("off");
+			}
+
 		}
 		else {
 			animationManager->setState(AnimationManager::PlayerState::Running);
+			if (flashLOn) {
+				usingFlashLight = true;
+				flashLOn = false;
+			}
 		}
 		draw();
 	}
@@ -320,7 +329,7 @@ void Player::draw()
 //en caso contrario solo se le añade el dinero al actual del jugador
 bool Player::moneyChange(int money)
 {
-	if (money < 0 && money_ < abs(money)) 
+	if (money < 0 && money_ < abs(money))
 		return false;
 
 	money_ += money;
@@ -335,21 +344,21 @@ const SDL_Rect Player::lightZone()
 	SDL_Rect hitZone{ int(getX() + 50),
 					int(getY()),
 					getWidth(),
-					getHeight()+50
+					getHeight() + 50
 	};
 	//ejeX
 	if (dirX_ == 1 /*&& dirY_==0*/) {
 		hitZone = { int(getX() + 50),
 					int(getY()),
-					getWidth()+ 50,
-					getHeight()  };
+					getWidth() + 50,
+					getHeight() };
 		setOrientation("right");
 	}
 	else if (dirX_ == -1 /*&& dirY_==0*/)
 	{
 		hitZone = { int(getX() - 100),
 					int(getY()),
-					getWidth()+50 ,
+					getWidth() + 50 ,
 					getHeight() };
 		setOrientation("left");
 	}
@@ -358,7 +367,7 @@ const SDL_Rect Player::lightZone()
 		hitZone = { int(getX()),
 					int(getY() - 100),
 					getWidth(),
-					getHeight() +50 };
+					getHeight() + 50 };
 		setOrientation("up");
 	}
 	else if (dirY_ == 1)
@@ -366,21 +375,21 @@ const SDL_Rect Player::lightZone()
 		hitZone = { int(getX()),
 					int(getY() + 50),
 					getWidth(),
-					getHeight() +50};
+					getHeight() + 50 };
 		setOrientation("down");
-		
+
 	}
-	else if(dirX_==0 && dirY_==0)
+	else if (dirX_ == 0 && dirY_ == 0)
 	{
-		if(getOrientation()=="left")
+		if (getOrientation() == "left")
 			hitZone = { int(getX() - 100),
 					int(getY()),
-					getWidth()+ 50,
-					getHeight()  };
-		else if(getOrientation() == "right")
+					getWidth() + 50,
+					getHeight() };
+		else if (getOrientation() == "right")
 			hitZone = { int(getX() + 50),
 					int(getY()),
-					getWidth()+ 50 ,
+					getWidth() + 50 ,
 					getHeight() };
 		else if (getOrientation() == "up")
 			hitZone = { int(getX()),
@@ -393,7 +402,7 @@ const SDL_Rect Player::lightZone()
 					getWidth(),
 					getHeight() + 50 };
 		else
-			hitZone=getCollider();
+			hitZone = getCollider();
 	}
 	return hitZone;
 }

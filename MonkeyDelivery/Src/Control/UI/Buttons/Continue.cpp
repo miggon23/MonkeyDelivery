@@ -5,7 +5,7 @@
 
 Continue::Continue(int x, int y, int w, int h, Game* game) :Button(game, w, h, x, y)
 {
-	setTexture(backButtonTexture);
+	setTexture(continueButtonTexture);
 }
 
 void Continue::onCursorCollision()
