@@ -7,6 +7,7 @@
 #include "Game.h"
 #include "SDL.h"
 
+
 Player::Player(Game* game, AnimationManager* animation) :GameObject(game), animationManager(animation) {
 	this->game = game;
 
@@ -319,7 +320,8 @@ void Player::draw()
 //en caso contrario solo se le añade el dinero al actual del jugador
 bool Player::moneyChange(int money)
 {
-	if (money < 0 && money_ < money) return false;
+	if (money < 0 && money_ < abs(money)) 
+		return false;
 
 	money_ += money;
 	return true;
