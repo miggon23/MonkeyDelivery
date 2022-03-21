@@ -149,6 +149,7 @@ void Player::changeSleep()
 		//actulizo la textura
 		if (sleeping) {
 			animationManager->setState(AnimationManager::PlayerState::Sleeping);
+			usingFlashLight = false;
 		}
 		else {
 			animationManager->setState(AnimationManager::PlayerState::Running);
@@ -329,14 +330,14 @@ const SDL_Rect Player::lightZone()
 	if (isAsleep()) {
 		return{ 0,0,0, 0 };
 	}
-	SDL_Rect defaultZone{ int(getX() + 50),
+	SDL_Rect hitZone{ int(getX() + 50),
 					int(getY()),
 					getWidth(),
 					getHeight()+50
 	};
 	//ejeX
 	if (dirX_ == 1 /*&& dirY_==0*/) {
-		defaultZone = { int(getX() + 50),
+		hitZone = { int(getX() + 50),
 					int(getY()),
 					getWidth()+ 50,
 					getHeight()  };
@@ -344,7 +345,7 @@ const SDL_Rect Player::lightZone()
 	}
 	else if (dirX_ == -1 /*&& dirY_==0*/)
 	{
-		defaultZone = { int(getX() - 100),
+		hitZone = { int(getX() - 100),
 					int(getY()),
 					getWidth()+50 ,
 					getHeight() };
@@ -352,7 +353,7 @@ const SDL_Rect Player::lightZone()
 	}
 	else if (/*dirX_ == 1 &&*/ dirY_ == -1)
 	{
-		defaultZone = { int(getX()),
+		hitZone = { int(getX()),
 					int(getY() - 100),
 					getWidth(),
 					getHeight() +50 };
@@ -360,7 +361,7 @@ const SDL_Rect Player::lightZone()
 	}
 	else if (dirY_ == 1)
 	{
-		defaultZone = { int(getX()),
+		hitZone = { int(getX()),
 					int(getY() + 50),
 					getWidth(),
 					getHeight() +50};
@@ -370,29 +371,29 @@ const SDL_Rect Player::lightZone()
 	else if(dirX_==0 && dirY_==0)
 	{
 		if(getOrientation()=="left")
-			defaultZone = { int(getX() - 100),
+			hitZone = { int(getX() - 100),
 					int(getY()),
 					getWidth()+ 50,
 					getHeight()  };
 		else if(getOrientation() == "right")
-			defaultZone = { int(getX() + 50),
+			hitZone = { int(getX() + 50),
 					int(getY()),
 					getWidth()+ 50 ,
 					getHeight() };
 		else if (getOrientation() == "up")
-			defaultZone = { int(getX()),
+			hitZone = { int(getX()),
 					int(getY() - 100),
 					getWidth(),
 					getHeight() + 50 };
 		else if (getOrientation() == "down")
-			defaultZone = { int(getX()),
+			hitZone = { int(getX()),
 					int(getY() + 50),
 					getWidth(),
 					getHeight() + 50 };
 		else
-			defaultZone=getCollider();
+			hitZone=getCollider();
 	}
-	return defaultZone;
+	return hitZone;
 }
 
 

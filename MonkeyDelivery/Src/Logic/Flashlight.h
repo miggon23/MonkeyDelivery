@@ -12,5 +12,6 @@ public:
 
 	bool useObject() override;
 	inline bool isOn() { return active; }
+	inline void turnOff() { active = false; }
 };
 
