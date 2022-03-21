@@ -4,9 +4,11 @@ class Slider: public GameObject
 {
 public:
 	Slider();
-	void draw() override;
+	~Slider();
+	void draw() override;	
+	void update() override;
 private:
-
+	//Necesitamos una parte de panel y la otra parte clicable
 
 };
 
