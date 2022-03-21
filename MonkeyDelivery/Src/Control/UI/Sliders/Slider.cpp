@@ -1,6 +1,6 @@
 #include "Slider.h"
 
-Slider::Slider()
+Slider::Slider():GameObject(nullptr)
 {
 }
 
@@ -8,7 +8,7 @@ Slider::~Slider()
 {
 }
 
-void Slider::FollowMouse()
+void Slider::draw()
 {
 }
 
