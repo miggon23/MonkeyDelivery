@@ -207,6 +207,7 @@
     <ClCompile Include="Src\Control\UI\Buttons\Continue.cpp">
       <Filter>Source Files\Control\UI\Buttons</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="Src\Control\UI\Buttons\Credits.cpp">
       <Filter>Source Files\Control\UI\Buttons</Filter>
 =======
@@ -217,6 +218,8 @@
       <Filter>Source Files\Control\UI\Slider</Filter>
 >>>>>>> Stashed changes
     </ClCompile>
+=======
+>>>>>>> parent of 8e27d44 (Error arreglado)
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -449,6 +452,7 @@
     <ClInclude Include="Src\Control\UI\Buttons\Continue.h">
       <Filter>Header Files\Control\UI\Buttons</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="Src\Control\UI\Buttons\Credits.h">
       <Filter>Header Files\Control\UI\Buttons</Filter>
 =======
@@ -459,6 +463,8 @@
       <Filter>Header Files\Control\UI\Slider</Filter>
 >>>>>>> Stashed changes
     </ClInclude>
+=======
+>>>>>>> parent of 8e27d44 (Error arreglado)
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="MonkeyDelivery.rc" />
