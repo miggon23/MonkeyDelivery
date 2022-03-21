@@ -21,7 +21,7 @@
 PlayingState::PlayingState(Game* game) : State(game) {
     registerCommands();
     game->start();
-    addButton(new Pause(game->getWindowWidth()- 100, 100, 100, 100, game));
+    addButton(new Pause(game->getWindowWidth()- 80, 30, 60, 60, game));
 }
 
 void PlayingState::registerCommands() {
