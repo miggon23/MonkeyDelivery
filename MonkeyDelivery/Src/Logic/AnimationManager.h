@@ -91,7 +91,7 @@ public:
 
 			tex->render(texturaRect, player);
 
-			if (timer_->TimeScale() - timer >= 300) {
+			if (timer_->TimeScale() - timer >= 250) {
 				texturaRect.x += 100;
 				if (texturaRect.x >= limit) {
 					texturaRect.x = 0;
@@ -105,7 +105,7 @@ public:
 			texturaRect.y = 300;
 			tex->render(texturaRect, player);
 
-			if (timer_->TimeScale() - timer >= 300) {
+			if (timer_->TimeScale() - timer >= 275) {
 				x1 += 100;
 				if (texturaRect.x >= 500) {
 					texturaRect.x = 100;
@@ -119,7 +119,7 @@ public:
 			texturaRect.y = 200;
 			tex->render(texturaRect, player);
 
-			if (timer_->TimeScale() - timer >= 300) {
+			if (timer_->TimeScale() - timer >= 250) {
 				x1 += 100;
 				if (texturaRect.x >= 500) {
 					texturaRect.x = 100;
@@ -129,9 +129,9 @@ public:
 			}
 		}
 		else if (playerState_ == Sleeping) {			
-			texturaRect.y = 200;			
+			texturaRect.y = 600;			
 			tex->render(texturaRect, player);
-			if (timer_->TimeScale() - timer >= 20) {
+			if (timer_->TimeScale() - timer >= 400) {
 				texturaRect.x += 100;
 				if (texturaRect.x >= 200) {
 					texturaRect.x = 0;				
