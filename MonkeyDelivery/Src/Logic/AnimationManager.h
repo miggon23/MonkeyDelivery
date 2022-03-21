@@ -37,8 +37,8 @@ private:
 		hScorpion_ = 100;
 
 	//Planta
-	int wPlant_ = 100,
-		hPlant_ = 100;
+	int wPlant_ = 55,
+		hPlant_ = 55;
 	
 public:
 
@@ -222,17 +222,18 @@ public:
 	inline int getWidthPlant() { return wPlant_; };
 	inline int getHeigthPlant() { return hPlant_; };
 	inline void getFrameImagePlant(SDL_Rect plant, SDL_Rect& texturaRect, Texture* tex, int& timer) {
-		if (timer_->TimeScale() - timer >= 375) {
+		if (timer_->TimeScale() - timer >= 150) {
 			texturaRect.x += wPlant_;
-			if (texturaRect.y >= 400 && texturaRect.x >= 100) {
+			if (texturaRect.y >= 55 && texturaRect.x >= 220) {
 				texturaRect.y = 0; texturaRect.x = 0;
 			}
-			if (texturaRect.x >= 200) {
+			if (texturaRect.x >= 220) {
 				texturaRect.x = 0;
 				texturaRect.y += hPlant_;
 			}
 			timer = timer_->TimeScale();
 		}
+		//cout << texturaRect.x << " , " << texturaRect.y << endl;
 		tex->render(texturaRect, plant);
 	};
 };
