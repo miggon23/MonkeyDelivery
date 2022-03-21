@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.8" tiledversion="1.8.2" orientation="orthogonal" renderorder="right-down" width="150" height="120" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="1">
+<map version="1.5" tiledversion="1.7.1" orientation="orthogonal" renderorder="right-down" width="150" height="120" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="1">
  <editorsettings>
-  <export target="MapJSON01.tmj" format="json"/>
+  <export target="MainMap.tmx" format="tmx"/>
  </editorsettings>
  <tileset firstgid="1" name="FloorTileset" tilewidth="16" tileheight="16" tilecount="572" columns="22">
   <image source="Spritesheets/TilesetFloor.png" width="352" height="417"/>
  </tileset>
- <tileset firstgid="573" source="Tilesets/WaterTileset.tsx"/>
+ <tileset firstgid="573" name="WaterTileset" tilewidth="16" tileheight="16" tilecount="476" columns="28">
+  <image source="Spritesheets/TilesetWater.png" width="448" height="272"/>
+ </tileset>
  <tileset firstgid="1049" source="Tilesets/NatureTileset.tsx"/>
  <tileset firstgid="1337" source="Tilesets/TilesetHouse.tsx"/>
  <tileset firstgid="2004" source="Tilesets/TilesetFloorDetail.tsx"/>

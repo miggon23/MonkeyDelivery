@@ -312,11 +312,36 @@
   <ItemGroup>
     <Image Include="MonkeyDelivery.ico" />
     <Image Include="small.ico" />
+    <Image Include="Src\TilemapSrc\Spritesheets\Elements.png" />
+    <Image Include="Src\TilemapSrc\Spritesheets\TilesetDungeon.png" />
+    <Image Include="Src\TilemapSrc\Spritesheets\TilesetElement.png" />
+    <Image Include="Src\TilemapSrc\Spritesheets\TilesetFloor.png" />
+    <Image Include="Src\TilemapSrc\Spritesheets\TilesetFloorB.png" />
+    <Image Include="Src\TilemapSrc\Spritesheets\TilesetFloorDetail.png" />
+    <Image Include="Src\TilemapSrc\Spritesheets\TilesetHole.png" />
+    <Image Include="Src\TilemapSrc\Spritesheets\TilesetHouse.png" />
+    <Image Include="Src\TilemapSrc\Spritesheets\TilesetInterior.png" />
+    <Image Include="Src\TilemapSrc\Spritesheets\TilesetInteriorFloor.png" />
+    <Image Include="Src\TilemapSrc\Spritesheets\TilesetLogic.png" />
+    <Image Include="Src\TilemapSrc\Spritesheets\TilesetNature.png" />
+    <Image Include="Src\TilemapSrc\Spritesheets\TilesetRelief.png" />
+    <Image Include="Src\TilemapSrc\Spritesheets\TilesetReliefDetail.png" />
+    <Image Include="Src\TilemapSrc\Spritesheets\TilesetWallSimple.png" />
+    <Image Include="Src\TilemapSrc\Spritesheets\TilesetWater.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Images\config\resources.json" />
     <None Include="resources\tilemap\zona_shelter.tmx" />
     <None Include="Src\TilemapSrc\1.level" />
+    <None Include="Src\TilemapSrc\Spritesheets\TilesetRelief.psd" />
+    <None Include="Src\TilemapSrc\Tilesets\FloorTileset.tsx" />
+    <None Include="Src\TilemapSrc\Tilesets\NatureTileset.tsx" />
+    <None Include="Src\TilemapSrc\Tilesets\TilesetElement.tsx" />
+    <None Include="Src\TilemapSrc\Tilesets\TilesetFloorDetail.tsx" />
+    <None Include="Src\TilemapSrc\Tilesets\TilesetHouse.tsx" />
+    <None Include="Src\TilemapSrc\Tilesets\TilesetRelief.tsx" />
+    <None Include="Src\TilemapSrc\Tilesets\TilesetReliefDetail.tsx" />
+    <None Include="Src\TilemapSrc\Tilesets\WaterTileset.tsx" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -95,8 +95,36 @@
 
   "tilesets": [
     {
+      "id": "FloorTileset",
+      "file": "./Src/TilemapSrc/Spritesheets/TilesetFloor.png"
+    },
+    {
       "id": "NatureTileset",
-      "file": "../../../Src/TilemapSrc/Tilesets/NatureTileset.tsx"
+      "file": "./Src/TilemapSrc/Spritesheets/TilesetNature.png"
+    },
+    {
+      "id": "TilesetElement",
+      "file": "./Src/TilemapSrc/Spritesheets/TilesetElement.png"
+    },
+    {
+      "id": "TilesetFloorDetail",
+      "file": "./Src/TilemapSrc/Spritesheets/TilesetFloorDetail.png"
+    },
+    {
+      "id": "TilesetHouse",
+      "file": "./Src/TilemapSrc/Spritesheets/TilesetHouse.png"
+    },
+    {
+      "id": "TilesetRelief",
+      "file": "./Src/TilemapSrc/Spritesheets/TilesetRelief.png"
+    },
+    {
+      "id": "TilesetReliefDetail",
+      "file": "./Src/TilemapSrc/Spritesheets/TilesetReliefDetail.png"
+    },
+    {
+      "id": "WaterTileset",
+      "file": "./Src/TilemapSrc/Spritesheets/TilesetWater.png"
     }
   ]
 
