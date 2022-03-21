@@ -8,11 +8,13 @@
 #include "../UI/Buttons/Exit.h"
 #include "../UI/Buttons/Start.h"
 #include "../UI/Buttons/Options.h"
+#include "../UI/Buttons/Credits.h"
 
 MenuState::MenuState(Game* game) : State(game){
     registerCommands();
     addButton(new Start(game->getWindowWidth() / 2 - 100, game->getWindowHeight() - 250, 100, 75, game));  
     addButton(new Options(game->getWindowWidth() / 2 - 100, game->getWindowHeight() - 100, 100, 75, game));  
+    addButton(new Credits(game->getWindowWidth() / 2 - 100, game->getWindowHeight() - 200, 100, 75, game));  
 }
 
 MenuState::~MenuState(){
