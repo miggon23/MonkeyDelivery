@@ -43,11 +43,12 @@ enum TextureName {
     sliderClicker,
     pauseButtonTexture,
     menuButtonTexture,
-    creditsButtonTexture
+    creditsButtonTexture, 
+    continueButtonTexture
 };
 
 
-const int NUM_TEXTURES = 32;
+const int NUM_TEXTURES = 33;
 
 
 
@@ -90,8 +91,8 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
   {"ui/sliderClicker.png",1,1},
   {"Buttons/pause.png",1,1},
   {"Buttons/backMenu.png",1,1},
-  {"Buttons/credits.png",1,1}
-
+  {"Buttons/credits.png",1,1},
+  {"Buttons/continue.png",1,1}
 };
 
 
