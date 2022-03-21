@@ -168,6 +168,7 @@
     <ClInclude Include="Src\Control\PauseCommand.h" />
     <ClInclude Include="Src\Control\SelectMissionCommand.h" />
     <ClInclude Include="Src\Control\ShopCommand.h" />
+    <ClInclude Include="Src\Control\States\CreditsState.h" />
     <ClInclude Include="Src\Control\States\GameOverState.h" />
     <ClInclude Include="Src\Control\States\MenuState.h" />
     <ClInclude Include="Src\Control\States\MissionSelectionState.h" />
@@ -182,7 +183,6 @@
     <ClInclude Include="Src\Control\UI\Buttons\Continue.h" />
     <ClInclude Include="Src\Control\UI\Buttons\Credits.h" />
     <ClInclude Include="Src\Control\UI\Buttons\Exit.h" />
-    <ClInclude Include="Src\Control\UI\Buttons\Menu.h" />
     <ClInclude Include="Src\Control\UI\Buttons\Options.h" />
     <ClInclude Include="Src\Control\UI\Buttons\Pause.h" />
     <ClInclude Include="Src\Control\UI\Buttons\Start.h" />
@@ -246,6 +246,7 @@
     <ClCompile Include="Src\Control\PauseCommand.cpp" />
     <ClCompile Include="Src\Control\SelectMissionCommand.cpp" />
     <ClCompile Include="Src\Control\ShopCommand.cpp" />
+    <ClCompile Include="Src\Control\States\CreditsState.cpp" />
     <ClCompile Include="Src\Control\States\GameOverState.cpp" />
     <ClCompile Include="Src\Control\States\MenuState.cpp" />
     <ClCompile Include="Src\Control\States\MissionSelectionState.cpp" />
@@ -260,7 +261,6 @@
     <ClCompile Include="Src\Control\UI\Buttons\Continue.cpp" />
     <ClCompile Include="Src\Control\UI\Buttons\Credits.cpp" />
     <ClCompile Include="Src\Control\UI\Buttons\Exit.cpp" />
-    <ClCompile Include="Src\Control\UI\Buttons\Menu.cpp" />
     <ClCompile Include="Src\Control\UI\Buttons\Options.cpp" />
     <ClCompile Include="Src\Control\UI\Buttons\Pause.cpp" />
     <ClCompile Include="Src\Control\UI\Buttons\Start.cpp" />
