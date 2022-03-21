@@ -31,6 +31,7 @@ private:
 
 	int selected_ = 0, lastClicked_;	
 	bool closeFailed_ = false;
+	string textError_;
 
 	Shop* shop_;
 	Font* font_;
