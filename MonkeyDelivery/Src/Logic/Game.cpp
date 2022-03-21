@@ -4,7 +4,6 @@ Game::Game(string n, int w, int h) : name(n), width(w), height(h), doExit(false)
 {    
     font_ = new Font("../Images/TheMoon.ttf", 50);
     animationManager = new AnimationManager(this);
-    
 }
 
 Game::~Game() {
@@ -79,8 +78,7 @@ void Game::update()
 
     for (auto enemy : enemyContainer_)
         enemy->update();
-
-    drawMap();
+    
 }
 
 void Game::setUserExit() {
@@ -94,8 +92,7 @@ bool Game::isUserExit() {
 //Normal draw for entities(no Tiles)
 void Game::draw()
 {
-    drawMap();
-
+    
     for (auto gO : gameObjects_)
         gO->draw();
     
@@ -110,15 +107,7 @@ void Game::draw()
     //renderText("aaaa", 100, 150, BLACK);
     
     player_->draw();
-}
-
-//Draw de Tiles
-void Game::drawTiles(tileObject o)
-{
     
-    SDL_Rect dest = o.getDest();
-    SDL_Rect src = o.getSource();
-    SDL_RenderCopyEx(renderer, o.getTex(), &src, &dest, 0, NULL, SDL_FLIP_NONE);
 }
 
 Point2D<int> Game::getOrigin() {
@@ -225,7 +214,8 @@ void Game::interactDialogue()
 }
 
 //TILEMAP
-void Game::loadMap(string const& filename) {
+void Game::loadMap(string const& filename) 
+{
 
     // Se carga la información del .tmx
     mapInfo.tile_map = new tmx::Map();
@@ -261,12 +251,11 @@ void Game::loadMap(string const& filename) {
     // (para poder cargar los tilesets del archivo .tmx, les ponemos de nombre 
     // el nombre del archivo sin extension en el .json) 
     auto& mapTilesets = mapInfo.tile_map->getTilesets();
-        for (auto& tileset : mapTilesets) {
-            string name = tileset.getName();
-            //Texture* texture = &sdlutils().tilesets().find(name)->second;
-            //mapInfo.tilesets.insert(pair<uint, Texture*>(tileset.getFirstGID(), texture));
-        }
-
+    for (auto& tileset : mapTilesets) {
+        string name = tileset.getName();
+        //Texture* texture = &sdlutils().tilesets().find(name)->second;
+        //mapInfo.tilesets.insert(pair<uint, Texture*>(tileset.getFirstGID(), texture));
+    }
     // recorremos cada una de las capas (de momento solo las de tiles) del mapa
     auto& map_layers = mapInfo.tile_map->getLayers();
     for (auto& layer : map_layers) {
@@ -373,10 +362,4 @@ void Game::loadMap(string const& filename) {
         }
     }
     in.close();*/
-}
-
-void Game::drawMap() {
-    for (int i = 0; i < map.size(); i++) {
-        drawTiles(map[i]);
-    }
 }

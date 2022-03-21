@@ -7,7 +7,6 @@
 #include <fstream>
 #include <string>
 #include <vector>
-#include "../TilemapSrc/tileObject.h"
 
 #include"../Control/States/StateMachine.h"
 #include "../View/Texture.h"
@@ -93,9 +92,6 @@ private:
 
     //prueba cuadro dialogo
     DialogueBox* dialogueBox_;
-    
-    //TILEMAP
-    vector<tileObject> map;
 
     //Tienda    
     Shop* shop_;
@@ -153,8 +149,6 @@ public:
    
     //Tilemap
     void loadMap(string const& filename);
-    void drawMap();
-    void drawTiles(tileObject o);
 
     //Tienda
     Shop* getShop() { return shop_; }
