@@ -44,9 +44,12 @@
 #include "./tmxlite/ObjectGroup.hpp"
 #include "./tmxlite/Tileset.hpp"
 
+#include "../json/JSON.h"
+
 #define TILE_SIZE 16
 
 using uint = unsigned int;
+using tileset_map = std::map<std::string, Texture*>;
 
 struct MapInfo{
     tmx::Map* tile_map;
@@ -70,7 +73,7 @@ using namespace std;
 class Game : public StateMachine {
 
 private:
-
+    SDL_Texture* background;
     MapInfo mapInfo;
 
     string name;
@@ -95,6 +98,10 @@ private:
 
     //Tienda    
     Shop* shop_;
+
+    //Tileset Temporal
+    void loadSpriteSheets();
+    tileset_map tilesets_; // textures map (string -> texture)
 
 public:
 
