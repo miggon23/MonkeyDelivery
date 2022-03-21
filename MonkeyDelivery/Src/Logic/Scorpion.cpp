@@ -9,6 +9,7 @@ Scorpion::Scorpion(Game* game, int Aleatorio, Point2D<int> centroRadio, Animatio
 	setDimension(100, 110);
 	initialPos_ = getPosition();
 	createCheckPoints();
+	lastUpdate_ = SDL_GetTicks();
 	setScariness(0.1);
 	iniPlayerVel = game->getPlayer()->getVel();
 	inRange = false;	
@@ -47,7 +48,9 @@ void Scorpion::checkDistance()
 			game->setVel(playerVel/2.0);
 			inRange = true;
 		}
-		game->scare(distanceX * scariness_ / 10);
+		double d = 1.8 * ((distanceY + distanceX) / 2);
+		if(lastUpdate_ + 1000 < SDL_GetTicks())
+		game->scare(d* scariness_ / 10);
 	}
 	//Si no esta en el rango la velocidad sera normal
 	else if (inRange) //<-- En rango aún

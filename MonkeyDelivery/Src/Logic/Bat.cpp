@@ -16,6 +16,7 @@ Bat::Bat(Game* game, int Aleatorio, Point2D<int> centroRadio, int nLoop, Animati
 	textureRect = { 0,0,animationManager->getWidthBat(),animationManager->getHeightBat() };
 	createCheckPoints();
 	setResistance(2000);
+	setScariness(0.12);
 }
 
 void Bat::update()

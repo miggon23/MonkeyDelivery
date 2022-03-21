@@ -8,6 +8,7 @@ Plant::Plant(Game* game, int Aleatorio, Point2D<int> centroRadio, AnimationManag
 	setTexture(plantSpritesheet);
 	setDimension(80, 90);
 	setResistance(4000);
+	//setScariness(0.2); necesario el checkCollision
 	textureRect = { 0, 0, animationManager->getWidthPlant(),animationManager->getHeigthPlant() };
 }
 
