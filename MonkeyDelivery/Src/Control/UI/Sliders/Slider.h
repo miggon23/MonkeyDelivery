@@ -1,17 +1,14 @@
 #pragma once
-#include "SliderClick.h"
-#include "SliderBase.h"
-class Slider
+#include "../../../Logic/GameObject.h"
+class Slider: public GameObject
 {
 public:
-	Slider(Game* game,double x, double y);
+	Slider();
 	~Slider();
-	void draw();	
-	void update();
+	void draw() override;	
+	void update() override;
 private:
-	Game* game_;
 	//Necesitamos una parte de panel y la otra parte clicable
-	SliderClick* sliderClick_;
-	SliderBase* sliderBase_;
+
 };
 

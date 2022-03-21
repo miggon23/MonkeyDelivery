@@ -3,16 +3,11 @@
 #include "../CommandExit.h"
 #include "../CommandClick.h"
 #include "../UI/Buttons/Back.h"
-#include "../UI/Sliders/Slider.h"
+
 OptionsState::OptionsState(Game* game) : State(game)
 {
 	registerCommands();
 	addButton(new Back(game->getWindowWidth() / 2 - 100, game->getWindowHeight() - 250, 100, 75, game, 1));
-<<<<<<< Updated upstream
-=======
-	
-
->>>>>>> Stashed changes
 }
 
 void OptionsState::update()

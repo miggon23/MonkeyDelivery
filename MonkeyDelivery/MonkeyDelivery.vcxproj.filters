@@ -200,21 +200,14 @@
     <ClCompile Include="Src\Control\UI\Buttons\Pause.cpp">
       <Filter>Source Files\Control\UI\Buttons</Filter>
     </ClCompile>
-    <ClCompile Include="Src\Control\UI\Buttons\Menu.cpp">
+    <ClCompile Include="Src\Control\States\CreditsState.cpp">
+      <Filter>Source Files\Control\States</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Control\UI\Buttons\Continue.cpp">
       <Filter>Source Files\Control\UI\Buttons</Filter>
     </ClCompile>
     <ClCompile Include="Src\Control\UI\Buttons\Credits.cpp">
       <Filter>Source Files\Control\UI\Buttons</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\UI\Buttons\Credits.cpp">
-      <Filter>Source Files\Control\UI\Buttons</Filter>
-
-    <ClCompile Include="Src\Control\UI\Sliders\SliderClick.cpp">
-      <Filter>Source Files\Control\UI\Slider</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\UI\Sliders\SliderBase.cpp">
-      <Filter>Source Files\Control\UI\Slider</Filter>
-
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -441,21 +434,14 @@
     <ClInclude Include="Src\Control\UI\Buttons\Pause.h">
       <Filter>Header Files\Control\UI\Buttons</Filter>
     </ClInclude>
-    <ClInclude Include="Src\Control\UI\Buttons\Menu.h">
+    <ClInclude Include="Src\Control\States\CreditsState.h">
+      <Filter>Header Files\Control\States</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Control\UI\Buttons\Continue.h">
       <Filter>Header Files\Control\UI\Buttons</Filter>
     </ClInclude>
     <ClInclude Include="Src\Control\UI\Buttons\Credits.h">
       <Filter>Header Files\Control\UI\Buttons</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Control\UI\Buttons\Credits.h">
-      <Filter>Header Files\Control\UI\Buttons</Filter>
-
-    <ClInclude Include="Src\Control\UI\Sliders\SliderClick.h">
-      <Filter>Header Files\Control\UI\Slider</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Control\UI\Sliders\SliderBase.h">
-      <Filter>Header Files\Control\UI\Slider</Filter>
-
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

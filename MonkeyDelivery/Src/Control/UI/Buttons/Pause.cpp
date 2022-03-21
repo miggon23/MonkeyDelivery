@@ -8,5 +8,10 @@ Pause::Pause(int x, int y, int w, int h, Game* game):Button(game,w,h,x,y){
 }
 
 void Pause::onCursorCollision(){
-	game->setState(new PauseState(game));
+    if (game->getSavedState() == nullptr) {
+        //pause
+        game->saveState(game->getState());
+        game->setState(new PauseState(game));
+    }
+	
 }
