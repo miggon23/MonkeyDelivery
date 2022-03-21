@@ -89,13 +89,12 @@ void Enemy::checkDistance()
 			double distanceX = abs(getPosition().getX() - game->getPosisitionPlayer().getX());
 			double distanceY = abs(getPosition().getY() - game->getPosisitionPlayer().getY());
 
-
 			if (distanceX <= offset && distanceY <= offset) {
 
 				/*if (distanceX < distanceY)
 					game->scare(distanceX*scariness_);
 				else*/
-				double d = (distanceY + distanceX) / 2;
+				double d = 1.8*((distanceY + distanceX) / 2);
 
 				//si no es demasiado por eso se divide entre 8
 				game->scare(d * scariness_ / 10);///esto hay que mirarlo
