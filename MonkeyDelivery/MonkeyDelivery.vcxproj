@@ -187,6 +187,8 @@
     <ClInclude Include="Src\Control\UI\Buttons\Pause.h" />
     <ClInclude Include="Src\Control\UI\Buttons\Start.h" />
     <ClInclude Include="Src\Control\UI\Sliders\Slider.h" />
+    <ClInclude Include="Src\Control\UI\Sliders\SliderBase.h" />
+    <ClInclude Include="Src\Control\UI\Sliders\SliderClick.h" />
     <ClInclude Include="Src\Control\ViewController.h" />
     <ClInclude Include="Src\json\JSON.h" />
     <ClInclude Include="Src\json\JSONValue.h" />
@@ -265,6 +267,8 @@
     <ClCompile Include="Src\Control\UI\Buttons\Pause.cpp" />
     <ClCompile Include="Src\Control\UI\Buttons\Start.cpp" />
     <ClCompile Include="Src\Control\UI\Sliders\Slider.cpp" />
+    <ClCompile Include="Src\Control\UI\Sliders\SliderBase.cpp" />
+    <ClCompile Include="Src\Control\UI\Sliders\SliderClick.cpp" />
     <ClCompile Include="Src\Control\ViewController.cpp" />
     <ClCompile Include="Src\json\JSON.cpp" />
     <ClCompile Include="Src\json\JSONValue.cpp" />

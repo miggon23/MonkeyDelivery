@@ -98,7 +98,7 @@ public:
 				}
 				timer = timer_->TimeScale();
 			}
-		}
+		}		
 		else if (playerState_== GoToSleep) {
 
 			texturaRect.x = x1;
@@ -128,13 +128,13 @@ public:
 				timer = timer_->TimeScale();
 			}
 		}
-		else if (playerState_ == Sleeping) {			
-			texturaRect.y = 200;			
+		else if (playerState_ == Sleeping) {
+			texturaRect.y = 600;
 			tex->render(texturaRect, player);
-			if (timer_->TimeScale() - timer >= 20) {
+			if (timer_->TimeScale() - timer >= 300) {
 				texturaRect.x += 100;
 				if (texturaRect.x >= 200) {
-					texturaRect.x = 0;				
+					texturaRect.x = 0;
 				}
 				timer = timer_->TimeScale();
 				cout << texturaRect.x << endl;
