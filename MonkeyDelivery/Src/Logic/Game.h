@@ -112,7 +112,6 @@ private:
     //Tienda    
     Shop* shop_;
 
-    
 
 public:
 

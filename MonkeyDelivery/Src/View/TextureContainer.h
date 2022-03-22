@@ -43,7 +43,10 @@ enum TextureName {
     pauseButtonTexture,
     menuButtonTexture,
     creditsButtonTexture, 
-    continueButtonTexture
+    continueButtonTexture,
+    flashlightUp,
+    flashlightDown,
+    flashlightSides
 };
 
 
@@ -90,7 +93,10 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
   {"Buttons/pause.png",1,1},
   {"Buttons/backMenu.png",1,1},
   {"Buttons/credits.png",1,1},
-  {"Buttons/continue.png",1,1}
+  {"Buttons/continue.png",1,1},
+  {"objects/linterna_up.png",1,1},
+  {"objects/linterna_down.png",1,1},
+  {"objects/linterna_left.png",1,1}
 };
 
 
