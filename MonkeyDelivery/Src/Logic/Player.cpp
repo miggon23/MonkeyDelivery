@@ -161,14 +161,15 @@ void Player::changeSleep()
 				usingFlashLight = false;
 				flashLOn = true;
 				setOrientation("off");
+				
 			}
-
 		}
 		else {
 			animationManager->setState(AnimationManager::PlayerState::Running);
 			if (flashLOn) {
 				usingFlashLight = true;
 				flashLOn = false;
+				
 			}
 		}
 		draw();
@@ -396,28 +397,41 @@ const SDL_Rect Player::lightZone()
 	}
 	else if (dirX_ == 0 && dirY_ == 0)
 	{
-		if (getOrientation() == "left")
+		if (getOrientation() == "left") {
 			hitZone = { int(getX() - 100),
 					int(getY()),
 					getWidth() + 50,
 					getHeight() };
-		else if (getOrientation() == "right")
+
+			//SDL_RenderCopy(renderer, flashlightSides, NULL, &hitzone);
+			//setTexture(flashlightSides);
+		}
+		else if (getOrientation() == "right") {
 			hitZone = { int(getX() + 50),
 					int(getY()),
 					getWidth() + 50 ,
 					getHeight() };
-		else if (getOrientation() == "up")
+			//setTexture(flashlightSides);
+		}
+			
+		else if (getOrientation() == "up") {
 			hitZone = { int(getX()),
 					int(getY() - 100),
 					getWidth(),
 					getHeight() + 50 };
-		else if (getOrientation() == "down")
+			//setTexture(flashlightUp);
+		}
+			
+		else if (getOrientation() == "down") {
 			hitZone = { int(getX()),
 					int(getY() + 50),
 					getWidth(),
 					getHeight() + 50 };
-		else
+			//setTexture(flashlightDown);
+		}
+		else {
 			hitZone = getCollider();
+		}
 	}
 	return hitZone;
 }

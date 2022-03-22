@@ -50,28 +50,34 @@ void Bull::chase(double x, double y)
 void Bull::checkDistance()
 {
 	if (isAlive()) {
-		int range = 300; //rango
-		double dirX = getPosition().getX() - game->getPosisitionPlayer().getX(); //direccion en las x
-		double dirY = getPosition().getY() - game->getPosisitionPlayer().getY(); //direccion en las y
-		double distanceX = abs(dirX); //distancia en valor absoluto en las x
-		double distanceY = abs(dirY); //distacia en valor absoluto en las y
+		if (lastUpdate_ + 1000 < SDL_GetTicks()) {
+			int range = 300; //rango
+			double dirX = getPosition().getX() - game->getPosisitionPlayer().getX(); //direccion en las x
+			double dirY = getPosition().getY() - game->getPosisitionPlayer().getY(); //direccion en las y
+			double distanceX = abs(dirX); //distancia en valor absoluto en las x
+			double distanceY = abs(dirY); //distacia en valor absoluto en las y
 
-		//Si esta en el rango
-		if (distanceX <= range && distanceY <= range) //Si esta en el rango
-		{
-			stop = false; //Dejo de patrullar
-			timer_ = SDL_GetTicks();
-			chase(dirX, dirY); //Persigo
-			double d = 1.8 * ((distanceY + distanceX) / 2);
-			if (lastUpdate_ + 1000 < SDL_GetTicks())
-			game->scare(d * scariness_ / 10);
-				lastUpdate_ = SDL_GetTicks();
+			//Si esta en el rango
+			if (distanceX <= range && distanceY <= range) //Si esta en el rango
+			{
+				stop = false; //Dejo de patrullar
+				timer_ = SDL_GetTicks();
+				chase(dirX, dirY); //Persigo
+				double d = 1.8 * ((distanceY + distanceX) / 2);
+				if (distanceX <= 20.0 && distanceY <= 20.0) {
+					game->scare(2.0 * scariness_ / 10);
+				}
+
+				game->scare(d * scariness_ / 10);
+
+			}
+			else if (SDL_GetTicks() <= timer_ + 3000) //Si no esta en el rango y no han pasado los 3 segundos 
+				chase(dirX, dirY); //Persigo
+
+			else  //Si no esta en el rango y han pasado los 3 segundos
+				stop = true; //Dejo de perseguir
+			lastUpdate_ = SDL_GetTicks();
 		}
-		else if (SDL_GetTicks() <= timer_ + 3000) //Si no esta en el rango y no han pasado los 3 segundos 
-			chase(dirX, dirY); //Persigo
-
-		else  //Si no esta en el rango y han pasado los 3 segundos
-			stop = true; //Dejo de perseguir
 	}
 
 }
