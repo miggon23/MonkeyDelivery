@@ -124,7 +124,7 @@ void Inventory::draw() {
 	int size = inventory_.size();
 	for (int i = 0; i < size; i++) {
 	
-		SDL_Rect oRect = { 290 + (48 * i), 355, 300 / 8, 300 / 7 };
+		SDL_Rect oRect = { 290 + (45 * i), 355, 300 / 8, 300 / 7 };
 		inventory_[i]->getTexture()->render(oRect);
 		
 	}
