@@ -26,4 +26,5 @@ void Slider::setSize(int w, int h)
 {
 	sliderBase_->setDimension(w, h);
 	sliderClick_->setDimension(w, h);
+	sliderClick_->chageMaxPosition(sliderBase_->getPosition().getX() + sliderBase_->getWidth() / 2);
 }

@@ -2,13 +2,11 @@
 
 #include "Command.h"
 #include "../Logic/Game.h"
+class SliderClick;
 class CommandClick : public Command {
-
+    SliderClick* sliderClicked_ = nullptr;
 public:
-
-
-    //CommandExit() {};
-    ~CommandClick() = default;
+    ~CommandClick();
     bool parse(SDL_Event& event) override;
     void execute() override;
 };

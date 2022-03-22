@@ -9,8 +9,9 @@ public:
 	void update() override;
 	void onCursorCollision() override;
 	void move();
+	inline void chageMaxPosition(double pos) { MAX_POSITION = pos; };
 private:
-	const double MAX_POSITION;
+    double MAX_POSITION;
 	bool onMoving_ = false;
 };
 
