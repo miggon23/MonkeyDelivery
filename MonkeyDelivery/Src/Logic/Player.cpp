@@ -31,8 +31,8 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game), anima
 
 	resetVelocity(); //Se inicializa al valor de INIT_VEL_X e ..._Y
 
-	setPosition(15, 100);
 	setDimension(90, 100);
+	setPosition(game->getWindowWidth() / 2 - getWidth() / 2 , game->getWindowHeight() / 2 - getHeight() / 2);
 
 	energyLevel_ = new energyLevel(game);
 	fearLevel_ = new FearLevel(game);
@@ -101,12 +101,17 @@ void Player::move()
 		//if (isRunning) { //Esto se puede implementar desde el runCommand, evitando que el jugador tenga muchos estados como el de corriendo
 		//	speed = speed * 1.5;			
 		//}
+		
+		// CAMARA
+		/*Vector2D<float> a = { (float)getX(), (float)getY() };
+		game->getCamera()->Lerp(a, 0.001);*/
 
 		drainEnergy(decreasingEnergyLevel_);
 	}
 
 	//HAY QUE NORMALIZAR EL VECTOR
 	setPosition(getX() + speed.getX(), getY() + speed.getY());
+
 }
 
 void Player::setIsRunning(bool run)
@@ -311,9 +316,14 @@ void Player::draw()
 			animationManager->setState(AnimationManager::PlayerState::Scared);
 	}
 
-	SDL_Rect pos = { game->getWindowWidth() / 2, game->getWindowHeight() / 2, getWidth(), getHeight() };
-	//animationManager->getFrameImagePlayer(getCollider(), textureRect, texture, timerAnimation, AnimationManager::LastDir{ dirX_, dirY_ });
-	animationManager->getFrameImagePlayer(pos, textureRect, texture, timerAnimation, AnimationManager::LastDir{ dirX_, dirY_ });
+	//SDL_Rect pos = { game->getWindowWidth() / 2 - getWidth() / 2, game->getWindowHeight() / 2 - getHeight() / 2 , getWidth(), getHeight()};
+	/*SDL_Rect pos = getCollider();
+	pos.x -= game->getCamera()->getCameraCenterPosition().getX();
+	pos.y -= game->getCamera()->getCameraCenterPosition().getY();
+	pos.x -= game->getCamera()->getWidth()/2;
+	pos.y -= game->getCamera()->getHeight()/2;*/
+	//animationManager->getFrameImagePlayer(pos, textureRect, texture, timerAnimation, AnimationManager::LastDir{ dirX_, dirY_ });
+	animationManager->getFrameImagePlayer(getCollider(), textureRect, texture, timerAnimation, AnimationManager::LastDir{ dirX_, dirY_ });
 
 	//drawDebug();
 	energyLevel_->draw();

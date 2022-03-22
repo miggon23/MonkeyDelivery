@@ -39,25 +39,28 @@ void Game::loadSpriteSheets()
 
 void Game::setCamera()
 {
-    Vector2D<float> camera;
-    camera.setX(-(player_->getX() + player_->getWidth() / 2)); // -mCamera_->getWidth() / 2;
-    camera.setY(-(player_->getY() + player_->getHeight() / 2)); // -mCamera_->getHeight() / 2;
+    Vector2D<float> newPos = mCamera_->getCameraPosition();
+    newPos.setX((player_->getX() + player_->getWidth() / 2)); // -mCamera_->getWidth() / 2;
+    newPos.setY((player_->getY() + player_->getHeight() / 2)); // -mCamera_->getHeight() / 2;
 
-    if (camera.getX() > 0) {
-        camera.setX(0);
+    // para evitar que se salga del mapa
+    int bgWidth = mapInfo.tile_width * mapInfo.cols;
+    int bgHeight = mapInfo.tile_height * mapInfo.rows;
+    if (newPos.getX() < 0) {
+        newPos.setX(0);
     }
-    if (camera.getY() > 0) {
-        camera.setY(0);
+    if (newPos.getY() < 0) {
+        newPos.setY(0);
     }
-    if (camera.getX() < -getWindowWidth()) {
-        camera.setX(0);
+    if (newPos.getX() > bgWidth) {
+        newPos.setX(bgWidth);
     }
-    if (camera.getY() < -getWindowHeight()) {
-        camera.setY(0);
+    if (newPos.getY() > bgHeight) {
+        newPos.setY(bgHeight);
     }
 
     // Movemos la cámara a la nueva pos
-    mCamera_->Move(camera);
+    mCamera_->Move(newPos);
 }
 
 Game::Game(string n, int w, int h) : name(n), width(w), height(h), doExit(false), mCamera_(nullptr)
@@ -112,9 +115,10 @@ void Game::start()
 
     // Cámara:
     Vector2D<float> camPos {0.0, 0.0};
-    //  mCamera_ = new Camera(this, camPos, getWindowWidth(), getWindowHeight());
-    mCamera_ = new Camera(this, camPos, getWindowWidth()*10, getWindowHeight()*10);
-
+    mCamera_ = new Camera(this, camPos, getWindowWidth() / 2, getWindowHeight() / 2); // /2 -> es la proporción de tamaño del mapa. Valor más pequeño hace que el mapa se vea + pequeño y viceversa
+    // dónde spawnea -> qué se ve del mapa
+    srcRect_ = mCamera_->renderRect();
+   // srcRect_ = {(int)camPos.getX(), (int)camPos.getY(), (int)mCamera_->getWidth(), (int)mCamera_->getHeight()}; // == lo que devuelve el renderRect
     animationManager = new AnimationManager(this);
    
     player_ = new Player(this,animationManager); //Creacion del jugador
@@ -141,9 +145,8 @@ void Game::start()
 void Game::update()
 {
     player_->update();
-    setCamera();
-    
-
+   // setCamera();
+   
     for (auto gO : gameObjects_)
         gO->update();
     
@@ -167,17 +170,17 @@ void Game::draw()
     // Dibujado del mapa
     int bgWidth = mapInfo.tile_width * mapInfo.cols;
     int bgHeight = mapInfo.tile_height * mapInfo.rows;
-    SDL_Rect r = { 0, 0, bgWidth, bgHeight };
-    SDL_Rect src = mCamera_->renderRect();
-    SDL_Rect dst = mCamera_->renderRect();
-    SDL_RenderCopy(renderer, background_, NULL, &dst);
+   // SDL_Rect r = { 0, 0, bgWidth, bgHeight };
+    SDL_Rect dst = { 0, 0, getWindowWidth(), getWindowHeight() }; // Se dibuja en la totalidad de la pantalla (modificar si quisieramos dejar un borde de UI por ejemplo)
+    srcRect_ = mCamera_->renderRect(); 
+    SDL_RenderCopy(renderer, background_, &srcRect_, &dst); // srcRect es la parte de la textura (background) que se va a ver
 
     /*auto a = SDL_GetWindowSurface(window_);
     auto tex = SDL_CreateTextureFromSurface(renderer, a);
     background_ = SDL_CreateTextureFromSurface(renderer, a);
     SDL_RenderCopy(renderer, background_, NULL, &dst);*/
 
-   for (auto gO : gameObjects_)
+   /*for (auto gO : gameObjects_)
         gO->draw();
     
     for (auto enemy : enemyContainer_)
@@ -187,8 +190,9 @@ void Game::draw()
 
     missionsPanel_->draw();
 
-    dialogueBox_->draw();
+    dialogueBox_->draw();*/
     player_->draw();
+    player_->drawDebug();
 }
 
 Point2D<int> Game::getOrigin() {
