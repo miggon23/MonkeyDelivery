@@ -427,10 +427,25 @@ void Game::loadMap(string const& filename)
                     dest.h = src.h;
 
                     int tileRot = layer_tiles[tile_index].flipFlags;
+                    float rotCorrection = 45;
                     SDL_RendererFlip tileFlip = SDL_FLIP_NONE;
+                    switch (tileRot)
+                    {
+                    default:break;
+                    case 2:  rotCorrection = 180; break;
+                    case 4:  tileFlip = SDL_FLIP_HORIZONTAL; rotCorrection = 45; break;
+                    case 6:  rotCorrection = 225; break;
+                    case 8:  tileFlip = SDL_FLIP_HORIZONTAL; rotCorrection = 90; break;
+                    case 10:  tileFlip = SDL_FLIP_HORIZONTAL; rotCorrection = 90; break;
+                    case 12:  rotCorrection = 45; break;
+                    case 14:  rotCorrection = 225; tileFlip = SDL_FLIP_HORIZONTAL; tileFlip = SDL_FLIP_VERTICAL; break;
+                        /*case 12:  tileFlip = SDL_FLIP_HORIZONTAL; rotCorrection = 90; break;
+                        case 14:  tileFlip = SDL_FLIP_HORIZONTAL; rotCorrection = 90; break;*/
+                        //case 14:   rotCorrection = 40; break;
+                    }
 
                     //Multiplicamos por 45 porque esta multiplicado por factor de 45 (lo que devuelve rot)
-                    mapInfo.tilesets[tset_gid]->render(src, dest, tileRot * 45, nullptr, tileFlip);
+                    mapInfo.tilesets[tset_gid]->render(src, dest, tileRot * rotCorrection, nullptr, tileFlip);
 
                 }
             }
