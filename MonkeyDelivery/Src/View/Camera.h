@@ -37,7 +37,7 @@ public:
 
 	inline void setPos(Vector2D<float> pos)
 	{
-		pos_ = pos_ + pos;
+		pos_ =  pos;
 	}
 
 	SDL_Rect renderRect();

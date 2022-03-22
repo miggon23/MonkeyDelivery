@@ -105,8 +105,9 @@ void Player::move()
 		// CAMARA
 		//Vector2D<float> a = { (float)getX(), (float)getY() };
 
-		game->getCamera()->setPos({ (float)speed.getX(),(float)speed.getY() });
-
+		//game->getCamera()->setPos({ (float)speed.getX(),(float)speed.getY() });
+		game->aPlayerPos((float)speed.getX(), (float)speed.getY());
+		
 		drainEnergy(decreasingEnergyLevel_);
 	}
 

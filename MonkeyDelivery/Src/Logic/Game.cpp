@@ -440,3 +440,27 @@ void Game::loadMap(string const& filename)
 
     SDL_SetRenderTarget(renderer, nullptr);
 }
+
+void Game::aPlayerPos(float x, float y)
+{
+    //obtenemos la posicion actual de la camara
+    Vector2D<float> current = mCamera_->getCameraPosition();
+    //comprobamo si esta enalguno de los limites y si va a sobrepasar este, reducimos el desplazamiento a 0
+    if ((x > 0 && current.getX() >= 1000) || (x < 0 && current.getX() <= 0))
+        x = 0;
+    if ((y > 0 && current.getY() >= 1000) || (y < 0 && current.getY() <= 0))
+        y = 0;
+    //aplicamos la nueva posicion a la camara
+    mCamera_->setPos(mCamera_->getCameraPosition() + Vector2D<float>(x, y));
+
+    //para todos los gameobjects ajustamos su posicion respecto al jugador
+    for (auto e : gameObjects_)
+    {
+        Point2D<double> newPos = e->getPosition() + Point2D<double>(x, y);
+        e->setPosition(newPos.getX(), newPos.getY());
+    }
+
+
+
+
+}

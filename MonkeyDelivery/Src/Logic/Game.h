@@ -45,6 +45,7 @@
 #include "./tmxlite/Tileset.hpp"
 
 #include "../View/Camera.h"
+#include "../Utils/Vector2D.h"
 
 #include "../json/JSON.h"
 
@@ -168,6 +169,8 @@ public:
     // Camara
     inline void setWindow(SDL_Window* w) { window_ = w; };
     inline Camera* getCamera() { return mCamera_; };
+  
+    void aPlayerPos(float x, float y);
     //Tienda
     Shop* getShop() { return shop_; }
 };
