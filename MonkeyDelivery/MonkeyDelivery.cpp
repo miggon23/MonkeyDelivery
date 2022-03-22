@@ -18,7 +18,7 @@ int main(int argc, char* argv[]) {
     _CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 
     try {
-        Game* game = new Game("Monkey Delivery", 800, 400);
+        Game* game = new Game("Monkey Delivery", 1800, 1000);
         ViewController controller(game);
         controller.run();
         delete game; 

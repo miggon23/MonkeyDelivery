@@ -13,7 +13,6 @@ const string IMAGES_PATH = "../Images/";
 enum TextureName {
     monkeyTexture,
     monkeyEyesClosedTexture, // para la presentaci�n del hito, se puede quitar despu�s pq est� en el spritesheet
-   // spritesheet,
     energyTexture,
     energyLevelTexture,
     fearLevelTexture,
@@ -61,7 +60,6 @@ typedef struct {
 const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
 { {"monkeyPrueba.png",1,1},
   {"animaciones mono/idle3.png",1,1},
- // {"animaciones mono/monkey.png",1,1}, // spritesheet
   {"energy.png",1,1},
   {"energyLevel.png",1,1},
   {"fearLevel.png",1,1},
@@ -72,16 +70,16 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
   {"batPrueba.png",1,1},
   {"decorations/Mision1.png",1,1},
   {"decorations/Mision1.png",1,1},
-  {"decorations/cama.jpg",1,1},
+  {"decorations/bed.png",1,1},
   {"dialogPrueba.png",1,1},
   {"bull.png",1,1},
-  {"animaciones mono/monkey.png",1,1},
+  {"animaciones mono/monkey_.png",1,1},
   {"enemies/bat.png",1,1},
   {"enemies/bull.png",1,1},
   {"enemies/cat.png",1,1},
   {"Buttons/startButton.png",1,1},
   {"enemies/scorpion.png",1,1},
-  {"shop.png",1,1},
+  {"shop/transparent.png",1,1},
   {"shop/panelShop.png",1,1},
   {"shop/seleccion.png",1,1},
   {"enemies/plant.png",1,1},

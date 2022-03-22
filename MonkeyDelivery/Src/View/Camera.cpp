@@ -2,7 +2,7 @@
 #include "../Logic/Game.h"
 #include <iostream>
 
-Camera::Camera(Game* g, Vector2D<float>& initialPos, float camW, float camH)
+Camera::Camera(Game* g, const Vector2D<float>& initialPos, float camW, float camH)
 {
 	game_ = g;
 	pos_ = initialPos;

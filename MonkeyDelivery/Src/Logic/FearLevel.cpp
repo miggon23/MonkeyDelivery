@@ -7,8 +7,8 @@ FearLevel::FearLevel(Game* game) :GameObject(game) {
 	fear_ = 0;
 	maxFear_ = 100;
 	setTexture(fearLevelTexture);
-	setPosition(place_, 35);
-	setDimension(200, 0);
+	setPosition(place_, 50);
+	setDimension(400, 0);
 }
 
 //se asusta y si llega a 100 se desmaya
@@ -17,8 +17,8 @@ bool FearLevel::getScared(int amount)
 	fear_+= amount;
 	if (fear_ < 0)fear_ = 0;
 	if (fear_ <maxFear_) {
-		setDimension(fear_*2, 20);
-		setPosition(50 - (amount/2), 35);
+		setDimension(fear_*2, 50);
+		setPosition(50 - (amount/2), 50);
 		return false;
 	}
 	else {

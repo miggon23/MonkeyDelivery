@@ -27,7 +27,7 @@ private:
 	//Gato
 	int wCat_=100,
 		hCat_=100;
-
+	
 	//Toro
 	int wBull_ = 100,
 		hBull_ = 100;

@@ -4,6 +4,7 @@
 IntectuableShop::IntectuableShop(Game* game,int x , int y) :GameObject(game) {
 	setTexture(shopTexture);
 	setDimension(x, y);
+	setPosition(280.0, 680.0);
 }
 
 IntectuableShop::~IntectuableShop()
@@ -13,7 +14,7 @@ IntectuableShop::~IntectuableShop()
 void IntectuableShop::update()
 {	
 }
-//lllamo al metodo para ver si puede dromir
+//llamo al metodo para ver si puede dromir
 void IntectuableShop::onPlayerInteraction(Player* player){
 	//player->changeSleep();
 	game->saveState(game->getState());

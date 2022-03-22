@@ -6,7 +6,7 @@ Cat::Cat(Game* game,int Aleatorio, Point2D<int>centroRadio, AnimationManager* an
 	setPosition(zonePoint.getX(), zonePoint.getY()); //Coloca al enemigo en ese punto
 	initialPos = getPosition();
 	setTexture(catspritesheet);
-	setDimension(70, 80);
+	setDimension(50, 60);
 	createCheckPoints();
 	setScariness(0.1);
 	setResistance(5000);

@@ -14,7 +14,7 @@ private:
 
 	Game* game_;
 public:
-	Camera(Game* g, Vector2D<float>& initialPos, float camW, float camH); // Doble & -> rvalue
+	Camera(Game* g, const Vector2D<float>& initialPos, float camW, float camH); // Doble & -> rvalue
 
 	void Move(const Vector2D<float>& newPos);
 	void MoveDir(const Vector2D<float>& newDir);

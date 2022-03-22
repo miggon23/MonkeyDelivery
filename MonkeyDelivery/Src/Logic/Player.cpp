@@ -309,7 +309,7 @@ void Player::addObjectToInventory(InventoryObject* p)
 	inventory_->addObject(p);
 }
 
-void Player::draw()
+void Player::draw() 
 {
 	if (!sleeping) {
 		if (energyLevel_->percentEnergy() <= 20) 

@@ -2,7 +2,7 @@
 #include "Player.h"
 Bed::Bed(Game* game) :GameObject(game) {
 	setTexture(cama);
-	setDimension(150, 150);
+	setDimension(140, 130);
 }
 
 Bed::~Bed()

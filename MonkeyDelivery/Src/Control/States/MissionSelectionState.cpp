@@ -28,7 +28,7 @@ MissionSelectionState::MissionSelectionState(Game* game, vector<pair<string,stri
 	//currentSelection_ = missionImg[0].first; ->if it's string
 	currentSelection_ = 0;
 
-	box_ = new Texture(game->getRenderer(), "../Images/missions/MissionBorder.png");
+	box_ = new Texture(game->getRenderer(), "../Images/shop/seleccion.png");
 	boxXPos_ = 100;
 
 	registerCommands();
@@ -65,12 +65,12 @@ void MissionSelectionState::draw()
 
 	int x = 100;
 	for (auto a : currentTextures_) {
-		textureBox = { x, 50, 350, 275 };
+		textureBox = { x, 50, 550, 475 };
 		a->render(textureBox);
 		x += xInc_;
 	}
 
-	SDL_Rect textureBox2 = { boxXPos_, 50, 350, 275 };
+	SDL_Rect textureBox2 = { boxXPos_, 50, 550, 475 };
 	box_->render(textureBox2);
 }
 

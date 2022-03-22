@@ -114,38 +114,35 @@ void Game::start()
     loadMap(mapInfo.path);
 
     // Cámara:
-    Vector2D<float> camPos {0.0, 0.0};
-    mCamera_ = new Camera(this, camPos, getWindowWidth() / 2, getWindowHeight() / 2); // /2 -> es la proporción de tamaño del mapa. Valor más pequeño hace que el mapa se vea + pequeño y viceversa
+    mCamera_ = new Camera(this, CAMINITPOSITION_, getWindowWidth() * MAPSCALE_, getWindowHeight() * MAPSCALE_); // /2 -> es la proporción de tamaño del mapa. Valor más pequeño hace que el mapa se vea + pequeño y viceversa
     // dónde spawnea -> qué se ve del mapa
     srcRect_ = mCamera_->renderRect();
    // srcRect_ = {(int)camPos.getX(), (int)camPos.getY(), (int)mCamera_->getWidth(), (int)mCamera_->getHeight()}; // == lo que devuelve el renderRect
     animationManager = new AnimationManager(this);
    
     player_ = new Player(this,animationManager); //Creacion del jugador
-    //iE_ = new InteractiveEntity(this, tucanTexture, 500, 80);
-    //add(iE_);
 
     missionsPanel_ = new MissionsPanel(this);
     add(missionsPanel_); 
-    add (new IntectuableShop(this, 200, 200));
-    enemiesCreation();//creacion de enemigos
-    
+
+    add(new IntectuableShop(this, 300, 40));
     shop_ = new Shop(player_, this);
 
+    enemiesCreation();//creacion de enemigos
+    
     dialogueBox_ = new DialogueBox(this);
     dialogueBox_->changeText("DialogueBox1");
     dialogueBox_->show();
 
     info = new UI_Info(this);
     auto* x = new Bed(this);
-    x->setPosition(500, 300);
+    x->setPosition(670, 760);
     add(x);
 }
 
 void Game::update()
 {
     player_->update();
-   // setCamera();
    
     for (auto gO : gameObjects_)
         gO->update();
@@ -170,7 +167,6 @@ void Game::draw()
     // Dibujado del mapa
     int bgWidth = mapInfo.tile_width * mapInfo.cols;
     int bgHeight = mapInfo.tile_height * mapInfo.rows;
-   // SDL_Rect r = { 0, 0, bgWidth, bgHeight };
     SDL_Rect dst = { 0, 0, getWindowWidth(), getWindowHeight() }; // Se dibuja en la totalidad de la pantalla (modificar si quisieramos dejar un borde de UI por ejemplo)
     srcRect_ = mCamera_->renderRect(); 
     SDL_RenderCopy(renderer, background_, &srcRect_, &dst); // srcRect es la parte de la textura (background) que se va a ver
@@ -191,7 +187,7 @@ void Game::draw()
 
     missionsPanel_->draw();
 
-    dialogueBox_->draw();
+  //  dialogueBox_->draw();
 
     player_->draw();
     player_->drawDebug();
@@ -284,7 +280,7 @@ void Game::addEnemies(Enemy* enemy)
 }
 void Game::enemiesCreation()
 {  
-    addEnemies(new Cat(this, 50, Point2D<int>(600, 600),animationManager));
+    addEnemies(new Cat(this, 50, Point2D<int>(1000, 600),animationManager));
     addEnemies(new Bat(this, 20, Point2D<int>(300, 500), 7,animationManager));
     addEnemies(new Bull(this, 35, Point2D<int>(200, 800),animationManager));
     addEnemies(new Scorpion(this, 80, Point2D<int>(100, 900), animationManager));
@@ -448,10 +444,13 @@ void Game::aPlayerPos(float x, float y)
 {
     //obtenemos la posicion actual de la camara
     Vector2D<float> current = mCamera_->getCameraPosition();
+
+    int bgWidth = mapInfo.tile_width * mapInfo.cols;
+    int bgHeight = mapInfo.tile_height * mapInfo.rows;
     //comprobamo si esta enalguno de los limites y si va a sobrepasar este, reducimos el desplazamiento a 0
-    if ((x > 0 && current.getX() >= 1000) || (x < 0 && current.getX() <= 0))
+    if ((x > 0 && current.getX() >= bgWidth) || (x < 0 && current.getX() <= 0))
         x = 0;
-    if ((y > 0 && current.getY() >= 1000) || (y < 0 && current.getY() <= 0))
+    if ((y > 0 && current.getY() >= bgHeight) || (y < 0 && current.getY() <= 0))
         y = 0;
     //aplicamos la nueva posicion a la camara
     mCamera_->setPos(current + Vector2D<float>(x, y));
@@ -460,7 +459,7 @@ void Game::aPlayerPos(float x, float y)
     for (auto e : gameObjects_)
     {
         //se multiplica en x2 el desplazamiento para que compense visualmente el mov relativo
-        Point2D<double> newPos = e->getPosition() - (Point2D<double>(x, y)*2);
+        Point2D<double> newPos = e->getPosition() - (Point2D<double>(x, y) / MAPSCALE_);
         e->setPosition(newPos.getX(), newPos.getY());
     }
 
@@ -468,9 +467,9 @@ void Game::aPlayerPos(float x, float y)
     {
         Point2D<double> move = Point2D<double>(x, y);
 
-        Point2D<double> newPos = e->getPosition() - move*2;
+        Point2D<double> newPos = e->getPosition() - move / MAPSCALE_;
         e->setPosition(newPos.getX(), newPos.getY());
-        e->changeOffset(move*-2);
+        e->changeOffset(move / -MAPSCALE_);
     }
 
 
