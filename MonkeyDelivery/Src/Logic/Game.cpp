@@ -180,10 +180,8 @@ void Game::draw()
     background_ = SDL_CreateTextureFromSurface(renderer, a);
     SDL_RenderCopy(renderer, background_, NULL, &dst);*/
 
-    for (auto gO : gameObjects_)
-        gO->draw();
-
-   /*for (auto gO : gameObjects_)
+  
+   for (auto gO : gameObjects_)
         gO->draw();
     
     for (auto enemy : enemyContainer_)
@@ -193,7 +191,8 @@ void Game::draw()
 
     missionsPanel_->draw();
 
-    dialogueBox_->draw();*/
+    dialogueBox_->draw();
+
     player_->draw();
     player_->drawDebug();
     
@@ -286,10 +285,10 @@ void Game::addEnemies(Enemy* enemy)
 void Game::enemiesCreation()
 {  
     addEnemies(new Cat(this, 50, Point2D<int>(100, 100),animationManager));
-    addEnemies(new Bat(this, 20, Point2D<int>(200, 300), 7,animationManager));
-    addEnemies(new Bull(this, 35, Point2D<int>(350, 70),animationManager));
-    addEnemies(new Scorpion(this, 80, Point2D<int>(100, 100), animationManager));
-    addEnemies(new Plant(this, 60, Point2D<int>(200, 100), animationManager));
+    //addEnemies(new Bat(this, 20, Point2D<int>(200, 300), 7,animationManager));
+    //addEnemies(new Bull(this, 35, Point2D<int>(350, 500),animationManager));
+    //addEnemies(new Scorpion(this, 80, Point2D<int>(100, 100), animationManager));
+    //addEnemies(new Plant(this, 60, Point2D<int>(200, 100), animationManager));
 }
 
 void Game::scare(double scariness)
@@ -455,12 +454,18 @@ void Game::aPlayerPos(float x, float y)
     if ((y > 0 && current.getY() >= 1000) || (y < 0 && current.getY() <= 0))
         y = 0;
     //aplicamos la nueva posicion a la camara
-    mCamera_->setPos(mCamera_->getCameraPosition() + Vector2D<float>(x, y));
+    mCamera_->setPos(current + Vector2D<float>(x, y));
 
     //para todos los gameobjects ajustamos su posicion respecto al jugador
     for (auto e : gameObjects_)
     {
         //se multiplica en x2 el desplazamiento para que compense visualmente el mov relativo
+        Point2D<double> newPos = e->getPosition() - (Point2D<double>(x, y)*2);
+        e->setPosition(newPos.getX(), newPos.getY());
+    }
+
+    for (auto e : enemyContainer_)
+    {
         Point2D<double> newPos = e->getPosition() - (Point2D<double>(x, y)*2);
         e->setPosition(newPos.getX(), newPos.getY());
     }
