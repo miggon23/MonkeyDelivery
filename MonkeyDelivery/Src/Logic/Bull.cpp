@@ -67,8 +67,7 @@ void Bull::checkDistance()
 				if (distanceX <= 20.0 && distanceY <= 20.0) {
 					game->scare(2.0 * scariness_ / 10);
 				}
-
-				game->scare(d * scariness_ / 10);
+				else game->scare(d * scariness_ / 10);
 
 			}
 			else if (SDL_GetTicks() <= timer_ + 3000) //Si no esta en el rango y no han pasado los 3 segundos 
