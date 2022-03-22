@@ -14,6 +14,7 @@ ViewController::ViewController(Game* _game) {
     game->loadTextures();
     
     game->setState(new MenuState(game));
+    game->setWindow(window);
 
     timer_ = Timer::Instance();
 }

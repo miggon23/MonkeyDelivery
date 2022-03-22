@@ -305,24 +305,27 @@ void Player::addObjectToInventory(InventoryObject* p)
 void Player::draw()
 {
 	if (!sleeping) {
-		if (energyLevel_->percentEnergy() <= 20) animationManager->setState(AnimationManager::PlayerState::GoToSleep);
+		if (energyLevel_->percentEnergy() <= 20) 
+			animationManager->setState(AnimationManager::PlayerState::GoToSleep);
 		else if (fearLevel_->percentFear() >= 50)
 			animationManager->setState(AnimationManager::PlayerState::Scared);
 	}
-	animationManager->getFrameImagePlayer(getCollider(), textureRect, texture, timerAnimation, AnimationManager::LastDir{ dirX_, dirY_ });
+
+	SDL_Rect pos = { game->getWindowWidth() / 2, game->getWindowHeight() / 2, getWidth(), getHeight() };
+	//animationManager->getFrameImagePlayer(getCollider(), textureRect, texture, timerAnimation, AnimationManager::LastDir{ dirX_, dirY_ });
+	animationManager->getFrameImagePlayer(pos, textureRect, texture, timerAnimation, AnimationManager::LastDir{ dirX_, dirY_ });
 
 	//drawDebug();
 	energyLevel_->draw();
 	fearLevel_->draw();
-	if (boolrenderSleepText)NoSleepText();
+	if (boolrenderSleepText)
+		NoSleepText();
 	//energyLevel_->drawDebug();
 	if (inventoryVisibility)
 		inventory_->draw();
 	if (usingFlashLight)
 		Box(lightZone(), BLUE).render(game->getRenderer());
 }
-
-
 
 //se le pasa una cantidad de dinero al player
 //si la cantidad es negativa se entiende que es para una compra y se devuelve un bool como confirmacion

@@ -40,26 +40,22 @@ void Game::loadSpriteSheets()
 void Game::setCamera()
 {
     Vector2D<float> camera;
-    camera.setX(player_->getX());
-    camera.setY(player_->getY());
+    camera.setX(-(player_->getX() + player_->getWidth() / 2)); // -mCamera_->getWidth() / 2;
+    camera.setY(-(player_->getY() + player_->getHeight() / 2)); // -mCamera_->getHeight() / 2;
 
-    //Keep the camera in bounds
-    if (camera.getX() < 0)
-    {
+    if (camera.getX() > 0) {
         camera.setX(0);
     }
-    if (camera.getY() < 0)
-    {
+    if (camera.getY() > 0) {
         camera.setY(0);
     }
-    if (camera.getX() > getWindowWidth() - mCamera_->getWidth())
-    {
-        camera.setX(getWindowWidth() - mCamera_->getWidth());
+    if (camera.getX() < -getWindowWidth()) {
+        camera.setX(0);
     }
-    if (camera.getY() > getWindowHeight() - mCamera_->getHeight())
-    {
-        camera.setY(getWindowHeight() - mCamera_->getHeight());
+    if (camera.getY() < -getWindowHeight()) {
+        camera.setY(0);
     }
+
     // Movemos la cámara a la nueva pos
     mCamera_->Move(camera);
 }
@@ -145,7 +141,7 @@ void Game::start()
 void Game::update()
 {
     player_->update();
-  //  setCamera();
+    setCamera();
     
 
     for (auto gO : gameObjects_)
@@ -171,9 +167,15 @@ void Game::draw()
     // Dibujado del mapa
     int bgWidth = mapInfo.tile_width * mapInfo.cols;
     int bgHeight = mapInfo.tile_height * mapInfo.rows;
-    //SDL_Rect r = { 0,0, bgWidth, bgHeight };
-    SDL_Rect r = mCamera_->renderRect();
-    SDL_RenderCopy(renderer, background_, NULL, &r);
+    SDL_Rect r = { 0, 0, bgWidth, bgHeight };
+    SDL_Rect src = mCamera_->renderRect();
+    SDL_Rect dst = mCamera_->renderRect();
+    SDL_RenderCopy(renderer, background_, NULL, &dst);
+
+    /*auto a = SDL_GetWindowSurface(window_);
+    auto tex = SDL_CreateTextureFromSurface(renderer, a);
+    background_ = SDL_CreateTextureFromSurface(renderer, a);
+    SDL_RenderCopy(renderer, background_, NULL, &dst);*/
 
    for (auto gO : gameObjects_)
         gO->draw();

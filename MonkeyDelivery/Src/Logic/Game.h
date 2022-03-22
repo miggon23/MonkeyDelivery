@@ -83,6 +83,7 @@ private:
     Camera* mCamera_;
     const float LERPVALUE_ = 0.2f;
     void setCamera();
+    SDL_Window* window_;
 
     string name;
     bool doExit;
@@ -162,6 +163,9 @@ public:
    
     //Tilemap
     void loadMap(string const& filename);
+
+    // Camara
+    inline void setWindow(SDL_Window* w) { window_ = w; };
 
     //Tienda
     Shop* getShop() { return shop_; }
