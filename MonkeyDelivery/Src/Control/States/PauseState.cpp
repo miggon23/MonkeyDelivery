@@ -11,7 +11,7 @@ PauseState::PauseState(Game* game) : State(game)
 {
 	registerCommands();
 
-	addButton(new Options(game->getWindowWidth() / 2 - 45, game->getWindowHeight()/2, 75, 75, game));
+	addButton(new Options(game->getWindowWidth() / 2 - 45, game->getWindowHeight()/2, 75, 75, game, 0));
 	addButton(new Menu(game->getWindowWidth() / 2 - 45, game->getWindowHeight() - 100, 75, 75, game));
 	addButton(new Continue(game->getWindowWidth() / 2 - 45, game->getWindowHeight() / 2 - 100, 75, 75, game));
 }
