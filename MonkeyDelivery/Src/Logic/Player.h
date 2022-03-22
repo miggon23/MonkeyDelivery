@@ -59,15 +59,16 @@ private:
 	SDL_Rect textureRect;
 	int timerAnimation;
 #pragma endregion	
+
 	//orientacion para la linterna
 	string orientation_;
-
+	Texture* flashlightTex_;
 
 public:
 
 	Player(Game* game, AnimationManager* animation);
 	~Player();
-
+	
 	void update() override;
 	void draw() override;
 
