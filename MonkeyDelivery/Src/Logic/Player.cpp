@@ -15,7 +15,7 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game), anima
 	setTexture(monkeyspritesheet);
 
 	setMovState(WALKING);
-	INIT_VEL_ = 3.0;
+	INIT_VEL_ = 1.0;
 
 	//inicializacion de variables
 	fear_ = 0;
@@ -25,8 +25,8 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game), anima
 	//walkingSpeed_ = 3;
 	runningSpeedFactor_ = 1.5;
 
-	walkingEnergy_ = 0.5;
-	runningEnergy_ = 1.0;
+	walkingEnergy_ = 0.05;
+	runningEnergy_ = walkingEnergy_ * 1.5;
 	decreasingEnergyLevel_ = walkingEnergy_; // Cambiar esto después a un método set <---
 
 	resetVelocity(); //Se inicializa al valor de INIT_VEL_X e ..._Y
@@ -39,10 +39,10 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game), anima
 	inventory_ = new Inventory(this, game->getRenderer());
 
 	//Obketos de inventario
-	inventory_->addObject(new Bike(new Texture(game->getRenderer(), "../Images/objects/linterna.png")));
+	inventory_->addObject(new Bike(new Texture(game->getRenderer(), "../Images/objects/patinete.png")));
 	inventory_->addObject(new Flashlight(new Texture(game->getRenderer(), "../Images/objects/linterna2.png")));
 	inventory_->addObject(new EnergyDrink(new Texture(game->getRenderer(), "../Images/objects/refresco.png")));
-	//inventory_->addObject(new Skates(new Texture(game->getRenderer(), "../Images/objects/refresco.png")));
+	inventory_->addObject(new Skates(new Texture(game->getRenderer(), "../Images/objects/patines.png")));
 
 	setInventoryVisibility(true);
 	textureRect = { 0, 0, 100, 100 };
@@ -161,14 +161,15 @@ void Player::changeSleep()
 				usingFlashLight = false;
 				flashLOn = true;
 				setOrientation("off");
+				
 			}
-
 		}
 		else {
 			animationManager->setState(AnimationManager::PlayerState::Running);
 			if (flashLOn) {
 				usingFlashLight = true;
 				flashLOn = false;
+				
 			}
 		}
 		draw();
@@ -396,28 +397,41 @@ const SDL_Rect Player::lightZone()
 	}
 	else if (dirX_ == 0 && dirY_ == 0)
 	{
-		if (getOrientation() == "left")
+		if (getOrientation() == "left") {
 			hitZone = { int(getX() - 100),
 					int(getY()),
 					getWidth() + 50,
 					getHeight() };
-		else if (getOrientation() == "right")
+
+			//SDL_RenderCopy(renderer, flashlightSides, NULL, &hitzone);
+			//setTexture(flashlightSides);
+		}
+		else if (getOrientation() == "right") {
 			hitZone = { int(getX() + 50),
 					int(getY()),
 					getWidth() + 50 ,
 					getHeight() };
-		else if (getOrientation() == "up")
+			//setTexture(flashlightSides);
+		}
+			
+		else if (getOrientation() == "up") {
 			hitZone = { int(getX()),
 					int(getY() - 100),
 					getWidth(),
 					getHeight() + 50 };
-		else if (getOrientation() == "down")
+			//setTexture(flashlightUp);
+		}
+			
+		else if (getOrientation() == "down") {
 			hitZone = { int(getX()),
 					int(getY() + 50),
 					getWidth(),
 					getHeight() + 50 };
-		else
+			//setTexture(flashlightDown);
+		}
+		else {
 			hitZone = getCollider();
+		}
 	}
 	return hitZone;
 }

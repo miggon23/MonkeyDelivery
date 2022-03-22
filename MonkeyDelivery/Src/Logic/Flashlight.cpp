@@ -21,5 +21,3 @@ bool Flashlight::useObject() {
 		return false; //devolvemos false indicando que el objeto no debe destruirse tras ser usado
 	}
 }
-
-

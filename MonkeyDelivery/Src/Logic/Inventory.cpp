@@ -23,11 +23,11 @@ Inventory::~Inventory()
 
 bool Inventory::addObject(InventoryObject* iO)
 {
-	//Comprobamos que el inventario no esté lleno
+	//Comprobamos que el inventario no estï¿½ lleno
 	if (inventoryFull())
 		return false;
 	
-	//Se añade el objeto y se le asigna el player
+	//Se aï¿½ade el objeto y se le asigna el player
 	inventory_.push_back(iO);
 	iO->attachPlayer(player_);
 
@@ -35,11 +35,11 @@ bool Inventory::addObject(InventoryObject* iO)
 }
 
 /// <summary>
-/// Añade el paquete de entrega al slot reservado para ello en el inventario. Si ya tiene uno,
-/// significa que aún no ha terminado la misión por lo que el método te dice si el jugador ha entregado el 
-/// paquete o no. Útil para no solapar misiones
+/// Aï¿½ade el paquete de entrega al slot reservado para ello en el inventario. Si ya tiene uno,
+/// significa que aï¿½n no ha terminado la misiï¿½n por lo que el mï¿½todo te dice si el jugador ha entregado el 
+/// paquete o no. ï¿½til para no solapar misiones
 /// </summary>
-/// <param name="io">Paquete de entrega a añadir en el inventario</param>
+/// <param name="io">Paquete de entrega a aï¿½adir en el inventario</param>
 /// <returns></returns>
 bool Inventory::addMisionObject(InventoryObject* io)
 {
@@ -59,7 +59,7 @@ bool Inventory::useObject(int indexObject)
 		return false;
 	//Si el objeto es de un solo uso (useObject() devuelve true)
 	//Lo eliminamos
-	//Si no había que eliminarlo, no se hace nada
+	//Si no habï¿½a que eliminarlo, no se hace nada
 	if (inventory_[indexObject]->useObject()) //useObject() devuelve un booleano!!
 	{
 		removeObject(indexObject);
@@ -98,10 +98,10 @@ void Inventory::clearInventory()
 }
 
 /// <summary>
-/// Recorre el inventario en búsqueda de objetos que sean nullptr. Si no encuentra ninguno
+/// Recorre el inventario en bï¿½squeda de objetos que sean nullptr. Si no encuentra ninguno
 /// devuelve true
 /// </summary>
-/// <returns>True si el inventario está lleno</returns>
+/// <returns>True si el inventario estï¿½ lleno</returns>
 bool Inventory::inventoryFull() {
 	
 	//int i = 0;
@@ -109,7 +109,7 @@ bool Inventory::inventoryFull() {
 	//while (i < inventory_.size() && inventory_[i] != nullptr)
 	//	i++;
 	//return i == inventory_.size();
-	// queréis esto:
+	// querï¿½is esto:
 	return inventory_.size() == INVENTORY_SIZE;
 }
 
@@ -125,7 +125,7 @@ void Inventory::draw() {
 	for (int i = 0; i < size; i++) {
 	
 	//	SDL_Rect oRect = { 290 + (48 * i), 355, 300 / 8, 300 / 7 };
-		SDL_Rect oRect = { 800 + (80*i), 910, 500 / 8, 500 / 7 }; // 790 = pos primer objeto 80 = separación 
+		SDL_Rect oRect = { 800 + (80*i), 910, 500 / 8, 500 / 7 }; // 790 = pos primer objeto 80 = separaciï¿½n 
 		inventory_[i]->getTexture()->render(oRect);
 		
 	}
