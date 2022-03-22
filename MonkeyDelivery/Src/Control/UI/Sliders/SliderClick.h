@@ -1,14 +1,16 @@
 #pragma once
-#include "../../../Logic/GameObject.h"
+#include "../../Button.h"
 #include "../../../Logic/Game.h"
 
-class SliderClick: public GameObject{
+class SliderClick: public Button{
 public:
 	SliderClick(Game* game,double topPosition,double x, double y);
 	~SliderClick();
-	 void update() override;
-	 void move(double x);
+	void update() override;
+	void onCursorCollision() override;
+	void move();
 private:
 	const double MAX_POSITION;
+	bool onMoving_ = false;
 };
 

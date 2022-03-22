@@ -7,6 +7,11 @@ Button::Button(Game* game, int wight, int height, int x, int y) :GameObject(game
 
 }
 
+Button::Button(Game* game, int x, int y):GameObject(game){
+	setDimension(100, 100);
+	setPosition(x, y);
+}
+
 bool Button::onClick()
 {
 	SDL_GetMouseState(&x_, &y_);
@@ -21,7 +26,8 @@ bool Button::onClick()
 }
 
 void Button::update()
-{/*
+{
+	/*
 	while ((SDL_PollEvent(event)))
 	{
 		if (event->type == SDL_MOUSEBUTTONDOWN)
@@ -35,17 +41,7 @@ void Button::update()
 				onCursorCollision();
 			}
 		}
-	}*/
-
-	/*SDL_GetMouseState(&x_, &y_);
-	SDL_Rect r1 = this->getCollider();
-	SDL_Rect mouse = { x_, y_, 20, 20 };
-
-	if (SDL_HasIntersection(&r1, &mouse))
-	{
-		onCursorCollision();
-	}*/
-
+	}
 	SDL_GetMouseState(&x_, &y_);
 	SDL_Rect r1 = this->getCollider();
 	SDL_Rect mouse = { x_, y_, 20, 20 };
@@ -54,6 +50,14 @@ void Button::update()
 	{
 		onCursorCollision();
 	}
+	SDL_GetMouseState(&x_, &y_);
+	SDL_Rect r1 = this->getCollider();
+	SDL_Rect mouse = { x_, y_, 20, 20 };
+
+	if (SDL_HasIntersection(&r1, &mouse))
+	{
+		onCursorCollision();
+	}*/
 }
 
 //

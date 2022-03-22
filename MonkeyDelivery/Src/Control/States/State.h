@@ -4,7 +4,7 @@
 #include "../CommandFactory.h"
 #include "../ViewController.h"
 #include "../Button.h"
-
+#include "../UI/Sliders/Slider.h"
 class Game;
 using namespace std;
 
@@ -20,6 +20,7 @@ protected:
 
     bool isFullscreen = false;
     vector<Button*> buttonsUI;
+    vector<Slider*> slidersUI;
 public:
     State(Game* game) : game(game) {
         commandFactory = new CommandFactory(game);
@@ -32,6 +33,10 @@ public:
             delete x;
             x = nullptr;
         }
+        for (auto x:slidersUI){
+            delete x;
+            x = nullptr;
+        }       
     };
 
     virtual void update() = 0;
@@ -46,6 +51,8 @@ public:
     virtual void resetInitTime() {};
 
     inline vector<Button*> getButtonsUI() { return buttonsUI; };
+    inline vector<Slider*> getSlidersUI() { return slidersUI; };
     inline void addButton(Button* button) { buttonsUI.push_back(button); };
+    inline void addSlider(Slider* slider) { slidersUI.push_back(slider); };
     vector<SDL_Event>& GetFrameEvents();
 };

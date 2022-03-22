@@ -18,5 +18,12 @@ void Slider::draw(){
 }
 
 void Slider::update(){
-	//aqui se valancea lo q haga el slid+er
+	sliderClick_->update();
+	//aqui se valancea lo q haga el slider
+}
+
+void Slider::setSize(int w, int h)
+{
+	sliderBase_->setDimension(w, h);
+	sliderClick_->setDimension(w, h);
 }

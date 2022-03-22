@@ -161,6 +161,7 @@
     <ClInclude Include="Src\Control\CommandFactory.h" />
     <ClInclude Include="Src\Control\CommandInteract.h" />
     <ClInclude Include="Src\Control\CommandMove.h" />
+    <ClInclude Include="Src\Control\CommandOnClick.h" />
     <ClInclude Include="Src\Control\CommandRun.h" />
     <ClInclude Include="Src\Control\InteractDialogueBoxCommand.h" />
     <ClInclude Include="Src\Control\InventoryCommand.h" />
@@ -243,6 +244,7 @@
     <ClCompile Include="Src\Control\CommandFactory.cpp" />
     <ClCompile Include="Src\Control\CommandInteract.cpp" />
     <ClCompile Include="Src\Control\CommandMove.cpp" />
+    <ClCompile Include="Src\Control\CommandOnClick.cpp" />
     <ClCompile Include="Src\Control\CommandRun.cpp" />
     <ClCompile Include="Src\Control\InteractDialogueBox.cpp" />
     <ClCompile Include="Src\Control\InventoryCommand.cpp" />

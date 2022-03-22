@@ -5,7 +5,6 @@
 #include "../UI/Sliders/Slider.h"
 class OptionsState : public State
 {
-	Slider* slider;
 public:
 	OptionsState(Game* game);
 	~OptionsState() = default;

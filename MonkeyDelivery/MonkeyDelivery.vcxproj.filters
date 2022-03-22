@@ -221,6 +221,9 @@
     <ClCompile Include="Src\View\Camera.cpp">
       <Filter>Source Files\View</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Control\CommandOnClick.cpp">
+      <Filter>Source Files\Control\Commands</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -466,6 +469,9 @@
     </ClInclude>
     <ClInclude Include="Src\View\Camera.h">
       <Filter>Header Files\View</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Control\CommandOnClick.h">
+      <Filter>Header Files\Control\Commands</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

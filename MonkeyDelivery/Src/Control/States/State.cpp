@@ -13,23 +13,6 @@ bool State::doQuit() {
 
 void State::handleEvents() {
     SDL_Event event;
-
-    //// Método de múltiples eventos
-    //while (SDL_PollEvent(&event) != 0)
-    //{
-    //    GetFrameEvents().push_back(event);
-    //}
-    //for (auto e : GetFrameEvents()) //Ejecutamos los executes de los comandos de los eventos registrados
-    //{
-    //    vector<Command*> commands = commandFactory->getCommand(e);
-    //    for (auto i : commands)
-    //    {
-    //        if (i != nullptr) {
-    //            i->execute();
-    //        }
-    //    }
-    //}
-
     // Método simple de eventos
     while (SDL_PollEvent(&event)) {
         Command* command = commandFactory->getCommand(event);
