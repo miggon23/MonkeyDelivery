@@ -168,9 +168,9 @@ public:
 
     // Camara
     inline void setWindow(SDL_Window* w) { window_ = w; };
-    inline Camera* getCamera() { return mCamera_; };
-  
+    inline Camera* getCamera() { return mCamera_; };  
     void aPlayerPos(float x, float y);
+
     //Tienda
     Shop* getShop() { return shop_; }
 };

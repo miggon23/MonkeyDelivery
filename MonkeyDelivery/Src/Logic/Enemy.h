@@ -27,6 +27,10 @@ protected:
 	int timerAnimation;
 
 	Uint32 timeOnFlash_;// timer morir enemigo
+
+	//movimiento enemigos respecto a camara
+	Point2D<double> offsetCamera;
+
 public:
 
 	Enemy(Game* game, int Aleatorio, Point2D<int>centroRadio, AnimationManager* animation);
@@ -46,4 +50,7 @@ public:
 	virtual void checkDistance();
 	inline virtual void setScariness(double fear) { scariness_ = fear; }
 	inline virtual void setResistance(int res) { resistence_ = res; }
+
+	//ajuste del offset
+	inline void changeOffset(Point2D<double> newMove) { offsetCamera = offsetCamera + newMove; }
 };

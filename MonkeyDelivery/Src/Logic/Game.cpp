@@ -284,11 +284,11 @@ void Game::addEnemies(Enemy* enemy)
 }
 void Game::enemiesCreation()
 {  
-    addEnemies(new Cat(this, 50, Point2D<int>(100, 100),animationManager));
-    //addEnemies(new Bat(this, 20, Point2D<int>(200, 300), 7,animationManager));
-    //addEnemies(new Bull(this, 35, Point2D<int>(350, 500),animationManager));
-    //addEnemies(new Scorpion(this, 80, Point2D<int>(100, 100), animationManager));
-    //addEnemies(new Plant(this, 60, Point2D<int>(200, 100), animationManager));
+    addEnemies(new Cat(this, 50, Point2D<int>(600, 600),animationManager));
+    addEnemies(new Bat(this, 20, Point2D<int>(300, 500), 7,animationManager));
+    addEnemies(new Bull(this, 35, Point2D<int>(200, 800),animationManager));
+    addEnemies(new Scorpion(this, 80, Point2D<int>(100, 900), animationManager));
+    addEnemies(new Plant(this, 60, Point2D<int>(800, 100), animationManager));
 }
 
 void Game::scare(double scariness)
@@ -466,8 +466,11 @@ void Game::aPlayerPos(float x, float y)
 
     for (auto e : enemyContainer_)
     {
-        Point2D<double> newPos = e->getPosition() - (Point2D<double>(x, y)*2);
+        Point2D<double> move = Point2D<double>(x, y);
+
+        Point2D<double> newPos = e->getPosition() - move*2;
         e->setPosition(newPos.getX(), newPos.getY());
+        e->changeOffset(move*-2);
     }
 
 

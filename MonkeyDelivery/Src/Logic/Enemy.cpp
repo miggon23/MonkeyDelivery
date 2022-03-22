@@ -17,7 +17,8 @@ void Enemy::patrol(double speed)
 {
 	if (checkpoints.size() > 1)
 	{
-		auto point = checkpoints[indexCheckPoint];
+		//añadido el offset de la camara a cada punto
+		auto point = checkpoints[indexCheckPoint] + offsetCamera;
 		auto x = getPosition().getX(), y = getPosition().getY();
 
 		if (point.getX() - x != 0) {
