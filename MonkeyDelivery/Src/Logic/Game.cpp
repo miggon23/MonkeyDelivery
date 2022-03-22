@@ -180,6 +180,9 @@ void Game::draw()
     background_ = SDL_CreateTextureFromSurface(renderer, a);
     SDL_RenderCopy(renderer, background_, NULL, &dst);*/
 
+    for (auto gO : gameObjects_)
+        gO->draw();
+
    /*for (auto gO : gameObjects_)
         gO->draw();
     
@@ -193,6 +196,7 @@ void Game::draw()
     dialogueBox_->draw();*/
     player_->draw();
     player_->drawDebug();
+    
 }
 
 Point2D<int> Game::getOrigin() {
@@ -456,7 +460,8 @@ void Game::aPlayerPos(float x, float y)
     //para todos los gameobjects ajustamos su posicion respecto al jugador
     for (auto e : gameObjects_)
     {
-        Point2D<double> newPos = e->getPosition() + Point2D<double>(x, y);
+        //se multiplica en x2 el desplazamiento para que compense visualmente el mov relativo
+        Point2D<double> newPos = e->getPosition() - (Point2D<double>(x, y)*2);
         e->setPosition(newPos.getX(), newPos.getY());
     }
 
