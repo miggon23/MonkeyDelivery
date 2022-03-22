@@ -103,14 +103,15 @@ void Player::move()
 		//}
 		
 		// CAMARA
-		/*Vector2D<float> a = { (float)getX(), (float)getY() };
-		game->getCamera()->Lerp(a, 0.001);*/
+		//Vector2D<float> a = { (float)getX(), (float)getY() };
+
+		game->getCamera()->setPos({ (float)speed.getX(),(float)speed.getY() });
 
 		drainEnergy(decreasingEnergyLevel_);
 	}
 
 	//HAY QUE NORMALIZAR EL VECTOR
-	setPosition(getX() + speed.getX(), getY() + speed.getY());
+	//setPosition(getX() + speed.getX(), getY() + speed.getY());
 
 }
 

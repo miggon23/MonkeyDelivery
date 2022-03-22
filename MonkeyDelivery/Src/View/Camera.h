@@ -35,6 +35,11 @@ public:
 		return scale_;
 	};
 
+	inline void setPos(Vector2D<float> pos)
+	{
+		pos_ = pos_ + pos;
+	}
+
 	SDL_Rect renderRect();
 };
 
