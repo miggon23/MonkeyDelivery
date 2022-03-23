@@ -11,46 +11,47 @@ using namespace std;
 const string IMAGES_PATH = "../Images/";
 
 enum TextureName {
-    monkeyTexture,
-    monkeyEyesClosedTexture, // para la presentaci�n del hito, se puede quitar despu�s pq est� en el spritesheet
-    energyTexture,
-    energyLevelTexture,
-    fearLevelTexture,
-    missionPanelTexture,
-    woodPanelTexture,
-    tucanTexture,
-    catTexture,
-    batTexture,
-    mission1Texture,
-    mission2Texture,
-    cama,
-    dialogoPrueba,
-    bullTexture,
-    monkeyspritesheet,
-    batspritesheet,
-    bullspritesheet,
-    catspritesheet,
-    startButtonTexture,
-    scorpionSpritesheet,
-    shopTexture,
-    shopPanel,
-    seleccionShopPanel,
-    plantSpritesheet,
-    optionsButtonTexture,
-    backButtonTexture,
-    sliderBase,
-    sliderClicker,
-    pauseButtonTexture,
-    menuButtonTexture,
-    creditsButtonTexture, 
-    continueButtonTexture,
-    flashlightUp,
-    flashlightDown,
-    flashlightSides
+	monkeyTexture,
+	monkeyEyesClosedTexture, // para la presentaci�n del hito, se puede quitar despu�s pq est� en el spritesheet
+	energyTexture,
+	energyLevelTexture,
+	fearLevelTexture,
+	missionPanelTexture,
+	woodPanelTexture,
+	tucanTexture,
+	catTexture,
+	batTexture,
+	mission1Texture,
+	mission2Texture,
+	cama,
+	dialogoPrueba,
+	bullTexture,
+	monkeyspritesheet,
+	batspritesheet,
+	bullspritesheet,
+	catspritesheet,
+	startButtonTexture,
+	scorpionSpritesheet,
+	shopTexture,
+	shopPanel,
+	seleccionShopPanel,
+	plantSpritesheet,
+	optionsButtonTexture,
+	backButtonTexture,
+	sliderBase,
+	sliderClicker,
+	pauseButtonTexture,
+	menuButtonTexture,
+	creditsButtonTexture,
+	continueButtonTexture,
+	flashlightUp,
+	flashlightDown,
+	flashlightSides,
+	linternaProvi
 };
 
 
-const int NUM_TEXTURES = 36;
+const int NUM_TEXTURES = 37;
 
 
 
@@ -96,7 +97,9 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
   {"Buttons/continue.png",1,1},
   {"objects/linterna_up.png",1,1},
   {"objects/linterna_down.png",1,1},
-  {"objects/linterna_left.png",1,1}
+  {"objects/linterna_left.png",1,1},
+  {"objects/luzprovi.png",1,1}
+
 };
 
 

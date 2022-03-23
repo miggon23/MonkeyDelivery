@@ -190,7 +190,7 @@ void Game::draw()
   //  dialogueBox_->draw();
 
     player_->draw();
-    player_->drawDebug();
+    /*player_->drawDebug();*/
     
 }
 

@@ -48,7 +48,7 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game), anima
 	textureRect = { 0, 0, 100, 100 };
 	timerAnimation = 0;
 
-	string path = "../Images/objects/linterna_up.png";
+	string path = "../Images/objects/luzprovi.png";
 	flashlightTex_ = new Texture(game->getRenderer(), path);
 }
 
@@ -340,7 +340,7 @@ void Player::draw()
 	if (inventoryVisibility)
 		inventory_->draw();
 	if (usingFlashLight) {
-		Box(lightZone(), BLUE).render(game->getRenderer());
+		/*Box(lightZone(), BLUE).render(game->getRenderer());*/
 		auto a = lightZone();
 		flashlightTex_->render(a);
 	}
