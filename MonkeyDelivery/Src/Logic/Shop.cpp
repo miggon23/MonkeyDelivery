@@ -44,14 +44,13 @@ void Shop::addElements(int level)
 	switch (level)
 	{
 	case 1:
-		
-		objects.push_back({ new EnergyDrink(game->getTexture(drinkTexture)),0,0,1,20}); // <-- precio del hito2 para que puedan ser comprados varios objetos
-		objects.push_back({ new Bike(game->getTexture(bikeTexture)),1,0,1,30});
-		objects.push_back({ new Skates(game->getTexture(skatesTexture)),2,0,1,25});		
-		objects.push_back({ new Flashlight(game->getTexture(flashlightTexture)),3,0,1,10});
-		objects.push_back({ new Bike(game->getTexture(bullTexture)),0,105,1,1000});
-		objects.push_back({ new Bike(game->getTexture(bullTexture)),1,105,1,1000});
-		objects.push_back({ new Bike(game->getTexture(bullTexture)),2,105,1,1000});
+		objects.push_back({ new EnergyDrink(game->getTexture(drinkTexture)), 0, 0, 1, 20}); // <-- precio del hito2 para que puedan ser comprados varios objetos
+		objects.push_back({ new Bike(game->getTexture(bikeTexture)), 1, 0, 1, 30});
+		objects.push_back({ new Skates(game->getTexture(skatesTexture)), 2, 0, 1, 25});		
+		objects.push_back({ new Flashlight(game->getTexture(flashlightTexture)), 3, 0, 1, 10});
+		//objects.push_back({ new Bike(game->getTexture(bullTexture)), 0, 105, 1, 1000});
+		//objects.push_back({ new Bike(game->getTexture(bullTexture)), 1, 105, 1, 1000});
+		//objects.push_back({ new Bike(game->getTexture(bullTexture)), 2, 105, 1, 1000});
 		break;
 	case 2:
 		break;
