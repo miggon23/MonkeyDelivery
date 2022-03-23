@@ -339,7 +339,7 @@ void Player::draw()
 	//energyLevel_->drawDebug();
 	if (inventoryVisibility)
 		inventory_->draw();
-	if (usingFlashLight && getOrientation()!="off") {
+	if (usingFlashLight) {
 		/*Box(lightZone(), BLUE).render(game->getRenderer());*/
 		auto a = lightZone();
 		flashlightTex_->render(a);
