@@ -11,10 +11,6 @@ DialogueBox::DialogueBox(Game* game) : GameObject(game)
 {
 	this->game = game;
 
-	letterPerLine_ = 20;
-	yText_ = 20;
-	sizeBtwLines = 40;
-
 	font_ = new Font("../Images/TheMoon.ttf", 40);
 	texture = game->getTexture(dialogoPrueba);
 	color_ = BLACK;
@@ -128,7 +124,7 @@ void DialogueBox::draw()
 		GameObject::draw();
 		for (int i = 0; i < textLines_.size(); i++)
 		{
-			font_->render(game->getRenderer(), textLines_[i].c_str(), getX() + textPos_.getX(), getY() + textPos_.getY() + sizeBtwLines * i, color_);
+			font_->render(game->getRenderer(), textLines_[i].c_str(), getX() + textPos_.getX(), getY() + textPos_.getY() + sizeBtwLines_ * i, color_);
 		}
 		
 	}

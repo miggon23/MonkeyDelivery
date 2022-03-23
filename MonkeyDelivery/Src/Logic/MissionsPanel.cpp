@@ -106,6 +106,8 @@ void MissionsPanel::onMissionSelected(string missionId)
 		activeTarget_->setDimension(m.width, m.height);
 		activeTarget_->setPosition(m.xPos, m.yPos);
 		activeTarget_->setTexture(m.target);
+		string txt = missionId;
+		activeTarget_->setText(txt);
 
 		//iniciar el contador
 		initialTicks_ = SDL_GetTicks();

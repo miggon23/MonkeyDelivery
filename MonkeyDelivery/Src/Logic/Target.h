@@ -24,8 +24,13 @@ public:
 
 	void setTexture(string tex);
 
+	inline void setText(const string& textName) {
+		textPath_ = textName + "Text";
+	};
+
 private:
 	MissionsPanel* missionsPanel_;
 	bool active_;
 	Texture* myTexture_;
+	string textPath_;
 };

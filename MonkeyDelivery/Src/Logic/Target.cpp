@@ -35,6 +35,7 @@ void Target::onPlayerInteraction(Player* player)
 
 		if (player->hasMissionObject()) {
 
+
 			string a = "Mission1Text";
 			game->newDialogue(a);
 
