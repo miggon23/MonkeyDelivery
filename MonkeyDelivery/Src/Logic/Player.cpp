@@ -13,7 +13,7 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game), anima
 
 	texture = nullptr;
 	setTexture(monkeyspritesheet);
-
+	setOrientation("off");
 	setMovState(WALKING);
 	INIT_VEL_ = 1.0;
 
@@ -339,7 +339,7 @@ void Player::draw()
 	//energyLevel_->drawDebug();
 	if (inventoryVisibility)
 		inventory_->draw();
-	if (usingFlashLight) {
+	if (usingFlashLight && getOrientation()!="off") {
 		/*Box(lightZone(), BLUE).render(game->getRenderer());*/
 		auto a = lightZone();
 		flashlightTex_->render(a);
@@ -433,7 +433,7 @@ const SDL_Rect Player::lightZone()
 					int(getY() + 50),
 					getWidth(),
 					getHeight() + 50 };
-			//setTexture(flashlightDown);
+			
 		}
 		else {
 			hitZone = getCollider();
