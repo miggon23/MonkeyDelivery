@@ -224,6 +224,9 @@
     <ClCompile Include="Src\Control\UI\Buttons\Back1.cpp">
       <Filter>Source Files\Control\UI\Buttons</Filter>
     </ClCompile>
+    <ClCompile Include="MessageOverlay.cpp">
+      <Filter>Source Files\Logic</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -472,6 +475,9 @@
     </ClInclude>
     <ClInclude Include="Src\Control\UI\Buttons\Back1.h">
       <Filter>Header Files\Control\UI\Buttons</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageOverlay.h">
+      <Filter>Source Files\Logic</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

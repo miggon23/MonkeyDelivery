@@ -245,5 +245,17 @@ public:
 		//cout << texturaRect.x << " , " << texturaRect.y << endl;
 		tex->render(texturaRect, plant);
 	};
+
+	//MENSAJE PANEL MISIONES
+	inline void getFrameImageMission(SDL_Rect plant, SDL_Rect& texturaRect, Texture* tex, int& timer) {
+		if (timer_->TimeScale() - timer >= 150) {
+			texturaRect.x += 200;
+			if (texturaRect.x >= 400) {
+				texturaRect.x = 0;
+			}
+			timer = timer_->TimeScale();
+		}
+		tex->render(texturaRect, plant);
+	};
 };
 
