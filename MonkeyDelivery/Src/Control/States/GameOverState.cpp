@@ -1,4 +1,5 @@
 #include "GameOverState.h"
+#include "../../Logic/Player.h"
 
 GameOverState::GameOverState(Game* game) : State(game)
 {
@@ -11,8 +12,14 @@ void GameOverState::update()
 
 void GameOverState::draw()
 {
+	game->renderText("GAME OVER", game->getWindowWidth() / 2 - 100, game->getWindowHeight() / 2);
 }
 
 void GameOverState::registerCommands()
+{
+	commandFactory->add(new CommandExit());
+}
+
+void GameOverState::next()
 {
 }

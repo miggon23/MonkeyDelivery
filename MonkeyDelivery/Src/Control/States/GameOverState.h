@@ -13,6 +13,7 @@ public:
 
 	void update()override;
 	void draw()override;
+	void next()override;
 
 	string getStateName() const {
 		return "GameOver state";

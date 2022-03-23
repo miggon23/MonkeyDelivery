@@ -12,9 +12,9 @@
 
 MenuState::MenuState(Game* game) : State(game){
     registerCommands();
-    addButton(new Start(game->getWindowWidth() / 2 - 100, game->getWindowHeight() - 250, 100, 75, game));  
-    addButton(new Options(game->getWindowWidth() / 2 - 100, game->getWindowHeight() - 100, 100, 75, game, 1));  
-    addButton(new Credits(game->getWindowWidth() / 2 - 100, game->getWindowHeight() - 200, 100, 75, game));  
+    addButton(new Start(game->getWindowWidth() / 2 - 50, game->getWindowHeight() - 450, 100, 75, game));  
+    addButton(new Options(game->getWindowWidth() / 2 - 50, game->getWindowHeight() - 350, 100, 75, game, 1));  
+    addButton(new Credits(game->getWindowWidth() / 2 - 50, game->getWindowHeight() - 250, 100, 75, game));  
 }
 
 MenuState::~MenuState(){
