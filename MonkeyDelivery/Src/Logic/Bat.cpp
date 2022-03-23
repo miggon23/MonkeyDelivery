@@ -33,7 +33,7 @@ void Bat::update()
 
 	checkDistance();
 	die();
-	/*respawn();*/
+	respawn();
 }
 
 void Bat::createCheckPoints()

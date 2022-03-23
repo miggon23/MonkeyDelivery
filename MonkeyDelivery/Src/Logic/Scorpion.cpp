@@ -22,7 +22,7 @@ void Scorpion::update()
 	patrol(1);
 	checkDistance();
 	die();
-	/*respawn();*/
+	respawn();
 }
 
 void Scorpion::createCheckPoints()

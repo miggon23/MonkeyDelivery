@@ -23,7 +23,7 @@ protected:
 	bool back;
 	int resistence_;
 	bool collided = false;
-
+	bool startTimer = false;
 	AnimationManager* animationManager;
 	SDL_Rect textureRect;
 	int timerAnimation;

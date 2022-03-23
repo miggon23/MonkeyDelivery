@@ -83,16 +83,16 @@ void Enemy::spawn()
 void Enemy::respawn()
 {
 	if (hasBeenKilled) {
-		respawnTimer = SDL_GetTicks();
-		if (respawnTimer + 1000 < SDL_GetTicks()) {
+		if (!startTimer) {
+			respawnTimer = SDL_GetTicks();
+			startTimer = true;
+		}
+		if (respawnTimer + 5000 < SDL_GetTicks()) {
 			spawn();
 			hasBeenKilled = false;
 			respawnTimer = SDL_GetTicks();
-
 		}
-
 	}
-
 }
 
 void Enemy::onCollision()
