@@ -280,11 +280,35 @@ void Game::addEnemies(Enemy* enemy)
 }
 void Game::enemiesCreation()
 {  
-    addEnemies(new Cat(this, 50, Point2D<int>(1000, 600),animationManager));
+   /* addEnemies(new Cat(this, 50, Point2D<int>(1000, 600),animationManager));
     addEnemies(new Bat(this, 20, Point2D<int>(300, 500), 7,animationManager));
     addEnemies(new Bull(this, 35, Point2D<int>(200, 800),animationManager));
-    addEnemies(new Scorpion(this, 80, Point2D<int>(100, 900), animationManager));
-    addEnemies(new Plant(this, 60, Point2D<int>(800, 100), animationManager));
+    addEnemies(new Scorpion(this, 80, Point2D<int>(100, 900), animationManager));*/
+
+    //zona derecha desde el inicio (pradera)
+    addEnemies(new Plant(this, 60, Point2D<int>(1100, 200), animationManager));
+    addEnemies(new Plant(this, 60, Point2D<int>(1200, 350), animationManager));
+    addEnemies(new Plant(this, 60, Point2D<int>(1600, 450), animationManager));
+    addEnemies(new Plant(this, 60, Point2D<int>(1700, 600), animationManager));
+
+    //zona inferior izquierda desde el inicio(camino junto al mar)
+    addEnemies(new Cat(this, 50, Point2D<int>(-100, 1300), animationManager));
+    addEnemies(new Cat(this, 50, Point2D<int>(-200, 1100), animationManager));
+
+    //zona inferior izquierda desde el inicio(cruce)
+    addEnemies(new Scorpion(this, 80, Point2D<int>(-300, 1650), animationManager));
+    addEnemies(new Scorpion(this, 80, Point2D<int>(-500, 1850), animationManager));
+
+    //zona inferior izquierda desde el inicio(ante zona al puente isla del sur)
+    addEnemies(new Cat(this, 50, Point2D<int>(-1000, 2300), animationManager));
+    addEnemies(new Cat(this, 50, Point2D<int>(-250, 2450), animationManager));
+    addEnemies(new Scorpion(this, 80, Point2D<int>(-550, 2500), animationManager));
+
+    //zona inferior desde el inicio(bosque)
+    addEnemies(new Bat(this, 20, Point2D<int>(450, 1500), 7, animationManager));
+    addEnemies(new Bat(this, 20, Point2D<int>(800, 1800), 7, animationManager));
+    addEnemies(new Bat(this, 20, Point2D<int>(1300, 2100), 7, animationManager));
+    addEnemies(new Bat(this, 20, Point2D<int>(2250, 2000), 7, animationManager));
 }
 
 void Game::scare(double scariness)
@@ -463,7 +487,7 @@ void Game::aPlayerPos(float x, float y)
     int bgWidth = mapInfo.tile_width * mapInfo.cols;
     int bgHeight = mapInfo.tile_height * mapInfo.rows;
     //comprobamo si esta enalguno de los limites y si va a sobrepasar este, reducimos el desplazamiento a 0
-    if ((x > 0 && current.getX() >= bgWidth) || (x < 0 && current.getX() <= 0))
+    if ((x > -10 && current.getX() >= bgWidth) || (x < 0 && current.getX() <= 0))
         x = 0;
     if ((y > 0 && current.getY() >= bgHeight) || (y < 0 && current.getY() <= 0))
         y = 0;
