@@ -13,7 +13,7 @@ OptionsState::OptionsState(Game* game, int num) : State(game)
 	else 	
 		addButton(new Back1(game->getWindowWidth() / 2 - 50, game->getWindowHeight() - 250, 100, 75, game));
 	addSlider(new Slider(game, 200, 200));
-	slidersUI[0]->setSize(400, 200);
+	slidersUI[0]->setSize(300, 150);
 }
 
 void OptionsState::update(){

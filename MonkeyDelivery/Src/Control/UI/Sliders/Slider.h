@@ -10,7 +10,8 @@ public:
 	void update();
 	void setSize(int w, int h);
 	inline SliderClick* getSliderClick() { return sliderClick_; };
-	inline SliderBase* getSldierBase() { return sliderBase_; };
+	inline SliderBase* getSliderBase() { return sliderBase_; };
+	inline double getMinPosition() { return sliderBase_->getPosition().getX() - sliderBase_->getWidth() / 2; };
 private:
 	Game* game_;
 	//Necesitamos una parte de panel y la otra parte clicable

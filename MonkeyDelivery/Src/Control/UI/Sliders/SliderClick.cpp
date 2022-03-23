@@ -1,6 +1,7 @@
 #include "SliderClick.h"
 
-SliderClick::SliderClick(Game* game, double topPosition, double x, double y):Button(game,x,y),MAX_POSITION(topPosition){
+SliderClick::SliderClick(Game* game, double topPosition,double minPosition ,double x, double y):
+	Button(game,x,y),MAX_POSITION(topPosition),MIN_POSITION(minPosition){
 	setTexture(sliderClicker);
 	setPosition(x, y);
 }
@@ -15,9 +16,11 @@ void SliderClick::update(){
 }
 
 void SliderClick::move(){
-	if (getPosition().getX() + 0.5f < MAX_POSITION) {
-		setPosition(getPosition().getX() + 0.5f, getPosition().getY());
-	}
+	SDL_GetMouseState(&x_, &y_);	
+	std::cout << x_ << std::endl;	
+	setPosition( x_, getPosition().getY());
+	if (getPosition().getX() > MAX_POSITION)setPosition(MAX_POSITION, getPosition().getY());
+	else if(getPosition().getX() <MIN_POSITION)setPosition(MIN_POSITION, getPosition().getY());
 }
 
 void SliderClick::onCursorCollision() {
