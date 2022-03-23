@@ -31,7 +31,7 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game), anima
 
 	resetVelocity(); //Se inicializa al valor de INIT_VEL_X e ..._Y
 
-	setDimension(90, 100);
+	setDimension(48, 54);
 	setPosition(game->getWindowWidth() / 2 - getWidth() / 2 , game->getWindowHeight() / 2 - getHeight() / 2);
 
 	energyLevel_ = new energyLevel(game);
@@ -45,7 +45,7 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game), anima
 	inventory_->addObject(new Skates(new Texture(game->getRenderer(), "../Images/objects/patines.png")));
 
 	setInventoryVisibility(true);
-	textureRect = { 0, 0, 100, 100 };
+	textureRect = { 0, 0, 16, 18 };
 	timerAnimation = 0;
 
 	string path = "../Images/objects/luzprovi.png";

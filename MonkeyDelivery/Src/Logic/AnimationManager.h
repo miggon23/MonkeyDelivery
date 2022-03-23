@@ -15,15 +15,17 @@ private:
 	
 	Timer* timer_ = Timer::Instance();	
 	int limit = 600;
+	int playerLimit = 64;
 
-	int wPlayer_=100,
-		hPlayer_=100,
-		x1=100;
+	int wPlayer_ = 16,
+		hPlayer_ = 18,
+		x1 = 16,
+		playerFrameSpeed = 200;
 	
 	
 	//Murcielago	
 	int wBat_ = 100,
-		hBat_ = 100;
+		hBat_ = 100; 
 	//Gato
 	int wCat_=100,
 		hCat_=100;
@@ -68,10 +70,10 @@ public:
 			switch (newDir.x)
 			{
 			case 1: //Derecha
-				texturaRect.y = 500;
+				texturaRect.y = 36;
 				break;
 			case -1: //Izquierda
-				texturaRect.y = 400;
+				texturaRect.y = 18;
 				break;
 			default:
 				break;
@@ -83,7 +85,7 @@ public:
 				texturaRect.y = 0;
 				break;
 			case -1: //Arriba
-				texturaRect.y = 100;
+				texturaRect.y = 54;
 				break;
 			default:
 				break;
@@ -91,9 +93,9 @@ public:
 
 			tex->render(texturaRect, player);
 
-			if (timer_->TimeScale() - timer >= 250) {
-				texturaRect.x += 100;
-				if (texturaRect.x >= limit) {
+			if (timer_->TimeScale() - timer >= playerFrameSpeed) {
+				texturaRect.x += 16;
+				if (texturaRect.x >= playerLimit) {
 					texturaRect.x = 0;
 				}
 				timer = timer_->TimeScale();
@@ -105,7 +107,7 @@ public:
 			texturaRect.y = 300;
 			tex->render(texturaRect, player);
 
-			if (timer_->TimeScale() - timer >= 275) {
+			if (timer_->TimeScale() - timer >= playerFrameSpeed) {
 				x1 += 100;
 				if (texturaRect.x >= 500) {
 					texturaRect.x = 100;
@@ -119,7 +121,7 @@ public:
 			texturaRect.y = 200;
 			tex->render(texturaRect, player);
 
-			if (timer_->TimeScale() - timer >= 250) {
+			if (timer_->TimeScale() - timer >= playerFrameSpeed) {
 				x1 += 100;
 				if (texturaRect.x >= 500) {
 					texturaRect.x = 100;
