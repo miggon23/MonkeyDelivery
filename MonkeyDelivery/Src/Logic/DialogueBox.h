@@ -19,14 +19,14 @@ private:
 	Point2D<int> textPos_;
 	SDL_Color color_;
 
-	const int xPos_ = 300,
-		yPos_ = 250,
-		width_ = 200,
-		height_ = 100,
+	const int xPos_ = 800,
+		yPos_ = 700,
+		width_ = 400,
+		height_ = 200,
 		xText_ = 10,
-		yText_ = 0,
+		yText_ = 20,
 		letterPerLine_ = 20,
-		sizeBtwLines = 20,
+		sizeBtwLines_ = 40,
 		normalUpdateTime_ = 50,
 		fastUpdateTime_ = 5;
 

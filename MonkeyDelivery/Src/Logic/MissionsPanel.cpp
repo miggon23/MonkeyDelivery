@@ -66,10 +66,9 @@ void MissionsPanel::onPlayerInteraction(Player* player)
 	}
 	else {
 		// mostrar mensaje de que ya no quedan más misiones
-		auto d = new DialogueBox(game);
-		d->changeText("Has terminado todas las misiones. Ve a la oficina.");
-		delete d;
+		
 	}
+
 }
 
 

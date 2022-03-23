@@ -131,8 +131,8 @@ void Game::start()
     enemiesCreation();//creacion de enemigos
     
     dialogueBox_ = new DialogueBox(this);
-    dialogueBox_->changeText("DialogueBox1");
-    dialogueBox_->show();
+   // dialogueBox_->changeText("DialogueBox1");
+   // dialogueBox_->show();
 
     info = new UI_Info(this);
     auto* x = new Bed(this);
@@ -187,7 +187,7 @@ void Game::draw()
 
     missionsPanel_->draw();
 
-  //  dialogueBox_->draw();
+    dialogueBox_->draw();
 
     player_->draw();
     /*player_->drawDebug();*/
@@ -320,6 +320,7 @@ void Game::interactDialogue()
 {
     dialogueBox_->interact();
 }
+
 
 //TILEMAP
 void Game::loadMap(string const& filename) 

@@ -162,7 +162,8 @@ public:
     void scare(double scariness);
 
     //texts
-    void interactDialogue();
+    void interactDialogue();   
+    inline void newDialogue(const string& text) { dialogueBox_->changeText(text); };
    
     //Tilemap
     void loadMap(string const& filename);

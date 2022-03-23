@@ -75,7 +75,7 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
   {"decorations/Mision1.png",1,1},
   {"decorations/Mision1.png",1,1},
   {"decorations/bed.png",1,1},
-  {"dialogPrueba.png",1,1},
+  {"ui/dialoguebox.png",1,1},
   {"bull.png",1,1},
   {"animaciones mono/monkey_.png",1,1},
   {"enemies/bat.png",1,1},

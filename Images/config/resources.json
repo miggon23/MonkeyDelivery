@@ -71,6 +71,26 @@
       "text": "Buenisimas tardes monos y senioras, bienvenido a DocTocs"
     }
   ],
+  "Mission1Text": [
+    {
+      "text": "Al fin. Se me estaba empezando a agrietar el pico."
+    }
+  ],
+  "Mission2Text": [
+    {
+      "text": "Buenisimas tardes monos y senioras, bienvenido a DocTocs"
+    }
+  ],
+  "Mission3Text": [
+    {
+      "text": "Buenisimas tardes monos y senioras, bienvenido a DocTocs"
+    }
+  ],
+  "Mission4Text": [
+    {
+      "text": "Buenisimas tardes monos y senioras, bienvenido a DocTocs"
+    }
+  ],
 
   "fonts": [
     {
@@ -127,5 +147,6 @@
       "file": "./Src/TilemapSrc/Spritesheets/TilesetWater.png"
     }
   ]
+
 
 }

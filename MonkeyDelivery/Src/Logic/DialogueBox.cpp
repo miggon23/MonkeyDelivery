@@ -11,8 +11,11 @@ DialogueBox::DialogueBox(Game* game) : GameObject(game)
 {
 	this->game = game;
 
+	letterPerLine_ = 20;
+	yText_ = 20;
+	sizeBtwLines = 40;
 
-	font_ = new Font("../Images/TheMoon.ttf", 20);
+	font_ = new Font("../Images/TheMoon.ttf", 40);
 	texture = game->getTexture(dialogoPrueba);
 	color_ = BLACK;
 
@@ -59,6 +62,7 @@ void DialogueBox::changeText(string id)
 					showLetterTime_ = normalUpdateTime_;
 
 					inShow_ = true;
+					draw_ = true;
 				}
 				else {
 					throw "'missions' array in '" + id

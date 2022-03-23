@@ -32,7 +32,12 @@ Target::~Target()
 void Target::onPlayerInteraction(Player* player)
 {
 	if (active_) {
+
 		if (player->hasMissionObject()) {
+
+			string a = "Mission1Text";
+			game->newDialogue(a);
+
 			player->removeMissionObject();
 			missionsPanel_->onMissionCompleted();
 		}
