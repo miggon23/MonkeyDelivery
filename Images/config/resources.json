@@ -83,12 +83,17 @@
   ],
   "Mission3Text": [
     {
-      "text": "Mis funny hippo, por fin."
+      "text": "Mis funny hippo, por fin. Me quedaba sin hijos ya."
     }
   ],
   "Mission4Text": [
     {
       "text": "Ya me estaba quedando sin ropa limpia que ponerme..."
+    }
+  ],
+  "MissionsFinished": [
+    {
+      "text": "Has terminado todas las misiones, enhorabuena."
     }
   ],
 

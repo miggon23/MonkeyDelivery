@@ -66,7 +66,8 @@ void MissionsPanel::onPlayerInteraction(Player* player)
 	}
 	else {
 		// mostrar mensaje de que ya no quedan más misiones
-		
+		string a = "MissionsFinished";
+		game->newDialogue(a);
 	}
 
 }
@@ -158,7 +159,7 @@ void MissionsPanel::onMissionCompleted()
 	// comprobar si todas las misiones de este nivel están completadas -> tandas de misiones
 	levelsCompleted_[m.level]++;
 	if (levelsCompleted_[m.level] == levels_[m.level]) {
-		if (currentLevel_ != 3) {
+		if (currentLevel_ != NLEVELS_) {
 			currentLevel_++;
 		}
 		else {
