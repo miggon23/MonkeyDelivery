@@ -7,7 +7,7 @@ private:
 	Point2D<double> initialPos_;
 	bool stop; //Evita que el toro persiga al jugador cuando ya lo ha alcanzado
 	int timer_; //Temporizador para el tiempo que el toro tiene stop activo
-	double speed = 2;
+	float speed = 2;
 
 public:
 	Bull(Game* game, int Aleatorio, Point2D<int>centroRadio, AnimationManager* animation);

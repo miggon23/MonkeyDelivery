@@ -6,7 +6,7 @@ Bull::Bull(Game* game, int Aleatorio, Point2D<int> centroRadio, AnimationManager
 	setTexture(bullspritesheet);
 	Vector2D<double> zonePoint = zone.generatePoint();
 	setPosition(zonePoint.getX(), zonePoint.getY());
-	setDimension(100, 110);
+	setDimension(120, 120);
 	initialPos_ = getPosition();
 	createCheckPoints();
 	lastUpdate_ = SDL_GetTicks();
@@ -51,7 +51,7 @@ void Bull::chase(double x, double y)
 void Bull::checkDistance()
 {
 	if (isAlive()) {
-		if (lastUpdate_ + 1000 < SDL_GetTicks()) {
+		/*if (lastUpdate_ + 1000 < SDL_GetTicks()) {*/
 			int range = 300; //rango
 			double dirX = getPosition().getX() - game->getPosisitionPlayer().getX(); //direccion en las x
 			double dirY = getPosition().getY() - game->getPosisitionPlayer().getY(); //direccion en las y
@@ -77,7 +77,7 @@ void Bull::checkDistance()
 			else  //Si no esta en el rango y han pasado los 3 segundos
 				stop = true; //Dejo de perseguir
 			lastUpdate_ = SDL_GetTicks();
-		}
+		//}
 	}
 
 }
