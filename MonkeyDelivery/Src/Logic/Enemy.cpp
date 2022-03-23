@@ -11,6 +11,8 @@ Enemy::Enemy(Game* game, int Aleatorio, Point2D<int>centroRadio, AnimationManage
 	lastUpdate_ = SDL_GetTicks();
 	timeOnFlash_ = SDL_GetTicks();
 	//setScariness(0.7);
+
+	nearLimit_ = 2;
 }
 
 void Enemy::patrol(double speed)
@@ -30,7 +32,7 @@ void Enemy::patrol(double speed)
 			else y--;
 		}
 		setPosition(x, y);
-		if (point == getPosition()) {
+		if (inPoint()) {
 			if (back)indexCheckPoint--;
 			else indexCheckPoint++;
 
@@ -108,6 +110,16 @@ void Enemy::checkDistance()
 			lastUpdate_ = SDL_GetTicks();
 		}
 	}
+
+}
+
+bool Enemy::inPoint()
+{
+	auto point = checkpoints[indexCheckPoint] + offsetCamera;
+	int x = getPosition().getX() - point.getX(),
+		y = getPosition().getY() - point.getY();
+
+	return abs(x) + abs(y) < nearLimit_;
 
 }
 

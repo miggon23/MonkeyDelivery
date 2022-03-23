@@ -31,6 +31,8 @@ protected:
 	//movimiento enemigos respecto a camara
 	Point2D<double> offsetCamera;
 
+	int nearLimit_;
+
 public:
 
 	Enemy(Game* game, int Aleatorio, Point2D<int>centroRadio, AnimationManager* animation);
@@ -53,4 +55,6 @@ public:
 
 	//ajuste del offset
 	inline void changeOffset(Point2D<double> newMove) { offsetCamera = offsetCamera + newMove; }
+
+	bool inPoint();
 };

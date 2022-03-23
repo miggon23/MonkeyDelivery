@@ -473,7 +473,7 @@ void Game::aPlayerPos(float x, float y)
     //para todos los gameobjects ajustamos su posicion respecto al jugador
     for (auto e : gameObjects_)
     {
-        //se multiplica en x2 el desplazamiento para que compense visualmente el mov relativo
+       
         Point2D<double> newPos = e->getPosition() - (Point2D<double>(x, y) / MAPSCALE_);
         e->setPosition(newPos.getX(), newPos.getY());
     }
