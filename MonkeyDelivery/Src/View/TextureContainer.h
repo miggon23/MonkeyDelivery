@@ -47,11 +47,15 @@ enum TextureName {
 	flashlightUp,
 	flashlightDown,
 	flashlightSides,
-	linternaProvi
+	linternaProvi, 
+	bikeTexture, 
+	skatesTexture, 
+	drinkTexture,
+	flashlightTexture,
 };
 
 
-const int NUM_TEXTURES = 37;
+const int NUM_TEXTURES = 41;
 
 
 
@@ -98,8 +102,11 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
   {"objects/linterna_up.png",1,1},
   {"objects/linterna_down.png",1,1},
   {"objects/linterna_left.png",1,1},
-  {"objects/luzprovi.png",1,1}
-
+  {"objects/luzprovi.png",1,1},
+  {"objects/patinete.png",1,1},
+  {"objects/patines.png",1,1},
+  {"objects/refresco.png",1,1},
+  {"objects/linterna2.png",1,1},
 };
 
 
