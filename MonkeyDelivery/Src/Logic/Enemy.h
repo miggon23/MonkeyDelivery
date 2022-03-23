@@ -25,7 +25,7 @@ protected:
 	AnimationManager* animationManager;
 	SDL_Rect textureRect;
 	int timerAnimation;
-
+	bool hasBeenKilled = false;
 	Uint32 timeOnFlash_;// timer morir enemigo
 
 	//movimiento enemigos respecto a camara
