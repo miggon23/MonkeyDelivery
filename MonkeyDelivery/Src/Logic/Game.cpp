@@ -309,6 +309,8 @@ void Game::enemiesCreation()
     addEnemies(new Bat(this, 20, Point2D<int>(800, 1800), 7, animationManager));
     addEnemies(new Bat(this, 20, Point2D<int>(1300, 2100), 7, animationManager));
     addEnemies(new Bat(this, 20, Point2D<int>(2250, 2000), 7, animationManager));
+
+    addEnemies(new Bull(this, 70, Point2D<int>(1100, 200), animationManager));
 }
 
 void Game::scare(double scariness)
