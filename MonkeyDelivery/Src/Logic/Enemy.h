@@ -9,8 +9,10 @@ private:
 
 
 protected:
-
+	//timers
 	Uint32 lastUpdate_;//para timer del miedo
+	Uint32 respawnTimer;//timer respawn
+	Uint32 timeOnFlash_;// timer morir enemigo
 	double speed;
 	bool alive;
 	double scariness_;
@@ -26,7 +28,7 @@ protected:
 	SDL_Rect textureRect;
 	int timerAnimation;
 	bool hasBeenKilled = false;
-	Uint32 timeOnFlash_;// timer morir enemigo
+
 
 	//movimiento enemigos respecto a camara
 	Point2D<double> offsetCamera;
@@ -48,6 +50,7 @@ public:
 	virtual void createCheckPoints() = 0; //Todos los enemigos crearan sus propios puntos de paso en su patrulla
 
 	void spawn();
+	void respawn();
 	void onCollision();
 	virtual void checkDistance();
 	inline virtual void setScariness(double fear) { scariness_ = fear; }

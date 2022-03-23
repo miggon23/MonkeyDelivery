@@ -17,6 +17,7 @@ void Plant::update()
 {
 	checkDistance();
 	die();
+	/*respawn();*/
 }
 //void Plant::die() {
 //	if (game->getPlayer()->usingFlashLight) {

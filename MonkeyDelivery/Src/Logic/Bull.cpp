@@ -23,6 +23,7 @@ void Bull::update()
 	if (stop) patrol(1); //El toro solo patrulla si no persigue 
 	checkDistance();
 	die();
+	/*respawn();*/
 	//Si han pasado 3 segundos y el toro esta persiguiendo
 	if (!stop && SDL_GetTicks() > timer_ + 3000) {
 		stop = true;

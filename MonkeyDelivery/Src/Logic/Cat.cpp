@@ -18,6 +18,7 @@ void Cat::update()
 	patrol(1);
 	checkDistance();
 	die();
+	/*respawn();*/
 }
 
 void Cat::createCheckPoints()

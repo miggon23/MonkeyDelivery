@@ -11,7 +11,7 @@ Enemy::Enemy(Game* game, int Aleatorio, Point2D<int>centroRadio, AnimationManage
 	lastUpdate_ = SDL_GetTicks();
 	timeOnFlash_ = SDL_GetTicks();
 	//setScariness(0.7);
-
+	respawnTimer = SDL_GetTicks();
 	nearLimit_ = 2;
 }
 
@@ -80,6 +80,21 @@ void Enemy::spawn()
 	setPosition(randomPos.getX(), randomPos.getY());
 }
 
+void Enemy::respawn()
+{
+	if (hasBeenKilled) {
+		respawnTimer = SDL_GetTicks();
+		if (respawnTimer + 1000 < SDL_GetTicks()) {
+			spawn();
+			hasBeenKilled = false;
+			respawnTimer = SDL_GetTicks();
+
+		}
+
+	}
+
+}
+
 void Enemy::onCollision()
 {
 
@@ -99,7 +114,7 @@ void Enemy::checkDistance()
 					game->scare(distanceX*scariness_);
 				else*/
 
-				double d = 1.8*((distanceY + distanceX) / 2);
+				double d = 1.8 * ((distanceY + distanceX) / 2);
 				if (distanceX <= 20.0 && distanceY <= 20.0) {
 					game->scare(2.0 * scariness_ / 10);
 				}
