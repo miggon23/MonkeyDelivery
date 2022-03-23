@@ -63,6 +63,13 @@ public:
 		if (lastDir.x != newDir.x || lastDir.y != newDir.y){//Si la direccion cambia (da igual de que componente)
 			texturaRect.x = 0;
 			lastDir = newDir;
+			if (timer_->TimeScale() - timer >= playerFrameSpeed) {
+				texturaRect.x += 16;
+				if (texturaRect.x >= playerLimit) {
+					texturaRect.x = 0;
+				}
+				timer = timer_->TimeScale();
+			}
 		}
 		if (playerState_==Running) {
 			
@@ -70,10 +77,10 @@ public:
 			switch (newDir.x)
 			{
 			case 1: //Derecha
-				texturaRect.y = 36;
+				texturaRect.y = 54;
 				break;
 			case -1: //Izquierda
-				texturaRect.y = 18;
+				texturaRect.y = 36;
 				break;
 			default:
 				break;
@@ -85,7 +92,7 @@ public:
 				texturaRect.y = 0;
 				break;
 			case -1: //Arriba
-				texturaRect.y = 54;
+				texturaRect.y = 72;
 				break;
 			default:
 				break;
