@@ -8,7 +8,7 @@ Bat::Bat(Game* game, int Aleatorio, Point2D<int> centroRadio, int nLoop, Animati
 	setTexture(batspritesheet);
 	setDimension(90, 100);
 	initialPos = getPosition();
-	
+	stealTimer_ = SDL_GetTicks();
 	speed = 1;
 	player_ = game->getPlayer();
 	
@@ -60,7 +60,10 @@ void Bat::createCheckPoints()
 void Bat::onPlayerInteraction(Player* player)
 {
 	if (isAlive()) {
-		player->removeMoney(1);
+		if (stealTimer_ + 750 < SDL_GetTicks()) {
+			player->removeMoney(1);
+			stealTimer_ = SDL_GetTicks();
+		}
 	}
 }
 

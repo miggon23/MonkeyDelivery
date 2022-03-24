@@ -7,6 +7,7 @@ class Bat : public Enemy
 	int coinLost_;
 	Player* player_;
 	int loops;
+	Uint32 stealTimer_;
 
 public:
 
