@@ -75,9 +75,19 @@ void Scorpion::checkDistance()
 	//	//iniPlayerVel = game->getPlayer()->getVel();
 	//} 
 }
-
+//batDyingSpritesheet,
+//bullDyingSpritesheet,
+//catDyingSpritesheet,
+//plantDyingSpritesheet,
+//scorpionDyingSpritesheet
 void Scorpion::draw()
 {
-	if (isAlive())
+	if (isAlive() && !collided) {
+		setTexture(scorpionSpritesheet);
 		animationManager->getFrameImageScorpion(getCollider(), textureRect, texture, timerAnimation);
+	}
+	else if(isAlive() && collided){
+		setTexture(scorpionDyingSpritesheet);
+		animationManager->getFrameImageScorpion(getCollider(), textureRect, texture, timerAnimation);
+	}
 }

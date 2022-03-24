@@ -12,6 +12,7 @@ private:
 	//Usamos un booleano de inRange para saber cuando el jugador entra y sale del rango,
 	//estio onCollisionEnter y onCollisionExit de Unity
 	bool inRange; 
+	bool attacked = false;
 
 public:
 	Scorpion(Game* game, int Aleatorio, Point2D<int>centroRadio, AnimationManager* animation);

@@ -30,12 +30,13 @@ enum TextureName {
 	batspritesheet,
 	bullspritesheet,
 	catspritesheet,
-	startButtonTexture,
+	plantSpritesheet,
 	scorpionSpritesheet,
+	
+	startButtonTexture,
 	shopTexture,
 	shopPanel,
 	seleccionShopPanel,
-	plantSpritesheet,
 	optionsButtonTexture,
 	backButtonTexture,
 	sliderBase,
@@ -47,15 +48,21 @@ enum TextureName {
 	flashlightUp,
 	flashlightDown,
 	flashlightSides,
-	linternaProvi, 
-	bikeTexture, 
-	skatesTexture, 
+	linternaProvi,
+	bikeTexture,
+	skatesTexture,
 	drinkTexture,
 	flashlightTexture,
+
+	batDyingSpritesheet,
+	bullDyingSpritesheet,
+	catDyingSpritesheet,
+	plantDyingSpritesheet,
+	scorpionDyingSpritesheet
 };
 
 
-const int NUM_TEXTURES = 41;
+const int NUM_TEXTURES = 46;
 
 
 
@@ -85,12 +92,12 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
   {"enemies/bat.png",1,1},
   {"enemies/bull.png",1,1},
   {"enemies/cat.png",1,1},
-  {"Buttons/startButton.png",1,1},
+  {"enemies/plant.png",1,1},
   {"enemies/scorpion.png",1,1},
+  {"Buttons/startButton.png",1,1},
   {"shop/transparent.png",1,1},
   {"shop/panelShop.png",1,1},
   {"shop/seleccion.png",1,1},
-  {"enemies/plant.png",1,1},
   {"Buttons/options.png",1,1},
   {"Buttons/back.png",1,1},
   {"ui/sliderBase.png",1,1},
@@ -107,6 +114,12 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
   {"objects/patines.png",1,1},
   {"objects/refresco.png",1,1},
   {"objects/linterna2.png",1,1},
+
+  {"enemies/bat_dying.png",1,1},
+  {"enemies/bull_dying.png",1,1},
+  {"enemies/cat_dying.png",1,1},
+  {"enemies/plant_dying.png",1,1},
+  {"enemies/scorpion_dying.png",1,1},
 };
 
 

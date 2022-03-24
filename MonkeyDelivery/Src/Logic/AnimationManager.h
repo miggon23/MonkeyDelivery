@@ -6,28 +6,28 @@ class Game;
 class AnimationManager
 {
 public:
-	enum PlayerState {Sleeping, GoToSleep, Running, Scared };
+	enum PlayerState { Sleeping, GoToSleep, Running, Scared };
 
 private:
 	Game* game_;
 	//Player	
-	PlayerState playerState_= Running;
-	
-	Timer* timer_ = Timer::Instance();	
+	PlayerState playerState_ = Running;
+
+	Timer* timer_ = Timer::Instance();
 	int limit = 600;
 
-	int wPlayer_=100,
-		hPlayer_=100,
-		x1=100;
-	
-	
+	int wPlayer_ = 100,
+		hPlayer_ = 100,
+		x1 = 100;
+
+
 	//Murcielago	
 	int wBat_ = 100,
 		hBat_ = 100;
 	//Gato
-	int wCat_=100,
-		hCat_=100;
-	
+	int wCat_ = 100,
+		hCat_ = 100;
+
 	//Toro
 	int wBull_ = 100,
 		hBull_ = 100;
@@ -39,7 +39,7 @@ private:
 	//Planta
 	int wPlant_ = 55,
 		hPlant_ = 55;
-	
+
 public:
 
 	struct LastDir
@@ -49,7 +49,7 @@ public:
 	};
 	LastDir lastDir;
 	inline AnimationManager() {  };
-	inline AnimationManager(Game* game) :game_(game) {		
+	inline AnimationManager(Game* game) :game_(game) {
 	};
 	inline ~AnimationManager() { timer_ = nullptr; cout << "animationManager Deleted" << endl; };
 	//JUGADOR
@@ -57,13 +57,13 @@ public:
 	inline int getWidthPlayer() { return wPlayer_; };
 	inline int getHeightPlayer() { return hPlayer_; };
 
-	inline void getFrameImagePlayer(SDL_Rect player, SDL_Rect& texturaRect, Texture* tex, int& timer/*,PlayerState state*/,  LastDir newDir) {
-		if (lastDir.x != newDir.x || lastDir.y != newDir.y){//Si la direccion cambia (da igual de que componente)
+	inline void getFrameImagePlayer(SDL_Rect player, SDL_Rect& texturaRect, Texture* tex, int& timer/*,PlayerState state*/, LastDir newDir) {
+		if (lastDir.x != newDir.x || lastDir.y != newDir.y) {//Si la direccion cambia (da igual de que componente)
 			texturaRect.x = 0;
 			lastDir = newDir;
 		}
-		if (playerState_==Running) {
-			
+		if (playerState_ == Running) {
+
 			//las x
 			switch (newDir.x)
 			{
@@ -99,7 +99,7 @@ public:
 				timer = timer_->TimeScale();
 			}
 		}
-		else if (playerState_== GoToSleep) {
+		else if (playerState_ == GoToSleep) {
 
 			texturaRect.x = x1;
 			texturaRect.y = 300;
@@ -114,7 +114,7 @@ public:
 				timer = timer_->TimeScale();
 			}
 		}
-		else if(playerState_== Scared){
+		else if (playerState_ == Scared) {
 			texturaRect.x = x1;
 			texturaRect.y = 200;
 			tex->render(texturaRect, player);
@@ -128,13 +128,13 @@ public:
 				timer = timer_->TimeScale();
 			}
 		}
-		else if (playerState_ == Sleeping) {			
-			texturaRect.y = 600;			
+		else if (playerState_ == Sleeping) {
+			texturaRect.y = 600;
 			tex->render(texturaRect, player);
 			if (timer_->TimeScale() - timer >= 400) {
 				texturaRect.x += 100;
 				if (texturaRect.x >= 200) {
-					texturaRect.x = 0;				
+					texturaRect.x = 0;
 				}
 				timer = timer_->TimeScale();
 				cout << texturaRect.x << endl;
@@ -151,33 +151,33 @@ public:
 	/// <param name="texturaRect">textureRect DEL MURCIELAGO(es una variable es lo q vamos a recortar de la sprite sheet)</param>
 	/// <param name="tex"> Textura del muercielago</param>
 	/// <param name="timer">variable timerAnimation para que me cambie la imagen cada cierto numero de ticks</param>
-	inline void getFrameImageBat(SDL_Rect bat,SDL_Rect &texturaRect, Texture* tex,int &timer) {
+	inline void getFrameImageBat(SDL_Rect bat, SDL_Rect& texturaRect, Texture* tex, int& timer) {
 		if (timer_->TimeScale() - timer >= 200) {
 			texturaRect.x += wBat_;
 			if (texturaRect.x >= 200/*&&texturaRect.y<300*/) {
 				texturaRect.x = 0;
 				texturaRect.y += hBat_;
 			}
-			if (texturaRect.y >= 200&& texturaRect.x>=100) {
+			if (texturaRect.y >= 200 && texturaRect.x >= 100) {
 				texturaRect.y = 0; texturaRect.x = 0;
 			}
 			timer = timer_->TimeScale();
 			//cout << texturaRect.x << " " << texturaRect.y << endl;
 		}
-		tex->render(texturaRect, bat);		
-	}	
+		tex->render(texturaRect, bat);
+	}
 	//GATO
 	inline int getWidthCat() { return wCat_; };
 	inline int getHeightcat() { return hCat_; };
 	inline void getFrameImageCat(SDL_Rect cat, SDL_Rect& texturaRect, Texture* tex, int& timer) {
-		if (timer_->TimeScale() - timer >=450) {
-			texturaRect.y += hCat_;			
+		if (timer_->TimeScale() - timer >= 450) {
+			texturaRect.y += hCat_;
 			if (texturaRect.y >= 200) {
-				texturaRect.y = 0; 
+				texturaRect.y = 0;
 			}
 			timer = timer_->TimeScale();
 		}
-		tex->render(texturaRect, cat);		
+		tex->render(texturaRect, cat);
 	}
 
 	//TORO
@@ -193,9 +193,9 @@ public:
 				texturaRect.x = 0;
 				texturaRect.y += hBull_;
 			}
-			
+
 			timer = timer_->TimeScale();
-			
+
 		}
 		tex->render(texturaRect, bull);
 	};
@@ -216,6 +216,7 @@ public:
 			timer = timer_->TimeScale();
 		}
 		tex->render(texturaRect, scorpion);
+
 	};
 
 	//PLANTA

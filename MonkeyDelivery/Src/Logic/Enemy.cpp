@@ -53,7 +53,7 @@ void Enemy::patrol(double speed)
 void Enemy::die()
 {
 	if (game->getPlayer()->usingFlashLight) {
-
+		
 		// se guardan los ticks al colisionar con la luz
 		if (collide(game->getPlayer()->lightZone()) && !collided) {
 			collided = true;
