@@ -154,6 +154,7 @@
     <ClInclude Include="framework.h" />
     <ClInclude Include="MonkeyDelivery.h" />
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="SoundEffect.h" />
     <ClInclude Include="Src\Control\Button.h" />
     <ClInclude Include="Src\Control\Command.h" />
     <ClInclude Include="Src\Control\CommandClick.h" />
@@ -224,6 +225,7 @@
     <ClInclude Include="Src\Logic\SpawnZone.h" />
     <ClInclude Include="Src\Logic\Target.h" />
     <ClInclude Include="Src\Logic\UI_Info.h" />
+    <ClInclude Include="Src\Utils\Music.h" />
     <ClInclude Include="Src\Utils\Singleton.h" />
     <ClInclude Include="Src\Utils\Timer.h" />
     <ClInclude Include="Src\Utils\Vector2D.h" />
@@ -237,6 +239,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MonkeyDelivery.cpp" />
+    <ClCompile Include="SoundEffect.cpp" />
     <ClCompile Include="Src\Control\Button.cpp" />
     <ClCompile Include="Src\Control\Command.cpp" />
     <ClCompile Include="Src\Control\CommandClick.cpp" />

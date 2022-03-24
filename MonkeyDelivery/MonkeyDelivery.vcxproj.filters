@@ -224,6 +224,7 @@
     <ClCompile Include="Src\Control\UI\Buttons\Back1.cpp">
       <Filter>Source Files\Control\UI\Buttons</Filter>
     </ClCompile>
+    <ClCompile Include="SoundEffect.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -473,6 +474,10 @@
     <ClInclude Include="Src\Control\UI\Buttons\Back1.h">
       <Filter>Header Files\Control\UI\Buttons</Filter>
     </ClInclude>
+    <ClInclude Include="Src\Utils\Music.h">
+      <Filter>Header Files\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundEffect.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="MonkeyDelivery.rc" />
