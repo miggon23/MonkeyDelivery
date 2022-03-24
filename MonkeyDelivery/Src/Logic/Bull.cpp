@@ -22,6 +22,7 @@ void Bull::update()
 {
 	if (stop) patrol(1); //El toro solo patrulla si no persigue 
 	checkDistance();
+	bullScares();
 	die();
 	respawn();
 	//Si han pasado 3 segundos y el toro esta persiguiendo
@@ -51,7 +52,6 @@ void Bull::chase(double x, double y)
 void Bull::checkDistance()
 {
 	if (isAlive()) {
-		/*if (lastUpdate_ + 1000 < SDL_GetTicks()) {*/
 			int range = 300; //rango
 			double dirX = getPosition().getX() - game->getPosisitionPlayer().getX(); //direccion en las x
 			double dirY = getPosition().getY() - game->getPosisitionPlayer().getY(); //direccion en las y
@@ -64,11 +64,6 @@ void Bull::checkDistance()
 				stop = false; //Dejo de patrullar
 				timer_ = SDL_GetTicks();
 				chase(dirX, dirY); //Persigo
-				double d = 1.8 * ((distanceY + distanceX) / 2);
-				if (distanceX <= 20.0 && distanceY <= 20.0) {
-					game->scare(2.0 * scariness_ / 10);
-				}
-				else game->scare(d * scariness_ / 10);
 
 			}
 			else if (SDL_GetTicks() <= timer_ + 3000) //Si no esta en el rango y no han pasado los 3 segundos 
@@ -76,8 +71,6 @@ void Bull::checkDistance()
 
 			else  //Si no esta en el rango y han pasado los 3 segundos
 				stop = true; //Dejo de perseguir
-			lastUpdate_ = SDL_GetTicks();
-		//}
 	}
 
 }
@@ -86,4 +79,31 @@ void Bull::draw()
 {
 	if (isAlive())
 		animationManager->getFrameImageBull(getCollider(), textureRect, texture, timerAnimation);
+}
+
+void Bull::bullScares()
+{
+	if (isAlive()) {
+		if (lastUpdate_ + 1000 < SDL_GetTicks()) {
+			int offset = 300;
+			double distanceX = abs(getPosition().getX() - game->getPosisitionPlayer().getX());
+			double distanceY = abs(getPosition().getY() - game->getPosisitionPlayer().getY());
+
+			if (distanceX <= offset && distanceY <= offset) {
+
+				/*if (distanceX < distanceY)
+					game->scare(distanceX*scariness_);
+				else*/
+
+				double d = 1.8 * ((distanceY + distanceX) / 2);
+				if (distanceX <= 20.0 && distanceY <= 20.0) {
+					game->scare(2.0 * scariness_ / 10);
+				}
+				//si no es demasiado por eso se divide entre 8
+				else game->scare(d * scariness_ / 10);///esto hay que mirarlo
+				lastUpdate_ = SDL_GetTicks();
+			}
+			lastUpdate_ = SDL_GetTicks();
+		}
+	}
 }
