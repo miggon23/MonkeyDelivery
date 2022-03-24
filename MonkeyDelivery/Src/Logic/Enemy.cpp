@@ -72,7 +72,6 @@ void Enemy::die()
 		}
 	}
 }
-
 void Enemy::spawn()
 {
 	setAlive(true); //Para que cuando reaparezca este vivo

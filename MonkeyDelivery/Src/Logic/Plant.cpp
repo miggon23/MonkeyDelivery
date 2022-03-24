@@ -38,22 +38,25 @@ void Plant::checkDistance()
 	if (distanceX <= range && distanceY <= range) {
 
 		game->drainPlayerEnergy(0.2);
-		
+
 		//Realmente esto no se si comentarlo porque la planta no da miedo, de momento lo dejo
 		if (lastUpdate_ + 1000 < SDL_GetTicks())
-			game->scare(scariness_ );
+			game->scare(scariness_);
 		lastUpdate_ = SDL_GetTicks();
 	}
 }
 
 void Plant::draw()
 {
-	if (isAlive() && !collided) {
-		setTexture(plantSpritesheet);
-		animationManager->getFrameImagePlant(getCollider(), textureRect, texture, timerAnimation);
+	if (isAlive()) {
+		if (collided && game->getPlayer()->usingFlashLight) {
+			setTexture(plantDyingSpritesheet);
+			animationManager->getFrameImagePlant(getCollider(), textureRect, texture, timerAnimation);
+		}
+		else {
+			setTexture(plantSpritesheet);
+			animationManager->getFrameImagePlant(getCollider(), textureRect, texture, timerAnimation);
+		}
 	}
-	else if (isAlive() && collided) {
-		setTexture(plantDyingSpritesheet);
-		animationManager->getFrameImagePlant(getCollider(), textureRect, texture, timerAnimation);
-	}
+
 }

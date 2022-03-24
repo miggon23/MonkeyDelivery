@@ -212,6 +212,7 @@
     <ClInclude Include="Src\Logic\InteractuableShop.h" />
     <ClInclude Include="Src\Logic\Inventory.h" />
     <ClInclude Include="Src\Logic\InventoryObject.h" />
+    <ClInclude Include="Src\Logic\Lantern.h" />
     <ClInclude Include="Src\Logic\Mission.h" />
     <ClInclude Include="Src\Logic\MissionManager.h" />
     <ClInclude Include="Src\Logic\MissionsPanel.h" />
@@ -297,6 +298,7 @@
     <ClCompile Include="Src\Logic\InteractubaleShop.cpp" />
     <ClCompile Include="Src\Logic\Inventory.cpp" />
     <ClCompile Include="Src\Logic\InventoryObject.cpp" />
+    <ClCompile Include="Src\Logic\Lantern.cpp" />
     <ClCompile Include="Src\Logic\Mission.cpp" />
     <ClCompile Include="Src\Logic\MissionManager.cpp" />
     <ClCompile Include="Src\Logic\MissionsPanel.cpp" />

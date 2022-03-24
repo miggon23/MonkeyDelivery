@@ -77,13 +77,15 @@ void Bull::checkDistance()
 
 void Bull::draw()
 {
-	if (isAlive() && !collided) {
-		setTexture(bullspritesheet);
-		animationManager->getFrameImageBull(getCollider(), textureRect, texture, timerAnimation);
-	}
-	else if (isAlive() && collided) {
-		setTexture(bullDyingSpritesheet);
-		animationManager->getFrameImageBull(getCollider(), textureRect, texture, timerAnimation);
+	if (isAlive()) {
+		if (collided && game->getPlayer()->usingFlashLight) {
+			setTexture(bullDyingSpritesheet);
+			animationManager->getFrameImageBull(getCollider(), textureRect, texture, timerAnimation);
+		}
+		else {
+			setTexture(bullspritesheet);
+			animationManager->getFrameImageBull(getCollider(), textureRect, texture, timerAnimation);
+		}
 	}
 }
 

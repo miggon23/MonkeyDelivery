@@ -227,6 +227,9 @@
     <ClCompile Include="Src\Utils\SoundEffect.cpp">
       <Filter>Source Files\Utils</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Logic\Lantern.cpp">
+      <Filter>Source Files\Logic\InteractuableObjects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -481,6 +484,9 @@
     </ClInclude>
     <ClInclude Include="Src\Utils\SoundEffect.h">
       <Filter>Header Files\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Logic\Lantern.h">
+      <Filter>Header Files\Logic\InteractuableObjects</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

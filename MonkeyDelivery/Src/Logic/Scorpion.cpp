@@ -82,12 +82,14 @@ void Scorpion::checkDistance()
 //scorpionDyingSpritesheet
 void Scorpion::draw()
 {
-	if (isAlive() && !collided) {
-		setTexture(scorpionSpritesheet);
-		animationManager->getFrameImageScorpion(getCollider(), textureRect, texture, timerAnimation);
-	}
-	else if(isAlive() && collided){
-		setTexture(scorpionDyingSpritesheet);
-		animationManager->getFrameImageScorpion(getCollider(), textureRect, texture, timerAnimation);
+	if (isAlive()) {
+		if (collided && game->getPlayer()->usingFlashLight) {
+			setTexture(scorpionDyingSpritesheet);
+			animationManager->getFrameImageScorpion(getCollider(), textureRect, texture, timerAnimation);
+		}
+		else {
+			setTexture(scorpionSpritesheet);
+			animationManager->getFrameImageScorpion(getCollider(), textureRect, texture, timerAnimation);
+		}
 	}
 }

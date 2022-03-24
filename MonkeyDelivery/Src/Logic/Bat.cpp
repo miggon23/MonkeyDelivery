@@ -68,12 +68,14 @@ void Bat::onPlayerInteraction(Player* player)
 }
 
 void Bat::draw(){
-	if (isAlive() && !collided) {
-		setTexture(batspritesheet);
-		animationManager->getFrameImageBat(getCollider(), textureRect, texture, timerAnimation);
-	}
-	else if (isAlive() && collided) {
-		setTexture(batDyingSpritesheet);
-		animationManager->getFrameImageBat(getCollider(), textureRect, texture, timerAnimation);
+	if (isAlive()) {
+		if (collided && game->getPlayer()->usingFlashLight) {
+			setTexture(batDyingSpritesheet);
+			animationManager->getFrameImageBat(getCollider(), textureRect, texture, timerAnimation);
+		}
+		else {
+			setTexture(batspritesheet);
+			animationManager->getFrameImageBat(getCollider(), textureRect, texture, timerAnimation);
+		}
 	}
 }
