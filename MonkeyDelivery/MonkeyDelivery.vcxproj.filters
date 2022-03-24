@@ -606,5 +606,11 @@
     <Filter Include="Source Files\Control\UI\Slider">
       <UniqueIdentifier>{6cc445ec-a5e2-4b11-8c35-fe3010cf64e7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\sdlutils">
+      <UniqueIdentifier>{2d40fece-8b39-4fb3-bee7-4b09d088d2aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\sdlutils">
+      <UniqueIdentifier>{026b6cce-9c4c-407d-9286-e45435f94d97}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>
