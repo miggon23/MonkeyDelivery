@@ -42,10 +42,10 @@ void Bull::createCheckPoints()
 void Bull::chase(double x, double y)
 {
 	double newX = getPosition().getX(), newY = getPosition().getY();
-	if (x < 0) newX = getPosition().getX() + speed / 2.0;		//el mono esta a la derecha
-	else if (x > 0) newX = getPosition().getX() - speed / 2.0;	//el mono esta a la izquierda
-	if (y < 0) newY = getPosition().getY() + speed / 2.0;		//el mono esta por debajo
-	else if (y > 0) newY = getPosition().getY() - speed / 2.0;	//el mono esta por encima
+	if (x < -1) newX = getPosition().getX() + speed / 2.0;		//el mono esta a la derecha
+	else if (x > 1) newX = getPosition().getX() - speed / 2.0;	//el mono esta a la izquierda
+	if (y < -1) newY = getPosition().getY() + speed / 2.0;		//el mono esta por debajo
+	else if (y > 1) newY = getPosition().getY() - speed / 2.0;	//el mono esta por encima
 	setPosition(newX, newY);
 }
 
