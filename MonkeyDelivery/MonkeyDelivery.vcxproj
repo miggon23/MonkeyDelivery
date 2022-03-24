@@ -154,7 +154,6 @@
     <ClInclude Include="framework.h" />
     <ClInclude Include="MonkeyDelivery.h" />
     <ClInclude Include="Resource.h" />
-    <ClInclude Include="SoundEffect.h" />
     <ClInclude Include="Src\Control\Button.h" />
     <ClInclude Include="Src\Control\Command.h" />
     <ClInclude Include="Src\Control\CommandClick.h" />
@@ -227,6 +226,7 @@
     <ClInclude Include="Src\Logic\UI_Info.h" />
     <ClInclude Include="Src\Utils\Music.h" />
     <ClInclude Include="Src\Utils\Singleton.h" />
+    <ClInclude Include="Src\Utils\SoundEffect.h" />
     <ClInclude Include="Src\Utils\Timer.h" />
     <ClInclude Include="Src\Utils\Vector2D.h" />
     <ClInclude Include="Src\View\Box.h" />
@@ -239,7 +239,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MonkeyDelivery.cpp" />
-    <ClCompile Include="SoundEffect.cpp" />
     <ClCompile Include="Src\Control\Button.cpp" />
     <ClCompile Include="Src\Control\Command.cpp" />
     <ClCompile Include="Src\Control\CommandClick.cpp" />
@@ -310,6 +309,7 @@
     <ClCompile Include="Src\Logic\SpawnZone.cpp" />
     <ClCompile Include="Src\Logic\Target.cpp" />
     <ClCompile Include="Src\Logic\UI_Info.cpp" />
+    <ClCompile Include="Src\Utils\SoundEffect.cpp" />
     <ClCompile Include="Src\Utils\Timer.cpp" />
     <ClCompile Include="Src\View\Camera.cpp" />
     <ClCompile Include="Src\View\Texture.cpp" />
