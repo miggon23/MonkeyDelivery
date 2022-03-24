@@ -68,6 +68,12 @@ void Bat::onPlayerInteraction(Player* player)
 }
 
 void Bat::draw(){
-	if (isAlive())
-	animationManager->getFrameImageBat(getCollider(), textureRect, texture,timerAnimation);
+	if (isAlive() && !collided) {
+		setTexture(batspritesheet);
+		animationManager->getFrameImageBat(getCollider(), textureRect, texture, timerAnimation);
+	}
+	else if (isAlive() && collided) {
+		setTexture(batDyingSpritesheet);
+		animationManager->getFrameImageBat(getCollider(), textureRect, texture, timerAnimation);
+	}
 }

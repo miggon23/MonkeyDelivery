@@ -34,6 +34,12 @@ void Cat::createCheckPoints()
 
 void Cat::draw()
 {
-	if(isAlive())
+	if (isAlive() && !collided) {
+		setTexture(catspritesheet);
 		animationManager->getFrameImageCat(getCollider(), textureRect, texture, timerAnimation);
+	}
+	else if (isAlive() && collided) {
+		setTexture(catDyingSpritesheet);
+		animationManager->getFrameImageCat(getCollider(), textureRect, texture, timerAnimation);
+	} 
 }

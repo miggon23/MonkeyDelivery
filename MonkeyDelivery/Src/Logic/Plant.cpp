@@ -48,6 +48,12 @@ void Plant::checkDistance()
 
 void Plant::draw()
 {
-	if (isAlive())
+	if (isAlive() && !collided) {
+		setTexture(plantSpritesheet);
 		animationManager->getFrameImagePlant(getCollider(), textureRect, texture, timerAnimation);
+	}
+	else if (isAlive() && collided) {
+		setTexture(plantDyingSpritesheet);
+		animationManager->getFrameImagePlant(getCollider(), textureRect, texture, timerAnimation);
+	}
 }
