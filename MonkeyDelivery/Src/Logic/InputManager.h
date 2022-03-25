@@ -25,10 +25,13 @@ private:
 	CommandFactory* commandFactory;
 	SDL_Event event;
 	Timer* timer_;
+	
+	void initSDL();
 public:
 	InputManager(Game* _game);
 	~InputManager();
-	void initSDL();
+	void run();
+	void handleEvents();
 	vector<SDL_Event>& GetFrameEvents(); //Vector de eventos, registra mas de 1 por frame
 	void clearBackground();
 	unsigned int frameDuration();

@@ -1,5 +1,8 @@
 #include "InputManager.h"
 #include "../Logic/Game.h"
+#include "../Control/States/MenuState.h"
+#include "../Control/States/PlayingState.h"
+
 
 InputManager::InputManager(Game *_game)
 {
@@ -10,7 +13,7 @@ InputManager::InputManager(Game *_game)
 	game->setRenderer(renderer);
 	game->loadTextures();
 	joystickDeadZone_ = 8000;
-
+	game->setState(new MenuState(game));
 	timer_ = Timer::Instance();
 
 }
@@ -19,9 +22,29 @@ InputManager::~InputManager()
 {
 	timer_->Release();
 	timer_ = nullptr;
+	SDL_JoystickClose(gamepad_);
+	gamepad_ = NULL;
 	SDL_DestroyRenderer(renderer);
 	SDL_DestroyWindow(window);
 	SDL_Quit();
+	IMG_Quit();
+}
+
+void InputManager::run()
+{
+	while (!game->getState()->doQuit()) {
+		timer_->Update();
+
+		handleEvents();
+
+		if (timer_->DeltaTime() >= 1.0f / FRAME_RATE) {
+			timer_->Reset();
+			clearBackground();
+			game->getState()->update();
+			game->getState()->draw();
+			SDL_RenderPresent(renderer);
+		}
+	}
 }
 
 void InputManager::initSDL()
@@ -64,6 +87,11 @@ void InputManager::initSDL()
 	SDL_FillRect(screenSurface, &screenSurface->clip_rect, 0xFF);
 	SDL_UpdateWindowSurface(window);
 
+}
+
+void InputManager::handleEvents()
+{
+	game->getState()->handleEvents();
 }
 
 vector<SDL_Event>& InputManager::GetFrameEvents()
