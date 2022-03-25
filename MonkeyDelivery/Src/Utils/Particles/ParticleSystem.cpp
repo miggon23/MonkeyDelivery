@@ -2,6 +2,7 @@
 #include <algorithm>
 #include <assert.h>
 #include <string>
+#include <iostream>
 
 inline float Deg2Rad(float a)
 {
@@ -428,6 +429,7 @@ void ParticleSystem::draw()
 {
     if (_texture == nullptr)
     {
+        std::cout << "QUE NO HAY TEXTURA";
         return;
     }
     for (int i = 0; i < _particleCount; i++)

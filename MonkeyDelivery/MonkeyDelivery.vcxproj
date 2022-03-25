@@ -225,6 +225,8 @@
     <ClInclude Include="Src\Logic\SpawnZone.h" />
     <ClInclude Include="Src\Logic\Target.h" />
     <ClInclude Include="Src\Logic\UI_Info.h" />
+    <ClInclude Include="Src\Utils\Particles\ParticleExample.h" />
+    <ClInclude Include="Src\Utils\Particles\ParticleSystem.h" />
     <ClInclude Include="Src\Utils\Singleton.h" />
     <ClInclude Include="Src\Utils\Timer.h" />
     <ClInclude Include="Src\Utils\Vector2D.h" />
@@ -309,6 +311,8 @@
     <ClCompile Include="Src\Logic\SpawnZone.cpp" />
     <ClCompile Include="Src\Logic\Target.cpp" />
     <ClCompile Include="Src\Logic\UI_Info.cpp" />
+    <ClCompile Include="Src\Utils\Particles\ParticleExample.cpp" />
+    <ClCompile Include="Src\Utils\Particles\ParticleSystem.cpp" />
     <ClCompile Include="Src\Utils\Timer.cpp" />
     <ClCompile Include="Src\View\Camera.cpp" />
     <ClCompile Include="Src\View\Texture.cpp" />

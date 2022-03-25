@@ -138,6 +138,11 @@ void Game::start()
     auto* x = new Bed(this);
     x->setPosition(670, 760);
     add(x);
+
+    partSystem = new ParticleExample();
+    partSystem->setRenderer(renderer);                   // set the renderer
+    partSystem->setPosition(670, 760);             // set the position
+    partSystem->setStyle(ParticleExample::FIRE);    // set the example effects
 }
 
 void Game::update()
@@ -191,6 +196,8 @@ void Game::draw()
 
     player_->draw();
     /*player_->drawDebug();*/
+
+    partSystem->draw();
     
 }
 

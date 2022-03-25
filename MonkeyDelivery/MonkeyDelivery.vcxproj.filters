@@ -227,6 +227,8 @@
     <ClCompile Include="MessageOverlay.cpp">
       <Filter>Source Files\Logic</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Utils\Particles\ParticleExample.cpp" />
+    <ClCompile Include="Src\Utils\Particles\ParticleSystem.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -479,6 +481,8 @@
     <ClInclude Include="MessageOverlay.h">
       <Filter>Source Files\Logic</Filter>
     </ClInclude>
+    <ClInclude Include="Src\Utils\Particles\ParticleExample.h" />
+    <ClInclude Include="Src\Utils\Particles\ParticleSystem.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="MonkeyDelivery.rc" />

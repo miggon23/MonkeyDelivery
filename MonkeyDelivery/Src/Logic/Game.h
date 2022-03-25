@@ -8,6 +8,7 @@
 #include <string>
 #include <vector>
 
+
 #include"../Control/States/StateMachine.h"
 #include "../View/Texture.h"
 #include "../View/TextureContainer.h"
@@ -46,6 +47,7 @@
 
 #include "../View/Camera.h"
 #include "../Utils/Vector2D.h"
+#include "../Utils/Particles/ParticleExample.h"
 
 #include "../json/JSON.h"
 
@@ -111,6 +113,9 @@ private:
 
     //Tienda    
     Shop* shop_;
+
+    //Particle System
+    ParticleExample* partSystem;
 
 
 public:
