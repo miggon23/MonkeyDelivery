@@ -1,6 +1,6 @@
 #pragma once
-#include "../Utils/Vector2D.h"
-#include <SDL.h>
+#include "../utils/Vector2D.h"
+#include "SDL.h"
 
 class Game;
 

@@ -6,7 +6,7 @@
 #define BOX_H
 
 #include "SDL.h"
-#include "../Utils/Vector2D.h"
+#include "../utils/Vector2D.h"
 
 #define WHITE SDL_Color({255,255,255})
 #define BLACK SDL_Color({0,0,0})

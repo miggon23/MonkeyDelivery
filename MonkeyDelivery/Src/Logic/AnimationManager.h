@@ -1,7 +1,7 @@
 #pragma once
 #include "../View/Texture.h"
 #include "../View/TextureContainer.h"
-#include "../Utils/Timer.h"
+#include "../utils/Timer.h"
 class Game;
 class AnimationManager
 {

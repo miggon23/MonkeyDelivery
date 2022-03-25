@@ -230,6 +230,12 @@
     <ClCompile Include="Src\Logic\Lantern.cpp">
       <Filter>Source Files\Logic\InteractuableObjects</Filter>
     </ClCompile>
+    <ClCompile Include="Src\sdlutils\SDLUtils.cpp">
+      <Filter>Source Files\sdlutils</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\sdlutils\SoundEffect.cpp">
+      <Filter>Source Files\sdlutils</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -488,6 +494,33 @@
     <ClInclude Include="Src\Logic\Lantern.h">
       <Filter>Header Files\Logic\InteractuableObjects</Filter>
     </ClInclude>
+    <ClInclude Include="Src\sdlutils\Font.h">
+      <Filter>Header Files\sdlutils</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\sdlutils\InputHandler.h">
+      <Filter>Header Files\sdlutils</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\sdlutils\macros.h">
+      <Filter>Header Files\sdlutils</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\sdlutils\Music.h">
+      <Filter>Header Files\sdlutils</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\sdlutils\RandomNumberGenerator.h">
+      <Filter>Header Files\sdlutils</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\sdlutils\SDLUtils.h">
+      <Filter>Header Files\sdlutils</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\sdlutils\sdlutils_demo.h">
+      <Filter>Header Files\sdlutils</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\sdlutils\SoundEffect.h">
+      <Filter>Header Files\sdlutils</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\sdlutils\VirtualTimer.h">
+      <Filter>Header Files\sdlutils</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="MonkeyDelivery.rc" />
@@ -613,10 +646,10 @@
       <UniqueIdentifier>{6cc445ec-a5e2-4b11-8c35-fe3010cf64e7}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\sdlutils">
-      <UniqueIdentifier>{2d40fece-8b39-4fb3-bee7-4b09d088d2aa}</UniqueIdentifier>
+      <UniqueIdentifier>{bb88966b-2a07-41ec-9d39-884603c3f2c5}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\sdlutils">
-      <UniqueIdentifier>{026b6cce-9c4c-407d-9286-e45435f94d97}</UniqueIdentifier>
+      <UniqueIdentifier>{7e07d613-1e4b-4016-87b1-115ddf48fdb2}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

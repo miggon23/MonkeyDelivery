@@ -225,6 +225,15 @@
     <ClInclude Include="Src\Logic\SpawnZone.h" />
     <ClInclude Include="Src\Logic\Target.h" />
     <ClInclude Include="Src\Logic\UI_Info.h" />
+    <ClInclude Include="Src\sdlutils\Font.h" />
+    <ClInclude Include="Src\sdlutils\InputHandler.h" />
+    <ClInclude Include="Src\sdlutils\macros.h" />
+    <ClInclude Include="Src\sdlutils\Music.h" />
+    <ClInclude Include="Src\sdlutils\RandomNumberGenerator.h" />
+    <ClInclude Include="Src\sdlutils\SDLUtils.h" />
+    <ClInclude Include="Src\sdlutils\sdlutils_demo.h" />
+    <ClInclude Include="Src\sdlutils\SoundEffect.h" />
+    <ClInclude Include="Src\sdlutils\VirtualTimer.h" />
     <ClInclude Include="Src\Utils\Music.h" />
     <ClInclude Include="Src\Utils\Singleton.h" />
     <ClInclude Include="Src\Utils\SoundEffect.h" />
@@ -311,6 +320,8 @@
     <ClCompile Include="Src\Logic\SpawnZone.cpp" />
     <ClCompile Include="Src\Logic\Target.cpp" />
     <ClCompile Include="Src\Logic\UI_Info.cpp" />
+    <ClCompile Include="Src\sdlutils\SDLUtils.cpp" />
+    <ClCompile Include="Src\sdlutils\SoundEffect.cpp" />
     <ClCompile Include="Src\Utils\SoundEffect.cpp" />
     <ClCompile Include="Src\Utils\Timer.cpp" />
     <ClCompile Include="Src\View\Camera.cpp" />

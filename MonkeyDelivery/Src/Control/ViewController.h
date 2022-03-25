@@ -3,7 +3,7 @@
 #include "SDL.h"
 #include "CommandFactory.h"
 #include <string>
-#include "../Utils/Timer.h"
+#include "../utils/Timer.h"
 
 
 
