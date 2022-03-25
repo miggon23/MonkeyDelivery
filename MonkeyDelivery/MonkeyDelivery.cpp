@@ -20,13 +20,13 @@ int main(int argc, char* argv[]) {
 
     try {
         Game* game = new Game("Monkey Delivery", 1800, 1000);
-        ViewController controller(game);
-       /* InputManager manager(game);
-        manager.run();*/
-        controller.run();
+        /*ViewController controller(game);*/
+        InputManager manager(game);
+        manager.run();
+        /*controller.run();*/
         delete game; 
-        controller.~ViewController();
-        /*manager.~InputManager();*/
+        /*controller.~ViewController();*/
+        manager.~InputManager();
     }
     catch (const string& e) {
         cout << e;

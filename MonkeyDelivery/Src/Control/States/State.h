@@ -3,6 +3,7 @@
 #include <string>
 #include "../CommandFactory.h"
 #include "../ViewController.h"
+#include "../../Logic/InputManager.h"
 #include "../Button.h"
 #include "../UI/Sliders/Slider.h"
 class Game;

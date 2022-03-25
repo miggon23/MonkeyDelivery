@@ -4,7 +4,7 @@
 #include "../Control/States/PlayingState.h"
 
 
-InputManager::InputManager(Game *_game)
+InputManager::InputManager(Game* _game)
 {
 	game = _game;
 	std::cout << "[DEBUG] frame duration: " << frameDuration() << " ms" << endl;
@@ -12,6 +12,7 @@ InputManager::InputManager(Game *_game)
 	IMG_Init(IMG_INIT_PNG);
 	game->setRenderer(renderer);
 	game->loadTextures();
+	commandFactory = new CommandFactory(game);
 	joystickDeadZone_ = 8000;
 	game->setState(new MenuState(game));
 	timer_ = Timer::Instance();
@@ -37,6 +38,7 @@ void InputManager::run()
 
 		handleEvents();
 
+
 		if (timer_->DeltaTime() >= 1.0f / FRAME_RATE) {
 			timer_->Reset();
 			clearBackground();
@@ -44,6 +46,7 @@ void InputManager::run()
 			game->getState()->draw();
 			SDL_RenderPresent(renderer);
 		}
+
 	}
 }
 
@@ -92,6 +95,23 @@ void InputManager::initSDL()
 void InputManager::handleEvents()
 {
 	game->getState()->handleEvents();
+	/*SDL_Event event;*/
+	// Método simple de eventos
+	//while (SDL_PollEvent(&event)) {
+	//	Command* command = commandFactory->getCommand(event);
+	//	if (command != nullptr) {
+	//		command->execute();
+	//		break;
+	//	}
+	//	/*if (event.type == SDL_JOYAXISMOTION) {
+	//		printf("axis: %i %i\n", event.jaxis.axis, event.jaxis.value);
+	//	}
+	//	else if (event.type == SDL_JOYBUTTONDOWN) {
+	//		printf("button: %i\n", event.jbutton.button);
+	//	}*/
+
+	//}
+
 }
 
 vector<SDL_Event>& InputManager::GetFrameEvents()
