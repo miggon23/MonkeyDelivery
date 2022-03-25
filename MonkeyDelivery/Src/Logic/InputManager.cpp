@@ -4,17 +4,24 @@
 InputManager::InputManager(Game *_game)
 {
 	game = _game;
-	/*std::cout << "[DEBUG] frame duration: " << frameDuration() << " ms" << endl;*/
+	std::cout << "[DEBUG] frame duration: " << frameDuration() << " ms" << endl;
 	initSDL();
 	IMG_Init(IMG_INIT_PNG);
 	game->setRenderer(renderer);
 	game->loadTextures();
 	joystickDeadZone_ = 8000;
 
+	timer_ = Timer::Instance();
+
 }
 
 InputManager::~InputManager()
 {
+	timer_->Release();
+	timer_ = nullptr;
+	SDL_DestroyRenderer(renderer);
+	SDL_DestroyWindow(window);
+	SDL_Quit();
 }
 
 void InputManager::initSDL()
@@ -57,4 +64,21 @@ void InputManager::initSDL()
 	SDL_FillRect(screenSurface, &screenSurface->clip_rect, 0xFF);
 	SDL_UpdateWindowSurface(window);
 
+}
+
+vector<SDL_Event>& InputManager::GetFrameEvents()
+{
+	static vector<SDL_Event> frame_events;
+	return frame_events;
+}
+
+void InputManager::clearBackground()
+{
+	SDL_RenderClear(renderer);
+	SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+}
+
+unsigned int InputManager::frameDuration()
+{
+	return 1000 / FRAME_RATE_;
 }

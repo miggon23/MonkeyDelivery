@@ -6,6 +6,11 @@
 #include <string>
 #include <vector>
 #include "../Control/CommandFactory.h"
+
+
+const int FRAME_RATE_ = 60;
+
+
 class Game;
 
 class InputManager {
@@ -24,6 +29,9 @@ public:
 	InputManager(Game* _game);
 	~InputManager();
 	void initSDL();
+	vector<SDL_Event>& GetFrameEvents(); //Vector de eventos, registra mas de 1 por frame
+	void clearBackground();
+	unsigned int frameDuration();
 };
 
 
