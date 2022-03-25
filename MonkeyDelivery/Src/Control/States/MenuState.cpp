@@ -18,7 +18,7 @@ MenuState::MenuState(Game* game) : State(game){
     addButton(new Options(game->getWindowWidth() / 2 - 50, game->getWindowHeight() - 350, 100, 75, game, 1));  
     addButton(new Credits(game->getWindowWidth() / 2 - 50, game->getWindowHeight() - 250, 100, 75, game));  
    /* Music* m = new Music("../Sounds/menumusic.wav");
-    m->play(1);*/
+    m->play(-1);*/ //-1 son infinitos loops
 }
 
 MenuState::~MenuState(){
