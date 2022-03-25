@@ -12,7 +12,10 @@ public:
 	inline SliderClick* getSliderClick() { return sliderClick_; };
 	inline SliderBase* getSliderBase() { return sliderBase_; };
 	inline double getMinPosition() { return sliderBase_->getPosition().getX() - sliderBase_->getWidth() / 2; };
-private:
+	double Percent();
+	//El metodo de utility realiza la funcionalidad que queramos que cumpla ese slider
+	virtual void Utility() = 0;
+protected:
 	Game* game_;
 	//Necesitamos una parte de panel y la otra parte clicable
 	SliderClick* sliderClick_;

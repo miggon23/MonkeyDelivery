@@ -21,7 +21,7 @@ void Slider::draw(){
 
 void Slider::update(){
 	sliderClick_->update();
-	//aqui se valancea lo q haga el slider
+	//Percent();
 }
 
 void Slider::setSize(int w, int h)
@@ -31,4 +31,11 @@ void Slider::setSize(int w, int h)
 	sliderClick_->setPosition(sliderClick_->getX(),sliderBase_->getY()+sliderBase_->getWidth()/8);
 	sliderClick_->chageMaxPosition(sliderBase_->getPosition().getX() + sliderBase_->getWidth()/2);
 	sliderClick_->chageMinPosition(sliderBase_->getPosition().getX() /*- sliderBase_->getWidth()*/);
+}
+
+double Slider::Percent(){
+	double maxDistance = sliderClick_->MaxPosition() - sliderClick_->MinPosition();
+	double x= sliderClick_->getPosition().getX()-sliderClick_->MinPosition();	
+	//cout << x/maxDistance<< endl;
+	return x;
 }

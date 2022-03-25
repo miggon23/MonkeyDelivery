@@ -2,7 +2,6 @@
 #include "State.h"
 #include "../../Logic/Game.h"
 #include "../States/MenuState.h"
-#include "../UI/Sliders/Slider.h"
 class OptionsState : public State
 {
 public:

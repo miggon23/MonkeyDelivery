@@ -11,6 +11,8 @@ public:
 	void move();
 	inline void chageMaxPosition(double pos) { MAX_POSITION = pos; };
 	inline void chageMinPosition(double pos) { MIN_POSITION = pos; };
+	inline double MaxPosition() { return MAX_POSITION; };
+	inline double MinPosition() { return MIN_POSITION; };
 private:
     double MAX_POSITION;
 	double MIN_POSITION;
