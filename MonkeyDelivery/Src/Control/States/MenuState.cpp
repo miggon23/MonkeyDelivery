@@ -1,6 +1,8 @@
 #include "MenuState.h"
 #include "../../Logic/Game.h"
 
+//#include "../../Utils/Music.h"
+
 #include "../NextStateCommand.h"
 #include "../CommandExit.h"
 #include "../CommandClick.h"
@@ -15,6 +17,8 @@ MenuState::MenuState(Game* game) : State(game){
     addButton(new Start(game->getWindowWidth() / 2 - 50, game->getWindowHeight() - 450, 100, 75, game));  
     addButton(new Options(game->getWindowWidth() / 2 - 50, game->getWindowHeight() - 350, 100, 75, game, 1));  
     addButton(new Credits(game->getWindowWidth() / 2 - 50, game->getWindowHeight() - 250, 100, 75, game));  
+   /* Music* m = new Music("../Sounds/menumusic.wav");
+    m->play(1);*/
 }
 
 MenuState::~MenuState(){
