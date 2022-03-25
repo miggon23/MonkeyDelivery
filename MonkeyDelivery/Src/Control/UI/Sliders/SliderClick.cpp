@@ -17,7 +17,7 @@ void SliderClick::update(){
 
 void SliderClick::move(){
 	SDL_GetMouseState(&x_, &y_);	
-	std::cout << x_ << std::endl;	
+	//std::cout << x_ << std::endl;	
 	setPosition( x_, getPosition().getY());
 	if (getPosition().getX() > MAX_POSITION)setPosition(MAX_POSITION, getPosition().getY());
 	else if(getPosition().getX() <MIN_POSITION)setPosition(MIN_POSITION, getPosition().getY());
@@ -25,6 +25,6 @@ void SliderClick::move(){
 
 void SliderClick::onCursorCollision() {
 	onMoving_ = !onMoving_;
-	std::cout << "onMoving: " << onMoving_ << std::endl;
+	//std::cout << "onMoving: " << onMoving_ << std::endl;
 }
 

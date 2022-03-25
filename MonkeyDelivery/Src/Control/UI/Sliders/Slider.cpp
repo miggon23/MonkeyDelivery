@@ -15,13 +15,15 @@ Slider::~Slider(){
 void Slider::draw(){
 	sliderBase_->draw();
 	sliderClick_->draw();
-	sliderBase_->drawDebug();
-	sliderClick_->drawDebug();
+	/*sliderBase_->drawDebug();
+	sliderClick_->drawDebug();*/
 }
 
 void Slider::update(){
 	sliderClick_->update();
-	//Percent();
+	//si se mueve miro si ha cambiado el sliderclick de sitio y por tanto su funcionalidad tiene que realizarse
+	if(sliderClick_->onMoving())
+		Utility();
 }
 
 void Slider::setSize(int w, int h)
@@ -37,5 +39,5 @@ double Slider::Percent(){
 	double maxDistance = sliderClick_->MaxPosition() - sliderClick_->MinPosition();
 	double x= sliderClick_->getPosition().getX()-sliderClick_->MinPosition();	
 	//cout << x/maxDistance<< endl;
-	return x;
+	return x / maxDistance;
 }

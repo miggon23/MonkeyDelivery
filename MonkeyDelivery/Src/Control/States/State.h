@@ -21,6 +21,7 @@ protected:
     bool isFullscreen = false;
     vector<Button*> buttonsUI;
     vector<Slider*> slidersUI;
+ 
 public:
     State(Game* game) : game(game) {
         commandFactory = new CommandFactory(game);
