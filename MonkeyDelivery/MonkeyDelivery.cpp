@@ -6,6 +6,7 @@
 
 #include "Src/Logic/Game.h"
 #include "Src/Control/ViewController.h"
+#include "Src/Logic/InputManager.h"
 
 
 using namespace std;
@@ -20,6 +21,7 @@ int main(int argc, char* argv[]) {
     try {
         Game* game = new Game("Monkey Delivery", 1800, 1000);
         ViewController controller(game);
+       /* InputManager manager(game);*/
         controller.run();
         delete game; 
         controller.~ViewController();
