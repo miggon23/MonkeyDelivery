@@ -20,6 +20,7 @@ void CreditsState::draw()
 	{
 		font_->render(game->getRenderer(), credits_[i], 100, 20, BLACK);
 	}
+	game->DrawBrightness();
 }
 
 void CreditsState::update()

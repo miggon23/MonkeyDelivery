@@ -1,5 +1,5 @@
 #include "Game.h"
-
+#include "../Control/UI/ElementsUI/Brightness.h"
 void Game::loadSpriteSheets()
 {
     string filename = "../Images/config/resources.json";
@@ -92,11 +92,11 @@ Game::~Game() {
     delete savedState;
     delete shop_;
     delete mCamera_;
-
     for (auto a : tilesets_) {
        a.second->free();
        delete a.second;
     }
+    delete brightness_;
 }
 
 string Game::getGameName() {
@@ -118,7 +118,6 @@ void Game::start()
     // dónde spawnea -> qué se ve del mapa
     srcRect_ = mCamera_->renderRect();
    // srcRect_ = {(int)camPos.getX(), (int)camPos.getY(), (int)mCamera_->getWidth(), (int)mCamera_->getHeight()}; // == lo que devuelve el renderRect
-    animationManager = new AnimationManager(this);
    
     player_ = new Player(this,animationManager); //Creacion del jugador
 
@@ -138,7 +137,7 @@ void Game::start()
     auto* x = new Bed(this);
     x->setPosition(670, 760);
     add(x);
-    
+   
 }
 
 void Game::update()
@@ -192,7 +191,7 @@ void Game::draw()
 
     player_->draw();
     /*player_->drawDebug();*/
-    
+   
 }
 
 Point2D<int> Game::getOrigin() {
@@ -518,4 +517,16 @@ void Game::aPlayerPos(float x, float y)
 
 
 
+}
+
+void Game::DrawBrightness(){
+    brightness_->draw();
+}
+
+void Game::ChangeAlphaBrightness(Uint8 x){
+    brightness_->changeAlhpa(x);
+}
+
+void Game::initBrightness(){
+    brightness_ = new Brightness(this);
 }

@@ -245,6 +245,9 @@
     <ClCompile Include="Src\Control\UI\Sliders\BrightnessSlider.cpp">
       <Filter>Source Files\Control\UI\Slider</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Control\UI\ElementsUI\Brightness.cpp">
+      <Filter>Source Files\Control\UI\ElementsUI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -539,6 +542,9 @@
     <ClInclude Include="Src\Control\UI\Sliders\BrightnessSlider.h">
       <Filter>Header Files\Control\UI\Slider</Filter>
     </ClInclude>
+    <ClInclude Include="Src\Control\UI\ElementsUI\Brightness.h">
+      <Filter>Header Files\Control\UI\ElementsUI</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="MonkeyDelivery.rc" />
@@ -668,6 +674,12 @@
     </Filter>
     <Filter Include="Source Files\sdlutils">
       <UniqueIdentifier>{7e07d613-1e4b-4016-87b1-115ddf48fdb2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Control\UI\ElementsUI">
+      <UniqueIdentifier>{e0f12b65-6178-4314-843c-f216948d59f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Control\UI\ElementsUI">
+      <UniqueIdentifier>{3f5c0075-be84-464a-a7b2-c2d83708c510}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

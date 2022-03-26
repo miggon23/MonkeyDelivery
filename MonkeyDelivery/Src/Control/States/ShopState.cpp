@@ -81,7 +81,7 @@ void ShopState::draw()
 		if (SDL_GetTicks() > lastClicked_ + FAIL_TIMESHOWED) 
 			closeFailed_ = false;
 	}
-
+	game->DrawBrightness();
 }
 
 void ShopState::next()

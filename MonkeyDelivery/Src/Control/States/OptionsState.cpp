@@ -6,6 +6,7 @@
 #include "../UI/Buttons/Back1.h"
 #include "../UI/Sliders/Slider.h"
 #include "../UI/Sliders/GeneralVolumeSlider.h"
+#include "../UI/Sliders/BrightnessSlider.h"
 OptionsState::OptionsState(Game* game, int num) : State(game){
 	registerCommands();
 	if (num == 1)
@@ -14,7 +15,7 @@ OptionsState::OptionsState(Game* game, int num) : State(game){
 	addButton(new Back1(game->getWindowWidth() / 2 - 50, game->getWindowHeight() - 250, 100, 75, game));
 
 	addSlider(new GeneralVolumeSlider(game, 200, 200));
-	slidersUI[0]->setSize(300, 150);
+	addSlider(new BrightnessSlider(game, 200, 500));
 }
 
 void OptionsState::update(){
@@ -30,6 +31,7 @@ void OptionsState::draw(){
 	for (auto b : getSlidersUI()) {
 		b->draw();
 	}
+	game->DrawBrightness();
 }
 
 void OptionsState::next(){

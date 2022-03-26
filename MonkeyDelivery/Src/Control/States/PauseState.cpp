@@ -28,6 +28,7 @@ void PauseState::draw()
 	for (auto b : getButtonsUI()) {
 		b->draw();
 	}
+	game->DrawBrightness();
 }
 
 void PauseState::next()

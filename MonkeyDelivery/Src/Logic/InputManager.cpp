@@ -12,6 +12,7 @@ InputManager::InputManager(Game* _game)
 	IMG_Init(IMG_INIT_PNG);
 	game->setRenderer(renderer);
 	game->loadTextures();
+	game->initBrightness();
 	commandFactory = new CommandFactory(game);
 	joystickDeadZone_ = 8000;
 	game->setState(new MenuState(game));

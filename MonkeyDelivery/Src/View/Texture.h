@@ -68,4 +68,8 @@ public:
         SDL_Rect src = { 0, 0, w, h };
         render(src, dest, rotation);
     }
+    inline void changeAlpha(Uint8 alpha) {
+        SDL_SetTextureBlendMode( texture,SDL_BLENDMODE_BLEND);
+        SDL_SetTextureAlphaMod(texture, alpha);
+    }
 };

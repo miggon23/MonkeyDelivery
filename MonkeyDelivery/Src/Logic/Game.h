@@ -71,7 +71,7 @@ struct MapInfo{
             delete tile_map;
     }
 };
-
+class Brightness;
 using namespace std;
 class Game : public StateMachine {
 
@@ -117,6 +117,7 @@ private:
     int soundEfectsVolume_ = 64;
     int generalVolume_ = 64;
     //Brightness
+    Brightness* brightness_;
 
 public:
 
@@ -185,4 +186,9 @@ public:
     inline void ChangeMusicVolume(int volume) { musicVolume_ = volume;/* std::cout << musicVolume_ << std::endl;*/ };
     inline void ChangeSoundEfectsVolume(int volume) { soundEfectsVolume_ = volume; /*std::cout << soundEfectsVolume_ << std::endl;*/};
     inline void ChangeGeneralVolume(int volume) { generalVolume_ = volume; /*std::cout << generalVolume_ << std::endl;*/};
+
+    //Brightness
+    void DrawBrightness();
+    void ChangeAlphaBrightness(Uint8 x);
+    void initBrightness();
 };
