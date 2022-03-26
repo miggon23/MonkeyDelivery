@@ -9,11 +9,11 @@ bool Lantern::useObject() {
 	if (!player_->isAsleep()) {
 		if (!active) {
 			cout << " Hola linternita circular";
-			player_->changeFLState(true);
+			player_->changeLState(true);
 		}
 		else {
 			cout << "Adios linternita circular";
-			player_->changeFLState(false);
+			player_->changeLState(false);
 			player_->setOrientation("off");
 		}
 		cout << endl;

@@ -25,6 +25,8 @@ private:
 	bool sleeping = false;
 	bool boolrenderSleepText = false;
 	int timerSleepText;
+	bool flashLOn = false;
+	bool lanternOn = false;
 #pragma endregion
 
 #pragma region Movement/Fear
@@ -63,6 +65,7 @@ private:
 	//orientacion para la linterna
 	string orientation_;
 	Texture* flashlightTex_;
+	Texture* lanternTex_;
 
 public:
 
@@ -125,15 +128,20 @@ public:
 	void addObjectToInventory(InventoryObject* p);
 #pragma endregion
 	//linterna
-	const SDL_Rect lightZone();
+	const SDL_Rect lightZoneFL();
+	const SDL_Rect lightZoneL();
 	bool usingFlashLight = false;
+	bool usingLantern = false;
 	void changeFLState(bool f) {
 		usingFlashLight = f;
+	}
+	void changeLState(bool f) {
+		usingLantern = f;
 	}
 	inline void setOrientation(string orien) { orientation_ = orien; }
 	inline string getOrientation() { return orientation_; }
 	inline bool isAsleep() { return sleeping; }
-	bool flashLOn=false;
+	
 };
 
 

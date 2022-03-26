@@ -83,7 +83,7 @@ void Scorpion::checkDistance()
 void Scorpion::draw()
 {
 	if (isAlive()) {
-		if (collided && game->getPlayer()->usingFlashLight) {
+		if (collided && (game->getPlayer()->usingFlashLight || game->getPlayer()->usingLantern)) {
 			setTexture(scorpionDyingSpritesheet);
 			animationManager->getFrameImageScorpion(getCollider(), textureRect, texture, timerAnimation);
 		}

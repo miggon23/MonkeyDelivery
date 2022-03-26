@@ -69,7 +69,7 @@ void Bat::onPlayerInteraction(Player* player)
 
 void Bat::draw(){
 	if (isAlive()) {
-		if (collided && game->getPlayer()->usingFlashLight) {
+		if (collided && (game->getPlayer()->usingFlashLight || game->getPlayer()->usingLantern)) {
 			setTexture(batDyingSpritesheet);
 			animationManager->getFrameImageBat(getCollider(), textureRect, texture, timerAnimation);
 		}

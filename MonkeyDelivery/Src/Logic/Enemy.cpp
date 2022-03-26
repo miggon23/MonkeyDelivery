@@ -55,17 +55,36 @@ void Enemy::die()
 	if (game->getPlayer()->usingFlashLight) {
 		
 		// se guardan los ticks al colisionar con la luz
-		if (collide(game->getPlayer()->lightZone()) && !collided) {
+		if (collide(game->getPlayer()->lightZoneFL()) && !collided) {
 			collided = true;
 			timeOnFlash_ = SDL_GetTicks();
 		}
 		// si se sale del collider de la luz se resetea todo 
 		//para que no se muera el enemigo al segundo hit
-		if (!collide(game->getPlayer()->lightZone()) && collided) {
+		if (!collide(game->getPlayer()->lightZoneFL()) && collided) {
 			collided = false;
 		}
 		// si pasa Xs en la luz, se muere
-		if (timeOnFlash_ + resistence_ < SDL_GetTicks() && collide(game->getPlayer()->lightZone()) && collided) {
+		if (timeOnFlash_ + resistence_ < SDL_GetTicks() && collide(game->getPlayer()->lightZoneFL()) && collided) {
+			setAlive(false);
+			hasBeenKilled = true;
+			collided = false;
+		}
+	}
+	if (game->getPlayer()->usingLantern) {
+
+		// se guardan los ticks al colisionar con la luz
+		if (collide(game->getPlayer()->lightZoneL()) && !collided) {
+			collided = true;
+			timeOnFlash_ = SDL_GetTicks();
+		}
+		// si se sale del collider de la luz se resetea todo 
+		//para que no se muera el enemigo al segundo hit
+		if (!collide(game->getPlayer()->lightZoneL()) && collided) {
+			collided = false;
+		}
+		// si pasa Xs en la luz, se muere
+		if (timeOnFlash_ + resistence_ < SDL_GetTicks() && collide(game->getPlayer()->lightZoneL()) && collided) {
 			setAlive(false);
 			hasBeenKilled = true;
 			collided = false;
