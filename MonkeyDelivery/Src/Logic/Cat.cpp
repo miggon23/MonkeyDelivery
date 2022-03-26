@@ -35,7 +35,7 @@ void Cat::createCheckPoints()
 void Cat::draw()
 {
 	if (isAlive()) {
-		if (collided && game->getPlayer()->usingFlashLight) {
+		if (collided && (game->getPlayer()->usingFlashLight || game->getPlayer()->usingLantern)) {
 			setTexture(catDyingSpritesheet);
 			animationManager->getFrameImageCat(getCollider(), textureRect, texture, timerAnimation);
 		}

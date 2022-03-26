@@ -2,6 +2,7 @@
 #include "Inventory.h"
 #include "Bike.h"
 #include "Flashlight.h"
+#include "Lantern.h"
 #include "EnergyDrink.h"
 #include "Skates.h"
 #include "Game.h"
@@ -41,6 +42,7 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game), anima
 	//Obketos de inventario
 	inventory_->addObject(new Bike(new Texture(game->getRenderer(), "../Images/objects/patinete.png")));
 	inventory_->addObject(new Flashlight(new Texture(game->getRenderer(), "../Images/objects/linterna2.png")));
+	inventory_->addObject(new Lantern(new Texture(game->getRenderer(), "../Images/objects/linterna.png")));
 	inventory_->addObject(new EnergyDrink(new Texture(game->getRenderer(), "../Images/objects/refresco.png")));
 	inventory_->addObject(new Skates(new Texture(game->getRenderer(), "../Images/objects/patines.png")));
 
@@ -48,8 +50,12 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game), anima
 	textureRect = { 0, 0, 100, 100 };
 	timerAnimation = 0;
 
+	// flashlight
 	string path = "../Images/objects/luzprovi.png";
 	flashlightTex_ = new Texture(game->getRenderer(), path);
+	//lantern
+	path = "../Images/objects/luzCircularProvi.png";
+	lanternTex_ = new Texture(game->getRenderer(), path);
 }
 
 Player::~Player()
@@ -58,6 +64,7 @@ Player::~Player()
 	delete fearLevel_;
 	delete inventory_;
 	delete flashlightTex_;
+	delete lanternTex_;
 	energyLevel_ = nullptr;
 	fearLevel_ = nullptr;
 	inventory_ = nullptr;
@@ -164,7 +171,10 @@ void Player::changeSleep()
 				usingFlashLight = false;
 				flashLOn = true;
 				setOrientation("off");
-				
+			}
+			if (usingLantern) {
+				usingLantern = false;
+				lanternOn = true;
 			}
 		}
 		else {
@@ -172,7 +182,10 @@ void Player::changeSleep()
 			if (flashLOn) {
 				usingFlashLight = true;
 				flashLOn = false;
-				
+			}
+			if (lanternOn) {
+				usingLantern = true;
+				lanternOn = false;
 			}
 		}
 		draw();
@@ -341,8 +354,12 @@ void Player::draw()
 		inventory_->draw();
 	if (usingFlashLight) {
 		/*Box(lightZone(), BLUE).render(game->getRenderer());*/
-		auto a = lightZone();
+		auto a = lightZoneFL();
 		flashlightTex_->render(a);
+	}
+	if (usingLantern) {
+		auto b = lightZoneL();
+		lanternTex_->render(b);
 	}
 }
 
@@ -358,7 +375,7 @@ bool Player::moneyChange(int money)
 	return true;
 }
 //linterna
-const SDL_Rect Player::lightZone()
+const SDL_Rect Player::lightZoneFL()
 {
 	if (isAsleep()) {
 		return{ 0,0,0, 0 };
@@ -439,6 +456,19 @@ const SDL_Rect Player::lightZone()
 			hitZone = getCollider();
 		}
 	}
+	return hitZone;
+}
+
+const SDL_Rect Player::lightZoneL()
+{
+	if (isAsleep()) {
+		return{ 0,0,0, 0 };
+	}
+	SDL_Rect hitZone{ int(getX()),
+					int(getY()),
+					getWidth(),
+					getHeight()
+	};
 	return hitZone;
 }
 

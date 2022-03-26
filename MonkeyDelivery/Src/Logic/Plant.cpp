@@ -49,7 +49,7 @@ void Plant::checkDistance()
 void Plant::draw()
 {
 	if (isAlive()) {
-		if (collided && game->getPlayer()->usingFlashLight) {
+		if (collided && (game->getPlayer()->usingFlashLight || game->getPlayer()->usingLantern)) {
 			setTexture(plantDyingSpritesheet);
 			animationManager->getFrameImagePlant(getCollider(), textureRect, texture, timerAnimation);
 		}
