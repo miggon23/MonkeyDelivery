@@ -2,38 +2,38 @@
 
 #pragma once
 
-#include <SDL.h>
-#include <SDL_image.h>
+#include "SDL.h"
+#include "SDL_image.h"
 #include <string>
 #include <cassert>
 #include <iostream>
 
 #include "Font.h"
 
-class Texture {
+class TextureUtils {
 public:
 
 	// cannot copy textures
-	Texture(const Texture&) = delete;
-	Texture& operator=(const Texture&) = delete;
+	TextureUtils(const TextureUtils&) = delete;
+	TextureUtils& operator=(const TextureUtils&) = delete;
 
 	// can be moved
-	Texture& operator=(Texture &&other) noexcept;
-	Texture(Texture &&other) noexcept;
+	TextureUtils& operator=(TextureUtils&&other) noexcept;
+	TextureUtils(TextureUtils&&other) noexcept;
 
 	// Construct from image
-	Texture(SDL_Renderer *renderer, const std::string &fileName);
+	TextureUtils(SDL_Renderer *renderer, const std::string &fileName);
 
 	// Construct from text
-	Texture(SDL_Renderer *renderer, const std::string &text, const Font &font,
+	TextureUtils(SDL_Renderer *renderer, const std::string &text, const Font &font,
 			const SDL_Color &fgColor);
 
 	// Construct from text with background
-	Texture(SDL_Renderer *renderer, const std::string &text, const Font &font,
+	TextureUtils(SDL_Renderer *renderer, const std::string &text, const Font &font,
 			const SDL_Color &fgColor, const SDL_Color &bgColor);
 
 
-	virtual ~Texture() {
+	virtual ~TextureUtils() {
 		if (texture_ != nullptr)
 			SDL_DestroyTexture(texture_); // delete the SDL texture
 	}

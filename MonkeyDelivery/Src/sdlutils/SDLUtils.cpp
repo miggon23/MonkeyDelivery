@@ -16,10 +16,10 @@ SDLUtils::SDLUtils(std::string windowTitle, int width, int height) :
 		width_(width), //
 		height_(height), //
 		fontsAccessWrapper_(fonts_, "Fonts Table"), //
-		//imagesAccessWrapper_(images_, "Images Table"), //
-	//	msgsAccessWrapper_(msgs_, "Messages Table"), //
+		imagesAccessWrapper_(images_, "Images Table"), //
+		msgsAccessWrapper_(msgs_, "Messages Table"), //
 		soundsAccessWrapper_(sounds_, "Sounds Table"), //
-		musicsAccessWrapper_(musics_, "Musics Table") ///
+		musicsAccessWrapper_(musics_, "Musics Table") //
 {
 
 	initWindow();
@@ -92,9 +92,9 @@ void SDLUtils::initSDLExtensions() {
 	std::cout << "Initializing SDL_img" << std::endl;
 #endif
 	// initialize SDL_image
-	/*int imgInit_ret = IMG_Init(
+	int imgInit_ret = IMG_Init(
 			IMG_INIT_JPG | IMG_INIT_PNG | IMG_INIT_TIF | IMG_INIT_WEBP);
-	assert(imgInit_ret != 0);*/
+	assert(imgInit_ret != 0);
 
 #ifdef _DEBUG
 	std::cout << "Initializing SEL_Mixer" << std::endl;
@@ -158,7 +158,7 @@ void SDLUtils::loadReasources(std::string filename) {
 	}
 
 	// load images
-	/*jValue = root["images"];
+	jValue = root["images"];
 	if (jValue != nullptr) {
 		if (jValue->IsArray()) {
 			for (auto &v : jValue->AsArray()) {
@@ -169,7 +169,7 @@ void SDLUtils::loadReasources(std::string filename) {
 #ifdef _DEBUG
 					std::cout << "Loading image with id: " << key << std::endl;
 #endif
-					images_.emplace(key, Texture(renderer(), file));
+					images_.emplace(key, TextureUtils(renderer(), file));
 				} else {
 					throw "'images' array in '" + filename
 							+ "' includes and invalid value";
@@ -178,43 +178,43 @@ void SDLUtils::loadReasources(std::string filename) {
 		} else {
 			throw "'images' is not an array in '" + filename + "'";
 		}
-	}*/
+	}
 
 	// load messages
-	jValue = root["messages"];
-	if (jValue != nullptr) {
-		if (jValue->IsArray()) {
-			for (auto &v : jValue->AsArray()) {
-				if (v->IsObject()) {
-					JSONObject vObj = v->AsObject();
-					std::string key = vObj["id"]->AsString();
-					std::string txt = vObj["text"]->AsString();
-					auto &font = fonts_.at(vObj["font"]->AsString());
-#ifdef _DEBUG
-					std::cout << "Loading message with id: " << key
-							<< std::endl;
-#endif
-					/*if (vObj["bg"] == nullptr)
-						msgs_.emplace(key,
-								Texture(renderer(), txt, font,
-										build_sdlcolor(
-												vObj["color"]->AsString())));
-					else
-						msgs_.emplace(key,
-								Texture(renderer(), txt, font,
-										build_sdlcolor(
-												vObj["color"]->AsString()),
-										build_sdlcolor(
-												vObj["bg"]->AsString())));*/
-				} else {
-					throw "'messages' array in '" + filename
-							+ "' includes and invalid value";
-				}
-			}
-		} else {
-			throw "'messages' is not an array in '" + filename + "'";
-		}
-	}
+//	jValue = root["messages"];
+//	if (jValue != nullptr) {
+//		if (jValue->IsArray()) {
+//			for (auto &v : jValue->AsArray()) {
+//				if (v->IsObject()) {
+//					JSONObject vObj = v->AsObject();
+//					std::string key = vObj["id"]->AsString();
+//					std::string txt = vObj["text"]->AsString();
+//					auto &font = fonts_.at(vObj["font"]->AsString());
+//#ifdef _DEBUG
+//					std::cout << "Loading message with id: " << key
+//							<< std::endl;
+//#endif
+//					/*if (vObj["bg"] == nullptr)
+//						msgs_.emplace(key,
+//								Texture(renderer(), txt, font,
+//										build_sdlcolor(
+//												vObj["color"]->AsString())));
+//					else
+//						msgs_.emplace(key,
+//								Texture(renderer(), txt, font,
+//										build_sdlcolor(
+//												vObj["color"]->AsString()),
+//										build_sdlcolor(
+//												vObj["bg"]->AsString())));*/
+//				} else {
+//					throw "'messages' array in '" + filename
+//							+ "' includes and invalid value";
+//				}
+//			}
+//		} else {
+//			throw "'messages' is not an array in '" + filename + "'";
+//		}
+//	}
 
 	// load sounds
 	jValue = root["sounds"];
@@ -269,12 +269,12 @@ void SDLUtils::closeSDLExtensions() {
 
 	musics_.clear();
 	sounds_.clear();
-	//msgs_.clear();
-	//images_.clear();
+	msgs_.clear();
+	images_.clear();
 	fonts_.clear();
 
 	Mix_Quit(); // quit SDL_mixer
-	//IMG_Quit(); // quit SDL_image
+	IMG_Quit(); // quit SDL_image
 	TTF_Quit(); // quit SDL_ttf
 }
 

@@ -237,6 +237,7 @@
     <ClInclude Include="Src\sdlutils\SDLUtils.h" />
     <ClInclude Include="Src\sdlutils\sdlutils_demo.h" />
     <ClInclude Include="Src\sdlutils\SoundEffect.h" />
+    <ClInclude Include="Src\sdlutils\TextureUtils.h" />
     <ClInclude Include="Src\sdlutils\VirtualTimer.h" />
     <ClInclude Include="Src\Utils\Music.h" />
     <ClInclude Include="Src\Utils\Singleton.h" />
@@ -330,6 +331,7 @@
     <ClCompile Include="Src\Logic\UI_Info.cpp" />
     <ClCompile Include="Src\sdlutils\SDLUtils.cpp" />
     <ClCompile Include="Src\sdlutils\SoundEffect.cpp" />
+    <ClCompile Include="Src\sdlutils\TextureUtils.cpp" />
     <ClCompile Include="Src\Utils\SoundEffect.cpp" />
     <ClCompile Include="Src\Utils\Timer.cpp" />
     <ClCompile Include="Src\View\Camera.cpp" />

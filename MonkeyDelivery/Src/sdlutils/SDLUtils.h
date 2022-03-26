@@ -12,6 +12,7 @@
 #include "Music.h"
 #include "SoundEffect.h"
 #include "VirtualTimer.h"
+#include "TextureUtils.h"
 
 class SDLUtils: public Singleton<SDLUtils> {
 
@@ -121,15 +122,15 @@ public:
 		return fontsAccessWrapper_;
 	}
 
-	//// images map
-	//inline auto& images() {
-	//	return imagesAccessWrapper_;
-	//}
+	// images map
+	inline auto& images() {
+		return imagesAccessWrapper_;
+	}
 
-	//// messages map
-	//inline auto& msgs() {
-	//	return msgsAccessWrapper_;
-	//}
+	// messages map
+	inline auto& msgs() {
+		return msgsAccessWrapper_;
+	}
 
 	// sound effects map
 	inline auto& soundEffects() {
@@ -179,14 +180,14 @@ private:
 	SDL_Renderer *renderer_; // the renderer
 
 	sdl_resource_table<Font> fonts_; // fonts map (string -> font)
-	//sdl_resource_table<Texture> images_; // textures map (string -> texture)
-	//sdl_resource_table<Texture> msgs_; // textures map (string -> texture)
+	sdl_resource_table<TextureUtils> images_; // textures map (string -> texture)
+	sdl_resource_table<TextureUtils> msgs_; // textures map (string -> texture)
 	sdl_resource_table<SoundEffect> sounds_; // sounds map (string -> sound)
 	sdl_resource_table<Music> musics_; // musics map (string -> music)
 
 	map_access_wrapper<Font> fontsAccessWrapper_;
-	/*map_access_wrapper<Texture> imagesAccessWrapper_;
-	map_access_wrapper<Texture> msgsAccessWrapper_;*/
+	map_access_wrapper<TextureUtils> imagesAccessWrapper_;
+	map_access_wrapper<TextureUtils> msgsAccessWrapper_;
 	map_access_wrapper<SoundEffect> soundsAccessWrapper_;
 	map_access_wrapper<Music> musicsAccessWrapper_;
 

@@ -1,9 +1,9 @@
 // This file is part of the course TPV2@UCM - Samir Genaim
 
-#include "Texture.h"
+#include "TextureUtils.h"
 
-Texture& Texture::operator=(Texture &&other) noexcept {
-	this->~Texture();
+TextureUtils& TextureUtils::operator=(TextureUtils&&other) noexcept {
+	this->~TextureUtils();
 	texture_ = other.texture_;
 	other.texture_ = nullptr;
 	renderer_ = other.renderer_;
@@ -14,7 +14,7 @@ Texture& Texture::operator=(Texture &&other) noexcept {
 	return *this;
 }
 
-Texture::Texture(Texture &&other) noexcept {
+TextureUtils::TextureUtils(TextureUtils&&other) noexcept {
 	texture_ = other.texture_;
 	other.texture_ = nullptr;
 	renderer_ = other.renderer_;
@@ -23,7 +23,7 @@ Texture::Texture(Texture &&other) noexcept {
 	height_ = other.height_;
 }
 
-Texture::Texture(SDL_Renderer *renderer, const std::string &fileName) {
+TextureUtils::TextureUtils(SDL_Renderer *renderer, const std::string &fileName) {
 	assert(renderer != nullptr);
 
 	SDL_Surface *surface = IMG_Load(fileName.c_str());
@@ -42,17 +42,17 @@ Texture::Texture(SDL_Renderer *renderer, const std::string &fileName) {
 
 }
 
-Texture::Texture(SDL_Renderer *renderer, const std::string &text,
+TextureUtils::TextureUtils(SDL_Renderer *renderer, const std::string &text,
 		const Font &font, const SDL_Color &fgColor) {
 	constructFromText(renderer, text, font, &fgColor);
 }
 
-Texture::Texture(SDL_Renderer *renderer, const std::string &text,
+TextureUtils::TextureUtils(SDL_Renderer *renderer, const std::string &text,
 		const Font &font, const SDL_Color &fgColor, const SDL_Color &bgColor) {
 	constructFromText(renderer, text, font, &fgColor, &bgColor);
 }
 
-void Texture::constructFromText(SDL_Renderer *renderer, const std::string &text,
+void TextureUtils::constructFromText(SDL_Renderer *renderer, const std::string &text,
 		const Font &font, const SDL_Color *fgColor, const SDL_Color *bgColor) {
 	assert(renderer != nullptr);
 

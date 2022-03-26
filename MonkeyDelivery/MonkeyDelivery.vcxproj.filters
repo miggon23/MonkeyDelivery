@@ -248,6 +248,9 @@
     <ClCompile Include="Src\Control\UI\ElementsUI\Brightness.cpp">
       <Filter>Source Files\Control\UI\ElementsUI</Filter>
     </ClCompile>
+    <ClCompile Include="Src\sdlutils\TextureUtils.cpp">
+      <Filter>Source Files\sdlutils</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -544,6 +547,9 @@
     </ClInclude>
     <ClInclude Include="Src\Control\UI\ElementsUI\Brightness.h">
       <Filter>Header Files\Control\UI\ElementsUI</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\sdlutils\TextureUtils.h">
+      <Filter>Header Files\sdlutils</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
