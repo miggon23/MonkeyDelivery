@@ -46,7 +46,7 @@ void MenuState::draw()
     for (auto b :getButtonsUI()) {
         b->draw();
     }
-    game->DrawBrightness();
+    //game->DrawBrightness();
 }
 
 void MenuState::next()

@@ -6,11 +6,10 @@ Brightness::Brightness(Game* game):game_(game),alpha_(0){
 }
 
 Brightness::~Brightness(){
-	delete tex_;	
+	//delete tex_;	
 }
 
 void Brightness::draw(){
-
 	tex_->render(rect_);
 }
 

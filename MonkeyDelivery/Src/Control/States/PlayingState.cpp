@@ -47,7 +47,7 @@ void PlayingState::draw() {
     for (auto b : getButtonsUI()) {
         b->draw();
     }
-    game->DrawBrightness();
+    //game->DrawBrightness();
 }
 
 void PlayingState::next() {
