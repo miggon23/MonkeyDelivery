@@ -96,7 +96,7 @@ Game::~Game() {
        a.second->free();
        delete a.second;
     }
-    delete brightness_;
+   // delete brightness_;
 }
 
 string Game::getGameName() {
