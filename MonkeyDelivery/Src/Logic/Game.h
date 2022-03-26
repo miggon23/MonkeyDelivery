@@ -116,6 +116,8 @@ private:
     int musicVolume_ = 64;
     int soundEfectsVolume_ = 64;
     int generalVolume_ = 64;
+    //Brightness
+
 public:
 
     Game(string name, int width, int height);

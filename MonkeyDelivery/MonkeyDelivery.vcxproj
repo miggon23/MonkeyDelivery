@@ -188,6 +188,7 @@
     <ClInclude Include="Src\Control\UI\Buttons\Options.h" />
     <ClInclude Include="Src\Control\UI\Buttons\Pause.h" />
     <ClInclude Include="Src\Control\UI\Buttons\Start.h" />
+    <ClInclude Include="Src\Control\UI\Sliders\BrightnessSlider.h" />
     <ClInclude Include="Src\Control\UI\Sliders\GeneralVolumeSlider.h" />
     <ClInclude Include="Src\Control\UI\Sliders\Slider.h" />
     <ClInclude Include="Src\Control\UI\Sliders\SliderBase.h" />
@@ -285,6 +286,7 @@
     <ClCompile Include="Src\Control\UI\Buttons\Options.cpp" />
     <ClCompile Include="Src\Control\UI\Buttons\Pause.cpp" />
     <ClCompile Include="Src\Control\UI\Buttons\Start.cpp" />
+    <ClCompile Include="Src\Control\UI\Sliders\BrightnessSlider.cpp" />
     <ClCompile Include="Src\Control\UI\Sliders\GeneralVolumeSlider.cpp" />
     <ClCompile Include="Src\Control\UI\Sliders\Slider.cpp" />
     <ClCompile Include="Src\Control\UI\Sliders\SliderBase.cpp" />
