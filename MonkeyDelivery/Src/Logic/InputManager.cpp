@@ -94,23 +94,25 @@ void InputManager::initSDL()
 
 void InputManager::handleEvents()
 {
+	auto state = game->getState();
 	game->getState()->handleEvents();
-	/*SDL_Event event;*/
-	// Método simple de eventos
+	//SDL_Event event;
+	// /*Método simple de eventos*/
 	//while (SDL_PollEvent(&event)) {
-	//	Command* command = commandFactory->getCommand(event);
-	//	if (command != nullptr) {
-	//		command->execute();
-	//		break;
-	//	}
-	//	/*if (event.type == SDL_JOYAXISMOTION) {
-	//		printf("axis: %i %i\n", event.jaxis.axis, event.jaxis.value);
-	//	}
-	//	else if (event.type == SDL_JOYBUTTONDOWN) {
-	//		printf("button: %i\n", event.jbutton.button);
-	//	}*/
+		/*if(state==MenuState)*/
+		/*Command* command = commandFactory->getCommand(event);
+		if (command != nullptr) {
+			command->execute();
+			break;
+		}
+		if (event.type == SDL_JOYAXISMOTION) {
+			printf("axis: %i %i\n", event.jaxis.axis, event.jaxis.value);
+		}
+		else if (event.type == SDL_JOYBUTTONDOWN) {
+			printf("button: %i\n", event.jbutton.button);
+		}*/
 
-	//}
+	/*}*/
 
 }
 
