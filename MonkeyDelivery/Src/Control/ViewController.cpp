@@ -12,7 +12,7 @@ ViewController::ViewController(Game* _game) {
     IMG_Init(IMG_INIT_PNG);
     game->setRenderer(renderer);
     game->loadTextures();
-    game->initBrightness();
+    //game->initBrightness();
     game->setState(new MenuState(game));
     game->setWindow(window);
 

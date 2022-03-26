@@ -117,7 +117,7 @@ private:
     int soundEfectsVolume_ = 64;
     int generalVolume_ = 64;
     //Brightness
-    Brightness* brightness_;
+    Brightness* brightness_=nullptr;
 
 public:
 

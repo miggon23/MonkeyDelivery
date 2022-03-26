@@ -31,6 +31,7 @@ void MenuState::registerCommands()
 }
 
 void MenuState::update(){
+
 }
 
 void MenuState::draw()
@@ -49,12 +50,7 @@ void MenuState::draw()
     //game->DrawBrightness();
 }
 
-void MenuState::next()
-{
-    for (auto b : buttonsUI) {
-        delete b;
-        b = nullptr;
-    }
+void MenuState::next(){
     cout << "Next State " << endl;
     game->setState(new PlayingState(game));
     delete this;

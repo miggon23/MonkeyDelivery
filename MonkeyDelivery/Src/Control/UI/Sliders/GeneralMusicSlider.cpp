@@ -9,5 +9,5 @@ GeneralMusicSlider::~GeneralMusicSlider(){
 
 void GeneralMusicSlider::Utility(){
 	double x = 128 * Percent();
-	game_->ChangeGeneralVolume(int(x));
+	game_->ChangeMusicVolume(int(x));
 }

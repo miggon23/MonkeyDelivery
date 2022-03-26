@@ -251,6 +251,12 @@
     <ClCompile Include="Src\sdlutils\TextureUtils.cpp">
       <Filter>Source Files\sdlutils</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Control\UI\Sliders\GeneralSoundsEffectSlider.cpp">
+      <Filter>Source Files\Control\UI\Slider</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Control\UI\Sliders\GeneralMusicSlider.cpp">
+      <Filter>Source Files\Control\UI\Slider</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -550,6 +556,12 @@
     </ClInclude>
     <ClInclude Include="Src\sdlutils\TextureUtils.h">
       <Filter>Header Files\sdlutils</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Control\UI\Sliders\GeneralMusicSlider.h">
+      <Filter>Header Files\Control\UI\Slider</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Control\UI\Sliders\GeneralSoundsEffectSlider.h">
+      <Filter>Header Files\Control\UI\Slider</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -137,7 +137,6 @@ void Game::start()
     auto* x = new Bed(this);
     x->setPosition(670, 760);
     add(x);
-   
 }
 
 void Game::update()

@@ -190,6 +190,8 @@
     <ClInclude Include="Src\Control\UI\Buttons\Start.h" />
     <ClInclude Include="Src\Control\UI\ElementsUI\Brightness.h" />
     <ClInclude Include="Src\Control\UI\Sliders\BrightnessSlider.h" />
+    <ClInclude Include="Src\Control\UI\Sliders\GeneralMusicSlider.h" />
+    <ClInclude Include="Src\Control\UI\Sliders\GeneralSoundsEffectSlider.h" />
     <ClInclude Include="Src\Control\UI\Sliders\GeneralVolumeSlider.h" />
     <ClInclude Include="Src\Control\UI\Sliders\Slider.h" />
     <ClInclude Include="Src\Control\UI\Sliders\SliderBase.h" />
@@ -290,6 +292,8 @@
     <ClCompile Include="Src\Control\UI\Buttons\Start.cpp" />
     <ClCompile Include="Src\Control\UI\ElementsUI\Brightness.cpp" />
     <ClCompile Include="Src\Control\UI\Sliders\BrightnessSlider.cpp" />
+    <ClCompile Include="Src\Control\UI\Sliders\GeneralMusicSlider.cpp" />
+    <ClCompile Include="Src\Control\UI\Sliders\GeneralSoundsEffectSlider.cpp" />
     <ClCompile Include="Src\Control\UI\Sliders\GeneralVolumeSlider.cpp" />
     <ClCompile Include="Src\Control\UI\Sliders\Slider.cpp" />
     <ClCompile Include="Src\Control\UI\Sliders\SliderBase.cpp" />
