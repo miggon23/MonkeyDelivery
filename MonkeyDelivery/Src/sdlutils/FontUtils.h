@@ -9,34 +9,34 @@
 
 #include "macros.h"
 
-class Font {
+class FontUtils {
 public:
 
 	// cannot copy objects of this type!
-	Font(const Font &other) = delete;
-	Font& operator=(const Font &other) = delete;
+	FontUtils(const FontUtils&other) = delete;
+	FontUtils& operator=(const FontUtils&other) = delete;
 
 	// can be moved
-	Font& operator=(Font &&other) noexcept {
-		this->~Font();
+	FontUtils& operator=(FontUtils&&other) noexcept {
+		this->~FontUtils();
 		font_ = other.font_;
 		other.font_ = nullptr;
 		return *this;
 	}
 
-	Font(Font &&other) noexcept {
+	FontUtils(FontUtils&&other) noexcept {
 		font_ = other.font_;
 		other.font_ = nullptr;
 	}
 
-	Font(const std::string &fileName, int size) {
+	FontUtils(const std::string &fileName, int size) {
 		font_ = TTF_OpenFont(fileName.c_str(), size);
 		if (font_ == nullptr) {
 			throw "Couldn't load font: " + fileName;
 		}
 	}
 
-	virtual ~Font() {
+	virtual ~FontUtils() {
 		if (font_ != nullptr)
 			TTF_CloseFont(font_);
 	}

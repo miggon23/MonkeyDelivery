@@ -231,7 +231,7 @@
     <ClInclude Include="Src\Logic\SpawnZone.h" />
     <ClInclude Include="Src\Logic\Target.h" />
     <ClInclude Include="Src\Logic\UI_Info.h" />
-    <ClInclude Include="Src\sdlutils\Font.h" />
+    <ClInclude Include="Src\sdlutils\FontUtils.h" />
     <ClInclude Include="Src\sdlutils\InputHandler.h" />
     <ClInclude Include="Src\sdlutils\macros.h" />
     <ClInclude Include="Src\sdlutils\Music.h" />

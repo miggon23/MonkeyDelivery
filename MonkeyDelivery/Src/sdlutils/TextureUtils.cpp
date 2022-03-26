@@ -43,17 +43,17 @@ TextureUtils::TextureUtils(SDL_Renderer *renderer, const std::string &fileName) 
 }
 
 TextureUtils::TextureUtils(SDL_Renderer *renderer, const std::string &text,
-		const Font &font, const SDL_Color &fgColor) {
+		const FontUtils&font, const SDL_Color &fgColor) {
 	constructFromText(renderer, text, font, &fgColor);
 }
 
 TextureUtils::TextureUtils(SDL_Renderer *renderer, const std::string &text,
-		const Font &font, const SDL_Color &fgColor, const SDL_Color &bgColor) {
+		const FontUtils&font, const SDL_Color &fgColor, const SDL_Color &bgColor) {
 	constructFromText(renderer, text, font, &fgColor, &bgColor);
 }
 
 void TextureUtils::constructFromText(SDL_Renderer *renderer, const std::string &text,
-		const Font &font, const SDL_Color *fgColor, const SDL_Color *bgColor) {
+		const FontUtils&font, const SDL_Color *fgColor, const SDL_Color *bgColor) {
 	assert(renderer != nullptr);
 
 	SDL_Surface *textSurface =

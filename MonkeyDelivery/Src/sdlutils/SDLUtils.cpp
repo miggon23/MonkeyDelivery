@@ -11,6 +11,23 @@ SDLUtils::SDLUtils() :
 		SDLUtils("SDL Demo", 600, 400) {
 }
 
+SDLUtils::SDLUtils(std::string windowTitle, int width, int height, SDL_Renderer* renderer) :
+	windowTitle_(windowTitle), //
+	width_(width), //
+	height_(height), //
+	renderer_(renderer), // 
+	fontsAccessWrapper_(fonts_, "Fonts Table"), //
+	imagesAccessWrapper_(images_, "Images Table"), //
+	msgsAccessWrapper_(msgs_, "Messages Table"), //
+	soundsAccessWrapper_(sounds_, "Sounds Table"), //
+	musicsAccessWrapper_(musics_, "Musics Table") //
+//	tilesetsAccessWrapper_(tilesets_, "Tilesets Table") //
+{
+
+	initWindowNotRenderer();
+	initSDLExtensions();
+}
+
 SDLUtils::SDLUtils(std::string windowTitle, int width, int height) :
 		windowTitle_(windowTitle), //
 		width_(width), //
@@ -20,6 +37,7 @@ SDLUtils::SDLUtils(std::string windowTitle, int width, int height) :
 		msgsAccessWrapper_(msgs_, "Messages Table"), //
 		soundsAccessWrapper_(sounds_, "Sounds Table"), //
 		musicsAccessWrapper_(musics_, "Musics Table") //
+	//	tilesetsAccessWrapper_(tilesets_, "Tilesets Table") //
 {
 
 	initWindow();
@@ -29,6 +47,12 @@ SDLUtils::SDLUtils(std::string windowTitle, int width, int height) :
 SDLUtils::SDLUtils(std::string windowTitle, int width, int height,
 		std::string filename) :
 		SDLUtils(windowTitle, width, height) {
+	loadReasources(filename);
+}
+
+SDLUtils::SDLUtils(std::string windowTitle, int width, int height,
+	std::string filename, SDL_Renderer* renderer) :
+	SDLUtils(windowTitle, width, height, renderer) {
 	loadReasources(filename);
 }
 
@@ -65,8 +89,27 @@ void SDLUtils::initWindow() {
 			SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 	assert(renderer_ != nullptr);
 
-	// hide cursor by default
-	hideCursor();
+}
+
+void SDLUtils::initWindowNotRenderer()
+{
+#ifdef _DEBUG
+	std::cout << "Initializing SDL" << std::endl;
+#endif
+
+	// initialise SDL
+	int sdlInit_ret = SDL_Init(SDL_INIT_EVERYTHING);
+	assert(sdlInit_ret == 0);
+
+#ifdef _DEBUG
+	std::cout << "Creating SDL window" << std::endl;
+#endif
+
+	// Create window
+	window_ = SDL_CreateWindow(windowTitle_.c_str(),
+		SDL_WINDOWPOS_UNDEFINED,
+		SDL_WINDOWPOS_UNDEFINED, width_, height_, SDL_WINDOW_SHOWN);
+	assert(window_ != nullptr);
 
 }
 
@@ -146,7 +189,7 @@ void SDLUtils::loadReasources(std::string filename) {
 #ifdef _DEBUG
 					std::cout << "Loading font with id: " << key << std::endl;
 #endif
-					fonts_.emplace(key, Font(file, size));
+					fonts_.emplace(key, FontUtils(file, size));
 				} else {
 					throw "'fonts' array in '" + filename
 							+ "' includes and invalid value";
@@ -169,7 +212,7 @@ void SDLUtils::loadReasources(std::string filename) {
 #ifdef _DEBUG
 					std::cout << "Loading image with id: " << key << std::endl;
 #endif
-					images_.emplace(key, TextureUtils(renderer(), file));
+					//images_.emplace(key, Texture(renderer(), file));
 				} else {
 					throw "'images' array in '" + filename
 							+ "' includes and invalid value";
@@ -180,41 +223,6 @@ void SDLUtils::loadReasources(std::string filename) {
 		}
 	}
 
-	// load messages
-//	jValue = root["messages"];
-//	if (jValue != nullptr) {
-//		if (jValue->IsArray()) {
-//			for (auto &v : jValue->AsArray()) {
-//				if (v->IsObject()) {
-//					JSONObject vObj = v->AsObject();
-//					std::string key = vObj["id"]->AsString();
-//					std::string txt = vObj["text"]->AsString();
-//					auto &font = fonts_.at(vObj["font"]->AsString());
-//#ifdef _DEBUG
-//					std::cout << "Loading message with id: " << key
-//							<< std::endl;
-//#endif
-//					/*if (vObj["bg"] == nullptr)
-//						msgs_.emplace(key,
-//								Texture(renderer(), txt, font,
-//										build_sdlcolor(
-//												vObj["color"]->AsString())));
-//					else
-//						msgs_.emplace(key,
-//								Texture(renderer(), txt, font,
-//										build_sdlcolor(
-//												vObj["color"]->AsString()),
-//										build_sdlcolor(
-//												vObj["bg"]->AsString())));*/
-//				} else {
-//					throw "'messages' array in '" + filename
-//							+ "' includes and invalid value";
-//				}
-//			}
-//		} else {
-//			throw "'messages' is not an array in '" + filename + "'";
-//		}
-//	}
 
 	// load sounds
 	jValue = root["sounds"];
@@ -263,6 +271,31 @@ void SDLUtils::loadReasources(std::string filename) {
 		}
 	}
 
+	// load tilesets
+	jValue = root["tilesets"];
+	if (jValue != nullptr) {
+		if (jValue->IsArray()) {
+			for (auto& v : jValue->AsArray()) {
+				if (v->IsObject()) {
+					JSONObject vObj = v->AsObject();
+					std::string key = vObj["id"]->AsString();
+					std::string file = vObj["file"]->AsString();
+#ifdef _DEBUG
+					std::cout << "Loading tileset with id: " << key << std::endl;
+#endif
+					auto a = new Texture(renderer(), file);
+					tilesets_.emplace(key, a);
+				}
+				else {
+					throw "'tilesets' array in '" + filename
+						+ "' includes and invalid value";
+				}
+			}
+		}
+		else {
+			throw "'tilesets' is not an array";
+		}
+	}
 }
 
 void SDLUtils::closeSDLExtensions() {

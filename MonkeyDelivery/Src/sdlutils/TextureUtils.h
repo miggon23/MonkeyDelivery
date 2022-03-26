@@ -8,7 +8,7 @@
 #include <cassert>
 #include <iostream>
 
-#include "Font.h"
+#include "FontUtils.h"
 
 class TextureUtils {
 public:
@@ -25,11 +25,11 @@ public:
 	TextureUtils(SDL_Renderer *renderer, const std::string &fileName);
 
 	// Construct from text
-	TextureUtils(SDL_Renderer *renderer, const std::string &text, const Font &font,
+	TextureUtils(SDL_Renderer *renderer, const std::string &text, const FontUtils&font,
 			const SDL_Color &fgColor);
 
 	// Construct from text with background
-	TextureUtils(SDL_Renderer *renderer, const std::string &text, const Font &font,
+	TextureUtils(SDL_Renderer *renderer, const std::string &text, const FontUtils&font,
 			const SDL_Color &fgColor, const SDL_Color &bgColor);
 
 
@@ -45,6 +45,8 @@ public:
 	inline int height() const {
 		return height_;
 	}
+
+	inline SDL_Texture* getSDLTexture() { return texture_; };
 
 	// This rendering method corresponds to method SDL_RenderCopyEx.
 	//
@@ -94,7 +96,7 @@ private:
 
 	// Construct from text
 	void constructFromText(SDL_Renderer *renderer, const std::string &text,
-			const Font &font, const SDL_Color *fgColor,
+			const FontUtils&font, const SDL_Color *fgColor,
 			const SDL_Color *bgColor = nullptr);
 
 	SDL_Texture *texture_;

@@ -515,9 +515,6 @@
     <ClInclude Include="Src\Logic\Lantern.h">
       <Filter>Header Files\Logic\InteractuableObjects</Filter>
     </ClInclude>
-    <ClInclude Include="Src\sdlutils\Font.h">
-      <Filter>Header Files\sdlutils</Filter>
-    </ClInclude>
     <ClInclude Include="Src\sdlutils\InputHandler.h">
       <Filter>Header Files\sdlutils</Filter>
     </ClInclude>
@@ -562,6 +559,9 @@
     </ClInclude>
     <ClInclude Include="Src\Control\UI\Sliders\GeneralSoundsEffectSlider.h">
       <Filter>Header Files\Control\UI\Slider</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\sdlutils\FontUtils.h">
+      <Filter>Header Files\sdlutils</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -64,7 +64,10 @@ void Game::setCamera()
 }
 
 Game::Game(string n, int w, int h) : name(n), width(w), height(h), doExit(false), mCamera_(nullptr)
-{    
+{
+    SDLUtils::init("Monkey Delivery", 1800, 1000,
+        "../Images/config/resources.json");
+
     font_ = new Font("../Images/TheMoon.ttf", 50);
     animationManager = new AnimationManager(this);
 }
@@ -97,6 +100,7 @@ Game::~Game() {
        delete a.second;
     }
     delete brightness_;
+    
 }
 
 string Game::getGameName() {
@@ -169,7 +173,7 @@ void Game::draw()
     SDL_Rect dst = { 0, 0, getWindowWidth(), getWindowHeight() }; // Se dibuja en la totalidad de la pantalla (modificar si quisieramos dejar un borde de UI por ejemplo)
     srcRect_ = mCamera_->renderRect(); 
     SDL_RenderCopy(renderer, background_, &srcRect_, &dst); // srcRect es la parte de la textura (background) que se va a ver
-
+    
     /*auto a = SDL_GetWindowSurface(window_);
     auto tex = SDL_CreateTextureFromSurface(renderer, a);
     background_ = SDL_CreateTextureFromSurface(renderer, a);
@@ -190,7 +194,7 @@ void Game::draw()
 
     player_->draw();
     /*player_->drawDebug();*/
-   
+
 }
 
 Point2D<int> Game::getOrigin() {
@@ -366,7 +370,8 @@ void Game::loadMap(string const& filename)
     auto& mapTilesets = mapInfo.tile_map->getTilesets();
     for (auto& tileset : mapTilesets) {
         string name = tileset.getName();
-        Texture* texture = tilesets_.find(name)->second;//&sdlutils().tilesets().find(name)->second;
+        //Texture* texture = sdlutils().tilesets().find(name)->second;
+        Texture* texture = tilesets_.find(name)->second;;
         mapInfo.tilesets.insert(pair<uint, Texture*>(tileset.getFirstGID(), texture));
     }
     // recorremos cada una de las capas (de momento solo las de tiles) del mapa

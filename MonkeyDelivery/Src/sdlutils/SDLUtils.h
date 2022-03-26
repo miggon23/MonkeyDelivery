@@ -8,11 +8,11 @@
 
 #include "../utils/Singleton.h"
 #include "RandomNumberGenerator.h"
-#include "Font.h"
+#include "FontUtils.h"
 #include "Music.h"
 #include "SoundEffect.h"
 #include "VirtualTimer.h"
-#include "TextureUtils.h"
+#include "../View/Texture.h"
 
 class SDLUtils: public Singleton<SDLUtils> {
 
@@ -71,6 +71,10 @@ public:
 	// other than those initialised in this class
 	inline SDL_Renderer* renderer() {
 		return renderer_;
+	}
+
+	inline void setRenderer(SDL_Renderer* r) {
+		renderer_ = r;
 	}
 
 	// clear the renderer with a given SDL_Color
@@ -142,6 +146,15 @@ public:
 		return musicsAccessWrapper_;
 	}
 
+	//inline auto& tilesets() {
+	//	return tilesetsAccessWrapper_;
+	//}
+
+	// tilesets maps
+	inline sdl_resource_table<Texture*>& tilesets() {
+		return tilesets_;
+	}
+
 	// Access to the random number generator. It is important to always
 	// use this generator, this way you can regenerate the same sequence
 	// if you start from the same seed
@@ -163,10 +176,14 @@ public:
 private:
 	SDLUtils();
 	SDLUtils(std::string windowTitle, int width, int height);
+	SDLUtils(std::string windowTitle, int width, int height, SDL_Renderer* renderer);
 	SDLUtils(std::string windowTitle, int width, int height,
 			std::string filename);
+	SDLUtils(std::string windowTitle, int width, int height,
+			std::string filename, SDL_Renderer* renderer);
 
 	void initWindow();
+	void initWindowNotRenderer();
 	void closeWindow();
 	void initSDLExtensions(); // initialize resources (fonts, textures, audio, etc.)
 	void closeSDLExtensions(); // free resources the
@@ -179,17 +196,19 @@ private:
 	SDL_Window *window_; // the window
 	SDL_Renderer *renderer_; // the renderer
 
-	sdl_resource_table<Font> fonts_; // fonts map (string -> font)
-	sdl_resource_table<TextureUtils> images_; // textures map (string -> texture)
-	sdl_resource_table<TextureUtils> msgs_; // textures map (string -> texture)
+	sdl_resource_table<FontUtils> fonts_; // fonts map (string -> font)
+	sdl_resource_table<Texture> images_; // textures map (string -> texture)
+	sdl_resource_table<Texture> msgs_; // textures map (string -> texture)
 	sdl_resource_table<SoundEffect> sounds_; // sounds map (string -> sound)
 	sdl_resource_table<Music> musics_; // musics map (string -> music)
+	sdl_resource_table<Texture*> tilesets_; // tilesets map (string -> texture)
 
-	map_access_wrapper<Font> fontsAccessWrapper_;
-	map_access_wrapper<TextureUtils> imagesAccessWrapper_;
-	map_access_wrapper<TextureUtils> msgsAccessWrapper_;
+	map_access_wrapper<FontUtils> fontsAccessWrapper_;
+	map_access_wrapper<Texture> imagesAccessWrapper_;
+	map_access_wrapper<Texture> msgsAccessWrapper_;
 	map_access_wrapper<SoundEffect> soundsAccessWrapper_;
 	map_access_wrapper<Music> musicsAccessWrapper_;
+	//map_access_wrapper<TextureUtils> tilesetsAccessWrapper_;
 
 	RandomNumberGenerator random_; // (pseudo) random numbers generator
 	VirtualTimer timer_; // virtual timer

@@ -48,6 +48,7 @@
 #include "../utils/Vector2D.h"
 
 #include "../json/JSON.h"
+#include "../sdlutils/SDLUtils.h"
 
 #define TILE_SIZE 16
 

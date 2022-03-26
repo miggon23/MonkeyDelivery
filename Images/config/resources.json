@@ -100,7 +100,7 @@
   "fonts": [
     {
       "id": "TheMoon",
-      "file": "Images/TheMoon.ttf",
+      "file": "../Images/TheMoon.ttf",
       "size": 16
     }
   ],
