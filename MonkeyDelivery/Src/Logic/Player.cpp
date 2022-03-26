@@ -354,10 +354,12 @@ void Player::draw()
 		inventory_->draw();
 	if (usingFlashLight) {
 		/*Box(lightZone(), BLUE).render(game->getRenderer());*/
+		//usingLantern = false;
 		auto a = lightZoneFL();
 		flashlightTex_->render(a);
 	}
 	if (usingLantern) {
+		//usingFlashLight = false;
 		auto b = lightZoneL();
 		lanternTex_->render(b);
 	}

@@ -1,8 +1,10 @@
 #include "Lantern.h"
 #include "Player.h"
+#include "Flashlight.h"
 
 Lantern::Lantern(Texture* tex) : active(false), InventoryObject(tex)
 {
+
 }
 
 bool Lantern::useObject() {
@@ -10,6 +12,8 @@ bool Lantern::useObject() {
 		if (!active) {
 			cout << " Hola linternita circular";
 			player_->changeLState(true);
+			player_->changeFLState(false);
+			//Flashlight::setActive(false);
 		}
 		else {
 			cout << "Adios linternita circular";

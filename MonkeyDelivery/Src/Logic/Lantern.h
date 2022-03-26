@@ -2,6 +2,7 @@
 #include "InventoryObject.h"
 
 class Game;
+class Flashlight;
 
 class Lantern : public InventoryObject
 {

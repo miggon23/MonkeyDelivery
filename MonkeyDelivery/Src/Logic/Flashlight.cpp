@@ -10,6 +10,7 @@ bool Flashlight::useObject() {
 		if (!active) {
 			cout << " Hola linternita";
 			player_->changeFLState(true);
+			player_->changeLState(false);
 		}
 		else {
 			cout << "Adios linternita";
@@ -20,4 +21,9 @@ bool Flashlight::useObject() {
 		active = !active;
 		return false; //devolvemos false indicando que el objeto no debe destruirse tras ser usado
 	}
+}
+
+void Flashlight::setActive(bool b)
+{
+	active = b;
 }

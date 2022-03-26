@@ -130,7 +130,3 @@ void Inventory::draw() {
 		
 	}
 }
-
-
-
-
