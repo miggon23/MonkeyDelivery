@@ -18,17 +18,19 @@ private:
 	string text_;
 	Point2D<int> textPos_;
 	SDL_Color color_;
+	Texture* currentIcon_;
 
 	const int xPos_ = 800,
 		yPos_ = 700,
 		width_ = 400,
 		height_ = 200,
-		xText_ = 10,
+		xText_ = 15,
 		yText_ = 20,
-		letterPerLine_ = 20,
+		letterPerLine_ = 23,
 		sizeBtwLines_ = 40,
 		normalUpdateTime_ = 50,
-		fastUpdateTime_ = 5;
+		fastUpdateTime_ = 5,
+		maxLines_ = 2;
 
 	bool draw_, inShow_;
 
@@ -42,7 +44,7 @@ public:
 	DialogueBox(Game* game);
 	~DialogueBox();
 	
-	void changeText(string id);
+	void changeText(string id, Texture* newT = nullptr);
 	void inShow();
 
 	void interact();

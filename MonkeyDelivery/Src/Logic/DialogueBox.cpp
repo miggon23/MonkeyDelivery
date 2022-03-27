@@ -11,6 +11,8 @@ DialogueBox::DialogueBox(Game* game) : GameObject(game)
 {
 	this->game = game;
 
+	currentIcon_ = nullptr;
+
 	font_ = new Font("../Images/TheMoon.ttf", 40);
 	texture = game->getTexture(dialogoPrueba);
 	color_ = BLACK;
@@ -26,7 +28,7 @@ DialogueBox::~DialogueBox()
 	font_ = nullptr;
 }
 
-void DialogueBox::changeText(string id)
+void DialogueBox::changeText(string id, Texture* newT = nullptr)
 {
 	std::unique_ptr<JSONValue> jValueRoot(JSON::ParseFromFile("../Images/config/resources.json"));
 
@@ -59,6 +61,10 @@ void DialogueBox::changeText(string id)
 
 					inShow_ = true;
 					draw_ = true;
+
+					//cambio a la nueva textura de icono
+					currentIcon_ = newT;
+					
 				}
 				else {
 					throw "'missions' array in '" + id
@@ -90,10 +96,19 @@ void DialogueBox::advanceLetter()
 	//si la linea a alcanzado su limite
 	if (lineIndex_ >= letterPerLine_ && textLines_[currentLine_][textLines_[currentLine_].size() - 1] == 32)
 	{
-		//añadimos una nueva linea
 		string s = "";
 		textLines_.push_back(s);
-		currentLine_++;
+
+		if (currentLine_ != maxLines_)
+		{
+			currentLine_++;			
+		}
+		else
+		{
+			textLines_.erase(textLines_.begin());
+		}
+
+		//añadimos una nueva linea		
 		lineIndex_ = 0;
 	}
 
