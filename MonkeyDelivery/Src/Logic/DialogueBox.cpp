@@ -28,7 +28,7 @@ DialogueBox::~DialogueBox()
 	font_ = nullptr;
 }
 
-void DialogueBox::changeText(string id, Texture* newT = nullptr)
+void DialogueBox::changeText(string id)
 {
 	std::unique_ptr<JSONValue> jValueRoot(JSON::ParseFromFile("../Images/config/resources.json"));
 
@@ -42,28 +42,19 @@ void DialogueBox::changeText(string id, Texture* newT = nullptr)
 
 	jValue = root[id];
 	if (jValue != nullptr) {
-		if (jValue->IsArray()) {
-			int x, y, width, height, xText, yText;
+		if (jValue->IsArray()) {			
 			for (auto& v : jValue->AsArray()) {
 				if (v->IsObject()) {
 					JSONObject vObj = v->AsObject();
 
 					text_ = vObj["text"]->AsString();
 
-					//reinicio de la cadena con linea inicial
-					textLines_.clear();
-					string s = "";
-					s += text_[0];
-					textLines_.push_back(s);
-					lineIndex_ = letterIndex_ = 1;
-					currentLine_ = 0;
-					showLetterTime_ = normalUpdateTime_;
+					//reinicio del texto
+					reiniciateText();
 
-					inShow_ = true;
-					draw_ = true;
-
+					int iconId = vObj["icon"]->AsNumber();
 					//cambio a la nueva textura de icono
-					currentIcon_ = newT;
+					getIcon(iconId);
 					
 				}
 				else {
@@ -123,6 +114,38 @@ void DialogueBox::advanceLetter()
 		inShow_ = false;
 }
 
+void DialogueBox::reiniciateText()
+{
+	//reinicio de la cadena con linea inicial
+	textLines_.clear();
+	string s = "";
+	s += text_[0];
+	textLines_.push_back(s);
+	lineIndex_ = letterIndex_ = 1;
+	currentLine_ = 0;
+	showLetterTime_ = normalUpdateTime_;
+
+	//ajuste de valores iniciales
+	inShow_ = true;
+	draw_ = true;
+}
+
+void DialogueBox::getIcon(unsigned int iconId)
+{
+	switch (iconId)
+	{
+	case 0:
+		currentIcon_ = nullptr;
+		break;
+	case 1:
+		currentIcon_ = game->getTexture(capibaraTexture);
+		break;
+	default:
+		currentIcon_ = nullptr;
+		break;
+	}
+}
+
 void DialogueBox::interact()
 {
 	if (inShow_)
@@ -137,6 +160,10 @@ void DialogueBox::draw()
 	if (draw_)
 	{
 		GameObject::draw();
+
+		if(currentIcon_ != nullptr)
+			currentIcon_->render({getX() + xIcon, getY() + yIcon, wIcon, hIcon});
+
 		for (int i = 0; i < textLines_.size(); i++)
 		{
 			font_->render(game->getRenderer(), textLines_[i].c_str(), getX() + textPos_.getX(), getY() + textPos_.getY() + sizeBtwLines_ * i, color_);

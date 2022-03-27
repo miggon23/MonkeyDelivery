@@ -26,7 +26,11 @@ private:
 		height_ = 200,
 		xText_ = 15,
 		yText_ = 20,
-		letterPerLine_ = 23,
+		xIcon = -50,
+		yIcon = -58,
+		wIcon = 125,
+		hIcon = 125,
+		letterPerLine_ = 20,
 		sizeBtwLines_ = 40,
 		normalUpdateTime_ = 50,
 		fastUpdateTime_ = 5,
@@ -44,12 +48,16 @@ public:
 	DialogueBox(Game* game);
 	~DialogueBox();
 	
-	void changeText(string id, Texture* newT = nullptr);
+	void changeText(string id);
 	void inShow();
 
 	void interact();
 
 	void advanceLetter();
+
+	void reiniciateText();
+
+	void getIcon(unsigned int iconId);
 
 	void show() { draw_ = true; inShow_ = true; }
 	void hide() { draw_ = false; }
