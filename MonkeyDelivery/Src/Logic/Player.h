@@ -84,7 +84,6 @@ public:
 	void sleep();//efecto de dormir
 	void changeSleep();//mirar si puede dormir
 	void NoSleepText();//si presionas la e pero no puedes dormir para que renderize el texto
-	void FadeOut();
 #pragma endregion
 
 #pragma region Energy

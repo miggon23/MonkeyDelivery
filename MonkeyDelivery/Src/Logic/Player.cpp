@@ -54,10 +54,10 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game), anima
 	// flashlight
 	string path = "../Images/objects/luzprovi.png";
 	flashlightTex_ = new Texture(game->getRenderer(), path);
-	//lantern
+	// lantern
 	path = "../Images/objects/luzCircularProvi.png";
 	lanternTex_ = new Texture(game->getRenderer(), path);
-
+	// fadeout
 	path = "../Images/ui/fade.png";
 	fadeTex_ = new Texture(game->getRenderer(), path);
 }
@@ -76,10 +76,12 @@ Player::~Player()
 
 void Player::update()
 {
-	//move();
-	//getScared(1);//pruebas
 	if (sleeping)sleep();//si esta durmiendo
 	else move();//si no esta durmiendo habilitanmos el movimiento
+
+	if ((energyLevel_->percentEnergy() == 0 || fearLevel_->percentFear() == 100) && !fade) {
+		fade = true;
+	}
 }
 
 /// <summary>
@@ -215,33 +217,10 @@ void Player::NoSleepText()
 	if (SDL_GetTicks() - timerSleepText >= 3000)boolrenderSleepText = false;
 }
 
-void Player::FadeOut()
-{
-	//string path = "../Images/ui/fade.png";
-	//fadeTex_ = new Texture(game->getRenderer(), path);
-
-	//fadeTex_ = game->getTexture(FadeOutTexture);
-
-	fade = true;
-
-	alpha += 15;
-	fadeTex_->changeAlpha(alpha);
-
-	/*while (alpha < SDL_ALPHA_OPAQUE)
-	{
-		if(timer.currTime() > 100)
-		{
-			alpha += 1;
-			fadeTex_->changeAlpha(alpha);
-			timer.reset();
-		}
-	}*/
-}
 
 void Player::getScared(int amount)
 {
-	if (fearLevel_->getScared(amount))
-		FadeOut();
+	fearLevel_->getScared(amount);
 }
 
 /// <summary>
@@ -250,9 +229,7 @@ void Player::getScared(int amount)
 /// <param name="amount"> cantidad que se le va añadir a energy_
 void Player::drainEnergy(float amount)
 {
-	if (energyLevel_->drain(amount)) { // se queda dormido porque no tiene energía
-		FadeOut();
-	}
+	energyLevel_->drain(amount); // se queda dormido porque no tiene energía
 }
 
 void Player::recoverEnergy(int amount)
@@ -343,21 +320,15 @@ void Player::draw()
 	}
 	if(fade)
 	{
-		fadeTex_->render({ 0, 0, 1800, 1000 });
+		fadeTex_->render({ 0, 0, 1800, 1000 }); //Renderizar la textura del rectangulo negro en ese rect
 
-		//fadeTex_->render({ 0, 0, 1800, 1000 });
-		/*if (timer.currTime() > 100 && alpha < SDL_ALPHA_OPAQUE)
+		if (timer.currTime() > 100 && alpha < SDL_ALPHA_OPAQUE)
 		{
-			alpha += 1;
+			alpha += 10;
 			fadeTex_->changeAlpha(alpha);
-			fadeTex_->render({ 0, 0, 1800, 1000 });
 			timer.reset();
+			//if (alpha >= SDL_ALPHA_OPAQUE) fade = false;
 		}
-		if(alpha >= SDL_ALPHA_OPAQUE)
-		{
-			fadeTex_->changeAlpha(alpha);
-			fadeTex_->render({ 0, 0, 1800, 1000 });
-		}*/
 	}
 }
 
@@ -469,5 +440,3 @@ const SDL_Rect Player::lightZoneL()
 	};
 	return hitZone;
 }
-
-
