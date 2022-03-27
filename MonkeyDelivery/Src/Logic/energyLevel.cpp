@@ -29,6 +29,10 @@ bool energyLevel::drain(float energyDrained)
 	}
 }
 
+void energyLevel::resetEnergy()
+{
+	energy_ = maxEnergy_;
+}
 
 void energyLevel::draw()
 {

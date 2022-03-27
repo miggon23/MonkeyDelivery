@@ -28,6 +28,10 @@ bool FearLevel::getScared(int amount)
 	}
 }
 
+void FearLevel::resetFear()
+{
+	fear_ = 0;
+}
 
 void FearLevel::draw()
 {

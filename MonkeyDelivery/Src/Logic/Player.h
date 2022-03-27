@@ -145,7 +145,10 @@ public:
 	inline void setOrientation(string orien) { orientation_ = orien; }
 	inline string getOrientation() { return orientation_; }
 	inline bool isAsleep() { return sleeping; }
-	
+
+	// Fadeout
+	void FadeOut(); // Realiza un fadeout sobre la pantalla
+	void sendToBed(); // Establece la posición en la cama más cercana después del fadeout
 };
 
 

@@ -60,6 +60,7 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game), anima
 	// fadeout
 	path = "../Images/ui/fade.png";
 	fadeTex_ = new Texture(game->getRenderer(), path);
+	fadeTex_->changeAlpha(0);
 }
 
 Player::~Player()
@@ -79,8 +80,11 @@ void Player::update()
 	if (sleeping)sleep();//si esta durmiendo
 	else move();//si no esta durmiendo habilitanmos el movimiento
 
-	if ((energyLevel_->percentEnergy() == 0 || fearLevel_->percentFear() == 100) && !fade) {
+	/*if ((energyLevel_->percentEnergy() == 0 || fearLevel_->percentFear() == 100) && !fade) {
 		fade = true;
+	}*/
+	if((fearLevel_->getScared(0) || energyLevel_->drain(0)) && !fade) {
+		fade = !fade;
 	}
 }
 
@@ -320,16 +324,39 @@ void Player::draw()
 	}
 	if(fade)
 	{
-		fadeTex_->render({ 0, 0, 1800, 1000 }); //Renderizar la textura del rectangulo negro en ese rect
+		fadeTex_->render({ 0, 0, 1800, 1000 }); // Renderizar la textura del rectangulo negro en ese rect
 
-		if (timer.currTime() > 100 && alpha < SDL_ALPHA_OPAQUE)
-		{
-			alpha += 10;
-			fadeTex_->changeAlpha(alpha);
-			timer.reset();
-			//if (alpha >= SDL_ALPHA_OPAQUE) fade = false;
-		}
+		FadeOut(); // Realiza un fadeout sobre la pantalla
 	}
+}
+
+void Player::FadeOut()
+{
+	if (alpha < SDL_ALPHA_OPAQUE && timer.currTime() > 50)
+	{
+		alpha += 5;
+		fadeTex_->changeAlpha(alpha);
+		timer.reset();
+	}
+	else if (alpha >= SDL_ALPHA_OPAQUE)
+	{
+		fade = !fade;
+		alpha = 0;
+		fadeTex_->changeAlpha(alpha);
+		fadeTex_->render({ 0, 0, 1800, 1000 });
+
+		// Reestablece el miedo y la energía al valor por defecto
+		fearLevel_->resetFear();
+		energyLevel_->resetEnergy();
+
+		// Establece la posición en la cama más cercana
+		sendToBed();
+	}
+}
+
+void Player::sendToBed()
+{
+
 }
 
 //se le pasa una cantidad de dinero al player

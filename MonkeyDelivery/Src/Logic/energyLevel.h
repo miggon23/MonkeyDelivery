@@ -15,6 +15,7 @@ public:
 
 	void update() override {};
 	bool drain(float energyDrained);
+	void resetEnergy();
 	void draw() override;
 
 	inline float getEnergy() { return energy_; };
