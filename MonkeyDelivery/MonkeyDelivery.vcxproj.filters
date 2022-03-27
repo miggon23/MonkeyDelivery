@@ -257,6 +257,9 @@
     <ClCompile Include="Src\Control\UI\Sliders\GeneralMusicSlider.cpp">
       <Filter>Source Files\Control\UI\Slider</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Logic\InteractuableChest.cpp">
+      <Filter>Source Files\Logic\InteractuableObjects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -562,6 +565,9 @@
     </ClInclude>
     <ClInclude Include="Src\sdlutils\FontUtils.h">
       <Filter>Header Files\sdlutils</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Logic\InteractuableChest.h">
+      <Filter>Header Files\Logic\InteractuableObjects</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

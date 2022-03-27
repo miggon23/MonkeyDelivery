@@ -61,11 +61,15 @@ enum TextureName {
 	scorpionDyingSpritesheet,
 	BrightnessTexture,
 	FadeOutTexture,
-	capibaraTexture
+
+	//no finales
+	capibaraTexture,
+	chestTexture,
+	goldTexture
 };
 
 
-const int NUM_TEXTURES = 49;
+const int NUM_TEXTURES = 51;
 
 
 
@@ -127,8 +131,10 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
   {"ui/fade.png",1,1},
 
 
-
-  {"icons/capibara.png",1,1}
+	//no finales
+  {"icons/capibara.png",1,1},
+  {"objects/chest.png",1,1},
+  {"objects/gold.png",1,1}
 };
 
 

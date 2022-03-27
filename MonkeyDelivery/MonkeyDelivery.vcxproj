@@ -215,6 +215,7 @@
     <ClInclude Include="Src\Logic\GameObject.h" />
     <ClInclude Include="Src\Logic\InputManager.h" />
     <ClInclude Include="Src\Logic\InteractiveEntity.h" />
+    <ClInclude Include="Src\Logic\InteractuableChest.h" />
     <ClInclude Include="Src\Logic\InteractuableShop.h" />
     <ClInclude Include="Src\Logic\Inventory.h" />
     <ClInclude Include="Src\Logic\InventoryObject.h" />
@@ -317,6 +318,7 @@
     <ClCompile Include="Src\Logic\GameObject.cpp" />
     <ClCompile Include="Src\Logic\InputManager.cpp" />
     <ClCompile Include="Src\Logic\InteractiveEntity.cpp" />
+    <ClCompile Include="Src\Logic\InteractuableChest.cpp" />
     <ClCompile Include="Src\Logic\InteractubaleShop.cpp" />
     <ClCompile Include="Src\Logic\Inventory.cpp" />
     <ClCompile Include="Src\Logic\InventoryObject.cpp" />
