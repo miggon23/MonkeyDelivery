@@ -49,6 +49,7 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game), anima
 	setInventoryVisibility(true);
 	textureRect = { 0, 0, 100, 100 };
 	timerAnimation = 0;
+	//timer = sdlutils().virtualTimer();
 
 	// flashlight
 	string path = "../Images/objects/luzprovi.png";
@@ -56,6 +57,9 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game), anima
 	//lantern
 	path = "../Images/objects/luzCircularProvi.png";
 	lanternTex_ = new Texture(game->getRenderer(), path);
+
+	path = "../Images/ui/fade.png";
+	fadeTex_ = new Texture(game->getRenderer(), path);
 }
 
 Player::~Player()
@@ -213,51 +217,25 @@ void Player::NoSleepText()
 
 void Player::FadeOut()
 {
-	//SDL_Surface* s;
-	/* Creating the surface. */
-	//s = SDL_CreateRGBSurface(0, game->getWindowWidth(), game->getWindowHeight(), 32, 0, 0, 0, 0);
-	//SDL_FillRect(s, NULL, SDL_MapRGB(s->format, 255, 0, 0));
-	/*auto rect= SDL_Rect(0, game->getWindowHeight(), game->getWindowWeight(), game->getWindowHeight()
-	auto x = Texture(rect);
-	SDL_SetTextureAlphaMod(,50);*/
+	//string path = "../Images/ui/fade.png";
+	//fadeTex_ = new Texture(game->getRenderer(), path);
 
-	/*setTexture(monkeyEyesClosedTexture);
+	//fadeTex_ = game->getTexture(FadeOutTexture);
 
-	SDL_Rect screenRectangle = { 0, 0, game->getWindowWidth(), game->getWindowHeight()};
-	SDL_Renderer* renderer = game->getRenderer();
-	SDL_SetRenderDrawBlendMode(renderer, SDL_BLENDMODE_BLEND);
-	SDL_SetRenderDrawColor(renderer, 120, 0, 0, this->alpha);
-	SDL_RenderFillRect(renderer, &screenRectangle);
-	SDL_RenderDrawRect(renderer, &screenRectangle);
-	SDL_Texture* front = SDL_CreateTexture(renderer, SDL_PIXELFORMAT_ARGB32, SDL_TEXTUREACCESS_TARGET,
-		game->getWindowWidth(), game->getWindowHeight());
-	SDL_SetRenderTarget(renderer, front);
+	fade = true;
 
-	while(alpha < SDL_ALPHA_OPAQUE)
+	alpha += 15;
+	fadeTex_->changeAlpha(alpha);
+
+	/*while (alpha < SDL_ALPHA_OPAQUE)
 	{
-		this->alpha += 1;
-		SDL_SetRenderDrawBlendMode(renderer, SDL_BLENDMODE_BLEND);
-		SDL_SetRenderDrawColor(renderer, 120, 0, 0, this->alpha);
-		SDL_RenderFillRect(renderer, &screenRectangle);
-		SDL_RenderDrawRect(renderer, &screenRectangle);
-		SDL_SetRenderTarget(renderer, front);
-
+		if(timer.currTime() > 100)
+		{
+			alpha += 1;
+			fadeTex_->changeAlpha(alpha);
+			timer.reset();
+		}
 	}*/
-
-	//SDL_Surface* s = SDL_CreateRGBSurface(0, game->getWindowWidth(), game->getWindowHeight(), 32, 0, 0, 0, 0);
-
-	//SDL_Texture* t;
-	////t = SDL_CreateTexture(game->getRenderer(), 32, 0, game->getWindowWidth(), game->getWindowHeight());
-	//t = SDL_CreateTextureFromSurface(game->getRenderer(), s);
-	//SDL_SetTextureAlphaMod(t, 255);
-	////SDL_SetRenderDrawColor(game->getRenderer(), 0, 0, 0, 0);
-	//SDL_Texture* front = SDL_CreateTexture(game->getRenderer(), SDL_PIXELFORMAT_ARGB32, SDL_TEXTUREACCESS_TARGET,
-	//	game->getWindowWidth(), game->getWindowHeight());
-	//SDL_SetRenderTarget(game->getRenderer(), front);
-
-	//SDL_SetRenderTarget(renderer, NULL);
-
-	//SDL_RenderClear(renderer);
 }
 
 void Player::getScared(int amount)
@@ -362,6 +340,24 @@ void Player::draw()
 		//usingFlashLight = false;
 		auto b = lightZoneL();
 		lanternTex_->render(b);
+	}
+	if(fade)
+	{
+		fadeTex_->render({ 0, 0, 1800, 1000 });
+
+		//fadeTex_->render({ 0, 0, 1800, 1000 });
+		/*if (timer.currTime() > 100 && alpha < SDL_ALPHA_OPAQUE)
+		{
+			alpha += 1;
+			fadeTex_->changeAlpha(alpha);
+			fadeTex_->render({ 0, 0, 1800, 1000 });
+			timer.reset();
+		}
+		if(alpha >= SDL_ALPHA_OPAQUE)
+		{
+			fadeTex_->changeAlpha(alpha);
+			fadeTex_->render({ 0, 0, 1800, 1000 });
+		}*/
 	}
 }
 

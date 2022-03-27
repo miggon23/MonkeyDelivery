@@ -59,11 +59,12 @@ enum TextureName {
 	catDyingSpritesheet,
 	plantDyingSpritesheet,
 	scorpionDyingSpritesheet,
-	BrightnessTexture
+	BrightnessTexture,
+	FadeOutTexture
 };
 
 
-const int NUM_TEXTURES = 47;
+const int NUM_TEXTURES = 48;
 
 
 
@@ -122,6 +123,7 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
   {"enemies/plant_dying.png",1,1},
   {"enemies/scorpion_dying.png",1,1},
   {"ui/Brightness.png",1,1},
+  {"ui/fade.png",1,1},
 };
 
 

@@ -6,6 +6,8 @@
 
 #include "InventoryObject.h"
 
+#include "../sdlutils/SDLUtils.h"
+
 class Game;
 class Inventory;
 class AnimationManager;
@@ -18,8 +20,9 @@ class Player : public GameObject {
 private:
 	Inventory* inventory_ = nullptr;
 	bool inventoryVisibility;
-	bool fade = true;
+	bool fade = false;
 	int alpha = SDL_ALPHA_TRANSPARENT;
+	VirtualTimer timer;
 
 #pragma region Sleep
 	bool sleeping = false;
@@ -66,6 +69,8 @@ private:
 	string orientation_;
 	Texture* flashlightTex_;
 	Texture* lanternTex_;
+
+	Texture* fadeTex_;
 
 public:
 
