@@ -11,7 +11,7 @@ ViewController::ViewController(Game* _game) {
     initSDL();
     IMG_Init(IMG_INIT_PNG);
 
-    game->setRenderer(renderer);
+    //game->setRenderer(renderer);
     game->loadTextures();
     //game->initBrightness();
     game->setState(new MenuState(game));

@@ -8,9 +8,9 @@ InputManager::InputManager(Game* _game)
 {
 	game = _game;
 	std::cout << "[DEBUG] frame duration: " << frameDuration() << " ms" << endl;
-	initSDL();
+	//initSDL();
 	IMG_Init(IMG_INIT_PNG);
-	game->setRenderer(renderer);
+	renderer = game->getRenderer();
 	game->loadTextures();
 	//game->initBrightness();
 	commandFactory = new CommandFactory(game);

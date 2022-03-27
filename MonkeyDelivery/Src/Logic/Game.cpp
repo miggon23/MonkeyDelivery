@@ -68,6 +68,8 @@ Game::Game(string n, int w, int h) : name(n), width(w), height(h), doExit(false)
     SDLUtils::init("Monkey Delivery", 1800, 1000,
         "../Images/config/resources.json");
 
+    setRenderer(sdlutils().renderer());
+
     font_ = new Font("../Images/TheMoon.ttf", 50);
     animationManager = new AnimationManager(this);
 }
@@ -113,7 +115,7 @@ void Game::add(GameObject* gameObject) {//a�adir gO al vector
 
 void Game::start()
 {
-    loadSpriteSheets();
+    //loadSpriteSheets();
     mapInfo.path = ".\\Src\\TilemapSrc\\MainMap.tmx";
     loadMap(mapInfo.path);
 
@@ -370,8 +372,8 @@ void Game::loadMap(string const& filename)
     auto& mapTilesets = mapInfo.tile_map->getTilesets();
     for (auto& tileset : mapTilesets) {
         string name = tileset.getName();
-        //Texture* texture = sdlutils().tilesets().find(name)->second;
-        Texture* texture = tilesets_.find(name)->second;;
+        Texture* texture = sdlutils().tilesets().find(name)->second;
+        //Texture* texture = tilesets_.find(name)->second;;
         mapInfo.tilesets.insert(pair<uint, Texture*>(tileset.getFirstGID(), texture));
     }
     // recorremos cada una de las capas (de momento solo las de tiles) del mapa
