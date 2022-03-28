@@ -247,6 +247,8 @@ void Player::recoverFear(int amount)
 void Player::getMoney(int amount)
 {
 	money_ += amount;
+	
+
 }
 
 void Player::removeMoney(int amount)
@@ -327,11 +329,13 @@ void Player::draw()
 		fadeTex_->render({ 0, 0, 1800, 1000 }); // Renderizar la textura del rectangulo negro en ese rect
 
 		FadeOut(); // Realiza un fadeout sobre la pantalla
+
 	}
 }
 
 void Player::FadeOut()
 {
+
 	if (alpha < SDL_ALPHA_OPAQUE && timer.currTime() > 50)
 	{
 		alpha += 5;
@@ -356,6 +360,7 @@ void Player::FadeOut()
 
 void Player::sendToBed()
 {
+	sdlutils().soundEffects().at("scary").play(0, 1);
 
 }
 
