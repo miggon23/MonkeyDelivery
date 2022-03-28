@@ -38,7 +38,7 @@ void OptionsState::next(){
 
 }
 
-void OptionsState::registerCommands(){
-	//commandFactory->add(new CommandExit());
+void OptionsState::registerCommands(){	
 	commandFactory->add(new CommandClick());
+	//commandFactory->add(new CommandExit());
 }

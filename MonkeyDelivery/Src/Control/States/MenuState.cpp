@@ -21,9 +21,6 @@ MenuState::MenuState(Game* game) : State(game){
     m->play(-1);*/ //-1 son infinitos loops
 }
 
-MenuState::~MenuState(){
-}
-
 void MenuState::registerCommands()
 {
    commandFactory->add(new CommandClick());

@@ -25,8 +25,7 @@ protected:
  
 public:
     State(Game* game) : game(game) {
-        commandFactory = new CommandFactory(game);
-        
+        commandFactory = new CommandFactory(game);       
     };
 
     virtual ~State() {
@@ -38,7 +37,7 @@ public:
         for (auto x:slidersUI){
             delete x;
             x = nullptr;
-        }       
+        }        
     };
 
     virtual void update() = 0;

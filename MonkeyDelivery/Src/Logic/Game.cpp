@@ -92,7 +92,7 @@ Game::~Game() {
     //delete missionsPanel_; //solo poner si no va en el vector de gameobjects
     delete dialogueBox_;
     delete iE_;
-    delete animationManager;
+    delete animationManager;    
     delete savedState;
     delete shop_;
     delete mCamera_;
@@ -101,6 +101,7 @@ Game::~Game() {
        delete a.second;
     }
     delete brightness_;  
+   
 }
 
 string Game::getGameName() {

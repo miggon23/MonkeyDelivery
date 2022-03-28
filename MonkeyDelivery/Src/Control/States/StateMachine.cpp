@@ -2,6 +2,7 @@
 #include "State.h"
 
 void StateMachine::setState(State* state) {
+	if(this->savedState!=this->state)delete this->state;
 	this->state = state;
 }
 
@@ -18,5 +19,5 @@ State* StateMachine::getSavedState() {
 }
 
 void StateMachine::clearSavedState() {
-	savedState = nullptr;
+	if(savedState!=nullptr)savedState = nullptr;
 }
