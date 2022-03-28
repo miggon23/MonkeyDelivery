@@ -15,7 +15,6 @@ enum TextureName {
 	monkeyEyesClosedTexture, // para la presentaci�n del hito, se puede quitar despu�s pq est� en el spritesheet
 	energyTexture,
 	energyLevelTexture,
-	energyLevelBackTexture,
 	fearLevelTexture,
 	missionPanelTexture,
 	woodPanelTexture,
@@ -71,7 +70,6 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
   {"animaciones mono/idle3.png",1,1},
   {"energy.png",1,1},
   {"energyLevel.png",1,1},
-  {"energyBackLevel.png",1,1},
   {"fearLevel.png",1,1},
   {"decorations/woodpanel.png",1,1},
   {"decorations/missionpanel.png",1,1},

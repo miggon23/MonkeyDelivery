@@ -427,7 +427,7 @@ void ParticleSystem::setTexture(SDL_Texture* var)
 
 void ParticleSystem::draw()
 {
-        if (_texture == nullptr)
+    if (_texture == nullptr)
     {
         std::cout << "QUE NO HAY TEXTURA";
         return;
