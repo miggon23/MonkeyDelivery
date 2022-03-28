@@ -50,6 +50,7 @@ void ShopCommand::execute()
 	{
 	case -1:
 		shopState_->buySelected();
+		//sdlutils().soundEffects().at("../Sounds/buy.wav").play(0, 1);
 		break;
 	case 0:
 		shopState_->moveSelectedX(moveCursor_);

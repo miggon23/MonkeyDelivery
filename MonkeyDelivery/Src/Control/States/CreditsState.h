@@ -4,7 +4,7 @@
 class CreditsState : public State
 {
 public:
-	CreditsState(Game* game, Font* font);
+	CreditsState(Game* game);
 	~CreditsState() = default;
 	
 	void draw()override;
@@ -19,7 +19,7 @@ public:
 	void registerCommands()override;
 
 private:
-	array<string, 10> credits_ =
+	vector<string> credits_ =
 	{
 		"Elisa Todd",
 		"Miguel Gonzales",
@@ -28,12 +28,12 @@ private:
 		"Alejandro Segarra",
 		"Simona Antonova",
 		"Jacobo Alonso",
-		"Javier Comas <JAvichu> ",
-		"Sara ISABEL no me se el apellido (García)"
+		"Javier Comas  ",
+		"Sara Isabel García",
 		"Raúl Saavedra"
 	};
 
-	Font* font_;
+
 	Texture* wallpaper_;
 
 	const int xOffset_ = 400, yOffset_ = 100, ySize_ = 50;

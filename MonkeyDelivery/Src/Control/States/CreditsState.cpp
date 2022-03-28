@@ -1,9 +1,11 @@
 #include "CreditsState.h"
 #include "../CommandClick.h"
+#include "../../Control/UI/Buttons/Back.h"
 
-CreditsState::CreditsState(Game* game, Font* font) : State(game), font_(font)
+CreditsState::CreditsState(Game* game) : State(game)
 {
-
+	
+	addButton(new Back(game->getWindowWidth() / 2 - 50, game->getWindowHeight() - 250, 100, 75, game));
 	registerCommands();
 }
 
@@ -14,11 +16,12 @@ void CreditsState::draw()
 		b->draw();
 	}
 
-	font_->render(game->getRenderer(), "CREDITS", 100, 20, BLACK);
+	game->renderText( "CREDITS", sdlutils().width()/2 - 100, 20);
 
 	for (int i = 0; i < index_; i++)
 	{
-		font_->render(game->getRenderer(), credits_[i], 100, 20, BLACK);
+		game->renderText(credits_[i], sdlutils().width()/2 - 100, 100  *i);
+		
 	}
 	//game->DrawBrightness();
 }
