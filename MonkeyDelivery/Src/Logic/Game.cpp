@@ -93,7 +93,6 @@ Game::~Game() {
     delete dialogueBox_;
     delete iE_;
     delete animationManager;    
-    delete savedState;
     delete shop_;
     delete mCamera_;
     for (auto a : tilesets_) {
@@ -101,7 +100,10 @@ Game::~Game() {
        delete a.second;
     }
     delete brightness_;  
-   
+    for(auto x:savedStates){
+        delete x;
+    }
+    delete texMiniMap_;
 }
 
 string Game::getGameName() {
@@ -144,6 +146,8 @@ void Game::start()
     auto* x = new Bed(this);
     x->setPosition(670, 760);
     add(x);
+    string path = "../Images/Mapa/imagenMiniMapa.png";
+    texMiniMap_ = new Texture(getRenderer(), path);
 }
 
 void Game::update()
@@ -538,9 +542,6 @@ void Game::initBrightness(){
     brightness_ = new Brightness(this);
 }
 
-void Game::drawMiniMap()
-{
-    string path = "../Images/Mapa/imagenMiniMapa.png";
-    Texture* tex_ = new Texture(getRenderer(), path);
-    tex_->render({ 0, 0, 1800, 1000 });
+void Game::drawMiniMap(){  
+    texMiniMap_->render({ 0, 0, 1800, 1000 });
 }

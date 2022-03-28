@@ -20,17 +20,19 @@ void PauseCommand::execute()
 {
 	if (game->getSavedState() == nullptr) {
 		//pause
-		game->saveState(game->getState());
+		game->setSaveState(game->getState());
 		game->setState(new PauseState(game));
 	}
 	else {
 		// unpause
+		if (game->saveStateEmpty())return;//por si no hay ningun estado
+
 		State* tmp = game->getState();
 		State* saved = game->getSavedState();
 		saved->resetInitTime();
 		saved->registerCommands();
 		game->setState(saved);
-		game->clearSavedState();
+		game->removeSavedState();
 		delete tmp;
 	}
 }

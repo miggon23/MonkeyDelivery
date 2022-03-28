@@ -17,6 +17,6 @@ void IntectuableShop::update()
 //llamo al metodo para ver si puede dromir
 void IntectuableShop::onPlayerInteraction(Player* player){
 	//player->changeSleep();
-	game->saveState(game->getState());
+	game->setSaveState(game->getState());
 	game->setState(new ShopState(game));
 }

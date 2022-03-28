@@ -59,8 +59,7 @@ void MissionsPanel::onPlayerInteraction(Player* player)
 
 		if (game->getSavedState() == nullptr) {
 			// show pannel
-			game->saveState(game->getState());
-
+			game->setSaveState(game->getState());
 			game->setState(new MissionSelectionState(game, missionsSent));
 		}
 	}
@@ -120,7 +119,8 @@ void MissionsPanel::onMissionSelected(string missionId)
 	saved->resetInitTime();
 	saved->registerCommands();
 	game->setState(saved);
-	game->clearSavedState();
+	game->removeSavedState();
+	delete tmp;
 	//delete tmp;
 }
 

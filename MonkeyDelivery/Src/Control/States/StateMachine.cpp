@@ -1,8 +1,6 @@
 #include "StateMachine.h"
 #include "State.h"
-
-void StateMachine::setState(State* state) {
-	if(this->savedState!=this->state)delete this->state;
+void StateMachine::setState(State* state) {	
 	this->state = state;
 }
 
@@ -10,14 +8,25 @@ State* StateMachine::getState() {
 	return this->state;
 }
 
-void StateMachine::saveState(State* state) {
-	savedState = state;
+void StateMachine::setSaveState(State* state) {
+	savedStates.push_back(state);
 }
 
-State* StateMachine::getSavedState() {
-	return savedState;
+State* StateMachine::getSavedState(){
+	auto x= savedStates.end();
+	x--;
+	return *x;
 }
 
-void StateMachine::clearSavedState() {
-	if(savedState!=nullptr)savedState = nullptr;
+void StateMachine::removeSavedState(){
+	auto x = savedStates.end();
+	x--;
+	savedStates.erase(x);
+}
+
+void StateMachine::clearSavedState(){
+	for (auto it : savedStates) {
+		delete it;
+	}
+	savedStates.clear();
 }

@@ -8,5 +8,6 @@ Credits::Credits(int x, int y, int w, int h, Game* game):Button(game,w,h,x,y){
 }
 
 void Credits::onCursorCollision(){
-	game->setState(new CreditsState(game));
+	//game->setState(new CreditsState(game));
+	ChangeToNewState(new CreditsState(game));
 }

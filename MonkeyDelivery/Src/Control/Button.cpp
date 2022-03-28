@@ -1,5 +1,5 @@
 #include "Button.h"
-
+#include "../Control/States/State.h"
 Button::Button(Game* game, int wight, int height, int x, int y) :GameObject(game) {
 
 	setDimension(wight, height);
@@ -25,55 +25,23 @@ bool Button::onClick()
 	return false;
 }
 
-void Button::update()
-{
-	/*
-	while ((SDL_PollEvent(event)))
-	{
-		if (event->type == SDL_MOUSEBUTTONDOWN)
-		{
-			SDL_GetMouseState(&x_, &y_);
-			SDL_Rect r1 = this->getCollider();
-			SDL_Rect mouse = { x_, y_, 20, 20 };
-
-			if (SDL_HasIntersection(&r1, &mouse))
-			{
-				onCursorCollision();
-			}
-		}
-	}
-	SDL_GetMouseState(&x_, &y_);
-	SDL_Rect r1 = this->getCollider();
-	SDL_Rect mouse = { x_, y_, 20, 20 };
-
-	if (SDL_HasIntersection(&r1, &mouse))
-	{
-		onCursorCollision();
-	}
-	SDL_GetMouseState(&x_, &y_);
-	SDL_Rect r1 = this->getCollider();
-	SDL_Rect mouse = { x_, y_, 20, 20 };
-
-	if (SDL_HasIntersection(&r1, &mouse))
-	{
-		onCursorCollision();
-	}*/
+void Button::update(){
 }
 
-//
-//bool Button::parse(SDL_Event& event)
-//{
-//	if (event.type == SDL_MOUSEBUTTONDOWN) {
-//		SDL_GetMouseState(&x_, &y_);
-//		SDL_Rect r1 = this->getCollider();
-//		SDL_Rect mouse = { x_, y_, 20, 20 };
-//
-//		if (SDL_HasIntersection(&r1, &mouse))
-//		{
-//			onCursorCollision();
-//		}		
-//	}
-//		
-//	return false;
-//}
+void Button::ChangeToNewState(State* state){
+	game->setSaveState(game->getState());
+	game->setState(state);
+}
+
+void Button::ChangeToLastState(){
+	State* tmp = game->getState();	
+	State* saved = game->getSavedState();
+	saved->resetInitTime();
+	saved->registerCommands();
+	game->setState(saved);
+	game->removeSavedState();
+	delete tmp;
+}
+
+
 

@@ -70,9 +70,11 @@ Player::~Player()
 	delete inventory_;
 	delete flashlightTex_;
 	delete lanternTex_;
+	delete fadeTex_;
 	energyLevel_ = nullptr;
 	fearLevel_ = nullptr;
 	inventory_ = nullptr;
+	std::cout << "PLAYER DELETED" << std::endl;
 }
 
 void Player::update()

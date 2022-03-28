@@ -16,6 +16,8 @@ public:
 	bool onClick();
 	virtual void  update() override;
     virtual void onCursorCollision()=0;
-	//bool parse(SDL_Event& event);
+	
+	void ChangeToNewState(State* state);
+	void ChangeToLastState();
 
 };
