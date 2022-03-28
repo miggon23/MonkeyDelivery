@@ -5,6 +5,7 @@
 
 class MenuState : public State {
     Texture* backgroundTexture;
+    Texture* titleTexture;
 public:
 
     MenuState(Game* game); 

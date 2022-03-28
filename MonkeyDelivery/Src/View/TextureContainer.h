@@ -67,11 +67,12 @@ enum TextureName {
 	chestTexture,
 	goldTexture,
 	// fondo menu principal
-	backgroundTex
+	backgroundTex,
+	titleTex
 };
 
 
-const int NUM_TEXTURES = 52;
+const int NUM_TEXTURES = 53;
 
 
 
@@ -138,7 +139,8 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
   {"objects/chest.png",1,1},
   {"objects/gold.png",1,1},
 	// fondo menu principal
-  {"background/MenuImage.png",1,1}
+  {"background/MenuImage.png",1,1},
+  {"background/GameTitleMockup1.png",1,1}
 };
 
 
