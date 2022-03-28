@@ -17,6 +17,8 @@ MenuState::MenuState(Game* game) : State(game) {
 	addButton(new Start(game->getWindowWidth() / 2 - 200, game->getWindowHeight() - 700, 400, 180, game));
 	addButton(new Options(game->getWindowWidth() / 2 - 200, game->getWindowHeight() - 500, 400, 180, game, 1));
 	addButton(new Credits(game->getWindowWidth() / 2 - 200, game->getWindowHeight() - 300, 400, 180, game));
+
+	backgroundTexture = game->getTexture(backgroundTex);
 	/* Music* m = new Music("../Sounds/menumusic.wav");
 	 m->play(-1);*/ //-1 son infinitos loops
 }
@@ -33,6 +35,9 @@ void MenuState::update() {
 
 void MenuState::draw()
 {
+	SDL_Rect rectPanel = { 0,0,game->getWindowWidth(),game->getWindowHeight() };
+	backgroundTexture->render(rectPanel);
+
 	int x = game->getWindowWidth() / 2 - 250;
 	int y = game->getWindowHeight() / 2 - 350;
 
@@ -44,6 +49,8 @@ void MenuState::draw()
 	for (auto b : getButtonsUI()) {
 		b->draw();
 	}
+
+
 	//game->DrawBrightness();
 }
 

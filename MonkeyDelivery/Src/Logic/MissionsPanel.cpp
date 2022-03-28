@@ -121,7 +121,7 @@ void MissionsPanel::onMissionSelected(string missionId)
 	saved->registerCommands();
 	game->setState(saved);
 	game->clearSavedState();
-	delete tmp;
+	//delete tmp;
 }
 
 void MissionsPanel::onMissionCompleted()

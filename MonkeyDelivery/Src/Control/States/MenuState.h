@@ -4,10 +4,11 @@
 #include "../UI/Buttons/Start.h"
 
 class MenuState : public State {
+    Texture* backgroundTexture;
 public:
 
     MenuState(Game* game); 
-    ~MenuState() = default;
+    ~MenuState() { backgroundTexture = nullptr; };
     void update() override;
     void draw() override;
     void next() override;
