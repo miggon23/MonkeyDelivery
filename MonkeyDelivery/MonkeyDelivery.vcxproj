@@ -317,6 +317,7 @@
     <ClCompile Include="Src\View\Camera.cpp" />
     <ClCompile Include="Src\View\Texture.cpp" />
     <ClCompile Include="Src\View\TextureContainer.cpp" />
+    <ClCompile Include="Src\View\Texture_manipulation.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="MonkeyDelivery.rc" />

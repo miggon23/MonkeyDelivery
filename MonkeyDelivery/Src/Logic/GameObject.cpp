@@ -15,7 +15,10 @@ void GameObject::drawTexture(Texture* texture) {
 void GameObject::setTexture(TextureName textureName)
 {
     this->texture = game->getTexture(textureName);
+
 }
+//void sprite::colorReplace(unsigned char r1, unsigned char g1, unsigned char b1, unsigned char r2, unsigned char g2, unsigned char b2) { int coltemp1 = SDL_MapRGB(s->format, r1, g1, b1);	int coltemp2 = SDL_MapRGB(s->format, r2, g2, b2);	SDL_LockSurface(s);	for (int y = 0; y < s->h; y++) { for (int x = 0; x < s->w; x++) { if (getpixel(x, y) == coltemp1)				putpixel(x, y, coltemp2); } }	SDL_UnlockSurface(s); }
+
 
 void GameObject::drawDebug()
 {

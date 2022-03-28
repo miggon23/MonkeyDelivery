@@ -229,6 +229,7 @@
     </ClCompile>
     <ClCompile Include="Src\Utils\Particles\ParticleExample.cpp" />
     <ClCompile Include="Src\Utils\Particles\ParticleSystem.cpp" />
+    <ClCompile Include="Src\View\Texture_manipulation.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">

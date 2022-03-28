@@ -65,7 +65,7 @@ void Game::setCamera()
 
 Game::Game(string n, int w, int h) : name(n), width(w), height(h), doExit(false), mCamera_(nullptr)
 {    
-    font_ = new Font("../Images/TheMoon.ttf", 50);
+    font_ = new Font("../Images/Pixellari.ttf", 50);
     animationManager = new AnimationManager(this);
 }
 
