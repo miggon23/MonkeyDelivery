@@ -140,13 +140,13 @@ void Game::start()
     add(x);
 
     //LLUVIA EN CEMENTERIO Y RECOLOR DE CLIMA
-    partSystem = new ParticleExample();
+    /*partSystem = new ParticleExample();
     partSystem->setRenderer(renderer);                   // set the renderer
     partSystem->setPosition(width/2, 0);             // set the position
-    partSystem->setStyle(ParticleExample::FIRE);    // set the example effects
+    partSystem->setStyle(ParticleExample::RAIN);    // set the example effects
 
     
-    SDL_SetTextureColorMod(background_, 180, 180, 210 );
+    SDL_SetTextureColorMod(background_, 180, 180, 210 );*/
 }
 
 void Game::update()
@@ -201,7 +201,7 @@ void Game::draw()
     player_->draw();
     /*player_->drawDebug();*/
 
-    partSystem->draw();
+    //partSystem->draw();
     
 }
 
