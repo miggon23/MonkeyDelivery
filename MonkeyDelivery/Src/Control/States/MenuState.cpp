@@ -12,43 +12,43 @@
 #include "../UI/Buttons/Options.h"
 #include "../UI/Buttons/Credits.h"
 
-MenuState::MenuState(Game* game) : State(game){
-    registerCommands();
-    addButton(new Start(game->getWindowWidth() / 2 - 50, game->getWindowHeight() - 450, 100, 75, game));  
-    addButton(new Options(game->getWindowWidth() / 2 - 50, game->getWindowHeight() - 350, 100, 75, game, 1));  
-    addButton(new Credits(game->getWindowWidth() / 2 - 50, game->getWindowHeight() - 250, 100, 75, game));  
-   /* Music* m = new Music("../Sounds/menumusic.wav");
-    m->play(-1);*/ //-1 son infinitos loops
+MenuState::MenuState(Game* game) : State(game) {
+	registerCommands();
+	addButton(new Start(game->getWindowWidth() / 2 - 200, game->getWindowHeight() - 700, 400, 180, game));
+	addButton(new Options(game->getWindowWidth() / 2 - 200, game->getWindowHeight() - 500, 400, 180, game, 1));
+	addButton(new Credits(game->getWindowWidth() / 2 - 200, game->getWindowHeight() - 300, 400, 180, game));
+	/* Music* m = new Music("../Sounds/menumusic.wav");
+	 m->play(-1);*/ //-1 son infinitos loops
 }
 
 void MenuState::registerCommands()
 {
-   commandFactory->add(new CommandClick());
-   commandFactory->add(new CommandExit());
+	commandFactory->add(new CommandClick());
+	commandFactory->add(new CommandExit());
 }
 
-void MenuState::update(){
+void MenuState::update() {
 
 }
 
 void MenuState::draw()
 {
-    int x = game->getWindowWidth() / 2 - 250;
-    int y = game->getWindowHeight() / 2 - 100;
+	int x = game->getWindowWidth() / 2 - 250;
+	int y = game->getWindowHeight() / 2 - 350;
 
-    vector<string> texts = {
-            "Welcome to Monkey Delivery"
-    };
+	vector<string> texts = {
+			"Welcome to Monkey Delivery"
+	};
 
-    game->renderText(texts, x, y, 75, 75);
-    for (auto b :getButtonsUI()) {
-        b->draw();
-    }
-    //game->DrawBrightness();
+	game->renderText(texts, x, y, 75, 75);
+	for (auto b : getButtonsUI()) {
+		b->draw();
+	}
+	//game->DrawBrightness();
 }
 
-void MenuState::next(){
-    cout << "Next State " << endl;
-    game->setState(new PlayingState(game));
-    delete this;
+void MenuState::next() {
+	cout << "Next State " << endl;
+	game->setState(new PlayingState(game));
+	delete this;
 }
