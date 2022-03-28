@@ -14,9 +14,9 @@
 
 MenuState::MenuState(Game* game) : State(game) {
 	registerCommands();
-	addButton(new Start(game->getWindowWidth() / 2 - 200, game->getWindowHeight() - 700, 400, 180, game));
-	addButton(new Options(game->getWindowWidth() / 2 - 200, game->getWindowHeight() - 500, 400, 180, game, 1));
-	addButton(new Credits(game->getWindowWidth() / 2 - 200, game->getWindowHeight() - 300, 400, 180, game));
+	addButton(new Start(game->getWindowWidth() / 2 - 100, game->getWindowHeight() - 625, 200, 90, game));
+	addButton(new Options(game->getWindowWidth() / 2 - 100, game->getWindowHeight() - 500, 200, 90, game, 1));
+	addButton(new Credits(game->getWindowWidth() / 2 - 100, game->getWindowHeight() - 375, 200, 90, game));
 
 	backgroundTexture = game->getTexture(backgroundTex);
 	titleTexture = game->getTexture(titleTex);
