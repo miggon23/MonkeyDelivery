@@ -13,7 +13,7 @@ InputManager::InputManager(Game* _game)
 	renderer = game->getRenderer();
 	game->loadTextures();
 	//game->initBrightness();
-	commandFactory = new CommandFactory(game);
+	//commandFactory = new CommandFactory(game);
 	joystickDeadZone_ = 8000;
 	game->setState(new MenuState(game));
 	timer_ = Timer::Instance();

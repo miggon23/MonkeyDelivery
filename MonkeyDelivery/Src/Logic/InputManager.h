@@ -17,7 +17,7 @@ class InputManager {
 private:
 	int joystickDeadZone_;
 	SDL_Joystick* gamepad_ = NULL;
-	CommandFactory* commandFactory = nullptr;
+	//CommandFactory* commandFactory = nullptr;
 
 	Game* game;
 	SDL_Window* window = nullptr;

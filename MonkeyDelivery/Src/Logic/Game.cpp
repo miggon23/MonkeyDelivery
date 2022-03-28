@@ -71,7 +71,6 @@ Game::Game(string n, int w, int h) : name(n), width(w), height(h), doExit(false)
     setRenderer(sdlutils().renderer());
 
     font_ = new Font("../Images/TheMoon.ttf", 50);
-    animationManager = new AnimationManager(this);
 }
 
 Game::~Game() {
@@ -101,8 +100,7 @@ Game::~Game() {
        a.second->free();
        delete a.second;
     }
-    delete brightness_;
-    
+    delete brightness_;  
 }
 
 string Game::getGameName() {
@@ -124,7 +122,7 @@ void Game::start()
     // dónde spawnea -> qué se ve del mapa
     srcRect_ = mCamera_->renderRect();
    // srcRect_ = {(int)camPos.getX(), (int)camPos.getY(), (int)mCamera_->getWidth(), (int)mCamera_->getHeight()}; // == lo que devuelve el renderRect
-   
+    animationManager = new AnimationManager(this);
     player_ = new Player(this,animationManager); //Creacion del jugador
 
     missionsPanel_ = new MissionsPanel(this);

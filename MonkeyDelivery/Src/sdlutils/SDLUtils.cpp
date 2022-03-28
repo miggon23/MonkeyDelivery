@@ -59,6 +59,11 @@ SDLUtils::SDLUtils(std::string windowTitle, int width, int height,
 SDLUtils::~SDLUtils() {
 	closeSDLExtensions();
 	closeWindow();
+	for (auto x:tilesets_)
+	{
+		delete x.second;
+		x.second = nullptr;		
+	}
 }
 
 void SDLUtils::initWindow() {
