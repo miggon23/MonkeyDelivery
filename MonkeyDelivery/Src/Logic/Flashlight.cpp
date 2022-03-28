@@ -11,11 +11,15 @@ bool Flashlight::useObject() {
 			cout << " Hola linternita";
 			player_->changeFLState(true);
 			player_->changeLState(false);
+			sdlutils().soundEffects().at("lantern").play(0, 1);
+
 		}
 		else {
 			cout << "Adios linternita";
 			player_->changeFLState(false);
 			player_->setOrientation("off");
+			sdlutils().soundEffects().at("lantern").play(0, 1);
+
 		}
 		cout << endl;
 		active = !active;

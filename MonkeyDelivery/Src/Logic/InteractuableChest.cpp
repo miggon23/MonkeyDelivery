@@ -21,6 +21,8 @@ void InteractuableChest::draw()
 void InteractuableChest::onPlayerInteraction(Player* player)
 {
 	active = !active;
+	//sdlutils().soundEffects().at("treasure").play(0, 1);
+
 }
 
 void InteractuableChest::selectReward(int reward)

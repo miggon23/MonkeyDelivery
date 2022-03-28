@@ -114,6 +114,33 @@
   ],
 
   "sounds": [
+    {
+      "id": "buy",
+      "file": "../Sounds/buy.wav"
+    },
+    {
+      "id": "click",
+      "file": "../Sounds/click.wav"
+    }, {
+      "id": "endMission",
+      "file": "../Sounds/endMission.wav"
+    }, {
+      "id": "lantern",
+      "file": "../Sounds/lantern.wav"
+    }, {
+      "id": "soda",
+      "file": "../Sounds/soda.wav"
+    }, {
+      "id": "scary",
+      "file": "../Sounds/scary.wav"
+    }, {
+      "id": "getMoney",
+      "file": "../Sounds/getMoney.wav"
+    }, {
+      "id": "treasure",
+      "file": "../Sounds/treasure.wav"
+    }
+
   ],
 
   "musics": [

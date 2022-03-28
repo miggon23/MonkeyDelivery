@@ -129,6 +129,8 @@ void ShopState::buySelected()
 		closeFailed_ = true;
 	}
 	else
+	{
 		closeFailed_ = false;
-
+		sdlutils().soundEffects().at("buy").play(0, 1);
+	}
 }
