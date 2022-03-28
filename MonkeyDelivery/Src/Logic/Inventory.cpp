@@ -10,7 +10,7 @@ Inventory::Inventory(Player* player, SDL_Renderer* renderer) : player_(player)
 
 	string route = "../Images/ui/inventorybar2.png";
 	base_ = new Texture(renderer, route);
-	baseRect_ = {650, 900, 620, 540/6};
+	baseRect_ = {650, 900, 154*4, 22*4};
 	missionObjectRect_ = {655, 910, 540 / 7, 540 / 7 };
 }
 
