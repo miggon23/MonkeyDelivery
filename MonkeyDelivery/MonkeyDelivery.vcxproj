@@ -164,6 +164,7 @@
     <ClInclude Include="Src\Control\CommandRun.h" />
     <ClInclude Include="Src\Control\InteractDialogueBoxCommand.h" />
     <ClInclude Include="Src\Control\InventoryCommand.h" />
+    <ClInclude Include="Src\Control\MapCommand.h" />
     <ClInclude Include="Src\Control\NextStateCommand.h" />
     <ClInclude Include="Src\Control\PauseCommand.h" />
     <ClInclude Include="Src\Control\SelectMissionCommand.h" />
@@ -267,6 +268,7 @@
     <ClCompile Include="Src\Control\CommandRun.cpp" />
     <ClCompile Include="Src\Control\InteractDialogueBox.cpp" />
     <ClCompile Include="Src\Control\InventoryCommand.cpp" />
+    <ClCompile Include="Src\Control\MapCommand.cpp" />
     <ClCompile Include="Src\Control\NextStateCommand.cpp" />
     <ClCompile Include="Src\Control\PauseCommand.cpp" />
     <ClCompile Include="Src\Control\SelectMissionCommand.cpp" />

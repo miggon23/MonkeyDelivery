@@ -92,7 +92,7 @@ private:
     const Vector2D<float> CAMINITPOSITION_ = { 600.0,50.0 };
 
     string name;
-    bool doExit;
+    bool doExit, mapOpened;
     int width, height;   
 
     TextureContainer* textureContainer_;
@@ -193,4 +193,8 @@ public:
     void DrawBrightness();
     void ChangeAlphaBrightness(Uint8 x);
     void initBrightness();
+
+    //MiniMapa
+    void drawMiniMap();
+    inline void setOpenedMap(bool m) { mapOpened = m; }
 };

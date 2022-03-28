@@ -63,7 +63,7 @@ void Game::setCamera()
     mCamera_->Move(newPos);
 }
 
-Game::Game(string n, int w, int h) : name(n), width(w), height(h), doExit(false), mCamera_(nullptr)
+Game::Game(string n, int w, int h) : name(n), width(w), height(h), doExit(false), mCamera_(nullptr), mapOpened(false)
 {
     SDLUtils::init("Monkey Delivery", 1800, 1000,
         "../Images/config/resources.json");
@@ -196,8 +196,8 @@ void Game::draw()
     dialogueBox_->draw();
 
     player_->draw();
-    /*player_->drawDebug();*/
-
+    
+    if(mapOpened) drawMiniMap();
 }
 
 Point2D<int> Game::getOrigin() {
@@ -536,4 +536,11 @@ void Game::ChangeAlphaBrightness(Uint8 x){
 
 void Game::initBrightness(){
     brightness_ = new Brightness(this);
+}
+
+void Game::drawMiniMap()
+{
+    string path = "../Images/Mapa/imagenMiniMapa.png";
+    Texture* tex_ = new Texture(getRenderer(), path);
+    tex_->render({ 0, 0, 1800, 1000 });
 }

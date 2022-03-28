@@ -68,7 +68,7 @@ enum TextureName {
 	goldTexture,
 	// fondo menu principal
 	backgroundTex,
-	titleTex
+	titleTex,
 };
 
 

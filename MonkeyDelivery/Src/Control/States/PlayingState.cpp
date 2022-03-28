@@ -12,7 +12,7 @@
 #include "../InteractDialogueBoxCommand.h"
 #include "../UI/Buttons/Back.h"
 #include "../UI/Buttons/Pause.h"
-
+#include "../MapCommand.h"
 
 
 #include "../States/MenuState.h"
@@ -35,6 +35,7 @@ void PlayingState::registerCommands() {
     //commandFactory->add(new PauseCommand());
     commandFactory->add(new InventoryCommand());
     commandFactory->add(new InteractDialogueBoxCommand());
+    commandFactory->add(new MapCommand());
 }
 
 void PlayingState::update() {
