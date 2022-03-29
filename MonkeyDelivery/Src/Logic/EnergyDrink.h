@@ -1,4 +1,4 @@
-#pragma once
+	#pragma once
 #include "InventoryObject.h"
 
 class Player;
@@ -16,4 +16,3 @@ public:
 	EnergyDrink(Texture* tex);
 	bool useObject() override;
 };
-
