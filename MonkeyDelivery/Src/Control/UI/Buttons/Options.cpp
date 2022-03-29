@@ -8,5 +8,5 @@ Options::Options(int x, int y, int w, int h, Game* game, int num) :Button(game, 
 
 void Options::onCursorCollision(){	
 	//game->setState(new OptionsState(game, num_));	
-	ChangeToNewState(new OptionsState(game, num_));
+	ChangeToNewState(new OptionsState(game, num_),true);
 }

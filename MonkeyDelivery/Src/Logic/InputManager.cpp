@@ -2,6 +2,7 @@
 #include "../Logic/Game.h"
 #include "../Control/States/MenuState.h"
 #include "../Control/States/PlayingState.h"
+#include "../Control/States/PauseState.h"
 
 
 InputManager::InputManager(Game* _game)

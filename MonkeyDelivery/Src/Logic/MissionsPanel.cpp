@@ -57,11 +57,11 @@ void MissionsPanel::onPlayerInteraction(Player* player)
 			b = "Mission";
 		}
 
-		if (game->getSavedState() == nullptr) {
+		
 			// show pannel
 			game->setSaveState(game->getState());
 			game->setState(new MissionSelectionState(game, missionsSent));
-		}
+		
 	}
 	else {
 		// mostrar mensaje de que ya no quedan más misiones

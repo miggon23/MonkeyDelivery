@@ -11,5 +11,5 @@ void Pause::onCursorCollision(){
     //pause
    /* game->setSaveState(game->getState());
     game->setState(new PauseState(game));*/
-    ChangeToNewState(new PauseState(game));
+    ChangeToNewState(new PauseState(game),true);
 }

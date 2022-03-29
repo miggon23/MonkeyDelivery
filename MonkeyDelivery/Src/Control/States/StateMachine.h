@@ -17,5 +17,6 @@ public:
 	void removeSavedState();
 	inline bool saveStateEmpty() { return savedStates.empty(); };
 	void clearSavedState();
+	void ClearState() { state = nullptr; };
 };
 

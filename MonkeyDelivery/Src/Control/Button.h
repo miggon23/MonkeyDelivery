@@ -17,7 +17,7 @@ public:
 	virtual void  update() override;
     virtual void onCursorCollision()=0;
 	
-	void ChangeToNewState(State* state);
+	void ChangeToNewState(State* state,bool guardar);
 	void ChangeToLastState();
 
 };

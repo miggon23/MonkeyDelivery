@@ -28,9 +28,16 @@ bool Button::onClick()
 void Button::update(){
 }
 
-void Button::ChangeToNewState(State* state){
-	game->setSaveState(game->getState());
+void Button::ChangeToNewState(State* state,bool guardar){
+	State* TMP = game->getState();
+	game->ClearState();
 	game->setState(state);
+	if (guardar) {
+		game->setSaveState(TMP);
+	}
+	else{
+		delete TMP;
+	}
 }
 
 void Button::ChangeToLastState(){
