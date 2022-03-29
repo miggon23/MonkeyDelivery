@@ -12,7 +12,7 @@ Inventory::Inventory(Player* player, SDL_Renderer* renderer) : player_(player)
 	base_ = new Texture(renderer, route);
 	route = "../Images/ui/inventorybar3.png";
 	overlay_ = new Texture(renderer, route);
-	baseRect_ = {650, 900, 120*4, 18*4};
+	baseRect_ = {650, 900, 120*4, 18*4}; //hay que cambiarlo por window H/H
 }
 
 Inventory::~Inventory()
@@ -119,14 +119,17 @@ void Inventory::draw()
 	base_->render(baseRect_);
 															
 	if (hasMissionObject()) { // si hay mission object, renderiza su textura
-		missionObject_->getTexture()->render(baseRect_);
+		SDL_Rect oRect = { 650 + base_->getW() / 7 * 6 * 4, 900 , 18 * 4, 18 * 4 };
+		missionObject_->getTexture()->render(oRect);
 	}
 	int size = inventory_.size();
 	
 	for (int i = 0; i < size; i++) 
 	{
+		//revisar esto
 		if (i == 4) continue;
-		SDL_Rect oRect = { 650 + base_->getW() / 7 * i * 4, 900 , 18 * 4, 18 * 4 }; // 790 = pos primer objeto 80 = separaci�n 
+		//La cuadricula de inventario tiene 7 slots de 18x18px, a cada ieracion aumenta una a la derecha (menos el vacio)
+		SDL_Rect oRect = { 650 + base_->getW() / 7 * i * 4, 900 , 18 * 4, 18 * 4 };
 		inventory_[i]->getTexture()->render(oRect);
 	}
 	overlay_->render(baseRect_);
