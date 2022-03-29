@@ -39,10 +39,11 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game), anima
 	inventory_ = new Inventory(this, game->getRenderer());
 
 	//Obketos de inventario
-	inventory_->addObject(new Bike(new Texture(game->getRenderer(), "../Images/objects/patinete.png")));
+	inventory_->addObject(new Skates(new Texture(game->getRenderer(), "../Images/objects/patines.png")));
+	//inventory_->addObject(new Bike(new Texture(game->getRenderer(), "../Images/objects/patinete.png")));
 	inventory_->addObject(new Flashlight(new Texture(game->getRenderer(), "../Images/objects/linterna2.png")));
 	inventory_->addObject(new EnergyDrink(new Texture(game->getRenderer(), "../Images/objects/refresco.png")));
-	inventory_->addObject(new Skates(new Texture(game->getRenderer(), "../Images/objects/patines.png")));
+	inventory_->addObject(new EnergyDrink(new Texture(game->getRenderer(), "../Images/objects/refresco.png")));
 
 	setInventoryVisibility(true);
 	textureRect = { 0, 0, 16, 18 };

@@ -10,8 +10,8 @@ Inventory::Inventory(Player* player, SDL_Renderer* renderer) : player_(player)
 
 	string route = "../Images/ui/inventorybar2.png";
 	base_ = new Texture(renderer, route);
+	route = "../Images/ui/inventorybar3.png";
 	baseRect_ = {650, 900, 154*4, 22*4};
-	missionObjectRect_ = {655, 910, 540 / 7, 540 / 7 };
 }
 
 Inventory::~Inventory()
@@ -113,24 +113,16 @@ bool Inventory::inventoryFull() {
 	return inventory_.size() == INVENTORY_SIZE;
 }
 
-void Inventory::draw() {
+void Inventory::draw() 
+{
 	base_->render(baseRect_);
-
 															
 	if (hasMissionObject()) { // si hay mission object, renderiza su textura
-		missionObject_->getTexture()->render(missionObjectRect_);
+		missionObject_->getTexture()->render(baseRect_);
 	}
-
 	int size = inventory_.size();
-	for (int i = 0; i < size; i++) {
-	
-	//	SDL_Rect oRect = { 290 + (48 * i), 355, 300 / 8, 300 / 7 };
-		SDL_Rect oRect = { 810 + (80*i), 910, 500 / 8, 500 / 7 }; // 790 = pos primer objeto 80 = separaci�n 
-		inventory_[i]->getTexture()->render(oRect);
-		
+	for (int i = 0; i < size; i++) 
+	{
+		inventory_[i]->getTexture()->render(baseRect_);
 	}
 }
-
-
-
-
