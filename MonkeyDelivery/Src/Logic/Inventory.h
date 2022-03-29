@@ -18,6 +18,7 @@ private:
 
 	//Renderizado
 	Texture* base_;
+	Texture* overlay_;
 	SDL_Rect baseRect_;
 
 public:

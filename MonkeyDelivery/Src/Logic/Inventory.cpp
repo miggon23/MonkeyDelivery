@@ -11,7 +11,8 @@ Inventory::Inventory(Player* player, SDL_Renderer* renderer) : player_(player)
 	string route = "../Images/ui/inventorybar2.png";
 	base_ = new Texture(renderer, route);
 	route = "../Images/ui/inventorybar3.png";
-	baseRect_ = {650, 900, 154*4, 22*4};
+	overlay_ = new Texture(renderer, route);
+	baseRect_ = {650, 900, 120*4, 18*4};
 }
 
 Inventory::~Inventory()
@@ -121,8 +122,12 @@ void Inventory::draw()
 		missionObject_->getTexture()->render(baseRect_);
 	}
 	int size = inventory_.size();
+	
 	for (int i = 0; i < size; i++) 
 	{
-		inventory_[i]->getTexture()->render(baseRect_);
+		if (i == 4) continue;
+		SDL_Rect oRect = { 650 + base_->getW() / 7 * i * 4, 900 , 18 * 4, 18 * 4 }; // 790 = pos primer objeto 80 = separaci�n 
+		inventory_[i]->getTexture()->render(oRect);
 	}
+	overlay_->render(baseRect_);
 }
