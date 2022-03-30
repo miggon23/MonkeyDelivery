@@ -3,6 +3,7 @@
 #include "../Control/States/MenuState.h"
 #include "../Control/States/PlayingState.h"
 #include "../Control/States/PauseState.h"
+#include "../sdlutils/InputHandler.h"
 
 
 InputManager::InputManager(Game* _game)
@@ -35,11 +36,12 @@ InputManager::~InputManager()
 
 void InputManager::run()
 {
+	auto& ihdlr = ih();
 	while (!game->getState()->doQuit()) {
 		timer_->Update();
 
 		handleEvents();
-
+		ihdlr.refresh();
 
 		if (timer_->DeltaTime() >= 1.0f / FRAME_RATE) {
 			timer_->Reset();
