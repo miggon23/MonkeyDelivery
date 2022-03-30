@@ -139,6 +139,9 @@
     }, {
       "id": "treasure",
       "file": "../Sounds/treasure.wav"
+    }, {
+      "id": "chest",
+      "file": "../Sounds/chest.wav"
     }
 
   ],
