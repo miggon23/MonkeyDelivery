@@ -37,6 +37,7 @@ void CommandClick::execute() {
     } 
     for (auto it : game->getState()->getButtonsUI()) {
         if (it->onClick()) {
+            sdlutils().soundEffects().at("click").setVolume(game->getSoundEfectsVolume());
             sdlutils().soundEffects().at("click").play(0, 1);
             it->onCursorCollision();
             break;
