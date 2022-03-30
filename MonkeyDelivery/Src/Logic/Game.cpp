@@ -102,6 +102,7 @@ Game::~Game() {
     for (auto x : savedStates) {
         delete x;
     }
+    SDL_SetWindowBrightness(sdlutils().window(), 1);
 }
 
 string Game::getGameName() {
