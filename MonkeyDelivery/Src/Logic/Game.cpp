@@ -103,7 +103,6 @@ Game::~Game() {
     for (auto x : savedStates) {
         delete x;
     }
-    delete texMiniMap_;
 }
 
 string Game::getGameName() {
@@ -148,8 +147,6 @@ void Game::start()
     auto* x = new Bed(this);
     x->setPosition(670, 760);
     add(x);
-    string path = "../Images/Mapa/imagenMiniMapa.png";
-    texMiniMap_ = new Texture(getRenderer(), path);
 }
 
 void Game::update()
@@ -202,8 +199,6 @@ void Game::draw()
     dialogueBox_->draw();
 
     player_->draw();
-
-    if (mapOpened) drawMiniMap();
 }
 
 Point2D<int> Game::getOrigin() {
@@ -292,11 +287,6 @@ void Game::addEnemies(Enemy* enemy)
 }
 void Game::enemiesCreation()
 {
-    /* addEnemies(new Cat(this, 50, Point2D<int>(1000, 600),animationManager));
-     addEnemies(new Bat(this, 20, Point2D<int>(300, 500), 7,animationManager));
-     addEnemies(new Bull(this, 35, Point2D<int>(200, 800),animationManager));
-     addEnemies(new Scorpion(this, 80, Point2D<int>(100, 900), animationManager));*/
-
      //zona derecha desde el inicio (pradera)
     addEnemies(new Plant(this, 60, Point2D<int>(1100, 200), animationManager));
     addEnemies(new Plant(this, 60, Point2D<int>(1200, 350), animationManager));
@@ -541,10 +531,6 @@ void Game::aPlayerPos(float x, float y)
         e->setPosition(newPos.getX(), newPos.getY());
         e->changeOffset(move / -MAPSCALE_);
     }
-
-
-
-
 }
 
 void Game::DrawBrightness() {
@@ -557,8 +543,4 @@ void Game::ChangeAlphaBrightness(Uint8 x) {
 
 void Game::initBrightness() {
     brightness_ = new Brightness(this);
-}
-
-void Game::drawMiniMap() {
-    texMiniMap_->render({ 0, 0, 1800, 1000 });
 }

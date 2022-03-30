@@ -124,7 +124,6 @@ private:
     int generalVolume_ = 64;
     //Brightness
     Brightness* brightness_=nullptr;
-    Texture* texMiniMap_;
 public:
 
     Game(string name, int width, int height);
@@ -203,6 +202,6 @@ public:
     void initBrightness();
 
     //MiniMapa
-    void drawMiniMap();
     inline void setOpenedMap(bool m) { mapOpened = m; }
+    inline bool getOpenedMap() { return mapOpened; }
 };

@@ -171,6 +171,7 @@
     <ClInclude Include="Src\Control\ShopCommand.h" />
     <ClInclude Include="Src\Control\States\CreditsState.h" />
     <ClInclude Include="Src\Control\States\GameOverState.h" />
+    <ClInclude Include="Src\Control\States\MapState.h" />
     <ClInclude Include="Src\Control\States\MenuState.h" />
     <ClInclude Include="Src\Control\States\MissionSelectionState.h" />
     <ClInclude Include="Src\Control\States\OptionsState.h" />
@@ -277,6 +278,7 @@
     <ClCompile Include="Src\Control\ShopCommand.cpp" />
     <ClCompile Include="Src\Control\States\CreditsState.cpp" />
     <ClCompile Include="Src\Control\States\GameOverState.cpp" />
+    <ClCompile Include="Src\Control\States\MapState.cpp" />
     <ClCompile Include="Src\Control\States\MenuState.cpp" />
     <ClCompile Include="Src\Control\States\MissionSelectionState.cpp" />
     <ClCompile Include="Src\Control\States\OptionsState.cpp" />

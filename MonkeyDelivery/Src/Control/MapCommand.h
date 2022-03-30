@@ -3,7 +3,6 @@
 
 class MapCommand:public Command
 {
-	bool open = false;
 
 public:
 	const string INFO_STRING = "[m] to open the map";
