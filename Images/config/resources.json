@@ -97,6 +97,12 @@
       "text": "Has terminado todas las misiones, enhorabuena."
     }
   ],
+  "Tutorial": [
+    {
+      "text": "Bienvenido a Macaco Town! Un lugar lleno de alegria y misterios. Pero yo no te voy a contar nada, mono. Solo te voy a decir: WASD para moverte, E para interactuar, SPACE para saltar el texto si te aburres y bueno, el inventario creo que es obvio si has jugado a algun juego en tu vida. 1,2,3,4,5. Compra objetos en la tienda para no morirte de hambre, mono.",
+      "icon": 0
+    }
+  ],
 
   "fonts": [
     {
@@ -121,24 +127,39 @@
     {
       "id": "click",
       "file": "../Sounds/click.wav"
-    }, {
+    },
+    {
       "id": "endMission",
       "file": "../Sounds/endMission.wav"
-    }, {
+    },
+    {
       "id": "lantern",
       "file": "../Sounds/lantern.wav"
-    }, {
+    },
+    {
       "id": "soda",
       "file": "../Sounds/soda.wav"
-    }, {
+    },
+    {
       "id": "scary",
       "file": "../Sounds/scary.wav"
-    }, {
+    },
+    {
       "id": "getMoney",
       "file": "../Sounds/getMoney.wav"
-    }, {
+    },
+    {
       "id": "treasure",
       "file": "../Sounds/treasure.wav"
+    }, {
+      "id": "chest",
+      "file": "../Sounds/chest.wav"
+    }, {
+      "id": "sleep",
+      "file": "../Sounds/sleep.wav"
+    }, {
+      "id": "walk",
+      "file": "../Sounds/walk.wav"
     }
 
   ],

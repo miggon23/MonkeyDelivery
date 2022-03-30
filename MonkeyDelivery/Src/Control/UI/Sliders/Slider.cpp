@@ -2,7 +2,7 @@
 #include <iostream>
 Slider::Slider(Game* game, double x, double y):game_(game){
 	sliderBase_ = new SliderBase(game, x, y);
-	sliderClick_ = new SliderClick(game, x + sliderBase_->getWidth()/2, x /*- sliderBase_->getWidth()*/, x, y);
+	sliderClick_ = new SliderClick(game, x + sliderBase_->getWidth()/2, x/*- sliderBase_->getWidth()*/, x, y);
 	setSize(300, 150);
 }
 
@@ -39,6 +39,6 @@ void Slider::setSize(int w, int h)
 double Slider::Percent(){
 	double maxDistance = sliderClick_->MaxPosition() - sliderClick_->MinPosition();
 	double x= sliderClick_->getPosition().getX()-sliderClick_->MinPosition();	
-	//cout << x/maxDistance<< endl;
+	cout << x/maxDistance<< endl;
 	return x / maxDistance;
 }

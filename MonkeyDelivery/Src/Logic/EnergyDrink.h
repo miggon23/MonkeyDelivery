@@ -7,6 +7,7 @@ class Player;
 // Aumenta la energía un 20% 
 class EnergyDrink : public InventoryObject
 {
+
 private:
 	const float speedBonus_ = 1.15;
 	const float energyBonus_ = 1.2;

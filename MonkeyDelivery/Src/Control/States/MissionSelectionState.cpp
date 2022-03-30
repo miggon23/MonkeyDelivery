@@ -72,7 +72,7 @@ void MissionSelectionState::draw()
 
 	SDL_Rect textureBox2 = { boxXPos_, 50, 550, 475 };
 	box_->render(textureBox2);
-	//game->DrawBrightness();
+	
 }
 
 void MissionSelectionState::update()

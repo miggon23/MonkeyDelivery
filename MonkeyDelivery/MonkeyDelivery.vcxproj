@@ -171,6 +171,7 @@
     <ClInclude Include="Src\Control\ShopCommand.h" />
     <ClInclude Include="Src\Control\States\CreditsState.h" />
     <ClInclude Include="Src\Control\States\GameOverState.h" />
+    <ClInclude Include="Src\Control\States\MapState.h" />
     <ClInclude Include="Src\Control\States\MenuState.h" />
     <ClInclude Include="Src\Control\States\MissionSelectionState.h" />
     <ClInclude Include="Src\Control\States\OptionsState.h" />
@@ -233,6 +234,7 @@
     <ClInclude Include="Src\Logic\Skates.h" />
     <ClInclude Include="Src\Logic\SpawnZone.h" />
     <ClInclude Include="Src\Logic\Target.h" />
+    <ClInclude Include="Src\Logic\TutorialBook.h" />
     <ClInclude Include="Src\Logic\UI_Info.h" />
     <ClInclude Include="Src\sdlutils\FontUtils.h" />
     <ClInclude Include="Src\sdlutils\InputHandler.h" />
@@ -276,6 +278,7 @@
     <ClCompile Include="Src\Control\ShopCommand.cpp" />
     <ClCompile Include="Src\Control\States\CreditsState.cpp" />
     <ClCompile Include="Src\Control\States\GameOverState.cpp" />
+    <ClCompile Include="Src\Control\States\MapState.cpp" />
     <ClCompile Include="Src\Control\States\MenuState.cpp" />
     <ClCompile Include="Src\Control\States\MissionSelectionState.cpp" />
     <ClCompile Include="Src\Control\States\OptionsState.cpp" />
@@ -338,6 +341,7 @@
     <ClCompile Include="Src\Logic\Skates.cpp" />
     <ClCompile Include="Src\Logic\SpawnZone.cpp" />
     <ClCompile Include="Src\Logic\Target.cpp" />
+    <ClCompile Include="Src\Logic\TutorialBook.cpp" />
     <ClCompile Include="Src\Logic\UI_Info.cpp" />
     <ClCompile Include="Src\sdlutils\SDLUtils.cpp" />
     <ClCompile Include="Src\sdlutils\SoundEffect.cpp" />

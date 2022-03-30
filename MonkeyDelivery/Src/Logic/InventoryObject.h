@@ -12,6 +12,7 @@ private:
 
 protected:
 	Player* player_ = nullptr;
+	Game* game_ = nullptr;
 	bool isConsumable_ = false;
 
 public:

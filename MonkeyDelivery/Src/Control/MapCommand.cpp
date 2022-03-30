@@ -1,8 +1,9 @@
 #include "MapCommand.h"
+#include "../Control/States/MapState.h"
+#include "../Control/States/State.h"
 
-MapCommand::MapCommand()
-{
-}
+
+MapCommand::MapCommand() {}
 
 bool MapCommand::parse(SDL_Event& event)
 {
@@ -16,11 +17,20 @@ bool MapCommand::parse(SDL_Event& event)
 
 void MapCommand::execute()
 {
-	if (!open) 
-		open = true;
-	
-	else 
-		open = false;
-	
-	game->setOpenedMap(open);
+	if (!game->getOpenedMap()) {
+		game->setSaveState(game->getState());
+		game->setState(new MapState(game));
+		game->setOpenedMap(true);
+	}
+		
+	else {
+		State* tmp = game->getState();
+		State* saved = game->getSavedState();
+		saved->resetInitTime();
+		saved->registerCommands();
+		game->setState(saved);
+		game->removeSavedState();
+		delete tmp;
+		game->setOpenedMap(false);
+	}
 }

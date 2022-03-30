@@ -6,7 +6,7 @@ Brightness::Brightness(Game* game):game_(game),alpha_(0){
 }
 
 Brightness::~Brightness(){
-	delete tex_;
+	//delete tex_;
 	if (tex_ == nullptr) {
 		std::cout << "no mem leak en tex del brightness" << std::endl;
 	}

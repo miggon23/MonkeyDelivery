@@ -14,9 +14,9 @@
 
 MenuState::MenuState(Game* game) : State(game) {
 	registerCommands();
-	addButton(new Start(game->getWindowWidth() / 2 - 100, game->getWindowHeight() - 625, 200, 90, game));
-	addButton(new Options(game->getWindowWidth() / 2 - 100, game->getWindowHeight() - 500, 200, 90, game, 1));
-	addButton(new Credits(game->getWindowWidth() / 2 - 100, game->getWindowHeight() - 375, 200, 90, game));
+	addButton(new Start(game->getWindowWidth() / 2 - buttonW / 2, game->getWindowHeight() / 2 - buttonH * 1.3, buttonW, buttonH, game));
+	addButton(new Options(game->getWindowWidth() / 2 - buttonW / 2, game->getWindowHeight() / 2, buttonW, buttonH, game, 1));
+	addButton(new Credits(game->getWindowWidth() / 2 - buttonW / 2, game->getWindowHeight() / 2 + buttonH * 1.3, buttonW, buttonH, game));
 
 	backgroundTexture = game->getTexture(backgroundTex);
 	titleTexture = game->getTexture(titleTex);
@@ -38,7 +38,7 @@ void MenuState::draw()
 {
 	SDL_Rect rectPanel = { 0,0,game->getWindowWidth(),game->getWindowHeight() };
 	backgroundTexture->render(rectPanel);
-	rectPanel = {game->getWindowWidth()/2 - 350,20,700,258 };
+	rectPanel = { game->getWindowWidth() / 2 - titleW / 2, titleH / 3, titleW, titleH };
 	titleTexture->render(rectPanel);
 
 	/*int x = game->getWindowWidth() / 2 - 250;
@@ -49,14 +49,12 @@ void MenuState::draw()
 	};
 
 	game->renderText(texts, x, y, 75, 75);*/
-
-
+	//game->DrawBrightness();
 	for (auto b : getButtonsUI()) {
 		b->draw();
 	}
 
 
-	//game->DrawBrightness();
 }
 
 void MenuState::next() {

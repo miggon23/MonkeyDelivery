@@ -3,7 +3,7 @@
 void Game::loadSpriteSheets()
 {
     string filename = "../Images/config/resources.json";
-    
+
     std::unique_ptr<JSONValue> jValueRoot(JSON::ParseFromFile(filename));
 
     if (jValueRoot == nullptr || !jValueRoot->IsObject()) {
@@ -91,22 +91,21 @@ Game::~Game() {
     delete player_;
     delete textureContainer_;
     delete font_;
-    delete info;  
+    delete info;
     //delete missionsPanel_; //solo poner si no va en el vector de gameobjects
     delete dialogueBox_;
     delete iE_;
-    delete animationManager;    
+    delete animationManager;
     delete shop_;
     delete mCamera_;
     for (auto a : tilesets_) {
-       a.second->free();
-       delete a.second;
+        a.second->free();
+        delete a.second;
     }
-    delete brightness_;  
-    for(auto x:savedStates){
+    for (auto x : savedStates) {
         delete x;
     }
-    delete texMiniMap_;
+    SDL_SetWindowBrightness(sdlutils().window(), 1);
 }
 
 string Game::getGameName() {
@@ -127,30 +126,30 @@ void Game::start()
     mCamera_ = new Camera(this, CAMINITPOSITION_, getWindowWidth() * MAPSCALE_, getWindowHeight() * MAPSCALE_); // /2 -> es la proporción de tamaño del mapa. Valor más pequeño hace que el mapa se vea + pequeño y viceversa
     // dónde spawnea -> qué se ve del mapa
     srcRect_ = mCamera_->renderRect();
-   // srcRect_ = {(int)camPos.getX(), (int)camPos.getY(), (int)mCamera_->getWidth(), (int)mCamera_->getHeight()}; // == lo que devuelve el renderRect
+    // srcRect_ = {(int)camPos.getX(), (int)camPos.getY(), (int)mCamera_->getWidth(), (int)mCamera_->getHeight()}; // == lo que devuelve el renderRect
     animationManager = new AnimationManager(this);
-    player_ = new Player(this,animationManager); //Creacion del jugador
+    player_ = new Player(this, animationManager); //Creacion del jugador
 
     missionsPanel_ = new MissionsPanel(this);
-    add(missionsPanel_); 
+    add(missionsPanel_);
 
     add(new IntectuableShop(this, 300, 40));
     shop_ = new Shop(player_, this);
 
     add(new InteractuableChest(this, 400, 400, 100, 100, 0));
 
+    add(new TutorialBook(this, 500, 500, 100, 75));
+
     enemiesCreation();//creacion de enemigos
-    
+
     dialogueBox_ = new DialogueBox(this);
-   // dialogueBox_->changeText("DialogueBox1");
-   // dialogueBox_->show();
+    // dialogueBox_->changeText("DialogueBox1");
+    // dialogueBox_->show();
 
     info = new UI_Info(this);
     auto* x = new Bed(this);
     x->setPosition(670, 760);
     add(x);
-    string path = "../Images/Mapa/imagenMiniMapa.png";
-    texMiniMap_ = new Texture(getRenderer(), path);
 }
 
 void Game::update()
@@ -165,11 +164,11 @@ void Game::update()
 
      for (auto gO : gameObjects_)
         gO->update();
-    
+
 
     for (auto enemy : enemyContainer_)
         enemy->update();
-    
+
 }
 
 void Game::setUserExit() {
@@ -187,9 +186,9 @@ void Game::draw()
     int bgWidth = mapInfo.tile_width * mapInfo.cols;
     int bgHeight = mapInfo.tile_height * mapInfo.rows;
     SDL_Rect dst = { 0, 0, getWindowWidth(), getWindowHeight() }; // Se dibuja en la totalidad de la pantalla (modificar si quisieramos dejar un borde de UI por ejemplo)
-    srcRect_ = mCamera_->renderRect(); 
+    srcRect_ = mCamera_->renderRect();
     SDL_RenderCopy(renderer, background_, &srcRect_, &dst); // srcRect es la parte de la textura (background) que se va a ver
-    
+
     /*auto a = SDL_GetWindowSurface(window_);
     auto tex = SDL_CreateTextureFromSurface(renderer, a);
     background_ = SDL_CreateTextureFromSurface(renderer, a);
@@ -211,8 +210,6 @@ void Game::draw()
     dialogueBox_->draw();
 
     player_->draw();
-    
-    if(mapOpened) drawMiniMap();
 }
 
 Point2D<int> Game::getOrigin() {
@@ -270,23 +267,23 @@ void Game::renderText(vector<string> text, int x, int y, int incX, int incY, SDL
 //actua como enlace al m�todo del jugador
 bool Game::changeMoneyPlayer(int money)
 {
-   return player_->moneyChange(money);
+    return player_->moneyChange(money);
 }
 
 //adri y simona: colisiones
 vector<GameObject*> Game::getCollisions(SDL_Rect rect)
 {
     vector<GameObject*>interactEnt;
-    
+
     // for que recorre el vector de gameobjects
     for (int i = 0; i < gameObjects_.size(); i++)
     {
         // gameObjects_[i]->isInteractive() quitar�a esto del if
-        if(gameObjects_[i]->collide(rect)){
+        if (gameObjects_[i]->collide(rect)) {
             interactEnt.push_back(gameObjects_[i]);
         }
     }
-    
+
     return interactEnt;
 }
 
@@ -300,13 +297,8 @@ void Game::addEnemies(Enemy* enemy)
     enemyContainer_.push_back(enemy);
 }
 void Game::enemiesCreation()
-{  
-   /* addEnemies(new Cat(this, 50, Point2D<int>(1000, 600),animationManager));
-    addEnemies(new Bat(this, 20, Point2D<int>(300, 500), 7,animationManager));
-    addEnemies(new Bull(this, 35, Point2D<int>(200, 800),animationManager));
-    addEnemies(new Scorpion(this, 80, Point2D<int>(100, 900), animationManager));*/
-
-    //zona derecha desde el inicio (pradera)
+{
+     //zona derecha desde el inicio (pradera)
     addEnemies(new Plant(this, 60, Point2D<int>(1100, 200), animationManager));
     addEnemies(new Plant(this, 60, Point2D<int>(1200, 350), animationManager));
     addEnemies(new Plant(this, 60, Point2D<int>(1600, 450), animationManager));
@@ -346,15 +338,15 @@ void Game::interactDialogue()
 
 
 //TILEMAP
-void Game::loadMap(string const& filename) 
+void Game::loadMap(string const& filename)
 {
     // Se carga la información del .tmx
     mapInfo.tile_map = new tmx::Map();
     mapInfo.tile_map->load(filename);
-   
+
     // tamaño del mapa
     auto map_dimensions = mapInfo.tile_map->getTileCount();
-    mapInfo.rows = map_dimensions.y; 
+    mapInfo.rows = map_dimensions.y;
     mapInfo.cols = map_dimensions.x;
 
     // tamaño de los tiles
@@ -376,7 +368,7 @@ void Game::loadMap(string const& filename)
     SDL_RenderClear(renderer);
     SDL_SetTextureBlendMode(background_, SDL_BLENDMODE_BLEND);
     SDL_SetRenderTarget(renderer, background_);
-    
+
 
     //Establecemos los bordes de la camara con respecto al tamaño del tilemap
         //Camera::mainCamera->setBounds(0, 0, mapInfo.cols * mapInfo.tile_width, mapInfo.rows * mapInfo.tile_height);
@@ -411,7 +403,7 @@ void Game::loadMap(string const& filename)
 
                     // con dicho indice obtenemos el indice del tile dentro de su tileset
                     auto cur_gid = layer_tiles[tile_index].ID;
-                    
+
 
                     // si es 0 esta vacio asi que continuamos a la siguiente iteracion
                     if (cur_gid == 0)
@@ -537,7 +529,7 @@ void Game::aPlayerPos(float x, float y)
     //para todos los gameobjects ajustamos su posicion respecto al jugador
     for (auto e : gameObjects_)
     {
-       
+
         Point2D<double> newPos = e->getPosition() - (Point2D<double>(x, y) / MAPSCALE_);
         e->setPosition(newPos.getX(), newPos.getY());
     }
@@ -550,24 +542,4 @@ void Game::aPlayerPos(float x, float y)
         e->setPosition(newPos.getX(), newPos.getY());
         e->changeOffset(move / -MAPSCALE_);
     }
-
-
-
-
-}
-
-void Game::DrawBrightness(){
-    brightness_->draw();
-}
-
-void Game::ChangeAlphaBrightness(Uint8 x){
-    brightness_->changeAlhpa(x);
-}
-
-void Game::initBrightness(){
-    brightness_ = new Brightness(this);
-}
-
-void Game::drawMiniMap(){  
-    texMiniMap_->render({ 0, 0, 1800, 1000 });
 }

@@ -14,7 +14,7 @@ InputManager::InputManager(Game* _game)
 	IMG_Init(IMG_INIT_PNG);
 	renderer = game->getRenderer();
 	game->loadTextures();
-	//game->initBrightness();
+	
 	//commandFactory = new CommandFactory(game);
 	joystickDeadZone_ = 8000;
 	game->setState(new MenuState(game));
@@ -36,12 +36,12 @@ InputManager::~InputManager()
 
 void InputManager::run()
 {
-	auto& ihdlr = ih();
+	//auto& ihdlr = ih();
 	while (!game->getState()->doQuit()) {
 		timer_->Update();
 
 		handleEvents();
-		ihdlr.refresh();
+//		ihdlr.refresh();
 
 		if (timer_->DeltaTime() >= 1.0f / FRAME_RATE) {
 			timer_->Reset();
