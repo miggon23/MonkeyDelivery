@@ -1,9 +1,13 @@
 #include "CommandMove.h"
-
+#include "../sdlutils/InputHandler.h"
 bool CommandMove::parse(SDL_Event& event)
 {
 	const Uint8* state = SDL_GetKeyboardState(NULL);
-
+	auto& ihdlr = ih();
+	if (ihdlr.keyDownEvent()) {
+		if (ihdlr.isKeyDown(SDL_SCANCODE_X))
+			cout << "SOCORRO";
+	}
 	if (state[SDL_SCANCODE_A]) {
 		//dir = -1;
 		game->setPlayerDirX(-1);
