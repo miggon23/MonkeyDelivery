@@ -190,7 +190,7 @@ void Game::draw()
 
     info->draw();
 
-    missionsPanel_->draw();
+    
 
     dialogueBox_->draw();
 
@@ -198,7 +198,7 @@ void Game::draw()
     /*player_->drawDebug();*/
 
     partSystem->draw();
-    
+    missionsPanel_->draw();
 }
 
 Point2D<int> Game::getOrigin() {
