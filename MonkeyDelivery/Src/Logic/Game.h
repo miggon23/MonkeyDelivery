@@ -33,6 +33,7 @@
 #include "Bed.h"
 #include "InteractuableShop.h"
 #include "InteractuableChest.h"
+#include "TutorialBook.h"
 #include "MissionsPanel.h"
 
 #include "AnimationManager.h"
