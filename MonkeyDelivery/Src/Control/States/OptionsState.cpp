@@ -10,12 +10,12 @@
 #include "../UI/Sliders/GeneralMusicSlider.h"
 #include "../UI/Sliders/BrightnessSlider.h"
 
-OptionsState::OptionsState(Game* game, int num) : State(game){
+OptionsState::OptionsState(Game* game/*, int num*/) : State(game){
 	registerCommands();
-	if (num == 1)
+	/*if (num == 1)*/
 	addButton(new Back(game->getWindowWidth() / 2 - 50, game->getWindowHeight() - 250, 100, 75, game));
-	else 	
-	addButton(new Back1(game->getWindowWidth() / 2 - 50, game->getWindowHeight() - 250, 100, 75, game));
+	/*else 	
+	addButton(new Back1(game->getWindowWidth() / 2 - 50, game->getWindowHeight() - 250, 100, 75, game));*/
 
 	addSlider(new GeneralVolumeSlider(game, 200, 200));
 	addSlider(new BrightnessSlider(game, 200, 500));

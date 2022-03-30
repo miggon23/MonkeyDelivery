@@ -20,4 +20,6 @@ public:
 	void ChangeToNewState(State* state,bool guardar);
 	void ChangeToLastState();
 
+	void ChangeToOptionsState();
+	void ChangeToLastaStateNO_DELETE_LAST();
 };

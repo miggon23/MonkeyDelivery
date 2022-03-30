@@ -6,14 +6,19 @@ class StateMachine
 {
 protected:
 	State* state = nullptr;
+	State* optionsState=nullptr;
 	//State* savedState = nullptr;
 	std::vector<State*> savedStates;
 public:
+	
 	void setState(State* state);
 	void setSaveState(State* state);
+	void setOptionsState(State* state);
 
 	State* getState();
 	State* getSavedState();
+	State* getOptionsState();
+
 	void removeSavedState();
 	inline bool saveStateEmpty() { return savedStates.empty(); };
 	void clearSavedState();

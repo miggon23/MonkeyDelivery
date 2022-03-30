@@ -5,7 +5,7 @@
 class OptionsState : public State
 {
 public:
-	OptionsState(Game* game, int num);
+	OptionsState(Game* game/*, int num*/);
 	~OptionsState() = default;
 
 	void update()override;

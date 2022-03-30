@@ -2,7 +2,7 @@
 #include "../Logic/Game.h"
 #include "../Control/States/MenuState.h"
 #include "../Control/States/PlayingState.h"
-#include "../Control/States/PauseState.h"
+#include "../Control/States/OptionsState.h"
 #include "../sdlutils/InputHandler.h"
 
 
@@ -18,6 +18,7 @@ InputManager::InputManager(Game* _game)
 	//commandFactory = new CommandFactory(game);
 	joystickDeadZone_ = 8000;
 	game->setState(new MenuState(game));
+	game->initOptionsState();
 	timer_ = Timer::Instance();
 
 }

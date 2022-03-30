@@ -10,5 +10,6 @@ Back::Back(int x, int y, int w, int h, Game* game):Button(game,w,h,x,y){
 
 void Back::onCursorCollision(){
 	//game->setState(new MenuState(game));
-	ChangeToLastState();
+	//ChangeToLastState();
+	ChangeToLastaStateNO_DELETE_LAST();
 }

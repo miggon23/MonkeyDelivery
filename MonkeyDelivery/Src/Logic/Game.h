@@ -197,4 +197,6 @@ public:
     //MiniMapa
     inline void setOpenedMap(bool m) { mapOpened = m; }
     inline bool getOpenedMap() { return mapOpened; }
+
+    void initOptionsState();
 };

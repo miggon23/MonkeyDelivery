@@ -1,5 +1,5 @@
 #include "Game.h"
-#include "../Control/UI/ElementsUI/Brightness.h"
+#include "../Control/States/OptionsState.h"
 void Game::loadSpriteSheets()
 {
     string filename = "../Images/config/resources.json";
@@ -69,7 +69,7 @@ Game::Game(string n, int w, int h) : name(n), width(w), height(h), doExit(false)
         "../Images/config/resources.json");
 
     setRenderer(sdlutils().renderer());
-
+   
     font_ = new Font("../Images/TheMoon.ttf", 50);
 }
 
@@ -84,7 +84,7 @@ Game::~Game() {
 
     for (auto col : collisions_)
         delete col;
-
+    collisions_.clear();
     gameObjects_.clear();
     enemyContainer_.clear();
     cout << "[DEBUG] deleting game" << endl;
@@ -92,6 +92,7 @@ Game::~Game() {
     delete textureContainer_;
     delete font_;
     delete info;
+    delete optionsState;
     //delete missionsPanel_; //solo poner si no va en el vector de gameobjects
     delete dialogueBox_;
     delete iE_;
@@ -121,7 +122,7 @@ void Game::start()
     //loadSpriteSheets();
     mapInfo.path = ".\\Src\\TilemapSrc\\MainMap.tmx";
     loadMap(mapInfo.path);
-
+    
     // Cámara:
     mCamera_ = new Camera(this, CAMINITPOSITION_, getWindowWidth() * MAPSCALE_, getWindowHeight() * MAPSCALE_); // /2 -> es la proporción de tamaño del mapa. Valor más pequeño hace que el mapa se vea + pequeño y viceversa
     // dónde spawnea -> qué se ve del mapa
@@ -542,4 +543,9 @@ void Game::aPlayerPos(float x, float y)
         e->setPosition(newPos.getX(), newPos.getY());
         e->changeOffset(move / -MAPSCALE_);
     }
+}
+
+void Game::initOptionsState()
+{
+    optionsState = new OptionsState(this);
 }

@@ -50,5 +50,20 @@ void Button::ChangeToLastState(){
 	delete tmp;
 }
 
+void Button::ChangeToOptionsState(){
+	State* TMP = game->getState();
+	game->ClearState();	
+	game->setSaveState(TMP);
+	game->setState(game->getOptionsState());
+}
+
+void Button::ChangeToLastaStateNO_DELETE_LAST(){
+	State* saved = game->getSavedState();
+	saved->resetInitTime();
+	saved->registerCommands();
+	game->setState(saved);
+	game->removeSavedState();
+}
+
 
 
