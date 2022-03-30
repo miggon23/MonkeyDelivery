@@ -34,6 +34,5 @@ private:
 	Texture* box_; // seleccionador
 	int boxXPos_; // posición en la que está el seleccionador
 
-	int xInc_ = 500; // separacion entre cada papel de mision
+	int xInc_ = 550; // separacion entre cada papel de mision
 };
-

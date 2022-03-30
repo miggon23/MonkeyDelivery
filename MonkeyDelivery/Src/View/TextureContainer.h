@@ -73,7 +73,7 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
   {"fearLevel.png",1,1},
   {"decorations/woodpanel.png",1,1},
   {"decorations/missionpanel.png",1,1},
-  {"animals/tucan.png",1,1},
+  {"NPCs/NPC_Tucan.png",1,1},
   {"catPrueba.png",1,1},
   {"batPrueba.png",1,1},
   {"decorations/Mision1.png",1,1},

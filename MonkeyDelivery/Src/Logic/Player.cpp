@@ -218,7 +218,8 @@ void Player::FadeOut()
 	SDL_SetRenderDrawColor(renderer, 120, 0, 0, this->alpha);
 	SDL_RenderFillRect(renderer, &screenRectangle);
 	SDL_RenderDrawRect(renderer, &screenRectangle);
-	SDL_Texture* front = SDL_CreateTexture(renderer, SDL_PIXELFORMAT_ARGB32, SDL_TEXTUREACCESS_TARGET,
+	SDL_Texture* front = SDL_CreateTexture(renderer, SDL_PIXELFORMAT_ARGB32, SDL_TEXTUREACCESS_
+	,
 		game->getWindowWidth(), game->getWindowHeight());
 	SDL_SetRenderTarget(renderer, front);
 

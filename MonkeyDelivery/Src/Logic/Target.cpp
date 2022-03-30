@@ -19,7 +19,7 @@ Target::Target(MissionsPanel* mp, Game* g, string texture) : GameObject(g), miss
 	setDimension(1, 1);
 	setPosition(0, 0);
 
-	string route = "../Images/animals/" + texture + ".png";
+	string route = "../Images/NPCs/" + texture + ".png";
 	myTexture_ = new Texture(g->getRenderer(), route);
 }
 
@@ -58,6 +58,6 @@ void Target::draw() {
 void Target::setTexture(string tex)
 {
 	delete myTexture_;
-	string route = "../Images/animals/" + tex + ".png";
+	string route = "../Images/NPCs/" + tex + ".png";
 	myTexture_ = new Texture(game->getRenderer(), route);
 }

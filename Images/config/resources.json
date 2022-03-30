@@ -10,11 +10,11 @@
       "mintime": 100000,
       "express": true,
       "special": false,
-      "target": "tucan",
+      "target": "NPC_Tucan",
       "targetPositionX": -250,
-      "targetPositionY": 730,
-      "targetWidth": 80,
-      "targetHeight": 100
+      "targetPositionY": 750,
+      "targetWidth": 60,
+      "targetHeight": 60
     },
     {
       "id": "Mission2",
@@ -100,8 +100,9 @@
   "fonts": [
     {
       "id": "TheMoon",
-      "file": "Images/TheMoon.ttf",
-      "size": 16
+      "file": "Images/Pixellari.ttf",
+      "size": 16,
+      "color": "white"
     }
   ],
 
