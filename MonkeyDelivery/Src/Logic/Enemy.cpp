@@ -1,7 +1,7 @@
 #include "Enemy.h"
 #include "Game.h"
 
-Enemy::Enemy(Game* game, int Aleatorio, Point2D<int>centroRadio, AnimationManager* animation) : GameObject(game), animationManager(animation) {
+Enemy::Enemy(Game* game, int Aleatorio, Point2D<int>centroRadio, AnimationManager* animation) : GameObject(game, true), animationManager(animation) {
 
 	zone = SpawnZone(Aleatorio, centroRadio); //Creaccion de la zona de spawn
 	setAlive(true);
@@ -20,7 +20,7 @@ void Enemy::patrol(double speed)
 	if (checkpoints.size() > 1)
 	{
 		//añadido el offset de la camara a cada punto
-		auto point = checkpoints[indexCheckPoint] + offsetCamera;
+		auto point = checkpoints[indexCheckPoint];
 		auto x = getPosition().getX(), y = getPosition().getY();
 
 		if (point.getX() - x != 0) {
@@ -113,6 +113,16 @@ void Enemy::respawn()
 	}
 }
 
+SDL_Rect Enemy::getDraw()
+{
+	SDL_Rect pos = getCollider();
+	const Point2D<float> center = game->getCurrentCenter();
+	pos.x -= center.getX();
+	pos.y -= center.getY();
+
+	return pos;
+}
+
 void Enemy::onCollision()
 {
 
@@ -148,7 +158,7 @@ void Enemy::checkDistance()
 
 bool Enemy::inPoint()
 {
-	auto point = checkpoints[indexCheckPoint] + offsetCamera;
+	auto point = checkpoints[indexCheckPoint];
 	int x = getPosition().getX() - point.getX(),
 		y = getPosition().getY() - point.getY();
 

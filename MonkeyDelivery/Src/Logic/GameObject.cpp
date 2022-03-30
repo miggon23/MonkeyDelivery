@@ -4,12 +4,21 @@
 #include "../Control/States/MissionSelectionState.h"
 
 void GameObject::drawTexture(Texture* texture) {
-    int dX =/* game->getOrigin().*/getX();
-    int dY = /*game->getOrigin().*/getY();
 
-    SDL_Rect c = getCollider();
-    SDL_Rect textureBox = { c.x , c.y , c.w, c.h };
-    texture->render(textureBox);
+    if (!relative_)
+    {
+        SDL_Rect c = getCollider();
+        SDL_Rect textureBox = { c.x , c.y , c.w, c.h };
+        texture->render(textureBox);
+    }
+    else
+    {
+        SDL_Rect pos = getCollider();
+        pos.x -= game->getCamera()->getCameraPosition().getX(); 
+        pos.y -= (game->getCamera()->getCameraPosition().getY());
+        
+        texture->render(pos);
+    };
 }
 
 void GameObject::setTexture(TextureName textureName)

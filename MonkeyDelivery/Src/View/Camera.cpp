@@ -10,10 +10,17 @@ Camera::Camera(Game* g, const Vector2D<float>& initialPos, float camW, float cam
 	height_ = camH;
 	width_ = camW;
 
-	windowHeight_ = game_->getWindowHeight();
-	windowWidth_ = game_->getWindowWidth();
+	windowHeight_ = sdlutils().width();
+	windowWidth_ = sdlutils().height();
 	
 	scale_ = windowWidth_ / width_;
+
+	iniPos_ = pos_;
+}
+
+void Camera::calculateIniOffset(Point2D<float> pos)
+{
+	iniOffset_ = pos - pos_;
 }
 
 void Camera::Move(const Vector2D<float>& newPos)
@@ -34,10 +41,18 @@ void Camera::Lerp(const Vector2D<float>& newPos, float i)
 		pos_ = pos_ + (newPos - pos_) * i;
 }
 
-Vector2D<float> Camera::getCameraCenterPosition()
+
+void Camera::setPosCenter(Vector2D<float> pos)
 {
-	return pos_ + Vector2D<float>(windowWidth_ / 2, windowHeight_ / 2) - Vector2D<float>(windowWidth_ - width_, windowHeight_ - height_) / 2;
+	pos_ = pos - iniOffset_ ;
 }
+
+const Vector2D<float> Camera::getRelativePos()
+{
+	return (pos_ - iniPos_);
+}
+
+
 
 SDL_Rect Camera::renderRect()
 {

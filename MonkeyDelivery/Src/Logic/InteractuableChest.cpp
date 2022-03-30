@@ -1,7 +1,7 @@
 #include "InteractuableChest.h"
 #include "../Logic/Game.h"
 
-InteractuableChest::InteractuableChest(Game* game, int x, int y, int w, int h, int reward) : GameObject(game)
+InteractuableChest::InteractuableChest(Game* game, int x, int y, int w, int h, int reward) : GameObject(game, true)
 {	
 	setTexture(chestTexture);
 	setDimension(w, h);

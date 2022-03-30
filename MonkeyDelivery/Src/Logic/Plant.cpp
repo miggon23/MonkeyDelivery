@@ -51,11 +51,11 @@ void Plant::draw()
 	if (isAlive()) {
 		if (collided && (game->getPlayer()->usingFlashLight || game->getPlayer()->usingLantern)) {
 			setTexture(plantDyingSpritesheet);
-			animationManager->getFrameImagePlant(getCollider(), textureRect, texture, timerAnimation);
+			animationManager->getFrameImagePlant(getDraw(), textureRect, texture, timerAnimation);
 		}
 		else {
 			setTexture(plantSpritesheet);
-			animationManager->getFrameImagePlant(getCollider(), textureRect, texture, timerAnimation);
+			animationManager->getFrameImagePlant(getDraw(), textureRect, texture, timerAnimation);
 		}
 	}
 

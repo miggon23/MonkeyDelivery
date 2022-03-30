@@ -1,6 +1,6 @@
 #include "Bed.h"
 #include "Player.h"
-Bed::Bed(Game* game) :GameObject(game) {
+Bed::Bed(Game* game) :GameObject(game, true) {
 	setTexture(cama);
 	setDimension(140, 130);
 }

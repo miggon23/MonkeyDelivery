@@ -12,9 +12,12 @@ private:
 	float windowWidth_, windowHeight_;
 	float scale_;
 
+	Vector2D<float> iniOffset_, iniPos_;
 	Game* game_;
 public:
 	Camera(Game* g, const Vector2D<float>& initialPos, float camW, float camH); // Doble & -> rvalue
+
+	void calculateIniOffset(Point2D<float> pos);
 
 	void Move(const Vector2D<float>& newPos);
 	void MoveDir(const Vector2D<float>& newDir);
@@ -23,7 +26,8 @@ public:
 	inline Vector2D<float> getCameraPosition() {
 		return pos_;
 	};
-	Vector2D<float> getCameraCenterPosition();
+
+	
 
 	inline float getWidth() { return width_; };
 	inline float getHeight() { return height_; };
@@ -39,6 +43,12 @@ public:
 	{
 		pos_ =  pos;
 	}
+
+	void setPosCenter(Vector2D<float> pos);
+
+	const Vector2D<float> getRelativePos();
+
+	
 
 	SDL_Rect renderRect();
 };

@@ -1,7 +1,7 @@
 #include "InteractuableShop.h"
 #include "Player.h"
 #include "../Control/States/ShopState.h"
-IntectuableShop::IntectuableShop(Game* game,int x , int y) :GameObject(game) {
+IntectuableShop::IntectuableShop(Game* game,int x , int y) :GameObject(game, true) {
 	setTexture(shopTexture);
 	setDimension(x, y);
 	setPosition(280.0, 680.0);

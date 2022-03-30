@@ -29,10 +29,6 @@ protected:
 	int timerAnimation;
 	bool hasBeenKilled = false;
 
-
-	//movimiento enemigos respecto a camara
-	Point2D<double> offsetCamera;
-
 	int nearLimit_;
 
 public:
@@ -56,8 +52,8 @@ public:
 	inline virtual void setScariness(double fear) { scariness_ = fear; }
 	inline virtual void setResistance(int res) { resistence_ = res; }
 
-	//ajuste del offset
-	inline void changeOffset(Point2D<double> newMove) { offsetCamera = offsetCamera + newMove; }
+	SDL_Rect getDraw();
+	
 
 	bool inPoint();
 };

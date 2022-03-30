@@ -179,7 +179,17 @@ public:
     // Camara
     inline void setWindow(SDL_Window* w) { window_ = w; };
     inline Camera* getCamera() { return mCamera_; };  
-    void aPlayerPos(float x, float y);
+    void actualiceCameraPos();
+    const Point2D<float> getCurrentCenter();
+    const Point2D<float> getCurrentMove();
+    inline Point2D<float> getSizeMap() 
+    { return Point2D<float>{ (float)(mapInfo.tile_width * mapInfo.cols) , (float)(mapInfo.tile_height * mapInfo.rows) }; }
+    inline float getMapScale() {
+        return MAPSCALE_;
+    };
+      
+    float x;
+    float y;
 
     //Tienda
     Shop* getShop() { return shop_; }

@@ -52,9 +52,13 @@ void DialogueBox::changeText(string id)
 					//reinicio del texto
 					reiniciateText();
 
-					int iconId = vObj["icon"]->AsNumber();
-					//cambio a la nueva textura de icono
-					getIcon(iconId);
+					if (vObj["icon"] != NULL)
+					{
+						int iconId = vObj["icon"]->AsNumber();
+						//cambio a la nueva textura de icono
+						getIcon(iconId);
+					}
+					
 					
 				}
 				else {

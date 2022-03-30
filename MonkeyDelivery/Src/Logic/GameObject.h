@@ -14,7 +14,7 @@ class GameObject {
 
     Point2D<double> position_;
     int w = 20, h = 20;
-
+    bool relative_;
     bool isMissionPanel_ = false;
 
 protected:
@@ -26,7 +26,7 @@ protected:
 public:
     void setTexture(TextureName textureName);
 
-    GameObject(Game* game) : game(game) {
+    GameObject(Game* game, bool relative = false) : game(game), relative_(relative) {
 
     };
     virtual ~GameObject() {

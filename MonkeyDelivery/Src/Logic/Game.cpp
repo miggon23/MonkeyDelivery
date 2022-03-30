@@ -123,6 +123,7 @@ void Game::start()
     // dónde spawnea -> qué se ve del mapa
     srcRect_ = mCamera_->renderRect();
    // srcRect_ = {(int)camPos.getX(), (int)camPos.getY(), (int)mCamera_->getWidth(), (int)mCamera_->getHeight()}; // == lo que devuelve el renderRect
+    
     animationManager = new AnimationManager(this);
     player_ = new Player(this,animationManager); //Creacion del jugador
 
@@ -149,6 +150,8 @@ void Game::start()
 void Game::update()
 {
     player_->update();
+
+    actualiceCameraPos();
    
     for (auto gO : gameObjects_)
         gO->update();
@@ -175,7 +178,7 @@ void Game::draw()
     int bgHeight = mapInfo.tile_height * mapInfo.rows;
     SDL_Rect dst = { 0, 0, getWindowWidth(), getWindowHeight() }; // Se dibuja en la totalidad de la pantalla (modificar si quisieramos dejar un borde de UI por ejemplo)
     srcRect_ = mCamera_->renderRect(); 
-    SDL_RenderCopy(renderer, background_, &srcRect_, &dst); // srcRect es la parte de la textura (background) que se va a ver
+   // SDL_RenderCopy(renderer, background_, &srcRect_, &dst); // srcRect es la parte de la textura (background) que se va a ver
     
     /*auto a = SDL_GetWindowSurface(window_);
     auto tex = SDL_CreateTextureFromSurface(renderer, a);
@@ -183,21 +186,23 @@ void Game::draw()
     SDL_RenderCopy(renderer, background_, NULL, &dst);*/
 
   
-   for (auto gO : gameObjects_)
+    for (auto gO : gameObjects_)
+    {        
         gO->draw();
+   }
+        
     
     for (auto enemy : enemyContainer_)
         enemy->draw();
 
     info->draw();
 
-    missionsPanel_->draw();
+    missionsPanel_->draw();   
 
     dialogueBox_->draw();
 
     player_->draw();
-    /*player_->drawDebug();*/
-
+   
 }
 
 Point2D<int> Game::getOrigin() {
@@ -489,41 +494,57 @@ void Game::loadMap(string const& filename)
     SDL_SetRenderTarget(renderer, nullptr);
 }
 
-void Game::aPlayerPos(float x, float y)
+//void Game::actualicePlayerPos(float x, float y, bool relative)
+//{
+//    ////  Vector2D<float> current = mCamera_->getCameraPosition();
+//    //int bgWidth = mapInfo.tile_width * mapInfo.cols;
+//    //int bgHeight = mapInfo.tile_height * mapInfo.rows;
+//    ////comprobamo si esta enalguno de los limites y si va a sobrepasar este, reducimos el desplazamiento a 0
+//  
+//    ////aplicamos la nueva posicion a la camara
+//    //mCamera_->setPos(current + Vector2D<float>(x, y));
+//
+//    ////para todos los gameobjects ajustamos su posicion respecto al jugador
+//    //for (auto e : gameObjects_)
+//    //{
+//
+//    //    Point2D<double> newPos = e->getPosition() - (Point2D<double>(x, y) / MAPSCALE_);
+//    //    e->setPosition(newPos.getX(), newPos.getY());
+//    //}
+//
+//    //for (auto e : enemyContainer_)
+//    //{
+//    //    Point2D<double> move = Point2D<double>(x, y);
+//
+//    //    Point2D<double> newPos = e->getPosition() - move / MAPSCALE_;
+//    //    e->setPosition(newPos.getX(), newPos.getY());
+//    //    e->changeOffset(move / -MAPSCALE_);
+//    //}
+//
+//   
+//
+//   
+// 
+//    mCamera_->setPosCenter(Vector2D<float>(x, y));
+//    
+//}
+
+
+
+void Game::actualiceCameraPos()
 {
-    //obtenemos la posicion actual de la camara
-    Vector2D<float> current = mCamera_->getCameraPosition();
 
-    int bgWidth = mapInfo.tile_width * mapInfo.cols;
-    int bgHeight = mapInfo.tile_height * mapInfo.rows;
-    //comprobamo si esta enalguno de los limites y si va a sobrepasar este, reducimos el desplazamiento a 0
-    if ((x > -10 && current.getX() >= bgWidth) || (x < 0 && current.getX() <= 0))
-        x = 0;
-    if ((y > 0 && current.getY() >= bgHeight) || (y < 0 && current.getY() <= 0))
-        y = 0;
-    //aplicamos la nueva posicion a la camara
-    mCamera_->setPos(current + Vector2D<float>(x, y));
+    mCamera_->setPosCenter( {(float)player_->getPosition().getX(), (float)player_->getPosition().getY()});   
+}
 
-    //para todos los gameobjects ajustamos su posicion respecto al jugador
-    for (auto e : gameObjects_)
-    {
-       
-        Point2D<double> newPos = e->getPosition() - (Point2D<double>(x, y) / MAPSCALE_);
-        e->setPosition(newPos.getX(), newPos.getY());
-    }
+const Point2D<float> Game::getCurrentCenter()
+{
+    return Point2D<float>(mCamera_->getRelativePos().getX(), mCamera_->getRelativePos().getY());
+}
 
-    for (auto e : enemyContainer_)
-    {
-        Point2D<double> move = Point2D<double>(x, y);
-
-        Point2D<double> newPos = e->getPosition() - move / MAPSCALE_;
-        e->setPosition(newPos.getX(), newPos.getY());
-        e->changeOffset(move / -MAPSCALE_);
-    }
-
-
-
-
+const Point2D<float> Game::getCurrentMove()
+{
+    return mCamera_->getRelativePos();
 }
 
 void Game::DrawBrightness(){

@@ -61,6 +61,8 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game), anima
 	path = "../Images/ui/fade.png";
 	fadeTex_ = new Texture(game->getRenderer(), path);
 	fadeTex_->changeAlpha(0);
+
+	game->getCamera()->calculateIniOffset(Point2D<float>(getPosition().getX(), getPosition().getY()));	
 }
 
 Player::~Player()
@@ -123,11 +125,19 @@ void Player::move()
 		//	speed = speed * 1.5;			
 		//}
 		
-		// CAMARA
-		//Vector2D<float> a = { (float)getX(), (float)getY() };
+		//ajustamos los valores de movimiento
+		auto tamMap = game->getSizeMap();
+		if ((dirX_ > 0 && getPosition().getX() >= tamMap.getX()) || (dirX_ < 0 && getPosition().getX() <= 0))
+			dirX_ = 0;
 
-		//game->getCamera()->setPos({ (float)speed.getX(),(float)speed.getY() });
-		game->aPlayerPos((float)speed.getX(), (float)speed.getY());
+		if ((dirY_ > 0 && getPosition().getY() >= tamMap.getY()) || (dirY_ < 0 && getPosition().getY() <= 0))
+			dirY_ = 0;
+
+		game->x += dirX_;
+		game->y += dirY_;
+
+		//ajustamos la posición al jugador
+		setPosition(getPosition().getX() + dirX_, getPosition().getY() + dirY_);
 		
 		drainEnergy(decreasingEnergyLevel_);
 	}
@@ -301,7 +311,10 @@ void Player::draw()
 	pos.x -= game->getCamera()->getWidth()/2;
 	pos.y -= game->getCamera()->getHeight()/2;*/
 	//animationManager->getFrameImagePlayer(pos, textureRect, texture, timerAnimation, AnimationManager::LastDir{ dirX_, dirY_ });
-	animationManager->getFrameImagePlayer(getCollider(), textureRect, texture, timerAnimation, AnimationManager::LastDir{ dirX_, dirY_ });
+	SDL_Rect pos = getCollider();
+	pos.x -= game->getCamera()->getCameraPosition().getX(); pos.y -= game->getCamera()->getCameraPosition().getY();
+	animationManager->getFrameImagePlayer(pos
+	, textureRect, texture, timerAnimation, AnimationManager::LastDir{ dirX_, dirY_ });
 
 	//drawDebug();
 	energyLevel_->draw();
