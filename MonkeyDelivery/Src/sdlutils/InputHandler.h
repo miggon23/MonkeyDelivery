@@ -93,6 +93,7 @@ public:
 	}
 
 	// close window event
+
 	inline bool closeWindowEvent() {
 		return isCloseWindoEvent_;
 	}

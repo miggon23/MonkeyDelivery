@@ -1,14 +1,22 @@
 #include "CommandInteract.h"
 #include "./States/MissionSelectionState.h"
-
+#include "../sdlutils/InputHandler.h"
 bool CommandInteract::parse(SDL_Event& event)
 {
-	if (event.type == SDL_KEYDOWN) {
-		SDL_Keycode key = event.key.keysym.sym;
-		if (key == SDLK_e) {
-			return true;
+	auto& ihdlr = ih();
+	//sin mando
+	//if (!ihdlr.bJoysticksInitialised()) {
+		if (ihdlr.keyDownEvent()) {
+			if (ihdlr.isKeyDown (SDL_SCANCODE_E))
+				return true;
 		}
-	}
+		
+	//}
+	/*else
+	{*/
+		if (ihdlr.bJoysticksInitialised() && ihdlr.getButtonState(0, 3))
+			return true;
+	//}
 	return false;
 }
 
