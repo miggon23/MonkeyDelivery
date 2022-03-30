@@ -192,6 +192,10 @@ public:
     inline void ChangeSoundEfectsVolume(int volume) { soundEfectsVolume_ = volume; /*std::cout << soundEfectsVolume_ << std::endl;*/};
     inline void ChangeGeneralVolume(int volume) { generalVolume_ = volume; /*std::cout << generalVolume_ << std::endl;*/};
 
+    int getMusicVolume() { return musicVolume_; };
+    int getSoundEfectsVolume() { return soundEfectsVolume_; };
+    int getGeneralVolume() { return generalVolume_; };
+
     //Brightness
     void DrawBrightness();
     void ChangeAlphaBrightness(Uint8 x);

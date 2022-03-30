@@ -249,8 +249,6 @@ void Player::recoverFear(int amount)
 void Player::getMoney(int amount)
 {
 	money_ += amount;
-	
-
 }
 
 void Player::removeMoney(int amount)
@@ -375,6 +373,10 @@ bool Player::moneyChange(int money)
 		return false;
 
 	money_ += money;
+
+	if (money > 0)
+	sdlutils().soundEffects().at("getMoney").play(0, 1);
+
 	return true;
 }
 //linterna
