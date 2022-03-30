@@ -11,7 +11,7 @@ public:
 		setPosition(p.getX(), p.getY());
 		setDimension(s, s);
 	};
-	~ColliderTile();
+	~ColliderTile() {};
 
 	void update() override {};
 };
