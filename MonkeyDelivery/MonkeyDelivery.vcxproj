@@ -233,6 +233,7 @@
     <ClInclude Include="Src\Logic\Skates.h" />
     <ClInclude Include="Src\Logic\SpawnZone.h" />
     <ClInclude Include="Src\Logic\Target.h" />
+    <ClInclude Include="Src\Logic\TutorialBook.h" />
     <ClInclude Include="Src\Logic\UI_Info.h" />
     <ClInclude Include="Src\sdlutils\FontUtils.h" />
     <ClInclude Include="Src\sdlutils\InputHandler.h" />
@@ -338,6 +339,7 @@
     <ClCompile Include="Src\Logic\Skates.cpp" />
     <ClCompile Include="Src\Logic\SpawnZone.cpp" />
     <ClCompile Include="Src\Logic\Target.cpp" />
+    <ClCompile Include="Src\Logic\TutorialBook.cpp" />
     <ClCompile Include="Src\Logic\UI_Info.cpp" />
     <ClCompile Include="Src\sdlutils\SDLUtils.cpp" />
     <ClCompile Include="Src\sdlutils\SoundEffect.cpp" />

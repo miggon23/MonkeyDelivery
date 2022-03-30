@@ -266,6 +266,9 @@
     <ClCompile Include="Src\Logic\ColliderTile.cpp">
       <Filter>Source Files\Logic</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Logic\TutorialBook.cpp">
+      <Filter>Source Files\Logic\InteractuableObjects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -580,6 +583,9 @@
     </ClInclude>
     <ClInclude Include="Src\Logic\ColliderTile.h">
       <Filter>Header Files\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Logic\TutorialBook.h">
+      <Filter>Header Files\Logic\InteractuableObjects</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
