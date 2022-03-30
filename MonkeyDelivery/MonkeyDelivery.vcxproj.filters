@@ -269,6 +269,9 @@
     <ClCompile Include="Src\Logic\TutorialBook.cpp">
       <Filter>Source Files\Logic\InteractuableObjects</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Control\States\MapState.cpp">
+      <Filter>Source Files\Control\States</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -586,6 +589,9 @@
     </ClInclude>
     <ClInclude Include="Src\Logic\TutorialBook.h">
       <Filter>Header Files\Logic\InteractuableObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Control\States\MapState.h">
+      <Filter>Header Files\Control\States</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
