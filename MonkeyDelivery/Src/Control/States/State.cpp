@@ -1,5 +1,6 @@
 #include "State.h"
 #include "../../Logic/Game.h"
+#include "../../sdlutils/InputHandler.h"
 
 
 bool State::doQuit() {
@@ -12,6 +13,7 @@ bool State::doQuit() {
 }
 
 void State::handleEvents() {
+    auto& ihdlr = ih();
     SDL_Event event;
     // Método simple de eventos
     while (SDL_PollEvent(&event)) {
@@ -20,6 +22,7 @@ void State::handleEvents() {
             command->execute();
             break;
         }
+        ihdlr.update(event);
 
     }
 }
