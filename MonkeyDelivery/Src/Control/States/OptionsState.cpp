@@ -36,7 +36,7 @@ void OptionsState::draw(){
 	for (auto b : getSlidersUI()) {
 		b->draw();
 	}
-	game->DrawBrightness();
+	
 }
 
 void OptionsState::next(){

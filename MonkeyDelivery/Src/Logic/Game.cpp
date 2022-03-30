@@ -99,7 +99,6 @@ Game::~Game() {
         a.second->free();
         delete a.second;
     }
-    delete brightness_;
     for (auto x : savedStates) {
         delete x;
     }
@@ -531,16 +530,4 @@ void Game::aPlayerPos(float x, float y)
         e->setPosition(newPos.getX(), newPos.getY());
         e->changeOffset(move / -MAPSCALE_);
     }
-}
-
-void Game::DrawBrightness() {
-    brightness_->draw();
-}
-
-void Game::ChangeAlphaBrightness(Uint8 x) {
-    brightness_->changeAlhpa(x);
-}
-
-void Game::initBrightness() {
-    brightness_ = new Brightness(this);
 }

@@ -39,6 +39,6 @@ void Slider::setSize(int w, int h)
 double Slider::Percent(){
 	double maxDistance = sliderClick_->MaxPosition() - sliderClick_->MinPosition();
 	double x= sliderClick_->getPosition().getX()-sliderClick_->MinPosition();	
-	//cout << x/maxDistance<< endl;
+	cout << x/maxDistance<< endl;
 	return x / maxDistance;
 }

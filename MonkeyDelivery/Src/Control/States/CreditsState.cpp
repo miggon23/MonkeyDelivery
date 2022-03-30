@@ -23,7 +23,7 @@ void CreditsState::draw()
 		game->renderText(credits_[i], sdlutils().width()/2 - 100, 100  *i);
 		
 	}
-	game->DrawBrightness();
+	
 }
 
 void CreditsState::update()

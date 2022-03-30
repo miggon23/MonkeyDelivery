@@ -38,7 +38,7 @@ void MenuState::draw()
 {
 	SDL_Rect rectPanel = { 0,0,game->getWindowWidth(),game->getWindowHeight() };
 	backgroundTexture->render(rectPanel);
-	rectPanel = { game->getWindowWidth() / 2 - titleW / 2, titleH / 3, titleW, titleH};
+	rectPanel = { game->getWindowWidth() / 2 - titleW / 2, titleH / 3, titleW, titleH };
 	titleTexture->render(rectPanel);
 
 	/*int x = game->getWindowWidth() / 2 - 250;
@@ -55,7 +55,6 @@ void MenuState::draw()
 	}
 
 
-	game->DrawBrightness();
 }
 
 void MenuState::next() {
