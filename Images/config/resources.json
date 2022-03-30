@@ -154,6 +154,12 @@
     }, {
       "id": "chest",
       "file": "../Sounds/chest.wav"
+    }, {
+      "id": "sleep",
+      "file": "../Sounds/sleep.wav"
+    }, {
+      "id": "walk",
+      "file": "../Sounds/walk.wav"
     }
 
   ],
