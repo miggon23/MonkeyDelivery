@@ -134,6 +134,7 @@ void MissionsPanel::onMissionCompleted()
 	if (SDL_GetTicks() > endTime_) {
 		reward -= ((SDL_GetTicks() - initialTicks_ - m.minTime) / 1000); // valor de tiempo que se ha pasado del tiempo mínimo
 	}
+	endTime_ = 0; // resetea la variable
 
 	if (m.isExpress && reward < 0) { // si es express y se ha retrasado tanto que el dinero es negativo
 		reward = 0;

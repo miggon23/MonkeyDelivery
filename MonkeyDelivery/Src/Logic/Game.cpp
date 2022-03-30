@@ -82,6 +82,9 @@ Game::~Game() {
     for (auto enemy : enemyContainer_)
         delete enemy;
 
+    for (auto col : collisions_)
+        delete col;
+
     gameObjects_.clear();
     enemyContainer_.clear();
     cout << "[DEBUG] deleting game" << endl;
@@ -154,7 +157,13 @@ void Game::update()
 {
     player_->update();
    
-    for (auto gO : gameObjects_)
+    for (auto c : collisions_) {
+        if (c->getPosition().getX() && c->collide(player_->getCollider())) {
+            cout << "player colliding\n";
+        }
+    }
+
+     for (auto gO : gameObjects_)
         gO->update();
     
 
@@ -187,11 +196,13 @@ void Game::draw()
     SDL_RenderCopy(renderer, background_, NULL, &dst);*/
 
   
-   for (auto gO : gameObjects_)
+    for (auto gO : gameObjects_)
         gO->draw();
+
     
     for (auto enemy : enemyContainer_)
         enemy->draw();
+    
 
     info->draw();
 
@@ -497,10 +508,10 @@ void Game::loadMap(string const& filename)
             for (auto obj : objs) {
                 auto rect = obj.getAABB();
 
-                if (obj.getName() == "collision") {
-                    auto a = new ColliderTile(this, Vector2D<double>(rect.left, rect.top), rect.width );
+             //   if (obj.getName() == "collision") 
+                    auto a = new ColliderTile(this, Vector2D<double>(rect.left, rect.top), rect.width, rect.height );
                     collisions_.push_back(a);
-                }
+                
             }
         }
     }
