@@ -2,7 +2,7 @@
 #include <iostream>
 Slider::Slider(Game* game, double x, double y):game_(game){
 	sliderBase_ = new SliderBase(game, x, y);
-	sliderClick_ = new SliderClick(game, x + sliderBase_->getWidth()/2, x /*- sliderBase_->getWidth()*/, x, y);
+	sliderClick_ = new SliderClick(game, x + sliderBase_->getWidth()/2 -10, x /*- sliderBase_->getWidth()*/, x, y);
 	setSize(300, 150);
 }
 

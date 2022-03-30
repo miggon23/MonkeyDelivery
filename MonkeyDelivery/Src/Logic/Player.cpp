@@ -360,6 +360,7 @@ void Player::FadeOut()
 
 void Player::sendToBed()
 {
+	sdlutils().soundEffects().at("scary").setVolume(game->getSoundEfectsVolume());
 	sdlutils().soundEffects().at("scary").play(0, 1);
 
 }
@@ -375,7 +376,11 @@ bool Player::moneyChange(int money)
 	money_ += money;
 
 	if (money > 0)
-	sdlutils().soundEffects().at("getMoney").play(0, 1);
+	{
+		sdlutils().soundEffects().at("getMoney").setVolume(game->getSoundEfectsVolume());
+		sdlutils().soundEffects().at("getMoney").play(0, 1);
+	}
+	
 
 	return true;
 }

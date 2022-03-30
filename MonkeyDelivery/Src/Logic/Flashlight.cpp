@@ -1,5 +1,7 @@
 #include "Flashlight.h"
 #include "Player.h"
+#include "Game.h"
+
 
 Flashlight::Flashlight(Texture* tex) : active(false), InventoryObject(tex)
 {
@@ -11,6 +13,7 @@ bool Flashlight::useObject() {
 			cout << " Hola linternita";
 			player_->changeFLState(true);
 			player_->changeLState(false);
+			sdlutils().soundEffects().at("lantern").setVolume(game_->getSoundEfectsVolume());
 			sdlutils().soundEffects().at("lantern").play(0, 1);
 
 		}
@@ -18,6 +21,7 @@ bool Flashlight::useObject() {
 			cout << "Adios linternita";
 			player_->changeFLState(false);
 			player_->setOrientation("off");
+			sdlutils().soundEffects().at("lantern").setVolume(game_->getSoundEfectsVolume());
 			sdlutils().soundEffects().at("lantern").play(0, 1);
 
 		}

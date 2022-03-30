@@ -6,7 +6,10 @@
 #include "../UI/Buttons/Back1.h"
 #include "../UI/Sliders/Slider.h"
 #include "../UI/Sliders/GeneralVolumeSlider.h"
+#include "../UI/Sliders/GeneralSoundsEffectSlider.h"
+#include "../UI/Sliders/GeneralMusicSlider.h"
 #include "../UI/Sliders/BrightnessSlider.h"
+
 OptionsState::OptionsState(Game* game, int num) : State(game){
 	registerCommands();
 	if (num == 1)
@@ -16,6 +19,8 @@ OptionsState::OptionsState(Game* game, int num) : State(game){
 
 	addSlider(new GeneralVolumeSlider(game, 200, 200));
 	addSlider(new BrightnessSlider(game, 200, 500));
+	addSlider(new GeneralMusicSlider(game, 1000, 200));
+	addSlider(new GeneralSoundsEffectSlider(game, 1000, 500));
 }
 
 void OptionsState::update(){
