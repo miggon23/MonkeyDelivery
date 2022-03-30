@@ -49,14 +49,13 @@ void MenuState::draw()
 	};
 
 	game->renderText(texts, x, y, 75, 75);*/
-
-
+	//game->DrawBrightness();
 	for (auto b : getButtonsUI()) {
 		b->draw();
 	}
 
 
-	//game->DrawBrightness();
+	game->DrawBrightness();
 }
 
 void MenuState::next() {

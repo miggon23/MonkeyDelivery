@@ -11,13 +11,13 @@ CommandClick::~CommandClick(){
     sliderClicked_ = nullptr;
 }
 bool CommandClick::parse(SDL_Event& event) {
-   if (event.type == SDL_MOUSEBUTTONDOWN)
+   if (event.type == SDL_MOUSEBUTTONDOWN)     
         return true;
-   if (event.type == SDL_MOUSEBUTTONUP) {
-       if (sliderClicked_ != nullptr) { 
-           sliderClicked_->onCursorCollision(); 
-           sliderClicked_ = nullptr; 
-       }
+   if (event.type == SDL_MOUSEBUTTONUP) {      
+        if (sliderClicked_ != nullptr) { 
+            sliderClicked_->onCursorCollision(); 
+            sliderClicked_ = nullptr; 
+        }
    }
     return false;
 }
