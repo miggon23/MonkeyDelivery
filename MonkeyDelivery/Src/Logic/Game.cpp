@@ -158,7 +158,7 @@ void Game::update()
    
     for (auto c : collisions_) {
         if (c->getPosition().getX() && c->collide(player_->getCollider())) {
-            cout << "player colliding\n";
+            //cout << "player colliding\n";
         }
     }
 
