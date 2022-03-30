@@ -488,6 +488,21 @@ void Game::loadMap(string const& filename)
                 }
             }
         }
+
+        if (layer->getType() == tmx::Layer::Type::Object) {
+            tmx::ObjectGroup* object_layer = dynamic_cast<tmx::ObjectGroup*>(layer.get());
+
+            auto& objs = object_layer->getObjects();
+
+            for (auto obj : objs) {
+                auto rect = obj.getAABB();
+
+                if (obj.getName() == "collision") {
+                    auto a = new ColliderTile(this, Vector2D<double>(rect.left, rect.top), rect.width );
+                    collisions_.push_back(a);
+                }
+            }
+        }
     }
 
     SDL_SetRenderTarget(renderer, nullptr);

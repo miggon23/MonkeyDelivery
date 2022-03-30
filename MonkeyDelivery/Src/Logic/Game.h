@@ -39,6 +39,8 @@
 
 #include "Shop.h"
 
+#include "ColliderTile.h"
+
 #include "./tmxlite/Map.hpp"
 #include "./tmxlite/Layer.hpp"
 #include "./tmxlite/TileLayer.hpp"
@@ -100,6 +102,7 @@ private:
     Player* player_ = nullptr;
     InteractiveEntity* iE_ = nullptr;
     vector<GameObject*> gameObjects_;
+    vector<GameObject*> collisions_;
     vector<Enemy*>enemyContainer_;//vector enemigos
     MissionsPanel* missionsPanel_= nullptr;
     
