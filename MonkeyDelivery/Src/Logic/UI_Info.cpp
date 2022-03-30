@@ -5,7 +5,7 @@
 UI_Info::UI_Info(Game* game)
 {
 	this->game = game;
-	font_ = new Font("../Images/TheMoon.ttf", 50);
+	font_ = new Font("../Images/Pixellari.ttf", 20);
 	
 }
 UI_Info::~UI_Info()	
@@ -44,7 +44,8 @@ void UI_Info::drawInfo()
 	{
 		renderImage(game->getMissionsPanel()->getMissionImage());
 		if (g->isExpress()) {
-			renderText(to_string(game->getMissionsPanel()->getTime()), 1300, 70, BLACK);
+			SDL_Color darkBlue = { 7, 24, 32, 0};
+			renderText(to_string(game->getMissionsPanel()->getTime()/10), 1325, 70, darkBlue);
 		}
 	}
 	//renderText("Money  " + to_string(game->getPlayer()->money_), 1300, 20, BLACK);
