@@ -13,7 +13,7 @@ bool EnergyDrink::useObject()
     double newVel = player_->getVel();
     newVel *= speedBonus_;
     player_->setVel(newVel);
-    sdlutils().soundEffects().at("soda").setVolume(game_->getSoundEfectsVolume());
+    //sdlutils().soundEffects().at("soda").setVolume(game_->getSoundEfectsVolume());
     sdlutils().soundEffects().at("soda").play(0, 1);
     // en 15 seg. ->
     player_->resetVelocity();

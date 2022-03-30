@@ -14,7 +14,7 @@ bool Lantern::useObject() {
 			cout << " Hola linternita circular";
 			player_->changeLState(true);
 			player_->changeFLState(false);
-			sdlutils().soundEffects().at("lantern").setVolume(game_->getSoundEfectsVolume());
+			//sdlutils().soundEffects().at("lantern").setVolume(game_->getSoundEfectsVolume());
 			sdlutils().soundEffects().at("lantern").play(0, 1);
 
 			//Flashlight::setActive(false);
@@ -23,7 +23,7 @@ bool Lantern::useObject() {
 			cout << "Adios linternita circular";
 			player_->changeLState(false);
 			player_->setOrientation("off");
-			sdlutils().soundEffects().at("lantern").setVolume(game_->getSoundEfectsVolume());
+			//sdlutils().soundEffects().at("lantern").setVolume(game_->getSoundEfectsVolume());
 			sdlutils().soundEffects().at("lantern").play(0, 1);
 
 		}
