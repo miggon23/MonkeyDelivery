@@ -7,8 +7,8 @@ energyLevel::energyLevel(Game* game) :GameObject(game) {
 	energy_ = 200;
 	maxEnergy_ = 200;
 	setTexture(energyLevelTexture);
-	setPosition(0, 0);
-	setDimension(108*3.1, 42*3.1);
+	setPosition(20, 20);
+	setDimension(111*4, 39*4);
 }
 
 // Drena energía y devuelve true si se queda a 0
