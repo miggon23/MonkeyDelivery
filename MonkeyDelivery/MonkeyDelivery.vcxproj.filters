@@ -272,6 +272,12 @@
     <ClCompile Include="Src\Control\States\MapState.cpp">
       <Filter>Source Files\Control\States</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Logic\Pickaxe.cpp">
+      <Filter>Source Files\Logic\InteractuableObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Logic\Rock.cpp">
+      <Filter>Source Files\Logic\InteractuableObjects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -592,6 +598,12 @@
     </ClInclude>
     <ClInclude Include="Src\Control\States\MapState.h">
       <Filter>Header Files\Control\States</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Logic\Pickaxe.h">
+      <Filter>Header Files\Logic\InteractuableObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Logic\Rock.h">
+      <Filter>Header Files\Logic\InteractuableObjects</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
