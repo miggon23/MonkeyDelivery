@@ -1,5 +1,4 @@
 #include "Player.h"
-#include "Inventory.h"
 #include "Bike.h"
 #include "Flashlight.h"
 #include "Lantern.h"

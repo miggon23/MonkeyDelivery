@@ -3,7 +3,7 @@
 #include "GameObject.h"
 #include "energyLevel.h"
 #include "FearLevel.h";
-
+#include "Inventory.h"
 #include "InventoryObject.h"
 
 #include "../sdlutils/SDLUtils.h"
