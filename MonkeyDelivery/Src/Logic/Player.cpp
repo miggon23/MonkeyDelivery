@@ -150,15 +150,6 @@ void Player::setIsRunning(bool run)
 		decreasingEnergyLevel_ = walkingEnergy_;
 		setVel(getVel() / runningSpeedFactor_);
 	}
-
-}
-
-/// <summary>
-/// Resetea la velocidad del jugador a la de por defecto (sin modificaciones)
-/// </summary>
-void Player::resetVelocity()
-{
-	setVel(INIT_VEL_);
 }
 
 void Player::sleep()
@@ -224,68 +215,10 @@ void Player::NoSleepText()
 	if (SDL_GetTicks() - timerSleepText >= 3000)boolrenderSleepText = false;
 }
 
-
-void Player::getScared(int amount)
-{
-	fearLevel_->getScared(amount);
-}
-
-/// <summary>
-/// Contador para bajar cada maxCont_ amout a energy_
-/// </summary>
-/// <param name="amount"> cantidad que se le va añadir a energy_
-void Player::drainEnergy(float amount)
-{
-	energyLevel_->drain(amount); // se queda dormido porque no tiene energía
-}
-
-void Player::recoverEnergy(int amount)
-{
-}
-
-void Player::recoverFear(int amount)
-{
-}
-
-void Player::getMoney(int amount)
-{
-	money_ += amount;
-}
-
 void Player::removeMoney(int amount)
 {
 	money_ -= amount;
 	if (money_ < 0) money_ = 0;
-}
-
-void Player::useObject(int index)
-{
-	inventory_->useObject(index);
-}
-
-bool Player::hasMissionObject()
-{
-	return inventory_->hasMissionObject();
-}
-
-void Player::addMissionObject(InventoryObject* p)
-{
-	inventory_->addMisionObject(p);
-}
-
-void Player::removeMissionObject()
-{
-	inventory_->removeMisionObject();
-}
-
-bool Player::inventoryFull()
-{
-	return inventory_->inventoryFull();
-}
-
-void Player::addObjectToInventory(InventoryObject* p)
-{
-	inventory_->addObject(p);
 }
 
 void Player::draw() 
@@ -363,8 +296,6 @@ void Player::sendToBed()
 {
 	sdlutils().soundEffects().at("scary").setVolume(game->getSoundEfectsVolume());
 	sdlutils().soundEffects().at("scary").play(0, 1);
-	
-
 }
 
 //se le pasa una cantidad de dinero al player

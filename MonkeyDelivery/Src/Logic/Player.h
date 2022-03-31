@@ -87,15 +87,15 @@ public:
 #pragma endregion
 
 #pragma region Energy
-	void drainEnergy(float amount);
-	void recoverEnergy(int amount);
+	void drainEnergy(float amount) { energyLevel_->drain(amount); };
+	inline void recoverEnergy(int amount) {};
 	inline float getEnergy() { return energyLevel_->getEnergy(); };
 	inline float getMaxEnergy() { return energyLevel_->getMaxEnergy(); };
 #pragma endregion
 
 #pragma region Fear
-	void getScared(int amount);
-	void recoverFear(int amount);
+	inline void getScared(int amount) { fearLevel_->getScared(amount); };
+	inline void recoverFear(int amount) {};
 #pragma endregion
 
 #pragma region Movement
@@ -103,7 +103,7 @@ public:
 	void move();
 	void setIsRunning(bool run);
 	inline void setVel(double x) { vel_ = x; };
-	void resetVelocity();
+	inline void resetVelocity() { setVel(INIT_VEL_); }; // Resetea la velocidad del jugador a la de por defecto (sin modificaciones)
 	inline double getVel() { return vel_; };
 
 	inline void setDirX(int x) { dirX_ = x; };
@@ -117,20 +117,21 @@ public:
 
 #pragma region economy
 	bool moneyChange(int money);
-	void getMoney(int amount);
+	inline void addMoney(int amount) { money_ += amount; };
 	void removeMoney(int amount);
 #pragma endregion
 
 #pragma region inventory
-	void useObject(int index);
+	inline void useObject(int index) { inventory_->useObject(index); };
 	inline void setInventoryVisibility(bool visible) { inventoryVisibility = visible; };
-	bool hasMissionObject();
-	void addMissionObject(InventoryObject* p);
-	void removeMissionObject();
+	inline bool hasMissionObject() { return inventory_->hasMissionObject(); };
+	inline void addMissionObject(InventoryObject* p) { inventory_->addMisionObject(p); };
+	inline void removeMissionObject() { inventory_->removeMisionObject(); };
 
-	bool inventoryFull();
-	void addObjectToInventory(InventoryObject* p);
+	inline bool inventoryFull() { return inventory_->inventoryFull(); };
+	inline void addObjectToInventory(InventoryObject* p) { inventory_->addObject(p); };
 #pragma endregion
+
 	//linterna
 	const SDL_Rect lightZoneFL();
 	const SDL_Rect lightZoneL();
@@ -150,5 +151,3 @@ public:
 	void FadeOut(); // Realiza un fadeout sobre la pantalla
 	void sendToBed(); // Establece la posición en la cama más cercana después del fadeout
 };
-
-
