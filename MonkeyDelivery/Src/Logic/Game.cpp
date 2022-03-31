@@ -137,7 +137,7 @@ void Game::start()
     add(new IntectuableShop(this, 300, 40));
     shop_ = new Shop(player_, this);
 
-    add(new InteractuableChest(this, 400, 400, 100, 100, 0));
+    add(new InteractuableChest(this, 400, 400, 100, 100));
 
     add(new TutorialBook(this, 500, 500, 100, 75));
 

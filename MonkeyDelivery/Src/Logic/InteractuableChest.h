@@ -10,7 +10,7 @@ class InteractuableChest : public GameObject
 	bool active = false;
 	Texture* rewardT_;
 public:
-	InteractuableChest(Game* game, int x, int y, int w, int h, int reward);
+	InteractuableChest(Game* game, int x, int y, int w, int h);
 	~InteractuableChest() = default;
 
 	void draw() override;
@@ -18,6 +18,6 @@ public:
 
 	void onPlayerInteraction(Player* player) override;
 
-	void selectReward(int reward);
+	void selectReward(int reward, Player* player);
 };
 
