@@ -70,11 +70,13 @@ enum TextureName {
 	backgroundTex,
 	titleTex,
 
-	bookTexture
+	bookTexture,
+
+	rocaTexture
 };
 
 
-const int NUM_TEXTURES = 54;
+const int NUM_TEXTURES = 55;
 
 
 
@@ -144,7 +146,8 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
 	{"background/MenuImage.png",1,1},
 	{"background/GameTitleMockup1.png",1,1},
 
-	{"objects/tutorial.png",1,1}
+	{"objects/tutorial.png",1,1},
+	{"roca.png",1,1}
 };
 
 

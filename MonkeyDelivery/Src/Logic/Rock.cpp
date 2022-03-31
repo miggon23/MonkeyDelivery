@@ -1,11 +1,15 @@
 #include "Rock.h"
 
 Rock::Rock(Game* game, int x, int y) :GameObject(game) {
-	setTexture(shopTexture);
-	setDimension(x, y);
-	setPosition(280.0, 680.0);
+	setTexture(rocaTexture);
+	setDimension(100.0, 100.0);
+	setPosition(x, y);
 }
 
-Rock::~Rock()
-{
+Rock::~Rock(){
+}
+
+void Rock::update(){
+
+
 }

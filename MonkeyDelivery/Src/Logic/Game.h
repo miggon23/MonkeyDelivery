@@ -39,6 +39,7 @@
 #include "AnimationManager.h"
 
 #include "Shop.h"
+#include "Rock.h"
 
 #include "ColliderTile.h"
 
@@ -198,5 +199,6 @@ public:
     inline void setOpenedMap(bool m) { mapOpened = m; }
     inline bool getOpenedMap() { return mapOpened; }
 
+    //Menu de Opciones
     void initOptionsState();
 };

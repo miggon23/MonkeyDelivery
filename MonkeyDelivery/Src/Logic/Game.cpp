@@ -151,6 +151,7 @@ void Game::start()
     auto* x = new Bed(this);
     x->setPosition(670, 760);
     add(x);
+   add(new Rock(this,100,700));
 }
 
 void Game::update()
