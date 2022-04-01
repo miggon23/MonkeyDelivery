@@ -4,6 +4,7 @@
 #include "Lantern.h"
 #include "EnergyDrink.h"
 #include "Skates.h"
+#include "Pickaxe.h"
 #include "Game.h"
 #include "SDL.h"
 
@@ -44,6 +45,8 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game), anima
 	inventory_->addObject(new Lantern(new Texture(game->getRenderer(), "../Images/objects/linterna.png")));
 	inventory_->addObject(new EnergyDrink(new Texture(game->getRenderer(), "../Images/objects/refresco.png")));
 	inventory_->addObject(new Skates(new Texture(game->getRenderer(), "../Images/objects/patines.png")));
+	inventory_->addObject(new Pickaxe(new Texture(game->getRenderer(), "../Images/objects/pico.png")));
+	
 
 	setInventoryVisibility(true);
 	textureRect = { 0, 0, 100, 100 };
@@ -236,6 +239,7 @@ void Player::draw()
 	pos.x -= game->getCamera()->getWidth()/2;
 	pos.y -= game->getCamera()->getHeight()/2;*/
 	//animationManager->getFrameImagePlayer(pos, textureRect, texture, timerAnimation, AnimationManager::LastDir{ dirX_, dirY_ });
+	
 	animationManager->getFrameImagePlayer(getCollider(), textureRect, texture, timerAnimation, AnimationManager::LastDir{ dirX_, dirY_ });
 
 	//drawDebug();
