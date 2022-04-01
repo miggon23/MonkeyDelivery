@@ -230,6 +230,9 @@
     <ClCompile Include="Src\Utils\Particles\ParticleExample.cpp" />
     <ClCompile Include="Src\Utils\Particles\ParticleSystem.cpp" />
     <ClCompile Include="Src\View\Texture_manipulation.cpp" />
+    <ClCompile Include="Src\Logic\FearBar.cpp">
+      <Filter>Source Files\Logic</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -484,6 +487,9 @@
     </ClInclude>
     <ClInclude Include="Src\Utils\Particles\ParticleExample.h" />
     <ClInclude Include="Src\Utils\Particles\ParticleSystem.h" />
+    <ClInclude Include="Src\Logic\FearBar.h">
+      <Filter>Header Files\Logic</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="MonkeyDelivery.rc" />

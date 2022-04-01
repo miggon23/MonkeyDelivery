@@ -34,7 +34,8 @@ enum TextureName {
 	scorpionSpritesheet,
 	shopTexture,
 	shopPanel,
-	seleccionShopPanel,
+	missionSelector,
+	shopSelector,
 	plantSpritesheet,
 	optionsButtonTexture,
 	backButtonTexture,
@@ -50,12 +51,12 @@ enum TextureName {
 	linternaProvi, 
 	bikeTexture, 
 	skatesTexture, 
-	drinkTexture,
-	flashlightTexture,
+	shop_Soda,
+	shop_Boots01,
 };
 
 
-const int NUM_TEXTURES = 41;
+const int NUM_TEXTURES = 42;
 
 
 
@@ -89,7 +90,8 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
   {"enemies/scorpion.png",1,1},
   {"shop/transparent.png",1,1},
   {"shop/panelShop.png",1,1},
-  {"shop/seleccion.png",1,1},
+  {"shop/missionSelector.png",1,1},
+  {"shop/shop_Selector.png",1,1},
   {"enemies/plant.png",1,1},
   {"Buttons/options.png",1,1},
   {"Buttons/back.png",1,1},
@@ -105,8 +107,8 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
   {"objects/luzprovi.png",1,1},
   {"objects/patinete.png",1,1},
   {"objects/patines.png",1,1},
-  {"objects/refresco.png",1,1},
-  {"objects/linterna2.png",1,1},
+  {"objects/Shop_Soda.png",1,1},
+  {"objects/Shop_Boots01.png",1,1},
 };
 
 

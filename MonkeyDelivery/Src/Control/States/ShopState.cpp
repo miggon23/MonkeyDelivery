@@ -61,11 +61,11 @@ void ShopState::draw()
 	//renderizado del objeto seleccionado
 
 	if(selected_ < 4)
-		rectPanel = { xOffset + xObj * selected_ - 15, yOffset + 3, (int)(wObj*1.3), (int)(hObj * 0.9) };
+		rectPanel = { xOffset + xObj * selected_ , yOffset , 405, 512 };
 	else
-		rectPanel = { xOffset + xObj * (selected_-4) - 15, yOffset + yObj + 3, (int)(wObj * 1.3), (int)(hObj * 0.9) };
+		rectPanel = { xOffset + xObj * (selected_), yOffset + yObj, 405, 512 };
 	
-	game->getTexture(seleccionShopPanel)->render(rectPanel);
+	game->getTexture(shopSelector)->render(rectPanel);
 
 	//renderizado del texto
 	if (shop_->objects.size()>selected_&&shop_->objects[selected_].stock > 0) {

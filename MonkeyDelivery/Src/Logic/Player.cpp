@@ -36,6 +36,7 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game), anima
 
 	energyLevel_ = new energyLevel(game);
 	fearLevel_ = new FearLevel(game);
+	fearBar_ = new FearBar(game);
 	inventory_ = new Inventory(this, game->getRenderer());
 
 	//Obketos de inventario
@@ -337,6 +338,7 @@ void Player::draw()
 	//drawDebug();
 	energyLevel_->draw();
 	fearLevel_->draw();
+	fearBar_->draw();
 	if (boolrenderSleepText)
 		NoSleepText();
 	//energyLevel_->drawDebug();
