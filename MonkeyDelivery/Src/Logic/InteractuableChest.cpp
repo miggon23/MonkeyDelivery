@@ -39,11 +39,13 @@ void InteractuableChest::onPlayerInteraction(Player* player)
 void InteractuableChest::selectReward(int reward, Player* player)
 {
 	int randMoney = sdlutils().rand().nextInt(5, 20);
+	string s = "ChestMoneyText";
 	switch (reward)
 	{
 	case 0:
 		rewardT_ = game->getTexture(goldTexture);
 		player->addMoney(randMoney);
+		game->newDialogue(s);
 		break;
 	case 1:
 		//Elementos de la narrativa
