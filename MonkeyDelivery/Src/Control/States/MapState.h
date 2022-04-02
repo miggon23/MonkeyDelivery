@@ -19,5 +19,10 @@ public:
 
 private:
 	Texture* backgroundTex_;
+	Texture* pointTex_;
+
+	int x_, y_;
+
+	bool put;
 };
 
