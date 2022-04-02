@@ -121,7 +121,7 @@ private:
     //Sounds&Music
     int musicVolume_ = 64;
     int soundEfectsVolume_ = 64;
-    int generalVolume_ = 64;
+    float generalVolume_ = 0.5;
     
 public:
 
@@ -131,6 +131,7 @@ public:
     string getGameName();
 
     void add(GameObject* gameObject);
+    void removeGameObject(GameObject* gameObject);
     void start();
     void update();   
     void setUserExit();
@@ -189,7 +190,7 @@ public:
     //Sounds&Music
     inline void ChangeMusicVolume(int volume) { musicVolume_ = volume;/* std::cout << musicVolume_ << std::endl;*/ };
     inline void ChangeSoundEfectsVolume(int volume) { soundEfectsVolume_ = volume; /*std::cout << soundEfectsVolume_ << std::endl;*/};
-    inline void ChangeGeneralVolume(int volume) { generalVolume_ = volume; /*std::cout << generalVolume_ << std::endl;*/};
+    inline void ChangeGeneralVolume(float volume) { generalVolume_ = volume; /*std::cout << generalVolume_ << std::endl;*/};
 
     int getMusicVolume() { return musicVolume_; };
     int getSoundEfectsVolume() { return soundEfectsVolume_; };

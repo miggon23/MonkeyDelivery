@@ -27,7 +27,6 @@ public:
     void setTexture(TextureName textureName);
 
     GameObject(Game* game) : game(game) {
-
     };
     virtual ~GameObject() {
         game = nullptr;

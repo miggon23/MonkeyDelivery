@@ -117,6 +117,17 @@ void Game::add(GameObject* gameObject) {//a�adir gO al vector
     gameObjects_.push_back(gameObject);
 }
 
+void Game::removeGameObject(GameObject* gameObject){
+    delete gameObject;
+    //es necesario el for qui pq si no luego antes de llegar al update peta
+    for (int i = 0; i < gameObjects_.size(); i++){
+        if (gameObjects_[i] == gameObject) {
+            gameObjects_.erase(gameObjects_.begin() + i);
+            break;
+        }
+    }
+}
+
 void Game::start()
 {
     //loadSpriteSheets();
@@ -151,7 +162,7 @@ void Game::start()
     auto* x = new Bed(this);
     x->setPosition(670, 760);
     add(x);
-   add(new Rock(this,100,700));
+    add(new Rock(this,100,700));
 }
 
 void Game::update()
@@ -164,8 +175,18 @@ void Game::update()
         }
     }
 
-     for (auto gO : gameObjects_)
-        gO->update();
+    for (auto gO : gameObjects_) {
+
+        if (gO != nullptr) 
+            gO->update();
+       /* else {
+            gameObjects_.erase()
+        }*/
+            
+        
+            
+    }
+       
 
 
     for (auto enemy : enemyContainer_)
@@ -198,6 +219,7 @@ void Game::draw()
 
   
     for (auto gO : gameObjects_)
+        if(gO!=nullptr)
         gO->draw();
 
     

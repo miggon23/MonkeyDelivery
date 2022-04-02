@@ -6,4 +6,5 @@ public:
 	Rock(Game* game, int x, int y);
 	~Rock();
 	void update() override;
+	void onPlayerInteraction(Player* player) override;
 };

@@ -130,6 +130,11 @@ public:
 
 	inline bool inventoryFull() { return inventory_->inventoryFull(); };
 	inline void addObjectToInventory(InventoryObject* p) { inventory_->addObject(p); };
+
+	//TEMPORAL
+	inline string getActiveItemObject() {
+		return inventory_->activeObject();
+	}
 #pragma endregion
 
 	//linterna

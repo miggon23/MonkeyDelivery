@@ -13,9 +13,11 @@ private:
 protected:
 	Player* player_ = nullptr;
 	Game* game_ = nullptr;
-	bool isConsumable_ = false;
-
+	bool isConsumable_ = false;	
+	//TEMPORAL
+	string typeObject = "InventoryObject";
 public:
+	
 	//InventoryObject() {};
 	InventoryObject(Texture* tex) : myTexture_(tex) {};
 	~InventoryObject();
@@ -27,6 +29,11 @@ public:
 	inline Texture* getTexture() { return myTexture_; };
 
 	inline bool isConsumable() { return isConsumable_; };
+	
 	//inline bool hasTexture() { return myTexture_ != nullptr; };
+
+	//TEMPORAL
+	inline string getTypeObject() { return typeObject; };
+	inline void setTypeObject(string x) { typeObject = x; };
 };
 

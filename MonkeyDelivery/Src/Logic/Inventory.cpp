@@ -3,6 +3,7 @@
 #include <iostream>
 #include <SDL_rect.h>
 #include "../View/Texture.h"
+#include <string>
 
 Inventory::Inventory(Player* player, SDL_Renderer* renderer) : player_(player)
 {
@@ -17,6 +18,7 @@ Inventory::Inventory(Player* player, SDL_Renderer* renderer) : player_(player)
 Inventory::~Inventory()
 {
 	clearInventory();
+	delete missionObject_;	
 	delete base_;
 }
 
@@ -53,6 +55,9 @@ bool Inventory::addMisionObject(InventoryObject* io)
 
 bool Inventory::useObject(int indexObject)
 {
+	//objeto sleccionado del inventario
+	activeInventaryObject = indexObject;
+
 	//Devuelve false si el objeto no pudo ser utilizado
 	if (indexObject >= inventory_.size())
 		return false;
@@ -128,4 +133,9 @@ void Inventory::draw() {
 		inventory_[i]->getTexture()->render(oRect);
 		
 	}
+}
+
+//TEMPORAL
+string Inventory::activeObject(){
+	 return inventory_[activeInventaryObject]->getTypeObject();
 }

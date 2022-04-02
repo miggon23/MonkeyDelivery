@@ -21,6 +21,9 @@ private:
 	SDL_Rect baseRect_;
 	SDL_Rect missionObjectRect_;
 
+	//TEMPORAL
+	int activeInventaryObject;
+
 public:
 	Inventory(Player* player, SDL_Renderer* renderer);
 	~Inventory();
@@ -39,5 +42,8 @@ public:
 	bool inventoryFull();
 
 	void draw();
+
+	//TEMPORAL
+	string activeObject();
 };
 

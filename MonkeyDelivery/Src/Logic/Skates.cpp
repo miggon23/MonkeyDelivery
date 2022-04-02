@@ -2,8 +2,7 @@
 #include "Skates.h"
 #include "Player.h"
 
-Skates::Skates(Texture* tex) : active(false), speedMult(1.8), InventoryObject(tex)
-{
+Skates::Skates(Texture* tex) : active(false), speedMult(1.8), InventoryObject(tex){
 }
 
 bool Skates::useObject()
