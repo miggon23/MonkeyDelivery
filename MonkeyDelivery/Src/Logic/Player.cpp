@@ -82,12 +82,12 @@ void Player::update()
 	if (sleeping)sleep();//si esta durmiendo
 	else move();//si no esta durmiendo habilitanmos el movimiento
 
-	/*if ((energyLevel_->percentEnergy() == 0 || fearLevel_->percentFear() == 100) && !fade) {
+	if ((energyLevel_->percentEnergy() == 0 || fearLevel_->percentFear() == 100) && !fade) {
 		fade = true;
-	}*/
-	if((fearLevel_->getScared(0) || energyLevel_->drain(0)) && !fade) {
-		fade = !fade;
 	}
+	/*if((fearLevel_->getScared(0) || energyLevel_->drain(0)) && !fade) {
+		fade = !fade;
+	}*/
 }
 
 /// <summary>
@@ -276,7 +276,6 @@ void Player::FadeOut()
 	}
 	else if (alpha >= SDL_ALPHA_OPAQUE)
 	{
-		fade = !fade;
 		alpha = 0;
 		fadeTex_->changeAlpha(alpha);
 		fadeTex_->render({ 0, 0, 1800, 1000 });
@@ -292,6 +291,7 @@ void Player::FadeOut()
 
 void Player::sendToBed()
 {
+	fade = false;
 	sdlutils().soundEffects().at("scary").setVolume(game->getSoundEfectsVolume());
 	sdlutils().soundEffects().at("scary").play(0, 1);
 }

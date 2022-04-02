@@ -15,7 +15,8 @@ FearLevel::FearLevel(Game* game) :GameObject(game) {
 bool FearLevel::getScared(int amount)
 {
 	fear_+= amount;
-	if (fear_ < 0)fear_ = 0;
+	if (fear_ < 0) fear_ = 0;
+	else if (fear_ > 100) fear_ = maxFear_;
 	if (fear_ <maxFear_) {
 		setDimension(fear_*2, 50);
 		setPosition(50 - (amount/2), 70);
