@@ -21,6 +21,7 @@ MenuState::MenuState(Game* game) : State(game) {
 
 	backgroundTexture = game->getTexture(backgroundTex);
 	titleTexture = game->getTexture(titleTex);
+	game->clearSavedState();
 	/* Music* m = new Music("../Sounds/menumusic.wav");
 	 m->play(-1);*/ //-1 son infinitos loops
 }

@@ -11,5 +11,5 @@ Back1::Back1(int x, int y, int w, int h, Game* game):Button(game,w,h,x,y){
 void Back1::onCursorCollision(){
 	//game->setState(new PlayingState(game));
 	//ChangeToLastState();
-	ChangeToLastaStateNO_DELETE_LAST();
+	ChangeToLastState();
 }
