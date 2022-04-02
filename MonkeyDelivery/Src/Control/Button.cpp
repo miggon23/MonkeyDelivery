@@ -37,6 +37,7 @@ void Button::ChangeToNewState(State* state,bool guardar){
 	}
 	else{
 		delete TMP;
+		TMP = nullptr;
 	}
 }
 

@@ -46,8 +46,7 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game), anima
 	inventory_->addObject(new EnergyDrink(new Texture(game->getRenderer(), "../Images/objects/refresco.png")));
 	inventory_->addObject(new Skates(new Texture(game->getRenderer(), "../Images/objects/patines.png")));
 	inventory_->addObject(new Pickaxe(new Texture(game->getRenderer(), "../Images/objects/pico.png")));
-	
-
+		 
 	setInventoryVisibility(true);
 	textureRect = { 0, 0, 100, 100 };
 	timerAnimation = 0;

@@ -13,6 +13,7 @@
 #include "../UI/Buttons/Credits.h"
 
 MenuState::MenuState(Game* game) : State(game) {
+	game->clearSavedState();
 	registerCommands();
 	addButton(new Start(game->getWindowWidth() / 2 - buttonW / 2, game->getWindowHeight() / 2 - buttonH * 1.3, buttonW, buttonH, game));
 	addButton(new Options(game->getWindowWidth() / 2 - buttonW / 2, game->getWindowHeight() / 2, buttonW, buttonH, game, 1));

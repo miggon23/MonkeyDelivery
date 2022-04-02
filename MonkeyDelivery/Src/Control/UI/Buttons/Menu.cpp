@@ -10,7 +10,8 @@ Menu::Menu(int x, int y, int w, int h, Game* game) :Button(game, w, h, x, y)
 
 void Menu::onCursorCollision()
 {
-	game->clearSavedState();
+	
+	//game->clearSavedState();
 	ChangeToNewState(new MenuState(game),false);
 	
 }

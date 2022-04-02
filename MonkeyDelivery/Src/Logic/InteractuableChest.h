@@ -11,7 +11,9 @@ class InteractuableChest : public GameObject
 	Texture* rewardT_;
 public:
 	InteractuableChest(Game* game, int x, int y, int w, int h);
-	~InteractuableChest() = default;
+	~InteractuableChest() {
+		rewardT_ = nullptr;
+	};
 
 	void draw() override;
 	void update() override {};

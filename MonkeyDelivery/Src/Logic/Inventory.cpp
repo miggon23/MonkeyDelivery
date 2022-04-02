@@ -17,7 +17,6 @@ Inventory::Inventory(Player* player, SDL_Renderer* renderer) : player_(player)
 Inventory::~Inventory()
 {
 	clearInventory();
-
 	delete base_;
 }
 

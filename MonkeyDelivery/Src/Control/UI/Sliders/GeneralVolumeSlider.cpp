@@ -8,6 +8,6 @@ GeneralVolumeSlider::~GeneralVolumeSlider(){
 }
 
 void GeneralVolumeSlider::Utility(){
-	double x = 128 * Percent();
+	double x = Percent();
 	game_->ChangeGeneralVolume(int(x));
 }
