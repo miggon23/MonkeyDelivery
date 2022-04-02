@@ -27,7 +27,6 @@ protected:
 	AnimationManager* animationManager;
 	SDL_Rect textureRect;
 	int timerAnimation;
-	bool hasBeenKilled = false;
 
 
 	//movimiento enemigos respecto a camara
@@ -51,7 +50,6 @@ public:
 
 	void spawn();
 	void respawn();
-	void onCollision();
 	virtual void checkDistance();
 	inline virtual void setScariness(double fear) { scariness_ = fear; }
 	inline virtual void setResistance(int res) { resistence_ = res; }

@@ -10,7 +10,6 @@ Enemy::Enemy(Game* game, int Aleatorio, Point2D<int>centroRadio, AnimationManage
 	timerAnimation = 0;
 	lastUpdate_ = SDL_GetTicks();
 	timeOnFlash_ = SDL_GetTicks();
-	//setScariness(0.7);
 	respawnTimer = SDL_GetTicks();
 	nearLimit_ = 2;
 }
@@ -45,14 +44,13 @@ void Enemy::patrol(double speed)
 				indexCheckPoint = checkpoints.size() - 1;
 				back = true;
 			}
-			//std::cout << indexCheckPoint << std::endl;
 		}
 	}
 }
 
 void Enemy::die()
 {
-	if (game->getPlayer()->usingFlashLight) {
+	if (game->getPlayer()->isUsingFlashLight()) {
 		
 		// se guardan los ticks al colisionar con la luz
 		if (collide(game->getPlayer()->lightZoneFL()) && !collided) {
@@ -67,11 +65,11 @@ void Enemy::die()
 		// si pasa Xs en la luz, se muere
 		if (timeOnFlash_ + resistence_ < SDL_GetTicks() && collide(game->getPlayer()->lightZoneFL()) && collided) {
 			setAlive(false);
-			hasBeenKilled = true;
 			collided = false;
 		}
 	}
-	if (game->getPlayer()->usingLantern) {
+
+	if (game->getPlayer()->isUsingLantern()) {
 
 		// se guardan los ticks al colisionar con la luz
 		if (collide(game->getPlayer()->lightZoneL()) && !collided) {
@@ -86,7 +84,6 @@ void Enemy::die()
 		// si pasa Xs en la luz, se muere
 		if (timeOnFlash_ + resistence_ < SDL_GetTicks() && collide(game->getPlayer()->lightZoneL()) && collided) {
 			setAlive(false);
-			hasBeenKilled = true;
 			collided = false;
 		}
 	}
@@ -100,22 +97,16 @@ void Enemy::spawn()
 
 void Enemy::respawn()
 {
-	if (hasBeenKilled) {
+	if (!isAlive()) {
 		if (!startTimer) {
 			respawnTimer = SDL_GetTicks();
 			startTimer = true;
 		}
 		if (respawnTimer + 15000 < SDL_GetTicks()) {
 			spawn();
-			hasBeenKilled = false;
 			respawnTimer = SDL_GetTicks();
 		}
 	}
-}
-
-void Enemy::onCollision()
-{
-
 }
 
 void Enemy::checkDistance()
@@ -128,10 +119,6 @@ void Enemy::checkDistance()
 
 			if (distanceX <= offset && distanceY <= offset) {
 
-				/*if (distanceX < distanceY)
-					game->scare(distanceX*scariness_);
-				else*/
-
 				double d = 1.8 * ((distanceY + distanceX) / 2);
 				if (distanceX <= 20.0 && distanceY <= 20.0) {
 					game->scare(2.0 * scariness_ / 10);
@@ -143,7 +130,6 @@ void Enemy::checkDistance()
 			lastUpdate_ = SDL_GetTicks();
 		}
 	}
-
 }
 
 bool Enemy::inPoint()
@@ -153,6 +139,4 @@ bool Enemy::inPoint()
 		y = getPosition().getY() - point.getY();
 
 	return abs(x) + abs(y) < nearLimit_;
-
 }
-

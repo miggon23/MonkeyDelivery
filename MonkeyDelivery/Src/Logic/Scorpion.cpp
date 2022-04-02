@@ -47,7 +47,7 @@ void Scorpion::checkDistance()
 		if (distanceX <= range && distanceY <= range)
 		{
 			//Si la velocidad del jugador no ha sido reducida, es decir, no había entrado en el rango
-			if (!inRange) { //playerVel > (iniPlayerVel / 2.0) + 0.05
+			if (!inRange) { 
 				game->setVel(playerVel / 2.0);
 				inRange = true;
 			}
@@ -69,21 +69,12 @@ void Scorpion::checkDistance()
 		}
 		lastUpdate_ = SDL_GetTicks();
 	}
-	//else { 
-	//	
-	//	//game->setVel(iniPlayerVel); // Esto hace que el jugador no pueda correr ni ir en bici ya que resetea la velocidad todo el rato <---
-	//	//iniPlayerVel = game->getPlayer()->getVel();
-	//} 
 }
-//batDyingSpritesheet,
-//bullDyingSpritesheet,
-//catDyingSpritesheet,
-//plantDyingSpritesheet,
-//scorpionDyingSpritesheet
+
 void Scorpion::draw()
 {
 	if (isAlive()) {
-		if (collided && (game->getPlayer()->usingFlashLight || game->getPlayer()->usingLantern)) {
+		if (collided && (game->getPlayer()->isUsingFlashLight() || game->getPlayer()->isUsingLantern())) {
 			setTexture(scorpionDyingSpritesheet);
 			animationManager->getFrameImageScorpion(getCollider(), textureRect, texture, timerAnimation);
 		}

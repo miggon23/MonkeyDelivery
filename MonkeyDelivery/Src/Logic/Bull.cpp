@@ -78,7 +78,7 @@ void Bull::checkDistance()
 void Bull::draw()
 {
 	if (isAlive()) {
-		if (collided && (game->getPlayer()->usingFlashLight || game->getPlayer()->usingLantern)) {
+		if (collided && (game->getPlayer()->isUsingFlashLight() || game->getPlayer()->isUsingLantern())) {
 			setTexture(bullDyingSpritesheet);
 			animationManager->getFrameImageBull(getCollider(), textureRect, texture, timerAnimation);
 		}

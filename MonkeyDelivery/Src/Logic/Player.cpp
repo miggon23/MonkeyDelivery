@@ -23,7 +23,6 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game), anima
 	money_ = 0;
 	vel_ = 0;
 	orientation_ = "";
-	//walkingSpeed_ = 3;
 	runningSpeedFactor_ = 1.5;
 
 	walkingEnergy_ = 0.05;
@@ -39,7 +38,7 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game), anima
 	fearLevel_ = new FearLevel(game);
 	inventory_ = new Inventory(this, game->getRenderer());
 
-	//Obketos de inventario
+	//Objetos de inventario
 	inventory_->addObject(new Bike(new Texture(game->getRenderer(), "../Images/objects/patinete.png")));
 	inventory_->addObject(new Flashlight(new Texture(game->getRenderer(), "../Images/objects/linterna2.png")));
 	inventory_->addObject(new Lantern(new Texture(game->getRenderer(), "../Images/objects/linterna.png")));
@@ -155,10 +154,6 @@ void Player::setIsRunning(bool run)
 
 void Player::sleep()
 {
-	//std::cout << "A MIMIR YA PUTO MONO" << endl;
-	//cambio la textura
-	//setTexture(monkeyEyesClosedTexture);
-	//draw();
 	getScared(-1);
 	drainEnergy(-1);
 	sdlutils().soundEffects().at("sleep").play(0, 1);
@@ -244,22 +239,23 @@ void Player::draw()
 	//drawDebug();
 	energyLevel_->draw();
 	fearLevel_->draw();
-	if (boolrenderSleepText)
-		NoSleepText();
-	//energyLevel_->drawDebug();
-	if (inventoryVisibility)
-		inventory_->draw();
+
+	if (boolrenderSleepText) NoSleepText();
+	
+	if (inventoryVisibility) inventory_->draw();
+
 	if (usingFlashLight) {
-		/*Box(lightZone(), BLUE).render(game->getRenderer());*/
-		//usingLantern = false;
+
 		auto a = lightZoneFL();
 		flashlightTex_->render(a);
 	}
+
 	if (usingLantern) {
-		//usingFlashLight = false;
+		
 		auto b = lightZoneL();
 		lanternTex_->render(b);
 	}
+
 	if(fade)
 	{
 		fadeTex_->render({ 0, 0, 1800, 1000 }); // Renderizar la textura del rectangulo negro en ese rect

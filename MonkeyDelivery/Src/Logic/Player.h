@@ -2,7 +2,7 @@
 
 #include "GameObject.h"
 #include "energyLevel.h"
-#include "FearLevel.h";
+#include "FearLevel.h"
 #include "Inventory.h"
 #include "InventoryObject.h"
 
@@ -21,6 +21,8 @@ private:
 	Inventory* inventory_ = nullptr;
 	bool inventoryVisibility;
 	bool fade = false;
+	bool usingFlashLight = false;
+	bool usingLantern = false;
 	int alpha = SDL_ALPHA_TRANSPARENT;
 	VirtualTimer timer;
 
@@ -70,7 +72,7 @@ private:
 	Texture* flashlightTex_;
 	Texture* lanternTex_;
 
-	Texture* fadeTex_;
+	Texture* fadeTex_ = nullptr;
 
 public:
 
@@ -80,25 +82,22 @@ public:
 	void update() override;
 	void draw() override;
 
-#pragma region Sleep
-	void sleep();//efecto de dormir
-	void changeSleep();//mirar si puede dormir
-	void NoSleepText();//si presionas la e pero no puedes dormir para que renderize el texto
-#pragma endregion
+	// SLEEP
+	void sleep(); //efecto de dormir
+	void changeSleep(); //mirar si puede dormir
+	void NoSleepText(); //si presionas la e pero no puedes dormir para que renderize el texto
 
-#pragma region Energy
+	// ENERGY
 	void drainEnergy(float amount) { energyLevel_->drain(amount); };
 	inline void recoverEnergy(int amount) {};
 	inline float getEnergy() { return energyLevel_->getEnergy(); };
 	inline float getMaxEnergy() { return energyLevel_->getMaxEnergy(); };
-#pragma endregion
 
-#pragma region Fear
+	// FEAR
 	inline void getScared(int amount) { fearLevel_->getScared(amount); };
 	inline void recoverFear(int amount) {};
-#pragma endregion
 
-#pragma region Movement
+	// MOVEMENT
 	void move(pair<double, double> speed);
 	void move();
 	void setIsRunning(bool run);
@@ -113,21 +112,17 @@ public:
 	inline MovState getMovState() { return movState_; };
 	inline void setMovState(MovState m) { movState_ = m; };
 
-#pragma endregion
-
-#pragma region economy
+	// ECONOMY
 	bool moneyChange(int money);
 	inline void addMoney(int amount) { money_ += amount; };
 	void removeMoney(int amount);
-#pragma endregion
 
-#pragma region inventory
+	// INVENTORY
 	inline void useObject(int index) { inventory_->useObject(index); };
 	inline void setInventoryVisibility(bool visible) { inventoryVisibility = visible; };
 	inline bool hasMissionObject() { return inventory_->hasMissionObject(); };
 	inline void addMissionObject(InventoryObject* p) { inventory_->addMisionObject(p); };
 	inline void removeMissionObject() { inventory_->removeMisionObject(); };
-
 	inline bool inventoryFull() { return inventory_->inventoryFull(); };
 	inline void addObjectToInventory(InventoryObject* p) { inventory_->addObject(p); };
 
@@ -135,24 +130,24 @@ public:
 	inline string getActiveItemObject() {
 		return inventory_->activeObject();
 	}
-#pragma endregion
 
-	//linterna
+
+
+	// LIGHTS
 	const SDL_Rect lightZoneFL();
 	const SDL_Rect lightZoneL();
-	bool usingFlashLight = false;
-	bool usingLantern = false;
-	void changeFLState(bool f) {
-		usingFlashLight = f;
-	}
-	void changeLState(bool f) {
-		usingLantern = f;
-	}
+	
+	inline void changeFLState(bool f) {usingFlashLight = f;}
+	inline void changeLState(bool f) { usingLantern = f;}
+
+	inline bool isUsingFlashLight() { return usingFlashLight; }
+	inline bool isUsingLantern() { return usingLantern; }
+
 	inline void setOrientation(string orien) { orientation_ = orien; }
 	inline string getOrientation() { return orientation_; }
 	inline bool isAsleep() { return sleeping; }
 
-	// Fadeout
+	// FADEOUT
 	void FadeOut(); // Realiza un fadeout sobre la pantalla
 	void sendToBed(); // Establece la posición en la cama más cercana después del fadeout
 };
