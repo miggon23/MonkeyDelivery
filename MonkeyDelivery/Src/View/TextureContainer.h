@@ -69,14 +69,13 @@ enum TextureName {
 	// fondo menu principal
 	backgroundTex,
 	titleTex,
-
 	bookTexture,
-
-	rocaTexture
+	rocaTexture,
+	openChestTexture
 };
 
 
-const int NUM_TEXTURES = 55;
+const int NUM_TEXTURES = 56;
 
 
 
@@ -140,14 +139,15 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
 
 	//no finales
 	{"icons/capibara.png",1,1},
-	{"objects/chest.png",1,1},
+	{"objects/chest0.png",1,1},
 	{"objects/gold.png",1,1},
 	// fondo menu principal
 	{"background/MenuImage.png",1,1},
 	{"background/GameTitleMockup1.png",1,1},
 
 	{"objects/tutorial.png",1,1},
-	{"roca.png",1,1}
+	{"roca.png",1,1},
+	{"objects/chest1.png", 1, 1}
 };
 
 

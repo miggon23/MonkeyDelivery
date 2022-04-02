@@ -112,9 +112,12 @@
     }
   ],
 
-  "images": [
-
-  ],
+    "images": [
+        {
+            "id": "chestTexture",
+            "file": "../Images/objects/chest0.png"
+        }
+    ],
 
   "messages": [
   ],

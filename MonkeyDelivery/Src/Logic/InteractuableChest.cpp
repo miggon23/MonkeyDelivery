@@ -10,7 +10,6 @@ InteractuableChest::InteractuableChest(Game* game, int x, int y, int w, int h) :
 }
 
 
-
 void InteractuableChest::draw()
 {
 	//Si el cofre esta desativado cambiar su textura
@@ -21,27 +20,33 @@ void InteractuableChest::draw()
 
 void InteractuableChest::onPlayerInteraction(Player* player)
 {
-	//active = !active;
-
 	if (active) {
 		sdlutils().soundEffects().at("chest").setVolume(game->getSoundEfectsVolume());
 		sdlutils().soundEffects().at("chest").play(0, 1);
 
-		//Los numeros variaran en funcion de cuantas recompensas haya
+		//0 --> dinero
+		//1 --> elementos de la narrativa
 		auto rand = sdlutils().rand().nextInt(0, 1);
 	
 		selectReward(rand, player);
+
+		active = false;
+
+		setTexture(openChestTexture);
 	}
-	active = false;
 }
 
 void InteractuableChest::selectReward(int reward, Player* player)
 {
+	int randMoney = sdlutils().rand().nextInt(5, 20);
 	switch (reward)
 	{
 	case 0:
 		rewardT_ = game->getTexture(goldTexture);
-		player->addMoney(10);
+		player->addMoney(randMoney);
+		break;
+	case 1:
+		//Elementos de la narrativa
 		break;
 	default:
 		break;
