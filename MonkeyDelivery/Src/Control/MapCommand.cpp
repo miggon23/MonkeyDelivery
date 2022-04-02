@@ -24,6 +24,7 @@ void MapCommand::execute()
 	}
 		
 	else {
+		game->setOpenedMap(false);
 		State* tmp = game->getState();
 		State* saved = game->getSavedState();
 		saved->resetInitTime();
@@ -31,6 +32,5 @@ void MapCommand::execute()
 		game->setState(saved);
 		game->removeSavedState();
 		delete tmp;
-		game->setOpenedMap(false);
 	}
 }
