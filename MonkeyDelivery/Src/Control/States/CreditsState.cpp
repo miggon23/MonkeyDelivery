@@ -1,11 +1,11 @@
 #include "CreditsState.h"
 #include "../CommandClick.h"
-#include "../../Control/UI/Buttons/Back.h"
+#include "../../Control/UI/Buttons/Back1.h"
 
 CreditsState::CreditsState(Game* game) : State(game)
 {
 	
-	addButton(new Back(game->getWindowWidth() / 2 - 50, game->getWindowHeight() - 250, 100, 75, game));
+	addButton(new Back1(game->getWindowWidth() / 2 - 50, game->getWindowHeight() - 250, 100, 75, game));
 	registerCommands();
 }
 

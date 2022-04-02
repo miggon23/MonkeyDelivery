@@ -33,9 +33,6 @@ private:
 		"Raúl Saavedra"
 	};
 
-
-	Texture* wallpaper_;
-
 	const int xOffset_ = 400, yOffset_ = 100, ySize_ = 50;
 	const int timeNewName_ = 1000;
 
