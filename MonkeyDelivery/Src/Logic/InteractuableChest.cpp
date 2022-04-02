@@ -21,7 +21,7 @@ void InteractuableChest::draw()
 void InteractuableChest::onPlayerInteraction(Player* player)
 {
 	if (active) {
-		sdlutils().soundEffects().at("chest").setVolume(game->getSoundEfectsVolume());
+		sdlutils().soundEffects().at("chest").setVolume(game->getSoundEfectsVolume()*2);
 		sdlutils().soundEffects().at("chest").play(0, 1);
 
 		//0 --> dinero
@@ -43,12 +43,12 @@ void InteractuableChest::selectReward(int reward, Player* player)
 	switch (reward)
 	{
 	case 0:
-		rewardT_ = game->getTexture(goldTexture);
 		player->addMoney(randMoney);
 		game->newDialogue(s);
 		break;
 	case 1:
 		//Elementos de la narrativa
+		rewardT_ = game->getTexture(goldTexture);
 		break;
 	default:
 		break;
