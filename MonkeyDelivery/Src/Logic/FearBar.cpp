@@ -30,6 +30,5 @@ bool FearBar::getScared(int amount)
 
 void FearBar::draw()
 {
-	std::cout << "A";
 	drawTexture(texture);
 }
