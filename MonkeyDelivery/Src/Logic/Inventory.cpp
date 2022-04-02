@@ -137,5 +137,8 @@ void Inventory::draw() {
 
 //TEMPORAL
 string Inventory::activeObject(){
+	if (activeInventaryObject >= inventory_.size()) {
+		return "NoActiveInventoryItem";
+	}
 	 return inventory_[activeInventaryObject]->getTypeObject();
 }
