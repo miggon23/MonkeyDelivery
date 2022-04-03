@@ -186,6 +186,7 @@
     <ClInclude Include="Src\Control\UI\Buttons\Continue.h" />
     <ClInclude Include="Src\Control\UI\Buttons\Credits.h" />
     <ClInclude Include="Src\Control\UI\Buttons\Exit.h" />
+    <ClInclude Include="Src\Control\UI\Buttons\ExitButton.h" />
     <ClInclude Include="Src\Control\UI\Buttons\Menu.h" />
     <ClInclude Include="Src\Control\UI\Buttons\Options.h" />
     <ClInclude Include="Src\Control\UI\Buttons\Pause.h" />
@@ -298,6 +299,7 @@
     <ClCompile Include="Src\Control\UI\Buttons\Menu.cpp" />
     <ClCompile Include="Src\Control\UI\Buttons\Options.cpp" />
     <ClCompile Include="Src\Control\UI\Buttons\Pause.cpp" />
+    <ClCompile Include="Src\Control\UI\Buttons\ExitButton.cpp" />
     <ClCompile Include="Src\Control\UI\Buttons\Start.cpp" />
     <ClCompile Include="Src\Control\UI\ElementsUI\Brightness.cpp" />
     <ClCompile Include="Src\Control\UI\Sliders\BrightnessSlider.cpp" />

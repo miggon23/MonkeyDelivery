@@ -278,6 +278,9 @@
     <ClCompile Include="Src\Logic\Rock.cpp">
       <Filter>Source Files\Logic\InteractuableObjects</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Control\UI\Buttons\ExitButton.cpp">
+      <Filter>Source Files\Control\UI\Buttons</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -604,6 +607,9 @@
     </ClInclude>
     <ClInclude Include="Src\Logic\Rock.h">
       <Filter>Header Files\Logic\InteractuableObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Control\UI\Buttons\ExitButton.h">
+      <Filter>Header Files\Control\UI\Buttons</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
