@@ -15,9 +15,6 @@ class Game;
 
 class InputManager {
 private:
-	int joystickDeadZone_;
-	SDL_Joystick* gamepad_ = NULL;
-	//CommandFactory* commandFactory = nullptr;
 
 	Game* game;
 	SDL_Window* window = nullptr;
@@ -26,12 +23,11 @@ private:
 	SDL_Event event;
 	Timer* timer_;
 	
-	void initSDL();
+	
 public:
 	InputManager(Game* _game);
 	~InputManager();
 	void run();
-	void handleEvents();
 	vector<SDL_Event>& GetFrameEvents(); //Vector de eventos, registra mas de 1 por frame
 	void clearBackground();
 	unsigned int frameDuration();
