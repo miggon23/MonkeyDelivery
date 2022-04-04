@@ -1,5 +1,6 @@
 #include "SpawnZone.h"
 #include <ctime>
+#include "../sdlutils/SDLUtils.h"
 
 SpawnZone::SpawnZone()
 {
@@ -19,8 +20,8 @@ Vector2D<double> SpawnZone::generatePoint()
 {
 	srand(time(NULL));
 	Point2D<double> pos;
-	pos.setX(rand() % -RadioSpawn + RadioSpawn);
-	pos.setY(rand() % -RadioSpawn + RadioSpawn);
+	pos.setX(sdlutils().rand().nextInt(-RadioSpawn, RadioSpawn));
+	pos.setY(sdlutils().rand().nextInt(-RadioSpawn, RadioSpawn));
 	pos.set(pos.getX()+centro.getX(),pos.getY()+centro.getY());
 	return pos;
 }
