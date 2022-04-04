@@ -64,6 +64,8 @@ void Bull::checkDistance()
 				stop = false; //Dejo de patrullar
 				timer_ = SDL_GetTicks();
 				chase(dirX, dirY); //Persigo
+				sdlutils().soundEffects().at("bull").play(0, 1);
+
 
 			}
 			else if (SDL_GetTicks() <= timer_ + 3000) //Si no esta en el rango y no han pasado los 3 segundos 

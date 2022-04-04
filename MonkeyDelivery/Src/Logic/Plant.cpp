@@ -41,7 +41,12 @@ void Plant::checkDistance()
 
 		//Realmente esto no se si comentarlo porque la planta no da miedo, de momento lo dejo
 		if (lastUpdate_ + 1000 < SDL_GetTicks())
+		{
 			game->scare(scariness_);
+			sdlutils().soundEffects().at("plant").play(0, 1);
+
+		}
+		
 		lastUpdate_ = SDL_GetTicks();
 	}
 }
