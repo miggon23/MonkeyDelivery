@@ -171,6 +171,26 @@
         {
             "id": "walk",
             "file": "../Sounds/walk.wav"
+        },
+        {
+            "id": "cat",
+            "file": "../Sounds/cat.wav"
+        },
+        {
+            "id": "bat",
+            "file": "../Sounds/bat.wav"
+        },
+        {
+            "id": "bull",
+            "file": "../Sounds/bull.wav"
+        },
+        {
+            "id": "plant",
+            "file": "../Sounds/plant.wav"
+        },
+        {
+            "id": "scorpion",
+            "file": "../Sounds/scorpion.wav"
         }
 
     ],
