@@ -31,13 +31,17 @@ void Shop::actualice()
 
 void Shop::clearElements()
 {
-	for (auto e : objects)
+	if (objects.size() > 0)
 	{
-		if(e.inventoryObject != nullptr)
-			delete e.inventoryObject;
-		//objects2.erase(objects2.begin());
+		for (auto e : objects)
+		{
+			if (e.inventoryObject != nullptr)
+				delete e.inventoryObject;
+			//objects2.erase(objects2.begin());
+		}
+		objects.clear();
 	}
-	objects.clear();
+	
 }
 
 void Shop::addElements(int level)
@@ -48,10 +52,9 @@ void Shop::addElements(int level)
 		objects.push_back({ new EnergyDrink(game->getTexture(drinkTexture), game), 0, 0, 1, 20}); // <-- precio del hito2 para que puedan ser comprados varios objetos
 		objects.push_back({ new Bike(game->getTexture(bikeTexture), game), 1, 0, 1, 30});
 		objects.push_back({ new Skates(game->getTexture(skatesTexture), game), 2, 0, 1, 25});
-		objects.push_back({ new Flashlight(game->getTexture(flashlightTexture), game), 3, 0, 1, 10 });
-
-		/*objects.push_back({ new EnergyDrink(game->getTexture(drinkTexture)), 4, 1, 1, 20 });
-		objects.push_back({ new EnergyDrink(game->getTexture(drinkTexture)), 5, 1, 1, 20 });*/
+		objects.push_back({ new Flashlight(game->getTexture(flashlightTexture), game), 3, 0, 1, 10 });		
+		objects.push_back({ new EnergyDrink(game->getTexture(drinkTexture), game), 4, 1, 1, 20 });
+	
 		
 		//objects.push_back({ new Bike(game->getTexture(bullTexture)), 0, 105, 1, 1000});
 		//objects.push_back({ new Bike(game->getTexture(bullTexture)), 1, 105, 1, 1000});

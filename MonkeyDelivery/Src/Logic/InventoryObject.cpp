@@ -3,7 +3,7 @@
 
 InventoryObject::~InventoryObject()
 {
-	delete myTexture_;
+	//delete myTexture_;
 	myTexture_ = nullptr;
 
 }
