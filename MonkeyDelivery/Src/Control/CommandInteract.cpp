@@ -10,12 +10,14 @@ bool CommandInteract::parse(SDL_Event& event)
 			if (ihdlr.isKeyDown (SDL_SCANCODE_E))
 				return true;
 		}
+		if (ihdlr.getButtonState(0, 3))
+			return true;
 		
 	//}
 	/*else
 	{*/
-		if (ihdlr.bJoysticksInitialised() && ihdlr.getButtonState(0, 3))
-			return true;
+		/*if (ihdlr.bJoysticksInitialised() && )
+			return true;*/
 	//}
 	return false;
 }
