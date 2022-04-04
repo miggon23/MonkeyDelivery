@@ -1,5 +1,6 @@
 #include "MissionSelectionState.h"
 #include "../SelectMissionCommand.h"
+#include "../PauseCommand.h"
 
 
 MissionSelectionState::MissionSelectionState(Game* game) : State(game)
@@ -87,6 +88,7 @@ void MissionSelectionState::registerCommands()
 {
 	commandFactory->add(new CommandExit());
 	commandFactory->add(new SelectMissionCommand(this));
+	commandFactory->add(new PauseCommand());
 }
 
 void MissionSelectionState::moveBox(int i)

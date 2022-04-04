@@ -50,8 +50,8 @@ void Shop::addElements(int level)
 		objects.push_back({ new Skates(game->getTexture(skatesTexture)), 2, 0, 1, 25});		
 		objects.push_back({ new Flashlight(game->getTexture(flashlightTexture)), 3, 0, 1, 10 }); 
 
-		objects.push_back({ new EnergyDrink(game->getTexture(drinkTexture)), 4, 1, 1, 20 });
-		objects.push_back({ new EnergyDrink(game->getTexture(drinkTexture)), 5, 1, 1, 20 });
+		/*objects.push_back({ new EnergyDrink(game->getTexture(drinkTexture)), 4, 1, 1, 20 });
+		objects.push_back({ new EnergyDrink(game->getTexture(drinkTexture)), 5, 1, 1, 20 });*/
 		
 		//objects.push_back({ new Bike(game->getTexture(bullTexture)), 0, 105, 1, 1000});
 		//objects.push_back({ new Bike(game->getTexture(bullTexture)), 1, 105, 1, 1000});
