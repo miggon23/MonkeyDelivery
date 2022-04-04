@@ -14,8 +14,14 @@ void GameObject::drawTexture(Texture* texture) {
     else
     {
         SDL_Rect pos = getCollider();
-        pos.x -= game->getCamera()->getCameraPosition().getX(); 
-        pos.y -= (game->getCamera()->getCameraPosition().getY());
+        //Dibujamos respecto al centro de la camara
+        //Recordemos que el getCameraPosition nos devuelve el x e y del rect (Arriba a la izquierda de la cámara
+        pos.x -= (game->getCamera()->getCameraPosition().getX() - game->getCamera()->getWidth() / 2) / game->getMapScale();
+        pos.y -= (game->getCamera()->getCameraPosition().getY() - game->getCamera()->getHeight() / 2) / game->getMapScale();
+
+        //pos.x = (pos.x - game->getCamera()->getCameraPosition().getX()) * game->getMapScale();
+        //pos.y = (pos.y - game->getCamera()->getCameraPosition().getY()) * game->getMapScale();
+
         
         texture->render(pos);
     };

@@ -33,7 +33,9 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game), anima
 	resetVelocity(); //Se inicializa al valor de INIT_VEL_X e ..._Y
 
 	setDimension(90, 100);
-	setPosition(game->getWindowWidth() / 2 - getWidth() / 2 , game->getWindowHeight() / 2 - getHeight() / 2);
+	//setPosition(game->getWindowWidth() / 2 - getWidth() / 2 , game->getWindowHeight() / 2 - getHeight() / 2);
+    setPosition(500, 300);
+
 
 	energyLevel_ = new energyLevel(game);
 	fearLevel_ = new FearLevel(game);
@@ -62,7 +64,7 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game), anima
 	fadeTex_ = new Texture(game->getRenderer(), path);
 	fadeTex_->changeAlpha(0);
 
-	game->getCamera()->calculateIniOffset(Point2D<float>(getPosition().getX(), getPosition().getY()));	
+	//game->getCamera()->calculateIniOffset(Point2D<float>(getPosition().getX(), getPosition().getY()));	
 }
 
 Player::~Player()
@@ -312,9 +314,12 @@ void Player::draw()
 	pos.y -= game->getCamera()->getHeight()/2;*/
 	//animationManager->getFrameImagePlayer(pos, textureRect, texture, timerAnimation, AnimationManager::LastDir{ dirX_, dirY_ });
 	SDL_Rect pos = getCollider();
-	pos.x -= game->getCamera()->getCameraPosition().getX(); pos.y -= game->getCamera()->getCameraPosition().getY();
-	animationManager->getFrameImagePlayer(pos
-	, textureRect, texture, timerAnimation, AnimationManager::LastDir{ dirX_, dirY_ });
+
+	//Para ponerlo en el centro, dibujado respecto a la camara y centrado
+	pos.x -= (game->getCamera()->getCameraPosition().getX() - game->getCamera()->getWidth() / 2) / game->getMapScale();
+	pos.y -= (game->getCamera()->getCameraPosition().getY() - game->getCamera()->getHeight() / 2) / game->getMapScale();
+	//pos.x = (sdlutils().width() - getWidth()) / 2; pos.y = (sdlutils().height() - getHeight()) / 2;
+	animationManager->getFrameImagePlayer(pos, textureRect, texture, timerAnimation, AnimationManager::LastDir{ dirX_, dirY_ });
 
 	//drawDebug();
 	energyLevel_->draw();

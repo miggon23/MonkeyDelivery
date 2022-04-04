@@ -82,14 +82,14 @@ private:
     MapInfo mapInfo;
     tileset_map tilesets_; // textures map (string -> texture)
     void loadSpriteSheets();
-    const float MAPSCALE_ = 0.3;
+    float MAPSCALE_ = 0.3;
 
     Camera* mCamera_;
     const float LERPVALUE_ = 0.2f;
     void setCamera();
     SDL_Rect srcRect_;
     SDL_Window* window_;
-    const Vector2D<float> CAMINITPOSITION_ = { 600.0,50.0 };
+    const Vector2D<float> CAMINITPOSITION_ = { 200.0,50.0 };
 
     string name;
     bool doExit;

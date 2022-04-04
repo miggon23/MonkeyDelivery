@@ -27,7 +27,9 @@ public:
 		return pos_;
 	};
 
-	
+	inline Vector2D<float> getCameraCenterPosition() {
+		return pos_ + Vector2D<float>(windowWidth_ / 2, windowHeight_ / 2); //-Vector2D<float>(windowWidth_ - width_, windowHeight_ - height_) / 2;
+	}
 
 	inline float getWidth() { return width_; };
 	inline float getHeight() { return height_; };

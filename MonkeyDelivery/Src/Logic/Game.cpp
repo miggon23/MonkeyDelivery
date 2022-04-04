@@ -60,7 +60,7 @@ void Game::setCamera()
     }
 
     // Movemos la cámara a la nueva pos
-    mCamera_->Move(newPos);
+    mCamera_->Move(newPos * getMapScale());
 }
 
 Game::Game(string n, int w, int h) : name(n), width(w), height(h), doExit(false), mCamera_(nullptr)
@@ -71,6 +71,7 @@ Game::Game(string n, int w, int h) : name(n), width(w), height(h), doExit(false)
     setRenderer(sdlutils().renderer());
 
     font_ = new Font("../Images/TheMoon.ttf", 50);
+    MAPSCALE_ = 0.3;
 }
 
 Game::~Game() {
@@ -118,14 +119,15 @@ void Game::start()
     mapInfo.path = ".\\Src\\TilemapSrc\\MainMap.tmx";
     loadMap(mapInfo.path);
 
-    // Cámara:
-    mCamera_ = new Camera(this, CAMINITPOSITION_, getWindowWidth() * MAPSCALE_, getWindowHeight() * MAPSCALE_); // /2 -> es la proporción de tamaño del mapa. Valor más pequeño hace que el mapa se vea + pequeño y viceversa
-    // dónde spawnea -> qué se ve del mapa
-    srcRect_ = mCamera_->renderRect();
-   // srcRect_ = {(int)camPos.getX(), (int)camPos.getY(), (int)mCamera_->getWidth(), (int)mCamera_->getHeight()}; // == lo que devuelve el renderRect
     
     animationManager = new AnimationManager(this);
     player_ = new Player(this,animationManager); //Creacion del jugador
+    // Cámara:
+    Vector2D<float> vJug = { (float) player_->getPosition().getX() - width / 2, (float) player_->getPosition().getY() - height / 2 };
+    // dónde spawnea -> qué se ve del mapa
+    mCamera_ = new Camera(this, vJug, getWindowWidth() * MAPSCALE_, getWindowHeight() * MAPSCALE_); // /2 -> es la proporción de tamaño del mapa. Valor más pequeño hace que el mapa se vea + pequeño y viceversa
+    srcRect_ = mCamera_->renderRect();
+   // srcRect_ = {(int)camPos.getX(), (int)camPos.getY(), (int)mCamera_->getWidth(), (int)mCamera_->getHeight()}; // == lo que devuelve el renderRect
 
     missionsPanel_ = new MissionsPanel(this);
     add(missionsPanel_); 
@@ -159,7 +161,8 @@ void Game::update()
 
     for (auto enemy : enemyContainer_)
         enemy->update();
-    
+    cout << player_->getPosition().getX() << " " << player_->getPosition().getY() << endl;
+    //cout << "Camera: " << mCamera_->getCameraPosition().getX() << " " << player_->getPosition().getY() << endl;
 }
 
 void Game::setUserExit() {
@@ -178,18 +181,14 @@ void Game::draw()
     int bgHeight = mapInfo.tile_height * mapInfo.rows;
     SDL_Rect dst = { 0, 0, getWindowWidth(), getWindowHeight() }; // Se dibuja en la totalidad de la pantalla (modificar si quisieramos dejar un borde de UI por ejemplo)
     srcRect_ = mCamera_->renderRect(); 
-   // SDL_RenderCopy(renderer, background_, &srcRect_, &dst); // srcRect es la parte de la textura (background) que se va a ver
-    
-    /*auto a = SDL_GetWindowSurface(window_);
-    auto tex = SDL_CreateTextureFromSurface(renderer, a);
-    background_ = SDL_CreateTextureFromSurface(renderer, a);
-    SDL_RenderCopy(renderer, background_, NULL, &dst);*/
+    SDL_RenderCopy(renderer, background_, &srcRect_, &dst); // srcRect es la parte de la textura (background) que se va a ver
 
   
     for (auto gO : gameObjects_)
     {        
         gO->draw();
-   }
+        //gO->drawDebug();
+    }
         
     
     for (auto enemy : enemyContainer_)
@@ -198,11 +197,13 @@ void Game::draw()
     info->draw();
 
     missionsPanel_->draw();   
+    //missionsPanel_->drawDebug();
 
     dialogueBox_->draw();
 
+
     player_->draw();
-   
+    player_->drawDebug();
 }
 
 Point2D<int> Game::getOrigin() {
@@ -533,8 +534,16 @@ void Game::loadMap(string const& filename)
 
 void Game::actualiceCameraPos()
 {
+    //Vector2D<float> v = { (float)player_->getPosition().getX(), (float)player_->getPosition().getY() };
+    //v = v - mCamera_->getCameraPosition() / getMapScale();
+    //mCamera_->setPosCenter( mCamera_->getCameraPosition() + v); 
+    //Vector2D<float> v = { (float)player_->getPosition().getX() - width / 2, (float)player_->getPosition().getY() - height / 2 };
+    Vector2D<float> v = { ((float)player_->getPosition().getX() - mCamera_->getWidth() / 2) * MAPSCALE_, ((float)player_->getPosition().getY() - mCamera_->getHeight() / 2) *  MAPSCALE_};
+    mCamera_->setPos(v);
+    //mCamera_->setPosCenter({ (float)player_->getPosition().getX(), (float)player_->getPosition().getY() });
 
-    mCamera_->setPosCenter( {(float)player_->getPosition().getX(), (float)player_->getPosition().getY()});   
+    //mCamera_->setPosCenter(v);
+
 }
 
 const Point2D<float> Game::getCurrentCenter()
