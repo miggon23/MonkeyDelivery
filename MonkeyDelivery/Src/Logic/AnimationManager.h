@@ -71,8 +71,8 @@ public:
 				timer = timer_->TimeScale();
 			}
 		}
-		if (playerState_==Running) {
-			
+		if (playerState_==Running) 
+		{
 			//las x
 			switch (newDir.x)
 			{
