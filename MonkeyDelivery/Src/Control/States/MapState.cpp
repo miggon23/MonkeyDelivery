@@ -2,6 +2,7 @@
 #include "../MapCommand.h"
 #include "../CommandExit.h"
 #include "../../sdlutils/InputHandler.h"
+#include "../../Logic/MapPoint.h"
 
 MapState::MapState(Game* game) : State(game)
 {
@@ -36,11 +37,15 @@ void MapState::draw()
 		if (ihdlr.getMouseButtonState(InputHandler::MOUSEBUTTON::LEFT)==1) {
 			SDL_GetMouseState(&x_, &y_);
 			put = true;
+			//game->setPointerMapPuting(true);;//seteamos el booleano de k esta puesto
+			//
+			//game->MapPoint()->setPosition(x_ - 50, y_ - 50);//actualizo la pos
 			rectPoint = { x_-50, y_ -50, 100, 100 };
 		}
 	}
 
-	if (put) {
+	if (put/* game->IsPointerMapPuting()*/) {//si esta puesto el punto lo pinto
+		//game->MapPoint()->draw(); //lo pinto
 		pointTex_->render(rectPoint);
 	}
 }

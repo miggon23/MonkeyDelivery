@@ -21,6 +21,7 @@
 #include "DialogueBox.h"
 #include "UI_Info.h"
 #include "Inventory.h"
+#include "../Logic/MapPoint.h"
 
 #include "Enemy.h"
 
@@ -123,6 +124,10 @@ private:
     int soundEfectsVolume_ = 64;
     float generalVolume_ = 0.5;
     
+    //Mapa
+    MapPoint* mapPoint;  
+    bool isMapPointerPutting=false;
+
 public:
 
     Game(string name, int width, int height);
@@ -200,7 +205,11 @@ public:
     //MiniMapa
     inline void setOpenedMap(bool m) { mapOpened = m; }
     inline bool getOpenedMap() { return mapOpened; }
+    inline GameObject* MapPoint() { return mapPoint; };
+    inline bool IsPointerMapPuting() { return isMapPointerPutting; };
+    inline void setPointerMapPuting(bool set) { isMapPointerPutting = set; };
 
     //Menu de Opciones
+
     void initOptionsState();
 };

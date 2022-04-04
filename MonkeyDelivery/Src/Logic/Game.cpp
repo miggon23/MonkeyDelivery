@@ -1,5 +1,8 @@
 #include "Game.h"
 #include "../Control/States/OptionsState.h"
+
+
+
 void Game::loadSpriteSheets()
 {
     string filename = "../Images/config/resources.json";
@@ -63,7 +66,7 @@ void Game::setCamera()
     mCamera_->Move(newPos);
 }
 
-Game::Game(string n, int w, int h) : name(n), width(w), height(h), doExit(false), mCamera_(nullptr), mapOpened(false)
+Game::Game(string n, int w, int h) : name(n), width(w), height(h), doExit(false), mCamera_(nullptr), mapOpened(false), mapPoint(nullptr)
 {
     SDLUtils::init("Monkey Delivery", 1800, 1000,
         "../Images/config/resources.json");
@@ -99,6 +102,7 @@ Game::~Game() {
     delete animationManager;
     delete shop_;
     delete mCamera_;
+    delete mapPoint;
     for (auto a : tilesets_) {
         a.second->free();
         delete a.second;
@@ -134,7 +138,6 @@ void Game::start()
     //loadSpriteSheets();
     mapInfo.path = ".\\Src\\TilemapSrc\\MainMap.tmx";
     loadMap(mapInfo.path);
-    
     // Cámara:
     mCamera_ = new Camera(this, CAMINITPOSITION_, getWindowWidth() * MAPSCALE_, getWindowHeight() * MAPSCALE_); // /2 -> es la proporción de tamaño del mapa. Valor más pequeño hace que el mapa se vea + pequeño y viceversa
     // dónde spawnea -> qué se ve del mapa
@@ -145,7 +148,8 @@ void Game::start()
 
     missionsPanel_ = new MissionsPanel(this);
     add(missionsPanel_);
-
+    
+    //mapPoint = new MapPoint(this);
     add(new IntectuableShop(this, 300, 40));
     shop_ = new Shop(player_, this);
 
@@ -158,7 +162,6 @@ void Game::start()
     dialogueBox_ = new DialogueBox(this);
     // dialogueBox_->changeText("DialogueBox1");
     // dialogueBox_->show();
-
     info = new UI_Info(this);
     auto* x = new Bed(this);
     x->setPosition(670, 760);
