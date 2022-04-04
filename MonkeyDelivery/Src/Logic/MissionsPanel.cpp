@@ -59,8 +59,9 @@ void MissionsPanel::onPlayerInteraction(Player* player)
 
 		
 			// show pannel
-			game->setSaveState(game->getState());
-			game->setState(new MissionSelectionState(game, missionsSent));
+		game->InGame();
+		game->setSaveState(game->getState());
+		game->setState(new MissionSelectionState(game, missionsSent));
 		
 	}
 	else {

@@ -130,6 +130,7 @@ void Game::removeGameObject(GameObject* gameObject){
 
 void Game::start()
 {
+    inGame=true;
     //loadSpriteSheets();
     mapInfo.path = ".\\Src\\TilemapSrc\\MainMap.tmx";
     loadMap(mapInfo.path);

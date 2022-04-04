@@ -2,8 +2,7 @@
 #include "./States/PauseState.h"
 
 
-PauseCommand::PauseCommand()
-{
+PauseCommand::PauseCommand(){
 }
 
 bool PauseCommand::parse(SDL_Event& event)
@@ -18,16 +17,19 @@ bool PauseCommand::parse(SDL_Event& event)
 
 void PauseCommand::execute()
 {
-	if (game->getSavedState() == nullptr) {
+	if (game->getInGame()) {
 		//pause
 		game->setSaveState(game->getState());
 		game->setState(new PauseState(game));
+		game->InGame();
 	}
 	else {
 		// unpause
+		game->InGame();
 		if (game->saveStateEmpty())return;//por si no hay ningun estado
 
 		State* tmp = game->getState();
+		game->ClearState();
 		State* saved = game->getSavedState();
 		saved->resetInitTime();
 		saved->registerCommands();

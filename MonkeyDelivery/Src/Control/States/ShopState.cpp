@@ -35,8 +35,6 @@ void ShopState::draw()
 	std::cout << selected_ << std::endl;
 	int i = 0;
 
-	//renderizado de los objetos
-
 	
 	//pruebas
 	//while (i < 4 && i < shop_->getSize())
@@ -45,6 +43,8 @@ void ShopState::draw()
 	//	shop_->objects2[i].inventoryObject->getTexture()->render({ xOffset + xObj * shop_->objects2[i].positionRectX, yOffset, wObj, hObj });
 	//	i++;
 	//}	
+	
+	//renderizado de los objetos	
 	while (i < shop_->getSize())
 	{
 		//shop_->objects[i]->getTexture()->render({ xOffset + xObj * (i-4), yOffset + yObj, wObj, hObj });
@@ -52,18 +52,33 @@ void ShopState::draw()
 		shop_->objects[i].inventoryObject->getTexture()->render(
 			{ xOffset + xObj * shop_->objects[i].positionRectX, yOffset + shop_->objects[i].positionRectY, wObj, hObj });
 		i++;*/
-		if (shop_->objects[i].stock > 0)
-			shop_->objects[i].inventoryObject->getTexture()->render(
-				{ xOffset + xObj * shop_->objects[i].positionRectX, yOffset + (shop_->objects[i].positionRectY * 3), wObj, hObj });
+		if (shop_->objects[i].stock > 0) {
+			if (i>=4) {
+				shop_->objects[i].inventoryObject->getTexture()->render(
+					{ xOffset + xObj * (shop_->objects[i].positionRectX-4) - 50 * (i-4),(int)( yOffset *(shop_->objects[i].positionRectY +0.75)+20), wObj, hObj });
+			}
+			else {
+				shop_->objects[i].inventoryObject->getTexture()->render(
+					{ xOffset + xObj * shop_->objects[i].positionRectX - 50 * i, yOffset + (shop_->objects[i].positionRectY * 3), wObj, hObj });
+			}
+		}
 		i++;
 	}
 
 	//renderizado del objeto seleccionado
 
-	if(selected_ < 4)
-		rectPanel = { xOffset + xObj * selected_ - 15, yOffset + 3, (int)(wObj*1.3), (int)(hObj * 0.9) };
-	else
-		rectPanel = { xOffset + xObj * (selected_-4) - 15, yOffset + yObj + 3, (int)(wObj * 1.3), (int)(hObj * 0.9) };
+	if (selected_ < 4) {
+		rectPanel = { xOffset * (selected_ + 1) -30,yOffset - 25, (int)(wObj * 1.5), (int)(hObj * 1.15) };
+		if (rectPanel.x != xOffset - 30) {
+			rectPanel.x -= (30 * (selected_))*2;
+		}
+	}
+	else {
+		rectPanel = { xOffset * (selected_ - 3)-30, yOffset + yObj - 60, (int)(wObj * 1.5), (int)(hObj * 1.15) };
+		if (rectPanel.x != xOffset - 30) {
+			rectPanel.x -= (30 * (selected_-4)) * 2;
+		}
+	}
 	
 	game->getTexture(seleccionShopPanel)->render(rectPanel);
 
@@ -81,7 +96,7 @@ void ShopState::draw()
 		if (SDL_GetTicks() > lastClicked_ + FAIL_TIMESHOWED) 
 			closeFailed_ = false;
 	}
-	//game->DrawBrightness();
+	
 }
 
 void ShopState::next()
@@ -117,7 +132,7 @@ void ShopState::moveSelectedY(int to)
 void ShopState::buySelected()
 {
 	
-	if (!shop_->buyObject(selected_, shop_->objects[selected_].price))
+	if (shop_->getSize()>selected_&&!shop_->buyObject(selected_, shop_->objects[selected_].price))
 	{
 		lastClicked_ = SDL_GetTicks();
 
@@ -131,7 +146,7 @@ void ShopState::buySelected()
 	else
 	{
 		closeFailed_ = false;
-		sdlutils().soundEffects().at("buy").setVolume(game->getSoundEfectsVolume());
+		sdlutils().soundEffects().at("buy").setVolume(game->getSoundEfectsVolume()*game->getGeneralVolume());
 		sdlutils().soundEffects().at("buy").play(0, 1);
 	}
 }

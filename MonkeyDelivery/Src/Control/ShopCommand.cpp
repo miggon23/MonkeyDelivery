@@ -49,8 +49,7 @@ void ShopCommand::execute()
 	switch (interaccion_)
 	{
 	case -1:
-		shopState_->buySelected();
-		
+ 		shopState_->buySelected();		
 		break;
 	case 0:
 		shopState_->moveSelectedX(moveCursor_);

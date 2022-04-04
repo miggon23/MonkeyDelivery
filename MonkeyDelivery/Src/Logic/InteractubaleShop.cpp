@@ -18,4 +18,5 @@ void IntectuableShop::update()
 void IntectuableShop::onPlayerInteraction(Player* player){	
 	game->setSaveState(game->getState());
 	game->setState(new ShopState(game));
+	game->InGame();
 }

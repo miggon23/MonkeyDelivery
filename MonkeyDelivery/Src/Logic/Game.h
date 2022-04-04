@@ -95,7 +95,7 @@ private:
     const Vector2D<float> CAMINITPOSITION_ = { 600.0,50.0 };
 
     string name;
-    bool doExit, mapOpened;
+    bool doExit, mapOpened,inGame;
     int width, height;   
 
     TextureContainer* textureContainer_;
@@ -140,7 +140,8 @@ public:
     Point2D<int> getOrigin();
     int getWindowWidth();
     int getWindowHeight();
-
+    void InGame() { inGame = !inGame; }
+    bool getInGame() { return inGame; }
     //Player
     inline void move(pair<double, double> speed) { player_->move(speed); };
     inline void setIsRunning(bool run) { player_->setIsRunning(run); };

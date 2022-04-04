@@ -8,7 +8,7 @@ protected:
 	State* state = nullptr;
 	State* optionsState=nullptr;
 	//State* savedState = nullptr;
-	std::vector<State*> savedStates;
+	std::vector<State*> savedStates;	
 public:
 	
 	void setState(State* state);

@@ -55,6 +55,7 @@ void GameObject::setDimension(double width, double height)
 void GameObject::draw()
 {
     drawTexture(texture);
+    //drawDebug();
 }
 
 bool GameObject::collide(SDL_Rect other) {
