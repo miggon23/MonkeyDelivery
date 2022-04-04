@@ -23,10 +23,13 @@ enum TextureName {
 	batTexture,
 	mission1Texture,
 	mission2Texture,
+	mission3Texture,
+	mission4Texture,
 	cama,
 	dialogoPrueba,
 	bullTexture,
 	monkeyspritesheet,
+	monkeyspritesheetPirate,
 	batspritesheet,
 	bullspritesheet,
 	catspritesheet,
@@ -53,10 +56,11 @@ enum TextureName {
 	skatesTexture, 
 	shop_Soda,
 	shop_Boots01,
+	shop_Boots02,
 };
 
 
-const int NUM_TEXTURES = 42;
+const int NUM_TEXTURES = 46;
 
 
 
@@ -77,12 +81,15 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
   {"NPCs/NPC_Tucan.png",1,1},
   {"catPrueba.png",1,1},
   {"batPrueba.png",1,1},
-  {"decorations/Mision1.png",1,1},
-  {"decorations/Mision1.png",1,1},
+  {"missions/Mision1.png",1,1},
+  {"missions/Mision2.png",1,1},
+  {"missions/Mision2.png",1,1},
+  {"missions/Mision2.png",1,1},
   {"decorations/bed.png",1,1},
   {"ui/dialoguebox.png",1,1},
   {"bull.png",1,1},
-  {"animaciones mono/monkey_.png",1,1},
+  {"animaciones mono/monkeySpriteSheet.png",1,1},
+  {"animaciones mono/monkeySpriteSheetPirate.png",1,1},
   {"enemies/bat.png",1,1},
   {"enemies/bull.png",1,1},
   {"enemies/cat.png",1,1},
@@ -109,6 +116,7 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
   {"objects/patines.png",1,1},
   {"objects/Shop_Soda.png",1,1},
   {"objects/Shop_Boots01.png",1,1},
+  {"objects/Shop_Boots02.png",1,1},
 };
 
 

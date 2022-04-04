@@ -55,7 +55,7 @@
       "id": "Mission4",
       "level": 2,
       "completed": false,
-      "image": "../Images/missions/Mision5.png",
+      "image": "../Images/missions/Mision4.png",
       "helperImage": "../Images/missions/Mision1.png",
       "maxmoney": 100,
       "minmoney": 50,

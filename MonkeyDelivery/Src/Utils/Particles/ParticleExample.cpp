@@ -532,7 +532,7 @@ void ParticleExample::setStyle(PatticleStyle style)
         _lifeVar = 1;
 
         // size, in pixels
-        _startSize = 60.0f;
+        _startSize = 5.0f;
         _startSizeVar = 10.0f;
         _endSize = START_SIZE_EQUAL_TO_END_SIZE;
 
