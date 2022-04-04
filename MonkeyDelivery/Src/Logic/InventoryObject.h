@@ -19,7 +19,7 @@ protected:
 public:
 	
 	//InventoryObject() {};
-	InventoryObject(Texture* tex) : myTexture_(tex) {};
+	InventoryObject(Texture* tex, Game* game) : myTexture_(tex),game_(game) {};
 	~InventoryObject();
 
 	virtual bool useObject();

@@ -1,5 +1,5 @@
 #include "Package.h"
 
-Package::Package(Texture* tex) : InventoryObject(tex)
+Package::Package(Texture* tex, Game* game) : InventoryObject(tex, game)
 {
 }

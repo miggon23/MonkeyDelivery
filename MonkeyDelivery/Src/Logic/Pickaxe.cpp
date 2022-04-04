@@ -2,7 +2,7 @@
 #include "Player.h"
 #include "Game.h"
 #include <string>
-Pickaxe::Pickaxe(Texture* tex):InventoryObject(tex),uses_(0) {
+Pickaxe::Pickaxe(Texture* tex, Game* game):InventoryObject(tex, game),uses_(0) {
 	isConsumable_ = true;
 	setTypeObject("Pickaxe");
 }

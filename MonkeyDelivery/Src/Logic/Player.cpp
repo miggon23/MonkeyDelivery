@@ -39,12 +39,12 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game), anima
 	inventory_ = new Inventory(this, game->getRenderer());
 
 	//Objetos de inventario
-	inventory_->addObject(new Bike(new Texture(game->getRenderer(), "../Images/objects/patinete.png")));
-	inventory_->addObject(new Flashlight(new Texture(game->getRenderer(), "../Images/objects/linterna2.png")));
-	inventory_->addObject(new Lantern(new Texture(game->getRenderer(), "../Images/objects/linterna.png")));
-	inventory_->addObject(new EnergyDrink(new Texture(game->getRenderer(), "../Images/objects/refresco.png")));
-	inventory_->addObject(new Skates(new Texture(game->getRenderer(), "../Images/objects/patines.png")));
-	inventory_->addObject(new Pickaxe(new Texture(game->getRenderer(), "../Images/objects/pico.png")));
+	inventory_->addObject(new Bike(new Texture(game->getRenderer(), "../Images/objects/patinete.png"), game));
+	inventory_->addObject(new Flashlight(new Texture(game->getRenderer(), "../Images/objects/linterna2.png"), game));
+	inventory_->addObject(new Lantern(new Texture(game->getRenderer(), "../Images/objects/linterna.png"), game));
+	inventory_->addObject(new EnergyDrink(new Texture(game->getRenderer(), "../Images/objects/refresco.png"), game));
+	inventory_->addObject(new Skates(new Texture(game->getRenderer(), "../Images/objects/patines.png"), game));
+	inventory_->addObject(new Pickaxe(new Texture(game->getRenderer(), "../Images/objects/pico.png"), game));
 		 
 	setInventoryVisibility(true);
 	textureRect = { 0, 0, 100, 100 };

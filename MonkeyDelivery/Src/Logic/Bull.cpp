@@ -64,6 +64,8 @@ void Bull::checkDistance()
 				stop = false; //Dejo de patrullar
 				timer_ = SDL_GetTicks();
 				chase(dirX, dirY); //Persigo
+
+				sdlutils().soundEffects().at("bull").setVolume(game->getSoundEfectsVolume());
 				sdlutils().soundEffects().at("bull").play(0, 1);
 
 

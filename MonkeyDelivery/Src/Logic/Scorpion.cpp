@@ -49,6 +49,7 @@ void Scorpion::checkDistance()
 			//Si la velocidad del jugador no ha sido reducida, es decir, no había entrado en el rango
 			if (!inRange) { 
 				game->setVel(playerVel / 2.0);
+				sdlutils().soundEffects().at("scorpion").setVolume(game->getSoundEfectsVolume());
 				sdlutils().soundEffects().at("scorpion").play(0, 1);
 				inRange = true;
 			}

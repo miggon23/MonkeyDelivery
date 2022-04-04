@@ -45,3 +45,28 @@ void Cat::draw()
 		}
 	}
 }
+
+void Cat::checkDistance()
+{
+	if (isAlive()) {
+		if (lastUpdate_ + 1000 < SDL_GetTicks()) {
+			int offset = 300;
+			double distanceX = abs(getPosition().getX() - game->getPosisitionPlayer().getX());
+			double distanceY = abs(getPosition().getY() - game->getPosisitionPlayer().getY());
+
+			if (distanceX <= offset && distanceY <= offset) {
+				sdlutils().soundEffects().at("cat").setVolume(game->getSoundEfectsVolume());
+				sdlutils().soundEffects().at("cat").play(0, 1);
+
+				double d = 1.8 * ((distanceY + distanceX) / 2);
+				if (distanceX <= 20.0 && distanceY <= 20.0) {
+					game->scare(2.0 * scariness_ / 10);
+				}
+				//si no es demasiado por eso se divide entre 8
+				else game->scare(d * scariness_ / 10);///esto hay que mirarlo
+				lastUpdate_ = SDL_GetTicks();
+			}
+			lastUpdate_ = SDL_GetTicks();
+		}
+	}
+}

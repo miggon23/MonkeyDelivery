@@ -8,7 +8,7 @@ class Flashlight : public InventoryObject
 private:
 	bool active;
 public:
-	Flashlight(Texture* tex);
+	Flashlight(Texture* tex, Game* game);
 
 	bool useObject() override;
 	inline bool isOn() { return active; }

@@ -8,7 +8,7 @@ private:
 	bool active;
 	double speedMult;
 public:
-	Skates(Texture* tex);
+	Skates(Texture* tex, Game* game);
 
 	bool useObject() override;
 	inline void setBikeSkatesMultiplier(double speed) { speedMult = speed; };

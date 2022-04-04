@@ -7,6 +7,6 @@ class Pickaxe : public InventoryObject{
 private:
 	int uses_;//regula el uso del pico
 public:
-	Pickaxe(Texture* tex);
+	Pickaxe(Texture* tex, Game* game);
 	bool useObject() override;
 };

@@ -43,6 +43,7 @@ void Plant::checkDistance()
 		if (lastUpdate_ + 1000 < SDL_GetTicks())
 		{
 			game->scare(scariness_);
+			sdlutils().soundEffects().at("plant").setVolume(game->getSoundEfectsVolume());
 			sdlutils().soundEffects().at("plant").play(0, 1);
 
 		}

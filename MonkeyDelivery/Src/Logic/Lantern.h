@@ -9,7 +9,7 @@ class Lantern : public InventoryObject
 private:
 	bool active;
 public:
-	Lantern(Texture* tex);
+	Lantern(Texture* tex, Game* game);
 
 	bool useObject() override;
 	inline bool isOn() { return active; }
