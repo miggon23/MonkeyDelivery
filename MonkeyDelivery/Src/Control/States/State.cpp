@@ -20,6 +20,7 @@ void State::handleEvents() {
         Command* command = commandFactory->getCommand(event);
         if (command != nullptr) {
             command->execute();
+            ihdlr.update(event);
             break;
         }
         ihdlr.update(event);

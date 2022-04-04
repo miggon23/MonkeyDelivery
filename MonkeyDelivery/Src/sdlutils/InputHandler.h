@@ -5,7 +5,7 @@
 #include <iostream>
 #include <SDL.h>
 #include <array>
-#include <vector>
+//#include <vector>
 #include "../utils/Singleton.h"
 #include "../utils/Vector2D.h"
 // Instead of a Singleton class, we could make it part of
@@ -82,10 +82,7 @@ public:
 	}
 	inline bool getButtonState(int joy, int buttonNumber)
 	{
-		if (SDL_NumJoysticks() > joy) {
-			return m_buttonStates[joy][buttonNumber];
-		}
-
+		if (SDL_NumJoysticks() > joy) return m_buttonStates[joy][buttonNumber];
 		return false;
 	}
 	inline bool bJoysticksInitialised() {
@@ -285,7 +282,6 @@ private:
 					{
 						tempButtons.push_back(false);
 					}
-					//m_buttonStates.push_back(tempButtons);
 					m_buttonStates[SDL_JoystickInstanceID(joy)] = tempButtons;
 					m_joystickValues.emplace_back();
 				}
