@@ -110,8 +110,11 @@ void DialogueBox::advanceLetter()
 	lineIndex_++;
 
 	//si ya no hay mas letras se acaba
-	if (letterIndex_ == text_.size())
+	if (letterIndex_ == text_.size()){
 		inShow_ = false;
+		hide();
+	}
+
 }
 
 void DialogueBox::reiniciateText()
