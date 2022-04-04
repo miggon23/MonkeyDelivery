@@ -71,7 +71,7 @@ Game::Game(string n, int w, int h) : name(n), width(w), height(h), doExit(false)
     setRenderer(sdlutils().renderer());
 
     font_ = new Font("../Images/TheMoon.ttf", 50);
-    MAPSCALE_ = 0.3;
+    MAPSCALE_ = 1;
 }
 
 Game::~Game() {
@@ -125,8 +125,9 @@ void Game::start()
     // Cámara:
     Vector2D<float> vJug = { (float) player_->getPosition().getX() - width / 2, (float) player_->getPosition().getY() - height / 2 };
     // dónde spawnea -> qué se ve del mapa
-    mCamera_ = new Camera(this, vJug, getWindowWidth() * MAPSCALE_, getWindowHeight() * MAPSCALE_); // /2 -> es la proporción de tamaño del mapa. Valor más pequeño hace que el mapa se vea + pequeño y viceversa
-    srcRect_ = mCamera_->renderRect();
+    //mCamera_ = new Camera(this, vJug, getWindowWidth() * MAPSCALE_, getWindowHeight() * MAPSCALE_); // /2 -> es la proporción de tamaño del mapa. Valor más pequeño hace que el mapa se vea + pequeño y viceversa
+    mCamera_ = new Camera(this, vJug, 500, 500); // /2 -> es la proporción de tamaño del mapa. Valor más pequeño hace que el mapa se vea + pequeño y viceversa
+    //srcRect_ = mCamera_->renderRect();
    // srcRect_ = {(int)camPos.getX(), (int)camPos.getY(), (int)mCamera_->getWidth(), (int)mCamera_->getHeight()}; // == lo que devuelve el renderRect
 
     missionsPanel_ = new MissionsPanel(this);
@@ -179,27 +180,32 @@ void Game::draw()
     // Dibujado del mapa
     int bgWidth = mapInfo.tile_width * mapInfo.cols;
     int bgHeight = mapInfo.tile_height * mapInfo.rows;
-    SDL_Rect dst = { 0, 0, getWindowWidth(), getWindowHeight() }; // Se dibuja en la totalidad de la pantalla (modificar si quisieramos dejar un borde de UI por ejemplo)
-    srcRect_ = mCamera_->renderRect(); 
-    SDL_RenderCopy(renderer, background_, &srcRect_, &dst); // srcRect es la parte de la textura (background) que se va a ver
+    //SDL_Rect dst = { 0, 0, 500, 500 }; // Se dibuja en la totalidad de la pantalla (modificar si quisieramos dejar un borde de UI por ejemplo)
+    srcRect_ = mCamera_->renderRect();
+    SDL_Rect r = { player_->getX(),player_->getY(), mCamera_->getWidth(), mCamera_->getHeight() };
+   // SDL_RenderCopy(renderer, background_, &srcRect_, &dst); // srcRect es la parte de la textura (background) que se va a ver
+    SDL_RenderCopy(renderer, background_, &r, nullptr); // srcRect es la parte de la textura (background) que se va a ver
 
   
-    for (auto gO : gameObjects_)
-    {        
-        gO->draw();
-        //gO->drawDebug();
-    }
-        
+    //for (auto gO : gameObjects_)
+    //{        
+    //    gO->draw();
+    //    //gO->drawDebug();
+    //}
+    //    
+    //
+    //for (auto enemy : enemyContainer_) {
+    //    enemy->draw();
+    //    enemy->drawDebug();
+    //}
     
-    for (auto enemy : enemyContainer_)
-        enemy->draw();
 
-    info->draw();
+    //info->draw();
 
-    missionsPanel_->draw();   
-    //missionsPanel_->drawDebug();
+    //missionsPanel_->draw();   
+    ////missionsPanel_->drawDebug();
 
-    dialogueBox_->draw();
+    //dialogueBox_->draw();
 
 
     player_->draw();
@@ -538,7 +544,8 @@ void Game::actualiceCameraPos()
     //v = v - mCamera_->getCameraPosition() / getMapScale();
     //mCamera_->setPosCenter( mCamera_->getCameraPosition() + v); 
     //Vector2D<float> v = { (float)player_->getPosition().getX() - width / 2, (float)player_->getPosition().getY() - height / 2 };
-    Vector2D<float> v = { ((float)player_->getPosition().getX() - mCamera_->getWidth() / 2) * MAPSCALE_, ((float)player_->getPosition().getY() - mCamera_->getHeight() / 2) *  MAPSCALE_};
+    //Vector2D<float> v = { ((float)player_->getPosition().getX() - mCamera_->getWidth() / 2) * MAPSCALE_, ((float)player_->getPosition().getY() - mCamera_->getHeight() / 2) * MAPSCALE_ };
+    Vector2D<float> v = { (float)player_->getPosition().getX(), (float)player_->getPosition().getY() };
     mCamera_->setPos(v);
     //mCamera_->setPosCenter({ (float)player_->getPosition().getX(), (float)player_->getPosition().getY() });
 

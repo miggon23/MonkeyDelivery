@@ -82,7 +82,7 @@ private:
     MapInfo mapInfo;
     tileset_map tilesets_; // textures map (string -> texture)
     void loadSpriteSheets();
-    float MAPSCALE_ = 0.3;
+    float MAPSCALE_ = 1;
 
     Camera* mCamera_;
     const float LERPVALUE_ = 0.2f;

@@ -115,12 +115,12 @@ void Player::move(pair<double, double> speed)
 
 void Player::move()
 {
-	Vector2D<double> speed = { (double)dirX_, (double)dirY_ };
-	speed.set(dirX_, dirY_);
+	//Vector2D<double> speed = { (double)dirX_, (double)dirY_ };
+	//speed.set(dirX_, dirY_);
 
 	//Normalizamos el vector para que no se desplaze más en diagonal
-	speed.normalize();
-	speed = speed * vel_;
+	/*speed.normalize();
+	speed = speed * vel_;*/
 
 	if (dirX_ != 0 || dirY_ != 0) {
 		//if (isRunning) { //Esto se puede implementar desde el runCommand, evitando que el jugador tenga muchos estados como el de corriendo
@@ -128,21 +128,23 @@ void Player::move()
 		//}
 		
 		//ajustamos los valores de movimiento
-		auto tamMap = game->getSizeMap();
+		/*auto tamMap = game->getSizeMap();
 		if ((dirX_ > 0 && getPosition().getX() >= tamMap.getX()) || (dirX_ < 0 && getPosition().getX() <= 0))
 			dirX_ = 0;
 
 		if ((dirY_ > 0 && getPosition().getY() >= tamMap.getY()) || (dirY_ < 0 && getPosition().getY() <= 0))
-			dirY_ = 0;
+			dirY_ = 0;*/
 
-		game->x += dirX_;
-		game->y += dirY_;
+		//game->x += dirX_;
+		//game->y += dirY_;
 
 		//ajustamos la posición al jugador
-		setPosition(getPosition().getX() + dirX_, getPosition().getY() + dirY_);
+		//setPosition(getPosition().getX() + dirX_, getPosition().getY() + dirY_);
 		
 		drainEnergy(decreasingEnergyLevel_);
 	}
+	setPosition(getPosition().getX() + dirX_, getPosition().getY() + dirY_);
+
 
 	//HAY QUE NORMALIZAR EL VECTOR
 	//setPosition(getX() + speed.getX(), getY() + speed.getY());
@@ -314,12 +316,20 @@ void Player::draw()
 	pos.y -= game->getCamera()->getHeight()/2;*/
 	//animationManager->getFrameImagePlayer(pos, textureRect, texture, timerAnimation, AnimationManager::LastDir{ dirX_, dirY_ });
 	SDL_Rect pos = getCollider();
+	//SDL_Rect pos = { 0, 0, getWidth(), getHeight() };
 
 	//Para ponerlo en el centro, dibujado respecto a la camara y centrado
-	pos.x -= (game->getCamera()->getCameraPosition().getX() - game->getCamera()->getWidth() / 2) / game->getMapScale();
-	pos.y -= (game->getCamera()->getCameraPosition().getY() - game->getCamera()->getHeight() / 2) / game->getMapScale();
+	//pos.x -= (game->getCamera()->getCameraPosition().getX() - game->getCamera()->getWidth() / 2) / game->getMapScale();
+	//pos.y -= (game->getCamera()->getCameraPosition().getY() - game->getCamera()->getHeight() / 2) / game->getMapScale();
+	/*pos.x -= (game->getCamera()->getCameraPosition().getX() - game->getCamera()->getWidth() / game->getWindowWidth()) / game->getMapScale();
+	pos.y -= (game->getCamera()->getCameraPosition().getY() - game->getCamera()->getHeight() / game->getWindowHeight()) / game->getMapScale();
+	*/
+	pos.x -= (game->getCamera()->getCameraPosition().getX() - game->getCamera()->getWidth() / 2) * (game->getWindowWidth() / game->getCamera()->getWidth() ); //*game->getMapScale();
+	pos.y -= (game->getCamera()->getCameraPosition().getY() - game->getCamera()->getHeight() / 2);// *game->getMapScale();
+
 	//pos.x = (sdlutils().width() - getWidth()) / 2; pos.y = (sdlutils().height() - getHeight()) / 2;
-	animationManager->getFrameImagePlayer(pos, textureRect, texture, timerAnimation, AnimationManager::LastDir{ dirX_, dirY_ });
+	animationManager->getFrameImagePlayer(pos, textureRect, texture, timerAnimation, AnimationManager::LastDir{ dirX_,  dirY_ });
+	//texture->render(pos);
 
 	//drawDebug();
 	energyLevel_->draw();

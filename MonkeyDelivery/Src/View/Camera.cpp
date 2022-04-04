@@ -56,7 +56,6 @@ const Vector2D<float> Camera::getRelativePos()
 
 SDL_Rect Camera::renderRect()
 {
-	SDL_Rect r = SDL_Rect{ (int)pos_.getX(), (int)pos_.getY(), (int)width_, (int)height_ };
-	return r;
+	return SDL_Rect{ (int)pos_.getX(), (int)pos_.getY(), (int)width_, (int)height_ };
 }
 
