@@ -3,6 +3,7 @@
 
 class PauseState : public State
 {
+	Texture* backgroundTexture;
 public:
 	PauseState(Game* game);
 	~PauseState() = default;

@@ -72,11 +72,12 @@ enum TextureName {
 	bookTexture,
 	rocaTexture,
 	openChestTexture,
-	exitButtonTexture
+	exitButtonTexture, 
+	pauseBackgroundTexture
 };
 
 
-const int NUM_TEXTURES = 57;
+const int NUM_TEXTURES = 58;
 
 
 
@@ -149,7 +150,8 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
 	{"objects/tutorial.png",1,1},
 	{"roca.png",1,1},
 	{"objects/chest1.png", 1, 1},
-	{"Buttons/exitButton.png", 1, 1}
+	{"Buttons/exitButton.png", 1, 1},
+	{"background/woodPanneling.png", 1, 1}
 };
 
 

@@ -21,6 +21,8 @@ OptionsState::OptionsState(Game* game/*, int num*/) : State(game){
 	addSlider(new BrightnessSlider(game, 200, 500));
 	addSlider(new GeneralMusicSlider(game, 1000, 200));
 	addSlider(new GeneralSoundsEffectSlider(game, 1000, 500));
+
+	backgroundTexture = game->getTexture(pauseBackgroundTexture);
 }
 
 void OptionsState::update(){
@@ -30,6 +32,8 @@ void OptionsState::update(){
 }
 
 void OptionsState::draw(){
+	SDL_Rect rectPanel = { 0,0,game->getWindowWidth(),game->getWindowHeight() };
+	backgroundTexture->render(rectPanel);
 	for (auto b : getButtonsUI()) {
 		b->draw();
 	}

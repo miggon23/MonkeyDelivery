@@ -4,6 +4,7 @@
 #include "../States/MenuState.h"
 class OptionsState : public State
 {
+	Texture* backgroundTexture;
 public:
 	OptionsState(Game* game/*, int num*/);
 	~OptionsState() = default;
