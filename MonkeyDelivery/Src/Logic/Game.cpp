@@ -182,10 +182,12 @@ void Game::draw()
     //int bgHeight = mapInfo.tile_height * mapInfo.rows;
     //SDL_Rect dst = { 0, 0, 500, 500 }; // Se dibuja en la totalidad de la pantalla (modificar si quisieramos dejar un borde de UI por ejemplo)
     //srcRect_ = mCamera_->renderRect();
-    SDL_Rect r = { player_->getX(),player_->getY(), mCamera_->getWidth(), mCamera_->getHeight() };
-   // SDL_RenderCopy(renderer, background_, &srcRect_, &dst); // srcRect es la parte de la textura (background) que se va a ver
-    SDL_RenderCopy(renderer, background_, &r, nullptr); // srcRect es la parte de la textura (background) que se va a ver
-
+   // SDL_Rect r = { player_->getX(),player_->getY(), mCamera_->getWidth(), mCamera_->getHeight() };
+   //// SDL_RenderCopy(renderer, background_, &srcRect_, &dst); // srcRect es la parte de la textura (background) que se va a ver
+   // SDL_RenderCopy(renderer, background_, &r, nullptr); // srcRect es la parte de la textura (background) que se va a ver
+    SDL_Rect dst = { -mCamera_->getCameraPosition().getX(), -mCamera_->getCameraPosition().getY(), getWindowWidth(), getWindowHeight() };
+    SDL_Rect src = { 0, 0,mCamera_->getWidth(), mCamera_->getHeight() };
+    SDL_RenderCopy(renderer, background_, &src, &dst);
   
     for (auto gO : gameObjects_)
     {        
@@ -545,7 +547,8 @@ void Game::actualiceCameraPos()
     //mCamera_->setPosCenter( mCamera_->getCameraPosition() + v); 
     //Vector2D<float> v = { (float)player_->getPosition().getX() - width / 2, (float)player_->getPosition().getY() - height / 2 };
     //Vector2D<float> v = { ((float)player_->getPosition().getX() - mCamera_->getWidth() / 2) * MAPSCALE_, ((float)player_->getPosition().getY() - mCamera_->getHeight() / 2) * MAPSCALE_ };
-    Vector2D<float> v = { (float)player_->getPosition().getX(), (float)player_->getPosition().getY() };
+   // Vector2D<float> v = { (float)player_->getPosition().getX(), (float)player_->getPosition().getY() };
+    Vector2D<float> v = { (float)player_->getPosition().getX() - getWindowWidth() / 2, (float)player_->getPosition().getY() - getWindowHeight() / 2 };
     mCamera_->setPos(v);
     //mCamera_->setPosCenter({ (float)player_->getPosition().getX(), (float)player_->getPosition().getY() });
 

@@ -20,8 +20,11 @@ void GameObject::drawTexture(Texture* texture) {
         //pos.x -= (game->getCamera()->getCameraPosition().getX() / game->getCamera()->getWidth());
         //pos.y -= (game->getCamera()->getCameraPosition().getY() / game->getCamera()->getHeight());
 
-        pos.x -= (game->getCamera()->getCameraPosition().getX() - game->getWindowWidth() / 2);
-        pos.y -= (game->getCamera()->getCameraPosition().getY() - game->getWindowHeight() / 2);
+        //pos.x -= (game->getCamera()->getCameraPosition().getX() - game->getWindowWidth() / 2);
+        //pos.y -= (game->getCamera()->getCameraPosition().getY() - game->getWindowHeight() / 2);
+        pos.x -= game->getCamera()->getCameraPosition().getX();
+        pos.y -= game->getCamera()->getCameraPosition().getY();
+
 
         texture->render(pos);
     };
@@ -36,6 +39,8 @@ void GameObject::drawDebug()
 {
     SDL_Rect c = { getX(), getY(),
          getWidth(), getHeight() };
+    c.x -= game->getCamera()->getCameraPosition().getX();
+    c.y -= game->getCamera()->getCameraPosition().getY();
 
     //c.x -= (game->getCamera()->getCameraPosition().getX() - game->getCamera()->getWidth()) / game->getMapScale();
     //c.y -= (game->getCamera()->getCameraPosition().getY() - game->getCamera()->getHeight()) / game->getMapScale();
