@@ -556,10 +556,8 @@ void Game::initOptionsState()
 }
 
 void Game::drawMap()
-{
-    int x = 1460, y=810;
-
-    SDL_Rect rectPanel = { minimapinfo_.xOrigin, minimapinfo_.yOrigin, 200, 111};
+{ 
+    SDL_Rect rectPanel = { minimapinfo_.xOrigin, minimapinfo_.yOrigin, minimapinfo_.w, minimapinfo_.h };
     maptexture->render(rectPanel);
 
     if (isMapPointerPut) 
@@ -573,7 +571,8 @@ void Game::scalePoint()
 
     mapPoint->setDimension(smallDimension, smallDimension);
 
-    int x = 1460, y=810;
-    mapPoint->setPosition((double)minimapinfo_.xOrigin + (mapPoint->getX() * (200/1800.0)-offset),
-        (double)minimapinfo_.yOrigin + (mapPoint->getY() * (111/1000.0)-offset));
+    double x = minimapinfo_.xOrigin + (mapPoint->getX() * (minimapinfo_.w / getWindowWidth()) - offset);
+    double y = minimapinfo_.yOrigin + (mapPoint->getY() * (minimapinfo_.h / getWindowHeight()) - offset);
+   
+    mapPoint->setPosition(x, y);
 }
