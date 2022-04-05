@@ -21,7 +21,8 @@
 #include "DialogueBox.h"
 #include "UI_Info.h"
 #include "Inventory.h"
-#include "../Logic/MapPoint.h"
+#include "../Logic/MAPPoint.h"
+
 
 #include "Enemy.h"
 
@@ -125,7 +126,7 @@ private:
     float generalVolume_ = 0.5;
     
     //Mapa
-    MapPoint* mapPoint;  
+    MAPPoint* mapPoint;    
     bool isMapPointerPutting=false;
 
 public:

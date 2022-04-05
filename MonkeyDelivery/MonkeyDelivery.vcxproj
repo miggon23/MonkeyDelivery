@@ -224,7 +224,7 @@
     <ClInclude Include="Src\Logic\Inventory.h" />
     <ClInclude Include="Src\Logic\InventoryObject.h" />
     <ClInclude Include="Src\Logic\Lantern.h" />
-    <ClInclude Include="Src\Logic\MapPoint.h" />
+    <ClInclude Include="Src\Logic\MAPPoint.h" />
     <ClInclude Include="Src\Logic\Mission.h" />
     <ClInclude Include="Src\Logic\MissionManager.h" />
     <ClInclude Include="Src\Logic\MissionsPanel.h" />
@@ -335,7 +335,7 @@
     <ClCompile Include="Src\Logic\Inventory.cpp" />
     <ClCompile Include="Src\Logic\InventoryObject.cpp" />
     <ClCompile Include="Src\Logic\Lantern.cpp" />
-    <ClCompile Include="Src\Logic\MapPoint.cpp" />
+    <ClCompile Include="Src\Logic\MAPPoint.cpp" />
     <ClCompile Include="Src\Logic\Mission.cpp" />
     <ClCompile Include="Src\Logic\MissionManager.cpp" />
     <ClCompile Include="Src\Logic\MissionsPanel.cpp" />

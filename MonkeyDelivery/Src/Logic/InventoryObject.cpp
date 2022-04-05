@@ -1,8 +1,7 @@
 #include "InventoryObject.h"
 #include "Player.h"
 
-InventoryObject::~InventoryObject()
-{
+InventoryObject::~InventoryObject(){
 	//delete myTexture_;
 	myTexture_ = nullptr;
 

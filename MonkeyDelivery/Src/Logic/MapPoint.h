@@ -1,10 +1,9 @@
 #pragma once
 #include "GameObject.h"
-
-class MapPoint :public GameObject {
-public:	
-	MapPoint(Game* game);
-	~MapPoint();
-	void update() override;
-	void draw() override;
+class MAPPoint :public GameObject {
+public:
+	MAPPoint(Game* game);
+	~MAPPoint()=default;
+	void update() override {
+	}	
 };

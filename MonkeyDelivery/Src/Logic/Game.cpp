@@ -149,7 +149,7 @@ void Game::start()
     missionsPanel_ = new MissionsPanel(this);
     add(missionsPanel_);
     
-    //mapPoint = new MapPoint(this);
+    mapPoint = new MAPPoint(this);
     add(new IntectuableShop(this, 300, 40));
     shop_ = new Shop(player_, this);
 

@@ -18,6 +18,7 @@ ShopState::~ShopState()
 {
 	
 	panelTexture = nullptr;
+	//delete shop_;
 	shop_ = nullptr;
 }
 
