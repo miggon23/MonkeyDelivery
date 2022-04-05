@@ -29,6 +29,8 @@ void MapState::draw()
 	backgroundTex_->render(rectPanel);
 
 	//SDL_Rect rectPoint = { x_ - 50, y_ - 50, 100, 100 };
+	game->MapPoint()->setDimension(24, 24);
+	game->MapPoint()->setPosition(game->minimapinfo_.X, game->minimapinfo_.Y);
 
 	//Evento para colocar la baliza del mapa
 	auto& ihdlr = ih();
@@ -39,8 +41,10 @@ void MapState::draw()
 			//put = true;
 			game->setPointerMapPuting(true);//seteamos el booleano de k esta puesto
 			//
-			game->MapPoint()->setPosition((double)x_ - 50, (double)y_ - 50);//actualizo la pos
+			game->MapPoint()->setPosition((double)x_ - 12, (double)y_ - 12);//actualizo la pos
 			//rectPoint = { x_-50, y_ -50, 100, 100 };
+			game->minimapinfo_.X = (double)x_ - 12;
+			game->minimapinfo_.Y = (double)y_ - 12;
 		}
 	}
 

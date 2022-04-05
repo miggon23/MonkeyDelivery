@@ -79,10 +79,18 @@ struct MapInfo{
             delete tile_map;
     }
 };
+
+struct miniMapInfo {
+ public:
+     double X, Y;
+     int xOrigin=1460, yOrigin=810;
+};
+
 using namespace std;
 class Game : public StateMachine {
 
 private:
+
     SDL_Texture* background_;
     MapInfo mapInfo;
     tileset_map tilesets_; // textures map (string -> texture)
@@ -131,6 +139,7 @@ private:
     Texture* maptexture;
 
 public:
+
 
     Game(string name, int width, int height);
     ~Game();
@@ -212,6 +221,8 @@ public:
     inline bool IsPointerMapPuting() { return isMapPointerPut; };
     inline void setPointerMapPuting(bool set) { isMapPointerPut = set; };
     void drawMap();
+    void scalePoint();
+    miniMapInfo minimapinfo_;
 
     //Menu de Opciones
     void initOptionsState();

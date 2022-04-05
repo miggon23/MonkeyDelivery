@@ -30,6 +30,7 @@ void MapCommand::execute()
 		saved->resetInitTime();
 		saved->registerCommands();
 		game->setState(saved);
+		game->scalePoint();
 		game->removeSavedState();
 		delete tmp;
 	}

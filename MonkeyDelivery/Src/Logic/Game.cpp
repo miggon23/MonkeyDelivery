@@ -557,12 +557,23 @@ void Game::initOptionsState()
 
 void Game::drawMap()
 {
-    SDL_Rect rectPanel = { getWindowWidth() - 340, getWindowHeight() - 190, 200, 111};
+    int x = 1460, y=810;
+
+    SDL_Rect rectPanel = { minimapinfo_.xOrigin, minimapinfo_.yOrigin, 200, 111};
     maptexture->render(rectPanel);
 
-    if (isMapPointerPut) {
-        mapPoint->setDimension(70, 70);
-        //mapPoint->setPosition(mapPoint->getX()/1800 - 340, mapPoint->getY()/1000);
+    if (isMapPointerPut) 
         mapPoint->draw();
-    }
+}
+
+void Game::scalePoint()
+{
+    int smallDimension = 12;
+    int offset = smallDimension / 2;
+
+    mapPoint->setDimension(smallDimension, smallDimension);
+
+    int x = 1460, y=810;
+    mapPoint->setPosition((double)minimapinfo_.xOrigin + (mapPoint->getX() * (200/1800.0)-offset),
+        (double)minimapinfo_.yOrigin + (mapPoint->getY() * (111/1000.0)-offset));
 }
