@@ -324,8 +324,10 @@ void Player::draw()
 	/*pos.x -= (game->getCamera()->getCameraPosition().getX() - game->getCamera()->getWidth() / game->getWindowWidth()) / game->getMapScale();
 	pos.y -= (game->getCamera()->getCameraPosition().getY() - game->getCamera()->getHeight() / game->getWindowHeight()) / game->getMapScale();
 	*/
-	pos.x -= (game->getCamera()->getCameraPosition().getX() - game->getCamera()->getWidth() / 2) * (game->getWindowWidth() / game->getCamera()->getWidth() ); //*game->getMapScale();
-	pos.y -= (game->getCamera()->getCameraPosition().getY() - game->getCamera()->getHeight() / 2);// *game->getMapScale();
+	//pos.x -= (game->getCamera()->getCameraPosition().getX() - game->getCamera()->getWidth() / 2) * (game->getWindowWidth() / game->getCamera()->getWidth() ); //*game->getMapScale();ç
+	//pos.y -= (game->getCamera()->getCameraPosition().getY() - game->getCamera()->getHeight() / 2);// *game->getMapScale();
+	pos.x -= (game->getCamera()->getCameraPosition().getX() - game->getWindowWidth() / 2);
+	pos.y -= (game->getCamera()->getCameraPosition().getY() - game->getWindowHeight() / 2);
 
 	//pos.x = (sdlutils().width() - getWidth()) / 2; pos.y = (sdlutils().height() - getHeight()) / 2;
 	animationManager->getFrameImagePlayer(pos, textureRect, texture, timerAnimation, AnimationManager::LastDir{ dirX_,  dirY_ });

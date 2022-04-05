@@ -14,18 +14,15 @@ void GameObject::drawTexture(Texture* texture) {
     else
     {
         SDL_Rect pos = getCollider();
+
         //Dibujamos respecto al centro de la camara
         //Recordemos que el getCameraPosition nos devuelve el x e y del rect (Arriba a la izquierda de la cámara
-        //pos.x -= (game->getCamera()->getCameraPosition().getX() - game->getCamera()->getWidth() / 2) / game->getMapScale();
-        //pos.y -= (game->getCamera()->getCameraPosition().getY() - game->getCamera()->getHeight() / 2) / game->getMapScale();
+        //pos.x -= (game->getCamera()->getCameraPosition().getX() / game->getCamera()->getWidth());
+        //pos.y -= (game->getCamera()->getCameraPosition().getY() / game->getCamera()->getHeight());
 
-        //pos.x -= (game->getCamera()->getCameraPosition().getX() - game->getCamera()->getWidth() / 2) / game->getMapScale();
-        //pos.y -= (game->getCamera()->getCameraPosition().getY() - game->getCamera()->getHeight() / 2) / game->getMapScale();
+        pos.x -= (game->getCamera()->getCameraPosition().getX() - game->getWindowWidth() / 2);
+        pos.y -= (game->getCamera()->getCameraPosition().getY() - game->getWindowHeight() / 2);
 
-        //pos.x = (pos.x - game->getCamera()->getCameraPosition().getX()) * game->getMapScale();
-        //pos.y = (pos.y - game->getCamera()->getCameraPosition().getY()) * game->getMapScale();
-
-        
         texture->render(pos);
     };
 }
@@ -40,8 +37,8 @@ void GameObject::drawDebug()
     SDL_Rect c = { getX(), getY(),
          getWidth(), getHeight() };
 
-    c.x -= (game->getCamera()->getCameraPosition().getX() - game->getCamera()->getWidth()) / game->getMapScale();
-    c.y -= (game->getCamera()->getCameraPosition().getY() - game->getCamera()->getHeight()) / game->getMapScale();
+    //c.x -= (game->getCamera()->getCameraPosition().getX() - game->getCamera()->getWidth()) / game->getMapScale();
+    //c.y -= (game->getCamera()->getCameraPosition().getY() - game->getCamera()->getHeight()) / game->getMapScale();
     Box(c, RED).render(game->getRenderer());
     //Box(getCenter(), BLUE).render(game->getRenderer());
 }

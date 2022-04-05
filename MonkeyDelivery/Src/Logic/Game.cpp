@@ -39,28 +39,28 @@ void Game::loadSpriteSheets()
 
 void Game::setCamera()
 {
-    Vector2D<float> newPos = mCamera_->getCameraPosition();
-    newPos.setX((player_->getX() + player_->getWidth() / 2)); // -mCamera_->getWidth() / 2;
-    newPos.setY((player_->getY() + player_->getHeight() / 2)); // -mCamera_->getHeight() / 2;
+    //Vector2D<float> newPos = mCamera_->getCameraPosition();
+    //newPos.setX((player_->getX() + player_->getWidth() / 2)); // -mCamera_->getWidth() / 2;
+    //newPos.setY((player_->getY() + player_->getHeight() / 2)); // -mCamera_->getHeight() / 2;
 
-    // para evitar que se salga del mapa
-    int bgWidth = mapInfo.tile_width * mapInfo.cols;
-    int bgHeight = mapInfo.tile_height * mapInfo.rows;
-    if (newPos.getX() < 0) {
-        newPos.setX(0);
-    }
-    if (newPos.getY() < 0) {
-        newPos.setY(0);
-    }
-    if (newPos.getX() > bgWidth) {
-        newPos.setX(bgWidth);
-    }
-    if (newPos.getY() > bgHeight) {
-        newPos.setY(bgHeight);
-    }
+    //// para evitar que se salga del mapa
+    //int bgWidth = mapInfo.tile_width * mapInfo.cols;
+    //int bgHeight = mapInfo.tile_height * mapInfo.rows;
+    //if (newPos.getX() < 0) {
+    //    newPos.setX(0);
+    //}
+    //if (newPos.getY() < 0) {
+    //    newPos.setY(0);
+    //}
+    //if (newPos.getX() > bgWidth) {
+    //    newPos.setX(bgWidth);
+    //}
+    //if (newPos.getY() > bgHeight) {
+    //    newPos.setY(bgHeight);
+    //}
 
-    // Movemos la cámara a la nueva pos
-    mCamera_->Move(newPos * getMapScale());
+    //// Movemos la cámara a la nueva pos
+    //mCamera_->Move(newPos * getMapScale());
 }
 
 Game::Game(string n, int w, int h) : name(n), width(w), height(h), doExit(false), mCamera_(nullptr)
@@ -126,7 +126,7 @@ void Game::start()
     Vector2D<float> vJug = { (float) player_->getPosition().getX() - width / 2, (float) player_->getPosition().getY() - height / 2 };
     // dónde spawnea -> qué se ve del mapa
     //mCamera_ = new Camera(this, vJug, getWindowWidth() * MAPSCALE_, getWindowHeight() * MAPSCALE_); // /2 -> es la proporción de tamaño del mapa. Valor más pequeño hace que el mapa se vea + pequeño y viceversa
-    mCamera_ = new Camera(this, vJug, 500, 500); // /2 -> es la proporción de tamaño del mapa. Valor más pequeño hace que el mapa se vea + pequeño y viceversa
+    mCamera_ = new Camera(this, vJug, 500, 300); // /2 -> es la proporción de tamaño del mapa. Valor más pequeño hace que el mapa se vea + pequeño y viceversa
     //srcRect_ = mCamera_->renderRect();
    // srcRect_ = {(int)camPos.getX(), (int)camPos.getY(), (int)mCamera_->getWidth(), (int)mCamera_->getHeight()}; // == lo que devuelve el renderRect
 
@@ -162,7 +162,7 @@ void Game::update()
 
     for (auto enemy : enemyContainer_)
         enemy->update();
-    cout << player_->getPosition().getX() << " " << player_->getPosition().getY() << endl;
+    //cout << player_->getPosition().getX() << " " << player_->getPosition().getY() << endl;
     //cout << "Camera: " << mCamera_->getCameraPosition().getX() << " " << player_->getPosition().getY() << endl;
 }
 
@@ -178,32 +178,32 @@ bool Game::isUserExit() {
 void Game::draw()
 {
     // Dibujado del mapa
-    int bgWidth = mapInfo.tile_width * mapInfo.cols;
-    int bgHeight = mapInfo.tile_height * mapInfo.rows;
+   // int bgWidth = mapInfo.tile_width * mapInfo.cols;
+    //int bgHeight = mapInfo.tile_height * mapInfo.rows;
     //SDL_Rect dst = { 0, 0, 500, 500 }; // Se dibuja en la totalidad de la pantalla (modificar si quisieramos dejar un borde de UI por ejemplo)
-    srcRect_ = mCamera_->renderRect();
+    //srcRect_ = mCamera_->renderRect();
     SDL_Rect r = { player_->getX(),player_->getY(), mCamera_->getWidth(), mCamera_->getHeight() };
    // SDL_RenderCopy(renderer, background_, &srcRect_, &dst); // srcRect es la parte de la textura (background) que se va a ver
     SDL_RenderCopy(renderer, background_, &r, nullptr); // srcRect es la parte de la textura (background) que se va a ver
 
   
-    //for (auto gO : gameObjects_)
-    //{        
-    //    gO->draw();
-    //    //gO->drawDebug();
-    //}
-    //    
-    //
+    for (auto gO : gameObjects_)
+    {        
+        gO->draw();
+        gO->drawDebug();
+    }
+        
+    
     //for (auto enemy : enemyContainer_) {
     //    enemy->draw();
     //    enemy->drawDebug();
     //}
     
 
-    //info->draw();
+    info->draw();
 
-    //missionsPanel_->draw();   
-    ////missionsPanel_->drawDebug();
+    missionsPanel_->draw();   
+    missionsPanel_->drawDebug();
 
     //dialogueBox_->draw();
 
