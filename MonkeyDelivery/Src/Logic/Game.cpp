@@ -2,7 +2,6 @@
 #include "../Control/States/OptionsState.h"
 
 
-
 void Game::loadSpriteSheets()
 {
     string filename = "../Images/config/resources.json";
@@ -74,6 +73,9 @@ Game::Game(string n, int w, int h) : name(n), width(w), height(h), doExit(false)
     setRenderer(sdlutils().renderer());
    
     font_ = new Font("../Images/TheMoon.ttf", 50);
+
+    string path = "../Images/Mapa/imagenMiniMapa.png";
+    maptexture = new Texture(getRenderer(), path);
 }
 
 Game::~Game() {
@@ -111,10 +113,8 @@ Game::~Game() {
         delete x;
     }
     SDL_SetWindowBrightness(sdlutils().window(), 1);
-}
 
-string Game::getGameName() {
-    return name;
+    delete maptexture; maptexture = nullptr;
 }
 
 void Game::add(GameObject* gameObject) {//a�adir gO al vector
@@ -187,23 +187,11 @@ void Game::update()
             gameObjects_.erase()
         }*/
             
-        
-            
     }
-       
-
 
     for (auto enemy : enemyContainer_)
         enemy->update();
 
-}
-
-void Game::setUserExit() {
-    doExit = true;
-}
-
-bool Game::isUserExit() {
-    return doExit;
 }
 
 //Normal draw for entities(no Tiles)
@@ -238,18 +226,12 @@ void Game::draw()
     dialogueBox_->draw();
 
     player_->draw();
+
+    if (!mapOpened) drawMap();
 }
 
 Point2D<int> Game::getOrigin() {
     return { int(-(player_->getX() - player_->getWidth())), 0 };
-}
-
-int Game::getWindowWidth() {
-    return width;
-}
-
-int Game::getWindowHeight() {
-    return height;
 }
 
 void Game::useInventory(int slot)
@@ -270,10 +252,6 @@ void Game::loadTextures() {
 
 Texture* Game::getTexture(TextureName name) {
     return textureContainer_->getTexture(name);
-}
-
-SDL_Renderer* Game::getRenderer() {
-    return renderer;
 }
 
 void Game::renderText(string text, int x, int y, SDL_Color color)
@@ -575,4 +553,10 @@ void Game::aPlayerPos(float x, float y)
 void Game::initOptionsState()
 {
     optionsState = new OptionsState(this);
+}
+
+void Game::drawMap()
+{
+    SDL_Rect rectPanel = { getWindowWidth() - 340, getWindowHeight() - 190, 200, 111};
+    maptexture->render(rectPanel);
 }

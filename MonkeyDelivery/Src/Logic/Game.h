@@ -128,26 +128,28 @@ private:
     //Mapa
     MAPPoint* mapPoint;    
     bool isMapPointerPutting=false;
+    Texture* maptexture;
 
 public:
 
     Game(string name, int width, int height);
     ~Game();
 
-    string getGameName();
+    inline string getGameName() { return name; };
 
     void add(GameObject* gameObject);
     void removeGameObject(GameObject* gameObject);
     void start();
     void update();   
-    void setUserExit();
-    bool isUserExit();
+    inline void setUserExit() { doExit = true; };
+    inline bool isUserExit() { return doExit; };
     void draw();
     Point2D<int> getOrigin();
-    int getWindowWidth();
-    int getWindowHeight();
-    void InGame() { inGame = !inGame; }
-    bool getInGame() { return inGame; }
+    inline int getWindowWidth() { return width;};
+    inline int getWindowHeight() { return height; };
+    inline void InGame() { inGame = !inGame; }
+    inline bool getInGame() { return inGame; }
+
     //Player
     inline void move(pair<double, double> speed) { player_->move(speed); };
     inline void setIsRunning(bool run) { player_->setIsRunning(run); };
@@ -162,7 +164,7 @@ public:
     void setRenderer(SDL_Renderer* renderer);
     void loadTextures();
     Texture* getTexture(TextureName name);
-    SDL_Renderer* getRenderer();
+    inline SDL_Renderer* getRenderer() { return renderer; };
     inline Player* getPlayer() { return player_; }
    // inline MissionManager* getMissionManager() { return missions_; }
     void renderText(string text, int x, int y, SDL_Color color = { 0,0,0 }); // Escribir una sola l�nea
@@ -209,6 +211,7 @@ public:
     inline GameObject* MapPoint() { return mapPoint; };
     inline bool IsPointerMapPuting() { return isMapPointerPutting; };
     inline void setPointerMapPuting(bool set) { isMapPointerPutting = set; };
+    void drawMap();
 
     //Menu de Opciones
 
