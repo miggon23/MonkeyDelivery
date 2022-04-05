@@ -559,4 +559,10 @@ void Game::drawMap()
 {
     SDL_Rect rectPanel = { getWindowWidth() - 340, getWindowHeight() - 190, 200, 111};
     maptexture->render(rectPanel);
+
+    if (isMapPointerPut) {
+        mapPoint->setDimension(70, 70);
+        //mapPoint->setPosition(mapPoint->getX()/1800 - 340, mapPoint->getY()/1000);
+        mapPoint->draw();
+    }
 }

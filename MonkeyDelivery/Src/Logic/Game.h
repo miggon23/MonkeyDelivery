@@ -127,7 +127,7 @@ private:
     
     //Mapa
     MAPPoint* mapPoint;    
-    bool isMapPointerPutting=false;
+    bool isMapPointerPut=false;
     Texture* maptexture;
 
 public:
@@ -209,11 +209,10 @@ public:
     inline void setOpenedMap(bool m) { mapOpened = m; }
     inline bool getOpenedMap() { return mapOpened; }
     inline GameObject* MapPoint() { return mapPoint; };
-    inline bool IsPointerMapPuting() { return isMapPointerPutting; };
-    inline void setPointerMapPuting(bool set) { isMapPointerPutting = set; };
+    inline bool IsPointerMapPuting() { return isMapPointerPut; };
+    inline void setPointerMapPuting(bool set) { isMapPointerPut = set; };
     void drawMap();
 
     //Menu de Opciones
-
     void initOptionsState();
 };

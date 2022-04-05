@@ -20,26 +20,26 @@ MapState::~MapState()
 //	delete pointTex_;       pointTex_ = nullptr;
 }
 
-void MapState::update()
-{
-}
+void MapState::update() {}
 
 void MapState::draw()
 {
+	//Mapa
 	SDL_Rect rectPanel = { 0,0,game->getWindowWidth(), game->getWindowHeight() };
 	backgroundTex_->render(rectPanel);
 
 	//SDL_Rect rectPoint = { x_ - 50, y_ - 50, 100, 100 };
 
+	//Evento para colocar la baliza del mapa
 	auto& ihdlr = ih();
 	if (ihdlr.mouseButtonEvent()) {
 		
 		if (ihdlr.getMouseButtonState(InputHandler::MOUSEBUTTON::LEFT)==1) {
 			SDL_GetMouseState(&x_, &y_);
 			//put = true;
-			game->setPointerMapPuting(true);;//seteamos el booleano de k esta puesto
+			game->setPointerMapPuting(true);//seteamos el booleano de k esta puesto
 			//
-			game->MapPoint()->setPosition(x_ - 50, y_ - 50);//actualizo la pos
+			game->MapPoint()->setPosition((double)x_ - 50, (double)y_ - 50);//actualizo la pos
 			//rectPoint = { x_-50, y_ -50, 100, 100 };
 		}
 	}
@@ -50,9 +50,7 @@ void MapState::draw()
 	}
 }
 
-void MapState::next()
-{
-}
+void MapState::next() {}
 
 void MapState::registerCommands()
 {
