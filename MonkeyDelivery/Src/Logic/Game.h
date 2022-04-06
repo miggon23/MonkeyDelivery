@@ -139,6 +139,8 @@ private:
     bool isMapPointerPut=false;
     Texture* maptexture;
 
+
+
 public:
 
 

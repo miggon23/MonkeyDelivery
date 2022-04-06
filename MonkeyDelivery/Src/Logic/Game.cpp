@@ -1,5 +1,6 @@
 #include "Game.h"
 #include "../Control/States/OptionsState.h"
+#include "GameObjectGenerator.h"
 
 
 void Game::loadSpriteSheets()
@@ -133,8 +134,6 @@ void Game::start()
     add(new IntectuableShop(this, 300, 40));
     shop_ = new Shop(player_, this);
 
-    add(new InteractuableChest(this, 400, 400, 100, 100));
-
     add(new TutorialBook(this, 500, 500, 100, 75));
 
     enemiesCreation();//creacion de enemigos
@@ -148,6 +147,8 @@ void Game::start()
     player_->bedPos(670, 760);
     add(x);
     add(new Rock(this,100,700));
+
+    GameObjectGenerator::generateLevel(this);
 }
 
 void Game::update()
