@@ -34,7 +34,7 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game), anima
 
 	setDimension(90, 100);
 	//setPosition(game->getWindowWidth() / 2 - getWidth() / 2 , game->getWindowHeight() / 2 - getHeight() / 2);
-    setPosition(500, 300);
+    setPosition(900, 700);
 
 
 	energyLevel_ = new energyLevel(game);

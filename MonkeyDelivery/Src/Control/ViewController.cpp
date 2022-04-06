@@ -14,7 +14,7 @@ ViewController::ViewController(Game* _game) {
     //game->setRenderer(renderer);
     game->loadTextures();
     //game->initBrightness();
-    game->setState(new MenuState(game));
+    game->setState(new MenuState(game));    
     game->setWindow(window);
 
     timer_ = Timer::Instance();

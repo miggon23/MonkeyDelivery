@@ -8,7 +8,7 @@
 #include "../Control/CommandFactory.h"
 
 
-const int FRAME_RATE_ = 60;
+const int FRAME_RATE_ = 150;
 
 
 class Game;
