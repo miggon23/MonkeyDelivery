@@ -287,6 +287,7 @@ void Player::sendToBed()
 	fade = false;
 	sdlutils().soundEffects().at("scary").setVolume(game->getSoundEfectsVolume());
 	sdlutils().soundEffects().at("scary").play(0, 1);
+	setPosition(bedX_ + 15, bedY_);//colocar en la cama
 }
 
 //se le pasa una cantidad de dinero al player

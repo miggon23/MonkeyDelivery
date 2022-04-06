@@ -74,6 +74,9 @@ private:
 
 	Texture* fadeTex_ = nullptr;
 
+	int bedX_;
+	int bedY_;
+
 public:
 
 	Player(Game* game, AnimationManager* animation);
@@ -86,7 +89,7 @@ public:
 	void sleep(); //efecto de dormir
 	void changeSleep(); //mirar si puede dormir
 	void NoSleepText(); //si presionas la e pero no puedes dormir para que renderize el texto
-
+	inline void bedPos(int x, int y) { bedX_ = x; bedY_ = y; }
 	// ENERGY
 	void drainEnergy(float amount) { energyLevel_->drain(amount); };
 	inline void recoverEnergy(int amount) {};

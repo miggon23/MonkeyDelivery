@@ -145,6 +145,7 @@ void Game::start()
     info = new UI_Info(this);
     auto* x = new Bed(this);
     x->setPosition(670, 760);
+    player_->bedPos(670, 760);
     add(x);
     add(new Rock(this,100,700));
 }
