@@ -180,8 +180,11 @@ void Game::update()
 void Game::draw()
 {
     // Dibujado del mapa
-    SDL_Rect dst = { -mCamera_->getCameraPosition().getX(), -mCamera_->getCameraPosition().getY(), getWindowWidth(), getWindowHeight() };
-    SDL_Rect src = { 0, 0,mCamera_->getWidth(), mCamera_->getHeight() };
+    SDL_Rect dst = { 0, 0, getWindowWidth(), getWindowHeight() };
+    SDL_Rect src = { mCamera_->getCameraPosition().getX() / (getWindowWidth() / mCamera_->getWidth()),
+                     mCamera_->getCameraPosition().getY() / (getWindowHeight() / mCamera_->getHeight()),
+                     mCamera_->getWidth(),
+                     mCamera_->getHeight() };
     SDL_RenderCopy(renderer, background_, &src, &dst);
 
   

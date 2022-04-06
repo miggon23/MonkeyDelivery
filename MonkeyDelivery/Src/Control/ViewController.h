@@ -6,7 +6,7 @@
 #include "../utils/Timer.h"
 
 
-const int FRAME_RATE = 60;
+//const int FRAME_RATE = 60;
 
 class Game;
 class ViewController {

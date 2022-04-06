@@ -63,5 +63,5 @@ void InputManager::clearBackground()
 
 unsigned int InputManager::frameDuration()
 {
-	return 1000 / FRAME_RATE_;
+	return 1000 / FRAME_RATE;
 }
