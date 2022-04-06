@@ -22,7 +22,9 @@ OptionsState::OptionsState(Game* game/*, int num*/) : State(game){
 	addSlider(new GeneralMusicSlider(game, 1000, 200));
 	addSlider(new GeneralSoundsEffectSlider(game, 1000, 500));
 
-	backgroundTexture = game->getTexture(pauseBackgroundTexture);
+	backgroundTexture = game->getTexture(pauseBackgroundTexture); 
+	//signsTexture = game->getTexture(settingsSignsTexture);
+	//settingsSignsTexture
 }
 
 void OptionsState::update(){
@@ -34,6 +36,8 @@ void OptionsState::update(){
 void OptionsState::draw(){
 	SDL_Rect rectPanel = { 0,0,game->getWindowWidth(),game->getWindowHeight() };
 	backgroundTexture->render(rectPanel);
+	/*rectPanel = { 100,100,200,400 };
+	signsTexture->render(rectPanel);*/
 	for (auto b : getButtonsUI()) {
 		b->draw();
 	}

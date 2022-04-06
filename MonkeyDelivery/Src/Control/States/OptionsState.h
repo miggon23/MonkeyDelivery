@@ -5,6 +5,7 @@
 class OptionsState : public State
 {
 	Texture* backgroundTexture;
+	Texture* signsTexture;
 public:
 	OptionsState(Game* game/*, int num*/);
 	~OptionsState() = default;

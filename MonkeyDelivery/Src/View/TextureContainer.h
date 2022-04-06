@@ -74,11 +74,12 @@ enum TextureName {
 	openChestTexture,
 	exitButtonTexture, 
 	pauseBackgroundTexture,
-	mapPointerTexture
+	mapPointerTexture,
+	settingsSignsTexture
 };
 
 
-const int NUM_TEXTURES = 59;
+const int NUM_TEXTURES = 60;
 
 
 
@@ -153,7 +154,8 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
 	{"objects/chest1.png", 1, 1},
 	{"Buttons/exitButton.png", 1, 1},
 	{"background/woodPanneling.png", 1, 1},
-	{"Mapa/marcador.png",1,1}
+	{"Mapa/marcador.png",1,1},
+	{"UI/signs.png",1,1}
 };
 
 
