@@ -132,11 +132,11 @@ public:
 	//DEVUELVE EL OBJECTO ACTIVADO POR EL JUGADOR
 	inline string getActiveItemObject() {
 		return inventory_->activeObject();
-	}
+	};
 	inline void selectObject(int index) {
 		inventory_->selectObject(index);
-	}
-
+	};
+	inline void useSelectedObject() { inventory_->useSelectedObject(); };
 
 	// LIGHTS
 	const SDL_Rect lightZoneFL();
