@@ -21,8 +21,9 @@ private:
 	SDL_Rect baseRect_;
 	SDL_Rect missionObjectRect_;
 
-	//TEMPORAL
-	int activeInventaryObject;
+	//OBJECTO SELECCIONADO
+	int selectedInventoryObject;
+	int selectedInventoryObjectLast;
 
 public:
 	Inventory(Player* player, SDL_Renderer* renderer);
@@ -43,7 +44,10 @@ public:
 
 	void draw();
 
-	//TEMPORAL
+	
 	string activeObject();
+	void changeSelectedObject(int x);
+	void selectObject(int index);
+	void useSelectedObject();
 };
 

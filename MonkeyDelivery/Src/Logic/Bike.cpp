@@ -3,12 +3,14 @@
 
 Bike::Bike(Texture* tex, Game* game) : active(false), speedMult(2.5), InventoryObject(tex, game)
 {
+	setTypeObject("Bike");
 }
 
 bool Bike::useObject() {
-	if (!active) {
+	if (/*!active*/ player_->getActiveItemObject()!="Skates") {
 		player_->setVel(player_->getVel() * speedMult);
 		cout << "Montando en Bici";
+
 	}
 	else {
 		player_->setVel(player_->getVel() / speedMult);

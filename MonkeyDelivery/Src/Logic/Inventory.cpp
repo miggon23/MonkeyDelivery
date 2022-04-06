@@ -56,7 +56,7 @@ bool Inventory::addMisionObject(InventoryObject* io)
 bool Inventory::useObject(int indexObject)
 {
 	//objeto sleccionado del inventario
-	activeInventaryObject = indexObject;
+	//selectedInventoryObject = indexObject;
 
 	//Devuelve false si el objeto no pudo ser utilizado
 	if (indexObject >= inventory_.size())
@@ -68,6 +68,8 @@ bool Inventory::useObject(int indexObject)
 	{
 		removeObject(indexObject);
 	}
+	else selectedInventoryObjectLast = indexObject;
+
 	return true;
 }
 
@@ -131,14 +133,32 @@ void Inventory::draw() {
 	//	SDL_Rect oRect = { 290 + (48 * i), 355, 300 / 8, 300 / 7 };
 		SDL_Rect oRect = { 810 + (80*i), 910, 500 / 8, 500 / 7 }; // 790 = pos primer objeto 80 = separaci�n 
 		inventory_[i]->getTexture()->render(oRect);
+		if (i == selectedInventoryObject) {			
+			base_->render(oRect);
+		}
 		
 	}
 }
 
 //TEMPORAL
 string Inventory::activeObject(){
-	if (activeInventaryObject >= inventory_.size()) {
+	if (selectedInventoryObject >= inventory_.size()) {
 		return "NoActiveInventoryItem";
 	}
-	 return inventory_[activeInventaryObject]->getTypeObject();
+	 return inventory_[selectedInventoryObject]->getTypeObject();
+}
+
+void Inventory::changeSelectedObject(int x){
+	selectedInventoryObject += x;
+	//selectedInventoryObject %= inventory_.size();
+	selectedInventoryObject %= INVENTORY_SIZE;
+}
+
+void Inventory::selectObject(int index){
+	//selectedInventoryObject = index % inventory_.size();
+	selectedInventoryObject = index % INVENTORY_SIZE;
+}
+
+void Inventory::useSelectedObject(){
+	useObject(selectedInventoryObject);
 }

@@ -3,6 +3,7 @@
 #include "Player.h"
 
 Skates::Skates(Texture* tex, Game* game) : active(false), speedMult(1.8), InventoryObject(tex, game){
+	setTypeObject("Skates");
 }
 
 bool Skates::useObject()

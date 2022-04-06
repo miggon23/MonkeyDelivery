@@ -126,11 +126,13 @@ public:
 	inline bool inventoryFull() { return inventory_->inventoryFull(); };
 	inline void addObjectToInventory(InventoryObject* p) { inventory_->addObject(p); };
 
-	//TEMPORAL
+	//DEVUELVE EL OBJECTO ACTIVADO POR EL JUGADOR
 	inline string getActiveItemObject() {
 		return inventory_->activeObject();
 	}
-
+	inline void selectObject(int index) {
+		inventory_->selectObject(index);
+	}
 
 
 	// LIGHTS
