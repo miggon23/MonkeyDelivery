@@ -44,7 +44,7 @@ private:
 	float runningSpeedFactor_; // A esto se le multiplica la velocidad actual
 	//Velocidad actual del jugador
 	double vel_;
-	int dirX_ = 0; // 1, 0 o -1
+	double dirX_ = 0; // 1, 0 o -1
 	int dirY_ = 0; // 1, 0 o -1
 #pragma endregion
 

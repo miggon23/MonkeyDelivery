@@ -1,6 +1,7 @@
 #include "Game.h"
 #include "../Control/States/OptionsState.h"
 #include "GameObjectGenerator.h"
+#include <cmath>
 
 
 void Game::loadSpriteSheets()
@@ -42,11 +43,11 @@ void Game::loadSpriteSheets()
 
 void Game::updateCameraPos()
 {
-    Vector2D<float> v = { (float)player_->getPosition().getX() - getWindowWidth() / 2, (float)player_->getPosition().getY() - getWindowHeight() / 2 };
+    Vector2D<double> v = { round(player_->getPosition().getX() - getWindowWidth() / 2), round(player_->getPosition().getY() - getWindowHeight() / 2) };
     mCamera_->setPos(v);
 }
 
-Game::Game(string n, int w, int h) : name(n), width(w), height(h), doExit(false), mCamera_(nullptr), mapOpened(false), mapPoint(nullptr)
+Game::Game(string n, double w, double h) : name(n), width(w), height(h), doExit(false), mCamera_(nullptr), mapOpened(false), mapPoint(nullptr)
 {
     SDLUtils::init("Monkey Delivery", 1800, 1000,
         "../Images/config/resources.json");
@@ -124,7 +125,7 @@ void Game::start()
     player_ = new Player(this, animationManager); //Creacion del jugador
 
     // Cámara:
-    Vector2D<float> vJug = { (float)player_->getPosition().getX() - width / 2, (float)player_->getPosition().getY() - height / 2 };
+    Vector2D<double> vJug = { (player_->getPosition().getX() - width / 2), (player_->getPosition().getY() - height / 2) };
     mCamera_ = new Camera(this, vJug, CAMSIZE_.getX(), CAMSIZE_.getY()); // Tamaño que se ve del mapa -> debe conservar la proporción de la ventana
 
     missionsPanel_ = new MissionsPanel(this);
@@ -154,8 +155,8 @@ void Game::start()
 void Game::update()
 {
     player_->update();
-   
     updateCameraPos();
+   
 
     for (auto c : collisions_) {
         if (c->getPosition().getX() && c->collide(player_->getCollider())) {
@@ -183,10 +184,14 @@ void Game::draw()
 {
     // Dibujado del mapa
     SDL_Rect dst = { 0, 0, getWindowWidth(), getWindowHeight() };
-    SDL_Rect src = { mCamera_->getCameraPosition().getX() / (getWindowWidth() / mCamera_->getWidth()),
-                     mCamera_->getCameraPosition().getY() / (getWindowHeight() / mCamera_->getHeight()),
-                     mCamera_->getWidth(),
-                     mCamera_->getHeight() };
+    if (mCamera_->getCameraPosition().getX() - trunc(mCamera_->getCameraPosition().getX()) > 0 ||
+        mCamera_->getCameraPosition().getY() - trunc(mCamera_->getCameraPosition().getY()) > 0) {
+        cout << "eu";
+    }
+    SDL_Rect src = { lround(mCamera_->getCameraPosition().getX() / (getWindowWidth() / mCamera_->getWidth())),
+                     lround(mCamera_->getCameraPosition().getY() / (getWindowHeight() / mCamera_->getHeight())),
+                     lround(mCamera_->getWidth()),
+                     lround(mCamera_->getHeight()) };
     SDL_RenderCopy(renderer, background_, &src, &dst);
 
   
@@ -197,7 +202,6 @@ void Game::draw()
     
     for (auto enemy : enemyContainer_)
         enemy->draw();
-    
 
     info->draw();
 

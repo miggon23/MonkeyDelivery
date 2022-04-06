@@ -32,7 +32,7 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game), anima
 	resetVelocity(); //Se inicializa al valor de INIT_VEL_X e ..._Y
 
 	setDimension(90, 100);
-	setPosition(600, 600);
+	setPosition(900, 600);
 
 	energyLevel_ = new energyLevel(game);
 	fearLevel_ = new FearLevel(game);
@@ -113,26 +113,22 @@ void Player::move(pair<double, double> speed)
 
 void Player::move()
 {
-	//Vector2D<double> speed = { (double)dirX_, (double)dirY_ };
-	//speed.set(dirX_, dirY_);
+	Vector2D<double> speed = { (double)dirX_, (double)dirY_ };
 
-	////Normalizamos el vector para que no se desplaze más en diagonal
-	//speed.normalize();
-	//speed = speed * vel_;
+	//Normalizamos el vector para que no se desplaze más en diagonal
+	speed.normalize();
+	speed = speed * vel_;
 
 	if (dirX_ != 0 || dirY_ != 0) {
-		//if (isRunning) { //Esto se puede implementar desde el runCommand, evitando que el jugador tenga muchos estados como el de corriendo
-		//	speed = speed * 1.5;			
-		//}
-		
-		// CAMARA
-		//Vector2D<float> a = { (float)getX(), (float)getY() };
-		
+		if (isRunning) { //Esto se puede implementar desde el runCommand, evitando que el jugador tenga muchos estados como el de corriendo
+			speed = speed * 1.5;			
+		}
+
 		drainEnergy(decreasingEnergyLevel_);
 	}
-	setPosition(getPosition().getX() + dirX_, getPosition().getY() + dirY_);
-	//HAY QUE NORMALIZAR EL VECTOR
-	//setPosition(getX() + speed.getX(), getY() + speed.getY());
+	//setPosition(getPosition().getX() + dirX_, getPosition().getY() + dirY_);
+	
+	setPosition(getPosition().getX() + speed.getX(), getPosition().getY() + speed.getY());
 }
 
 void Player::setIsRunning(bool run)
@@ -228,7 +224,7 @@ void Player::draw()
 	pos.x -= game->getCamera()->getCameraPosition().getX();
 	pos.y -= game->getCamera()->getCameraPosition().getY();
 	
-	animationManager->getFrameImagePlayer(pos, textureRect, texture, timerAnimation, AnimationManager::LastDir{ dirX_, dirY_ });
+	animationManager->getFrameImagePlayer(pos, textureRect, texture, timerAnimation, AnimationManager::LastDir{ (int)dirX_, (int)dirY_ });
 
 	energyLevel_->draw();
 	fearLevel_->draw();

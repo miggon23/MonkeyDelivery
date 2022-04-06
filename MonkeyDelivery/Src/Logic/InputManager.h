@@ -9,7 +9,7 @@
 
 
 
-const int FRAME_RATE = 150;
+const int FRAME_RATE = 100;
 class Game;
 
 class InputManager {

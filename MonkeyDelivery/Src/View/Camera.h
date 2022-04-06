@@ -7,26 +7,26 @@ class Game;
 class Camera
 {
 private:
-	Vector2D<float> pos_;
-	float width_, height_; // Tamaño de la cámara
-	float windowWidth_, windowHeight_;
+	Vector2D<double> pos_;
+	double width_, height_; // Tamaño de la cámara
+	double windowWidth_, windowHeight_;
 	float scale_;
 
 	Game* game_;
 public:
-	Camera(Game* g, const Vector2D<float>& initialPos, float camW, float camH); // Doble & -> rvalue
+	Camera(Game* g, const Vector2D<double>& initialPos, double camW, double camH);
 
-	void Move(const Vector2D<float>& newPos);
-	void MoveDir(const Vector2D<float>& newDir);
-	void Lerp(const Vector2D<float>& newPos, float i);
+	void Move(const Vector2D<double>& newPos);
+	void MoveDir(const Vector2D<double>& newDir);
+	void Lerp(const Vector2D<double>& newPos, float i);
 
-	inline Vector2D<float> getCameraPosition() {
+	inline Vector2D<double> getCameraPosition() {
 		return pos_;
 	};
-	Vector2D<float> getCameraCenterPosition();
+	Vector2D<double> getCameraCenterPosition();
 
-	inline float getWidth() { return width_; };
-	inline float getHeight() { return height_; };
+	inline double getWidth() { return width_; };
+	inline double getHeight() { return height_; };
 
 	inline void setScale(float newScale) {
 		scale_ = newScale;
@@ -35,7 +35,7 @@ public:
 		return scale_;
 	};
 
-	inline void setPos(Vector2D<float> pos)
+	inline void setPos(Vector2D<double> pos)
 	{
 		pos_ =  pos;
 	}

@@ -107,7 +107,7 @@ private:
 
     string name;
     bool doExit, mapOpened,inGame;
-    int width, height;   
+    double width, height;   
 
     TextureContainer* textureContainer_;
     SDL_Renderer* renderer = nullptr;
@@ -144,7 +144,7 @@ private:
 public:
 
 
-    Game(string name, int width, int height);
+    Game(string name, double width, double height);
     ~Game();
 
     inline string getGameName() { return name; };
@@ -157,8 +157,8 @@ public:
     inline bool isUserExit() { return doExit; };
     void draw();
     Point2D<int> getOrigin();
-    inline int getWindowWidth() { return width;};
-    inline int getWindowHeight() { return height; };
+    inline double getWindowWidth() { return width;};
+    inline double getWindowHeight() { return height; };
     inline void InGame() { inGame = !inGame; }
     inline bool getInGame() { return inGame; }
 

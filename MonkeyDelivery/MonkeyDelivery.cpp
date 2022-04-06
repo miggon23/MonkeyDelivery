@@ -19,7 +19,7 @@ int main(int argc, char* argv[]) {
     _CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 
     try {
-        Game* game = new Game("Monkey Delivery", 1800, 1000);
+        Game* game = new Game("Monkey Delivery", 1800.0, 1000.0);
         /*ViewController controller(game);*/
          InputManager manager(game);
         manager.run();
