@@ -3,7 +3,7 @@
 #include "DialogueBox.h"
 #include "../json/JSON.h"
 
-TutorialBook::TutorialBook(Game* game, int x, int y, int w, int h) : GameObject(game) {
+TutorialBook::TutorialBook(Game* game, int x, int y, int w, int h) : GameObject(game, true) {
 	setTexture(bookTexture);
 	setDimension(w, h);
 	setPosition(x, y);

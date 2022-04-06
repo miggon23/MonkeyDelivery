@@ -32,7 +32,7 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game), anima
 	resetVelocity(); //Se inicializa al valor de INIT_VEL_X e ..._Y
 
 	setDimension(90, 100);
-	setPosition(game->getWindowWidth() / 2 - getWidth() / 2 , game->getWindowHeight() / 2 - getHeight() / 2);
+	setPosition(600, 600);
 
 	energyLevel_ = new energyLevel(game);
 	fearLevel_ = new FearLevel(game);
@@ -113,12 +113,12 @@ void Player::move(pair<double, double> speed)
 
 void Player::move()
 {
-	Vector2D<double> speed = { (double)dirX_, (double)dirY_ };
-	speed.set(dirX_, dirY_);
+	//Vector2D<double> speed = { (double)dirX_, (double)dirY_ };
+	//speed.set(dirX_, dirY_);
 
-	//Normalizamos el vector para que no se desplaze más en diagonal
-	speed.normalize();
-	speed = speed * vel_;
+	////Normalizamos el vector para que no se desplaze más en diagonal
+	//speed.normalize();
+	//speed = speed * vel_;
 
 	if (dirX_ != 0 || dirY_ != 0) {
 		//if (isRunning) { //Esto se puede implementar desde el runCommand, evitando que el jugador tenga muchos estados como el de corriendo
@@ -127,13 +127,10 @@ void Player::move()
 		
 		// CAMARA
 		//Vector2D<float> a = { (float)getX(), (float)getY() };
-
-		//game->getCamera()->setPos({ (float)speed.getX(),(float)speed.getY() });
-		game->aPlayerPos((float)speed.getX(), (float)speed.getY());
 		
 		drainEnergy(decreasingEnergyLevel_);
 	}
-
+	setPosition(getPosition().getX() + dirX_, getPosition().getY() + dirY_);
 	//HAY QUE NORMALIZAR EL VECTOR
 	//setPosition(getX() + speed.getX(), getY() + speed.getY());
 }
@@ -226,17 +223,13 @@ void Player::draw()
 			animationManager->setState(AnimationManager::PlayerState::Scared);
 	}
 
-	//SDL_Rect pos = { game->getWindowWidth() / 2 - getWidth() / 2, game->getWindowHeight() / 2 - getHeight() / 2 , getWidth(), getHeight()};
-	/*SDL_Rect pos = getCollider();
-	pos.x -= game->getCamera()->getCameraCenterPosition().getX();
-	pos.y -= game->getCamera()->getCameraCenterPosition().getY();
-	pos.x -= game->getCamera()->getWidth()/2;
-	pos.y -= game->getCamera()->getHeight()/2;*/
-	//animationManager->getFrameImagePlayer(pos, textureRect, texture, timerAnimation, AnimationManager::LastDir{ dirX_, dirY_ });
-	
-	animationManager->getFrameImagePlayer(getCollider(), textureRect, texture, timerAnimation, AnimationManager::LastDir{ dirX_, dirY_ });
+	SDL_Rect pos = getCollider();
 
-	//drawDebug();
+	pos.x -= game->getCamera()->getCameraPosition().getX();
+	pos.y -= game->getCamera()->getCameraPosition().getY();
+	
+	animationManager->getFrameImagePlayer(pos, textureRect, texture, timerAnimation, AnimationManager::LastDir{ dirX_, dirY_ });
+
 	energyLevel_->draw();
 	fearLevel_->draw();
 

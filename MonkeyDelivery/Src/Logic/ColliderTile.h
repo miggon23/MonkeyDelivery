@@ -7,7 +7,7 @@ class Game;
 class ColliderTile : public GameObject
 {
 public:
-	ColliderTile(Game* g, Vector2D<double> p, int w, int h) : GameObject(g){
+	ColliderTile(Game* g, Vector2D<double> p, int w, int h) : GameObject(g, true){
 		setPosition(p.getX(), p.getY());
 		setDimension(w, h);
 	};

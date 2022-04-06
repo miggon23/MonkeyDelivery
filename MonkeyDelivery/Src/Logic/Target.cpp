@@ -3,7 +3,7 @@
 #include "Player.h"
 #include "Game.h"
 
-Target::Target(MissionsPanel* mp, Game* g) : GameObject(g), missionsPanel_(mp)
+Target::Target(MissionsPanel* mp, Game* g) : GameObject(g, true), missionsPanel_(mp)
 {
 	active_ = false;
 

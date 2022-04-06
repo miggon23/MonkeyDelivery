@@ -99,11 +99,11 @@ private:
     const float MAPSCALE_ = 0.3;
 
     Camera* mCamera_;
-    const float LERPVALUE_ = 0.2f;
-    void setCamera();
     SDL_Rect srcRect_;
     SDL_Window* window_;
-    const Vector2D<float> CAMINITPOSITION_ = { 600.0,50.0 };
+    const Vector2D<float> CAMSIZE_ = { 500.0, 300.0 };
+    void updateCameraPos();
+
 
     string name;
     bool doExit, mapOpened,inGame;
