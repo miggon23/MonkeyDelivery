@@ -236,12 +236,16 @@ void Player::draw()
 	if (usingFlashLight) {
 
 		auto a = lightZoneFL();
+		a.x -= game->getCamera()->getCameraPosition().getX();
+		a.y -= game->getCamera()->getCameraPosition().getY();
 		flashlightTex_->render(a);
 	}
 
 	if (usingLantern) {
 		
 		auto b = lightZoneL();
+		b.x -= game->getCamera()->getCameraPosition().getX();
+		b.y -= game->getCamera()->getCameraPosition().getY();
 		lanternTex_->render(b);
 	}
 
