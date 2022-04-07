@@ -1,7 +1,7 @@
 #include "InventoryCommand.h"
-
-bool InventoryCommand::parse(SDL_Event & event) {
-
+#include "../sdlutils/InputHandler.h"
+bool InventoryCommand::parse(SDL_Event& event) {
+	auto& ihdlr = ih();
 	if (event.type == SDL_KEYDOWN) {
 		SDL_Keycode key = event.key.keysym.sym;
 		use = false;
@@ -13,9 +13,27 @@ bool InventoryCommand::parse(SDL_Event & event) {
 		if (key == SDLK_5) id = 4;
 		if (key == SDLK_6) id = 5;
 		if (key == SDLK_SPACE)use = true;
-			
-		if(id!=-1||use)
+
+		if (id != -1 || use)
 			return true;
+	}
+	if (ihdlr.bJoysticksInitialised()) {
+		use = false;
+		//id = -1;
+		if (ihdlr.getButtonState(0, 5)) {
+			id++;
+			if (id > 5) id = 0;
+		}
+		if (ihdlr.getButtonState(0, 4)) {
+			if (id != -1)
+				id--;
+			if (id == 0) id = 5;
+		}
+		if (ihdlr.getButtonState(0, 0))use = true;
+		//cout << id;
+		if (id != -1 || use)
+			return true;
+
 	}
 	return false;
 }
