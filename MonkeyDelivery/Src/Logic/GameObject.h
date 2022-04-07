@@ -52,5 +52,6 @@ public:
 
     // INTERACCIONES
     virtual void onPlayerInteraction(Player* player) {};
+  
 };
 #endif 

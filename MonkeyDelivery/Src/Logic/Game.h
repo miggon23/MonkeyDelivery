@@ -150,6 +150,7 @@ public:
     inline string getGameName() { return name; };
 
     void add(GameObject* gameObject);
+    vector<GameObject*> getGameObjects() { return gameObjects_; };
     void removeGameObject(GameObject* gameObject);
     void start();
     void update();   

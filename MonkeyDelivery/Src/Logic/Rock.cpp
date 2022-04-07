@@ -12,9 +12,9 @@ Rock::~Rock(){
 void Rock::update(){
 }
 
-void Rock::onPlayerInteraction(Player* player){
-	if (player->getActiveItemObject()=="Pickaxe") {
-		// quitarle un uso al pico
-		game->removeGameObject(this);
-	}
-}
+//void Rock::onPlayerInteraction(Player* player){
+//	if (player->getActiveItemObject()=="Pickaxe") {
+//		// quitarle un uso al pico
+//		game->removeGameObject(this);
+//	}
+//}

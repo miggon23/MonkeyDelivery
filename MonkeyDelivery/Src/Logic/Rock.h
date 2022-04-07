@@ -5,6 +5,6 @@ class Rock : public GameObject {
 public:
 	Rock(Game* game, int x, int y);
 	~Rock();
-	void update() override;
-	void onPlayerInteraction(Player* player) override;
+	void update() override;	
+	//void onPlayerInteraction(Player* player) override;
 };
