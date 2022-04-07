@@ -118,15 +118,15 @@ void Game::start()
 {
     inGame = true;
 
-    mapInfo.path = ".\\Src\\TilemapSrc\\MainMap.tmx";
-    loadMap(mapInfo.path);
-
     animationManager = new AnimationManager(this);
     player_ = new Player(this, animationManager); //Creacion del jugador
 
     // Cámara:
     Vector2D<double> vJug = { (player_->getPosition().getX() - width / 2), (player_->getPosition().getY() - height / 2) };
     mCamera_ = new Camera(this, vJug, CAMSIZE_.getX(), CAMSIZE_.getY()); // Tamaño que se ve del mapa -> debe conservar la proporción de la ventana
+
+    mapInfo.path = ".\\Src\\TilemapSrc\\MainMap.tmx";
+    loadMap(mapInfo.path);
 
     missionsPanel_ = new MissionsPanel(this);
     add(missionsPanel_);
@@ -159,9 +159,7 @@ void Game::update()
    
 
     for (auto c : collisions_) {
-        if (c->getPosition().getX() && c->collide(player_->getCollider())) {
-            //cout << "player colliding\n";
-        }
+        c->update();
     }
 
     for (auto gO : gameObjects_) {
@@ -202,6 +200,10 @@ void Game::draw()
     
     for (auto enemy : enemyContainer_)
         enemy->draw();
+
+    for (auto c : collisions_) {
+        c->drawDebug();
+    }
 
     info->draw();
 
@@ -489,9 +491,16 @@ void Game::loadMap(string const& filename)
             for (auto obj : objs) {
                 auto rect = obj.getAABB();
 
-             //   if (obj.getName() == "collision") 
-                    auto a = new ColliderTile(this, Vector2D<double>(rect.left, rect.top), rect.width, rect.height );
-                    collisions_.push_back(a);
+                 //   if (obj.getName() == "collision") 
+
+                rect.width *= (getWindowWidth() / mCamera_->getWidth());
+                rect.height *= (getWindowHeight() / mCamera_->getHeight());
+
+                rect.left *= (getWindowWidth() / mCamera_->getWidth());
+                rect.top *= (getWindowHeight() / mCamera_->getHeight());
+
+                auto a = new ColliderTile(this, Vector2D<double>(rect.left, rect.top), rect.width, rect.height );
+                collisions_.push_back(a);
                 
             }
         }

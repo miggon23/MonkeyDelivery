@@ -289,6 +289,27 @@ void Player::sendToBed()
 	setPosition((double) bedX_ + 15, bedY_);//colocar en la cama
 }
 
+/// <summary>
+/// Manejar velocidad al chocar con una pared
+/// </summary>
+/// <param name="ud"> direccion en la que se cancela la velocidad</param> 
+void Player::onCollision(int dir)
+{
+	switch (dir) {
+	case LEFT:
+		break;
+	case UP:
+		break;
+	case RIGHT:
+		break;
+	case DOWN:
+		break;
+	default:break;
+	}
+
+	
+}
+
 //se le pasa una cantidad de dinero al player
 //si la cantidad es negativa se entiende que es para una compra y se devuelve un bool como confirmacion
 //en caso contrario solo se le añade el dinero al actual del jugador

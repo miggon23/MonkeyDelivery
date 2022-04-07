@@ -12,11 +12,19 @@ class Game;
 class Inventory;
 class AnimationManager;
 
+enum Directions {
+	LEFT = 0,
+	UP = 1,
+	RIGHT = 2,
+	DOWN = 3
+};
+
+
 class Player : public GameObject {
 
 	friend class UI_Info;
 	enum MovState { WALKING, RUNNING, RIDING };
-
+	
 private:
 	Inventory* inventory_ = nullptr;
 	bool inventoryVisibility;
@@ -155,4 +163,7 @@ public:
 	// FADEOUT
 	void FadeOut(); // Realiza un fadeout sobre la pantalla
 	void sendToBed(); // Establece la posición en la cama más cercana después del fadeout
+
+	// COLLISIONS
+	void onCollision(int dir);
 };
