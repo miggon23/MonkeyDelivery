@@ -23,4 +23,3 @@ private:
 	double MIN_POSITION;
 	bool onMoving_ = false;
 };
-

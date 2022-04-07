@@ -4,7 +4,7 @@
             "id": "Mission1",
             "level": 1,
             "completed": false,
-            "image": "../Images/missions/Mision1.png",
+            "image": "Images/missions/Mision1.png",
             "maxmoney": 100,
             "minmoney": 50,
             "mintime": 100000,
@@ -20,7 +20,7 @@
             "id": "Mission2",
             "level": 1,
             "completed": false,
-            "image": "../Images/missions/Mision2.png",
+            "image": "Images/missions/Mision2.png",
             "maxmoney": 100,
             "minmoney": 50,
             "mintime": 10000,
@@ -36,7 +36,7 @@
             "id": "Mission3",
             "level": 2,
             "completed": false,
-            "image": "../Images/missions/Mision3.png",
+            "image": "Images/missions/Mision3.png",
             "maxmoney": 100,
             "minmoney": 50,
             "mintime": 10000,
@@ -52,7 +52,7 @@
             "id": "Mission4",
             "level": 2,
             "completed": false,
-            "image": "../Images/missions/Mision5.png",
+            "image": "Images/missions/Mision5.png",
             "maxmoney": 100,
             "minmoney": 50,
             "mintime": 10000,
@@ -112,7 +112,7 @@
     "fonts": [
         {
             "id": "TheMoon",
-            "file": "../Images/TheMoon.ttf",
+            "file": "Images/TheMoon.ttf",
             "size": 16
         }
     ],
@@ -120,7 +120,7 @@
     "images": [
         {
             "id": "chestTexture",
-            "file": "../Images/objects/chest0.png"
+            "file": "Images/objects/chest0.png"
         }
     ],
 

@@ -1,5 +1,6 @@
 #include "CommandMove.h"
 #include "../sdlutils/InputHandler.h"
+
 bool CommandMove::parse(SDL_Event& event)
 {
 	auto& ihdlr = ih();
@@ -45,5 +46,4 @@ bool CommandMove::parse(SDL_Event& event)
 void CommandMove::execute()
 {
 	//game->move(pair<double, double>(dir, dirV)); //Movimiento del player
-
 }

@@ -17,4 +17,3 @@ public:
         this->game = game;
     }
 };
-

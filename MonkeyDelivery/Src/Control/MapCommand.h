@@ -13,4 +13,3 @@ public:
 	bool parse(SDL_Event & event) override;
 	void execute() override;
 };
-

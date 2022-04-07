@@ -14,4 +14,3 @@ public:
 	inline void setBikeSpeedMultiplier(double speed) { speedMult = speed; };
 	inline double getBikeSpeedMultiplier() { return speedMult; };
 };
-

@@ -86,4 +86,3 @@ private:
 	Mix_Chunk* chunk_;
 	static int channels_; // initialized in cpp
 };
-

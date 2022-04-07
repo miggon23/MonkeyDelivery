@@ -31,7 +31,6 @@ void PauseState::draw()
 	for (auto b : getButtonsUI()) {
 		b->draw();
 	}
-	
 }
 
 void PauseState::next()

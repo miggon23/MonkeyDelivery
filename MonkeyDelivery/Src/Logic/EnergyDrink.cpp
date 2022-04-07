@@ -18,5 +18,4 @@ bool EnergyDrink::useObject()
     // en 15 seg. ->
     player_->resetVelocity();
     return true;
-
 }

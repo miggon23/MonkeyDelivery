@@ -60,4 +60,3 @@ public:
 private:
 	Mix_Music *music_;
 };
-

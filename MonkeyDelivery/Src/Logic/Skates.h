@@ -13,5 +13,4 @@ public:
 	bool useObject() override;
 	inline void setBikeSkatesMultiplier(double speed) { speedMult = speed; };
 	inline double getBikeSkatesMultiplier() { return speedMult; };
-
 };

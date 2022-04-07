@@ -3,6 +3,7 @@
 #include "../View/TextureContainer.h"
 #include "../utils/Timer.h"
 class Game;
+
 class AnimationManager
 {
 public:
@@ -238,4 +239,3 @@ public:
 		tex->render(texturaRect, plant);
 	};
 };
-

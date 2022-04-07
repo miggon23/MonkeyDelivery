@@ -1,5 +1,6 @@
 #pragma once
 #include"Slider.h"
+
 class GeneralSoundsEffectSlider :public Slider {
 public:
 	GeneralSoundsEffectSlider(Game* game, double x, double y);

@@ -1,8 +1,11 @@
 #pragma once
 #include <SDL.h>
 #include "../../../View/Texture.h"
+
 using namespace std;
 typedef unsigned int uint;
+
+
 class Game;
 class Brightness {
 	Game* game_;

@@ -8,4 +8,3 @@ public:
 	void update() override;
 	void onPlayerInteraction(Player* player) override;
 };
-

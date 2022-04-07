@@ -23,5 +23,3 @@ public:
 	//porcentaje de enegia que tiene el personaje
 	inline float percentEnergy() { return (energy_ / maxEnergy_) * 100; };
 };
-
-

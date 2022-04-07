@@ -1,6 +1,7 @@
 #pragma once
 #include "SliderClick.h"
 #include "SliderBase.h"
+
 class Slider
 {
 public:
@@ -21,4 +22,3 @@ protected:
 	SliderClick* sliderClick_;
 	SliderBase* sliderBase_;
 };
-

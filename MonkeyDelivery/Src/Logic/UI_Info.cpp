@@ -5,7 +5,7 @@
 UI_Info::UI_Info(Game* game)
 {
 	this->game = game;
-	font_ = new Font("../Images/TheMoon.ttf", 50);
+	font_ = new Font("Images/TheMoon.ttf", 50);
 	
 }
 UI_Info::~UI_Info()	

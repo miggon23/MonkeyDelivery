@@ -1,6 +1,7 @@
 #include "CommandInteract.h"
 #include "./States/MissionSelectionState.h"
 #include "../sdlutils/InputHandler.h"
+
 bool CommandInteract::parse(SDL_Event& event)
 {
 	auto& ihdlr = ih();
@@ -59,6 +60,3 @@ void CommandInteract::execute()
 		//}
 	}
 }
-
-
-

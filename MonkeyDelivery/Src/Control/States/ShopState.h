@@ -37,5 +37,3 @@ private:
 	Shop* shop_;
 	Font* font_;
 };
-
-

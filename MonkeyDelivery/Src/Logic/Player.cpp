@@ -39,12 +39,12 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game), anima
 	inventory_ = new Inventory(this, game->getRenderer());
 
 	//Objetos de inventario
-	inventory_->addObject(new Bike(new Texture(game->getRenderer(), "../Images/objects/patinete.png"), game));
-	inventory_->addObject(new Flashlight(new Texture(game->getRenderer(), "../Images/objects/linterna2.png"), game));
-	inventory_->addObject(new Lantern(new Texture(game->getRenderer(), "../Images/objects/linterna.png"), game));
-	inventory_->addObject(new EnergyDrink(new Texture(game->getRenderer(), "../Images/objects/refresco.png"), game));
-	inventory_->addObject(new Skates(new Texture(game->getRenderer(), "../Images/objects/patines.png"), game));
-	inventory_->addObject(new Pickaxe(new Texture(game->getRenderer(), "../Images/objects/pico.png"), game));
+	inventory_->addObject(new Bike(new Texture(game->getRenderer(), "Images/objects/patinete.png"), game));
+	inventory_->addObject(new Flashlight(new Texture(game->getRenderer(), "Images/objects/linterna2.png"), game));
+	inventory_->addObject(new Lantern(new Texture(game->getRenderer(), "Images/objects/linterna.png"), game));
+	inventory_->addObject(new EnergyDrink(new Texture(game->getRenderer(), "Images/objects/refresco.png"), game));
+	inventory_->addObject(new Skates(new Texture(game->getRenderer(), "Images/objects/patines.png"), game));
+	inventory_->addObject(new Pickaxe(new Texture(game->getRenderer(), "Images/objects/pico.png"), game));
 		 
 	setInventoryVisibility(true);
 	textureRect = { 0, 0, 100, 100 };
@@ -52,13 +52,13 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game), anima
 	//timer = sdlutils().virtualTimer();
 
 	// flashlight
-	string path = "../Images/objects/luzprovi.png";
+	string path = "Images/objects/luzprovi.png";
 	flashlightTex_ = new Texture(game->getRenderer(), path);
 	// lantern
-	path = "../Images/objects/luzCircularProvi.png";
+	path = "Images/objects/luzCircularProvi.png";
 	lanternTex_ = new Texture(game->getRenderer(), path);
 	// fadeout
-	path = "../Images/ui/fade.png";
+	path = "Images/ui/fade.png";
 	fadeTex_ = new Texture(game->getRenderer(), path);
 	fadeTex_->changeAlpha(0);
 }
@@ -254,7 +254,6 @@ void Player::draw()
 		fadeTex_->render({ 0, 0, 1800, 1000 }); // Renderizar la textura del rectangulo negro en ese rect
 
 		FadeOut(); // Realiza un fadeout sobre la pantalla
-
 	}
 }
 
@@ -287,7 +286,7 @@ void Player::sendToBed()
 	fade = false;
 	sdlutils().soundEffects().at("scary").setVolume(game->getSoundEfectsVolume());
 	sdlutils().soundEffects().at("scary").play(0, 1);
-	setPosition(bedX_ + 15, bedY_);//colocar en la cama
+	setPosition((double) bedX_ + 15, bedY_);//colocar en la cama
 }
 
 //se le pasa una cantidad de dinero al player

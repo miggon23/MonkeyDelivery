@@ -3,6 +3,7 @@
 #include "Game.h"
 #include "Rock.h"
 #include <string>
+
 Pickaxe::Pickaxe(Texture* tex, Game* game):InventoryObject(tex, game),uses_(0) {
 	isConsumable_ = true;
 	setTypeObject("Pickaxe");
@@ -23,5 +24,3 @@ bool Pickaxe::useObject(){
 	if(uses_>=3)return true;
 	return false;
 }
-
-

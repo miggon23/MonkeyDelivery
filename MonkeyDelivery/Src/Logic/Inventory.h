@@ -50,4 +50,3 @@ public:
 	void selectObject(int index);
 	void useSelectedObject();
 };
-

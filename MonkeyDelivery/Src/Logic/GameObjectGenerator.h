@@ -15,7 +15,7 @@ class GameObjectGenerator
 public:
 	static void generateLevel(Game* game) //Lo llamas en las rocas
 	{
-		game->add(new InteractuableChest(game, 350, 150, gOGenerator.chestDimension_.w, gOGenerator.chestDimension_.h));
+		game->add(new InteractuableChest(game, 400, 150, gOGenerator.chestDimension_.w, gOGenerator.chestDimension_.h));
 		game->add(new InteractuableChest(game, 6350, 250, gOGenerator.chestDimension_.w, gOGenerator.chestDimension_.h));
 		game->add(new InteractuableChest(game, 4300, 1150, gOGenerator.chestDimension_.w, gOGenerator.chestDimension_.h));
 		game->add(new InteractuableChest(game, 2060, 2500, gOGenerator.chestDimension_.w, gOGenerator.chestDimension_.h));
@@ -23,4 +23,3 @@ public:
 
 	static GameObjectGenerator gOGenerator;
 };
-

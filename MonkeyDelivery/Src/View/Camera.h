@@ -42,4 +42,3 @@ public:
 
 	SDL_Rect renderRect();
 };
-

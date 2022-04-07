@@ -32,6 +32,4 @@ public:
 private:
 	Timer();
 	~Timer();
-
 };
-

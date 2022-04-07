@@ -57,8 +57,6 @@ void MenuState::draw()
 	for (auto b : getButtonsUI()) {
 		b->draw();
 	}
-
-
 }
 
 void MenuState::next() {

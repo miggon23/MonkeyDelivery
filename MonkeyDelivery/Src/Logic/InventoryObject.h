@@ -36,4 +36,3 @@ public:
 	inline string getTypeObject() { return typeObject; };
 	inline void setTypeObject(string x) { typeObject = x; };
 };
-

@@ -5,7 +5,6 @@
 
 Lantern::Lantern(Texture* tex, Game* game) : active(false), InventoryObject(tex, game)
 {
-
 }
 
 bool Lantern::useObject() {

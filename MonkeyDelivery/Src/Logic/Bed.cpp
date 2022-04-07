@@ -5,17 +5,14 @@ Bed::Bed(Game* game) :GameObject(game, true) {
 	setDimension(140, 130);
 }
 
-Bed::~Bed()
-{
-}
+Bed::~Bed(){}
 
-void Bed::update()
-{	
-}
-//lllamo al metodo para ver si puede dromir
+void Bed::update(){}
+
+//llamo al metodo para ver si puede dromir
 void Bed::onPlayerInteraction(Player* player){
 	player->changeSleep();
 
 	if(player->isAsleep())//si te vas a dormir
-	player->setPosition(getX()+15, getY());//colocar en la cama
+	player->setPosition((double)getX()+15, getY());//colocar en la cama
 }

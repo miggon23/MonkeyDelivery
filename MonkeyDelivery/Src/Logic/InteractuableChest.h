@@ -22,4 +22,3 @@ public:
 
 	void selectReward(int reward, Player* player);
 };
-

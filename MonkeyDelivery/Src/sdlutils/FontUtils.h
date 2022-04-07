@@ -55,5 +55,4 @@ public:
 
 private:
 	TTF_Font *font_;
-}
-;
+};

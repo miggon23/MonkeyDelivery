@@ -73,5 +73,4 @@ void TextureUtils::constructFromText(SDL_Renderer *renderer, const std::string &
 	width_ = textSurface->w;
 	height_ = textSurface->h;
 	renderer_ = renderer;
-
 }

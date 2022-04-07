@@ -19,4 +19,3 @@ public:
 	inline string getName() { return name_; }
 	inline bool isExpress() { return isExpress_; }
 };
-

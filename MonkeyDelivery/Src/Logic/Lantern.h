@@ -15,4 +15,3 @@ public:
 	inline bool isOn() { return active; }
 	inline void turnOff() { active = false; }
 };
-

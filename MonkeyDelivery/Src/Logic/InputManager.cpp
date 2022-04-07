@@ -45,7 +45,6 @@ void InputManager::run()
 			game->getState()->draw();
 			SDL_RenderPresent(renderer);
 		}
-
 	}
 }
 

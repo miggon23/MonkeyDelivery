@@ -8,7 +8,7 @@
 
 using namespace std;
 
-const string IMAGES_PATH = "../Images/";
+const string IMAGES_PATH = "Images/";
 
 enum TextureName {
 	monkeyTexture,
@@ -190,4 +190,3 @@ public:
 
 	Texture* getTexture(TextureName name) const { return textures[name]; };
 };
-

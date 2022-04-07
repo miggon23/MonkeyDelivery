@@ -12,5 +12,4 @@ void Back::onCursorCollision(){
 	//game->setState(new MenuState(game));
 	//ChangeToLastState();	
 	ChangeToLastaStateNO_DELETE_LAST();
-	
 }

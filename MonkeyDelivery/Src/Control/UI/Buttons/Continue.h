@@ -8,4 +8,3 @@ public:
 	~Continue() {};
 	void onCursorCollision() override;
 };
-

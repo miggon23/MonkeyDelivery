@@ -83,5 +83,3 @@ inline SDL_Color build_sdlcolor(std::string strnum) {
  */
 #define COLOREXP(color) \
 	color.r, color.g, color.b, color.a
-
-

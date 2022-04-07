@@ -2,6 +2,8 @@
 #include <vector>
 class State; 
 class Button;
+
+
 class StateMachine
 {
 protected:
@@ -24,4 +26,3 @@ public:
 	void clearSavedState();
 	void ClearState() { state = nullptr; };
 };
-

@@ -18,11 +18,8 @@ public:
 	void registerCommands()override;
 
 private:
+
 	Texture* backgroundTex_;
-	//Texture* pointTex_;
-
+	
 	int x_, y_;
-
-	//bool put;
 };
-

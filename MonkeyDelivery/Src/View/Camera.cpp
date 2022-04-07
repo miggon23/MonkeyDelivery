@@ -44,4 +44,3 @@ SDL_Rect Camera::renderRect()
 	SDL_Rect r = SDL_Rect{ (int )round(pos_.getX()), (int) round(pos_.getY()), (int)width_, (int)height_ };
 	return r;
 }
-

@@ -27,4 +27,3 @@ void SliderClick::onCursorCollision() {
 	onMoving_ = !onMoving_;
 	//std::cout << "onMoving: " << onMoving_ << std::endl;
 }
-

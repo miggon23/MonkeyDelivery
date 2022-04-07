@@ -1,5 +1,6 @@
 #pragma once
 #include "Enemy.h"
+
 class Bull : public Enemy
 {
 private:
@@ -21,4 +22,3 @@ public:
 	void draw() override;
 	void bullScares();//metodo de miedo especifico para el toro
 };
-

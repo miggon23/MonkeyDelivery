@@ -2,19 +2,11 @@
 #include <ctime>
 #include "../sdlutils/SDLUtils.h"
 
-SpawnZone::SpawnZone()
-{
-	
-}
+SpawnZone::SpawnZone(): RadioSpawn(0) {}
 
-SpawnZone::SpawnZone(int radio, Point2D<int> centro) :RadioSpawn(radio), centro(centro)
-{
-	
-}
+SpawnZone::SpawnZone(int radio, Point2D<int> centro) :RadioSpawn(radio), centro(centro){}
 
-SpawnZone::~SpawnZone()
-{
-}
+SpawnZone::~SpawnZone(){}
 
 Vector2D<double> SpawnZone::generatePoint()
 {

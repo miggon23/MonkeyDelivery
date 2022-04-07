@@ -19,4 +19,3 @@ public:
 	void draw() override;
 	void checkDistance() override;
 };
-

@@ -31,6 +31,3 @@ public:
 	void clearBackground();
 	unsigned int frameDuration();
 };
-
-
-

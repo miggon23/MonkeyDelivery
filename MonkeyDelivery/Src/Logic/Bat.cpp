@@ -48,11 +48,11 @@ void Bat::createCheckPoints()
 
 	for (int i = 1; i < loops; i++)
 	{
-		addCheckPoint(Point2D<double>(initialPos.getX() + move * i, initialPos.getY()));
-		addCheckPoint(Point2D<double>(initialPos.getX() + 100 + move * i, initialPos.getY() - 100));
-		addCheckPoint(Point2D<double>(initialPos.getX() + move * i, initialPos.getY() - 200));
-		addCheckPoint(Point2D<double>(initialPos.getX() - 100 + move * i, initialPos.getY() - 100));
-		addCheckPoint(Point2D<double>(initialPos.getX() + move * i, initialPos.getY()));
+		addCheckPoint(Point2D<double>(initialPos.getX() + (double) move * i, initialPos.getY()));
+		addCheckPoint(Point2D<double>(initialPos.getX() + 100 + (double) move * i, initialPos.getY() - 100));
+		addCheckPoint(Point2D<double>(initialPos.getX() + (double) move * i, initialPos.getY() - 200));
+		addCheckPoint(Point2D<double>(initialPos.getX() - 100 + (double) move * i, initialPos.getY() - 100));
+		addCheckPoint(Point2D<double>(initialPos.getX() + (double) move * i, initialPos.getY()));
 
 	}
 }

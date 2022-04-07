@@ -1,5 +1,6 @@
 #include "Brightness.h"
 #include "../../../Logic/Game.h"
+
 Brightness::Brightness(Game* game):game_(game),alpha_(0){
 	tex_ = game->getTexture(BrightnessTexture);
 	changeAlhpa(0);

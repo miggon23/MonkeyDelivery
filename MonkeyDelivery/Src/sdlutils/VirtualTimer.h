@@ -43,4 +43,3 @@ private:
 	Uint32 zeroTime_;
 	Uint32 pauseStartRealTime_;
 };
-

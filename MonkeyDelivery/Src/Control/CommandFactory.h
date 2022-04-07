@@ -39,4 +39,3 @@ public:
         availableCommands.push_back(c);
     }
 };
-

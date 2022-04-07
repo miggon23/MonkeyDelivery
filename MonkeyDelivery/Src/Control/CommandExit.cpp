@@ -1,4 +1,5 @@
 #include "CommandExit.h"
+
 bool CommandExit::parse(SDL_Event& event) {
     if (event.type == SDL_QUIT)
         return true;

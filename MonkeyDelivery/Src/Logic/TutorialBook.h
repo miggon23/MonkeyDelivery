@@ -18,5 +18,4 @@ public:
     inline void setText(const string& textName) {
         textPath_ = textName + "Text";
     };
-  
 };

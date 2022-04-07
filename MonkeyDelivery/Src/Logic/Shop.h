@@ -34,6 +34,4 @@ public:
 	bool inventoryFull(); 
 
 	int getSize() { return objects.size(); }
-
 };
-

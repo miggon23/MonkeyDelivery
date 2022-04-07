@@ -2,10 +2,7 @@
 #include "GameObject.h"
 
 
-
-
 class InteractiveEntity:public GameObject {
-
 
 public:
 
@@ -17,5 +14,4 @@ public:
     bool collide(SDL_Rect other);
 
     bool isInteractive();
-  
 };

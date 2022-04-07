@@ -18,4 +18,3 @@ public:
         return "Testing state";
     };
 };
-

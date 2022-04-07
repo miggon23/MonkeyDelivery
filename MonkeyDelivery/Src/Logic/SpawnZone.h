@@ -10,4 +10,3 @@ public:
 	~SpawnZone();
 	Vector2D<double>generatePoint();
 };
-

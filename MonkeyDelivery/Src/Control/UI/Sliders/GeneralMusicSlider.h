@@ -1,5 +1,6 @@
 #pragma once
 #include"Slider.h"
+
 class GeneralMusicSlider :public Slider {
 public:
 	GeneralMusicSlider(Game* game, double x, double y);

@@ -33,4 +33,3 @@ void Texture::render(const SDL_Rect& destRect, SDL_RendererFlip flip) const {
 	srcRect.w = w; srcRect.h = h;
 	SDL_RenderCopyEx(renderer, texture, &srcRect, &destRect, 0, 0, flip);
 }
-

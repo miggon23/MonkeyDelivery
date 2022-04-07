@@ -17,4 +17,3 @@ public:
 	EnergyDrink(Texture* tex, Game* game);
 	bool useObject() override;
 };
-

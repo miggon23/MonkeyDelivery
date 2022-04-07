@@ -52,5 +52,3 @@ public:
 		SDL_DestroyTexture(textTexture);
 	}
 };
-
-

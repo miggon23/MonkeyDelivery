@@ -13,7 +13,7 @@ DialogueBox::DialogueBox(Game* game) : GameObject(game)
 
 	currentIcon_ = nullptr;
 
-	font_ = new Font("../Images/TheMoon.ttf", 40);
+	font_ = new Font("Images/TheMoon.ttf", 40);
 	texture = game->getTexture(dialogoPrueba);
 	color_ = BLACK;
 
@@ -30,11 +30,11 @@ DialogueBox::~DialogueBox()
 
 void DialogueBox::changeText(string id)
 {
-	std::unique_ptr<JSONValue> jValueRoot(JSON::ParseFromFile("../Images/config/resources.json"));
+	std::unique_ptr<JSONValue> jValueRoot(JSON::ParseFromFile("Images/config/resources.json"));
 
 
 	if (jValueRoot == nullptr || !jValueRoot->IsObject()) {
-		throw "Something went wrong while load/parsing '../Images/config/resources.json'";
+		throw "Something went wrong while load/parsing 'Images/config/resources.json'";
 	}
 
 	JSONObject root = jValueRoot->AsObject();
@@ -171,6 +171,5 @@ void DialogueBox::draw()
 		{
 			font_->render(game->getRenderer(), textLines_[i].c_str(), getX() + textPos_.getX(), getY() + textPos_.getY() + sizeBtwLines_ * i, color_);
 		}
-		
 	}
 }

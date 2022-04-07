@@ -1,13 +1,14 @@
 #include "Button.h"
 #include "../Control/States/State.h"
-Button::Button(Game* game, int wight, int height, int x, int y) :GameObject(game) {
+
+Button::Button(Game* game, int wight, int height, int x, int y) :GameObject(game), y_(0), x_(0) {
 
 	setDimension(wight, height);
 	setPosition(x, y);
 
 }
 
-Button::Button(Game* game, int x, int y):GameObject(game){
+Button::Button(Game* game, int x, int y):GameObject(game), y_(0), x_(0) {
 	setDimension(100, 100);
 	setPosition(x, y);
 }
@@ -65,6 +66,3 @@ void Button::ChangeToLastaStateNO_DELETE_LAST(){
 	game->setState(saved);
 	game->removeSavedState();
 }
-
-
-

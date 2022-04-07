@@ -319,4 +319,3 @@ private:
 inline InputHandler& ih() {
 	return *InputHandler::instance();
 }
-

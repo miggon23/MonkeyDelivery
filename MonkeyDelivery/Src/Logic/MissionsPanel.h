@@ -76,4 +76,3 @@ public:
 
 	string getMissionImage();
 };
-

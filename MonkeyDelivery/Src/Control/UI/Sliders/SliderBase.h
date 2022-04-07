@@ -1,5 +1,6 @@
 #pragma once
 #include "../../../Logic/GameObject.h"
+
 class SliderBase: public GameObject{
 public:
 	SliderBase(Game* game, int x, int y);
@@ -7,4 +8,3 @@ public:
 	void update() override{};
 
 };
-

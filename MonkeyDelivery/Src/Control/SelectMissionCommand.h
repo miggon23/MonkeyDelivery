@@ -18,4 +18,3 @@ private:
     int moveCursor_;
     MissionSelectionState* missionSelection_;
 };
-

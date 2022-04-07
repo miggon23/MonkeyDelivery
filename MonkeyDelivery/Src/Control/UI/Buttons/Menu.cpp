@@ -13,5 +13,4 @@ void Menu::onCursorCollision()
 	
 	game->clearSavedState();
 	ChangeToNewState(new MenuState(game),false);
-	
 }

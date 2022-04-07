@@ -7,7 +7,7 @@ TutorialBook::TutorialBook(Game* game, int x, int y, int w, int h) : GameObject(
 	setTexture(bookTexture);
 	setDimension(w, h);
 	setPosition(x, y);
-	//MissionsPanel::loadMissions("../Images/config/resources.json");
+	//MissionsPanel::loadMissions("Images/config/resources.json");
 	//setText("pachuco");
 }
 

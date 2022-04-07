@@ -64,5 +64,4 @@ void Plant::draw()
 			animationManager->getFrameImagePlant(getCollider(), textureRect, texture, timerAnimation);
 		}
 	}
-
 }

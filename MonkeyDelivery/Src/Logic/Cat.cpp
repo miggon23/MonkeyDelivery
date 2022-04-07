@@ -1,5 +1,6 @@
 #include "Cat.h"
 #include "Game.h"
+
 Cat::Cat(Game* game,int Aleatorio, Point2D<int>centroRadio, AnimationManager* animation):Enemy(game, Aleatorio, centroRadio, animation){
 
 	Vector2D<double> zonePoint = zone.generatePoint(); //genera un punto en la zona de spawn

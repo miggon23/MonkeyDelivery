@@ -20,5 +20,3 @@ public:
 
 	inline float percentFear() { return (fear_ / maxFear_) * 100; };
 };
-
-

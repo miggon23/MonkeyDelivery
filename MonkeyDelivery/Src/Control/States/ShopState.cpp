@@ -8,7 +8,7 @@ ShopState::ShopState(Game* game) : State(game){
 	registerCommands();
 
 	panelTexture=game->getTexture(shopPanel);
-	font_ = new Font("../Images/TheMoon.ttf", 40);
+	font_ = new Font("Images/TheMoon.ttf", 40);
 
 	shop_ = game->getShop();
 	shop_->actualice();

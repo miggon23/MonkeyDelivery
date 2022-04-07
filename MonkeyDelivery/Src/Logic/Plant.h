@@ -13,4 +13,3 @@ public:
 	void draw() override;
 	//void die() override;
 };
-

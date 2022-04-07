@@ -5,11 +5,11 @@
 #include "../View/Texture.h"
 #include <string>
 
-Inventory::Inventory(Player* player, SDL_Renderer* renderer) : player_(player)
+Inventory::Inventory(Player* player, SDL_Renderer* renderer) : player_(player), selectedInventoryObjectLast(0), selectedInventoryObject(0)
 {
 	missionObject_ = nullptr;
 
-	string route = "../Images/ui/inventorybar2.png";
+	string route = "Images/ui/inventorybar2.png";
 	base_ = new Texture(renderer, route);
 	baseRect_ = {650, 900, 620, 540/6};
 	missionObjectRect_ = {655, 910, 540 / 7, 540 / 7 };

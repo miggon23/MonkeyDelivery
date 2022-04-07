@@ -6,7 +6,7 @@
 
 void Game::loadSpriteSheets()
 {
-    string filename = "../Images/config/resources.json";
+    string filename = "Images/config/resources.json";
 
     std::unique_ptr<JSONValue> jValueRoot(JSON::ParseFromFile(filename));
 
@@ -50,13 +50,13 @@ void Game::updateCameraPos()
 Game::Game(string n, double w, double h) : name(n), width(w), height(h), doExit(false), mCamera_(nullptr), mapOpened(false), mapPoint(nullptr)
 {
     SDLUtils::init("Monkey Delivery", 1800, 1000,
-        "../Images/config/resources.json");
+        "Images/config/resources.json");
 
     setRenderer(sdlutils().renderer());
    
-    font_ = new Font("../Images/TheMoon.ttf", 50);
+    font_ = new Font("Images/TheMoon.ttf", 50);
 
-    string path = "../Images/Mapa/imagenMiniMapa.png";
+    string path = "Images/Mapa/imagenMiniMapa.png";
     maptexture = new Texture(getRenderer(), path);
 }
 
@@ -476,8 +476,7 @@ void Game::loadMap(string const& filename)
                     //}
 
                     //Multiplicamos por 45 porque esta multiplicado por factor de 45 (lo que devuelve rot)
-                    mapInfo.tilesets[tset_gid]->render(src, dest, tileRot * rotCorrection, nullptr, tileFlip);
-
+                    mapInfo.tilesets[tset_gid]->render(src, dest, (double) tileRot * rotCorrection, nullptr, tileFlip);
                 }
             }
         }
