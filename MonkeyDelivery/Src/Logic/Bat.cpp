@@ -70,13 +70,16 @@ void Bat::onPlayerInteraction(Player* player)
 
 void Bat::draw(){
 	if (isAlive()) {
+		auto pos = getCollider();
+		pos.x -= game->getCamera()->getCameraPosition().getX();
+		pos.y -= game->getCamera()->getCameraPosition().getY();
 		if (collided && (game->getPlayer()->isUsingFlashLight() || game->getPlayer()->isUsingLantern())) {
 			setTexture(batDyingSpritesheet);
-			animationManager->getFrameImageBat(getCollider(), textureRect, texture, timerAnimation);
+			animationManager->getFrameImageBat(pos, textureRect, texture, timerAnimation);
 		}
 		else {
 			setTexture(batspritesheet);
-			animationManager->getFrameImageBat(getCollider(), textureRect, texture, timerAnimation);
+			animationManager->getFrameImageBat(pos, textureRect, texture, timerAnimation);
 		}
 	}
 }

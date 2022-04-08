@@ -76,13 +76,16 @@ void Scorpion::checkDistance()
 void Scorpion::draw()
 {
 	if (isAlive()) {
+		auto pos = getCollider();
+		pos.x -= game->getCamera()->getCameraPosition().getX();
+		pos.y -= game->getCamera()->getCameraPosition().getY();
 		if (collided && (game->getPlayer()->isUsingFlashLight() || game->getPlayer()->isUsingLantern())) {
 			setTexture(scorpionDyingSpritesheet);
-			animationManager->getFrameImageScorpion(getCollider(), textureRect, texture, timerAnimation);
+			animationManager->getFrameImageScorpion(pos, textureRect, texture, timerAnimation);
 		}
 		else {
 			setTexture(scorpionSpritesheet);
-			animationManager->getFrameImageScorpion(getCollider(), textureRect, texture, timerAnimation);
+			animationManager->getFrameImageScorpion(pos, textureRect, texture, timerAnimation);
 		}
 	}
 }

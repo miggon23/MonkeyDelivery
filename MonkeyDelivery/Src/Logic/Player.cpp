@@ -124,6 +124,14 @@ void Player::move()
 			speed = speed * 1.5;			
 		}
 
+		// Comprobar si hay que cancelar el movimiento en alguna dirección por las colisiones
+		if (topCollision && speed.getX() < 0  || bottomCollision && speed.getX() > 0) {
+			speed = {0, speed.getY()};
+		}
+		if (leftCollision && speed.getY() < 0 || rightCollision && speed.getY() > 0) {
+			speed = { speed.getX(), 0 };
+		}
+
 		drainEnergy(decreasingEnergyLevel_);
 	}
 	//setPosition(getPosition().getX() + dirX_, getPosition().getY() + dirY_);
@@ -297,17 +305,41 @@ void Player::onCollision(int dir)
 {
 	switch (dir) {
 	case LEFT:
+		leftCollision = true;
 		break;
 	case UP:
+		topCollision = true;
 		break;
 	case RIGHT:
+		rightCollision = true;
 		break;
 	case DOWN:
+		bottomCollision = true;
 		break;
 	default:break;
 	}
+}
 
-	
+/// <summary>
+/// Manejar velocidad al dejar de chocar con una pared
+/// </summary>
+/// <param name="ud"> direccion en la que se cancela la colision</param> 
+void Player::onCollisionExit(int dir) {
+	switch (dir) {
+	case LEFT:
+		leftCollision = false;
+		break;
+	case UP:
+		topCollision = false;
+		break;
+	case RIGHT:
+		rightCollision = false;
+		break;
+	case DOWN:
+		bottomCollision = false;
+		break;
+	default:break;
+	}
 }
 
 //se le pasa una cantidad de dinero al player

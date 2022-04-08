@@ -82,13 +82,16 @@ void Bull::checkDistance()
 void Bull::draw()
 {
 	if (isAlive()) {
+		auto pos = getCollider();
+		pos.x -= game->getCamera()->getCameraPosition().getX();
+		pos.y -= game->getCamera()->getCameraPosition().getY();
 		if (collided && (game->getPlayer()->isUsingFlashLight() || game->getPlayer()->isUsingLantern())) {
 			setTexture(bullDyingSpritesheet);
-			animationManager->getFrameImageBull(getCollider(), textureRect, texture, timerAnimation);
+			animationManager->getFrameImageBull(pos, textureRect, texture, timerAnimation);
 		}
 		else {
 			setTexture(bullspritesheet);
-			animationManager->getFrameImageBull(getCollider(), textureRect, texture, timerAnimation);
+			animationManager->getFrameImageBull(pos, textureRect, texture, timerAnimation);
 		}
 	}
 }

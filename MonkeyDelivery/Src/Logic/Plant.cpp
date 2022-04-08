@@ -55,13 +55,16 @@ void Plant::checkDistance()
 void Plant::draw()
 {
 	if (isAlive()) {
+		auto pos = getCollider();
+		pos.x -= game->getCamera()->getCameraPosition().getX();
+		pos.y -= game->getCamera()->getCameraPosition().getY();
 		if (collided && (game->getPlayer()->isUsingFlashLight() || game->getPlayer()->isUsingLantern())) {
 			setTexture(plantDyingSpritesheet);
-			animationManager->getFrameImagePlant(getCollider(), textureRect, texture, timerAnimation);
+			animationManager->getFrameImagePlant(pos, textureRect, texture, timerAnimation);
 		}
 		else {
 			setTexture(plantSpritesheet);
-			animationManager->getFrameImagePlant(getCollider(), textureRect, texture, timerAnimation);
+			animationManager->getFrameImagePlant(pos, textureRect, texture, timerAnimation);
 		}
 	}
 }

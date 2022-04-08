@@ -36,13 +36,16 @@ void Cat::createCheckPoints()
 void Cat::draw()
 {
 	if (isAlive()) {
+		auto pos = getCollider();
+		pos.x -= game->getCamera()->getCameraPosition().getX();
+		pos.y -= game->getCamera()->getCameraPosition().getY();
 		if (collided && (game->getPlayer()->isUsingFlashLight() || game->getPlayer()->isUsingLantern())) {
 			setTexture(catDyingSpritesheet);
-			animationManager->getFrameImageCat(getCollider(), textureRect, texture, timerAnimation);
+			animationManager->getFrameImageCat(pos, textureRect, texture, timerAnimation);
 		}
 		else {
 			setTexture(catspritesheet);
-			animationManager->getFrameImageCat(getCollider(), textureRect, texture, timerAnimation);
+			animationManager->getFrameImageCat(pos, textureRect, texture, timerAnimation);
 		}
 	}
 }

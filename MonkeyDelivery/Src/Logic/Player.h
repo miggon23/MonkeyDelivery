@@ -54,6 +54,13 @@ private:
 	double vel_;
 	double dirX_ = 0; // 1, 0 o -1
 	int dirY_ = 0; // 1, 0 o -1
+
+	// Direcciones en las que no se puede mover por colisiones
+	bool topCollision = false;
+	bool bottomCollision = false;
+	bool leftCollision = false;
+	bool rightCollision = false;
+
 #pragma endregion
 
 #pragma region Mission activeMission	
@@ -166,4 +173,5 @@ public:
 
 	// COLLISIONS
 	void onCollision(int dir);
+	void onCollisionExit(int dir);
 };
