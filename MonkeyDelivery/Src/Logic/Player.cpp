@@ -253,7 +253,7 @@ void Player::draw()
 	{
 		fadeTex_->render({ 0, 0, 1800, 1000 }); // Renderizar la textura del rectangulo negro en ese rect
 
-		FadeOut(); // Realiza un fadeout sobre la pantalla
+		//FadeOut(); // Realiza un fadeout sobre la pantalla
 	}
 }
 

@@ -1,25 +1,32 @@
 #pragma once
 
 #include "Game.h"
-
+#include <vector>
 
 class GameObjectGenerator
 {
-	//int nBulls=4, nCats, nPlants, nBats, nScorpions, nChest=8;
+	int nBulls=4, nCats, nPlants, nBats, nScorpions, nChest=8;
 	struct ChestDimension
 	{
 		int w=100, h=100;
 	};
 
 	ChestDimension chestDimension_;
+
+	vector<pair<int, int>>posChest;
+
 public:
 	static void generateLevel(Game* game) //Lo llamas en las rocas
 	{
-		game->add(new InteractuableChest(game, 400, 150, gOGenerator.chestDimension_.w, gOGenerator.chestDimension_.h));
-		game->add(new InteractuableChest(game, 6350, 250, gOGenerator.chestDimension_.w, gOGenerator.chestDimension_.h));
-		game->add(new InteractuableChest(game, 4300, 1150, gOGenerator.chestDimension_.w, gOGenerator.chestDimension_.h));
-		game->add(new InteractuableChest(game, 2060, 2500, gOGenerator.chestDimension_.w, gOGenerator.chestDimension_.h));
+		gOGenerator.createChest();
+
+		for (int i = 0; i < gOGenerator.nChest; i++)
+			game->add(new InteractuableChest(game, gOGenerator.posChest[i].first, gOGenerator.posChest[i].second, gOGenerator.chestDimension_.w, gOGenerator.chestDimension_.h));
+		
+		
 	}
 
 	static GameObjectGenerator gOGenerator;
+
+	void createChest();
 };
