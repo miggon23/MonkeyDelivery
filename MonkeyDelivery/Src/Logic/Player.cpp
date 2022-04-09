@@ -32,7 +32,7 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game), anima
 	resetVelocity(); //Se inicializa al valor de INIT_VEL_X e ..._Y
 
 	setDimension(90, 100);
-	setPosition(900, 600);
+	setPosition(2000, 600);
 
 	energyLevel_ = new energyLevel(game);
 	fearLevel_ = new FearLevel(game);
@@ -125,11 +125,11 @@ void Player::move()
 		}
 
 		// Comprobar si hay que cancelar el movimiento en alguna dirección por las colisiones
-		if (topCollision && speed.getX() < 0  || bottomCollision && speed.getX() > 0) {
-			speed = {0, speed.getY()};
-		}
-		if (leftCollision && speed.getY() < 0 || rightCollision && speed.getY() > 0) {
+		if (topCollision && speed.getY() < 0  || bottomCollision && speed.getY() > 0) {
 			speed = { speed.getX(), 0 };
+		}
+		if (leftCollision && speed.getX() < 0 || rightCollision && speed.getX() > 0) {
+			speed = {0, speed.getY()};
 		}
 
 		drainEnergy(decreasingEnergyLevel_);
@@ -323,23 +323,11 @@ void Player::onCollision(int dir)
 /// <summary>
 /// Manejar velocidad al dejar de chocar con una pared
 /// </summary>
-/// <param name="ud"> direccion en la que se cancela la colision</param> 
-void Player::onCollisionExit(int dir) {
-	switch (dir) {
-	case LEFT:
-		leftCollision = false;
-		break;
-	case UP:
-		topCollision = false;
-		break;
-	case RIGHT:
-		rightCollision = false;
-		break;
-	case DOWN:
-		bottomCollision = false;
-		break;
-	default:break;
-	}
+void Player::onCollisionExit() {
+	leftCollision = false;
+	topCollision = false;
+	rightCollision = false;
+	bottomCollision = false;
 }
 
 //se le pasa una cantidad de dinero al player

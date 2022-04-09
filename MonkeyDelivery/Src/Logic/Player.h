@@ -173,5 +173,5 @@ public:
 
 	// COLLISIONS
 	void onCollision(int dir);
-	void onCollisionExit(int dir);
+	void onCollisionExit();
 };
