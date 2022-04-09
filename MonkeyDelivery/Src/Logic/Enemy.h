@@ -26,7 +26,7 @@ protected:
 	bool startTimer = false;
 	AnimationManager* animationManager;
 	SDL_Rect textureRect;
-	int timerAnimation;
+	float timerAnimation;
 
 
 	//movimiento enemigos respecto a camara

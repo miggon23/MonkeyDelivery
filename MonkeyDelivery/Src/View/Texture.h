@@ -10,10 +10,10 @@ class Texture {
 private:
     SDL_Texture* texture = nullptr;
     SDL_Renderer* renderer = nullptr;
-    uint w = 0;
-    uint h = 0;
-    uint fw = 0; // Frame width
-    uint fh = 0; // Frame height
+    int w = 0;
+    int h = 0;
+    int fw = 0; // Frame width
+    int fh = 0; // Frame height
 
 public:
     Texture(SDL_Renderer* r) : renderer(r) {};

@@ -210,7 +210,7 @@ public:
 
     int getMusicVolume() { return musicVolume_; };
     int getSoundEfectsVolume() { return soundEfectsVolume_; };
-    int getGeneralVolume() { return generalVolume_; };
+    float getGeneralVolume() { return generalVolume_; };
 
     //MiniMapa
     inline void setOpenedMap(bool m) { mapOpened = m; }

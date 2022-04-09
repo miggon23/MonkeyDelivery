@@ -25,7 +25,7 @@ protected:
 public:
     void setTexture(TextureName textureName);
 
-    GameObject(Game* game, bool rel = false) : game(game), relative_(rel) {
+    GameObject(Game* game, bool rel = false) : game(game), relative_(rel), texture(nullptr) {
     };
     virtual ~GameObject() {
         game = nullptr;

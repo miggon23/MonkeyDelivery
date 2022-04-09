@@ -9,7 +9,7 @@ class Command
 protected:
     Game* game;
 public:
-    Command() {};
+    Command():game(nullptr) {};
     virtual ~Command() = default;
     virtual bool parse(SDL_Event& event) = 0;
     virtual void execute() = 0;

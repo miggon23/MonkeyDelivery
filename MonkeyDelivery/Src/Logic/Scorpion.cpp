@@ -79,13 +79,12 @@ void Scorpion::draw()
 		auto pos = getCollider();
 		pos.x -= game->getCamera()->getCameraPosition().getX();
 		pos.y -= game->getCamera()->getCameraPosition().getY();
-		if (collided && (game->getPlayer()->isUsingFlashLight() || game->getPlayer()->isUsingLantern())) {
+		if (collided && (game->getPlayer()->isUsingFlashLight() || game->getPlayer()->isUsingLantern())) 
 			setTexture(scorpionDyingSpritesheet);
-			animationManager->getFrameImageScorpion(pos, textureRect, texture, timerAnimation);
-		}
-		else {
+		
+		else 
 			setTexture(scorpionSpritesheet);
-			animationManager->getFrameImageScorpion(pos, textureRect, texture, timerAnimation);
-		}
+		
+		animationManager->getFrameImageScorpion(pos, textureRect, texture, timerAnimation);
 	}
 }

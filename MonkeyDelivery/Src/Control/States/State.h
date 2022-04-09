@@ -24,7 +24,7 @@ protected:
     vector<Slider*> slidersUI;
  
 public:
-    State(Game* game) : game(game) {
+    State(Game* game) : game(game), initTime(0), totalTime(0) {
         commandFactory = new CommandFactory(game);       
     };
 

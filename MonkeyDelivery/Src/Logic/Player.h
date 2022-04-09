@@ -79,7 +79,7 @@ private:
 #pragma region Animations	
 	AnimationManager* animationManager;
 	SDL_Rect textureRect;
-	int timerAnimation;
+	float timerAnimation;
 #pragma endregion	
 
 	//orientacion para la linterna

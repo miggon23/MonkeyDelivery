@@ -39,14 +39,13 @@ void Cat::draw()
 		auto pos = getCollider();
 		pos.x -= game->getCamera()->getCameraPosition().getX();
 		pos.y -= game->getCamera()->getCameraPosition().getY();
-		if (collided && (game->getPlayer()->isUsingFlashLight() || game->getPlayer()->isUsingLantern())) {
+		if (collided && (game->getPlayer()->isUsingFlashLight() || game->getPlayer()->isUsingLantern())) 
 			setTexture(catDyingSpritesheet);
-			animationManager->getFrameImageCat(pos, textureRect, texture, timerAnimation);
-		}
-		else {
+		
+		else 
 			setTexture(catspritesheet);
-			animationManager->getFrameImageCat(pos, textureRect, texture, timerAnimation);
-		}
+		
+		animationManager->getFrameImageCat(pos, textureRect, texture, timerAnimation);
 	}
 }
 

@@ -104,7 +104,7 @@ void Game::add(GameObject* gameObject) {//a�adir gO al vector
 }
 
 void Game::removeGameObject(GameObject* gameObject){
-    delete gameObject;
+    
     //es necesario el for qui pq si no luego antes de llegar al update peta
     for (int i = 0; i < gameObjects_.size(); i++){
         if (gameObjects_[i] == gameObject) {
@@ -112,6 +112,7 @@ void Game::removeGameObject(GameObject* gameObject){
             break;
         }
     }
+    delete gameObject; gameObject = nullptr;
 }
 
 void Game::start()
