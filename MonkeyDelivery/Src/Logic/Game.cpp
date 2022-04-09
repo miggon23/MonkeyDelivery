@@ -300,14 +300,9 @@ void Game::enemiesCreation()
     addEnemies(new Cat(this, 50, Point2D<int>(-100, 1300), animationManager_));
     addEnemies(new Cat(this, 50, Point2D<int>(-200, 1100), animationManager_));
 
-    //zona inferior izquierda desde el inicio(cruce)
-    addEnemies(new Scorpion(this, 80, Point2D<int>(-300, 1650), animationManager_));
-    addEnemies(new Scorpion(this, 80, Point2D<int>(-500, 1850), animationManager_));
-
     //zona inferior izquierda desde el inicio(ante zona al puente isla del sur)
     addEnemies(new Cat(this, 50, Point2D<int>(-1000, 2300), animationManager_));
     addEnemies(new Cat(this, 50, Point2D<int>(-250, 2450), animationManager_));
-    addEnemies(new Scorpion(this, 80, Point2D<int>(-550, 2500), animationManager_));
 
     //zona inferior desde el inicio(bosque)
     addEnemies(new Bat(this, 20, Point2D<int>(450, 1500), 7, animationManager_));

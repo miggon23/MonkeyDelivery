@@ -30,4 +30,8 @@ void GameObjectGenerator::createBats()
 
 void GameObjectGenerator::createScorpions()
 {
+	posScorpions.push_back({ 6000, 1900 });		posScorpions.push_back({ 5000, 4000 });
+	posScorpions.push_back({ 5100, 5600 });		posScorpions.push_back({ 2300, 4700 });
+	posScorpions.push_back({ 1750, 2800 });		posScorpions.push_back({ 300, 2600 });
+	posScorpions.push_back({ 3200, 2300 });		posScorpions.push_back({ 5100, 1000 });
 }
