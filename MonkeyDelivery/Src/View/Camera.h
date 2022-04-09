@@ -10,7 +10,7 @@ private:
 	Vector2D<double> pos_;
 	double width_, height_; // Tamaño de la cámara
 	double windowWidth_, windowHeight_;
-	float scale_;
+	double scale_;
 
 	Game* game_;
 public:
@@ -31,7 +31,7 @@ public:
 	inline void setScale(float newScale) {
 		scale_ = newScale;
 	};
-	inline float getScale() {
+	inline double getScale() {
 		return scale_;
 	};
 

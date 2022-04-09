@@ -56,20 +56,19 @@ public:
 			game->add(new InteractuableChest(game, gOGenerator.posChest[i].first, gOGenerator.posChest[i].second, gOGenerator.chestDimension_.w, gOGenerator.chestDimension_.h));
 
 		for (int i = 0; i < gOGenerator.nBulls; i++)
-			game->add(new Bull(game, gOGenerator.radios_.bullR, gOGenerator.posBulls[i], game->getAnimationManager()));
+			game->addEnemies(new Bull(game, gOGenerator.radios_.bullR, gOGenerator.posBulls[i], game->getAnimationManager()));
 		
 		for (int i = 0; i < gOGenerator.nScorpions; i++)
-			game->add(new Scorpion(game, gOGenerator.radios_.scorpionsR, gOGenerator.posScorpions[i], game->getAnimationManager()));
+			game->addEnemies(new Scorpion(game, gOGenerator.radios_.scorpionsR, gOGenerator.posScorpions[i], game->getAnimationManager()));
 
 		for (int i = 0; i < gOGenerator.nBats; i++)
-			game->add(new Bat(game, gOGenerator.radios_.batsR, gOGenerator.posBats[i], 3, game->getAnimationManager()));
+			game->addEnemies(new Bat(game, gOGenerator.radios_.batsR, gOGenerator.posBats[i], 3, game->getAnimationManager()));
 
 		for (int i = 0; i < gOGenerator.nPlants; i++)
-			game->add(new Plant(game, gOGenerator.radios_.plantsR, gOGenerator.posPlants[i], game->getAnimationManager()));
+			game->addEnemies(new Plant(game, gOGenerator.radios_.plantsR, gOGenerator.posPlants[i], game->getAnimationManager()));
 		
 		for (int i = 0; i < gOGenerator.nCats; i++)
-			game->add(new Cat(game, gOGenerator.radios_.catR, gOGenerator.posCats[i], game->getAnimationManager()));
+			game->addEnemies(new Cat(game, gOGenerator.radios_.catR, gOGenerator.posCats[i], game->getAnimationManager()));
 	}
-
 	static GameObjectGenerator gOGenerator;
 };
