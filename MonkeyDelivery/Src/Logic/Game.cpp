@@ -148,7 +148,7 @@ void Game::start()
     bed->setPosition(670, 760);
     player_->bedPos(670, 760);
     add(bed);
-    add(new Rock(this,100,700));
+    add(new Rock(this,2500,800));
 }
 
 void Game::update()

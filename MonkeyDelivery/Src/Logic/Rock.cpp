@@ -1,21 +1,17 @@
 #include "Rock.h"
 #include "../Logic/game.h"
 
-Rock::Rock(Game* game, int x, int y) :GameObject(game, true) {
+Rock::Rock(Game* game, int x, int y) :ColliderTile(game,Vector2D<double>(x,y),w,h) {
 	setTexture(rocaTexture);
-	setDimension(100.0, 100.0);
+	setDimension(w, h);
 	setPosition(x, y);
 }
 
 Rock::~Rock(){
 }
 
-void Rock::update(){
+void Rock::draw(){
+	drawTexture(texture);
+	drawDebug();
 }
 
-//void Rock::onPlayerInteraction(Player* player){
-//	if (player->getActiveItemObject()=="Pickaxe") {
-//		// quitarle un uso al pico
-//		game->removeGameObject(this);
-//	}
-//}

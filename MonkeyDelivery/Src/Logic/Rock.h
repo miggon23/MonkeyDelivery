@@ -1,10 +1,12 @@
 #pragma once
-#include "GameObject.h"
+#include "ColliderTile.h"
 
-class Rock : public GameObject {
+class Rock : public ColliderTile {
+	int w=75.0;
+	int h=75.0;
 public:
 	Rock(Game* game, int x, int y);
-	~Rock();
-	void update() override;	
+	~Rock();	
+	void draw() override;
 	//void onPlayerInteraction(Player* player) override;
 };
