@@ -18,10 +18,24 @@ void GameObjectGenerator::creteBulls()
 
 void GameObjectGenerator::createCats()
 {
+	posCats.push_back({ 4250, 5100 });		posCats.push_back({ 1800, 5350 });
+	posCats.push_back({ 3100, 6000 });		posCats.push_back({ 1850, 2100 });
+	posCats.push_back({ 5550, 1850 });		posCats.push_back({ 4800, 2150 });
+	posCats.push_back({ 1500, 2600 });		posCats.push_back({ 1500, 2900 });
+	posCats.push_back({ 2320, 4100 });		posCats.push_back({ 4700, 1200 });
+	posCats.push_back({ 5800, 2800 });		posCats.push_back({ 6050, 3200 });
+	posCats.push_back({ 4900, 3300 });
 }
 
 void GameObjectGenerator::createPlants()
 {
+	posPlants.push_back({ 300, 2200 });			posPlants.push_back({ 2400, 1900 });
+	posPlants.push_back({ 3400, 2800 });		posPlants.push_back({ 800, 5700 });
+	posPlants.push_back({ 1200, 440 });			posPlants.push_back({ 1600, 4800 });
+	posPlants.push_back({ 7250, 2950 });		posPlants.push_back({ 7100, 800 });
+	posPlants.push_back({ 6100, 1000 });		posPlants.push_back({ 4150, 750 });
+	posPlants.push_back({ 4850, 5600 });		posPlants.push_back({ 6400, 5600 });
+	posPlants.push_back({ 6000, 4650 });		posPlants.push_back({ 5450, 3700 });
 }
 
 void GameObjectGenerator::createBats()

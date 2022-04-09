@@ -4,6 +4,8 @@
 #include "Bull.h"
 #include "Scorpion.h"
 #include "Bat.h"
+#include "Plant.h"
+#include "Cat.h"
 #include <vector>
 
 class GameObjectGenerator
@@ -18,7 +20,7 @@ class GameObjectGenerator
 	{
 		int bullR = 60;
 		int catR = 100;
-		int plantsR = 200;
+		int plantsR = 150;
 		int batsR = 50;
 		int scorpionsR = 70;
 	};
@@ -33,6 +35,13 @@ class GameObjectGenerator
 	vector<Point2D<int>> posBats;
 	vector<Point2D<int>> posScorpions;
 
+	void createChest();
+	void creteBulls();
+	void createCats();
+	void createPlants();
+	void createBats();
+	void createScorpions();
+
 public:
 	static void generateLevel(Game* game) //Lo llamas en las rocas
 	{
@@ -40,6 +49,8 @@ public:
 		gOGenerator.creteBulls();
 		gOGenerator.createScorpions();
 		gOGenerator.createBats();
+		gOGenerator.createPlants();
+		gOGenerator.createCats();
 
 		for (int i = 0; i < gOGenerator.nChest; i++)
 			game->add(new InteractuableChest(game, gOGenerator.posChest[i].first, gOGenerator.posChest[i].second, gOGenerator.chestDimension_.w, gOGenerator.chestDimension_.h));
@@ -52,14 +63,13 @@ public:
 
 		for (int i = 0; i < gOGenerator.nBats; i++)
 			game->add(new Bat(game, gOGenerator.radios_.batsR, gOGenerator.posBats[i], 3, game->getAnimationManager()));
+
+		for (int i = 0; i < gOGenerator.nPlants; i++)
+			game->add(new Plant(game, gOGenerator.radios_.plantsR, gOGenerator.posPlants[i], game->getAnimationManager()));
+		
+		for (int i = 0; i < gOGenerator.nCats; i++)
+			game->add(new Cat(game, gOGenerator.radios_.catR, gOGenerator.posCats[i], game->getAnimationManager()));
 	}
 
 	static GameObjectGenerator gOGenerator;
-
-	void createChest();
-	void creteBulls();
-	void createCats();
-	void createPlants();
-	void createBats();
-	void createScorpions();
 };

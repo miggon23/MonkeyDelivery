@@ -137,19 +137,17 @@ void Game::start()
 
     add(new TutorialBook(this, 500, 500, 100, 75));
 
-    enemiesCreation();//creacion de enemigos
+    GameObjectGenerator::generateLevel(this);
 
     dialogueBox_ = new DialogueBox(this);
     // dialogueBox_->changeText("DialogueBox1");
     // dialogueBox_->show();
     info = new UI_Info(this);
-    auto* x = new Bed(this);
-    x->setPosition(670, 760);
+    auto* bed = new Bed(this);
+    bed->setPosition(670, 760);
     player_->bedPos(670, 760);
-    add(x);
+    add(bed);
     add(new Rock(this,100,700));
-
-    GameObjectGenerator::generateLevel(this);
 }
 
 void Game::update()
@@ -287,23 +285,6 @@ InteractiveEntity* Game::getiE()
 void Game::addEnemies(Enemy* enemy)
 {
     enemyContainer_.push_back(enemy);
-}
-void Game::enemiesCreation()
-{
-     //zona derecha desde el inicio (pradera)
-    addEnemies(new Plant(this, 60, Point2D<int>(1100, 200), animationManager_));
-    addEnemies(new Plant(this, 60, Point2D<int>(1200, 350), animationManager_));
-    addEnemies(new Plant(this, 60, Point2D<int>(1600, 450), animationManager_));
-    addEnemies(new Plant(this, 60, Point2D<int>(1700, 600), animationManager_));
-
-    //zona inferior izquierda desde el inicio(camino junto al mar)
-    addEnemies(new Cat(this, 50, Point2D<int>(-100, 1300), animationManager_));
-    addEnemies(new Cat(this, 50, Point2D<int>(-200, 1100), animationManager_));
-
-    //zona inferior izquierda desde el inicio(ante zona al puente isla del sur)
-    addEnemies(new Cat(this, 50, Point2D<int>(-1000, 2300), animationManager_));
-    addEnemies(new Cat(this, 50, Point2D<int>(-250, 2450), animationManager_));
-    
 }
 
 void Game::scare(double scariness)
