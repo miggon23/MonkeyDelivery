@@ -1,13 +1,14 @@
 #include "Bike.h"
 #include "Player.h"
 
-Bike::Bike(Texture* tex, Game* game) : active(false), speedMult(2.5), InventoryObject(tex, game)
+Bike::Bike(Texture* tex, Game* game) : speedMult(2.5), InventoryObject(tex, game)
 {
+	active = false;
 	setTypeObject("Bike");
 }
 
 bool Bike::useObject() {
-	if (/*!active*/ player_->getActiveItemObject()!="Skates") {
+	if ( !active ) {
 		player_->setVel(player_->getVel() * speedMult);
 		cout << "Montando en Bici";
 

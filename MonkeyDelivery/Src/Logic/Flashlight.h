@@ -5,8 +5,6 @@ class Game;
 
 class Flashlight : public InventoryObject
 {
-private:
-	bool active;
 public:
 	Flashlight(Texture* tex, Game* game);
 

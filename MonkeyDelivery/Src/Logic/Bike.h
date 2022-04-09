@@ -4,7 +4,6 @@
 class Bike : public InventoryObject
 {
 private:
-	bool active;
 	double speedMult;
 public:
 	

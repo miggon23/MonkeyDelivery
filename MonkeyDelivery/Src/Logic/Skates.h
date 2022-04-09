@@ -4,8 +4,6 @@
 
 class Skates : public InventoryObject
 {
-private:
-	bool active;
 	double speedMult;
 public:
 	Skates(Texture* tex, Game* game);

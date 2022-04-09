@@ -3,8 +3,9 @@
 #include "Game.h"
 
 
-Flashlight::Flashlight(Texture* tex, Game* game) : active(false), InventoryObject(tex, game)
+Flashlight::Flashlight(Texture* tex, Game* game) : InventoryObject(tex, game)
 {
+	active = false;
 }
 
 bool Flashlight::useObject() {

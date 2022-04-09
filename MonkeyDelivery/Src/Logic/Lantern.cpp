@@ -3,8 +3,9 @@
 #include "Flashlight.h"
 #include "Game.h"
 
-Lantern::Lantern(Texture* tex, Game* game) : active(false), InventoryObject(tex, game)
+Lantern::Lantern(Texture* tex, Game* game) : InventoryObject(tex, game)
 {
+	active = false;
 }
 
 bool Lantern::useObject() {

@@ -14,6 +14,7 @@ protected:
 	Player* player_ = nullptr;
 	Game* game_ = nullptr;
 	bool isConsumable_ = false;	
+	bool active = false;
 	//TEMPORAL
 	string typeObject = "InventoryObject";
 public:
@@ -35,4 +36,6 @@ public:
 	//TEMPORAL
 	inline string getTypeObject() { return typeObject; };
 	inline void setTypeObject(string x) { typeObject = x; };
+	inline bool getActive() { return active; };
+	
 };
