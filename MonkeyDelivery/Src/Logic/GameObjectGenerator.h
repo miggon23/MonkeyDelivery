@@ -3,6 +3,7 @@
 #include "Game.h"
 #include "Bull.h"
 #include "Scorpion.h"
+#include "Bat.h"
 #include <vector>
 
 class GameObjectGenerator
@@ -15,10 +16,10 @@ class GameObjectGenerator
 	};
 	struct Radios 
 	{
-		int bullR = 50;
+		int bullR = 60;
 		int catR = 100;
 		int plantsR = 200;
-		int batsR = 100;
+		int batsR = 50;
 		int scorpionsR = 70;
 	};
 
@@ -38,6 +39,7 @@ public:
 		gOGenerator.createChest();
 		gOGenerator.creteBulls();
 		gOGenerator.createScorpions();
+		gOGenerator.createBats();
 
 		for (int i = 0; i < gOGenerator.nChest; i++)
 			game->add(new InteractuableChest(game, gOGenerator.posChest[i].first, gOGenerator.posChest[i].second, gOGenerator.chestDimension_.w, gOGenerator.chestDimension_.h));
@@ -47,6 +49,9 @@ public:
 		
 		for (int i = 0; i < gOGenerator.nScorpions; i++)
 			game->add(new Scorpion(game, gOGenerator.radios_.scorpionsR, gOGenerator.posScorpions[i], game->getAnimationManager()));
+
+		for (int i = 0; i < gOGenerator.nBats; i++)
+			game->add(new Bat(game, gOGenerator.radios_.batsR, gOGenerator.posBats[i], 3, game->getAnimationManager()));
 	}
 
 	static GameObjectGenerator gOGenerator;

@@ -26,7 +26,6 @@
 
 #include "Enemy.h"
 
-#include "Bat.h"
 #include "Cat.h"
 #include "Plant.h"
 

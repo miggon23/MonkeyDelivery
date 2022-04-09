@@ -303,12 +303,7 @@ void Game::enemiesCreation()
     //zona inferior izquierda desde el inicio(ante zona al puente isla del sur)
     addEnemies(new Cat(this, 50, Point2D<int>(-1000, 2300), animationManager_));
     addEnemies(new Cat(this, 50, Point2D<int>(-250, 2450), animationManager_));
-
-    //zona inferior desde el inicio(bosque)
-    addEnemies(new Bat(this, 20, Point2D<int>(450, 1500), 7, animationManager_));
-    addEnemies(new Bat(this, 20, Point2D<int>(800, 1800), 7, animationManager_));
-    addEnemies(new Bat(this, 20, Point2D<int>(1300, 2100), 7, animationManager_));
-    addEnemies(new Bat(this, 20, Point2D<int>(2250, 2000), 7, animationManager_));
+    
 }
 
 void Game::scare(double scariness)
