@@ -12,7 +12,8 @@ void GameObjectGenerator::createChest()
 
 void GameObjectGenerator::creteBulls()
 {
-	posBulls.push_back({2500, 6800});
+	posBulls.push_back({ 6800, 1950 }); posBulls.push_back({ 6200, 5450 });
+	posBulls.push_back({ 5300, 4700 }); posBulls.push_back({ 550, 4600 });
 }
 
 void GameObjectGenerator::createCats()

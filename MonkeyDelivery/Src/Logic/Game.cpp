@@ -83,7 +83,7 @@ Game::~Game() {
     //delete missionsPanel_; //solo poner si no va en el vector de gameobjects
     delete dialogueBox_;
     delete iE_;
-    delete animationManager;
+    delete animationManager_;
     delete shop_;
     delete mCamera_;
     delete mapPoint;
@@ -118,8 +118,8 @@ void Game::start()
 {
     inGame = true;
 
-    animationManager = new AnimationManager(this);
-    player_ = new Player(this, animationManager); //Creacion del jugador
+    animationManager_ = new AnimationManager(this);
+    player_ = new Player(this, animationManager_); //Creacion del jugador
 
     // Cámara:
     Vector2D<double> vJug = { (player_->getPosition().getX() - width / 2), (player_->getPosition().getY() - height / 2) };
@@ -291,31 +291,29 @@ void Game::addEnemies(Enemy* enemy)
 void Game::enemiesCreation()
 {
      //zona derecha desde el inicio (pradera)
-    addEnemies(new Plant(this, 60, Point2D<int>(1100, 200), animationManager));
-    addEnemies(new Plant(this, 60, Point2D<int>(1200, 350), animationManager));
-    addEnemies(new Plant(this, 60, Point2D<int>(1600, 450), animationManager));
-    addEnemies(new Plant(this, 60, Point2D<int>(1700, 600), animationManager));
+    addEnemies(new Plant(this, 60, Point2D<int>(1100, 200), animationManager_));
+    addEnemies(new Plant(this, 60, Point2D<int>(1200, 350), animationManager_));
+    addEnemies(new Plant(this, 60, Point2D<int>(1600, 450), animationManager_));
+    addEnemies(new Plant(this, 60, Point2D<int>(1700, 600), animationManager_));
 
     //zona inferior izquierda desde el inicio(camino junto al mar)
-    addEnemies(new Cat(this, 50, Point2D<int>(-100, 1300), animationManager));
-    addEnemies(new Cat(this, 50, Point2D<int>(-200, 1100), animationManager));
+    addEnemies(new Cat(this, 50, Point2D<int>(-100, 1300), animationManager_));
+    addEnemies(new Cat(this, 50, Point2D<int>(-200, 1100), animationManager_));
 
     //zona inferior izquierda desde el inicio(cruce)
-    addEnemies(new Scorpion(this, 80, Point2D<int>(-300, 1650), animationManager));
-    addEnemies(new Scorpion(this, 80, Point2D<int>(-500, 1850), animationManager));
+    addEnemies(new Scorpion(this, 80, Point2D<int>(-300, 1650), animationManager_));
+    addEnemies(new Scorpion(this, 80, Point2D<int>(-500, 1850), animationManager_));
 
     //zona inferior izquierda desde el inicio(ante zona al puente isla del sur)
-    addEnemies(new Cat(this, 50, Point2D<int>(-1000, 2300), animationManager));
-    addEnemies(new Cat(this, 50, Point2D<int>(-250, 2450), animationManager));
-    addEnemies(new Scorpion(this, 80, Point2D<int>(-550, 2500), animationManager));
+    addEnemies(new Cat(this, 50, Point2D<int>(-1000, 2300), animationManager_));
+    addEnemies(new Cat(this, 50, Point2D<int>(-250, 2450), animationManager_));
+    addEnemies(new Scorpion(this, 80, Point2D<int>(-550, 2500), animationManager_));
 
     //zona inferior desde el inicio(bosque)
-    addEnemies(new Bat(this, 20, Point2D<int>(450, 1500), 7, animationManager));
-    addEnemies(new Bat(this, 20, Point2D<int>(800, 1800), 7, animationManager));
-    addEnemies(new Bat(this, 20, Point2D<int>(1300, 2100), 7, animationManager));
-    addEnemies(new Bat(this, 20, Point2D<int>(2250, 2000), 7, animationManager));
-
-    addEnemies(new Bull(this, 70, Point2D<int>(1100, 200), animationManager));
+    addEnemies(new Bat(this, 20, Point2D<int>(450, 1500), 7, animationManager_));
+    addEnemies(new Bat(this, 20, Point2D<int>(800, 1800), 7, animationManager_));
+    addEnemies(new Bat(this, 20, Point2D<int>(1300, 2100), 7, animationManager_));
+    addEnemies(new Bat(this, 20, Point2D<int>(2250, 2000), 7, animationManager_));
 }
 
 void Game::scare(double scariness)

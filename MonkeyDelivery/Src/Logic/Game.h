@@ -118,7 +118,8 @@ private:
     vector<Enemy*>enemyContainer_;//vector enemigos
     MissionsPanel* missionsPanel_= nullptr;
     
-    AnimationManager* animationManager;
+    //Animaciones
+    AnimationManager* animationManager_;
 
     Font* font_;
     UI_Info* info;
@@ -201,7 +202,7 @@ public:
     //Tilemap
     void loadMap(string const& filename);
 
-    // Camara
+    //Camara
     inline void setWindow(SDL_Window* w) { window_ = w; };
     inline Camera* getCamera() { return mCamera_; };  
     void aPlayerPos(float x, float y);
@@ -230,4 +231,7 @@ public:
 
     //Menu de Opciones
     void initOptionsState();
+
+    //Animaciones
+    inline AnimationManager* getAnimationManager() { return animationManager_; }
 };
