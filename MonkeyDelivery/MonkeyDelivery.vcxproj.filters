@@ -1,647 +1,225 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="Src\Logic\Bed.cpp">
-      <Filter>Source Files\Logic\InteractuableObjects</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Logic\Bat.cpp">
-      <Filter>Source Files\Logic\Enemies</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Logic\Cat.cpp">
-      <Filter>Source Files\Logic\Enemies</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Logic\Bike.cpp">
-      <Filter>Source Files\Logic\InteractuableObjects</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\Command.cpp">
-      <Filter>Source Files\Control</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\CommandExit.cpp">
-      <Filter>Source Files\Control\Commands</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\CommandFactory.cpp">
-      <Filter>Source Files\Control</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\CommandInteract.cpp">
-      <Filter>Source Files\Control\Commands</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\CommandMove.cpp">
-      <Filter>Source Files\Control\Commands</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\CommandRun.cpp">
-      <Filter>Source Files\Control\Commands</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Logic\Enemy.cpp">
-      <Filter>Source Files\Logic</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Logic\EnergyDrink.cpp">
-      <Filter>Source Files\Logic\InteractuableObjects</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Logic\energyLevel.cpp">
-      <Filter>Source Files\Logic</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Logic\FearLevel.cpp">
-      <Filter>Source Files\Logic</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Logic\Game.cpp">
-      <Filter>Source Files\Logic\Managers/Game</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Logic\GameObject.cpp">
-      <Filter>Source Files\Logic</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\States\GameOverState.cpp">
-      <Filter>Source Files\Control\States</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Logic\InteractiveEntity.cpp">
-      <Filter>Source Files\Logic</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Logic\Inventory.cpp">
-      <Filter>Source Files\Logic</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\InventoryCommand.cpp">
-      <Filter>Source Files\Control\Commands</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Logic\InventoryObject.cpp">
-      <Filter>Source Files\Logic</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\States\MenuState.cpp">
-      <Filter>Source Files\Control\States</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Logic\Mission.cpp">
-      <Filter>Source Files\Logic</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Logic\MissionManager.cpp">
-      <Filter>Source Files\Logic\Managers/Game</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\States\MissionSelectionState.cpp">
-      <Filter>Source Files\Control\States</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Logic\MissionsPanel.cpp">
-      <Filter>Source Files\Logic\InteractuableObjects</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\NextStateCommand.cpp">
-      <Filter>Source Files\Control\Commands</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\PauseCommand.cpp">
-      <Filter>Source Files\Control\Commands</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\States\PauseState.cpp">
-      <Filter>Source Files\Control\States</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\States\PlayingState.cpp">
-      <Filter>Source Files\Control\States</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\States\State.cpp">
-      <Filter>Source Files\Control</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Logic\Player.cpp">
-      <Filter>Source Files\Logic</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Logic\DialogueBox.cpp">
-      <Filter>Source Files\View</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\View\Texture.cpp">
-      <Filter>Source Files\View</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\View\TextureContainer.cpp">
-      <Filter>Source Files\View</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\States\TestingState.cpp">
-      <Filter>Source Files\Control\States</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\States\StateMachine.cpp">
-      <Filter>Source Files\Control</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\SelectMissionCommand.cpp">
-      <Filter>Source Files\Control\Commands</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Logic\SpawnZone.cpp">
-      <Filter>Source Files\Logic\Enemies</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Logic\UI_Info.cpp">
-      <Filter>Source Files\View</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\json\JSON.cpp">
-      <Filter>Source Files\Utils</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\json\JSONValue.cpp">
-      <Filter>Source Files\Utils</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\ViewController.cpp">
-      <Filter>Source Files\Control</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Utils\Timer.cpp">
-      <Filter>Source Files\Utils</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Logic\Bull.cpp">
-      <Filter>Source Files\Logic\Enemies</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Logic\Target.cpp">
-      <Filter>Source Files\Logic\InteractuableObjects</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Logic\Package.cpp">
-      <Filter>Source Files\Logic\InteractuableObjects</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Logic\AnimationManager.cpp">
-      <Filter>Source Files\Logic\Managers/Game</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\Button.cpp">
-      <Filter>Source Files\Control</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\States\OptionsState.cpp">
-      <Filter>Source Files\Control\States</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Logic\Flashlight.cpp">
-      <Filter>Source Files\Logic\InteractuableObjects</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Logic\Scorpion.cpp">
-      <Filter>Source Files\Logic\Enemies</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Logic\Shop.cpp">
-      <Filter>Source Files\Logic</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\InteractDialogueBox.cpp">
-      <Filter>Source Files\Control\Commands</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\CommandClick.cpp">
-      <Filter>Source Files\Control\Commands</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Logic\Plant.cpp">
-      <Filter>Source Files\Logic\Enemies</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Logic\Skates.cpp">
-      <Filter>Source Files\Logic\InteractuableObjects</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\ShopCommand.cpp">
-      <Filter>Source Files\Control\Commands</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\States\ShopState.cpp">
-      <Filter>Source Files\Control\States</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Logic\InteractubaleShop.cpp">
-      <Filter>Source Files\Logic\InteractuableObjects</Filter>
-    </ClCompile>
+    <ClCompile Include="MessageOverlay.cpp" />
     <ClCompile Include="MonkeyDelivery.cpp" />
-    <ClCompile Include="Src\Control\UI\Buttons\Back.cpp">
-      <Filter>Source Files\Control\UI\Buttons</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\UI\Buttons\Exit.cpp">
-      <Filter>Source Files\Control\UI\Buttons</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\UI\Buttons\Options.cpp">
-      <Filter>Source Files\Control\UI\Buttons</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\UI\Buttons\Start.cpp">
-      <Filter>Source Files\Control\UI\Buttons</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\UI\Sliders\Slider.cpp">
-      <Filter>Source Files\Control\UI\Slider</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\UI\Buttons\Pause.cpp">
-      <Filter>Source Files\Control\UI\Buttons</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\States\CreditsState.cpp">
-      <Filter>Source Files\Control\States</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\UI\Buttons\Continue.cpp">
-      <Filter>Source Files\Control\UI\Buttons</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\UI\Buttons\Credits.cpp">
-      <Filter>Source Files\Control\UI\Buttons</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\UI\Buttons\Menu.cpp">
-      <Filter>Source Files\Control\UI\Buttons</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\UI\Sliders\SliderBase.cpp">
-      <Filter>Source Files\Control\UI\Slider</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\UI\Sliders\SliderClick.cpp">
-      <Filter>Source Files\Control\UI\Slider</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\View\Camera.cpp">
-      <Filter>Source Files\View</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\UI\Buttons\Back1.cpp">
-      <Filter>Source Files\Control\UI\Buttons</Filter>
-    </ClCompile>
-<<<<<<< HEAD
-    <ClCompile Include="Src\Utils\SoundEffect.cpp">
-      <Filter>Source Files\Utils</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Logic\Lantern.cpp">
-      <Filter>Source Files\Logic\InteractuableObjects</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\sdlutils\SDLUtils.cpp">
-      <Filter>Source Files\sdlutils</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\sdlutils\SoundEffect.cpp">
-      <Filter>Source Files\sdlutils</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\UI\Sliders\GeneralVolumeSlider.cpp">
-      <Filter>Source Files\Control\UI\Slider</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Logic\InputManager.cpp">
-      <Filter>Source Files\Logic\Managers/Game</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\UI\Sliders\BrightnessSlider.cpp">
-      <Filter>Source Files\Control\UI\Slider</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\UI\ElementsUI\Brightness.cpp">
-      <Filter>Source Files\Control\UI\ElementsUI</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\sdlutils\TextureUtils.cpp">
-      <Filter>Source Files\sdlutils</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\UI\Sliders\GeneralSoundsEffectSlider.cpp">
-      <Filter>Source Files\Control\UI\Slider</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\UI\Sliders\GeneralMusicSlider.cpp">
-      <Filter>Source Files\Control\UI\Slider</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Logic\InteractuableChest.cpp">
-      <Filter>Source Files\Logic\InteractuableObjects</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\MapCommand.cpp">
-      <Filter>Source Files\Control\Commands</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Logic\ColliderTile.cpp">
-      <Filter>Source Files\Logic</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Logic\TutorialBook.cpp">
-      <Filter>Source Files\Logic\InteractuableObjects</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\States\MapState.cpp">
-      <Filter>Source Files\Control\States</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Logic\Pickaxe.cpp">
-      <Filter>Source Files\Logic\InteractuableObjects</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Logic\Rock.cpp">
-      <Filter>Source Files\Logic\InteractuableObjects</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\UI\Buttons\ExitButton.cpp">
-      <Filter>Source Files\Control\UI\Buttons</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Logic\MAPPoint.cpp">
-      <Filter>Source Files\Logic\InteractuableObjects</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Logic\GameObjectGenerator.cpp">
-=======
-    <ClCompile Include="MessageOverlay.cpp">
-      <Filter>Source Files\Logic</Filter>
-    </ClCompile>
+    <ClCompile Include="Src\Control\Button.cpp" />
+    <ClCompile Include="Src\Control\Command.cpp" />
+    <ClCompile Include="Src\Control\CommandClick.cpp" />
+    <ClCompile Include="Src\Control\CommandExit.cpp" />
+    <ClCompile Include="Src\Control\CommandFactory.cpp" />
+    <ClCompile Include="Src\Control\CommandInteract.cpp" />
+    <ClCompile Include="Src\Control\CommandMove.cpp" />
+    <ClCompile Include="Src\Control\CommandRun.cpp" />
+    <ClCompile Include="Src\Control\InteractDialogueBox.cpp" />
+    <ClCompile Include="Src\Control\InventoryCommand.cpp" />
+    <ClCompile Include="Src\Control\MapCommand.cpp" />
+    <ClCompile Include="Src\Control\NextStateCommand.cpp" />
+    <ClCompile Include="Src\Control\PauseCommand.cpp" />
+    <ClCompile Include="Src\Control\SelectMissionCommand.cpp" />
+    <ClCompile Include="Src\Control\ShopCommand.cpp" />
+    <ClCompile Include="Src\Control\States\CreditsState.cpp" />
+    <ClCompile Include="Src\Control\States\GameOverState.cpp" />
+    <ClCompile Include="Src\Control\States\MapState.cpp" />
+    <ClCompile Include="Src\Control\States\MenuState.cpp" />
+    <ClCompile Include="Src\Control\States\MissionSelectionState.cpp" />
+    <ClCompile Include="Src\Control\States\OptionsState.cpp" />
+    <ClCompile Include="Src\Control\States\PauseState.cpp" />
+    <ClCompile Include="Src\Control\States\PlayingState.cpp" />
+    <ClCompile Include="Src\Control\States\ShopState.cpp" />
+    <ClCompile Include="Src\Control\States\State.cpp" />
+    <ClCompile Include="Src\Control\States\StateMachine.cpp" />
+    <ClCompile Include="Src\Control\States\TestingState.cpp" />
+    <ClCompile Include="Src\Control\UI\Buttons\Back.cpp" />
+    <ClCompile Include="Src\Control\UI\Buttons\Back1.cpp" />
+    <ClCompile Include="Src\Control\UI\Buttons\Continue.cpp" />
+    <ClCompile Include="Src\Control\UI\Buttons\Credits.cpp" />
+    <ClCompile Include="Src\Control\UI\Buttons\Exit.cpp" />
+    <ClCompile Include="Src\Control\UI\Buttons\Menu.cpp" />
+    <ClCompile Include="Src\Control\UI\Buttons\Options.cpp" />
+    <ClCompile Include="Src\Control\UI\Buttons\Pause.cpp" />
+    <ClCompile Include="Src\Control\UI\Buttons\ExitButton.cpp" />
+    <ClCompile Include="Src\Control\UI\Buttons\Start.cpp" />
+    <ClCompile Include="Src\Control\UI\ElementsUI\Brightness.cpp" />
+    <ClCompile Include="Src\Control\UI\Sliders\BrightnessSlider.cpp" />
+    <ClCompile Include="Src\Control\UI\Sliders\GeneralMusicSlider.cpp" />
+    <ClCompile Include="Src\Control\UI\Sliders\GeneralSoundsEffectSlider.cpp" />
+    <ClCompile Include="Src\Control\UI\Sliders\GeneralVolumeSlider.cpp" />
+    <ClCompile Include="Src\Control\UI\Sliders\Slider.cpp" />
+    <ClCompile Include="Src\Control\UI\Sliders\SliderBase.cpp" />
+    <ClCompile Include="Src\Control\UI\Sliders\SliderClick.cpp" />
+    <ClCompile Include="Src\Control\ViewController.cpp" />
+    <ClCompile Include="Src\json\JSON.cpp" />
+    <ClCompile Include="Src\json\JSONValue.cpp" />
+    <ClCompile Include="Src\Logic\AnimationManager.cpp" />
+    <ClCompile Include="Src\Logic\Bat.cpp" />
+    <ClCompile Include="Src\Logic\Bike.cpp" />
+    <ClCompile Include="Src\Logic\Bed.cpp" />
+    <ClCompile Include="Src\Logic\Bull.cpp" />
+    <ClCompile Include="Src\Logic\Cat.cpp" />
+    <ClCompile Include="Src\Logic\ColliderTile.cpp" />
+    <ClCompile Include="Src\Logic\DialogueBox.cpp" />
+    <ClCompile Include="Src\Logic\Enemy.cpp" />
+    <ClCompile Include="Src\Logic\EnergyDrink.cpp" />
+    <ClCompile Include="Src\Logic\energyLevel.cpp" />
+    <ClCompile Include="Src\Logic\FearBar.cpp" />
+    <ClCompile Include="Src\Logic\FearLevel.cpp" />
+    <ClCompile Include="Src\Logic\Flashlight.cpp" />
+    <ClCompile Include="Src\Logic\Game.cpp" />
+    <ClCompile Include="Src\Logic\GameObject.cpp" />
+    <ClCompile Include="Src\Logic\GameObjectGenerator.cpp" />
+    <ClCompile Include="Src\Logic\InputManager.cpp" />
+    <ClCompile Include="Src\Logic\InteractiveEntity.cpp" />
+    <ClCompile Include="Src\Logic\InteractuableChest.cpp" />
+    <ClCompile Include="Src\Logic\InteractubaleShop.cpp" />
+    <ClCompile Include="Src\Logic\Inventory.cpp" />
+    <ClCompile Include="Src\Logic\InventoryObject.cpp" />
+    <ClCompile Include="Src\Logic\Lantern.cpp" />
+    <ClCompile Include="Src\Logic\MAPPoint.cpp" />
+    <ClCompile Include="Src\Logic\Mission.cpp" />
+    <ClCompile Include="Src\Logic\MissionManager.cpp" />
+    <ClCompile Include="Src\Logic\MissionsPanel.cpp" />
+    <ClCompile Include="Src\Logic\Package.cpp" />
+    <ClCompile Include="Src\Logic\Pickaxe.cpp" />
+    <ClCompile Include="Src\Logic\Plant.cpp" />
+    <ClCompile Include="Src\Logic\Player.cpp" />
+    <ClCompile Include="Src\Logic\Rock.cpp" />
+    <ClCompile Include="Src\Logic\Scorpion.cpp" />
+    <ClCompile Include="Src\Logic\Shop.cpp" />
+    <ClCompile Include="Src\Logic\Skates.cpp" />
+    <ClCompile Include="Src\Logic\SpawnZone.cpp" />
+    <ClCompile Include="Src\Logic\Target.cpp" />
+    <ClCompile Include="Src\Logic\TutorialBook.cpp" />
+    <ClCompile Include="Src\Logic\UI_Info.cpp" />
+    <ClCompile Include="Src\sdlutils\SDLUtils.cpp" />
+    <ClCompile Include="Src\sdlutils\SoundEffect.cpp" />
+    <ClCompile Include="Src\sdlutils\TextureUtils.cpp" />
+    <ClCompile Include="Src\Utils\SoundEffect.cpp" />
     <ClCompile Include="Src\Utils\Particles\ParticleExample.cpp" />
     <ClCompile Include="Src\Utils\Particles\ParticleSystem.cpp" />
+    <ClCompile Include="Src\Utils\Timer.cpp" />
+    <ClCompile Include="Src\View\Camera.cpp" />
+    <ClCompile Include="Src\View\Texture.cpp" />
+    <ClCompile Include="Src\View\TextureContainer.cpp" />
     <ClCompile Include="Src\View\Texture_manipulation.cpp" />
-    <ClCompile Include="Src\Logic\FearBar.cpp">
->>>>>>> Visuals_Revamp
-      <Filter>Source Files\Logic</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="framework.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MonkeyDelivery.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Resource.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="targetver.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Control\Command.h">
-      <Filter>Header Files\Control</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Control\CommandFactory.h">
-      <Filter>Header Files\Control</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Control\CommandExit.h">
-      <Filter>Header Files\Control\Commands</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Control\CommandInteract.h">
-      <Filter>Header Files\Control\Commands</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Control\CommandMove.h">
-      <Filter>Header Files\Control\Commands</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Control\CommandRun.h">
-      <Filter>Header Files\Control\Commands</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Logic\Enemy.h">
-      <Filter>Header Files\Logic</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Logic\energyLevel.h">
-      <Filter>Header Files\Logic</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Logic\FearLevel.h">
-      <Filter>Header Files\Logic</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Logic\GameObject.h">
-      <Filter>Header Files\Logic</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Control\States\GameOverState.h">
-      <Filter>Header Files\Control\States</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Control\InventoryCommand.h">
-      <Filter>Header Files\Control\Commands</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Control\States\MenuState.h">
-      <Filter>Header Files\Control\States</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Control\States\MissionSelectionState.h">
-      <Filter>Header Files\Control\States</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Logic\Player.h">
-      <Filter>Header Files\Logic</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Control\States\PauseState.h">
-      <Filter>Header Files\Control\States</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Control\SelectMissionCommand.h">
-      <Filter>Header Files\Control\Commands</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Utils\Vector2D.h">
-      <Filter>Header Files\Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\View\Texture.h">
-      <Filter>Header Files\View</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\View\Font.h">
-      <Filter>Header Files\View</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\View\TextureContainer.h">
-      <Filter>Header Files\View</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Control\ViewController.h">
-      <Filter>Header Files\Control</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Control\States\State.h">
-      <Filter>Header Files\Control</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Control\States\TestingState.h">
-      <Filter>Header Files\Control\States</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Utils\Singleton.h">
-      <Filter>Header Files\Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Control\PauseCommand.h">
-      <Filter>Header Files\Control\Commands</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Logic\Mission.h">
-      <Filter>Header Files\Logic</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Control\States\StateMachine.h">
-      <Filter>Header Files\Control</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Control\NextStateCommand.h">
-      <Filter>Header Files\Control\Commands</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Logic\UI_Info.h">
-      <Filter>Header Files\View</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Logic\Bat.h">
-      <Filter>Header Files\Logic\Enemies</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Logic\Cat.h">
-      <Filter>Header Files\Logic\Enemies</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Logic\Game.h">
-      <Filter>Header Files\Logic\Managers/Game</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Logic\MissionManager.h">
-      <Filter>Header Files\Logic\Managers/Game</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Logic\Bike.h">
-      <Filter>Header Files\Logic\InteractuableObjects</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Logic\Bed.h">
-      <Filter>Header Files\Logic\InteractuableObjects</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Logic\EnergyDrink.h">
-      <Filter>Header Files\Logic\InteractuableObjects</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Logic\SpawnZone.h">
-      <Filter>Header Files\Logic\Enemies</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Logic\InteractiveEntity.h">
-      <Filter>Header Files\Logic</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\View\Box.h">
-      <Filter>Header Files\View</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Logic\DialogueBox.h">
-      <Filter>Header Files\View</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Logic\InventoryObject.h">
-      <Filter>Header Files\Logic</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Logic\Inventory.h">
-      <Filter>Header Files\Logic</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Logic\MissionsPanel.h">
-      <Filter>Header Files\Logic\InteractuableObjects</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Control\States\PlayingState.h">
-      <Filter>Header Files\Control\States</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\json\JSON.h">
-      <Filter>Header Files\Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\json\JSONValue.h">
-      <Filter>Header Files\Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Utils\Timer.h">
-      <Filter>Header Files\Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Logic\Bull.h">
-      <Filter>Header Files\Logic\Enemies</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Logic\Target.h">
-      <Filter>Header Files\Logic\InteractuableObjects</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Logic\Package.h">
-      <Filter>Header Files\Logic\InteractuableObjects</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Logic\AnimationManager.h">
-      <Filter>Header Files\Logic\Managers/Game</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Control\Button.h">
-      <Filter>Header Files\Control</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Control\States\OptionsState.h">
-      <Filter>Header Files\Control\States</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Logic\Flashlight.h">
-      <Filter>Header Files\Logic\InteractuableObjects</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\View\checkML.h" />
-    <ClInclude Include="Src\Logic\Scorpion.h">
-      <Filter>Header Files\Logic\Enemies</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Logic\Shop.h">
-      <Filter>Header Files\Logic</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Control\InteractDialogueBoxCommand.h">
-      <Filter>Header Files\Control\Commands</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Control\CommandClick.h">
-      <Filter>Header Files\Control\Commands</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Logic\Plant.h">
-      <Filter>Header Files\Logic\Enemies</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Logic\Skates.h">
-      <Filter>Header Files\Logic\InteractuableObjects</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Control\ShopCommand.h">
-      <Filter>Header Files\Control\Commands</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Control\States\ShopState.h">
-      <Filter>Header Files\Control\States</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Logic\InteractuableShop.h">
-      <Filter>Header Files\Logic\InteractuableObjects</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Control\UI\Buttons\Back.h">
-      <Filter>Header Files\Control\UI\Buttons</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Control\UI\Buttons\Exit.h">
-      <Filter>Header Files\Control\UI\Buttons</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Control\UI\Buttons\Options.h">
-      <Filter>Header Files\Control\UI\Buttons</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Control\UI\Buttons\Start.h">
-      <Filter>Header Files\Control\UI\Buttons</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Control\UI\Sliders\Slider.h">
-      <Filter>Header Files\Control\UI\Slider</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Control\UI\Buttons\Pause.h">
-      <Filter>Header Files\Control\UI\Buttons</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Control\States\CreditsState.h">
-      <Filter>Header Files\Control\States</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Control\UI\Buttons\Continue.h">
-      <Filter>Header Files\Control\UI\Buttons</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Control\UI\Buttons\Credits.h">
-      <Filter>Header Files\Control\UI\Buttons</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Control\UI\Buttons\Menu.h">
-      <Filter>Header Files\Control\UI\Buttons</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Control\UI\Sliders\SliderBase.h">
-      <Filter>Header Files\Control\UI\Slider</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Control\UI\Sliders\SliderClick.h">
-      <Filter>Header Files\Control\UI\Slider</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\View\Camera.h">
-      <Filter>Header Files\View</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Control\UI\Buttons\Back1.h">
-      <Filter>Header Files\Control\UI\Buttons</Filter>
-    </ClInclude>
-<<<<<<< HEAD
-    <ClInclude Include="Src\Utils\Music.h">
-      <Filter>Header Files\Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Utils\SoundEffect.h">
-      <Filter>Header Files\Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Logic\Lantern.h">
-      <Filter>Header Files\Logic\InteractuableObjects</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\sdlutils\InputHandler.h">
-      <Filter>Header Files\sdlutils</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\sdlutils\macros.h">
-      <Filter>Header Files\sdlutils</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\sdlutils\Music.h">
-      <Filter>Header Files\sdlutils</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\sdlutils\RandomNumberGenerator.h">
-      <Filter>Header Files\sdlutils</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\sdlutils\SDLUtils.h">
-      <Filter>Header Files\sdlutils</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\sdlutils\sdlutils_demo.h">
-      <Filter>Header Files\sdlutils</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\sdlutils\SoundEffect.h">
-      <Filter>Header Files\sdlutils</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\sdlutils\VirtualTimer.h">
-      <Filter>Header Files\sdlutils</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Control\UI\Sliders\GeneralVolumeSlider.h">
-      <Filter>Header Files\Control\UI\Slider</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Logic\InputManager.h">
-      <Filter>Header Files\Logic\Managers/Game</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Control\UI\Sliders\BrightnessSlider.h">
-      <Filter>Header Files\Control\UI\Slider</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Control\UI\ElementsUI\Brightness.h">
-      <Filter>Header Files\Control\UI\ElementsUI</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\sdlutils\TextureUtils.h">
-      <Filter>Header Files\sdlutils</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Control\UI\Sliders\GeneralMusicSlider.h">
-      <Filter>Header Files\Control\UI\Slider</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Control\UI\Sliders\GeneralSoundsEffectSlider.h">
-      <Filter>Header Files\Control\UI\Slider</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\sdlutils\FontUtils.h">
-      <Filter>Header Files\sdlutils</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Logic\InteractuableChest.h">
-      <Filter>Header Files\Logic\InteractuableObjects</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Control\MapCommand.h">
-      <Filter>Header Files\Control\Commands</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Logic\ColliderTile.h">
-      <Filter>Header Files\Logic</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Logic\TutorialBook.h">
-      <Filter>Header Files\Logic\InteractuableObjects</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Control\States\MapState.h">
-      <Filter>Header Files\Control\States</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Logic\Pickaxe.h">
-      <Filter>Header Files\Logic\InteractuableObjects</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Logic\Rock.h">
-      <Filter>Header Files\Logic\InteractuableObjects</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Control\UI\Buttons\ExitButton.h">
-      <Filter>Header Files\Control\UI\Buttons</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Logic\MAPPoint.h">
-      <Filter>Header Files\Logic\InteractuableObjects</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Logic\GameObjectGenerator.h">
-=======
-    <ClInclude Include="MessageOverlay.h">
-      <Filter>Source Files\Logic</Filter>
-    </ClInclude>
+    <ClInclude Include="framework.h" />
+    <ClInclude Include="MessageOverlay.h" />
+    <ClInclude Include="MonkeyDelivery.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="Src\Control\Button.h" />
+    <ClInclude Include="Src\Control\Command.h" />
+    <ClInclude Include="Src\Control\CommandClick.h" />
+    <ClInclude Include="Src\Control\CommandExit.h" />
+    <ClInclude Include="Src\Control\CommandFactory.h" />
+    <ClInclude Include="Src\Control\CommandInteract.h" />
+    <ClInclude Include="Src\Control\CommandMove.h" />
+    <ClInclude Include="Src\Control\CommandRun.h" />
+    <ClInclude Include="Src\Control\InteractDialogueBoxCommand.h" />
+    <ClInclude Include="Src\Control\InventoryCommand.h" />
+    <ClInclude Include="Src\Control\MapCommand.h" />
+    <ClInclude Include="Src\Control\NextStateCommand.h" />
+    <ClInclude Include="Src\Control\PauseCommand.h" />
+    <ClInclude Include="Src\Control\SelectMissionCommand.h" />
+    <ClInclude Include="Src\Control\ShopCommand.h" />
+    <ClInclude Include="Src\Control\States\CreditsState.h" />
+    <ClInclude Include="Src\Control\States\GameOverState.h" />
+    <ClInclude Include="Src\Control\States\MapState.h" />
+    <ClInclude Include="Src\Control\States\MenuState.h" />
+    <ClInclude Include="Src\Control\States\MissionSelectionState.h" />
+    <ClInclude Include="Src\Control\States\OptionsState.h" />
+    <ClInclude Include="Src\Control\States\PauseState.h" />
+    <ClInclude Include="Src\Control\States\PlayingState.h" />
+    <ClInclude Include="Src\Control\States\ShopState.h" />
+    <ClInclude Include="Src\Control\States\State.h" />
+    <ClInclude Include="Src\Control\States\StateMachine.h" />
+    <ClInclude Include="Src\Control\States\TestingState.h" />
+    <ClInclude Include="Src\Control\UI\Buttons\Back.h" />
+    <ClInclude Include="Src\Control\UI\Buttons\Back1.h" />
+    <ClInclude Include="Src\Control\UI\Buttons\Continue.h" />
+    <ClInclude Include="Src\Control\UI\Buttons\Credits.h" />
+    <ClInclude Include="Src\Control\UI\Buttons\Exit.h" />
+    <ClInclude Include="Src\Control\UI\Buttons\ExitButton.h" />
+    <ClInclude Include="Src\Control\UI\Buttons\Menu.h" />
+    <ClInclude Include="Src\Control\UI\Buttons\Options.h" />
+    <ClInclude Include="Src\Control\UI\Buttons\Pause.h" />
+    <ClInclude Include="Src\Control\UI\Buttons\Start.h" />
+    <ClInclude Include="Src\Control\UI\ElementsUI\Brightness.h" />
+    <ClInclude Include="Src\Control\UI\Sliders\BrightnessSlider.h" />
+    <ClInclude Include="Src\Control\UI\Sliders\GeneralMusicSlider.h" />
+    <ClInclude Include="Src\Control\UI\Sliders\GeneralSoundsEffectSlider.h" />
+    <ClInclude Include="Src\Control\UI\Sliders\GeneralVolumeSlider.h" />
+    <ClInclude Include="Src\Control\UI\Sliders\Slider.h" />
+    <ClInclude Include="Src\Control\UI\Sliders\SliderBase.h" />
+    <ClInclude Include="Src\Control\UI\Sliders\SliderClick.h" />
+    <ClInclude Include="Src\Control\ViewController.h" />
+    <ClInclude Include="Src\json\JSON.h" />
+    <ClInclude Include="Src\json\JSONValue.h" />
+    <ClInclude Include="Src\Logic\AnimationManager.h" />
+    <ClInclude Include="Src\Logic\Bat.h" />
+    <ClInclude Include="Src\Logic\Bike.h" />
+    <ClInclude Include="Src\Logic\Bed.h" />
+    <ClInclude Include="Src\Logic\Bull.h" />
+    <ClInclude Include="Src\Logic\Cat.h" />
+    <ClInclude Include="Src\Logic\ColliderTile.h" />
+    <ClInclude Include="Src\Logic\DialogueBox.h" />
+    <ClInclude Include="Src\Logic\Enemy.h" />
+    <ClInclude Include="Src\Logic\EnergyDrink.h" />
+    <ClInclude Include="Src\Logic\energyLevel.h" />
+    <ClInclude Include="Src\Logic\FearBar.h" />
+    <ClInclude Include="Src\Logic\FearLevel.h" />
+    <ClInclude Include="Src\Logic\Flashlight.h" />
+    <ClInclude Include="Src\Logic\Game.h" />
+    <ClInclude Include="Src\Logic\GameObject.h" />
+    <ClInclude Include="Src\Logic\GameObjectGenerator.h" />
+    <ClInclude Include="Src\Logic\InputManager.h" />
+    <ClInclude Include="Src\Logic\InteractiveEntity.h" />
+    <ClInclude Include="Src\Logic\InteractuableChest.h" />
+    <ClInclude Include="Src\Logic\InteractuableShop.h" />
+    <ClInclude Include="Src\Logic\Inventory.h" />
+    <ClInclude Include="Src\Logic\InventoryObject.h" />
+    <ClInclude Include="Src\Logic\Lantern.h" />
+    <ClInclude Include="Src\Logic\MAPPoint.h" />
+    <ClInclude Include="Src\Logic\Mission.h" />
+    <ClInclude Include="Src\Logic\MissionManager.h" />
+    <ClInclude Include="Src\Logic\MissionsPanel.h" />
+    <ClInclude Include="Src\Logic\Package.h" />
+    <ClInclude Include="Src\Logic\Pickaxe.h" />
+    <ClInclude Include="Src\Logic\Plant.h" />
+    <ClInclude Include="Src\Logic\Player.h" />
+    <ClInclude Include="Src\Logic\Rock.h" />
+    <ClInclude Include="Src\Logic\Scorpion.h" />
+    <ClInclude Include="Src\Logic\Shop.h" />
+    <ClInclude Include="Src\Logic\Skates.h" />
+    <ClInclude Include="Src\Logic\SpawnZone.h" />
+    <ClInclude Include="Src\Logic\Target.h" />
+    <ClInclude Include="Src\Logic\TutorialBook.h" />
+    <ClInclude Include="Src\Logic\UI_Info.h" />
+    <ClInclude Include="Src\sdlutils\FontUtils.h" />
+    <ClInclude Include="Src\sdlutils\InputHandler.h" />
+    <ClInclude Include="Src\sdlutils\macros.h" />
+    <ClInclude Include="Src\sdlutils\Music.h" />
+    <ClInclude Include="Src\sdlutils\RandomNumberGenerator.h" />
+    <ClInclude Include="Src\sdlutils\SDLUtils.h" />
+    <ClInclude Include="Src\sdlutils\sdlutils_demo.h" />
+    <ClInclude Include="Src\sdlutils\SoundEffect.h" />
+    <ClInclude Include="Src\sdlutils\TextureUtils.h" />
+    <ClInclude Include="Src\sdlutils\VirtualTimer.h" />
+    <ClInclude Include="Src\Utils\Music.h" />
     <ClInclude Include="Src\Utils\Particles\ParticleExample.h" />
     <ClInclude Include="Src\Utils\Particles\ParticleSystem.h" />
-    <ClInclude Include="Src\Logic\FearBar.h">
->>>>>>> Visuals_Revamp
-      <Filter>Header Files\Logic</Filter>
-    </ClInclude>
+    <ClInclude Include="Src\Utils\Singleton.h" />
+    <ClInclude Include="Src\Utils\SoundEffect.h" />
+    <ClInclude Include="Src\Utils\Timer.h" />
+    <ClInclude Include="Src\Utils\Vector2D.h" />
+    <ClInclude Include="Src\View\Box.h" />
+    <ClInclude Include="Src\View\Camera.h" />
+    <ClInclude Include="Src\View\checkML.h" />
+    <ClInclude Include="Src\View\Font.h" />
+    <ClInclude Include="Src\View\Texture.h" />
+    <ClInclude Include="Src\View\TextureContainer.h" />
+    <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="MonkeyDelivery.rc" />
@@ -665,12 +243,114 @@
     <Image Include="Src\TilemapSrc\Spritesheets\TilesetReliefDetail.png" />
     <Image Include="Src\TilemapSrc\Spritesheets\TilesetWallSimple.png" />
     <Image Include="Src\TilemapSrc\Spritesheets\TilesetWater.png" />
+    <Image Include="Images\background\bckg_GameTitle.png" />
+    <Image Include="Images\background\bckg_Image.png" />
+    <Image Include="Images\background\bckg_WoodPanneling.png" />
+    <Image Include="Images\decor\Trohpy_Coco.png" />
+    <Image Include="Images\decor\Trohpy_Eagle.png" />
+    <Image Include="Images\decor\Trohpy_Fish.png" />
+    <Image Include="Images\decor\Trohpy_Fox.png" />
+    <Image Include="Images\decor\Trohpy_Frog.png" />
+    <Image Include="Images\decor\Trohpy_Hippo.png" />
+    <Image Include="Images\decor\Trohpy_Kangaroo.png" />
+    <Image Include="Images\decor\Trohpy_Toucan.png" />
+    <Image Include="Images\enemies\batSS_Death.png" />
+    <Image Include="Images\enemies\batSS_Default.png" />
+    <Image Include="Images\enemies\bullSS_Death.png" />
+    <Image Include="Images\enemies\bullSS_Default.png" />
+    <Image Include="Images\enemies\catSS_Death.png" />
+    <Image Include="Images\enemies\catSS_Default.png" />
+    <Image Include="Images\enemies\plantSS_Death.png" />
+    <Image Include="Images\enemies\plantSS_Default.png" />
+    <Image Include="Images\enemies\scorpionSS_Death.png" />
+    <Image Include="Images\enemies\scorpionSS_Default.png" />
+    <Image Include="Images\items\Item_Boots01.png" />
+    <Image Include="Images\items\Item_Boots02.png" />
+    <Image Include="Images\items\Item_Boots03.png" />
+    <Image Include="Images\items\Item_Lantern01.png" />
+    <Image Include="Images\items\Item_Package.png" />
+    <Image Include="Images\items\Item_Soda.png" />
+    <Image Include="Images\items\light\lanternCircular.png" />
+    <Image Include="Images\items\light\lanternDown.png" />
+    <Image Include="Images\items\light\lanternLeft.png" />
+    <Image Include="Images\items\light\lanternUp.png" />
+    <Image Include="Images\items\light\lightGeneric.png" />
+    <Image Include="Images\items\world\worldObject_Bed.png" />
+    <Image Include="Images\items\world\worldObject_blockRock.png" />
+    <Image Include="Images\items\world\worldObject_Chest_Closed.png" />
+    <Image Include="Images\items\world\worldObject_Chest_Opened.png" />
+    <Image Include="Images\items\world\worldObject_Gold.png" />
+    <Image Include="Images\items\world\worldObject_Tutorial.png" />
+    <Image Include="Images\map\mapMarker.png" />
+    <Image Include="Images\map\mapOverlay.png" />
+    <Image Include="Images\map\minimapOverlay.png" />
+    <Image Include="Images\roca.png" />
+    <Image Include="Images\missions\mision_UI_Helper.png" />
+    <Image Include="Images\missions\mision_UI_Panel.png" />
+    <Image Include="Images\missions\mision_UI_Selector.png" />
+    <Image Include="Images\missions\Mision01.png" />
+    <Image Include="Images\missions\Mision02.png" />
+    <Image Include="Images\missions\Mision03.png" />
+    <Image Include="Images\missions\woodpanel.png" />
+    <Image Include="Images\monkeyAnims\monkeySS_Default.png" />
+    <Image Include="Images\monkeyAnims\monkeySS_Pirate.png" />
+    <Image Include="Images\monkeyAnims\monkeySS_Sleep.png" />
+    <Image Include="Images\monkeyAnims\monkeySS_Tired.png" />
+    <Image Include="Images\monkeyAnims\racoonSS.png" />
+    <Image Include="Images\npcs\NPC_Base.png" />
+    <Image Include="Images\npcs\NPC_Coco.png" />
+    <Image Include="Images\npcs\NPC_Eagle.png" />
+    <Image Include="Images\npcs\NPC_Fish.png" />
+    <Image Include="Images\npcs\NPC_Fox.png" />
+    <Image Include="Images\npcs\NPC_Frog.png" />
+    <Image Include="Images\npcs\NPC_Hipo.png" />
+    <Image Include="Images\npcs\NPC_Kangaroo.png" />
+    <Image Include="Images\npcs\NPC_Pavo.png" />
+    <Image Include="Images\npcs\NPC_Rabbit.png" />
+    <Image Include="Images\npcs\NPC_Tucan.png" />
+    <Image Include="Images\npcs\NPC_Turtle.png" />
+    <Image Include="Images\shop\panelShopp.png" />
+    <Image Include="Images\shop\Shop_Boots01.png" />
+    <Image Include="Images\shop\Shop_Boots02.png" />
+    <Image Include="Images\shop\Shop_Boots03.png" />
+    <Image Include="Images\shop\Shop_Soda.png" />
+    <Image Include="Images\shop\shop_UI_PanelShop.png" />
+    <Image Include="Images\shop\shop_UI_Selector.png" />
+    <Image Include="Images\ui\InGame\dialoguebox.png" />
+    <Image Include="Images\ui\InGame\UI_energyLevel.png" />
+    <Image Include="Images\ui\InGame\UI_fearLevel.png" />
+    <Image Include="Images\ui\InGame\UI_InventoryBar.png" />
+    <Image Include="Images\ui\InGame\UI_InventoryBarOverlay.png" />
+    <Image Include="Images\ui\InGame\UI_playerHUD.png" />
+    <Image Include="Images\ui\Menu\black.png" />
+    <Image Include="Images\ui\Menu\Brightness.png" />
+    <Image Include="Images\ui\Menu\button_Back.png" />
+    <Image Include="Images\ui\Menu\button_BackMenu.png" />
+    <Image Include="Images\ui\Menu\button_Continue.png" />
+    <Image Include="Images\ui\Menu\button_Main_Credits.png" />
+    <Image Include="Images\ui\Menu\button_Main_ExitButton.png" />
+    <Image Include="Images\ui\Menu\button_Main_Options.png" />
+    <Image Include="Images\ui\Menu\button_Main_StartButton.png" />
+    <Image Include="Images\ui\Menu\button_Options.png" />
+    <Image Include="Images\ui\Menu\button_Pause.png" />
+    <Image Include="Images\ui\Menu\dialoguebox.png" />
+    <Image Include="Images\ui\Menu\fade.png" />
+    <Image Include="Images\ui\Menu\label.png" />
+    <Image Include="Images\ui\Menu\sliderBase.png" />
+    <Image Include="Images\ui\Menu\sliderClicker.png" />
+    <Image Include="Images\ui\Menu\UI_Checker00.png" />
+    <Image Include="Images\ui\Menu\UI_Checker01.png" />
+    <Image Include="Images\ui\Menu\UI_Checker02.png" />
+    <Image Include="Images\ui\Menu\UI_Checker03.png" />
+    <Image Include="Images\ui\capibara.png" />
+    <Image Include="Images\ui\signs.png" />
+    <Image Include="Images\ui\UI_Coin.png" />
+    <Image Include="Images\dialogPrueba.png" />
+    <Image Include="Images\missingTex.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Images\config\resources.json" />
-    <None Include="Src\TilemapSrc\1.level">
-      <Filter>Header Files\TilemapSrc</Filter>
-    </None>
+    <None Include="Src\TilemapSrc\1.level" />
     <None Include="Src\TilemapSrc\Spritesheets\TilesetRelief.psd" />
     <None Include="Src\TilemapSrc\Tilesets\FloorTileset.tsx" />
     <None Include="Src\TilemapSrc\Tilesets\NatureTileset.tsx" />
@@ -680,103 +360,14 @@
     <None Include="Src\TilemapSrc\Tilesets\TilesetRelief.tsx" />
     <None Include="Src\TilemapSrc\Tilesets\TilesetReliefDetail.tsx" />
     <None Include="Src\TilemapSrc\Tilesets\WaterTileset.tsx" />
+    <None Include="Images\background\bckg_woodWall.webp" />
+    <None Include="Images\background\6241db5f3cf64.psd" />
+    <None Include="Images\config\resources.json" />
   </ItemGroup>
   <ItemGroup>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{d6e2d8c0-9256-41c5-944b-ccfdc2985a9e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{c14015d3-7066-4fe2-bff8-1b839ffbeeb6}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Control">
-      <UniqueIdentifier>{2a021ac2-440f-43ef-851c-6c43135185d5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Logic">
-      <UniqueIdentifier>{858b51aa-57fa-42cb-b004-b10415731755}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Utils">
-      <UniqueIdentifier>{049afb76-f537-403d-8b67-693fea0275fd}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\View">
-      <UniqueIdentifier>{01c4da67-814d-4948-9b7c-aab128b8e552}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Control\Commands">
-      <UniqueIdentifier>{c98a6c5e-ff87-49af-a20c-40b3bf24d560}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Control\States">
-      <UniqueIdentifier>{af696cf6-5768-4a70-8f4d-f6cbfe12e6f4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Logic\Enemies">
-      <UniqueIdentifier>{a0bcd63d-f473-4478-8723-f96c2b4db6ec}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Logic\Managers/Game">
-      <UniqueIdentifier>{883b681f-f682-4323-a822-a383ff5c9da3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Logic\InteractuableObjects">
-      <UniqueIdentifier>{cd853b69-f465-4354-9ba4-96baf3005af1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Control">
-      <UniqueIdentifier>{30ee3c4c-2ad0-4d82-bec6-c4ec11e4f39f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Control\Commands">
-      <UniqueIdentifier>{3fb937fc-585d-4658-97f9-2f818f9a2b1f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Control\States">
-      <UniqueIdentifier>{c91deb6b-f1d0-41a1-9d5e-7edd4c890838}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Logic">
-      <UniqueIdentifier>{e52c8509-4511-4f09-9161-0c2c3a178282}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Logic\Enemies">
-      <UniqueIdentifier>{da85ca32-a699-4aa3-ac8d-9840da2fa3a7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Logic\Managers/Game">
-      <UniqueIdentifier>{3c6afe4c-0714-4fcb-b38f-7d2f0813e1ea}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Logic\InteractuableObjects">
-      <UniqueIdentifier>{a67bf8d4-b26b-4204-98c7-b652cf0742ce}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\View">
-      <UniqueIdentifier>{36a7088a-52fd-467b-a85c-b09d056043d7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Utils">
-      <UniqueIdentifier>{ba85a3eb-a68c-492a-93e0-96351463e5cd}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\TilemapSrc">
-      <UniqueIdentifier>{856c1558-74cd-42ec-9bf8-3dedeacee8a1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\TilemapSrc">
-      <UniqueIdentifier>{992d8c67-6ade-45a8-8967-85b71538412d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Control\UI">
-      <UniqueIdentifier>{be0b8170-49dd-43cb-8a83-737372429e57}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Control\UI">
-      <UniqueIdentifier>{193c4a2e-e9d5-4af8-9ab4-d8551f3fe81a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Control\UI\Buttons">
-      <UniqueIdentifier>{04f934f8-5a8b-4f1b-8faf-561568f798ff}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Control\UI\Buttons">
-      <UniqueIdentifier>{f745237f-7074-4cc2-be2c-4b87115b66ee}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Control\UI\Slider">
-      <UniqueIdentifier>{16451465-8ff3-4630-9fef-f1e05965a710}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Control\UI\Slider">
-      <UniqueIdentifier>{6cc445ec-a5e2-4b11-8c35-fe3010cf64e7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\sdlutils">
-      <UniqueIdentifier>{bb88966b-2a07-41ec-9d39-884603c3f2c5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\sdlutils">
-      <UniqueIdentifier>{7e07d613-1e4b-4016-87b1-115ddf48fdb2}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Control\UI\ElementsUI">
-      <UniqueIdentifier>{e0f12b65-6178-4314-843c-f216948d59f1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Control\UI\ElementsUI">
-      <UniqueIdentifier>{3f5c0075-be84-464a-a7b2-c2d83708c510}</UniqueIdentifier>
-    </Filter>
+    <Font Include="Images\fonts\Monospace.ttf" />
+    <Font Include="Images\fonts\Pixellari.ttf" />
+    <Font Include="Images\fonts\TheLiquid.ttf" />
+    <Font Include="Images\fonts\TheMoon.ttf" />
   </ItemGroup>
 </Project>

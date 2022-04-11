@@ -1,18 +1,17 @@
 #include "Inventory.h"
 #include "InventoryObject.h"
+#include "game.h"
 #include <iostream>
 #include <SDL_rect.h>
 #include "../View/Texture.h"
 #include <string>
 
-Inventory::Inventory(Player* player, SDL_Renderer* renderer) : player_(player), selectedInventoryObjectLast(0), selectedInventoryObject(0)
+Inventory::Inventory(Game* game, Player* player, SDL_Renderer* renderer) : player_(player), selectedInventoryObjectLast(0), selectedInventoryObject(0)
 {
 	missionObject_ = nullptr;
 
-	string route = "Images/ui/inventorybar2.png";
-	base_ = new Texture(renderer, route);
-	route = "../Images/ui/inventorybar3.png";
-	overlay_ = new Texture(renderer, route);
+	base_ = game->getTexture(UI_InventoryBar);
+	overlay_ = game->getTexture(UI_InventoryBarOverlay);
 	baseRect_ = {650, 900, 120*4, 18*4}; //hay que cambiarlo por window H/H
 }
 

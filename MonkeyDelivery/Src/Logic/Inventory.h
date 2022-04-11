@@ -7,6 +7,7 @@ using namespace std;
 
 class InventoryObject;
 class Player;
+class Game; 
 
 class Inventory
 {
@@ -26,7 +27,7 @@ private:
 	int selectedInventoryObjectLast;
 
 public:
-	Inventory(Player* player, SDL_Renderer* renderer);
+	Inventory(Game* game, Player* player, SDL_Renderer* renderer);
 	~Inventory();
 
 	bool addObject(InventoryObject* iO);

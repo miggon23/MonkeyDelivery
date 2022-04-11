@@ -153,7 +153,7 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
 	{"background/bckg_GameTitle.png",1,1},
 	{"background/bckg_Image.png",1,1},
 	{"background/bckg_WoodPanneling.png",1,1},
-	{"background/bckg_woodWall.png",1,1},
+	{"background/bckg_woodWall.webp",1,1},
 
 	//2-Buttons (UI Menu)
 	
@@ -218,9 +218,9 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
 	{"missions/Mision03.png",1,1},
 
 	//8-Monkey SpriteSheets
-	{"monkeyAnim/monkeySS_Default.png",1,1},
-	{"monkeyAnim/monkeySS_Tired.png",1,1},
-	{"monkeyAnim/monkeySS_Sleep.png",1,1},
+	{"monkeyAnims/monkeySS_Default.png",1,1},
+	{"monkeyAnims/monkeySS_Tired.png",1,1},
+	{"monkeyAnims/monkeySS_Sleep.png",1,1},
 
 	//9-NPCS SpriteSheets
 	{"npcs/NPC_Coco.png",1,1},
@@ -235,12 +235,12 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
 	{"npcs/NPC_Turtle.png",1,1},
 
 	//10-Shop
-	{"items/shop_Boots01.png",1,1},
-	{"items/shop_Boots02.png",1,1},
-	{"items/shop_Boots03.png",1,1},
-	{"items/shop_Soda.png",1,1},
-	{"items/shop_UI_PanelShop.png",1,1},
-	{"items/shop_UI_Selector.png",1,1},
+	{"shop/shop_Boots01.png",1,1},
+	{"shop/shop_Boots02.png",1,1},
+	{"shop/shop_Boots03.png",1,1},
+	{"shop/shop_Soda.png",1,1},
+	{"shop/shop_UI_PanelShop.png",1,1},
+	{"shop/shop_UI_Selector.png",1,1},
 
 	//UI Overlay (InGame)
 	{"ui/InGame/dialoguebox.png",1,1},

@@ -37,15 +37,15 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game), anima
 	energyLevel_ = new energyLevel(game);
 	fearLevel_ = new FearLevel(game);
 	//fearBar_ = new FearBar(game);
-	inventory_ = new Inventory(this, game->getRenderer());
+	inventory_ = new Inventory(game, this, game->getRenderer());
 
 	//Obketos de inventario
-	inventory_->addObject(new Skates(new Texture(game->getRenderer(), "../Images/objects/patines.png"), game));
+	inventory_->addObject(new Skates(game->getTexture(shop_Boots01), game));
+	inventory_->addObject(new Flashlight(game->getTexture(shop_Boots01), game));
+	inventory_->addObject(new EnergyDrink(game->getTexture(shop_Boots01), game));
+	inventory_->addObject(new EnergyDrink(game->getTexture(shop_Boots01), game));
+	inventory_->addObject(new EnergyDrink(game->getTexture(shop_Boots01), game));
 	//inventory_->addObject(new Bike(new Texture(game->getRenderer(), "../Images/objects/patinete.png")));
-	inventory_->addObject(new Flashlight(new Texture(game->getRenderer(), "../Images/objects/linterna2.png"), game));
-	inventory_->addObject(new EnergyDrink(new Texture(game->getRenderer(), "../Images/objects/refresco.png"), game));
-	inventory_->addObject(new EnergyDrink(new Texture(game->getRenderer(), "../Images/objects/refresco.png"), game));
-	inventory_->addObject(new EnergyDrink(new Texture(game->getRenderer(), "../Images/objects/refresco.png"), game));
 
 	setInventoryVisibility(true);
 	textureRect = { 0, 0, 16, 18 };
@@ -53,14 +53,11 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game), anima
 	//timer = sdlutils().virtualTimer();
 
 	// flashlight
-	string path = "Images/objects/luzprovi.png";
-	flashlightTex_ = new Texture(game->getRenderer(), path);
+	flashlightTex_ = game->getTexture(shop_Boots01);
 	// lantern
-	path = "Images/objects/luzCircularProvi.png";
-	lanternTex_ = new Texture(game->getRenderer(), path);
+	lanternTex_ = game->getTexture(shop_Boots01);
 	// fadeout
-	path = "Images/ui/fade.png";
-	fadeTex_ = new Texture(game->getRenderer(), path);
+	fadeTex_ = game->getTexture(shop_Boots01);
 	fadeTex_->changeAlpha(0);
 }
 

@@ -104,7 +104,7 @@
   "fonts": [
     {
       "id": "TheMoon",
-      "file": "Images/fonts/Pixellari.ttf",
+      "file": "Images/fonts/Monospace.ttf",
       "size": 16,
       "color": "white"
     }
