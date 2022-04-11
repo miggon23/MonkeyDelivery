@@ -20,7 +20,7 @@ private:
 	//Renderizado
 	Texture* base_;
 	Texture* overlay_;
-	SDL_Rect baseRect_;
+	SDL_Rect baseRect_, overlayRect_;
 
 	//OBJECTO SELECCIONADO
 	int selectedInventoryObject;

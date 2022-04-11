@@ -20,6 +20,7 @@ Inventory::~Inventory()
 	clearInventory();
 	delete missionObject_;	
 	delete base_;
+	delete overlay_;
 }
 
 bool Inventory::addObject(InventoryObject* iO)
@@ -122,6 +123,7 @@ bool Inventory::inventoryFull() {
 void Inventory::draw() 
 {
 	base_->render(baseRect_);
+	
 															
 	if (hasMissionObject()) { // si hay mission object, renderiza su textura
 		SDL_Rect oRect = { 650 + base_->getW() / 7 * 6 * 4, 900 , 18 * 4, 18 * 4 };
@@ -139,8 +141,8 @@ void Inventory::draw()
 		if (i == selectedInventoryObject) {			
 			base_->render(oRect);
 		}
-		
 	}
+	overlay_->render(overlayRect_);
 }
 
 //TEMPORAL
