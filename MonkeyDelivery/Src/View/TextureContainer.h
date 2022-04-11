@@ -11,7 +11,6 @@ using namespace std;
 const string IMAGES_PATH = "../Images/";
 
 enum TextureName {
-	monkeyTexture,
 	monkeyEyesClosedTexture, // para la presentaci�n del hito, se puede quitar despu�s pq est� en el spritesheet
 	energyTexture,
 	energyLevelTexture,
@@ -60,7 +59,7 @@ enum TextureName {
 };
 
 
-const int NUM_TEXTURES = 46;
+const int NUM_TEXTURES = 45;
 
 
 
@@ -71,8 +70,7 @@ typedef struct {
 
 
 const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
-{ {"monkeyPrueba.png",1,1},
-  {"animaciones mono/idle3.png",1,1},
+{ {"animaciones mono/monkeySS_Tired.png",1,1},
   {"energy.png",1,1},
   {"energyLevel.png",1,1},
   {"fearLevel.png",1,1},
@@ -88,8 +86,8 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
   {"decorations/bed.png",1,1},
   {"ui/dialoguebox.png",1,1},
   {"bull.png",1,1},
-  {"animaciones mono/monkeySpriteSheett.png",1,1},
-  {"animaciones mono/monkeySpriteSheetPirate.png",1,1},
+  {"animaciones mono/monkeySS_Default.png",1,1},
+  {"animaciones mono/monkeySS_Default.png",1,1},
   {"enemies/bat.png",1,1},
   {"enemies/bull.png",1,1},
   {"enemies/cat.png",1,1},
