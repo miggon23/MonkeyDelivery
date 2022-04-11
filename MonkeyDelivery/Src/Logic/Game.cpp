@@ -54,9 +54,8 @@ Game::Game(string n, double w, double h) : name(n), width(w), height(h), doExit(
 
     setRenderer(sdlutils().renderer());
    
-    string path = "Images/Mapa/imagenMiniMapa.png";
-    maptexture = new Texture(getRenderer(), path);   
-    font_ = new Font("../Images/Pixellari.ttf", 50);
+    //maptexture = getTexture(Item_Package);
+    font_ = new Font("../Images/fonts/Pixellari.ttf", 50);
     animationManager_ = new AnimationManager(this);
 }
 
@@ -497,7 +496,7 @@ void Game::initOptionsState()
 void Game::drawMap()
 { 
     SDL_Rect rectPanel = { minimapinfo_.xOrigin, minimapinfo_.yOrigin, minimapinfo_.w, minimapinfo_.h };
-    maptexture->render(rectPanel);
+   // maptexture->render(rectPanel);
 
     if (isMapPointerPut) 
         mapPoint->draw();

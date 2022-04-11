@@ -3,7 +3,7 @@
 #include "../Control/States/ShopState.h"
 
 IntectuableShop::IntectuableShop(Game* game,int x , int y) :GameObject(game, true) {
-	setTexture(shopTexture);
+	setTexture(missingTex);
 	setDimension(x, y);
 	setPosition(280.0, 680.0);
 }

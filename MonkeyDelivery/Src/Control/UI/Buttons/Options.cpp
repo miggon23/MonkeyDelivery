@@ -3,7 +3,7 @@
 #include "../../States/OptionsState.h"
 
 Options::Options(int x, int y, int w, int h, Game* game, int num) :Button(game, w, h, x, y){
-	setTexture(optionsButtonTexture);
+	setTexture(button_Main_Options);
 	num_ = num;
 }
 

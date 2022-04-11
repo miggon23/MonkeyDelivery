@@ -2,7 +2,7 @@
 #include "../Logic/game.h"
 
 Rock::Rock(Game* game, int x, int y) :ColliderTile(game,Vector2D<double>(x,y),w,h) {
-	setTexture(rocaTexture);
+	setTexture(worldObject_blockRock);
 	setDimension(w, h);
 	setPosition(x, y);
 }

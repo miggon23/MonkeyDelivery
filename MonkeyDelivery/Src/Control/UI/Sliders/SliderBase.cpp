@@ -2,7 +2,7 @@
 #include <iostream>
 
 SliderBase::SliderBase(Game* game, int x, int y):GameObject(game){
-	setTexture(sliderBase);
+	setTexture(UI_SliderBase);
 	setPosition(x, y);
 }
 

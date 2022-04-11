@@ -6,7 +6,7 @@ Cat::Cat(Game* game,int Aleatorio, Point2D<int>centroRadio, AnimationManager* an
 	Vector2D<double> zonePoint = zone.generatePoint(); //genera un punto en la zona de spawn
 	setPosition(zonePoint.getX(), zonePoint.getY()); //Coloca al enemigo en ese punto
 	initialPos = getPosition();
-	setTexture(catspritesheet);
+	setTexture(catSS_Default);
 	setDimension(50, 60);
 	createCheckPoints();
 	setScariness(0.1);
@@ -40,10 +40,10 @@ void Cat::draw()
 		pos.x -= game->getCamera()->getCameraPosition().getX();
 		pos.y -= game->getCamera()->getCameraPosition().getY();
 		if (collided && (game->getPlayer()->isUsingFlashLight() || game->getPlayer()->isUsingLantern())) 
-			setTexture(catDyingSpritesheet);
+			setTexture(catSS_Death);
 		
 		else 
-			setTexture(catspritesheet);
+			setTexture(catSS_Default);
 		
 		animationManager->getFrameImageCat(pos, textureRect, texture, timerAnimation);
 	}

@@ -13,8 +13,8 @@ DialogueBox::DialogueBox(Game* game) : GameObject(game)
 
 	currentIcon_ = nullptr;
 
-	font_ = new Font("Images/TheMoon.ttf", 40);
-	texture = game->getTexture(dialogoPrueba);
+	font_ = new Font("Images/fonts/Pixellari.ttf", 40);
+	texture = game->getTexture(UI_dialogueBox);
 	color_ = BLACK;
 
 	setPosition(xPos_, yPos_);
@@ -141,7 +141,7 @@ void DialogueBox::getIcon(unsigned int iconId)
 		currentIcon_ = nullptr;
 		break;
 	case 1:
-		currentIcon_ = game->getTexture(capibaraTexture);
+		currentIcon_ = game->getTexture(npc_Fox);
 		break;
 	default:
 		currentIcon_ = nullptr;

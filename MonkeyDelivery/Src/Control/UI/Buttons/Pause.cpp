@@ -4,7 +4,7 @@
 
 
 Pause::Pause(int x, int y, int w, int h, Game* game):Button(game,w,h,x,y){
-	setTexture(pauseButtonTexture);
+	setTexture(button_Pause);
 }
 
 void Pause::onCursorCollision(){

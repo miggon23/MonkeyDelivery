@@ -4,7 +4,7 @@
 #include "../json/JSON.h"
 
 TutorialBook::TutorialBook(Game* game, int x, int y, int w, int h) : GameObject(game, true) {
-	setTexture(bookTexture);
+	setTexture(worldObject_Tutorial);
 	setDimension(w, h);
 	setPosition(x, y);
 	//MissionsPanel::loadMissions("Images/config/resources.json");

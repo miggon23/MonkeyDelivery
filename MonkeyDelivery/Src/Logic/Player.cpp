@@ -13,7 +13,7 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game), anima
 	this->game = game;
 
 	texture = nullptr;
-	setTexture(monkeyspritesheet);
+	setTexture(monkeySS_Default);
 	setOrientation("off");
 	setMovState(WALKING);
 	INIT_VEL_ = 1.0;

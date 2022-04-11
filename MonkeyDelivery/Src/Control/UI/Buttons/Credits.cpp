@@ -4,7 +4,7 @@
 #include "../../States/CreditsState.h"
 
 Credits::Credits(int x, int y, int w, int h, Game* game):Button(game,w,h,x,y){
-	setTexture(creditsButtonTexture);
+	setTexture(button_Main_Credits);
 }
 
 void Credits::onCursorCollision(){

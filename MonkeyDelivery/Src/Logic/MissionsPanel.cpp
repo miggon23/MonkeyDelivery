@@ -14,7 +14,7 @@ MissionsPanel::MissionsPanel(Game* game) : GameObject(game, true)
 {
 	setPosition(700, 210);
 	setDimension(69, 98);
-	setTexture(missionPanelTexture);
+	setTexture(mision_UI_Panel);
 
 	missionsFinished_ = false;
 	currentLevel_ = 1;

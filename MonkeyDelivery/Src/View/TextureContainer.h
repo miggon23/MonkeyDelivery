@@ -10,80 +10,136 @@ using namespace std;
 
 const string IMAGES_PATH = "Images/";
 
-enum TextureName {
-	monkeyEyesClosedTexture, // para la presentaci�n del hito, se puede quitar despu�s pq est� en el spritesheet
-	energyTexture,
-	energyLevelTexture,
-	fearLevelTexture,
-	missionPanelTexture,
-	woodPanelTexture,
-	tucanTexture,
-	catTexture,
-	batTexture,
-	mission1Texture,
-	mission2Texture,
-	mission3Texture,
-	mission4Texture,
-	cama,
-	dialogoPrueba,
-	bullTexture,
-	monkeyspritesheet,
-	monkeyspritesheetPirate,
-	batspritesheet,
-	bullspritesheet,
-	catspritesheet,
-	plantSpritesheet,
-	scorpionSpritesheet,
-	startButtonTexture,
-	shopTexture,
-	shopPanel,
-	seleccionShopPanel,
-	missionSelector,
-	shopSelector,
-	optionsButtonTexture,
-	backButtonTexture,
-	sliderBase,
-	sliderClicker,
-	pauseButtonTexture,
-	menuButtonTexture,
-	creditsButtonTexture,
-	continueButtonTexture,
-	flashlightUp,
-	flashlightDown,
-	flashlightSides,
-	linternaProvi,
-	bikeTexture,
-	skatesTexture,
-	drinkTexture,
-	flashlightTexture,
-	batDyingSpritesheet,
-	bullDyingSpritesheet,
-	catDyingSpritesheet,
-	plantDyingSpritesheet,
-	scorpionDyingSpritesheet,
-	BrightnessTexture,
-	FadeOutTexture,
-	capibaraTexture,
-	chestTexture,
-	goldTexture,
-	backgroundTex,
-	titleTex,
-	bookTexture,
-	rocaTexture,
-	openChestTexture,
-	exitButtonTexture, 
-	pauseBackgroundTexture,
-	mapPointerTexture,
-	settingsSignsTexture,
-	linternaProvi,
-	bikeTexture,
-	skatesTexture,
-	shop_Soda,
-	shop_Boots01,
-	shop_Boots02,
+enum TextureName 
+{
+	/*
+	* Ordenadas por orden de carpetas, y ficheros (alfabetico)
+	* Index - Nombre de seccion - Numero de sprites por seccion
+	*/
+
+	//1-Background (UI Menu) - 4
+		bckg_GameTitle,
+		bckg_Image,
+		bckg_WoodPanneling,
+		bckg_woodWall,
+	
+	//3-Decorations (House) - 8
+		Trohpy_Coco,
+		Trohpy_Eagle,
+		Trohpy_Fish,
+		Trohpy_Fox,
+		Trohpy_Frog,
+		Trohpy_Hippo,
+		Trohpy_Kangaroo,
+		Trohpy_Toucan,
+	
+	//4-Enemies SpritesSheets - 10
+		batSS_Death,
+		batSS_Default,
+		bullSS_Death,
+		bullSS_Default,
+		catSS_Default,
+		catSS_Death,
+		plantSS_Death,
+		plantSS_Default,
+		scorpionSS_Death,
+		scorpionSS_Default,
+	
+	//5-Items (General) - 17
+	Item_Boots01,
+	Item_Boots02,
+	Item_Boots03,
+	Item_Lantern01,
+	Item_Package,
+	Item_Soda,
+
+		//5,1-Items (Light)
+		worldObject_Bed,
+		worldObject_blockRock,
+		worldObject_Chest_Closed,
+		worldObject_Chest_Opened,
+		worldObject_Gold,
+		worldObject_Tutorial,
+
+		//5,2-Items (World)
+		lanternCircular,
+		lanternDown,
+		lanternLeft,
+		lanternUp,
+		lightGeneric,
+	
+	//6-Map - 3
+		mapMarker,
+		mapOverlay,
+		minimapOverlay,
+	
+	//7-Missions - 6
+		mision_UI_Helper,
+		mision_UI_Panel,
+		mision_UI_Selector,
+		Mision01,
+		Mision02,
+		Mision03,
+	
+	//8-Monkey SpriteSheets - 3
+		monkeySS_Default,
+		monkeySS_Tired,
+		monkeySS_Sleep,
+	
+	//9-NPCS SpriteSheets - 10
+		npc_Coco,
+		npc_Eagle,
+		npc_Fish,
+		npc_Fox,
+		npc_Frog,
+		npc_Hipo,
+		npc_Pavo,
+		npc_Tucan,
+		npc_Kangaroo,
+		npc_Turtle,
+
+	//10-Shop - 6
+		shop_Boots01,
+		shop_Boots02,
+		shop_Boots03,
+		shop_Soda,
+		shop_UI_PanelShop,
+		shop_UI_Selector,
+	
+	//11-UI Overlay (InGame) - 7
+		UI_dialogueBox,
+		UI_Coin,
+		UI_energyLevel,
+		UI_fearLevel,
+		UI_InventoryBar,
+		UI_InventoryBarOverlay,
+		UI_playerHUD,
+	
+	//12-UI Overlay (Menu) - 19
+		UI_Black,
+		UI_Brightness,
+		button_Back,
+		button_BackMenu,
+		button_Continue,
+		button_Main_Credits,
+		button_Main_ExitButton,
+		button_Main_Options,
+		button_Main_StartButton,
+		button_Options,
+		button_Pause,
+		UI_Fade,
+		UI_label,
+		UI_SliderBase,
+		UI_SliderClicker,
+		UI_Checker00,
+		UI_Checker01,
+		UI_Checker02,
+		UI_Checker03,
+
+		missingTex,
 };
 
-const int NUM_TEXTURES = 70;
+const int NUM_TEXTURES = 94;
 
 typedef struct {
 	string filename;
@@ -93,76 +149,132 @@ typedef struct {
 
 const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
 { 
-	{"monkeyPrueba.png",1,1},
-	{"animaciones mono/idle3.png",1,1},
-	{"energy.png",1,1},
-	{"energyLevel.png",1,1},
-	{"fearLevel.png",1,1},
-	{"decorations/woodpanel.png",1,1},
-	{"decorations/missionpanel.png",1,1},
-	{"animals/tucan.png",1,1},
-	{"catPrueba.png",1,1},
-	{"batPrueba.png",1,1},
-	{"decorations/Mision1.png",1,1},
-	{"decorations/Mision1.png",1,1},
-	{"decorations/bed.png",1,1},
-	{"ui/dialoguebox.png",1,1},
-	{"bull.png",1,1},
-	{"animaciones mono/monkey_.png",1,1},
-	{"enemies/bat.png",1,1},
-	{"enemies/bull.png",1,1},
-	{"enemies/cat.png",1,1},
-	{"enemies/plant.png",1,1},
-	{"enemies/scorpion.png",1,1},
-	{"Buttons/startButton.png",1,1},
-	{"shop/transparent.png",1,1},
-	{"shop/panelShop.png",1,1},
-	{"shop/seleccion.png",1,1},
-	{"Buttons/options.png",1,1},
-	{"Buttons/back.png",1,1},
-	{"ui/label.png",1,1},
-	{"ui/point.png",1,1},
-	{"Buttons/pause.png",1,1},
-	{"Buttons/backMenu.png",1,1},
-	{"Buttons/credits.png",1,1},
-	{"Buttons/continue.png",1,1},
-	{"objects/linterna_up.png",1,1},
-	{"objects/linterna_down.png",1,1},
-	{"objects/linterna_left.png",1,1},
-	{"objects/luzprovi.png",1,1},
-	{"objects/patinete.png",1,1},
-	{"objects/patines.png",1,1},
-	{"objects/refresco.png",1,1},
-	{"objects/linterna2.png",1,1},
-	{"enemies/bat_dying.png",1,1},
-	{"enemies/bull_dying.png",1,1},
-	{"enemies/cat_dying.png",1,1},
-	{"enemies/plant_dying.png",1,1},
-	{"enemies/scorpion_dying.png",1,1},
-	{"ui/Brightness.png",1,1},
-	{"ui/fade.png",1,1},
-	{"icons/capibara.png",1,1},
-	{"objects/chest0.png",1,1},
-	{"objects/gold.png",1,1},
-	{"background/MenuImage.png",1,1},
-	{"background/GameTitleMockup1.png",1,1},
-	{"objects/tutorial.png",1,1},
-	{"roca.png",1,1},
-	{"objects/chest1.png", 1, 1},
-	{"Buttons/exitButton.png", 1, 1},
-	{"background/woodPanneling.png", 1, 1},
-	{"Mapa/marcador.png",1,1},
-	{"UI/signs.png",1,1},
-	{"objects/tutorial.png",1,1},
-	{"roca.png",1,1},
-	{"objects/chest1.png", 1, 1},
-	{"Buttons/exitButton.png", 1, 1},
-	{"background/woodPanneling.png", 1, 1},
-	{"Mapa/marcador.png",1,1},
-	{"UI/signs.png",1,1},
-	{"UI/signs.png",1,1},
-	{"UI/signs.png",1,1},
-	{"UI/signs.png",1,1}
+	//1-Background (UI Menu)
+	{"background/bckg_GameTitle.png",1,1},
+	{"background/bckg_Image.png",1,1},
+	{"background/bckg_WoodPanneling.png",1,1},
+	{"background/bckg_woodWall.png",1,1},
+
+	//2-Buttons (UI Menu)
+	
+	
+	//3-Decorations (House)
+	{"decor/Trohpy_Coco.png",1,1},
+	{"decor/Trohpy_Eagle.png",1,1},
+	{"decor/Trohpy_Fish.png",1,1},
+	{"decor/Trohpy_Fox.png",1,1},
+	{"decor/Trohpy_Frog.png",1,1},
+	{"decor/Trohpy_Hippo.png",1,1},
+	{"decor/Trohpy_Kangaroo.png",1,1},
+	{"decor/Trohpy_Toucan.png",1,1},
+
+	//4-Enemies SpritesSheets
+	{"enemies/batSS_Death.png",1,1},
+	{"enemies/batSS_Default.png",1,1},
+	{"enemies/bullSS_Death.png",1,1},
+	{"enemies/bullSS_Default.png",1,1},
+	{"enemies/catSS_Death.png",1,1},
+	{"enemies/catSS_Default.png",1,1},
+	{"enemies/plantSS_Death.png",1,1},
+	{"enemies/plantSS_Default.png",1,1},
+	{"enemies/scorpionSS_Death.png",1,1},
+	{"enemies/scorpionSS_Default.png",1,1},
+
+	//5-Items
+	{"items/Item_Boots01.png",1,1},
+	{"items/Item_Boots02.png",1,1},
+	{"items/Item_Boots03.png",1,1},
+	{"items/Item_Lantern01.png",1,1},
+	{"items/Item_Package.png",1,1},
+	{"items/Item_Soda.png",1,1},
+	
+	//Items Light
+		{"items/light/lanternCircular.png",1,1},
+		{"items/light/lanternDown.png",1,1},
+		{"items/light/lanternLeft.png",1,1},
+		{"items/light/lanternUp.png",1,1},
+		{"items/light/lightGeneric.png",1,1},
+
+	//Items World
+		{"items/world/worldObject_Bed.png",1,1},
+		{"items/world/worldObject_blockRock.png",1,1},
+		{"items/world/worldObject_Chest_Closed.png",1,1},
+		{"items/world/worldObject_Chest_Opened.png",1,1},
+		{"items/world/worldObject_Gold.png",1,1},
+		{"items/world/worldObject_Tutorial.png",1,1},
+
+
+	//6-Map
+	{"map/mapMarker.png",1,1},
+	{"map/mapOverlay.png",1,1},
+	{"map/minimapOverlay.png",1,1},
+
+	//7-Missions
+	{"missions/mision_UI_Helper.png",1,1},
+	{"missions/mision_UI_Panel.png",1,1},
+	{"missions/mision_UI_Selector.png",1,1},
+	{"missions/Mision01.png",1,1},
+	{"missions/Mision02.png",1,1},
+	{"missions/Mision03.png",1,1},
+
+	//8-Monkey SpriteSheets
+	{"monkeyAnim/monkeySS_Default.png",1,1},
+	{"monkeyAnim/monkeySS_Tired.png",1,1},
+	{"monkeyAnim/monkeySS_Sleep.png",1,1},
+
+	//9-NPCS SpriteSheets
+	{"npcs/NPC_Coco.png",1,1},
+	{"npcs/NPC_Eagle.png",1,1},
+	{"npcs/NPC_Fish.png",1,1},
+	{"npcs/NPC_Fox.png",1,1},
+	{"npcs/NPC_Frog.png",1,1},
+	{"npcs/NPC_Hipo.png",1,1},
+	{"npcs/NPC_Kangaroo.png",1,1},
+	{"npcs/NPC_Pavo.png",1,1},
+	{"npcs/NPC_Tucan.png",1,1},
+	{"npcs/NPC_Turtle.png",1,1},
+
+	//10-Shop
+	{"items/shop_Boots01.png",1,1},
+	{"items/shop_Boots02.png",1,1},
+	{"items/shop_Boots03.png",1,1},
+	{"items/shop_Soda.png",1,1},
+	{"items/shop_UI_PanelShop.png",1,1},
+	{"items/shop_UI_Selector.png",1,1},
+
+	//UI Overlay (InGame)
+	{"ui/InGame/dialoguebox.png",1,1},
+	{"ui/InGame/UI_Coin.png",1,1},
+	{"ui/InGame/UI_energyLevel.png",1,1},
+	{"ui/InGame/UI_fearLevel.png",1,1},
+	{"ui/InGame/UI_InventoryBar.png",1,1},
+	{"ui/InGame/UI_InventoryBarOverlay.png",1,1},
+	{"ui/InGame/UI_playerHUD.png",1,1},
+
+	//UI Overlay (Menu)
+	{"ui/Menu/black.png",1,1},
+	{"ui/Menu/Brightness.png",1,1},
+	{"ui/Menu/button_Back.png",1,1 },
+	{"ui/Menu/button_BackMenu.png",1,1 },
+	{"ui/Menu/button_Continue.png",1,1 },
+	{"ui/Menu/button_Main_ExitButton.png",1,1 },
+	{"ui/Menu/button_Main_Options.png",1,1 },
+	{"ui/Menu/button_Main_StartButton.png",1,1 },
+	{"ui/Menu/button_Options.png",1,1 },
+	{"ui/Menu/button_Pause.png",1,1 },
+	{"ui/Menu/dialoguebox.png",1,1},
+	{"ui/Menu/fade.png",1,1},
+	{"ui/Menu/label.png",1,1},
+	{"ui/Menu/sliderBase.png",1,1},
+	{"ui/Menu/sliderClicker.png",1,1},
+	{"ui/Menu/UI_Checker00.png",1,1},
+	{"ui/Menu/UI_Checker01.png",1,1},
+	{"ui/Menu/UI_Checker02.png",1,1},
+	{"ui/Menu/UI_Checker03.png",1,1},
+	
+	{"missingTex.png",1,1},
+
+
 };
 
 class TextureContainer {
@@ -193,5 +305,13 @@ public:
 		}
 	}
 
-	Texture* getTexture(TextureName name) const { return textures[name]; };
+	Texture* getTexture(TextureName name) const 
+	{
+		if (name >= textures.size()) return nullptr;
+		else
+		{
+			std::cout << "Index: " << name << "name: " << textures[name];
+			return textures[name];
+		}
+	};
 };

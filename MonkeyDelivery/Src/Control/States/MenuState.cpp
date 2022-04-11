@@ -21,8 +21,8 @@ MenuState::MenuState(Game* game) : State(game) {
 	addButton(new Credits(game->getWindowWidth() / 2 - buttonW / 2, game->getWindowHeight() / 2 + buttonH * 1.3, buttonW, buttonH, game));
 	addButton(new ExitButton(game->getWindowWidth() / 2 - buttonW / 2, game->getWindowHeight() / 2 + buttonH * 2.6, buttonW, buttonH, game));
 
-	backgroundTexture = game->getTexture(backgroundTex);
-	titleTexture = game->getTexture(titleTex);
+	backgroundTexture = game->getTexture(bckg_Image);
+	titleTexture = game->getTexture(bckg_GameTitle);
 	game->clearSavedState();
 	/* Music* m = new Music("../Sounds/menumusic.wav");
 	 m->play(-1);*/ //-1 son infinitos loops

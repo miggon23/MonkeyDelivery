@@ -58,7 +58,7 @@ void Shop::addElements(int level)
 		//objects.push_back({ new Bike(game->getTexture(bullTexture)), 2, 105, 1, 1000});
 		break;
 	case 2:
-		objects.push_back({ new Lantern(game->getTexture(flashlightTexture), game), 3, 0, 1, 10 });
+		objects.push_back({ new Lantern(game->getTexture(Item_Lantern01), game), 3, 0, 1, 10 });
 		break;
 	case 3:
 		break;

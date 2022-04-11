@@ -3,7 +3,7 @@
 
 Scorpion::Scorpion(Game* game, int Aleatorio, Point2D<int> centroRadio, AnimationManager* animation) : Enemy(game, Aleatorio, centroRadio, animation)
 {
-	setTexture(scorpionSpritesheet);
+	setTexture(scorpionSS_Default);
 	Vector2D<double> zonePoint = zone.generatePoint();
 	setPosition(zonePoint.getX(), zonePoint.getY());
 	setDimension(100, 110);
@@ -80,10 +80,10 @@ void Scorpion::draw()
 		pos.x -= game->getCamera()->getCameraPosition().getX();
 		pos.y -= game->getCamera()->getCameraPosition().getY();
 		if (collided && (game->getPlayer()->isUsingFlashLight() || game->getPlayer()->isUsingLantern())) 
-			setTexture(scorpionDyingSpritesheet);
+			setTexture(scorpionSS_Death);
 		
 		else 
-			setTexture(scorpionSpritesheet);
+			setTexture(scorpionSS_Default);
 		
 		animationManager->getFrameImageScorpion(pos, textureRect, texture, timerAnimation);
 	}

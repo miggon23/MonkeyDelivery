@@ -2,7 +2,7 @@
 #include "../../../Logic/Game.h"
 
 Brightness::Brightness(Game* game):game_(game),alpha_(0){
-	tex_ = game->getTexture(BrightnessTexture);
+	tex_ = game->getTexture(UI_Brightness);
 	changeAlhpa(0);
 }
 

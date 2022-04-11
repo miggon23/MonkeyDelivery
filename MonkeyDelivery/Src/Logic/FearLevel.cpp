@@ -6,7 +6,7 @@ FearLevel::FearLevel(Game* game) :GameObject(game) {
 	place_ = 50;
 	fear_ = 0;
 	maxFear_ = 100;
-	setTexture(fearLevelTexture);
+	setTexture(UI_fearLevel);
 	setPosition(place_, 70);
 	setDimension(400, 0);
 }

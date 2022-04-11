@@ -22,7 +22,7 @@ OptionsState::OptionsState(Game* game/*, int num*/) : State(game){
 	addSlider(new GeneralMusicSlider(game, 1000, 200));
 	addSlider(new GeneralSoundsEffectSlider(game, 1000, 500));
 
-	backgroundTexture = game->getTexture(pauseBackgroundTexture); 
+	backgroundTexture = game->getTexture(button_Main_Options);
 	//signsTexture = game->getTexture(settingsSignsTexture);
 	//settingsSignsTexture
 }

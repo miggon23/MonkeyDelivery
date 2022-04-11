@@ -5,7 +5,7 @@ Bat::Bat(Game* game, int Aleatorio, Point2D<int> centroRadio, int nLoop, Animati
 {
 	Vector2D<double> zonePoint = zone.generatePoint();
 	setPosition(zonePoint.getX(), zonePoint.getY());
-	setTexture(batspritesheet);
+	setTexture(batSS_Default);
 	setDimension(90, 100);
 	initialPos = getPosition();
 	stealTimer_ = SDL_GetTicks();
@@ -74,10 +74,10 @@ void Bat::draw(){
 		pos.x -= game->getCamera()->getCameraPosition().getX();
 		pos.y -= game->getCamera()->getCameraPosition().getY();
 		if (collided && (game->getPlayer()->isUsingFlashLight() || game->getPlayer()->isUsingLantern())) 
-			setTexture(batDyingSpritesheet);
+			setTexture(batSS_Death);
 		
 		else 
-			setTexture(batspritesheet);
+			setTexture(batSS_Default);
 		
 		animationManager->getFrameImageBat(pos, textureRect, texture, timerAnimation);
 	}

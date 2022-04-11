@@ -1,6 +1,6 @@
 #include "MAPPoint.h"
 
 MAPPoint::MAPPoint(Game* game) :GameObject(game) {
-	setTexture(mapPointerTexture);
+	setTexture(mapMarker);
 	setDimension(100, 100);
 };

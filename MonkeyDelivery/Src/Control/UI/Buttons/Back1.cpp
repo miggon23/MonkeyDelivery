@@ -5,7 +5,7 @@
 
 
 Back1::Back1(int x, int y, int w, int h, Game* game):Button(game,w,h,x,y){
-	setTexture(backButtonTexture);
+	setTexture(button_Back);
 }
 
 void Back1::onCursorCollision(){

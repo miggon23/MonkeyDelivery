@@ -3,7 +3,7 @@
 
 Bull::Bull(Game* game, int radio, Point2D<int> centroRadio, AnimationManager* animation) : Enemy(game, radio, centroRadio, animation)
 {
-	setTexture(bullspritesheet);
+	setTexture(bullSS_Default);
 	Vector2D<double> zonePoint = zone.generatePoint();
 	setPosition(zonePoint.getX(), zonePoint.getY());
 	setDimension(120, 120);
@@ -86,10 +86,10 @@ void Bull::draw()
 		pos.x -= game->getCamera()->getCameraPosition().getX();
 		pos.y -= game->getCamera()->getCameraPosition().getY();
 		if (collided && (game->getPlayer()->isUsingFlashLight() || game->getPlayer()->isUsingLantern())) 
-			setTexture(bullDyingSpritesheet);
+			setTexture(bullSS_Death);
 		
 		else 
-			setTexture(bullspritesheet);
+			setTexture(bullSS_Default);
 		
 		animationManager->getFrameImageBull(pos, textureRect, texture, timerAnimation);
 	}

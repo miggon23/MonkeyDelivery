@@ -3,7 +3,7 @@
 #include "../../States/PlayingState.h"
 
 Start::Start(int x, int y, int w, int h, Game* game):Button(game,w,h,x,y){
-	setTexture(startButtonTexture);
+	setTexture(button_Main_StartButton);
 }
 
 void Start::onCursorCollision(){

@@ -7,8 +7,8 @@
 ShopState::ShopState(Game* game) : State(game){
 	registerCommands();
 
-	panelTexture=game->getTexture(shopPanel);
-	font_ = new Font("Images/TheMoon.ttf", 40);
+	panelTexture=game->getTexture(shop_UI_PanelShop);
+	font_ = new Font("Images/fonts/Pixellari.ttf", 40);
 
 	shop_ = game->getShop();
 	shop_->actualice();
@@ -73,7 +73,7 @@ void ShopState::draw()
 	else
 		rectPanel = { xOffset + xObj * (selected_), yOffset + yObj, 405, 512 };
 	
-	game->getTexture(shopSelector)->render(rectPanel);
+	game->getTexture(shop_UI_Selector)->render(rectPanel);
 
 	//renderizado del texto
 	if (shop_->objects.size()>selected_&&shop_->objects[selected_].stock > 0) {

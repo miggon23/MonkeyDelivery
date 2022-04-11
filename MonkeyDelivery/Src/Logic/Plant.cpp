@@ -5,7 +5,7 @@ Plant::Plant(Game* game, int Aleatorio, Point2D<int> centroRadio, AnimationManag
 {
 	Vector2D<double> zonePoint = zone.generatePoint(); //genera un punto en la zona de spawn
 	setPosition(zonePoint.getX(), zonePoint.getY()); //Coloca al enemigo en ese punto
-	setTexture(plantSpritesheet);
+	setTexture(plantSS_Default);
 	setDimension(80, 90);
 	setResistance(4000);
 	lastUpdate_ = SDL_GetTicks();
@@ -59,10 +59,10 @@ void Plant::draw()
 		pos.x -= game->getCamera()->getCameraPosition().getX();
 		pos.y -= game->getCamera()->getCameraPosition().getY();
 		if (collided && (game->getPlayer()->isUsingFlashLight() || game->getPlayer()->isUsingLantern())) 
-			setTexture(plantDyingSpritesheet);
+			setTexture(plantSS_Death);
 		
 		else 
-			setTexture(plantSpritesheet);
+			setTexture(plantSS_Default);
 		
 		animationManager->getFrameImagePlant(pos, textureRect, texture, timerAnimation);
 	}

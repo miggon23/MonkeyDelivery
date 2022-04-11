@@ -3,7 +3,7 @@
 
 InteractuableChest::InteractuableChest(Game* game, int x, int y, int w, int h) : GameObject(game, true), rewardT_(nullptr)
 {	
-	setTexture(chestTexture);
+	setTexture(worldObject_Chest_Closed);
 	setDimension(w, h);
 	setPosition(x, y);
 	active = true;
@@ -32,7 +32,7 @@ void InteractuableChest::onPlayerInteraction(Player* player)
 
 		active = false;
 
-		setTexture(openChestTexture);
+		setTexture(worldObject_Chest_Opened);
 	}
 }
 
@@ -48,7 +48,7 @@ void InteractuableChest::selectReward(int reward, Player* player)
 		break;
 	case 1:
 		//Elementos de la narrativa
-		rewardT_ = game->getTexture(goldTexture);
+		rewardT_ = game->getTexture(UI_Coin);
 		break;
 	default:
 		break;

@@ -15,7 +15,7 @@ PauseState::PauseState(Game* game) : State(game)
 	addButton(new Menu(game->getWindowWidth() / 2 - 45, game->getWindowHeight() - 100, 75, 75, game));
 	addButton(new Continue(game->getWindowWidth() / 2 - 45, game->getWindowHeight() / 2 - 100, 75, 75, game));
 
-	backgroundTexture = game->getTexture(pauseBackgroundTexture);
+	backgroundTexture = game->getTexture(button_Main_Options);
 }
 
 void PauseState::update()

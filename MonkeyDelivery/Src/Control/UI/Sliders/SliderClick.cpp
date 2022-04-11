@@ -2,7 +2,7 @@
 
 SliderClick::SliderClick(Game* game, double topPosition,double minPosition ,double x, double y):
 	Button(game,x,y),MAX_POSITION(topPosition),MIN_POSITION(minPosition ){
-	setTexture(sliderClicker);
+	setTexture(UI_SliderClicker);
 	setPosition(x, y);
 }
 
