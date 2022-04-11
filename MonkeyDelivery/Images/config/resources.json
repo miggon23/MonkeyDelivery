@@ -1,237 +1,162 @@
 {
-    "missions": [
-        {
-            "id": "Mission1",
-            "level": 1,
-            "completed": false,
-            "image": "Images/missions/Mision1.png",
-            "maxmoney": 100,
-            "minmoney": 50,
-            "mintime": 100000,
-            "express": true,
-            "special": false,
-            "target": "tucan",
-            "targetPositionX": -250,
-            "targetPositionY": 730,
-            "targetWidth": 80,
-            "targetHeight": 100
-        },
-        {
-            "id": "Mission2",
-            "level": 1,
-            "completed": false,
-            "image": "Images/missions/Mision2.png",
-            "maxmoney": 100,
-            "minmoney": 50,
-            "mintime": 10000,
-            "express": false,
-            "special": false,
-            "target": "rana",
-            "targetPositionX": -250,
-            "targetPositionY": 730,
-            "targetWidth": 60,
-            "targetHeight": 80
-        },
-        {
-            "id": "Mission3",
-            "level": 2,
-            "completed": false,
-            "image": "Images/missions/Mision3.png",
-            "maxmoney": 100,
-            "minmoney": 50,
-            "mintime": 10000,
-            "express": false,
-            "special": false,
-            "target": "hipopotamo",
-            "targetPositionX": -250,
-            "targetPositionY": 730,
-            "targetWidth": 60,
-            "targetHeight": 80
-        },
-        {
-            "id": "Mission4",
-            "level": 2,
-            "completed": false,
-            "image": "Images/missions/Mision5.png",
-            "maxmoney": 100,
-            "minmoney": 50,
-            "mintime": 10000,
-            "express": false,
-            "special": false,
-            "target": "cocodrilo",
-            "targetPositionX": -250,
-            "targetPositionY": 730,
-            "targetWidth": 70,
-            "targetHeight": 90
-        }
-    ],
+  "missions": [
+    {
+      "id": "Mission1",
+      "level": 1,
+      "completed": false,
+      "image": "../Images/missions/Mision1.png",
+      "helperImage": "../Images/missions/Helper_Tucan.png",
+      "maxmoney": 100,
+      "minmoney": 50,
+      "mintime": 100000,
+      "express": true,
+      "special": false,
+      "target": "NPC_Tucan",
+      "targetPositionX": -250,
+      "targetPositionY": 750,
+      "targetWidth": 60,
+      "targetHeight": 60
+    },
+    {
+      "id": "Mission2",
+      "level": 1,
+      "completed": false,
+      "image": "../Images/missions/Mision2.png",
+      "helperImage": "../Images/missions/Helper_Tucan.png",
+      "maxmoney": 100,
+      "minmoney": 50,
+      "mintime": 10000,
+      "express": false,
+      "special": false,
+      "target": "NPC_Frog",
+      "targetPositionX": -250,
+      "targetPositionY": 730,
+      "targetWidth": 60,
+      "targetHeight": 60
+    },
+    {
+      "id": "Mission3",
+      "level": 2,
+      "completed": false,
+      "image": "../Images/missions/Mision3.png",
+      "helperImage": "../Images/missions/Mision1.png",
+      "maxmoney": 100,
+      "minmoney": 50,
+      "mintime": 10000,
+      "express": false,
+      "special": false,
+      "target": "hipopotamo",
+      "targetPositionX": -250,
+      "targetPositionY": 730,
+      "targetWidth": 60,
+      "targetHeight": 80
+    },
+    {
+      "id": "Mission4",
+      "level": 2,
+      "completed": false,
+      "image": "../Images/missions/Mision4.png",
+      "helperImage": "../Images/missions/Mision1.png",
+      "maxmoney": 100,
+      "minmoney": 50,
+      "mintime": 10000,
+      "express": false,
+      "special": false,
+      "target": "cocodrilo",
+      "targetPositionX": -250,
+      "targetPositionY": 730,
+      "targetWidth": 70,
+      "targetHeight": 90
+    }
+  ],
 
-    "DialogueBox1": [
-        {
-            "text": "Buenisimas tardes monos y senioras, bienvenido a DocTocs"
-        }
-    ],
-    "Mission1Text": [
-        {
-            "text": "Al fin. Se me estaba empezando a agrietar el pico. y esto es la cancion del club del herrete con la que pruebo si va lo de que los dialogos sean largo *carita feliz llorando*",
-            "icon": 1
-        }
-    ],
-    "Mission2Text": [
-        {
-            "text": "Mis pacientes agradeceran este bisturi... El cuchillo jamonero no era lo mejor."
-        }
-    ],
-    "Mission3Text": [
-        {
-            "text": "Mis funny hippo, por fin. Me quedaba sin hijos ya."
-        }
-    ],
-    "Mission4Text": [
-        {
-            "text": "Ya me estaba quedando sin ropa limpia que ponerme..."
-        }
-    ],
-    "MissionsFinished": [
-        {
-            "text": "Has terminado todas las misiones, enhorabuena."
-        }
-    ],
-    "Tutorial": [
-        {
-            "text": "Bienvenido a Macaco Town! Un lugar lleno de alegria y misterios. Pero yo no te voy a contar nada, mono. Solo te voy a decir: WASD para moverte, E para interactuar, SPACE para saltar el texto si te aburres y bueno, el inventario creo que es obvio si has jugado a algun juego en tu vida. 1,2,3,4,5. Compra objetos en la tienda para no morirte de hambre, mono.",
-            "icon": 0
-        }
-    ],
-    "ChestMoneyText": [
-        {
-            "text": "Has recibido dinero, tomaaaaaaaa. Corre a gastartelo.",
-            "icon": 0
-        }
-    ],
-    "fonts": [
-        {
-            "id": "TheMoon",
-            "file": "Images/TheMoon.ttf",
-            "size": 16
-        }
-    ],
+  "DialogueBox1": [
+    {
+      "text": "Buenisimas tardes monos y senioras, bienvenido a DocTocs"
+    }
+  ],
+  "Mission1Text": [
+    {
+      "text": "Al fin. Se me estaba empezando a agrietar el pico."
+    }
+  ],
+  "Mission2Text": [
+    {
+      "text": "Mis pacientes agradeceran este bisturi... El cuchillo jamonero no era lo mejor."
+    }
+  ],
+  "Mission3Text": [
+    {
+      "text": "Mis funny hippo, por fin. Me quedaba sin hijos ya."
+    }
+  ],
+  "Mission4Text": [
+    {
+      "text": "Ya me estaba quedando sin ropa limpia que ponerme..."
+    }
+  ],
+  "MissionsFinished": [
+    {
+      "text": "Has terminado todas las misiones, enhorabuena."
+    }
+  ],
 
-    "images": [
-        {
-            "id": "chestTexture",
-            "file": "Images/objects/chest0.png"
-        }
-    ],
+  "fonts": [
+    {
+      "id": "TheMoon",
+      "file": "Images/Pixellari.ttf",
+      "size": 16,
+      "color": "white"
+    }
+  ],
 
-    "messages": [
-    ],
+  "images": [
 
-    "sounds": [
-        {
-            "id": "buy",
-            "file": "../Sounds/buy.wav"
-        },
-        {
-            "id": "click",
-            "file": "../Sounds/click.wav"
-        },
-        {
-            "id": "endMission",
-            "file": "../Sounds/endMission.wav"
-        },
-        {
-            "id": "lantern",
-            "file": "../Sounds/lantern.wav"
-        },
-        {
-            "id": "soda",
-            "file": "../Sounds/soda.wav"
-        },
-        {
-            "id": "scary",
-            "file": "../Sounds/scary.wav"
-        },
-        {
-            "id": "getMoney",
-            "file": "../Sounds/getMoney.wav"
-        },
-        {
-            "id": "treasure",
-            "file": "../Sounds/treasure.wav"
-        },
-        {
-            "id": "chest",
-            "file": "../Sounds/chest.wav"
-        },
-        {
-            "id": "sleep",
-            "file": "../Sounds/sleep.wav"
-        },
-        {
-            "id": "walk",
-            "file": "../Sounds/walk.wav"
-        },
-        {
-            "id": "cat",
-            "file": "../Sounds/cat.wav"
-        },
-        {
-            "id": "bat",
-            "file": "../Sounds/bat.wav"
-        },
-        {
-            "id": "bull",
-            "file": "../Sounds/bull.wav"
-        },
-        {
-            "id": "plant",
-            "file": "../Sounds/plant.wav"
-        },
-        {
-            "id": "scorpion",
-            "file": "../Sounds/scorpion.wav"
-        }
+  ],
 
-    ],
+  "messages": [
+  ],
 
-    "musics": [
-    ],
+  "sounds": [
+  ],
 
-    "tilesets": [
-        {
-            "id": "FloorTileset",
-            "file": "./Src/TilemapSrc/Spritesheets/TilesetFloor.png"
-        },
-        {
-            "id": "NatureTileset",
-            "file": "./Src/TilemapSrc/Spritesheets/TilesetNature.png"
-        },
-        {
-            "id": "TilesetElement",
-            "file": "./Src/TilemapSrc/Spritesheets/TilesetElement.png"
-        },
-        {
-            "id": "TilesetFloorDetail",
-            "file": "./Src/TilemapSrc/Spritesheets/TilesetFloorDetail.png"
-        },
-        {
-            "id": "TilesetHouse",
-            "file": "./Src/TilemapSrc/Spritesheets/TilesetHouse.png"
-        },
-        {
-            "id": "TilesetRelief",
-            "file": "./Src/TilemapSrc/Spritesheets/TilesetRelief.png"
-        },
-        {
-            "id": "TilesetReliefDetail",
-            "file": "./Src/TilemapSrc/Spritesheets/TilesetReliefDetail.png"
-        },
-        {
-            "id": "WaterTileset",
-            "file": "./Src/TilemapSrc/Spritesheets/TilesetWater.png"
-        }
-    ]
+  "musics": [
+  ],
+
+  "tilesets": [
+    {
+      "id": "FloorTileset",
+      "file": "./Src/TilemapSrc/Spritesheets/TilesetFloor.png"
+    },
+    {
+      "id": "NatureTileset",
+      "file": "./Src/TilemapSrc/Spritesheets/TilesetNature.png"
+    },
+    {
+      "id": "TilesetElement",
+      "file": "./Src/TilemapSrc/Spritesheets/TilesetElement.png"
+    },
+    {
+      "id": "TilesetFloorDetail",
+      "file": "./Src/TilemapSrc/Spritesheets/TilesetFloorDetail.png"
+    },
+    {
+      "id": "TilesetHouse",
+      "file": "./Src/TilemapSrc/Spritesheets/TilesetHouse.png"
+    },
+    {
+      "id": "TilesetRelief",
+      "file": "./Src/TilemapSrc/Spritesheets/TilesetRelief.png"
+    },
+    {
+      "id": "TilesetReliefDetail",
+      "file": "./Src/TilemapSrc/Spritesheets/TilesetReliefDetail.png"
+    },
+    {
+      "id": "WaterTileset",
+      "file": "./Src/TilemapSrc/Spritesheets/TilesetWater.png"
+    }
+  ]
 
 
 }

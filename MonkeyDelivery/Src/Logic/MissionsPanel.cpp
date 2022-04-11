@@ -12,8 +12,8 @@
 
 MissionsPanel::MissionsPanel(Game* game) : GameObject(game, true)
 {
-	setPosition(700, 200);
-	setDimension(120, 140);
+	setPosition(700, 210);
+	setDimension(69, 98);
 	setTexture(missionPanelTexture);
 
 	missionsFinished_ = false;
@@ -175,7 +175,8 @@ string MissionsPanel::getMissionImage()
 	if (currentMission_ != nullptr) {
 
 		MissionInfo m = missions_.at(currentMission_->getName());
-		return m.imgRoute;
+		std::cout << m.helpImgRoute;
+		return m.helpImgRoute;
 	}
 	else
 		return "No Mission Active";
@@ -202,6 +203,7 @@ void MissionsPanel::loadMissions(std::string filename)
 					std::string key = vObj["id"]->AsString();
 					int level = vObj["level"]->AsNumber();
 					std::string imgRoute = vObj["image"]->AsString(); 
+					std::string helpImgRoute = vObj["helperImage"]->AsString();
 					int maxMoney = vObj["maxmoney"]->AsNumber();
 					int minMoney = vObj["minmoney"]->AsNumber();
 					int minTime = vObj["mintime"]->AsNumber();
@@ -236,6 +238,7 @@ void MissionsPanel::loadMissions(std::string filename)
 						isExpress,
 						isSpecial,
 						imgRoute,
+						helpImgRoute,
 						target,
 						tX,
 						tY,

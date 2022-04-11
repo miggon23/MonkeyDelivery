@@ -8,6 +8,7 @@
 #include <string>
 #include <vector>
 
+
 #include"../Control/States/StateMachine.h"
 #include "../View/Texture.h"
 #include "../View/TextureContainer.h"
@@ -47,6 +48,7 @@
 
 #include "../View/Camera.h"
 #include "../utils/Vector2D.h"
+#include "../utils/Particles/ParticleExample.h"
 
 #include "../json/JSON.h"
 #include "../sdlutils/SDLUtils.h"
@@ -134,6 +136,8 @@ private:
     bool isMapPointerPut=false;
     Texture* maptexture;
 
+    //Particle System
+    ParticleExample* partSystem;
 
 
 public:

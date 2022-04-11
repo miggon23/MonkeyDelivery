@@ -74,6 +74,7 @@ private:
 	float decreasingEnergyLevel_;
 	energyLevel* energyLevel_ = nullptr;
 	FearLevel* fearLevel_ = nullptr;
+	FearBar* fearBar_ = nullptr;
 #pragma endregion
 
 #pragma region Animations	
@@ -169,7 +170,7 @@ public:
 
 	// FADEOUT
 	void FadeOut(); // Realiza un fadeout sobre la pantalla
-	void sendToBed(); // Establece la posición en la cama más cercana después del fadeout
+	void sendToBed(); // Establece la posiciï¿½n en la cama mï¿½s cercana despuï¿½s del fadeout
 
 	// COLLISIONS
 	void onCollision(int dir);

@@ -27,27 +27,28 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game), anima
 
 	walkingEnergy_ = 0.05;
 	runningEnergy_ = walkingEnergy_ * 1.5;
-	decreasingEnergyLevel_ = walkingEnergy_; // Cambiar esto después a un método set <---
+	decreasingEnergyLevel_ = walkingEnergy_; // Cambiar esto despuï¿½s a un mï¿½todo set <---
 
 	resetVelocity(); //Se inicializa al valor de INIT_VEL_X e ..._Y
 
-	setDimension(90, 100);
+	setDimension(48, 54);
 	setPosition(2000, 600);
 
 	energyLevel_ = new energyLevel(game);
 	fearLevel_ = new FearLevel(game);
+	fearBar_ = new FearBar(game);
 	inventory_ = new Inventory(this, game->getRenderer());
 
-	//Objetos de inventario
-	inventory_->addObject(new Bike(new Texture(game->getRenderer(), "Images/objects/patinete.png"), game));
-	inventory_->addObject(new Flashlight(new Texture(game->getRenderer(), "Images/objects/linterna2.png"), game));
-	inventory_->addObject(new Lantern(new Texture(game->getRenderer(), "Images/objects/linterna.png"), game));
-	inventory_->addObject(new EnergyDrink(new Texture(game->getRenderer(), "Images/objects/refresco.png"), game));
-	inventory_->addObject(new Skates(new Texture(game->getRenderer(), "Images/objects/patines.png"), game));
-	inventory_->addObject(new Pickaxe(new Texture(game->getRenderer(), "Images/objects/pico.png"), game));
-		 
+	//Obketos de inventario
+	inventory_->addObject(new Skates(new Texture(game->getRenderer(), "../Images/objects/patines.png")));
+	//inventory_->addObject(new Bike(new Texture(game->getRenderer(), "../Images/objects/patinete.png")));
+	inventory_->addObject(new Flashlight(new Texture(game->getRenderer(), "../Images/objects/linterna2.png")));
+	inventory_->addObject(new EnergyDrink(new Texture(game->getRenderer(), "../Images/objects/refresco.png")));
+	inventory_->addObject(new EnergyDrink(new Texture(game->getRenderer(), "../Images/objects/refresco.png")));
+	inventory_->addObject(new EnergyDrink(new Texture(game->getRenderer(), "../Images/objects/refresco.png")));
+
 	setInventoryVisibility(true);
-	textureRect = { 0, 0, 100, 100 };
+	textureRect = { 0, 0, 16, 18 };
 	timerAnimation = 0;
 	//timer = sdlutils().virtualTimer();
 
@@ -115,7 +116,7 @@ void Player::move()
 {
 	Vector2D<double> speed = { (double)dirX_, (double)dirY_ };
 
-	//Normalizamos el vector para que no se desplaze más en diagonal
+	//Normalizamos el vector para que no se desplaze mï¿½s en diagonal
 	speed.normalize();
 	speed = speed * vel_;
 
@@ -124,7 +125,7 @@ void Player::move()
 			speed = speed * 1.5;			
 		}
 
-		// Comprobar si hay que cancelar el movimiento en alguna dirección por las colisiones
+		// Comprobar si hay que cancelar el movimiento en alguna direcciï¿½n por las colisiones
 		if (topCollision && speed.getY() < 0  || bottomCollision && speed.getY() > 0) {
 			speed = { speed.getX(), 0 };
 		}
@@ -280,11 +281,11 @@ void Player::FadeOut()
 		fadeTex_->changeAlpha(alpha);
 		fadeTex_->render({ 0, 0, 1800, 1000 });
 
-		// Reestablece el miedo y la energía al valor por defecto
+		// Reestablece el miedo y la energï¿½a al valor por defecto
 		fearLevel_->resetFear();
 		energyLevel_->resetEnergy();
 
-		// Establece la posición en la cama más cercana
+		// Establece la posiciï¿½n en la cama mï¿½s cercana
 		sendToBed();
 	}
 }
@@ -332,7 +333,7 @@ void Player::onCollisionExit() {
 
 //se le pasa una cantidad de dinero al player
 //si la cantidad es negativa se entiende que es para una compra y se devuelve un bool como confirmacion
-//en caso contrario solo se le añade el dinero al actual del jugador
+//en caso contrario solo se le aï¿½ade el dinero al actual del jugador
 bool Player::moneyChange(int money)
 {
 	if (money < 0 && money_ < abs(money))

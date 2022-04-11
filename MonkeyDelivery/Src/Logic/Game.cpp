@@ -54,10 +54,10 @@ Game::Game(string n, double w, double h) : name(n), width(w), height(h), doExit(
 
     setRenderer(sdlutils().renderer());
    
-    font_ = new Font("Images/TheMoon.ttf", 50);
-
     string path = "Images/Mapa/imagenMiniMapa.png";
-    maptexture = new Texture(getRenderer(), path);
+    maptexture = new Texture(getRenderer(), path);   
+    font_ = new Font("../Images/Pixellari.ttf", 50);
+    animationManager = new AnimationManager(this);
 }
 
 Game::~Game() {
@@ -149,6 +149,11 @@ void Game::start()
     player_->bedPos(670, 760);
     add(bed);
     add(new Rock(this,2500,800));
+
+    partSystem = new ParticleExample();
+    partSystem->setRenderer(renderer);                   // set the renderer
+    partSystem->setPosition(670, 600);             // set the position
+    partSystem->setStyle(ParticleExample::SMOKE);    // set the example effects
 }
 
 void Game::update()
@@ -206,13 +211,17 @@ void Game::draw()
 
     info->draw();
 
-    missionsPanel_->draw();
+    
 
     dialogueBox_->draw();
 
     player_->draw();
 
     if (!mapOpened) drawMap();
+    /*player_->drawDebug();*/
+
+    //partSystem->draw();
+    missionsPanel_->draw();
 }
 
 Point2D<int> Game::getOrigin() {

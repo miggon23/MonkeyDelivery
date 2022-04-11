@@ -11,7 +11,6 @@ using namespace std;
 const string IMAGES_PATH = "Images/";
 
 enum TextureName {
-	monkeyTexture,
 	monkeyEyesClosedTexture, // para la presentaci�n del hito, se puede quitar despu�s pq est� en el spritesheet
 	energyTexture,
 	energyLevelTexture,
@@ -23,10 +22,13 @@ enum TextureName {
 	batTexture,
 	mission1Texture,
 	mission2Texture,
+	mission3Texture,
+	mission4Texture,
 	cama,
 	dialogoPrueba,
 	bullTexture,
 	monkeyspritesheet,
+	monkeyspritesheetPirate,
 	batspritesheet,
 	bullspritesheet,
 	catspritesheet,
@@ -37,6 +39,9 @@ enum TextureName {
 	shopTexture,
 	shopPanel,
 	seleccionShopPanel,
+	missionSelector,
+	shopSelector,
+	plantSpritesheet,
 	optionsButtonTexture,
 	backButtonTexture,
 	sliderBase,
@@ -80,6 +85,16 @@ enum TextureName {
 
 
 const int NUM_TEXTURES = 60;
+	linternaProvi, 
+	bikeTexture, 
+	skatesTexture, 
+	shop_Soda,
+	shop_Boots01,
+	shop_Boots02,
+};
+
+
+const int NUM_TEXTURES = 45;
 
 
 
@@ -156,6 +171,51 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
 	{"background/woodPanneling.png", 1, 1},
 	{"Mapa/marcador.png",1,1},
 	{"UI/signs.png",1,1}
+{ {"animaciones mono/monkeySS_Tired.png",1,1},
+  {"energy.png",1,1},
+  {"energyLevel.png",1,1},
+  {"fearLevel.png",1,1},
+  {"decorations/woodpanel.png",1,1},
+  {"decorations/missionpanel.png",1,1},
+  {"NPCs/NPC_Tucan.png",1,1},
+  {"catPrueba.png",1,1},
+  {"batPrueba.png",1,1},
+  {"missions/Mision1.png",1,1},
+  {"missions/Mision2.png",1,1},
+  {"missions/Mision2.png",1,1},
+  {"missions/Mision2.png",1,1},
+  {"decorations/bed.png",1,1},
+  {"ui/dialoguebox.png",1,1},
+  {"bull.png",1,1},
+  {"animaciones mono/monkeySS_Default.png",1,1},
+  {"animaciones mono/monkeySS_Default.png",1,1},
+  {"enemies/bat.png",1,1},
+  {"enemies/bull.png",1,1},
+  {"enemies/cat.png",1,1},
+  {"Buttons/startButton.png",1,1},
+  {"enemies/scorpion.png",1,1},
+  {"shop/transparent.png",1,1},
+  {"shop/panelShop.png",1,1},
+  {"shop/missionSelector.png",1,1},
+  {"shop/shop_Selector.png",1,1},
+  {"enemies/plant.png",1,1},
+  {"Buttons/options.png",1,1},
+  {"Buttons/back.png",1,1},
+  {"ui/sliderBase.png",1,1},
+  {"ui/sliderClicker.png",1,1},
+  {"Buttons/pause.png",1,1},
+  {"Buttons/backMenu.png",1,1},
+  {"Buttons/credits.png",1,1},
+  {"Buttons/continue.png",1,1},
+  {"objects/linterna_up.png",1,1},
+  {"objects/linterna_down.png",1,1},
+  {"objects/linterna_left.png",1,1},
+  {"objects/luzprovi.png",1,1},
+  {"objects/patinete.png",1,1},
+  {"objects/patines.png",1,1},
+  {"objects/Shop_Soda.png",1,1},
+  {"objects/Shop_Boots01.png",1,1},
+  {"objects/Shop_Boots02.png",1,1},
 };
 
 

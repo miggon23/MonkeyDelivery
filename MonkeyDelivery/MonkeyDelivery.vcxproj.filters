@@ -224,6 +224,7 @@
     <ClCompile Include="Src\Control\UI\Buttons\Back1.cpp">
       <Filter>Source Files\Control\UI\Buttons</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="Src\Utils\SoundEffect.cpp">
       <Filter>Source Files\Utils</Filter>
     </ClCompile>
@@ -285,6 +286,15 @@
       <Filter>Source Files\Logic\InteractuableObjects</Filter>
     </ClCompile>
     <ClCompile Include="Src\Logic\GameObjectGenerator.cpp">
+=======
+    <ClCompile Include="MessageOverlay.cpp">
+      <Filter>Source Files\Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Utils\Particles\ParticleExample.cpp" />
+    <ClCompile Include="Src\Utils\Particles\ParticleSystem.cpp" />
+    <ClCompile Include="Src\View\Texture_manipulation.cpp" />
+    <ClCompile Include="Src\Logic\FearBar.cpp">
+>>>>>>> Visuals_Revamp
       <Filter>Source Files\Logic</Filter>
     </ClCompile>
   </ItemGroup>
@@ -536,6 +546,7 @@
     <ClInclude Include="Src\Control\UI\Buttons\Back1.h">
       <Filter>Header Files\Control\UI\Buttons</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="Src\Utils\Music.h">
       <Filter>Header Files\Utils</Filter>
     </ClInclude>
@@ -621,6 +632,14 @@
       <Filter>Header Files\Logic\InteractuableObjects</Filter>
     </ClInclude>
     <ClInclude Include="Src\Logic\GameObjectGenerator.h">
+=======
+    <ClInclude Include="MessageOverlay.h">
+      <Filter>Source Files\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Utils\Particles\ParticleExample.h" />
+    <ClInclude Include="Src\Utils\Particles\ParticleSystem.h" />
+    <ClInclude Include="Src\Logic\FearBar.h">
+>>>>>>> Visuals_Revamp
       <Filter>Header Files\Logic</Filter>
     </ClInclude>
   </ItemGroup>

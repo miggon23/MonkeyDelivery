@@ -10,6 +10,7 @@ struct MissionInfo {
 	bool isExpress;
 	bool isSpecial;
 	string imgRoute;
+	string helpImgRoute;
 	string target;
 	double xPos;
 	double yPos;

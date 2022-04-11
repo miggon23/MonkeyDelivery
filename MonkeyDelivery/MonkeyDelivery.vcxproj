@@ -42,7 +42,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
@@ -152,6 +152,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="framework.h" />
+    <ClInclude Include="MessageOverlay.h" />
     <ClInclude Include="MonkeyDelivery.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="Src\Control\Button.h" />
@@ -213,6 +214,7 @@
     <ClInclude Include="Src\Logic\Enemy.h" />
     <ClInclude Include="Src\Logic\EnergyDrink.h" />
     <ClInclude Include="Src\Logic\energyLevel.h" />
+    <ClInclude Include="Src\Logic\FearBar.h" />
     <ClInclude Include="Src\Logic\FearLevel.h" />
     <ClInclude Include="Src\Logic\Flashlight.h" />
     <ClInclude Include="Src\Logic\Game.h" />
@@ -241,6 +243,7 @@
     <ClInclude Include="Src\Logic\Target.h" />
     <ClInclude Include="Src\Logic\TutorialBook.h" />
     <ClInclude Include="Src\Logic\UI_Info.h" />
+<<<<<<< HEAD
     <ClInclude Include="Src\sdlutils\FontUtils.h" />
     <ClInclude Include="Src\sdlutils\InputHandler.h" />
     <ClInclude Include="Src\sdlutils\macros.h" />
@@ -252,6 +255,10 @@
     <ClInclude Include="Src\sdlutils\TextureUtils.h" />
     <ClInclude Include="Src\sdlutils\VirtualTimer.h" />
     <ClInclude Include="Src\Utils\Music.h" />
+=======
+    <ClInclude Include="Src\Utils\Particles\ParticleExample.h" />
+    <ClInclude Include="Src\Utils\Particles\ParticleSystem.h" />
+>>>>>>> Visuals_Revamp
     <ClInclude Include="Src\Utils\Singleton.h" />
     <ClInclude Include="Src\Utils\SoundEffect.h" />
     <ClInclude Include="Src\Utils\Timer.h" />
@@ -265,6 +272,7 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="MessageOverlay.cpp" />
     <ClCompile Include="MonkeyDelivery.cpp" />
     <ClCompile Include="Src\Control\Button.cpp" />
     <ClCompile Include="Src\Control\Command.cpp" />
@@ -325,6 +333,7 @@
     <ClCompile Include="Src\Logic\Enemy.cpp" />
     <ClCompile Include="Src\Logic\EnergyDrink.cpp" />
     <ClCompile Include="Src\Logic\energyLevel.cpp" />
+    <ClCompile Include="Src\Logic\FearBar.cpp" />
     <ClCompile Include="Src\Logic\FearLevel.cpp" />
     <ClCompile Include="Src\Logic\Flashlight.cpp" />
     <ClCompile Include="Src\Logic\Game.cpp" />
@@ -353,14 +362,20 @@
     <ClCompile Include="Src\Logic\Target.cpp" />
     <ClCompile Include="Src\Logic\TutorialBook.cpp" />
     <ClCompile Include="Src\Logic\UI_Info.cpp" />
+<<<<<<< HEAD
     <ClCompile Include="Src\sdlutils\SDLUtils.cpp" />
     <ClCompile Include="Src\sdlutils\SoundEffect.cpp" />
     <ClCompile Include="Src\sdlutils\TextureUtils.cpp" />
     <ClCompile Include="Src\Utils\SoundEffect.cpp" />
+=======
+    <ClCompile Include="Src\Utils\Particles\ParticleExample.cpp" />
+    <ClCompile Include="Src\Utils\Particles\ParticleSystem.cpp" />
+>>>>>>> Visuals_Revamp
     <ClCompile Include="Src\Utils\Timer.cpp" />
     <ClCompile Include="Src\View\Camera.cpp" />
     <ClCompile Include="Src\View\Texture.cpp" />
     <ClCompile Include="Src\View\TextureContainer.cpp" />
+    <ClCompile Include="Src\View\Texture_manipulation.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="MonkeyDelivery.rc" />
