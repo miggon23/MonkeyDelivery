@@ -18,20 +18,11 @@ private:
 	int limit = 600;
 	int playerLimit = 64;
 
-<<<<<<< HEAD
-	int wPlayer_ = 100,
-		hPlayer_ = 100,
-		x1 = 100;
-
-
-=======
 	int wPlayer_ = 16,
 		hPlayer_ = 18,
 		x1 = 16,
 		playerFrameSpeed = 200;
 	
-	
->>>>>>> Visuals_Revamp
 	//Murcielago	
 	int wBat_ = 100,
 		hBat_ = 100; 
@@ -79,13 +70,9 @@ public:
 				timer = timer_->TimeScale();
 			}
 		}
-<<<<<<< HEAD
-		if (playerState_ == Running) {
 
-=======
 		if (playerState_==Running) 
 		{
->>>>>>> Visuals_Revamp
 			//las x
 			switch (newDir.x)
 			{
@@ -257,9 +244,7 @@ public:
 		}
 		tex->render(texturaRect, plant);
 	};
-<<<<<<< HEAD
-};
-=======
+
 
 	//MENSAJE PANEL MISIONES
 	inline void getFrameImageMission(SDL_Rect plant, SDL_Rect& texturaRect, Texture* tex, int& timer) {
@@ -273,5 +258,3 @@ public:
 		tex->render(texturaRect, plant);
 	};
 };
-
->>>>>>> Visuals_Revamp

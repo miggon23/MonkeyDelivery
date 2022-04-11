@@ -57,7 +57,7 @@ Game::Game(string n, double w, double h) : name(n), width(w), height(h), doExit(
     string path = "Images/Mapa/imagenMiniMapa.png";
     maptexture = new Texture(getRenderer(), path);   
     font_ = new Font("../Images/Pixellari.ttf", 50);
-    animationManager = new AnimationManager(this);
+    animationManager_ = new AnimationManager(this);
 }
 
 Game::~Game() {

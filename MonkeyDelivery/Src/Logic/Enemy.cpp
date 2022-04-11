@@ -1,27 +1,18 @@
 #include "Enemy.h"
 #include "Game.h"
 
-<<<<<<< HEAD
 Enemy::Enemy(Game* game, int radio, Point2D<int>centroRadio, AnimationManager* animation) : GameObject(game, true), animationManager(animation) {
 
 	zone = SpawnZone(radio, centroRadio); //Creaccion de la zona de spawn
-=======
-Enemy::Enemy(Game* game, int Aleatorio, Point2D<int>centroRadio, AnimationManager* animation) : GameObject(game), animationManager(animation) {
 
-	zone = SpawnZone(Aleatorio, centroRadio); //Creaccion de la zona de spawn
->>>>>>> Visuals_Revamp
 	setAlive(true);
 	indexCheckPoint = 0;
 	back = false; //Boolenao que indica cuando se da la vuelta el enemigo en su patrulla
 	timerAnimation = 0;
 	lastUpdate_ = SDL_GetTicks();
 	timeOnFlash_ = SDL_GetTicks();
-<<<<<<< HEAD
-	respawnTimer = SDL_GetTicks();
-=======
-	//setScariness(0.7);
 
->>>>>>> Visuals_Revamp
+	respawnTimer = SDL_GetTicks();
 	nearLimit_ = 2;
 }
 
@@ -55,17 +46,12 @@ void Enemy::patrol(double speed)
 				indexCheckPoint = checkpoints.size() - 1;
 				back = true;
 			}
-<<<<<<< HEAD
-=======
-			//std::cout << indexCheckPoint << std::endl;
->>>>>>> Visuals_Revamp
 		}
 	}
 }
 
 void Enemy::die()
 {
-<<<<<<< HEAD
 	if (game->getPlayer()->isUsingFlashLight()) {
 		
 		// se guardan los ticks al colisionar con la luz
@@ -88,42 +74,24 @@ void Enemy::die()
 	if (game->getPlayer()->isUsingLantern()) {
 
 		// se guardan los ticks al colisionar con la luz
-		if (collide(game->getPlayer()->lightZoneL()) && !collided) {
-=======
-	if (game->getPlayer()->usingFlashLight) {
-
-		// se guardan los ticks al colisionar con la luz
-		if (collide(game->getPlayer()->lightZone()) && !collided) {
->>>>>>> Visuals_Revamp
+		if (collide(game->getPlayer()->lightZoneL()) && !collided) 
+		{
 			collided = true;
 			timeOnFlash_ = SDL_GetTicks();
 		}
 		// si se sale del collider de la luz se resetea todo 
 		//para que no se muera el enemigo al segundo hit
-<<<<<<< HEAD
 		if (!collide(game->getPlayer()->lightZoneL()) && collided) {
 			collided = false;
 		}
 		// si pasa Xs en la luz, se muere
 		if (timeOnFlash_ + resistence_ < SDL_GetTicks() && collide(game->getPlayer()->lightZoneL()) && collided) {
 			setAlive(false);
-=======
-		if (!collide(game->getPlayer()->lightZone()) && collided) {
-			collided = false;
-		}
-		// si pasa Xs en la luz, se muere
-		if (timeOnFlash_ + resistence_ < SDL_GetTicks() && collide(game->getPlayer()->lightZone()) && collided) {
-			setAlive(false);
-			hasBeenKilled = true;
->>>>>>> Visuals_Revamp
 			collided = false;
 		}
 	}
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> Visuals_Revamp
 void Enemy::spawn()
 {
 	setAlive(true); //Para que cuando reaparezca este vivo
@@ -131,7 +99,7 @@ void Enemy::spawn()
 	setPosition(randomPos.getX(), randomPos.getY());
 }
 
-<<<<<<< HEAD
+
 void Enemy::respawn()
 {
 	if (!isAlive()) {
@@ -144,11 +112,6 @@ void Enemy::respawn()
 			respawnTimer = SDL_GetTicks();
 		}
 	}
-=======
-void Enemy::onCollision()
-{
-
->>>>>>> Visuals_Revamp
 }
 
 void Enemy::checkDistance()
@@ -161,15 +124,8 @@ void Enemy::checkDistance()
 
 			if (distanceX <= offset && distanceY <= offset) {
 
-<<<<<<< HEAD
-				double d = 1.8 * ((distanceY + distanceX) / 2);
-=======
-				/*if (distanceX < distanceY)
-					game->scare(distanceX*scariness_);
-				else*/
 
-				double d = 1.8*((distanceY + distanceX) / 2);
->>>>>>> Visuals_Revamp
+				double d = 1.8 * ((distanceY + distanceX) / 2);
 				if (distanceX <= 20.0 && distanceY <= 20.0) {
 					game->scare(2.0 * scariness_ / 10);
 				}
@@ -180,10 +136,6 @@ void Enemy::checkDistance()
 			lastUpdate_ = SDL_GetTicks();
 		}
 	}
-<<<<<<< HEAD
-=======
-
->>>>>>> Visuals_Revamp
 }
 
 bool Enemy::inPoint()
@@ -193,10 +145,4 @@ bool Enemy::inPoint()
 		y = getPosition().getY() - point.getY();
 
 	return abs(x) + abs(y) < nearLimit_;
-<<<<<<< HEAD
 }
-=======
-
-}
-
->>>>>>> Visuals_Revamp

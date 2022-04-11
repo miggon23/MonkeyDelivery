@@ -68,25 +68,10 @@ void ShopState::draw()
 
 	//renderizado del objeto seleccionado
 
-<<<<<<< HEAD
-	if (selected_ < 4) {
-		rectPanel = { xOffset * (selected_ + 1) -30,yOffset - 25, (int)(wObj * 1.5), (int)(hObj * 1.15) };
-		if (rectPanel.x != xOffset - 30) {
-			rectPanel.x -= (30 * (selected_))*2;
-		}
-	}
-	else {
-		rectPanel = { xOffset * (selected_ - 3)-30, yOffset + yObj - 60, (int)(wObj * 1.5), (int)(hObj * 1.15) };
-		if (rectPanel.x != xOffset - 30) {
-			rectPanel.x -= (30 * (selected_-4)) * 2;
-		}
-	}
-=======
 	if(selected_ < 4)
 		rectPanel = { xOffset + xObj * selected_ , yOffset , 405, 512 };
 	else
 		rectPanel = { xOffset + xObj * (selected_), yOffset + yObj, 405, 512 };
->>>>>>> Visuals_Revamp
 	
 	game->getTexture(shopSelector)->render(rectPanel);
 

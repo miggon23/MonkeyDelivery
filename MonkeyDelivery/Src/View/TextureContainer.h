@@ -34,14 +34,12 @@ enum TextureName {
 	catspritesheet,
 	plantSpritesheet,
 	scorpionSpritesheet,
-
 	startButtonTexture,
 	shopTexture,
 	shopPanel,
 	seleccionShopPanel,
 	missionSelector,
 	shopSelector,
-	plantSpritesheet,
 	optionsButtonTexture,
 	backButtonTexture,
 	sliderBase,
@@ -58,7 +56,6 @@ enum TextureName {
 	skatesTexture,
 	drinkTexture,
 	flashlightTexture,
-
 	batDyingSpritesheet,
 	bullDyingSpritesheet,
 	catDyingSpritesheet,
@@ -66,12 +63,9 @@ enum TextureName {
 	scorpionDyingSpritesheet,
 	BrightnessTexture,
 	FadeOutTexture,
-
-	//no finales
 	capibaraTexture,
 	chestTexture,
 	goldTexture,
-	// fondo menu principal
 	backgroundTex,
 	titleTex,
 	bookTexture,
@@ -80,23 +74,16 @@ enum TextureName {
 	exitButtonTexture, 
 	pauseBackgroundTexture,
 	mapPointerTexture,
-	settingsSignsTexture
-};
-
-
-const int NUM_TEXTURES = 60;
-	linternaProvi, 
-	bikeTexture, 
-	skatesTexture, 
+	settingsSignsTexture,
+	linternaProvi,
+	bikeTexture,
+	skatesTexture,
 	shop_Soda,
 	shop_Boots01,
 	shop_Boots02,
 };
 
-
-const int NUM_TEXTURES = 45;
-
-
+const int NUM_TEXTURES = 70;
 
 typedef struct {
 	string filename;
@@ -105,7 +92,8 @@ typedef struct {
 
 
 const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
-{   {"monkeyPrueba.png",1,1},
+{ 
+	{"monkeyPrueba.png",1,1},
 	{"animaciones mono/idle3.png",1,1},
 	{"energy.png",1,1},
 	{"energyLevel.png",1,1},
@@ -146,7 +134,6 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
 	{"objects/patines.png",1,1},
 	{"objects/refresco.png",1,1},
 	{"objects/linterna2.png",1,1},
-
 	{"enemies/bat_dying.png",1,1},
 	{"enemies/bull_dying.png",1,1},
 	{"enemies/cat_dying.png",1,1},
@@ -154,71 +141,29 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
 	{"enemies/scorpion_dying.png",1,1},
 	{"ui/Brightness.png",1,1},
 	{"ui/fade.png",1,1},
-
-
-	//no finales
 	{"icons/capibara.png",1,1},
 	{"objects/chest0.png",1,1},
 	{"objects/gold.png",1,1},
-	// fondo menu principal
 	{"background/MenuImage.png",1,1},
 	{"background/GameTitleMockup1.png",1,1},
-
 	{"objects/tutorial.png",1,1},
 	{"roca.png",1,1},
 	{"objects/chest1.png", 1, 1},
 	{"Buttons/exitButton.png", 1, 1},
 	{"background/woodPanneling.png", 1, 1},
 	{"Mapa/marcador.png",1,1},
+	{"UI/signs.png",1,1},
+	{"objects/tutorial.png",1,1},
+	{"roca.png",1,1},
+	{"objects/chest1.png", 1, 1},
+	{"Buttons/exitButton.png", 1, 1},
+	{"background/woodPanneling.png", 1, 1},
+	{"Mapa/marcador.png",1,1},
+	{"UI/signs.png",1,1},
+	{"UI/signs.png",1,1},
+	{"UI/signs.png",1,1},
 	{"UI/signs.png",1,1}
-{ {"animaciones mono/monkeySS_Tired.png",1,1},
-  {"energy.png",1,1},
-  {"energyLevel.png",1,1},
-  {"fearLevel.png",1,1},
-  {"decorations/woodpanel.png",1,1},
-  {"decorations/missionpanel.png",1,1},
-  {"NPCs/NPC_Tucan.png",1,1},
-  {"catPrueba.png",1,1},
-  {"batPrueba.png",1,1},
-  {"missions/Mision1.png",1,1},
-  {"missions/Mision2.png",1,1},
-  {"missions/Mision2.png",1,1},
-  {"missions/Mision2.png",1,1},
-  {"decorations/bed.png",1,1},
-  {"ui/dialoguebox.png",1,1},
-  {"bull.png",1,1},
-  {"animaciones mono/monkeySS_Default.png",1,1},
-  {"animaciones mono/monkeySS_Default.png",1,1},
-  {"enemies/bat.png",1,1},
-  {"enemies/bull.png",1,1},
-  {"enemies/cat.png",1,1},
-  {"Buttons/startButton.png",1,1},
-  {"enemies/scorpion.png",1,1},
-  {"shop/transparent.png",1,1},
-  {"shop/panelShop.png",1,1},
-  {"shop/missionSelector.png",1,1},
-  {"shop/shop_Selector.png",1,1},
-  {"enemies/plant.png",1,1},
-  {"Buttons/options.png",1,1},
-  {"Buttons/back.png",1,1},
-  {"ui/sliderBase.png",1,1},
-  {"ui/sliderClicker.png",1,1},
-  {"Buttons/pause.png",1,1},
-  {"Buttons/backMenu.png",1,1},
-  {"Buttons/credits.png",1,1},
-  {"Buttons/continue.png",1,1},
-  {"objects/linterna_up.png",1,1},
-  {"objects/linterna_down.png",1,1},
-  {"objects/linterna_left.png",1,1},
-  {"objects/luzprovi.png",1,1},
-  {"objects/patinete.png",1,1},
-  {"objects/patines.png",1,1},
-  {"objects/Shop_Soda.png",1,1},
-  {"objects/Shop_Boots01.png",1,1},
-  {"objects/Shop_Boots02.png",1,1},
 };
-
-
 
 class TextureContainer {
 

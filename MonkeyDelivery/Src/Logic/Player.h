@@ -74,7 +74,7 @@ private:
 	float decreasingEnergyLevel_;
 	energyLevel* energyLevel_ = nullptr;
 	FearLevel* fearLevel_ = nullptr;
-	FearBar* fearBar_ = nullptr;
+	//FearBar* fearBar_ = nullptr;
 #pragma endregion
 
 #pragma region Animations	

@@ -24,15 +24,10 @@ public:
 
 private:
 	Texture* panelTexture;
-<<<<<<< HEAD
 
-	/*const int xObj = 128, yObj = 105, wObj = 100, hObj = 100, xOffset = 160, yOffset = 115,xText = 260, yText = 320;*/
-	const int xObj = 350, yObj = 300, wObj = 200, hObj = 200, xOffset = 350, yOffset = 315, //Valores para el Hito2		
-=======
 	const int xObj = 420, yObj = 300, wObj = 405, hObj = 512, xOffset = 90, yOffset = 250, //Valores para el Hito2
-		/*xText = 260, yText = 320;*/
->>>>>>> Visuals_Revamp
-		xText = 680, yText = 830; //Coordenadas  para el Hito2
+		
+	xText = 680, yText = 830; //Coordenadas  para el Hito2
 	const int MAX_SELECTED = 8, FAIL_TIMESHOWED = 3000;
 
 	int selected_ = 0, lastClicked_;	

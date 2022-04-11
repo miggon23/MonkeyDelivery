@@ -243,7 +243,6 @@
     <ClInclude Include="Src\Logic\Target.h" />
     <ClInclude Include="Src\Logic\TutorialBook.h" />
     <ClInclude Include="Src\Logic\UI_Info.h" />
-<<<<<<< HEAD
     <ClInclude Include="Src\sdlutils\FontUtils.h" />
     <ClInclude Include="Src\sdlutils\InputHandler.h" />
     <ClInclude Include="Src\sdlutils\macros.h" />
@@ -255,10 +254,8 @@
     <ClInclude Include="Src\sdlutils\TextureUtils.h" />
     <ClInclude Include="Src\sdlutils\VirtualTimer.h" />
     <ClInclude Include="Src\Utils\Music.h" />
-=======
     <ClInclude Include="Src\Utils\Particles\ParticleExample.h" />
     <ClInclude Include="Src\Utils\Particles\ParticleSystem.h" />
->>>>>>> Visuals_Revamp
     <ClInclude Include="Src\Utils\Singleton.h" />
     <ClInclude Include="Src\Utils\SoundEffect.h" />
     <ClInclude Include="Src\Utils\Timer.h" />
@@ -362,15 +359,12 @@
     <ClCompile Include="Src\Logic\Target.cpp" />
     <ClCompile Include="Src\Logic\TutorialBook.cpp" />
     <ClCompile Include="Src\Logic\UI_Info.cpp" />
-<<<<<<< HEAD
     <ClCompile Include="Src\sdlutils\SDLUtils.cpp" />
     <ClCompile Include="Src\sdlutils\SoundEffect.cpp" />
     <ClCompile Include="Src\sdlutils\TextureUtils.cpp" />
     <ClCompile Include="Src\Utils\SoundEffect.cpp" />
-=======
     <ClCompile Include="Src\Utils\Particles\ParticleExample.cpp" />
     <ClCompile Include="Src\Utils\Particles\ParticleSystem.cpp" />
->>>>>>> Visuals_Revamp
     <ClCompile Include="Src\Utils\Timer.cpp" />
     <ClCompile Include="Src\View\Camera.cpp" />
     <ClCompile Include="Src\View\Texture.cpp" />

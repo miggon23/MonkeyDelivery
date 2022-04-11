@@ -29,11 +29,7 @@ MissionSelectionState::MissionSelectionState(Game* game, vector<pair<string,stri
 	//currentSelection_ = missionImg[0].first; ->if it's string
 	currentSelection_ = 0;
 
-<<<<<<< HEAD
-	box_ = new Texture(game->getRenderer(), "Images/shop/seleccion.png");
-=======
 	box_ = game->getTexture(missionSelector);
->>>>>>> Visuals_Revamp
 	boxXPos_ = 100;
 
 	registerCommands();
