@@ -1,5 +1,5 @@
 #include "InventoryObject.h"
-#include "Player.h"
+#include "../Player/Player.h"
 
 InventoryObject::~InventoryObject(){
 	//delete myTexture_;

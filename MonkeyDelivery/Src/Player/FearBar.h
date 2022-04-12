@@ -1,4 +1,5 @@
-#include "GameObject.h"
+#include "../Logic/GameObject.h"
+
 class Game;
 
 class FearBar : public GameObject {
