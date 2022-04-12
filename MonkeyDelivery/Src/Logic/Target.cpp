@@ -58,6 +58,6 @@ void Target::draw() {
 void Target::setTexture(string tex)
 {
 	delete myTexture_;
-	string route = "../Images/NPCs/" + tex + ".png";
+	string route = "./Images/NPCs/" + tex + ".png";
 	myTexture_ = new Texture(game->getRenderer(), route);
 }

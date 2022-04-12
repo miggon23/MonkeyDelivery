@@ -233,7 +233,7 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
 	{"npcs/NPC_Hipo.png",1,1},
 	{"npcs/NPC_Kangaroo.png",1,1},
 	{"npcs/NPC_Pavo.png",1,1},
-	{"npcs/NPC_Tucan.png",1,1},
+	{"NPCs/NPC_Tucan.png",1,1},
 	{"npcs/NPC_Turtle.png",1,1},
 
 	//10-Shop
