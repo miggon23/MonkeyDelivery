@@ -150,9 +150,9 @@ void Game::start()
     add(new Rock(this,2500,800));
 
     partSystem = new ParticleExample();
-    partSystem->setRenderer(renderer);                   // set the renderer
+    partSystem->setRenderer(renderer);             // set the renderer
     partSystem->setPosition(670, 600);             // set the position
-    partSystem->setStyle(ParticleExample::SMOKE);    // set the example effects
+    partSystem->setStyle(ParticleExample::SMOKE);  // set the example effects
 }
 
 void Game::update()

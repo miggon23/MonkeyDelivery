@@ -4,8 +4,8 @@
       "id": "Mission1",
       "level": 1,
       "completed": false,
-      "image": "../Images/missions/Mision1.png",
-      "helperImage": "../Images/missions/Helper_Tucan.png",
+      "image": "../missions/Mission01.png",
+      "helperImage": "../missions/mission_UI_Helper.png",
       "maxmoney": 100,
       "minmoney": 50,
       "mintime": 100000,
@@ -21,8 +21,8 @@
       "id": "Mission2",
       "level": 1,
       "completed": false,
-      "image": "../Images/missions/Mision2.png",
-      "helperImage": "../Images/missions/Helper_Tucan.png",
+      "image": "../missions/Mission02.png",
+      "helperImage": "../missions/mission_UI_Helper.png",
       "maxmoney": 100,
       "minmoney": 50,
       "mintime": 10000,
@@ -38,8 +38,8 @@
       "id": "Mission3",
       "level": 2,
       "completed": false,
-      "image": "../Images/missions/Mision3.png",
-      "helperImage": "../Images/missions/Mision1.png",
+      "image": "../missions/Mission03.png",
+      "helperImage": "../missions/mission_UI_Helper.png",
       "maxmoney": 100,
       "minmoney": 50,
       "mintime": 10000,
@@ -55,8 +55,8 @@
       "id": "Mission4",
       "level": 2,
       "completed": false,
-      "image": "../Images/missions/Mision4.png",
-      "helperImage": "../Images/missions/Mision1.png",
+      "image": "../missions/Mission03.png",
+      "helperImage": "../missions/mission_UI_Helper.png",
       "maxmoney": 100,
       "minmoney": 50,
       "mintime": 10000,
@@ -98,15 +98,6 @@
   "MissionsFinished": [
     {
       "text": "Has terminado todas las misiones, enhorabuena."
-    }
-  ],
-
-  "fonts": [
-    {
-      "id": "TheMoon",
-      "file": "Images/fonts/Monospace.ttf",
-      "size": 16,
-      "color": "white"
     }
   ],
 
@@ -157,6 +148,4 @@
       "file": "./Src/TilemapSrc/Spritesheets/TilesetWater.png"
     }
   ]
-
-
 }

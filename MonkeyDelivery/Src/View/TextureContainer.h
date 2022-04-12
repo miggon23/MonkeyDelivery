@@ -74,12 +74,13 @@ enum TextureName
 		minimapOverlay,
 	
 	//7-Missions - 6
-		mision_UI_Helper,
-		mision_UI_Panel,
-		mision_UI_Selector,
-		Mision01,
-		Mision02,
-		Mision03,
+		mission_UI_Helper,
+		mission_UI_Panel,
+		mission_UI_Selector,
+		Mission01,
+		Mission02,
+		Mission03,
+		MissionPanel_Interact,
 	
 	//8-Monkey SpriteSheets - 3
 		monkeySS_Default,
@@ -139,7 +140,7 @@ enum TextureName
 		missingTex,
 };
 
-const int NUM_TEXTURES = 94;
+const int NUM_TEXTURES = 95;
 
 typedef struct {
 	string filename;
@@ -210,12 +211,13 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
 	{"map/minimapOverlay.png",1,1},
 
 	//7-Missions
-	{"missions/mision_UI_Helper.png",1,1},
-	{"missions/mision_UI_Panel.png",1,1},
-	{"missions/mision_UI_Selector.png",1,1},
-	{"missions/Mision01.png",1,1},
-	{"missions/Mision02.png",1,1},
-	{"missions/Mision03.png",1,1},
+	{"missions/mission_UI_Helper.png",1,1},
+	{"missions/mission_UI_Panel.png",1,1},
+	{"missions/mission_UI_Selector.png",1,1},
+	{"missions/Mission01.png",1,1},
+	{"missions/Mission02.png",1,1},
+	{"missions/Mission03.png",1,1},
+	{"missions/MissionPanel_Interact.png",1,1},
 
 	//8-Monkey SpriteSheets
 	{"monkeyAnims/monkeySS_Default.png",1,1},
@@ -257,12 +259,12 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
 	{"ui/Menu/button_Back.png",1,1 },
 	{"ui/Menu/button_BackMenu.png",1,1 },
 	{"ui/Menu/button_Continue.png",1,1 },
+	{"ui/Menu/button_Main_Credits.png",1,1 },
 	{"ui/Menu/button_Main_ExitButton.png",1,1 },
 	{"ui/Menu/button_Main_Options.png",1,1 },
 	{"ui/Menu/button_Main_StartButton.png",1,1 },
 	{"ui/Menu/button_Options.png",1,1 },
 	{"ui/Menu/button_Pause.png",1,1 },
-	{"ui/Menu/dialoguebox.png",1,1},
 	{"ui/Menu/fade.png",1,1},
 	{"ui/Menu/label.png",1,1},
 	{"ui/Menu/sliderBase.png",1,1},
@@ -307,11 +309,6 @@ public:
 
 	Texture* getTexture(TextureName name) const 
 	{
-		if (name >= textures.size()) return nullptr;
-		else
-		{
-			std::cout << "Index: " << name << "name: " << textures[name];
-			return textures[name];
-		}
+		return textures[name];
 	};
 };

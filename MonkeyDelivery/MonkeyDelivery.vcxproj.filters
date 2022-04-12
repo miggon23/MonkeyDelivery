@@ -284,14 +284,6 @@
     <Image Include="Images\map\mapMarker.png" />
     <Image Include="Images\map\mapOverlay.png" />
     <Image Include="Images\map\minimapOverlay.png" />
-    <Image Include="Images\roca.png" />
-    <Image Include="Images\missions\mision_UI_Helper.png" />
-    <Image Include="Images\missions\mision_UI_Panel.png" />
-    <Image Include="Images\missions\mision_UI_Selector.png" />
-    <Image Include="Images\missions\Mision01.png" />
-    <Image Include="Images\missions\Mision02.png" />
-    <Image Include="Images\missions\Mision03.png" />
-    <Image Include="Images\missions\woodpanel.png" />
     <Image Include="Images\monkeyAnims\monkeySS_Default.png" />
     <Image Include="Images\monkeyAnims\monkeySS_Pirate.png" />
     <Image Include="Images\monkeyAnims\monkeySS_Sleep.png" />
@@ -345,8 +337,14 @@
     <Image Include="Images\ui\capibara.png" />
     <Image Include="Images\ui\signs.png" />
     <Image Include="Images\ui\UI_Coin.png" />
-    <Image Include="Images\dialogPrueba.png" />
     <Image Include="Images\missingTex.png" />
+    <Image Include="Images\missions\MissionPanel_Interact.png" />
+    <Image Include="Images\missions\mission_UI_Helper.png" />
+    <Image Include="Images\missions\mission_UI_Panel.png" />
+    <Image Include="Images\missions\mission_UI_Selector.png" />
+    <Image Include="Images\missions\Mission01.png" />
+    <Image Include="Images\missions\Mission02.png" />
+    <Image Include="Images\missions\Mission03.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Images\config\resources.json" />

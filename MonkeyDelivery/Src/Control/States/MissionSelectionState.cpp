@@ -5,7 +5,7 @@
 
 MissionSelectionState::MissionSelectionState(Game* game) : State(game)
 {
-	background_ = game->getTexture(mision_UI_Panel);
+	background_ = game->getTexture(mission_UI_Panel);
 	
 	registerCommands();
 
@@ -18,7 +18,7 @@ MissionSelectionState::MissionSelectionState(Game* game) : State(game)
 // Constructora cuando cambiemos las texturas
 MissionSelectionState::MissionSelectionState(Game* game, vector<pair<string,string>> missionImg) :  State(game)
 {
-	background_ = game->getTexture(mision_UI_Panel);
+	background_ = game->getTexture(mission_UI_Panel);
 
 	// Bucle for que cargue solo las imagenes que se indican en missionImg
 	for (auto a : missionImg) {
@@ -29,7 +29,7 @@ MissionSelectionState::MissionSelectionState(Game* game, vector<pair<string,stri
 	//currentSelection_ = missionImg[0].first; ->if it's string
 	currentSelection_ = 0;
 
-	box_ = game->getTexture(mision_UI_Selector);
+	box_ = game->getTexture(mission_UI_Selector);
 	boxXPos_ = 100;
 
 	registerCommands();

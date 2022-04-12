@@ -386,7 +386,6 @@
     <Image Include="Images\decor\Trohpy_Hippo.png" />
     <Image Include="Images\decor\Trohpy_Kangaroo.png" />
     <Image Include="Images\decor\Trohpy_Toucan.png" />
-    <Image Include="Images\dialogPrueba.png" />
     <Image Include="Images\enemies\batSS_Death.png" />
     <Image Include="Images\enemies\batSS_Default.png" />
     <Image Include="Images\enemies\bullSS_Death.png" />
@@ -418,13 +417,13 @@
     <Image Include="Images\map\mapOverlay.png" />
     <Image Include="Images\map\minimapOverlay.png" />
     <Image Include="Images\missingTex.png" />
-    <Image Include="Images\missions\Mision01.png" />
-    <Image Include="Images\missions\Mision02.png" />
-    <Image Include="Images\missions\Mision03.png" />
-    <Image Include="Images\missions\mision_UI_Helper.png" />
-    <Image Include="Images\missions\mision_UI_Panel.png" />
-    <Image Include="Images\missions\mision_UI_Selector.png" />
-    <Image Include="Images\missions\woodpanel.png" />
+    <Image Include="Images\missions\Mission01.png" />
+    <Image Include="Images\missions\Mission02.png" />
+    <Image Include="Images\missions\Mission03.png" />
+    <Image Include="Images\missions\MissionPanel_Interact.png" />
+    <Image Include="Images\missions\mission_UI_Helper.png" />
+    <Image Include="Images\missions\mission_UI_Panel.png" />
+    <Image Include="Images\missions\mission_UI_Selector.png" />
     <Image Include="Images\monkeyAnims\monkeySS_Default.png" />
     <Image Include="Images\monkeyAnims\monkeySS_Pirate.png" />
     <Image Include="Images\monkeyAnims\monkeySS_Sleep.png" />
@@ -442,7 +441,6 @@
     <Image Include="Images\npcs\NPC_Rabbit.png" />
     <Image Include="Images\npcs\NPC_Tucan.png" />
     <Image Include="Images\npcs\NPC_Turtle.png" />
-    <Image Include="Images\roca.png" />
     <Image Include="Images\shop\panelShopp.png" />
     <Image Include="Images\shop\Shop_Boots01.png" />
     <Image Include="Images\shop\Shop_Boots02.png" />

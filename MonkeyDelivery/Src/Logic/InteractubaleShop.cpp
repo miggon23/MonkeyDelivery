@@ -1,5 +1,5 @@
 #include "InteractuableShop.h"
-#include "Player.h"
+#include "../Player/Player.h"
 #include "../Control/States/ShopState.h"
 
 IntectuableShop::IntectuableShop(Game* game,int x , int y) :GameObject(game, true) {
