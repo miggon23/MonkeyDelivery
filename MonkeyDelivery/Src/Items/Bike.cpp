@@ -1,5 +1,5 @@
 #include "Bike.h"
-#include "Player.h"
+#include "../Player/Player.h"
 
 Bike::Bike(Texture* tex, Game* game) : speedMult(2.5), InventoryObject(tex, game)
 {

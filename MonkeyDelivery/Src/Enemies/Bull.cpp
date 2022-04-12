@@ -1,5 +1,5 @@
 #include "Bull.h"
-#include "Game.h"
+#include "../Logic/Game.h"
 
 Bull::Bull(Game* game, int radio, Point2D<int> centroRadio, AnimationManager* animation) : Enemy(game, radio, centroRadio, animation)
 {

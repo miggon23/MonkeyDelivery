@@ -1,6 +1,6 @@
 #pragma once
 
-#include "InventoryObject.h"
+#include "../Logic/InventoryObject.h"
 
 class Skates : public InventoryObject
 {

@@ -1,4 +1,4 @@
-#include "GameObject.h"
+#include "../Logic/GameObject.h"
 class Game;
 
 class energyLevel: public GameObject {

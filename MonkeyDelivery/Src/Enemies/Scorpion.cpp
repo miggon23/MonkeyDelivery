@@ -1,5 +1,5 @@
 #include "Scorpion.h"
-#include "Game.h"
+#include "../Logic/Game.h"
 
 Scorpion::Scorpion(Game* game, int Aleatorio, Point2D<int> centroRadio, AnimationManager* animation) : Enemy(game, Aleatorio, centroRadio, animation)
 {

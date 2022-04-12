@@ -138,11 +138,13 @@ void Inventory::draw()
 		//La cuadricula de inventario tiene 7 slots de 18x18px, a cada ieracion aumenta una a la derecha (menos el vacio)
 		SDL_Rect oRect = { 650 + base_->getW() / 7 * i * 4, 900 , 18 * 4, 18 * 4 };
 		inventory_[i]->getTexture()->render(oRect);
-		if (i == selectedInventoryObject) {			
+		
+		//No Se para que es esto pero hace que los graficos hagan PUM
+		/*if (i == selectedInventoryObject) {
 			base_->render(oRect);
-		}
+		}*/
 	}
-	overlay_->render(overlayRect_);
+	overlay_->render(baseRect_);
 }
 
 //TEMPORAL

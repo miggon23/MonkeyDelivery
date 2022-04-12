@@ -1,6 +1,6 @@
 #include "Flashlight.h"
-#include "Player.h"
-#include "Game.h"
+#include "../Player/Player.h"
+#include "../Logic/Game.h"
 
 
 Flashlight::Flashlight(Texture* tex, Game* game) : InventoryObject(tex, game)

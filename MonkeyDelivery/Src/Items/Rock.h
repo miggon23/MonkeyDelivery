@@ -1,5 +1,5 @@
 #pragma once
-#include "ColliderTile.h"
+#include "../Logic/ColliderTile.h"
 
 class Rock : public ColliderTile {
 	int w=75.0;

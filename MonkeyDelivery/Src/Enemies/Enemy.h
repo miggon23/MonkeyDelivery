@@ -1,6 +1,6 @@
 #pragma once
-#include "GameObject.h"
-#include "SpawnZone.h"
+#include "../Logic/GameObject.h"
+#include "../Logic/SpawnZone.h"
 
 class AnimationManager;
 class Enemy : public GameObject

@@ -1,5 +1,5 @@
 #pragma once
-#include "InventoryObject.h"
+#include "../Logic/InventoryObject.h"
 
 class Game;
 

@@ -1,5 +1,5 @@
 #include "Plant.h"
-#include "Game.h"
+#include "../Logic/Game.h"
 
 Plant::Plant(Game* game, int Aleatorio, Point2D<int> centroRadio, AnimationManager* animation) :Enemy(game, Aleatorio, centroRadio, animation)
 {

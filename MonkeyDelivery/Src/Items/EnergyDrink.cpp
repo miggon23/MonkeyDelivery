@@ -1,6 +1,6 @@
 #include "EnergyDrink.h"
-#include "Game.h"
-#include "Player.h"
+#include "../Logic/Game.h"
+#include "../Player/Player.h"
 
 EnergyDrink::EnergyDrink(Texture* tex,  Game* game) : InventoryObject(tex, game)
 {

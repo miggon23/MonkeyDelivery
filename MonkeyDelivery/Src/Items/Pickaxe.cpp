@@ -1,6 +1,6 @@
 #include "Pickaxe.h"
-#include "Player.h"
-#include "Game.h"
+#include "../Player/Player.h"
+#include "../Logic/Game.h"
 #include "Rock.h"
 #include <string>
 

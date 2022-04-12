@@ -1,7 +1,7 @@
 #include "Lantern.h"
-#include "Player.h"
+#include "../Player/Player.h"
 #include "Flashlight.h"
-#include "Game.h"
+#include "../Logic/Game.h"
 
 Lantern::Lantern(Texture* tex, Game* game) : InventoryObject(tex, game)
 {

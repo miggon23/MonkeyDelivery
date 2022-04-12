@@ -1,5 +1,5 @@
 #include "GameOverState.h"
-#include "../../Logic/Player.h"
+#include "../../Player/Player.h"
 
 GameOverState::GameOverState(Game* game) : State(game)
 {

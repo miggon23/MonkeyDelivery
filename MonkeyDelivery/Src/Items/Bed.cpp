@@ -1,5 +1,5 @@
 #include "Bed.h"
-#include "Player.h"
+#include "../Player/Player.h"
 Bed::Bed(Game* game) :GameObject(game, true) {
 	setTexture(worldObject_Bed);
 	setDimension(140, 130);

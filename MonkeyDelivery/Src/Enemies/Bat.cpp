@@ -1,5 +1,5 @@
 #include "Bat.h"
-#include "Game.h"
+#include "../Logic/Game.h"
 
 Bat::Bat(Game* game, int Aleatorio, Point2D<int> centroRadio, int nLoop, AnimationManager* animation) : Enemy(game, Aleatorio, centroRadio,animation)
 {

@@ -1,6 +1,6 @@
 #include "Target.h"
 #include "MissionsPanel.h"
-#include "Player.h"
+#include "../Player/Player.h"
 #include "Game.h"
 
 Target::Target(MissionsPanel* mp, Game* g) : GameObject(g, true), missionsPanel_(mp), myTexture_(nullptr)

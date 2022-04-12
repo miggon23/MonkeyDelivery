@@ -1,10 +1,10 @@
 #pragma once
 
-#include "GameObject.h"
+#include "../Logic/GameObject.h"
 #include "energyLevel.h"
 #include "FearLevel.h"
-#include "Inventory.h"
-#include "InventoryObject.h"
+#include "../Logic/Inventory.h"
+#include "../Logic/InventoryObject.h"
 
 #include "../sdlutils/SDLUtils.h"
 

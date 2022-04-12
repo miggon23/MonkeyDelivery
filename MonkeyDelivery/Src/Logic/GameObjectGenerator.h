@@ -1,11 +1,11 @@
 #pragma once
 
 #include "Game.h"
-#include "Bull.h"
-#include "Scorpion.h"
-#include "Bat.h"
-#include "Plant.h"
-#include "Cat.h"
+#include "../Enemies/Bull.h"
+#include "../Enemies/Scorpion.h"
+#include "../Enemies/Bat.h"
+#include "../Enemies/Plant.h"
+#include "../Enemies/Cat.h"
 #include <vector>
 
 class GameObjectGenerator

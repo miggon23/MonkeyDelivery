@@ -1,6 +1,6 @@
 #include "TutorialBook.h"
 #include "../Logic/Game.h"
-#include "DialogueBox.h"
+#include "../Logic/DialogueBox.h"
 #include "../json/JSON.h"
 
 TutorialBook::TutorialBook(Game* game, int x, int y, int w, int h) : GameObject(game, true) {

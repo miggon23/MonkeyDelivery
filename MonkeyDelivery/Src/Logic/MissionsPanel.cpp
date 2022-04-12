@@ -7,7 +7,7 @@
 #include "../Control/States/MissionSelectionState.h"
 #include "../json/JSON.h"
 
-#include "Package.h"
+#include "../Items/Package.h"
 #include "DialogueBox.h"
 
 MissionsPanel::MissionsPanel(Game* game) : GameObject(game, true)

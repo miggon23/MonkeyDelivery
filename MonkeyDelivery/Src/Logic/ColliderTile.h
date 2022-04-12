@@ -2,7 +2,7 @@
 #include "../utils/Vector2D.h"
 
 #include "GameObject.h"
-#include "Player.h"
+#include "../Player/Player.h"
 class Game;
 
 class ColliderTile : public GameObject

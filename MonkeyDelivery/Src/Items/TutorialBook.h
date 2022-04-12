@@ -1,5 +1,5 @@
 #pragma once
-#include "GameObject.h"
+#include "../Logic/GameObject.h"
 
 class TutorialBook:public GameObject {
 

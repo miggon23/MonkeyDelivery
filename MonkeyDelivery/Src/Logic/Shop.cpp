@@ -2,12 +2,12 @@
 #include <iostream>
 #include "InventoryObject.h"
 #include "Inventory.h"
-#include "Player.h"
-#include "Bike.h"
-#include "EnergyDrink.h"
-#include "Skates.h"
-#include "Flashlight.h"
-#include "Lantern.h"
+#include "../Player/Player.h"
+#include "../Items/Bike.h"
+#include "../Items/EnergyDrink.h"
+#include "../Items/Skates.h"
+#include "../Items/Flashlight.h"
+#include "../Items/Lantern.h"
 #include "Game.h"
 
 Shop::Shop(Player* player, Game* game)

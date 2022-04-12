@@ -15,7 +15,7 @@
 
 #include "../View/Font.h"
 
-#include "Player.h"
+#include "../Player/Player.h"
 #include "InteractiveEntity.h"
 
 #include "Mission.h"
@@ -25,18 +25,18 @@
 #include "../Logic/MAPPoint.h"
 
 
-#include "Enemy.h"
+#include "../Enemies/Enemy.h"
 
-#include "Bed.h"
+#include "../Items/Bed.h"
 #include "InteractuableShop.h"
 #include "InteractuableChest.h"
-#include "TutorialBook.h"
+#include "../Items/TutorialBook.h"
 #include "MissionsPanel.h"
 
 #include "AnimationManager.h"
 
 #include "Shop.h"
-#include "Rock.h"
+#include "../Items/Rock.h"
 
 #include "ColliderTile.h"
 
