@@ -19,8 +19,14 @@ Inventory::~Inventory()
 {
 	clearInventory();
 	delete missionObject_;	
-	delete base_;
-	delete overlay_;
+
+	//no se pueden eliminar estas texturas
+	//delete base_;
+	//delete overlay_;
+
+
+	base_ = nullptr;
+	overlay_ = nullptr;
 }
 
 bool Inventory::addObject(InventoryObject* iO)

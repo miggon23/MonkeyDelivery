@@ -20,6 +20,7 @@ Shop::Shop(Player* player, Game* game)
 Shop::~Shop()
 {
 	clearElements();
+
 	player = nullptr;
 }
 

@@ -66,9 +66,14 @@ Player::~Player()
 	delete energyLevel_;
 	delete fearLevel_;
 	delete inventory_;
+
 	delete flashlightTex_;
 	delete lanternTex_;
 	delete fadeTex_;
+	
+	flashlightTex_ = nullptr;
+	lanternTex_ = nullptr;
+	fadeTex_ = nullptr;
 	energyLevel_ = nullptr;
 	fearLevel_ = nullptr;
 	inventory_ = nullptr;

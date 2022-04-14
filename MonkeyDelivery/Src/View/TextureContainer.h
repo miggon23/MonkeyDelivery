@@ -208,7 +208,7 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
 	//6-Map
 	{"map/mapMarker.png",1,1},
 	{"map/mapOverlay.png",1,1},
-	{"map/minimapOverlay.png",1,1},
+	{"map/minimapOverlay.png",1,1}, //
 
 	//7-Missions
 	{"missions/mission_UI_Helper.png",1,1},
