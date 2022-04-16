@@ -23,9 +23,8 @@ MenuState::MenuState(Game* game) : State(game) {
 
 	backgroundTexture = game->getTexture(bckg_Image);
 	titleTexture = game->getTexture(bckg_GameTitle);
-	game->clearSavedState();
-	/* Music* m = new Music("../Sounds/menumusic.wav");
-	 m->play(-1);*/ //-1 son infinitos loops
+	game->clearSavedState();	
+	sdlutils().musics().at("menumusic").play(-1);
 }
 
 void MenuState::registerCommands()
@@ -35,7 +34,7 @@ void MenuState::registerCommands()
 }
 
 void MenuState::update() {
-
+	sdlutils().musics().at("menumusic").setMusicVolume(game->getMusicVolume()*game->getGeneralVolume());
 }
 
 void MenuState::draw()

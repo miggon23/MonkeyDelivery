@@ -109,9 +109,85 @@
   ],
 
   "sounds": [
+    {
+      "id": "background01",
+      "file": "./Sounds/background01.wav"
+    },
+    {
+      "id": "background02",
+      "file": "./Sounds/background02.wav"
+    },
+    {
+      "id": "bat",
+      "file": "./Sounds/bat.wav"
+    },
+    {
+      "id": "bull",
+      "file": "./Sounds/bull.wav"
+    },
+    {
+      "id": "buy",
+      "file": "./Sounds/buy.wav"
+    },
+    {
+      "id": "cat",
+      "file": "./Sounds/cat.wav"
+    },
+    {
+      "id": "chest",
+      "file": "./Sounds/chest.wav"
+    },
+    {
+      "id": "click",
+      "file": "./Sounds/click.wav"
+    },
+    {
+      "id": "endMission",
+      "file": "./Sounds/endMission.wav"
+    },
+    {
+      "id": "getMoney",
+      "file": "./Sounds/getMoney.wav"
+    },
+    {
+      "id": "lantern",
+      "file": "./Sounds/lantern.wav"
+    },
+    {
+      "id": "plant",
+      "file": "./Sounds/plant.wav"
+    },
+    {
+      "id": "scary",
+      "file": "./Sounds/scary.wav"
+    },
+    {
+      "id": "scorpion",
+      "file": "./Sounds/scorpion.wav"
+    },
+    {
+      "id": "sleep",
+      "file": "./Sounds/sleep.wav"
+    },
+    {
+      "id": "soda",
+      "file": "./Sounds/soda.wav"
+    },
+    {
+      "id": "treasure",
+      "file": "./Sounds/treasure.wav"
+    },
+    {
+      "id": "walk",
+      "file": "./Sounds/walk.wav"
+    }
   ],
 
   "musics": [
+    {
+      "id": "menumusic",
+      "file": "./Sounds/menumusic.wav"
+    }
   ],
 
   "tilesets": [

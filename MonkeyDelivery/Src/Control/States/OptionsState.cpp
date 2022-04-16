@@ -27,7 +27,10 @@ OptionsState::OptionsState(Game* game/*, int num*/) : State(game){
 	//settingsSignsTexture
 }
 
-void OptionsState::update(){
+void OptionsState::update()
+{
+	std::cout << game->getMusicVolume() * game->getGeneralVolume() << std::endl;
+	sdlutils().musics().at("menumusic").setMusicVolume(game->getMusicVolume() * game->getGeneralVolume());
 	for (auto b : getSlidersUI()) {
 		b->update();
 	}

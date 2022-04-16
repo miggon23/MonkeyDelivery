@@ -41,5 +41,8 @@ double Slider::Percent(){
 	double maxDistance = sliderClick_->MaxPosition() - sliderClick_->MinPosition();
 	double x= sliderClick_->getPosition().getX()-sliderClick_->MinPosition();	
 	cout << x/maxDistance<< endl;
+	if (x / maxDistance < 0)return 0;
+	else if (x / maxDistance > 1)return 1;
+
 	return x / maxDistance;
 }
