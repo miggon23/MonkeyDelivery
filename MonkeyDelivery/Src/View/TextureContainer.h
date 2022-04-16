@@ -38,8 +38,8 @@ enum TextureName
 		batSS_Default,
 		bullSS_Death,
 		bullSS_Default,
-		catSS_Default,
 		catSS_Death,
+		catSS_Default,
 		plantSS_Death,
 		plantSS_Default,
 		scorpionSS_Death,
@@ -275,7 +275,6 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
 	{"ui/Menu/UI_Checker01.png",1,1},
 	{"ui/Menu/UI_Checker02.png",1,1},
 	{"ui/Menu/UI_Checker03.png",1,1},
-	
 	{"missingTex.png",1,1},
 
 
