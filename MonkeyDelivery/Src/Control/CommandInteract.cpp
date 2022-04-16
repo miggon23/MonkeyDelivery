@@ -5,30 +5,14 @@
 bool CommandInteract::parse(SDL_Event& event)
 {
 	auto& ihdlr = ih();
-	//sin mando
-	//if (!ihdlr.bJoysticksInitialised()) {
-		if (ihdlr.keyDownEvent()) {
-			if (ihdlr.isKeyDown (SDL_SCANCODE_E))
-				return true;
-		}
-		if (ihdlr.getButtonState(0, 3))
-			return true;
-		
-	//}
-	/*else
-	{*/
-		/*if (ihdlr.bJoysticksInitialised() && )
-			return true;*/
-	//}
+	if (ihdlr.isKeyDown(SDL_SCANCODE_E) || ihdlr.getButtonState(0, 3))
+		return true;
+	
 	return false;
 }
 
 void CommandInteract::execute()
 {
-	//game->interactions(); ??? esto pa q es
-
-	// adri y simona: lo usamos para la interaccion con los bichos
-	
 	for (GameObject* o : game->getCollisions(game->getPlayer()->getCollider())) {
 
 		//o->exampleInter(game->getPlayer());
