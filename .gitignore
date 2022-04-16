@@ -395,5 +395,4 @@ FodyWeavers.xsd
 *.msp
 
 # JetBrains Rider
-*.sln.iml
-Instalador/Output/MonketDeliverySetUp.exe
+

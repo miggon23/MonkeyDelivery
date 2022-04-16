@@ -1,0 +1,9 @@
+
+	COMO CREAR INSTALADOR
+
+1* Instalar Innosetup
+2* Abrir el archivo
+3* Se os habra instalado donde le digais
+4* En la carpeta de output se os habra creao la el .exe con el instalador
+
+	
