@@ -31,6 +31,7 @@ void MapCommand::execute()
 		saved->registerCommands();
 		game->setState(saved);
 		game->scalePoint();
+		game->scalePlayerIcon();
 		game->removeSavedState();
 		delete tmp;
 	}

@@ -226,6 +226,7 @@ public:
     inline GameObject* playerIcon() { return pIcon; };
     void drawMap();
     void scalePoint();
+    void scalePlayerIcon();
     miniMapInfo minimapinfo_;
 
     //Menu de Opciones

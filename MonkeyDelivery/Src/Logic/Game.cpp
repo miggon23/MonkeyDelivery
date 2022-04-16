@@ -158,6 +158,8 @@ void Game::start()
     partSystem->setRenderer(renderer);             // set the renderer
     partSystem->setPosition(670, 600);             // set the position
     partSystem->setStyle(ParticleExample::SMOKE);  // set the example effects
+
+    scalePlayerIcon();
 }
 
 void Game::update()
@@ -505,10 +507,13 @@ void Game::drawMap()
 
     if (isMapPointerPut) 
         mapPoint->draw();
+
+    pIcon->draw();
 }
 
 void Game::scalePoint()
 {
+    //BALIZA
     int smallDimension = 12;
     int offset = smallDimension / 2;
 
@@ -518,4 +523,18 @@ void Game::scalePoint()
     double y = minimapinfo_.yOrigin + (mapPoint->getY() * (minimapinfo_.h / getWindowHeight()) - offset);
    
     mapPoint->setPosition(x, y);
+}
+
+void Game::scalePlayerIcon()
+{
+    //PLAYER
+    int smallDimension = 20;
+    int offset = smallDimension / 2;
+
+    pIcon->setDimension(smallDimension, smallDimension);
+
+    double x = minimapinfo_.xOrigin + (pIcon->getX() * (minimapinfo_.w / getWindowWidth()) - offset);
+    double y = minimapinfo_.yOrigin + (pIcon->getY() * (minimapinfo_.h / getWindowHeight()) - offset);
+
+    pIcon->setPosition(x, y);
 }
