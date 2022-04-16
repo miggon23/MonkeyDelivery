@@ -12,11 +12,9 @@
 
 OptionsState::OptionsState(Game* game/*, int num*/) : State(game){
 	registerCommands();
-	/*if (num == 1)*/
+	
 	addButton(new Back(game->getWindowWidth() / 2 - 50, game->getWindowHeight() - 250, 100, 75, game));
-	/*else 	
-	addButton(new Back1(game->getWindowWidth() / 2 - 50, game->getWindowHeight() - 250, 100, 75, game));*/
-
+	
 	addSlider(new GeneralVolumeSlider(game, 200, 200));
 	addSlider(new BrightnessSlider(game, 200, 500));
 	addSlider(new GeneralMusicSlider(game, 1000, 200));
@@ -27,9 +25,7 @@ OptionsState::OptionsState(Game* game/*, int num*/) : State(game){
 	//settingsSignsTexture
 }
 
-void OptionsState::update()
-{
-	std::cout << game->getMusicVolume() * game->getGeneralVolume() << std::endl;
+void OptionsState::update(){
 	sdlutils().musics().at("menumusic").setMusicVolume(game->getMusicVolume() * game->getGeneralVolume());
 	for (auto b : getSlidersUI()) {
 		b->update();
