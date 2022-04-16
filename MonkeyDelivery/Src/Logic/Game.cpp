@@ -47,12 +47,15 @@ void Game::updateCameraPos()
     mCamera_->setPos(v);
 }
 
-Game::Game(string n, double w, double h) : name(n), width(w), height(h), doExit(false), mCamera_(nullptr), mapOpened(false), mapPoint(nullptr)
+Game::Game(string n, double w, double h) : name(n), width(w), height(h), doExit(false), mCamera_(nullptr), mapOpened(false), mapPoint(nullptr), pIcon(nullptr)
 {
     SDLUtils::init("Monkey Delivery", 1800, 1000,
         "Images/config/resources.json");
 
     setRenderer(sdlutils().renderer());
+
+    string path = "Images/map/minimapOverlay.png";
+    maptexture = new Texture(getRenderer(), path);
    
     //maptexture = getTexture(Item_Package);
     font_ = new Font("./Images/fonts/Pixellari.ttf", 50);
@@ -86,6 +89,7 @@ Game::~Game() {
     delete shop_;
     delete mCamera_;
     delete mapPoint;
+    delete pIcon; pIcon = nullptr;
     for (auto a : tilesets_) {
         a.second->free();
         delete a.second;
@@ -132,6 +136,7 @@ void Game::start()
     add(missionsPanel_);
     
     mapPoint = new MAPPoint(this);
+    pIcon = new PlayerIcon(this);
     add(new IntectuableShop(this, 300, 40));
     shop_ = new Shop(player_, this);
 
@@ -496,7 +501,7 @@ void Game::initOptionsState()
 void Game::drawMap()
 { 
     SDL_Rect rectPanel = { minimapinfo_.xOrigin, minimapinfo_.yOrigin, minimapinfo_.w, minimapinfo_.h };
-    //maptexture->render(rectPanel);
+    maptexture->render(rectPanel);
 
     if (isMapPointerPut) 
         mapPoint->draw();

@@ -7,7 +7,7 @@
 MapState::MapState(Game* game) : State(game)
 {
 	registerCommands();
-	string path = "Images/Mapa/imagenMiniMapa.png";
+	string path = "Images/map/minimapOverlay.png";
 	backgroundTex_ = new Texture(game->getRenderer(), path);
 }
 
@@ -24,6 +24,7 @@ void MapState::draw()
 	SDL_Rect rectPanel = { 0,0,game->getWindowWidth(), game->getWindowHeight() };
 	backgroundTex_->render(rectPanel);
 	
+	//Baliza
 	game->MapPoint()->setDimension(24, 24);
 	game->MapPoint()->setPosition(game->minimapinfo_.X, game->minimapinfo_.Y);
 
@@ -34,7 +35,7 @@ void MapState::draw()
 		if (ihdlr.getMouseButtonState(InputHandler::MOUSEBUTTON::LEFT)==1) {
 			SDL_GetMouseState(&x_, &y_);
 			
-			game->setPointerMapPuting(true);
+			game->setPointerMapPut(true);
 			
 			game->MapPoint()->setPosition((double)x_ - 12, (double)y_ - 12);//actualizo la pos
 			
@@ -43,9 +44,21 @@ void MapState::draw()
 		}
 	}
 
-	if (game->IsPointerMapPuting()) {//si esta puesto el punto lo pinto
+	if (game->IsPointerMapPut()) {//si esta puesto el punto lo pinto
 		game->MapPoint()->draw();
 	}
+
+	//Player
+	int dimension = 50, h = 6500, w = 8500;
+	int offset = dimension / 2;
+
+	game->playerIcon()->setDimension(dimension, dimension);
+
+	double x = game->getPlayer()->getX() * (game->getWindowWidth() / w) - offset;
+	double y = game->getPlayer()->getY() * (game->getWindowHeight() / h) - offset;
+	
+	game->playerIcon()->setPosition(x, y);
+	game->playerIcon()->draw();
 }
 
 void MapState::next() {}

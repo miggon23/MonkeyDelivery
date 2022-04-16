@@ -46,14 +46,14 @@ enum TextureName
 		scorpionSS_Default,
 	
 	//5-Items (General) - 17
-	Item_Boots01,
-	Item_Boots02,
-	Item_Boots03,
-	Item_Lantern01,
-	Item_Package,
-	Item_Soda,
+		Item_Boots01,
+		Item_Boots02,
+		Item_Boots03,
+		Item_Lantern01,
+		Item_Package,
+		Item_Soda,
 
-		//5,1-Items (Light)
+	//5,1-Items (Light)
 		worldObject_Bed,
 		worldObject_blockRock,
 		worldObject_Chest_Closed,
@@ -61,17 +61,18 @@ enum TextureName
 		worldObject_Gold,
 		worldObject_Tutorial,
 
-		//5,2-Items (World)
+	//5,2-Items (World)
 		lanternCircular,
 		lanternDown,
 		lanternLeft,
 		lanternUp,
 		lightGeneric,
 	
-	//6-Map - 3
+	//6-Map - 4
 		mapMarker,
 		mapOverlay,
 		minimapOverlay,
+		playerIconTex,
 	
 	//7-Missions - 6
 		mission_UI_Helper,
@@ -140,7 +141,7 @@ enum TextureName
 		missingTex,
 };
 
-const int NUM_TEXTURES = 95;
+const int NUM_TEXTURES = 96;
 
 typedef struct {
 	string filename;
@@ -208,7 +209,8 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
 	//6-Map
 	{"map/mapMarker.png",1,1},
 	{"map/mapOverlay.png",1,1},
-	{"map/minimapOverlay.png",1,1}, //
+	{"map/minimapOverlay.png",1,1},
+	{"map/playerIcon.png",1,1},
 
 	//7-Missions
 	{"missions/mission_UI_Helper.png",1,1},

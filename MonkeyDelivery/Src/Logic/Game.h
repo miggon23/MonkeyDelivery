@@ -23,7 +23,7 @@
 #include "UI_Info.h"
 #include "Inventory.h"
 #include "../Logic/MAPPoint.h"
-
+#include "../Logic/PlayerIcon.h"
 
 #include "../Enemies/Enemy.h"
 
@@ -133,8 +133,9 @@ private:
     
     //Mapa
     MAPPoint* mapPoint;    
-    bool isMapPointerPut=false;
+    bool isMapPointerPut = false;
     Texture* maptexture;
+    PlayerIcon* pIcon;
 
     //Particle System
     ParticleExample* partSystem;
@@ -220,8 +221,9 @@ public:
     inline void setOpenedMap(bool m) { mapOpened = m; }
     inline bool getOpenedMap() { return mapOpened; }
     inline GameObject* MapPoint() { return mapPoint; };
-    inline bool IsPointerMapPuting() { return isMapPointerPut; };
-    inline void setPointerMapPuting(bool set) { isMapPointerPut = set; };
+    inline bool IsPointerMapPut() { return isMapPointerPut; };
+    inline void setPointerMapPut(bool set) { isMapPointerPut = set; };
+    inline GameObject* playerIcon() { return pIcon; };
     void drawMap();
     void scalePoint();
     miniMapInfo minimapinfo_;

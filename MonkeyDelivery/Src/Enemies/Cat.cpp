@@ -58,8 +58,8 @@ void Cat::checkDistance()
 			double distanceY = abs(getPosition().getY() - game->getPosisitionPlayer().getY());
 
 			if (distanceX <= offset && distanceY <= offset) {
-				sdlutils().soundEffects().at("cat").setVolume(game->getSoundEfectsVolume());
-				sdlutils().soundEffects().at("cat").play(0, 1);
+				/*sdlutils().soundEffects().at("cat").setVolume(game->getSoundEfectsVolume());
+				sdlutils().soundEffects().at("cat").play(0, 1);*/
 
 				double d = 1.8 * ((distanceY + distanceX) / 2);
 				if (distanceX <= 20.0 && distanceY <= 20.0) {

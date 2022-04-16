@@ -177,7 +177,6 @@
     <ClInclude Include="Src\Control\States\MissionSelectionState.h" />
     <ClInclude Include="Src\Control\States\OptionsState.h" />
     <ClInclude Include="Src\Control\States\PauseState.h" />
-    <ClInclude Include="Src\Control\States\PlayingState.h" />
     <ClInclude Include="Src\Control\States\ShopState.h" />
     <ClInclude Include="Src\Control\States\State.h" />
     <ClInclude Include="Src\Control\States\StateMachine.h" />
@@ -231,6 +230,7 @@
     <ClInclude Include="Src\Items\Package.h" />
     <ClInclude Include="Src\Items\Pickaxe.h" />
     <ClInclude Include="Src\Enemies\Plant.h" />
+    <ClInclude Include="Src\Logic\PlayerIcon.h" />
     <ClInclude Include="Src\Player\energyLevel.h" />
     <ClInclude Include="Src\Player\FearBar.h" />
     <ClInclude Include="Src\Player\FearLevel.h" />
@@ -347,6 +347,7 @@
     <ClCompile Include="Src\Items\Package.cpp" />
     <ClCompile Include="Src\Items\Pickaxe.cpp" />
     <ClCompile Include="Src\Enemies\Plant.cpp" />
+    <ClCompile Include="Src\Logic\PlayerIcon.cpp" />
     <ClCompile Include="Src\Player\energyLevel.cpp" />
     <ClCompile Include="Src\Player\FearBar.cpp" />
     <ClCompile Include="Src\Player\FearLevel.cpp" />
