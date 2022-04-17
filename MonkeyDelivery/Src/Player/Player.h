@@ -152,6 +152,9 @@ public:
 	inline void selectObject(int index) {
 		inventory_->selectObject(index);
 	};
+	inline void mouseWheelSelectedObject(int index) {
+		inventory_->changeSelectedObject(index);
+	}
 	inline void useSelectedObject() { inventory_->useSelectedObject(); };
 
 	// LIGHTS

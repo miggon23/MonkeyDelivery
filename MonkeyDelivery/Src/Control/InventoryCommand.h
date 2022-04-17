@@ -6,6 +6,7 @@ class InventoryCommand : public Command
 private:
 	int id;
 	bool use;
+	bool ruedaRton;
 public:
 	InventoryCommand() : id(-1),use(false) {};
 	~InventoryCommand() = default;

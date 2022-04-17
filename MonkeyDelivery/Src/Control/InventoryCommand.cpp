@@ -2,6 +2,14 @@
 #include "../sdlutils/InputHandler.h"
 bool InventoryCommand::parse(SDL_Event& event) {
 	auto& ihdlr = ih();
+
+	if (event.type == SDL_MOUSEWHEEL) {
+		ruedaRton = true;
+		id = event.wheel.y;
+		//std::cout << id << std::endl;
+		return true;
+	}
+
 	if (event.type == SDL_KEYDOWN) {
 		SDL_Keycode key = event.key.keysym.sym;
 		use = false;
@@ -11,9 +19,8 @@ bool InventoryCommand::parse(SDL_Event& event) {
 		if (key == SDLK_3) id = 2;
 		if (key == SDLK_4) id = 3;
 		if (key == SDLK_5) id = 4;
-		if (key == SDLK_6) id = 5;
+		if (key == SDLK_6) id = 5;					
 		if (key == SDLK_SPACE)use = true;
-
 		if (id != -1 || use)
 			return true;
 	}
@@ -40,6 +47,8 @@ bool InventoryCommand::parse(SDL_Event& event) {
 
 void InventoryCommand::execute() {
 	if (use) { game->getPlayer()->useSelectedObject(); return; }
+	else if (ruedaRton) { game->getPlayer()->mouseWheelSelectedObject(id); ruedaRton = false; return; }
 	game->getPlayer()->selectObject(id);
+	
 	//game->useInventory(id);
 }

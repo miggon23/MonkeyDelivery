@@ -137,18 +137,19 @@ void Inventory::draw()
 	}
 	int size = inventory_.size();
 	
-	for (int i = 0; i < size; i++) 
+	for (int i = 0; i < INVENTORY_SIZE; i++) 
 	{
-		//revisar esto
-		if (i == 4) continue;
-		//La cuadricula de inventario tiene 7 slots de 18x18px, a cada ieracion aumenta una a la derecha (menos el vacio)
-		SDL_Rect oRect = { 650 + base_->getW() / 7 * i * 4, 900 , 18 * 4, 18 * 4 };
-		inventory_[i]->getTexture()->render(oRect);
+		SDL_Rect oRect;
+		if (i > 3) oRect = { 650 + base_->getW() / 7 * (i+1) * 4, 900 , 18 * 4, 18 * 4 };		
+		else oRect = { 650 + base_->getW() / 7 * i * 4, 900 , 18 * 4, 18 * 4 };
 		
-		//No Se para que es esto pero hace que los graficos hagan PUM
-		/*if (i == selectedInventoryObject) {
+		
+		if (i < inventory_.size()) 						
+			inventory_[i]->getTexture()->render(oRect);
+				
+		if (i == selectedInventoryObject) 
 			base_->render(oRect);
-		}*/
+		
 	}
 	overlay_->render(baseRect_);
 }
@@ -162,9 +163,13 @@ string Inventory::activeObject(){
 }
 
 void Inventory::changeSelectedObject(int x){
+
+	if (selectedInventoryObject < inventory_.size() && inventory_[selectedInventoryObject]->getActive()) { useSelectedObject(); };
 	selectedInventoryObject += x;
-	//selectedInventoryObject %= inventory_.size();
 	selectedInventoryObject %= INVENTORY_SIZE;
+
+	if (selectedInventoryObject < 0)selectedInventoryObject = INVENTORY_SIZE-1;
+	
 }
 
 void Inventory::selectObject(int index){
