@@ -215,6 +215,9 @@ public:
 			break;
 		}
 	}
+	inline void JoystickVibration(SDL_Joystick*joy, Uint16 left_rumble, Uint16 right_rumble, Uint32 duration_ms) {
+		SDL_JoystickRumbleTriggers(joy,  left_rumble, right_rumble, duration_ms);
+	}
 
 private:
 	InputHandler() {
@@ -276,6 +279,7 @@ private:
 			for (int i = 0; i < SDL_NumJoysticks(); i++)
 			{
 				SDL_Joystick* joy = SDL_JoystickOpen(i);
+				//JoystickVibration(joy, 0xFFFF, 0xFFFF, 1000);
 
 				if (joy)
 				{
