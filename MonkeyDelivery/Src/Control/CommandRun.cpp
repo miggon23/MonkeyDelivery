@@ -1,7 +1,9 @@
 #include "CommandRun.h"
+#include "../sdlutils/InputHandler.h"
 
 bool CommandRun::parse(SDL_Event& event)
 {
+	auto &ihl = ih();
 	if (event.type == SDL_KEYDOWN) {
 		SDL_Keycode key = event.key.keysym.sym;
 
@@ -10,7 +12,17 @@ bool CommandRun::parse(SDL_Event& event)
 			return true;
 		}
 	}
-
+	if (ihl.getButtonState(0, 0)) {
+		if (!isRunning) { //Para que la velocidad no se acumule
+			isRunning = true;
+			return true;
+		}
+		else
+		{
+			isRunning = false;
+			return true;
+		}
+	}
 	if (event.type == SDL_KEYUP) {
 		SDL_Keycode key = event.key.keysym.sym;
 
