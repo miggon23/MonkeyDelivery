@@ -165,7 +165,9 @@ public:
 		int whichOne = event.jaxis.which;
 		auto m_sens = 10000;
 
-		if (event.jaxis.axis == 0) {
+		switch (event.jaxis.axis)
+		{
+		case 0:
 			if (event.jaxis.value > m_sens) {
 				m_joystickValues[whichOne].first.setX(1);
 			}
@@ -175,9 +177,8 @@ public:
 			else {
 				m_joystickValues[whichOne].first.setX(0);
 			}
-		}
-
-		if (event.jaxis.axis == 1) {
+			break;
+		case 1:
 			if (event.jaxis.value > m_sens) {
 				m_joystickValues[whichOne].first.setY(1);
 			}
@@ -187,9 +188,8 @@ public:
 			else {
 				m_joystickValues[whichOne].first.setY(0);
 			}
-		}
-
-		if (event.jaxis.axis == 3) {
+			break;
+		case 3:
 			if (event.jaxis.value > m_sens) {
 				m_joystickValues[whichOne].second.setX(1);
 			}
@@ -199,9 +199,8 @@ public:
 			else {
 				m_joystickValues[whichOne].second.setX(0);
 			}
-		}
-
-		if (event.jaxis.axis == 4) {
+			break;
+		case 4:
 			if (event.jaxis.value > m_sens) {
 				m_joystickValues[whichOne].second.setY(1);
 			}
@@ -211,6 +210,9 @@ public:
 			else {
 				m_joystickValues[whichOne].second.setY(0);
 			}
+			break;
+		default:
+			break;
 		}
 	}
 
