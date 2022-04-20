@@ -362,6 +362,7 @@
     <None Include="Images\background\bckg_woodWall.webp" />
     <None Include="Images\background\6241db5f3cf64.psd" />
     <None Include="Images\config\resources.json" />
+    <None Include="Src\TilemapSrc\MainMap.tmx" />
   </ItemGroup>
   <ItemGroup>
     <Font Include="Images\fonts\Monospace.ttf" />

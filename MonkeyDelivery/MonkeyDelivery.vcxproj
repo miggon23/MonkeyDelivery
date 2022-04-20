@@ -147,7 +147,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>SDL2_image.lib;Box2D\lib;SDL2_image-2.0.1\lib\x64;SDL2_mixer-2.0.4\lib\x64;SDL2-2.0.20\lib\x64;tmxlite/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>box2d.lib;SDL2.lib;SDL2main.lib;SDL2_mixer.lib;SDL2_image.lib;SDL2_ttf.lib;tmxlite-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>box2d.lib;SDL2.lib;SDL2main.lib;SDL2_mixer.lib;SDL2_image.lib;SDL2_ttf.lib;tmxlite.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -503,6 +503,7 @@
     <None Include="Images\background\bckg_woodWall.webp" />
     <None Include="Images\config\resources.json" />
     <None Include="Src\TilemapSrc\1.level" />
+    <None Include="Src\TilemapSrc\MainMap.tmx" />
     <None Include="Src\TilemapSrc\Spritesheets\TilesetRelief.psd" />
     <None Include="Src\TilemapSrc\Tilesets\FloorTileset.tsx" />
     <None Include="Src\TilemapSrc\Tilesets\NatureTileset.tsx" />

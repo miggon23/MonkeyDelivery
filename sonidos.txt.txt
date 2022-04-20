@@ -3,7 +3,6 @@ Musica cuando te sube la barra de miedo
 Efecto de sonido de compra
 Efecto de sonido al ganar dinero
 Efecto de sonido al completar una misión
-Efecto de sonido al consumir un objeto
 Musica de la tienda (opcional)
 
 
