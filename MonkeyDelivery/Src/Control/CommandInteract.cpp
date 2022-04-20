@@ -5,7 +5,7 @@
 bool CommandInteract::parse(SDL_Event& event)
 {
 	auto& ihdlr = ih();
-	if (ihdlr.isKeyDown(SDL_SCANCODE_E) || ihdlr.getButtonState(0, 3))
+	if ((event.type == SDL_KEYDOWN&& event.key.keysym.sym==SDLK_e) || ihdlr.getButtonState(0, 3))
 		return true;
 	
 	return false;
@@ -17,7 +17,7 @@ void CommandInteract::execute()
 
 		//o->exampleInter(game->getPlayer());
 		o->onPlayerInteraction(game->getPlayer()); // Podemos poner esto directamente
-
+		return;
 		// esto era para la forma "cutre" del panel de misiones
 		//if (o->isMissionPanel()) {
 
