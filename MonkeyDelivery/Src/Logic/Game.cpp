@@ -152,8 +152,10 @@ void Game::start()
     bed->setPosition(670, 760);
     player_->bedPos(670, 760);
     add(bed);
-    add(new Rock(this,2500,800));
-
+    //add(new Rock(this,2500,800));
+    auto cama = new Bed(this);
+    cama->setPosition(2500, 500);
+    add(cama);
     partSystem = new ParticleExample();
     partSystem->setRenderer(renderer);             // set the renderer
     partSystem->setPosition(670, 600);             // set the position

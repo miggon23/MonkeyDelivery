@@ -82,7 +82,8 @@ Player::~Player()
 
 void Player::update()
 {
-	if (sleeping)sleep();//si esta durmiendo
+	if (sleeping)
+		sleep();//si esta durmiendo
 	else move();//si no esta durmiendo habilitanmos el movimiento
 
 	if ((energyLevel_->percentEnergy() == 0 || fearLevel_->percentFear() == 100) && !fade) {
