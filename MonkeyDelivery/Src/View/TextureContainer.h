@@ -53,6 +53,13 @@ enum TextureName
 		Item_Package,
 		Item_Soda,
 
+	//5,2-Items (World)
+		lanternCircular,
+		lanternDown,
+		lanternLeft,
+		lanternUp,
+		lightGeneric,
+
 	//5,1-Items (Light)
 		worldObject_Bed,
 		worldObject_blockRock,
@@ -61,12 +68,7 @@ enum TextureName
 		worldObject_Gold,
 		worldObject_Tutorial,
 
-	//5,2-Items (World)
-		lanternCircular,
-		lanternDown,
-		lanternLeft,
-		lanternUp,
-		lightGeneric,
+	
 	
 	//6-Map - 4
 		mapMarker,
