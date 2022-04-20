@@ -25,7 +25,7 @@ Tiles girados
 Cuando le das al 2 en el inventario y luego al espacio peta en el render (fatarán texturas)
 Cuando estas a practicamente 0 de distancia del enemigo, deja de dar miedo
 Fatan colliders (valla del cementerio, troncos a la derecha del mapa)
-
+Los dialogos no van
 
 Enemigos----
 Murcielago - Hecho (hay que subirlo)

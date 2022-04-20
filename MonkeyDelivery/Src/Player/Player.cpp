@@ -59,6 +59,7 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game), anima
 	//// fadeout
 	//fadeTex_ = game->getTexture(shop_Boots01);
 	//fadeTex_->changeAlpha(0);
+	fadeTex_ = game->getTexture(UI_Fade);
 }
 
 Player::~Player()
@@ -263,7 +264,7 @@ void Player::draw()
 
 	if(fade)
 	{
-		//fadeTex_->render({ 0, 0, 1800, 1000 }); // Renderizar la textura del rectangulo negro en ese rect
+		fadeTex_->render({ 0, 0, 1800, 1000 }); // Renderizar la textura del rectangulo negro en ese rect
 
 		//FadeOut(); // Realiza un fadeout sobre la pantalla
 	}

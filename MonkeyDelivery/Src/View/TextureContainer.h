@@ -67,8 +67,6 @@ enum TextureName
 		worldObject_Chest_Opened,
 		worldObject_Gold,
 		worldObject_Tutorial,
-
-	
 	
 	//6-Map - 4
 		mapMarker,
