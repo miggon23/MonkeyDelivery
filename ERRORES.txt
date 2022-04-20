@@ -16,7 +16,6 @@ Memory leaks
 Ligar los objetos del inventario con los slot
 El jugador no se mueve en el minimapa de la pantalla de juego
 Pantalla completa y ajustarlo todo
-El fadetex_->render peta (falta la textura nunca se proprciona la ruta)
 El ajuste del brillo cambia el brillo del ordendor además del juego
 Cambiar el sprite de la roca
 Las texturas estan cambiadas la cama es el libro tutorial

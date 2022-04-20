@@ -67,14 +67,11 @@ Player::~Player()
 	delete energyLevel_;
 	delete fearLevel_;
 	delete inventory_;
-
-	delete flashlightTex_;
-	delete lanternTex_;
-	delete fadeTex_;
+	delete flashlightTex_; //CUIDADO!!!!
+	delete lanternTex_; //CUIDADO!!!!
 	
-	flashlightTex_ = nullptr;
-	lanternTex_ = nullptr;
-	fadeTex_ = nullptr;
+	flashlightTex_ = nullptr; //CUIDADO!!!!
+	lanternTex_ = nullptr; //CUIDADO!!!!
 	energyLevel_ = nullptr;
 	fearLevel_ = nullptr;
 	inventory_ = nullptr;
@@ -266,7 +263,7 @@ void Player::draw()
 	{
 		fadeTex_->render({ 0, 0, 1800, 1000 }); // Renderizar la textura del rectangulo negro en ese rect
 
-		//FadeOut(); // Realiza un fadeout sobre la pantalla
+		FadeOut(); // Realiza un fadeout sobre la pantalla
 	}
 }
 
