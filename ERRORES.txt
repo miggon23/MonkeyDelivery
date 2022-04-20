@@ -25,3 +25,23 @@ Tiles girados
 Cuando le das al 2 en el inventario y luego al espacio peta en el render (fatarán texturas)
 Cuando estas a practicamente 0 de distancia del enemigo, deja de dar miedo
 Fatan colliders (valla del cementerio, troncos a la derecha del mapa)
+
+
+Enemigos----
+Murcielago - Hecho (hay que subirlo)
+Gato - Hecho (hay que subirlo)
+Toro - Sprite
+Escorpion - Sprite
+
+Actualizar Misiones----
+
+Terminar de Arrelgar los tiles que faltan--------
+
+Items------
+Soda_02 - Hecho(hay que subirlo)
+Platanos - Hecho(hay que subirlo)
+                                       
+Creditos-------
+Marco Minimapa -------                                                                 
+
+Selector de Inventario---------
