@@ -34,7 +34,7 @@ public:
     // with a rotation (angle) around point p (of dest), and flips
     // according to the value of flip. If 'p'is nullptr, the rotation is done
     // wrt. the center
-    //
+
     inline void render(const SDL_Rect& src, const SDL_Rect& dest, double angle,
         const SDL_Point* p = nullptr,
         SDL_RendererFlip flip = SDL_FLIP_NONE) {
