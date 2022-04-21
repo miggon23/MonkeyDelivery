@@ -6,7 +6,7 @@
 
 Pickaxe::Pickaxe(Texture* tex, Game* game):InventoryObject(tex, game),uses_(0) {
 	isConsumable_ = true;
-	setTypeObject("Pickaxe");
+	setTypeObject(PICO);
 }
 bool Pickaxe::useObject(){
 	

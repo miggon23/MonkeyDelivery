@@ -4,7 +4,14 @@
 
 class Game;
 class Player;
-
+enum TypeObjectInventory {
+	BOTAS, //
+	CONSUMIBLES, //
+	PICO, //
+	LINTERNA,
+	PAQUETE, //
+	SINASIGNAR
+};
 class InventoryObject
 {
 private:
@@ -16,13 +23,14 @@ protected:
 	bool isConsumable_ = false;	
 	bool active = false;
 	//TEMPORAL
-	string typeObject = "InventoryObject";
+	string typeObjectAux = "InventoryObject";
+	TypeObjectInventory typeObject;
 public:
 	
 	//InventoryObject() {};
-	InventoryObject(Texture* tex, Game* game) : myTexture_(tex),game_(game) {};
+	InventoryObject(Texture* tex, Game* game) : myTexture_(tex), game_(game) { typeObject = SINASIGNAR; };
 	~InventoryObject();
-
+	
 	virtual bool useObject();
 	void attachPlayer(Player* player);
 
@@ -34,8 +42,9 @@ public:
 	//inline bool hasTexture() { return myTexture_ != nullptr; };
 
 	//TEMPORAL
-	inline string getTypeObject() { return typeObject; };
-	inline void setTypeObject(string x) { typeObject = x; };
+	/*inline string getTypeObject() { return typeObjectAux; };
+	inline void setTypeObject(string x) { typeObjectAux = x; };*/
+	inline void setTypeObject(TypeObjectInventory x) { typeObject= x; };
 	inline bool getActive() { return active; };
 	
 };

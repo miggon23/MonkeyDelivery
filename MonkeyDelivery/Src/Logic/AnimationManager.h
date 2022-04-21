@@ -253,7 +253,7 @@ public:
 			if (texturaRect.x >= 400) {
 				texturaRect.x = 0;
 			}
-			timer = timer_->TimeScale();
+			timer = (int)timer_->TimeScale();
 		}
 		tex->render(texturaRect, plant);
 	};

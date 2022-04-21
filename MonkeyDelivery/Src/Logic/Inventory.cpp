@@ -6,8 +6,7 @@
 #include "../View/Texture.h"
 #include <string>
 
-Inventory::Inventory(Game* game, Player* player, SDL_Renderer* renderer) : player_(player), selectedInventoryObjectLast(0), selectedInventoryObject(0)
-{
+Inventory::Inventory(Game* game, Player* player, SDL_Renderer* renderer) : player_(player), selectedInventoryObjectLast(0), selectedInventoryObject(0){
 	missionObject_ = nullptr;
 
 	base_ = game->getTexture(UI_InventoryBar);
@@ -29,8 +28,7 @@ Inventory::~Inventory()
 	overlay_ = nullptr;
 }
 
-bool Inventory::addObject(InventoryObject* iO)
-{
+bool Inventory::addObject(InventoryObject* iO){
 	//Comprobamos que el inventario no est� lleno
 	if (inventoryFull())
 		return false;
@@ -71,7 +69,7 @@ bool Inventory::useObject(int indexObject)
 	//Si el objeto es de un solo uso (useObject() devuelve true)
 	//Lo eliminamos
 	//Si no hab�a que eliminarlo, no se hace nada
-	if (inventory_[indexObject]->useObject()) //useObject() devuelve un booleano!!
+	if (inventory_[indexObject]!=nullptr&&inventory_[indexObject]->useObject()) //useObject() devuelve un booleano!!
 	{
 		removeObject(indexObject);
 	}
@@ -83,7 +81,8 @@ bool Inventory::useObject(int indexObject)
 void Inventory::removeObject(int indexObject)
 {
 	delete inventory_[indexObject];
-	inventory_.erase(inventory_.begin() + indexObject);
+	inventory_[indexObject] = nullptr; 
+	//inventory_.erase(inventory_.begin() + indexObject);
 }
 
 void Inventory::removeMisionObject()
@@ -98,7 +97,6 @@ bool Inventory::hasMissionObject()
 {
 	return missionObject_ != nullptr;
 }
-
 
 void Inventory::clearInventory()
 {
@@ -115,15 +113,15 @@ void Inventory::clearInventory()
 /// devuelve true
 /// </summary>
 /// <returns>True si el inventario est� lleno</returns>
-bool Inventory::inventoryFull() {
-	
-	//int i = 0;
-	//// error grave, saca elementos del vector
-	//while (i < inventory_.size() && inventory_[i] != nullptr)
-	//	i++;
-	//return i == inventory_.size();
+bool Inventory::inventoryFull(){	
+	if (inventory_.size() >= INVENTORY_SIZE) {	
+		int i = 0;
+		while (i < inventory_.size() && inventory_[i] != nullptr)
+			i++;
+		return i == inventory_.size();
+	}
 	// quer�is esto:
-	return inventory_.size() == INVENTORY_SIZE;
+	return false;
 }
 
 void Inventory::draw() 
@@ -144,7 +142,7 @@ void Inventory::draw()
 		else oRect = { 650 + base_->getW() / 7 * i * 4, 900 , 18 * 4, 18 * 4 };
 		
 		
-		if (i < inventory_.size()) 						
+		if (i < inventory_.size()&&inventory_[i]!=nullptr) 						
 			inventory_[i]->getTexture()->render(oRect);
 				
 		if (i == selectedInventoryObject) 
@@ -159,12 +157,11 @@ string Inventory::activeObject(){
 	if (selectedInventoryObject >= inventory_.size()) {
 		return "NoActiveInventoryItem";
 	}
-	 return inventory_[selectedInventoryObject]->getTypeObject();
+	// return inventory_[selectedInventoryObject]->getTypeObject();
 }
 
 void Inventory::changeSelectedObject(int x){
-
-	if (selectedInventoryObject < inventory_.size() && inventory_[selectedInventoryObject]->getActive()) { useSelectedObject(); };
+	if (selectedInventoryObject < inventory_.size() && inventory_[selectedInventoryObject] != nullptr &&inventory_[selectedInventoryObject]->getActive()) { useSelectedObject(); };
 	selectedInventoryObject += x;
 	selectedInventoryObject %= INVENTORY_SIZE;
 
@@ -172,9 +169,8 @@ void Inventory::changeSelectedObject(int x){
 	
 }
 
-void Inventory::selectObject(int index){
-	
-	if ( selectedInventoryObject<inventory_.size() &&inventory_[selectedInventoryObject]->getActive()) { useSelectedObject(); };
+void Inventory::selectObject(int index){	
+	if ( selectedInventoryObject<inventory_.size()&& inventory_[selectedInventoryObject] != nullptr &&inventory_[selectedInventoryObject]->getActive()) { useSelectedObject(); };
 	//selectedInventoryObject = index % inventory_.size();
 	selectedInventoryObject = index % INVENTORY_SIZE;
 }

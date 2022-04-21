@@ -4,7 +4,7 @@
 Bike::Bike(Texture* tex, Game* game) : speedMult(2.5), InventoryObject(tex, game)
 {
 	active = false;
-	setTypeObject("Bike");
+	setTypeObject(BOTAS);
 }
 
 bool Bike::useObject() {
