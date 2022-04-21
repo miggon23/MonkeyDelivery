@@ -49,13 +49,13 @@ void MapState::draw()
 	}
 
 	//Player
-	int dimension = 50, h = 6500, w = 8500;
+	int dimension = 50;
 	int offset = dimension / 2;
 
 	game->playerIcon()->setDimension(dimension, dimension);
 
-	double x = game->getPlayer()->getX() * (game->getWindowWidth() / w) - offset;
-	double y = game->getPlayer()->getY() * (game->getWindowHeight() / h) - offset;
+	double x = game->getPlayer()->getX() * (game->getWindowWidth() / game->minimapinfo_.realW) - offset;
+	double y = game->getPlayer()->getY() * (game->getWindowHeight() / game->minimapinfo_.realH) - offset;
 	
 	game->playerIcon()->setPosition(x, y);
 	game->playerIcon()->draw();

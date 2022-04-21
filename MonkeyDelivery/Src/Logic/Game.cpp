@@ -219,8 +219,6 @@ void Game::draw()
 
     info->draw();
 
-    
-
     dialogueBox_->draw();
 
     player_->draw();
@@ -230,6 +228,8 @@ void Game::draw()
 
     //partSystem->draw();
     missionsPanel_->draw();
+
+    scalePlayerIcon();
 }
 
 Point2D<int> Game::getOrigin() {
@@ -535,8 +535,8 @@ void Game::scalePlayerIcon()
 
     pIcon->setDimension(smallDimension, smallDimension);
 
-    double x = minimapinfo_.xOrigin + (pIcon->getX() * (minimapinfo_.w / getWindowWidth()) - offset);
-    double y = minimapinfo_.yOrigin + (pIcon->getY() * (minimapinfo_.h / getWindowHeight()) - offset);
+    double x = minimapinfo_.xOrigin + (player_->getX() * (minimapinfo_.w / minimapinfo_.realW) - offset);
+    double y = minimapinfo_.yOrigin + (player_->getY() * (minimapinfo_.h / minimapinfo_.realH) - offset);
 
     pIcon->setPosition(x, y);
 }

@@ -81,6 +81,7 @@ struct miniMapInfo {
      double X, Y;
      int xOrigin=1460, yOrigin=810;
      double w = 200.0, h = 111.0;
+     int realW = 8500, realH = 6500;
 };
 
 using namespace std;

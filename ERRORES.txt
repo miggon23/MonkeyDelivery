@@ -14,7 +14,6 @@ Te sales por el mapa abajo a la izquierda (hay 2 hueco en los colliders)
 El toro persigue mas rapido cuando corres con las botas
 Memory leaks
 Ligar los objetos del inventario con los slot
-El jugador no se mueve en el minimapa de la pantalla de juego
 Pantalla completa y ajustarlo todo
 El ajuste del brillo cambia el brillo del ordendor además del juego
 Cambiar el sprite de la roca
