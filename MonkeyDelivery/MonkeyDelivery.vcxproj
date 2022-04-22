@@ -200,6 +200,7 @@
     <ClInclude Include="Src\Control\UI\Sliders\SliderBase.h" />
     <ClInclude Include="Src\Control\UI\Sliders\SliderClick.h" />
     <ClInclude Include="Src\Control\ViewController.h" />
+    <ClInclude Include="Src\Enemies\Enemy.h" />
     <ClInclude Include="Src\json\JSON.h" />
     <ClInclude Include="Src\json\JSONValue.h" />
     <ClInclude Include="Src\Logic\AnimationManager.h" />
@@ -210,7 +211,6 @@
     <ClInclude Include="Src\Enemies\Cat.h" />
     <ClInclude Include="Src\Logic\ColliderTile.h" />
     <ClInclude Include="Src\Logic\DialogueBox.h" />
-    <ClInclude Include="Src\Enemies\Enemy.h" />
     <ClInclude Include="Src\Items\EnergyDrink.h" />
     <ClInclude Include="Src\Items\Flashlight.h" />
     <ClInclude Include="Src\Logic\Game.h" />
@@ -302,7 +302,6 @@
     <ClCompile Include="Src\Control\UI\Buttons\Back1.cpp" />
     <ClCompile Include="Src\Control\UI\Buttons\Continue.cpp" />
     <ClCompile Include="Src\Control\UI\Buttons\Credits.cpp" />
-    <ClCompile Include="Src\Control\UI\Buttons\Exit.cpp" />
     <ClCompile Include="Src\Control\UI\Buttons\Menu.cpp" />
     <ClCompile Include="Src\Control\UI\Buttons\Options.cpp" />
     <ClCompile Include="Src\Control\UI\Buttons\Pause.cpp" />
@@ -430,19 +429,6 @@
     <Image Include="Images\monkeyAnims\monkeySS_Sleep.png" />
     <Image Include="Images\monkeyAnims\monkeySS_Tired.png" />
     <Image Include="Images\monkeyAnims\racoonSS.png" />
-    <Image Include="Images\npcs\NPC_Base.png" />
-    <Image Include="Images\npcs\NPC_Coco.png" />
-    <Image Include="Images\npcs\NPC_Eagle.png" />
-    <Image Include="Images\npcs\NPC_Fish.png" />
-    <Image Include="Images\npcs\NPC_Fox.png" />
-    <Image Include="Images\npcs\NPC_Frog.png" />
-    <Image Include="Images\npcs\NPC_Hipo.png" />
-    <Image Include="Images\npcs\NPC_Kangaroo.png" />
-    <Image Include="Images\npcs\NPC_Pavo.png" />
-    <Image Include="Images\npcs\NPC_Rabbit.png" />
-    <Image Include="Images\npcs\NPC_Tucan.png" />
-    <Image Include="Images\npcs\NPC_Turtle.png" />
-    <Image Include="Images\shop\panelShopp.png" />
     <Image Include="Images\shop\Shop_Boots01.png" />
     <Image Include="Images\shop\Shop_Boots02.png" />
     <Image Include="Images\shop\Shop_Boots03.png" />

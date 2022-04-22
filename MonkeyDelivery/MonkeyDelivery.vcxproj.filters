@@ -3,14 +3,6 @@
   <ItemGroup>
     <ClCompile Include="MessageOverlay.cpp" />
     <ClCompile Include="MonkeyDelivery.cpp" />
-    <ClCompile Include="Src\Control\Button.cpp" />
-    <ClCompile Include="Src\Control\Command.cpp" />
-    <ClCompile Include="Src\Control\CommandClick.cpp" />
-    <ClCompile Include="Src\Control\CommandExit.cpp" />
-    <ClCompile Include="Src\Control\CommandFactory.cpp" />
-    <ClCompile Include="Src\Control\CommandInteract.cpp" />
-    <ClCompile Include="Src\Control\CommandMove.cpp" />
-    <ClCompile Include="Src\Control\CommandRun.cpp" />
     <ClCompile Include="Src\Control\InteractDialogueBox.cpp" />
     <ClCompile Include="Src\Control\InventoryCommand.cpp" />
     <ClCompile Include="Src\Control\MapCommand.cpp" />
@@ -18,7 +10,6 @@
     <ClCompile Include="Src\Control\PauseCommand.cpp" />
     <ClCompile Include="Src\Control\SelectMissionCommand.cpp" />
     <ClCompile Include="Src\Control\ShopCommand.cpp" />
-    <ClCompile Include="Src\Control\States\CreditsState.cpp" />
     <ClCompile Include="Src\Control\States\GameOverState.cpp" />
     <ClCompile Include="Src\Control\States\MapState.cpp" />
     <ClCompile Include="Src\Control\States\MenuState.cpp" />
@@ -29,18 +20,11 @@
     <ClCompile Include="Src\Control\States\State.cpp" />
     <ClCompile Include="Src\Control\States\StateMachine.cpp" />
     <ClCompile Include="Src\Control\States\TestingState.cpp" />
-    <ClCompile Include="Src\Control\UI\Buttons\Back.cpp" />
-    <ClCompile Include="Src\Control\UI\Buttons\Back1.cpp" />
-    <ClCompile Include="Src\Control\UI\Buttons\Continue.cpp" />
-    <ClCompile Include="Src\Control\UI\Buttons\Credits.cpp" />
-    <ClCompile Include="Src\Control\UI\Buttons\Exit.cpp" />
     <ClCompile Include="Src\Control\UI\Buttons\Menu.cpp" />
     <ClCompile Include="Src\Control\UI\Buttons\Options.cpp" />
     <ClCompile Include="Src\Control\UI\Buttons\Pause.cpp" />
     <ClCompile Include="Src\Control\UI\Buttons\ExitButton.cpp" />
     <ClCompile Include="Src\Control\UI\Buttons\Start.cpp" />
-    <ClCompile Include="Src\Control\UI\ElementsUI\Brightness.cpp" />
-    <ClCompile Include="Src\Control\UI\Sliders\BrightnessSlider.cpp" />
     <ClCompile Include="Src\Control\UI\Sliders\GeneralMusicSlider.cpp" />
     <ClCompile Include="Src\Control\UI\Sliders\GeneralSoundsEffectSlider.cpp" />
     <ClCompile Include="Src\Control\UI\Sliders\GeneralVolumeSlider.cpp" />
@@ -50,16 +34,6 @@
     <ClCompile Include="Src\Control\ViewController.cpp" />
     <ClCompile Include="Src\json\JSON.cpp" />
     <ClCompile Include="Src\json\JSONValue.cpp" />
-    <ClCompile Include="Src\Logic\AnimationManager.cpp" />
-    <ClCompile Include="Src\Enemies\Bat.cpp" />
-    <ClCompile Include="Src\Items\Bike.cpp" />
-    <ClCompile Include="Src\Items\Bed.cpp" />
-    <ClCompile Include="Src\Enemies\Bull.cpp" />
-    <ClCompile Include="Src\Enemies\Cat.cpp" />
-    <ClCompile Include="Src\Logic\ColliderTile.cpp" />
-    <ClCompile Include="Src\Logic\DialogueBox.cpp" />
-    <ClCompile Include="Src\Enemies\Enemy.cpp" />
-    <ClCompile Include="Src\Items\EnergyDrink.cpp" />
     <ClCompile Include="Src\Items\Flashlight.cpp" />
     <ClCompile Include="Src\Logic\Game.cpp" />
     <ClCompile Include="Src\Logic\GameObject.cpp" />
@@ -94,29 +68,100 @@
     <ClCompile Include="Src\Utils\Particles\ParticleExample.cpp" />
     <ClCompile Include="Src\Utils\Particles\ParticleSystem.cpp" />
     <ClCompile Include="Src\Utils\Timer.cpp" />
-    <ClCompile Include="Src\View\Camera.cpp" />
     <ClCompile Include="Src\View\Texture.cpp" />
     <ClCompile Include="Src\View\TextureContainer.cpp" />
     <ClCompile Include="Src\View\Texture_manipulation.cpp" />
-    <ClCompile Include="Src\Player\energyLevel.cpp" />
     <ClCompile Include="Src\Player\FearBar.cpp" />
     <ClCompile Include="Src\Player\FearLevel.cpp" />
     <ClCompile Include="Src\Logic\PlayerIcon.cpp" />
     <ClCompile Include="Src\Control\States\PlayingState.cpp" />
+    <ClCompile Include="Src\Control\UI\Buttons\Back.cpp">
+      <Filter>Source\Control\UI\Buttons</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Control\UI\Buttons\Back1.cpp">
+      <Filter>Source\Control\UI\Buttons</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Enemies\Bat.cpp">
+      <Filter>Source\Logic\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Items\Bed.cpp">
+      <Filter>Source\Logic\InteractuableObjectsMap</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Logic\AnimationManager.cpp">
+      <Filter>Source\Logic\Managers/Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Items\Bike.cpp">
+      <Filter>Source\Logic\InventoryObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Control\UI\ElementsUI\Brightness.cpp">
+      <Filter>Source\Control\UI\ElementsUI</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Control\UI\Sliders\BrightnessSlider.cpp">
+      <Filter>Source\Control\UI\Sliders</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Enemies\Bull.cpp">
+      <Filter>Source\Logic\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Control\Button.cpp">
+      <Filter>Source\Control\UI\Buttons</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\View\Camera.cpp">
+      <Filter>Source\Logic\BasicElements</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Enemies\Cat.cpp">
+      <Filter>Source\Logic\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Logic\ColliderTile.cpp">
+      <Filter>Source\Tile</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Control\CommandFactory.cpp">
+      <Filter>Header\Control</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Control\Command.cpp">
+      <Filter>Source\Control\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Control\CommandClick.cpp">
+      <Filter>Source\Control\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Control\CommandExit.cpp">
+      <Filter>Source\Control\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Control\CommandInteract.cpp">
+      <Filter>Source\Control\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Control\CommandMove.cpp">
+      <Filter>Source\Control\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Control\CommandRun.cpp">
+      <Filter>Source\Control\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Control\UI\Buttons\Continue.cpp">
+      <Filter>Source\Control\UI\Buttons</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Control\UI\Buttons\Credits.cpp">
+      <Filter>Source\Control\UI\Buttons</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Logic\DialogueBox.cpp">
+      <Filter>Source\View</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Control\States\CreditsState.cpp">
+      <Filter>Source\Control\States</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Enemies\Enemy.cpp">
+      <Filter>Source\Logic\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Items\EnergyDrink.cpp">
+      <Filter>Source\Logic\InventoryObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Player\energyLevel.cpp">
+      <Filter>Source\Logic\Levels</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h" />
     <ClInclude Include="MessageOverlay.h" />
     <ClInclude Include="MonkeyDelivery.h" />
     <ClInclude Include="Resource.h" />
-    <ClInclude Include="Src\Control\Button.h" />
-    <ClInclude Include="Src\Control\Command.h" />
-    <ClInclude Include="Src\Control\CommandClick.h" />
-    <ClInclude Include="Src\Control\CommandExit.h" />
-    <ClInclude Include="Src\Control\CommandFactory.h" />
-    <ClInclude Include="Src\Control\CommandInteract.h" />
-    <ClInclude Include="Src\Control\CommandMove.h" />
-    <ClInclude Include="Src\Control\CommandRun.h" />
     <ClInclude Include="Src\Control\InteractDialogueBoxCommand.h" />
     <ClInclude Include="Src\Control\InventoryCommand.h" />
     <ClInclude Include="Src\Control\MapCommand.h" />
@@ -124,7 +169,6 @@
     <ClInclude Include="Src\Control\PauseCommand.h" />
     <ClInclude Include="Src\Control\SelectMissionCommand.h" />
     <ClInclude Include="Src\Control\ShopCommand.h" />
-    <ClInclude Include="Src\Control\States\CreditsState.h" />
     <ClInclude Include="Src\Control\States\GameOverState.h" />
     <ClInclude Include="Src\Control\States\MapState.h" />
     <ClInclude Include="Src\Control\States\MenuState.h" />
@@ -135,18 +179,11 @@
     <ClInclude Include="Src\Control\States\State.h" />
     <ClInclude Include="Src\Control\States\StateMachine.h" />
     <ClInclude Include="Src\Control\States\TestingState.h" />
-    <ClInclude Include="Src\Control\UI\Buttons\Back.h" />
-    <ClInclude Include="Src\Control\UI\Buttons\Back1.h" />
-    <ClInclude Include="Src\Control\UI\Buttons\Continue.h" />
-    <ClInclude Include="Src\Control\UI\Buttons\Credits.h" />
-    <ClInclude Include="Src\Control\UI\Buttons\Exit.h" />
     <ClInclude Include="Src\Control\UI\Buttons\ExitButton.h" />
     <ClInclude Include="Src\Control\UI\Buttons\Menu.h" />
     <ClInclude Include="Src\Control\UI\Buttons\Options.h" />
     <ClInclude Include="Src\Control\UI\Buttons\Pause.h" />
     <ClInclude Include="Src\Control\UI\Buttons\Start.h" />
-    <ClInclude Include="Src\Control\UI\ElementsUI\Brightness.h" />
-    <ClInclude Include="Src\Control\UI\Sliders\BrightnessSlider.h" />
     <ClInclude Include="Src\Control\UI\Sliders\GeneralMusicSlider.h" />
     <ClInclude Include="Src\Control\UI\Sliders\GeneralSoundsEffectSlider.h" />
     <ClInclude Include="Src\Control\UI\Sliders\GeneralVolumeSlider.h" />
@@ -156,16 +193,6 @@
     <ClInclude Include="Src\Control\ViewController.h" />
     <ClInclude Include="Src\json\JSON.h" />
     <ClInclude Include="Src\json\JSONValue.h" />
-    <ClInclude Include="Src\Logic\AnimationManager.h" />
-    <ClInclude Include="Src\Enemies\Bat.h" />
-    <ClInclude Include="Src\Items\Bike.h" />
-    <ClInclude Include="Src\Items\Bed.h" />
-    <ClInclude Include="Src\Enemies\Bull.h" />
-    <ClInclude Include="Src\Enemies\Cat.h" />
-    <ClInclude Include="Src\Logic\ColliderTile.h" />
-    <ClInclude Include="Src\Logic\DialogueBox.h" />
-    <ClInclude Include="Src\Enemies\Enemy.h" />
-    <ClInclude Include="Src\Items\EnergyDrink.h" />
     <ClInclude Include="Src\Items\Flashlight.h" />
     <ClInclude Include="Src\Logic\Game.h" />
     <ClInclude Include="Src\Logic\GameObject.h" />
@@ -210,164 +237,609 @@
     <ClInclude Include="Src\Utils\SoundEffect.h" />
     <ClInclude Include="Src\Utils\Timer.h" />
     <ClInclude Include="Src\Utils\Vector2D.h" />
-    <ClInclude Include="Src\View\Box.h" />
-    <ClInclude Include="Src\View\Camera.h" />
-    <ClInclude Include="Src\View\checkML.h" />
     <ClInclude Include="Src\View\Font.h" />
     <ClInclude Include="Src\View\Texture.h" />
     <ClInclude Include="Src\View\TextureContainer.h" />
     <ClInclude Include="targetver.h" />
-    <ClInclude Include="Src\Player\energyLevel.h" />
     <ClInclude Include="Src\Player\FearBar.h" />
     <ClInclude Include="Src\Player\FearLevel.h" />
     <ClInclude Include="Src\Logic\PlayerIcon.h" />
+    <ClInclude Include="Src\Control\UI\Buttons\Back.h">
+      <Filter>Header\Control\UI\Buttons</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Control\UI\Buttons\Back1.h">
+      <Filter>Header\Control\UI\Buttons</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Enemies\Bat.h">
+      <Filter>Header\Logic\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Items\Bed.h">
+      <Filter>Header\Logic\InteractuableObjectsMap</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Logic\AnimationManager.h">
+      <Filter>Header\Logic\Managers/Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Items\Bike.h">
+      <Filter>Header\Logic\InventoryObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Control\UI\ElementsUI\Brightness.h">
+      <Filter>Header\Control\UI\ElementsUI</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Control\UI\Sliders\BrightnessSlider.h">
+      <Filter>Header\Control\UI\Sliders</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Enemies\Bull.h">
+      <Filter>Header\Logic\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Control\Button.h">
+      <Filter>Header\Control\UI\Buttons</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\View\Camera.h">
+      <Filter>Header\Logic\BasicElements</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Enemies\Cat.h">
+      <Filter>Header\Logic\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Logic\ColliderTile.h">
+      <Filter>Header\Tile</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Control\CommandFactory.h">
+      <Filter>Header\Control</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Control\Command.h">
+      <Filter>Header\Control\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Control\CommandClick.h">
+      <Filter>Header\Control\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Control\CommandExit.h">
+      <Filter>Header\Control\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Control\CommandInteract.h">
+      <Filter>Header\Control\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Control\CommandMove.h">
+      <Filter>Header\Control\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Control\CommandRun.h">
+      <Filter>Header\Control\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Control\UI\Buttons\Continue.h">
+      <Filter>Header\Control\UI\Buttons</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Control\UI\Buttons\Credits.h">
+      <Filter>Header\Control\UI\Buttons</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\View\checkML.h">
+      <Filter>Header\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\View\Box.h">
+      <Filter>Header\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Logic\DialogueBox.h">
+      <Filter>Header\View</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Control\States\CreditsState.h">
+      <Filter>Header\Control\States</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Items\EnergyDrink.h">
+      <Filter>Header\Logic\InventoryObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Player\energyLevel.h">
+      <Filter>Header\Logic\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Control\UI\Buttons\Exit.h">
+      <Filter>Header\Control\UI\Buttons</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Enemies\Enemy.h">
+      <Filter>Header\Logic\Enemies</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="MonkeyDelivery.rc" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="MonkeyDelivery.ico" />
-    <Image Include="small.ico" />
-    <Image Include="Src\TilemapSrc\Spritesheets\Elements.png" />
-    <Image Include="Src\TilemapSrc\Spritesheets\TilesetDungeon.png" />
-    <Image Include="Src\TilemapSrc\Spritesheets\TilesetElement.png" />
-    <Image Include="Src\TilemapSrc\Spritesheets\TilesetFloor.png" />
-    <Image Include="Src\TilemapSrc\Spritesheets\TilesetFloorB.png" />
-    <Image Include="Src\TilemapSrc\Spritesheets\TilesetFloorDetail.png" />
-    <Image Include="Src\TilemapSrc\Spritesheets\TilesetHole.png" />
-    <Image Include="Src\TilemapSrc\Spritesheets\TilesetHouse.png" />
-    <Image Include="Src\TilemapSrc\Spritesheets\TilesetInterior.png" />
-    <Image Include="Src\TilemapSrc\Spritesheets\TilesetInteriorFloor.png" />
-    <Image Include="Src\TilemapSrc\Spritesheets\TilesetLogic.png" />
-    <Image Include="Src\TilemapSrc\Spritesheets\TilesetNature.png" />
-    <Image Include="Src\TilemapSrc\Spritesheets\TilesetRelief.png" />
-    <Image Include="Src\TilemapSrc\Spritesheets\TilesetReliefDetail.png" />
-    <Image Include="Src\TilemapSrc\Spritesheets\TilesetWallSimple.png" />
-    <Image Include="Src\TilemapSrc\Spritesheets\TilesetWater.png" />
-    <Image Include="Images\background\bckg_GameTitle.png" />
-    <Image Include="Images\background\bckg_Image.png" />
-    <Image Include="Images\background\bckg_WoodPanneling.png" />
-    <Image Include="Images\decor\Trohpy_Coco.png" />
-    <Image Include="Images\decor\Trohpy_Eagle.png" />
-    <Image Include="Images\decor\Trohpy_Fish.png" />
-    <Image Include="Images\decor\Trohpy_Fox.png" />
-    <Image Include="Images\decor\Trohpy_Frog.png" />
-    <Image Include="Images\decor\Trohpy_Hippo.png" />
-    <Image Include="Images\decor\Trohpy_Kangaroo.png" />
-    <Image Include="Images\decor\Trohpy_Toucan.png" />
-    <Image Include="Images\enemies\batSS_Death.png" />
-    <Image Include="Images\enemies\batSS_Default.png" />
-    <Image Include="Images\enemies\bullSS_Death.png" />
-    <Image Include="Images\enemies\bullSS_Default.png" />
-    <Image Include="Images\enemies\catSS_Death.png" />
-    <Image Include="Images\enemies\catSS_Default.png" />
-    <Image Include="Images\enemies\plantSS_Death.png" />
-    <Image Include="Images\enemies\plantSS_Default.png" />
-    <Image Include="Images\enemies\scorpionSS_Death.png" />
-    <Image Include="Images\enemies\scorpionSS_Default.png" />
-    <Image Include="Images\items\Item_Boots01.png" />
-    <Image Include="Images\items\Item_Boots02.png" />
-    <Image Include="Images\items\Item_Boots03.png" />
-    <Image Include="Images\items\Item_Lantern01.png" />
-    <Image Include="Images\items\Item_Package.png" />
-    <Image Include="Images\items\Item_Soda.png" />
-    <Image Include="Images\items\light\lanternCircular.png" />
-    <Image Include="Images\items\light\lanternDown.png" />
-    <Image Include="Images\items\light\lanternLeft.png" />
-    <Image Include="Images\items\light\lanternUp.png" />
-    <Image Include="Images\items\light\lightGeneric.png" />
-    <Image Include="Images\items\world\worldObject_Bed.png" />
-    <Image Include="Images\items\world\worldObject_blockRock.png" />
-    <Image Include="Images\items\world\worldObject_Chest_Closed.png" />
-    <Image Include="Images\items\world\worldObject_Chest_Opened.png" />
-    <Image Include="Images\items\world\worldObject_Gold.png" />
-    <Image Include="Images\items\world\worldObject_Tutorial.png" />
-    <Image Include="Images\map\mapMarker.png" />
-    <Image Include="Images\map\mapOverlay.png" />
-    <Image Include="Images\map\minimapOverlay.png" />
-    <Image Include="Images\monkeyAnims\monkeySS_Default.png" />
-    <Image Include="Images\monkeyAnims\monkeySS_Pirate.png" />
-    <Image Include="Images\monkeyAnims\monkeySS_Sleep.png" />
-    <Image Include="Images\monkeyAnims\monkeySS_Tired.png" />
-    <Image Include="Images\monkeyAnims\racoonSS.png" />
-    <Image Include="Images\npcs\NPC_Base.png" />
-    <Image Include="Images\npcs\NPC_Coco.png" />
-    <Image Include="Images\npcs\NPC_Eagle.png" />
-    <Image Include="Images\npcs\NPC_Fish.png" />
-    <Image Include="Images\npcs\NPC_Fox.png" />
-    <Image Include="Images\npcs\NPC_Frog.png" />
-    <Image Include="Images\npcs\NPC_Hipo.png" />
-    <Image Include="Images\npcs\NPC_Kangaroo.png" />
-    <Image Include="Images\npcs\NPC_Pavo.png" />
-    <Image Include="Images\npcs\NPC_Rabbit.png" />
-    <Image Include="Images\npcs\NPC_Tucan.png" />
-    <Image Include="Images\npcs\NPC_Turtle.png" />
-    <Image Include="Images\shop\panelShopp.png" />
-    <Image Include="Images\shop\Shop_Boots01.png" />
-    <Image Include="Images\shop\Shop_Boots02.png" />
-    <Image Include="Images\shop\Shop_Boots03.png" />
-    <Image Include="Images\shop\Shop_Soda.png" />
-    <Image Include="Images\shop\shop_UI_PanelShop.png" />
-    <Image Include="Images\shop\shop_UI_Selector.png" />
-    <Image Include="Images\ui\InGame\dialoguebox.png" />
-    <Image Include="Images\ui\InGame\UI_energyLevel.png" />
-    <Image Include="Images\ui\InGame\UI_fearLevel.png" />
-    <Image Include="Images\ui\InGame\UI_InventoryBar.png" />
-    <Image Include="Images\ui\InGame\UI_InventoryBarOverlay.png" />
-    <Image Include="Images\ui\InGame\UI_playerHUD.png" />
-    <Image Include="Images\ui\Menu\black.png" />
-    <Image Include="Images\ui\Menu\Brightness.png" />
-    <Image Include="Images\ui\Menu\button_Back.png" />
-    <Image Include="Images\ui\Menu\button_BackMenu.png" />
-    <Image Include="Images\ui\Menu\button_Continue.png" />
-    <Image Include="Images\ui\Menu\button_Main_Credits.png" />
-    <Image Include="Images\ui\Menu\button_Main_ExitButton.png" />
-    <Image Include="Images\ui\Menu\button_Main_Options.png" />
-    <Image Include="Images\ui\Menu\button_Main_StartButton.png" />
-    <Image Include="Images\ui\Menu\button_Options.png" />
-    <Image Include="Images\ui\Menu\button_Pause.png" />
-    <Image Include="Images\ui\Menu\dialoguebox.png" />
-    <Image Include="Images\ui\Menu\fade.png" />
-    <Image Include="Images\ui\Menu\label.png" />
-    <Image Include="Images\ui\Menu\sliderBase.png" />
-    <Image Include="Images\ui\Menu\sliderClicker.png" />
-    <Image Include="Images\ui\Menu\UI_Checker00.png" />
-    <Image Include="Images\ui\Menu\UI_Checker01.png" />
-    <Image Include="Images\ui\Menu\UI_Checker02.png" />
-    <Image Include="Images\ui\Menu\UI_Checker03.png" />
-    <Image Include="Images\ui\capibara.png" />
-    <Image Include="Images\ui\signs.png" />
-    <Image Include="Images\ui\UI_Coin.png" />
-    <Image Include="Images\missingTex.png" />
-    <Image Include="Images\missions\MissionPanel_Interact.png" />
-    <Image Include="Images\missions\mission_UI_Helper.png" />
-    <Image Include="Images\missions\mission_UI_Panel.png" />
-    <Image Include="Images\missions\mission_UI_Selector.png" />
-    <Image Include="Images\missions\Mission01.png" />
-    <Image Include="Images\missions\Mission02.png" />
-    <Image Include="Images\missions\Mission03.png" />
+    <Image Include="Images\enemies\batSS_Death.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\enemies\batSS_Default.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\background\bckg_Image.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\background\bckg_GameTitle.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\background\bckg_WoodPanneling.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\ui\Menu\black.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\enemies\bullSS_Death.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\enemies\bullSS_Default.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\ui\Menu\button_Back.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\ui\Menu\button_BackMenu.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\ui\Menu\button_Continue.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\ui\Menu\button_Main_Credits.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\ui\Menu\button_Main_Options.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\ui\Menu\button_Main_ExitButton.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\ui\Menu\button_Main_StartButton.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\ui\Menu\button_Options.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\ui\Menu\button_Pause.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\ui\capibara.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\enemies\catSS_Death.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\enemies\catSS_Default.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Src\TilemapSrc\Spritesheets\Elements.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\ui\InGame\dialoguebox.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\ui\Menu\dialoguebox.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\ui\Menu\fade.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\items\Item_Boots01.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\items\Item_Boots02.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\items\Item_Boots03.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\items\Item_Lantern01.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\items\Item_Package.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\items\Item_Soda.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\ui\Menu\label.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\items\light\lanternCircular.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\items\light\lanternDown.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\items\light\lanternLeft.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\items\light\lanternUp.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\items\light\lightGeneric.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\map\mapMarker.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\map\mapOverlay.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\map\minimapOverlay.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\missingTex.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\missions\mission_UI_Helper.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\missions\mission_UI_Panel.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\missions\mission_UI_Selector.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\missions\Mission01.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\missions\Mission02.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\missions\Mission03.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\missions\MissionPanel_Interact.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\monkeyAnims\monkeySS_Default.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\monkeyAnims\monkeySS_Pirate.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\monkeyAnims\monkeySS_Sleep.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\monkeyAnims\monkeySS_Tired.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="MonkeyDelivery.ico">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\enemies\plantSS_Death.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\enemies\plantSS_Default.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\monkeyAnims\racoonSS.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\enemies\scorpionSS_Death.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\enemies\scorpionSS_Default.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\shop\Shop_Boots01.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\shop\Shop_Boots02.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\shop\Shop_Boots03.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\shop\Shop_Soda.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\shop\shop_UI_PanelShop.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\shop\shop_UI_Selector.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\ui\signs.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\ui\Menu\sliderBase.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\ui\Menu\sliderClicker.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="small.ico">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Src\TilemapSrc\Spritesheets\TilesetDungeon.png">
+      <Filter>Recursos\Tile</Filter>
+    </Image>
+    <Image Include="Src\TilemapSrc\Spritesheets\TilesetElement.png">
+      <Filter>Recursos\Tile</Filter>
+    </Image>
+    <Image Include="Src\TilemapSrc\Spritesheets\TilesetFloor.png">
+      <Filter>Recursos\Tile</Filter>
+    </Image>
+    <Image Include="Src\TilemapSrc\Spritesheets\TilesetFloorB.png">
+      <Filter>Recursos\Tile</Filter>
+    </Image>
+    <Image Include="Src\TilemapSrc\Spritesheets\TilesetFloorDetail.png">
+      <Filter>Recursos\Tile</Filter>
+    </Image>
+    <Image Include="Src\TilemapSrc\Spritesheets\TilesetHole.png">
+      <Filter>Recursos\Tile</Filter>
+    </Image>
+    <Image Include="Src\TilemapSrc\Spritesheets\TilesetHouse.png">
+      <Filter>Recursos\Tile</Filter>
+    </Image>
+    <Image Include="Src\TilemapSrc\Spritesheets\TilesetInterior.png">
+      <Filter>Recursos\Tile</Filter>
+    </Image>
+    <Image Include="Src\TilemapSrc\Spritesheets\TilesetInteriorFloor.png">
+      <Filter>Recursos\Tile</Filter>
+    </Image>
+    <Image Include="Src\TilemapSrc\Spritesheets\TilesetLogic.png">
+      <Filter>Recursos\Tile</Filter>
+    </Image>
+    <Image Include="Src\TilemapSrc\Spritesheets\TilesetNature.png">
+      <Filter>Recursos\Tile</Filter>
+    </Image>
+    <Image Include="Src\TilemapSrc\Spritesheets\TilesetRelief.png">
+      <Filter>Recursos\Tile</Filter>
+    </Image>
+    <Image Include="Src\TilemapSrc\Spritesheets\TilesetReliefDetail.png">
+      <Filter>Recursos\Tile</Filter>
+    </Image>
+    <Image Include="Src\TilemapSrc\Spritesheets\TilesetWallSimple.png">
+      <Filter>Recursos\Tile</Filter>
+    </Image>
+    <Image Include="Src\TilemapSrc\Spritesheets\TilesetWater.png">
+      <Filter>Recursos\Tile</Filter>
+    </Image>
+    <Image Include="Images\items\world\worldObject_Tutorial.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\items\world\worldObject_Gold.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\items\world\worldObject_Chest_Opened.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\items\world\worldObject_Chest_Closed.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\items\world\worldObject_blockRock.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\items\world\worldObject_Bed.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\ui\InGame\UI_playerHUD.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\ui\InGame\UI_InventoryBarOverlay.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\ui\InGame\UI_InventoryBar.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\ui\InGame\UI_fearLevel.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\ui\InGame\UI_energyLevel.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\ui\UI_Coin.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\ui\Menu\UI_Checker02.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\ui\Menu\UI_Checker03.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\ui\Menu\UI_Checker01.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\ui\Menu\UI_Checker00.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\decor\Trohpy_Toucan.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\decor\Trohpy_Kangaroo.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\decor\Trohpy_Hippo.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\decor\Trohpy_Frog.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\decor\Trohpy_Fox.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\decor\Trohpy_Fish.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\decor\Trohpy_Eagle.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\decor\Trohpy_Coco.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
+    <Image Include="Images\ui\Menu\Brightness.png">
+      <Filter>Recursos\Imagenes</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\Images\config\resources.json" />
-    <None Include="Src\TilemapSrc\1.level" />
-    <None Include="Src\TilemapSrc\Spritesheets\TilesetRelief.psd" />
-    <None Include="Src\TilemapSrc\Tilesets\FloorTileset.tsx" />
-    <None Include="Src\TilemapSrc\Tilesets\NatureTileset.tsx" />
-    <None Include="Src\TilemapSrc\Tilesets\TilesetElement.tsx" />
-    <None Include="Src\TilemapSrc\Tilesets\TilesetFloorDetail.tsx" />
-    <None Include="Src\TilemapSrc\Tilesets\TilesetHouse.tsx" />
-    <None Include="Src\TilemapSrc\Tilesets\TilesetRelief.tsx" />
-    <None Include="Src\TilemapSrc\Tilesets\TilesetReliefDetail.tsx" />
-    <None Include="Src\TilemapSrc\Tilesets\WaterTileset.tsx" />
-    <None Include="Images\background\bckg_woodWall.webp" />
-    <None Include="Images\background\6241db5f3cf64.psd" />
-    <None Include="Images\config\resources.json" />
     <None Include="Src\TilemapSrc\MainMap.tmx" />
+    <None Include="Src\TilemapSrc\1.level">
+      <Filter>Recursos\Imagenes</Filter>
+    </None>
+    <None Include="Images\background\6241db5f3cf64.psd">
+      <Filter>Recursos\Imagenes</Filter>
+    </None>
+    <None Include="Images\background\bckg_woodWall.webp">
+      <Filter>Recursos\Imagenes</Filter>
+    </None>
+    <None Include="..\Images\config\resources.json">
+      <Filter>Recursos\Imagenes</Filter>
+    </None>
+    <None Include="Images\config\resources.json">
+      <Filter>Recursos\Imagenes</Filter>
+    </None>
+    <None Include="Src\TilemapSrc\Tilesets\NatureTileset.tsx">
+      <Filter>Recursos\Tile</Filter>
+    </None>
+    <None Include="Src\TilemapSrc\Tilesets\TilesetElement.tsx">
+      <Filter>Recursos\Tile</Filter>
+    </None>
+    <None Include="Src\TilemapSrc\Tilesets\TilesetFloorDetail.tsx">
+      <Filter>Recursos\Tile</Filter>
+    </None>
+    <None Include="Src\TilemapSrc\Tilesets\TilesetHouse.tsx">
+      <Filter>Recursos\Tile</Filter>
+    </None>
+    <None Include="Src\TilemapSrc\Spritesheets\TilesetRelief.psd">
+      <Filter>Recursos\Tile</Filter>
+    </None>
+    <None Include="Src\TilemapSrc\Tilesets\TilesetRelief.tsx">
+      <Filter>Recursos\Tile</Filter>
+    </None>
+    <None Include="Src\TilemapSrc\Tilesets\TilesetReliefDetail.tsx">
+      <Filter>Recursos\Tile</Filter>
+    </None>
+    <None Include="Src\TilemapSrc\Tilesets\WaterTileset.tsx">
+      <Filter>Recursos\Tile</Filter>
+    </None>
+    <None Include="Src\TilemapSrc\Tilesets\FloorTileset.tsx">
+      <Filter>Recursos\Tile</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Font Include="Images\fonts\Monospace.ttf" />
-    <Font Include="Images\fonts\Pixellari.ttf" />
-    <Font Include="Images\fonts\TheLiquid.ttf" />
-    <Font Include="Images\fonts\TheMoon.ttf" />
+    <Font Include="Images\fonts\Monospace.ttf">
+      <Filter>Recursos\Fuentes</Filter>
+    </Font>
+    <Font Include="Images\fonts\Pixellari.ttf">
+      <Filter>Recursos\Fuentes</Filter>
+    </Font>
+    <Font Include="Images\fonts\TheLiquid.ttf">
+      <Filter>Recursos\Fuentes</Filter>
+    </Font>
+    <Font Include="Images\fonts\TheMoon.ttf">
+      <Filter>Recursos\Fuentes</Filter>
+    </Font>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header">
+      <UniqueIdentifier>{802a752c-d624-4a11-acfe-1351e6ca90fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{db582531-5d91-4b12-b3e9-715236920b11}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Recursos">
+      <UniqueIdentifier>{62f1b34b-e395-4c06-8d6d-d6989c0122af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Recursos\Tile">
+      <UniqueIdentifier>{1f1a7db6-8c40-47f2-a329-6b77753bda06}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Recursos\Fuentes">
+      <UniqueIdentifier>{86446b4e-9ded-4b3d-bc6b-c262abe949ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Recursos\Imagenes">
+      <UniqueIdentifier>{a8aa21c8-de4c-4cf3-815d-9ce01215bda5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header\Control">
+      <UniqueIdentifier>{e2a9cc9d-88b1-4109-b5a2-7ffeaed288fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header\Logic">
+      <UniqueIdentifier>{f3109f2c-4406-4914-804d-708b0ad833bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header\Utils">
+      <UniqueIdentifier>{b81793ef-8a6a-4d8c-ae7d-c535c06fa705}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header\View">
+      <UniqueIdentifier>{df6f451c-0558-4b9a-a432-05b1277e6b6e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Control">
+      <UniqueIdentifier>{36bb00f8-c80e-421d-a5da-918c8dbe97a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Logic">
+      <UniqueIdentifier>{bc30113d-0f10-446f-981b-31abc661e960}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\View">
+      <UniqueIdentifier>{d6dce7f1-3ca5-4097-8704-345ee477c86c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header\Control\UI">
+      <UniqueIdentifier>{4bc0884e-0dd5-41ff-9e05-57453e4f621f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header\Control\States">
+      <UniqueIdentifier>{326caaff-1a62-4ebc-829a-5ced2aa5c77c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header\Control\Commands">
+      <UniqueIdentifier>{799760de-90e7-462f-a2b8-e6fb3db29629}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header\Control\UI\Buttons">
+      <UniqueIdentifier>{e27d4bb5-8ea1-43ee-bb1d-b91db3770294}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header\Control\UI\Sliders">
+      <UniqueIdentifier>{2bd7bd48-a3db-4291-8c81-261a54938c29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Control\Commands">
+      <UniqueIdentifier>{f734ab93-af15-4119-9b67-77897451afed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Control\States">
+      <UniqueIdentifier>{1acf5868-2edd-496e-9be4-35e15eb644c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Control\UI">
+      <UniqueIdentifier>{b2d5bc56-93b4-46ba-84af-ae779c9addac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Control\UI\Buttons">
+      <UniqueIdentifier>{10dedced-721d-4fd4-a58a-932bf0a83846}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Control\UI\Sliders">
+      <UniqueIdentifier>{c10af61d-5ccf-40e0-84ec-07a010471f27}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Control\UI\ElementsUI">
+      <UniqueIdentifier>{e8b269e8-58a2-44ea-84fa-5acbd82bc07c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header\Control\UI\ElementsUI">
+      <UniqueIdentifier>{96363e43-14db-4aac-8112-8279a5885f3f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Logic\Enemies">
+      <UniqueIdentifier>{51c55e34-8c2e-4013-8c78-98155cf332f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header\Logic\Enemies">
+      <UniqueIdentifier>{36a0db96-b9c2-4526-915b-6730631efb47}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header\Logic\InteractuableObjectsMap">
+      <UniqueIdentifier>{75a35314-a001-472e-ab94-d5848da46131}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Logic\InteractuableObjectsMap">
+      <UniqueIdentifier>{3e07c5ce-ba68-4b40-abd8-9538c895b5a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Logic\InventoryObjects">
+      <UniqueIdentifier>{4cdd6b1d-f8a7-4ef5-9d8a-0037d3534787}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header\Logic\InventoryObjects">
+      <UniqueIdentifier>{26d3b8df-8f07-4753-97e0-a556d8e41cd1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Logic\Managers/Game">
+      <UniqueIdentifier>{3c811ee8-05d3-47bb-86cc-a56bd5483297}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header\Logic\Managers/Game">
+      <UniqueIdentifier>{abae91a8-ee5b-4f6d-8063-1635493d881a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Logic\BasicElements">
+      <UniqueIdentifier>{79f1f54f-f59e-4ea0-b5ec-397d370fa14d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header\Logic\BasicElements">
+      <UniqueIdentifier>{21304b7d-ece9-4bc5-bff1-683f7dc22195}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Tile">
+      <UniqueIdentifier>{65c6b915-543a-47fc-9841-80ad513027f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header\Tile">
+      <UniqueIdentifier>{0e1b6917-1ab4-4805-b324-7e924267f9e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Utils">
+      <UniqueIdentifier>{395b3aeb-d9a5-4714-bbb6-414c207f6d13}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header\Logic\Levels">
+      <UniqueIdentifier>{b75bdda4-4e42-4994-b2ce-d34e7ec57f44}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Logic\Levels">
+      <UniqueIdentifier>{28165e73-cf22-4a04-a9aa-1422b6398e70}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>
