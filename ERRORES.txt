@@ -22,7 +22,7 @@ Tiles girados
 Cuando le das al 2 en el inventario y luego al espacio peta en el render (fatarán texturas)
 Fatan colliders (valla del cementerio, troncos a la derecha del mapa)
 Los dialogos no van
-La barra de miedo no se resetea al despertar
+
 
 Enemigos----
 Murcielago - Hecho (hay que subirlo)

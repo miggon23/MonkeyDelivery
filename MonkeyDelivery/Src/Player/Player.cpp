@@ -87,9 +87,6 @@ void Player::update()
 	if ((energyLevel_->percentEnergy() == 0 || fearLevel_->percentFear() == 100) && !fade) {
 		fade = true;
 	}
-	/*if((fearLevel_->getScared(0) || energyLevel_->drain(0)) && !fade) {
-		fade = !fade;
-	}*/
 }
 
 /// <summary>
@@ -165,7 +162,7 @@ void Player::sleep()
 //cambiar la variable de dormir y establecer la textura
 void Player::changeSleep()
 {
-	if (energyLevel_->percentEnergy() <= 20.0 || sleeping) {
+	if (energyLevel_->percentEnergy() <= 20.0 || sleeping || fade) {
 		sleeping = !sleeping;
 		//actulizo la textura
 		if (sleeping) {
@@ -282,12 +279,12 @@ void Player::FadeOut()
 		fadeTex_->changeAlpha(alpha);
 		fadeTex_->render({ 0, 0, 1800, 1000 });
 
-		// Reestablece el miedo y la energ�a al valor por defecto
-		fearLevel_->resetFear();
-		energyLevel_->resetEnergy();
 
 		// Establece la posici�n en la cama m�s cercana
 		sendToBed();
+		// Reestablece el miedo y la energ�a al valor por defecto
+		fearLevel_->resetFear();
+		energyLevel_->resetEnergy();
 	}
 }
 

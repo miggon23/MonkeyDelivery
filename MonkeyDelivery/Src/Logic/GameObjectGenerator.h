@@ -14,7 +14,7 @@ class GameObjectGenerator
 
 	struct ChestDimension
 	{
-		int w=100, h=100;
+		int w=50, h=50;
 	};
 	struct Radios 
 	{
