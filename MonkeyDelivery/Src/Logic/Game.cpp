@@ -221,15 +221,14 @@ void Game::draw()
 
     dialogueBox_->draw();
 
-    player_->draw();
-
     if (!mapOpened) drawMap();
+    scalePlayerIcon();
+
+    player_->draw();
     /*player_->drawDebug();*/
 
     //partSystem->draw();
     missionsPanel_->draw();
-
-    scalePlayerIcon();
 }
 
 Point2D<int> Game::getOrigin() {

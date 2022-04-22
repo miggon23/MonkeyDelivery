@@ -1,5 +1,7 @@
 #include "Cat.h"
 #include "../Logic/Game.h"
+#include <cmath>
+#include <algorithm>
 
 Cat::Cat(Game* game,int Aleatorio, Point2D<int>centroRadio, AnimationManager* animation):Enemy(game, Aleatorio, centroRadio, animation){
 
@@ -9,7 +11,6 @@ Cat::Cat(Game* game,int Aleatorio, Point2D<int>centroRadio, AnimationManager* an
 	setTexture(catSS_Default);
 	setDimension(50, 60);
 	createCheckPoints();
-	setScariness(0.1);
 	setResistance(5000);
 	textureRect = { 0,0,animationManager->getWidthCat(),animationManager->getHeightcat() };
 }
@@ -42,8 +43,7 @@ void Cat::draw()
 		if (collided && (game->getPlayer()->isUsingFlashLight() || game->getPlayer()->isUsingLantern())) 
 			setTexture(catSS_Death);
 		
-		else 
-			setTexture(catSS_Default);
+		else setTexture(catSS_Default);
 		
 		animationManager->getFrameImageCat(pos, textureRect, texture, timerAnimation);
 	}
@@ -52,24 +52,21 @@ void Cat::draw()
 void Cat::checkDistance()
 {
 	if (isAlive()) {
-		if (lastUpdate_ + 1000 < SDL_GetTicks()) {
-			int offset = 300;
-			double distanceX = abs(getPosition().getX() - game->getPosisitionPlayer().getX());
-			double distanceY = abs(getPosition().getY() - game->getPosisitionPlayer().getY());
+		
+		int range = 300;
+		double distanceX = abs(getPosition().getX() - game->getPosisitionPlayer().getX());
+		double distanceY = abs(getPosition().getY() - game->getPosisitionPlayer().getY());
 
-			if (distanceX <= offset && distanceY <= offset) {
-				/*sdlutils().soundEffects().at("cat").setVolume(game->getSoundEfectsVolume());
-				sdlutils().soundEffects().at("cat").play(0, 1);*/
-
-				double d = 1.8 * ((distanceY + distanceX) / 2);
-				if (distanceX <= 20.0 && distanceY <= 20.0) {
-					game->scare(2.0 * scariness_ / 10);
-				}
-				//si no es demasiado por eso se divide entre 8
-				else game->scare(d * scariness_ / 10);///esto hay que mirarlo
+		if (distanceX <= range && distanceY <= range) {
+			/*sdlutils().soundEffects().at("cat").setVolume(game->getSoundEfectsVolume());
+			sdlutils().soundEffects().at("cat").play(0, 1);*/
+			if (lastUpdate_ + 1500 < SDL_GetTicks()) {
+				double minDis = min(distanceX, distanceY);
+				scariness_ = range / (minDis*3);
+				if (scariness_ > 12) scariness_ = 12; //Como mximo quita un 12% cada vez
+				game->scare(scariness_);
 				lastUpdate_ = SDL_GetTicks();
 			}
-			lastUpdate_ = SDL_GetTicks();
 		}
 	}
 }

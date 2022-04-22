@@ -4,14 +4,12 @@
 Enemy::Enemy(Game* game, int radio, Point2D<int>centroRadio, AnimationManager* animation) : GameObject(game, true), animationManager(animation) {
 
 	zone = SpawnZone(radio, centroRadio); //Creaccion de la zona de spawn
-
 	setAlive(true);
 	indexCheckPoint = 0;
 	back = false; //Boolenao que indica cuando se da la vuelta el enemigo en su patrulla
 	timerAnimation = 0;
 	lastUpdate_ = SDL_GetTicks();
 	timeOnFlash_ = SDL_GetTicks();
-
 	respawnTimer = SDL_GetTicks();
 	nearLimit_ = 2;
 }
@@ -117,23 +115,20 @@ void Enemy::respawn()
 void Enemy::checkDistance()
 {
 	if (isAlive()) {
-		if (lastUpdate_ + 1000 < SDL_GetTicks()) {
-			int offset = 300;
-			double distanceX = abs(getPosition().getX() - game->getPosisitionPlayer().getX());
-			double distanceY = abs(getPosition().getY() - game->getPosisitionPlayer().getY());
+		int range = 300;
+		double distanceX = abs(getPosition().getX() - game->getPosisitionPlayer().getX());
+		double distanceY = abs(getPosition().getY() - game->getPosisitionPlayer().getY());
 
-			if (distanceX <= offset && distanceY <= offset) {
+		if (distanceX <= range && distanceY <= range) {
 
-
-				double d = 1.8 * ((distanceY + distanceX) / 2);
-				if (distanceX <= 20.0 && distanceY <= 20.0) {
-					game->scare(2.0 * scariness_ / 10);
-				}
-				//si no es demasiado por eso se divide entre 8
-				else game->scare(d * scariness_ / 10);///esto hay que mirarlo
+			if (lastUpdate_ + 1500 < SDL_GetTicks()) {
+				double minDis = min(distanceX, distanceY);
+				scariness_ = range / (minDis * 3);
+				if (scariness_ > 20) scariness_ = 20; //Como mximo quita un 20% cada vez
+				game->scare(scariness_);
 				lastUpdate_ = SDL_GetTicks();
+				//cout << "MIEDO: " << scariness_ << endl;
 			}
-			lastUpdate_ = SDL_GetTicks();
 		}
 	}
 }

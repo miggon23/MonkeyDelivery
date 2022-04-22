@@ -11,9 +11,7 @@ Bull::Bull(Game* game, int radio, Point2D<int> centroRadio, AnimationManager* an
 	createCheckPoints();
 	lastUpdate_ = SDL_GetTicks();
 	stop = true; //Patrulla y no persigue
-	setScariness(0.15);
 	setResistance(1500);
-
 
 	textureRect = { 0, 0, animationManager->getWidthBull(),animationManager->getHeigthBull() };
 }
@@ -22,7 +20,6 @@ void Bull::update()
 {
 	if (stop) patrol(1); //El toro solo patrulla si no persigue 
 	checkDistance();
-	bullScares();
 	die();
 	respawn();
 	//Si han pasado 3 segundos y el toro esta persiguiendo
@@ -52,29 +49,36 @@ void Bull::chase(double x, double y)
 void Bull::checkDistance()
 {
 	if (isAlive()) {
-			int range = 300; //rango
-			double dirX = getPosition().getX() - game->getPosisitionPlayer().getX(); //direccion en las x
-			double dirY = getPosition().getY() - game->getPosisitionPlayer().getY(); //direccion en las y
-			double distanceX = abs(dirX); //distancia en valor absoluto en las x
-			double distanceY = abs(dirY); //distacia en valor absoluto en las y
+		int range = 300; //rango
+		double dirX = getPosition().getX() - game->getPosisitionPlayer().getX(); //direccion en las x
+		double dirY = getPosition().getY() - game->getPosisitionPlayer().getY(); //direccion en las y
+		double distanceX = abs(dirX); //distancia en valor absoluto en las x
+		double distanceY = abs(dirY); //distacia en valor absoluto en las y
 
-			//Si esta en el rango
-			if (distanceX <= range && distanceY <= range) //Si esta en el rango
-			{
-				stop = false; //Dejo de patrullar
-				timer_ = SDL_GetTicks();
-				chase(dirX, dirY); //Persigo
+		//Si esta en el rango
+		if (distanceX <= range && distanceY <= range) //Si esta en el rango
+		{
+			stop = false; //Dejo de patrullar
+			timer_ = SDL_GetTicks();
+			chase(dirX, dirY); //Persigo
 
-				sdlutils().soundEffects().at("bull").setVolume(game->getSoundEfectsVolume());
-				sdlutils().soundEffects().at("bull").play(0, 1);
+			sdlutils().soundEffects().at("bull").setVolume(game->getSoundEfectsVolume());
+			sdlutils().soundEffects().at("bull").play(0, 1);
 
-
+			if (lastUpdate_ + 1500 < SDL_GetTicks()) {
+				double minDis = min(distanceX, distanceY);
+				scariness_ = range / (minDis * 3);
+				if (scariness_ > 5) scariness_ = 5; //Como mximo quita un 5% cada vez
+				game->scare(scariness_);
+				lastUpdate_ = SDL_GetTicks();
+				//cout << "MIEDO: " << scariness_ << endl;
 			}
-			else if (SDL_GetTicks() <= timer_ + 3000) //Si no esta en el rango y no han pasado los 3 segundos 
-				chase(dirX, dirY); //Persigo
+		}
+		else if (SDL_GetTicks() <= timer_ + 3000) //Si no esta en el rango y no han pasado los 3 segundos 
+			chase(dirX, dirY); //Persigo
 
-			else  //Si no esta en el rango y han pasado los 3 segundos
-				stop = true; //Dejo de perseguir
+		else  //Si no esta en el rango y han pasado los 3 segundos
+			stop = true; //Dejo de perseguir
 	}
 
 }
@@ -88,36 +92,8 @@ void Bull::draw()
 		if (collided && (game->getPlayer()->isUsingFlashLight() || game->getPlayer()->isUsingLantern())) 
 			setTexture(bullSS_Death);
 		
-		else 
-			setTexture(bullSS_Default);
+		else setTexture(bullSS_Default);
 		
 		animationManager->getFrameImageBull(pos, textureRect, texture, timerAnimation);
-	}
-}
-
-void Bull::bullScares()
-{
-	if (isAlive()) {
-		if (lastUpdate_ + 1000 < SDL_GetTicks()) {
-			int offset = 300;
-			double distanceX = abs(getPosition().getX() - game->getPosisitionPlayer().getX());
-			double distanceY = abs(getPosition().getY() - game->getPosisitionPlayer().getY());
-
-			if (distanceX <= offset && distanceY <= offset) {
-
-				/*if (distanceX < distanceY)
-					game->scare(distanceX*scariness_);
-				else*/
-
-				double d = 1.8 * ((distanceY + distanceX) / 2);
-				if (distanceX <= 20.0 && distanceY <= 20.0) {
-					game->scare(2.0 * scariness_ / 10);
-				}
-				//si no es demasiado por eso se divide entre 8
-				else game->scare(d * scariness_ / 10);///esto hay que mirarlo
-				lastUpdate_ = SDL_GetTicks();
-			}
-			lastUpdate_ = SDL_GetTicks();
-		}
 	}
 }
