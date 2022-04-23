@@ -150,7 +150,7 @@ void Player::sleep()
 {
 	getScared(-1);
 	drainEnergy(-1);
-	sdlutils().soundEffects().at("sleep").play(0, 1);
+	//sdlutils().soundEffects().at("sleep").play(0, 1);
 }
 
 //cambiar la variable de dormir y establecer la textura
@@ -170,6 +170,8 @@ void Player::changeSleep()
 				usingLantern = false;
 				lanternOn = true;
 			}
+			sdlutils().soundEffects().at("sleep").setVolume(game->getGeneralVolume() * game->getSoundEfectsVolume());
+			sdlutils().soundEffects().at("sleep").play(-1, 1);
 		}
 		else {
 			animationManager->setState(AnimationManager::PlayerState::Running);
@@ -181,6 +183,7 @@ void Player::changeSleep()
 				usingLantern = true;
 				lanternOn = false;
 			}
+			sdlutils().soundEffects().at("sleep").pauseChannel(1);
 		}
 		draw();
 	}
@@ -285,7 +288,7 @@ void Player::FadeOut()
 void Player::sendToBed()
 {
 	fade = false;
-	sdlutils().soundEffects().at("scary").setVolume(game->getSoundEfectsVolume());
+	sdlutils().soundEffects().at("scary").setVolume(game->getSoundEfectsVolume()*game->getGeneralVolume());
 	sdlutils().soundEffects().at("scary").play(0, 1);
 	setPosition((double) bedX_ + 15, bedY_);//colocar en la cama
 }
