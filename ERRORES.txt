@@ -1,7 +1,6 @@
 ALARGA EL MAPA al acercarse al borde
 ALGUNA TEXTURA PETA
 INTERFAZ BARRAS DE  MIEDO Y ENERGIA
-Si entras al panel de misiones, sales y vuelvs a entrar peta, y si coges una mision la primera vez tambien
 La linterna no sale la luz, ta jodida
 Te sales por el mapa abajo a la izquierda (hay 2 hueco en los colliders)
 El toro persigue mas rapido cuando corres con las botas
@@ -13,7 +12,7 @@ Tiles girados
 Cuando le das al 2 en el inventario y luego al espacio peta en el render (fatarán texturas "Linterna")
 Fatan colliders (valla del cementerio, troncos a la derecha del mapa)
 Los dialogos no van
-
+Cuando se abre el panel de misiones y se selecciona una mision, si se vuelve a entrar se puede seguir seleccionando
 
 Enemigos----
 Murcielago - Hecho (hay que subirlo)

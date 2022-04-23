@@ -3,7 +3,7 @@
 #include "../Player/Player.h"
 #include "Game.h"
 
-Target::Target(MissionsPanel* mp, Game* g) : GameObject(g, true), missionsPanel_(mp), myTexture_(nullptr)
+Target::Target(MissionsPanel* mp, Game* g) : GameObject(g, true), missionsPanel_(mp)
 {
 	active_ = false;
 
@@ -20,14 +20,14 @@ Target::Target(MissionsPanel* mp, Game* g, string texture) : GameObject(g), miss
 	setPosition(0, 0);
 
 	string route = "../Images/NPCs/" + texture + ".png";
-	myTexture_ = new Texture(g->getRenderer(), route);
+	this->texture = new Texture(g->getRenderer(), route);
 }
 
 Target::~Target()
 {
 	missionsPanel_ = nullptr;
-	delete myTexture_;
-	myTexture_ = nullptr;
+	delete texture;
+	texture = nullptr;
 }
 
 void Target::onPlayerInteraction(Player* player)
@@ -51,13 +51,20 @@ void Target::update()
 void Target::draw() {
 	if (active_) {
 		//drawTexture(texture);
-		SDL_Rect rect = {getPosition().getX(), getPosition().getY(), getWidth(), getHeight()};
-		myTexture_->render(rect);
+		 SDL_Rect pos = getCollider();
+
+        //Dibujamos respecto a la camara
+        pos.x -= game->getCamera()->getCameraPosition().getX();
+        pos.y -= game->getCamera()->getCameraPosition().getY();
+
+        texture->render(pos);
 	}
 }
 
 void Target::setTexture(string tex)
 {	
+	if (texture != nullptr)
+		delete texture;
 	string route = "./Images/NPCs/" + tex + ".png";
-	myTexture_ = new Texture(game->getRenderer(), route);
+	texture = new Texture(game->getRenderer(), route);
 }

@@ -31,6 +31,5 @@ public:
 private:
 	MissionsPanel* missionsPanel_;
 	bool active_;
-	Texture* myTexture_;
 	string textPath_;
 };

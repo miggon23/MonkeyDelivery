@@ -12,7 +12,7 @@
       "express": true,
       "special": false,
       "target": "NPC_Tucan",
-      "targetPositionX": -250,
+      "targetPositionX": 1700,
       "targetPositionY": 750,
       "targetWidth": 60,
       "targetHeight": 60
