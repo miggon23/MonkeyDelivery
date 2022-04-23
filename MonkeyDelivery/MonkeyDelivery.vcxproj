@@ -180,7 +180,6 @@
     <ClInclude Include="Src\Control\States\ShopState.h" />
     <ClInclude Include="Src\Control\States\State.h" />
     <ClInclude Include="Src\Control\States\StateMachine.h" />
-    <ClInclude Include="Src\Control\States\TestingState.h" />
     <ClInclude Include="Src\Control\UI\Buttons\Back.h" />
     <ClInclude Include="Src\Control\UI\Buttons\Back1.h" />
     <ClInclude Include="Src\Control\UI\Buttons\Continue.h" />
@@ -249,15 +248,12 @@
     <ClInclude Include="Src\sdlutils\Music.h" />
     <ClInclude Include="Src\sdlutils\RandomNumberGenerator.h" />
     <ClInclude Include="Src\sdlutils\SDLUtils.h" />
-    <ClInclude Include="Src\sdlutils\sdlutils_demo.h" />
     <ClInclude Include="Src\sdlutils\SoundEffect.h" />
     <ClInclude Include="Src\sdlutils\TextureUtils.h" />
     <ClInclude Include="Src\sdlutils\VirtualTimer.h" />
-    <ClInclude Include="Src\Utils\Music.h" />
     <ClInclude Include="Src\Utils\Particles\ParticleExample.h" />
     <ClInclude Include="Src\Utils\Particles\ParticleSystem.h" />
     <ClInclude Include="Src\Utils\Singleton.h" />
-    <ClInclude Include="Src\Utils\SoundEffect.h" />
     <ClInclude Include="Src\Utils\Timer.h" />
     <ClInclude Include="Src\Utils\Vector2D.h" />
     <ClInclude Include="Src\View\Box.h" />
@@ -279,7 +275,7 @@
     <ClCompile Include="Src\Control\CommandInteract.cpp" />
     <ClCompile Include="Src\Control\CommandMove.cpp" />
     <ClCompile Include="Src\Control\CommandRun.cpp" />
-    <ClCompile Include="Src\Control\InteractDialogueBox.cpp" />
+    <ClCompile Include="Src\Control\InteractDialogueBoxCommand.cpp" />
     <ClCompile Include="Src\Control\InventoryCommand.cpp" />
     <ClCompile Include="Src\Control\MapCommand.cpp" />
     <ClCompile Include="Src\Control\NextStateCommand.cpp" />
@@ -297,7 +293,6 @@
     <ClCompile Include="Src\Control\States\ShopState.cpp" />
     <ClCompile Include="Src\Control\States\State.cpp" />
     <ClCompile Include="Src\Control\States\StateMachine.cpp" />
-    <ClCompile Include="Src\Control\States\TestingState.cpp" />
     <ClCompile Include="Src\Control\UI\Buttons\Back.cpp" />
     <ClCompile Include="Src\Control\UI\Buttons\Back1.cpp" />
     <ClCompile Include="Src\Control\UI\Buttons\Continue.cpp" />
@@ -362,7 +357,6 @@
     <ClCompile Include="Src\sdlutils\SDLUtils.cpp" />
     <ClCompile Include="Src\sdlutils\SoundEffect.cpp" />
     <ClCompile Include="Src\sdlutils\TextureUtils.cpp" />
-    <ClCompile Include="Src\Utils\SoundEffect.cpp" />
     <ClCompile Include="Src\Utils\Particles\ParticleExample.cpp" />
     <ClCompile Include="Src\Utils\Particles\ParticleSystem.cpp" />
     <ClCompile Include="Src\Utils\Timer.cpp" />
