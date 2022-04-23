@@ -114,7 +114,6 @@ void DialogueBox::advanceLetter()
 	//si ya no hay mas letras se acaba
 	if (letterIndex_ == text_.size()){
 		inShow_ = false;
-		hide();
 	}
 
 }
@@ -150,6 +149,8 @@ void DialogueBox::getIcon(unsigned int iconId)
 
 void DialogueBox::interact()
 {
+	if (!draw_) return;
+
 	if (inShow_)
 		showLetterTime_ = fastUpdateTime_;
 	else hide();
