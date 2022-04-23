@@ -3,9 +3,10 @@
 #include "Flashlight.h"
 #include "../Logic/Game.h"
 
-Lantern::Lantern(Texture* tex, Game* game) : InventoryObject(tex, game)
+Lantern::Lantern(Texture* tex, Game* game,Player* player) : InventoryObject(tex, game,player)
 {
 	active = false;
+	setTypeObject(LANTERN);
 }
 
 bool Lantern::useObject() {

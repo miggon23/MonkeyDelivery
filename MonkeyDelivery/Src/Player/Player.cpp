@@ -41,24 +41,18 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game), anima
 	inventory_ = new Inventory(game, this, game->getRenderer());
 
 	//Objetos de inventario
-	inventory_->addObject(new Skates(game->getTexture(Item_Boots01), game));
-	inventory_->addObject(new Flashlight(game->getTexture(Item_Lantern01), game));
-	inventory_->addObject(new EnergyDrink(game->getTexture(Item_Soda), game));
-	inventory_->addObject(new EnergyDrink(game->getTexture(Item_Soda), game));
-	//inventory_->addObject(new Bike(new Texture(game->getRenderer(), "../Images/objects/patinete.png")));
+	inventory_->addObject(new Skates(game->getTexture(Item_Boots01), game,this));
+	inventory_->addObject(new Flashlight(game->getTexture(Item_Lantern01), game,this));
+	inventory_->addObject(new EnergyDrink(game->getTexture(Item_Soda), game,this));
+	inventory_->addObject(new EnergyDrink(game->getTexture(Item_Soda), game,this));
+	//falta la textura del pico
+	inventory_->addObject(new Pickaxe(game->getTexture(Item_Soda), game, 1,this));
 
 	setInventoryVisibility(true);
 	textureRect = { 0, 0, 16, 18 };
 	timerAnimation = 0;
 	//timer = sdlutils().virtualTimer();
 
-	//// flashlight
-	//flashlightTex_ = game->getTexture(shop_Boots01);
-	//// lantern
-	//lanternTex_ = game->getTexture(shop_Boots01);
-	//// fadeout
-	//fadeTex_ = game->getTexture(shop_Boots01);
-	//fadeTex_->changeAlpha(0);
 	fadeTex_ = game->getTexture(UI_Fade);
 }
 

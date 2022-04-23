@@ -1,10 +1,10 @@
 #include "Bike.h"
 #include "../Player/Player.h"
 
-Bike::Bike(Texture* tex, Game* game) : speedMult(2.5), InventoryObject(tex, game)
+Bike::Bike(Texture* tex, Game* game,Player* player) : speedMult(2.5), InventoryObject(tex, game,player)
 {
 	active = false;
-	setTypeObject(BOTAS);
+	setTypeObject(BOOTS);
 }
 
 bool Bike::useObject() {

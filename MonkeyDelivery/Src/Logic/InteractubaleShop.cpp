@@ -4,8 +4,8 @@
 
 IntectuableShop::IntectuableShop(Game* game,int x , int y) :GameObject(game, true) {
 	setTexture(missingTex);
-	setDimension(x, y);
-	setPosition(280.0, 680.0);
+	setPosition(x, y);
+	setDimension(280.0, 680.0);
 }
 
 IntectuableShop::~IntectuableShop() {}

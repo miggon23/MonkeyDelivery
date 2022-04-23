@@ -2,9 +2,10 @@
 #include "../Logic/Game.h"
 #include "../Player/Player.h"
 
-EnergyDrink::EnergyDrink(Texture* tex,  Game* game) : InventoryObject(tex, game)
+EnergyDrink::EnergyDrink(Texture* tex,  Game* game,Player* player) : InventoryObject(tex, game,player)
 {
     isConsumable_ = true;
+    setTypeObject(CONSUMABLES);
 }
 
 bool EnergyDrink::useObject()

@@ -3,9 +3,10 @@
 #include "../Logic/Game.h"
 
 
-Flashlight::Flashlight(Texture* tex, Game* game) : InventoryObject(tex, game)
+Flashlight::Flashlight(Texture* tex, Game* game,Player* player) : InventoryObject(tex, game,player)
 {
 	active = false;
+	setTypeObject(LANTERN);
 }
 
 bool Flashlight::useObject() {

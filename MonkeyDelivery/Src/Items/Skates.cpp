@@ -2,9 +2,10 @@
 #include "Skates.h"
 #include "../Player/Player.h"
 
-Skates::Skates(Texture* tex, Game* game) : speedMult(1.8), InventoryObject(tex, game){
-	setTypeObject(BOTAS);
+Skates::Skates(Texture* tex, Game* game,Player* player) : speedMult(1.8), InventoryObject(tex, game,player){
+	setTypeObject(BOOTS);
 	active = false;
+
 }
 
 bool Skates::useObject()

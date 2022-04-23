@@ -41,7 +41,7 @@ void Enemy::patrol(double speed)
 				back = false;
 			}
 			else if (indexCheckPoint > checkpoints.size() - 1) {
-				indexCheckPoint = checkpoints.size() - 1;
+				indexCheckPoint = (int)checkpoints.size() - 1;
 				back = true;
 			}
 		}

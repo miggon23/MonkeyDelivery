@@ -31,7 +31,7 @@ public:
 	void clearElements();
 	void addElements(int level);
 	bool buyObject(int id, int price);
-	bool inventoryFull(); 
+	bool inventoryFull(int selected); 
 
 	int getSize() { return objects.size(); }
 };

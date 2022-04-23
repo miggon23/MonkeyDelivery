@@ -4,9 +4,13 @@
 #include "Rock.h"
 #include <string>
 
-Pickaxe::Pickaxe(Texture* tex, Game* game):InventoryObject(tex, game),uses_(0) {
+Pickaxe::Pickaxe(Texture* tex, Game* game,int level,Player* player):InventoryObject(tex, game,player) {
 	isConsumable_ = true;
-	setTypeObject(PICO);
+	level_ = level % 2;
+	/*if (level_ == 1)tex = game_->getTexture();
+	else tex = game->getTexture();*/
+
+	setTypeObject(PICKAXE);
 }
 bool Pickaxe::useObject(){
 	
@@ -15,12 +19,9 @@ bool Pickaxe::useObject(){
 	std::cout << "widthPickaxeCollider: " << player_->getWidth() + 20 << " heightPickaxeCollider: " << player_->getHeight() + 20 << std::endl;
 	for (auto x:game_->getGameObjects()){
 		Rock* possibleRock = dynamic_cast<Rock*>(x);//Cacheao para ver si es una roca o no
-		if (possibleRock!=nullptr &&possibleRock->collide(rect)) {
-			game_->removeGameObject(x);
-			uses_++;
+		if (possibleRock!=nullptr &&possibleRock->collide(rect)&&possibleRock->seeLevelToDestroy()<=level_) {
+			game_->removeGameObject(x);			
 		}		
 	}
-	//uses_++;
-	if(uses_>=3)return true;
 	return false;
 }

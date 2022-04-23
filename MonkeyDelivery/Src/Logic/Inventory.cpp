@@ -11,7 +11,15 @@ Inventory::Inventory(Game* game, Player* player, SDL_Renderer* renderer) : playe
 
 	base_ = game->getTexture(UI_InventoryBar);
 	overlay_ = game->getTexture(UI_InventoryBarOverlay);
-	baseRect_ = {650, 900, 120*4, 18*4}; //hay que cambiarlo por window H/H
+	baseRect_ = {650, 900, 120*4, 18*4}; //hay que cambiarlo por window H/H	
+	InventoryObject* relleno = new InventoryObject(game->getTexture(UI_Black), game, game->getPlayer());
+	//Inicializar InventoryObjects
+	for (int i = 0; i < INVENTORY_SIZE+1; i++){
+		inventory_.push_back(relleno);
+		inventory_[i] = nullptr;
+	}
+	delete relleno;
+	relleno = nullptr;
 }
 
 Inventory::~Inventory()
@@ -29,14 +37,28 @@ Inventory::~Inventory()
 }
 
 bool Inventory::addObject(InventoryObject* iO){
-	//Comprobamos que el inventario no est� lleno
-	if (inventoryFull())
+	TypeObjectInventory aux = iO->getTypeObject();
+	switch (aux) {
+	case BOOTS:
+		inventory_[0] =iO;
+		break;
+	case CONSUMABLES:
+		if (inventory_[2] == nullptr) inventory_[2] = iO;		
+		else inventory_[3] = iO;				
+		break;
+	case PICKAXE:
+		 inventory_[4] = iO;
+		break;
+	case LANTERN:
+		inventory_[1] = iO;
+		break;
+	case PACKAGE:
+		inventory_[5] = iO;
+		break;
+	default:
 		return false;
-	
-	//Se a�ade el objeto y se le asigna el player
-	inventory_.push_back(iO);
-	iO->attachPlayer(player_);
-
+		break;
+	}
 	return true;
 }
 
@@ -113,15 +135,42 @@ void Inventory::clearInventory()
 /// devuelve true
 /// </summary>
 /// <returns>True si el inventario est� lleno</returns>
-bool Inventory::inventoryFull(){	
-	if (inventory_.size() >= INVENTORY_SIZE) {	
-		int i = 0;
-		while (i < inventory_.size() && inventory_[i] != nullptr)
-			i++;
-		return i == inventory_.size();
+//bool Inventory::inventoryFull(){
+//
+//	if (inventory_.size() >= INVENTORY_SIZE) {	
+//		int i = 0;
+//		while (i < inventory_.size() && inventory_[i] != nullptr)
+//			i++;
+//		return i == inventory_.size();
+//	}
+//	return false;
+//}
+
+bool Inventory::inventoryFull(InventoryObject* x){
+	TypeObjectInventory aux =x->getTypeObject();
+	switch (aux){
+	case BOOTS:
+		//return inventory_[0] != nullptr;
+		return false;
+		break;
+	case CONSUMABLES:
+		return inventory_[2] != nullptr&& inventory_[3] != nullptr;;
+		break;
+	case PICKAXE:
+		//return inventory_[4] != nullptr;
+		return false;
+		break;
+	case LANTERN:
+		//return inventory_[1] != nullptr;
+		return false;
+		break;
+	case PACKAGE:
+		return inventory_[5] != nullptr;
+		break;
+	default:
+		return true;
+		break;
 	}
-	// quer�is esto:
-	return false;
 }
 
 void Inventory::draw() 
@@ -150,14 +199,6 @@ void Inventory::draw()
 		
 	}
 	overlay_->render(baseRect_);
-}
-
-//TEMPORAL
-string Inventory::activeObject(){
-	if (selectedInventoryObject >= inventory_.size()) {
-		return "NoActiveInventoryItem";
-	}
-	// return inventory_[selectedInventoryObject]->getTypeObject();
 }
 
 void Inventory::changeSelectedObject(int x){

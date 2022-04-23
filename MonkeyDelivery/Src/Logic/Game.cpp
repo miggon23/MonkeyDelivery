@@ -137,7 +137,7 @@ void Game::start()
     
     mapPoint = new MAPPoint(this);
     pIcon = new PlayerIcon(this);
-    add(new IntectuableShop(this, 300, 40));
+    add(new IntectuableShop(this, 2000, 400));
     shop_ = new Shop(player_, this);
 
     add(new TutorialBook(this, 500, 500, 100, 75));

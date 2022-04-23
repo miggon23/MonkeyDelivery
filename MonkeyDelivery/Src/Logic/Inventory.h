@@ -8,7 +8,6 @@ using namespace std;
 class InventoryObject;
 class Player;
 class Game; 
-
 class Inventory
 {
 private:
@@ -41,12 +40,10 @@ public:
 	bool hasMissionObject();
 
 	void clearInventory();
-	bool inventoryFull();
-
+	//bool inventoryFull();
+	bool inventoryFull(InventoryObject* x);
 	void draw();
 
-	
-	string activeObject();
 	void changeSelectedObject(int x);
 	void selectObject(int index);
 	void useSelectedObject();

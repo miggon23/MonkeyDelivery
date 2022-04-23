@@ -20,6 +20,8 @@ ShopState::~ShopState()
 	panelTexture = nullptr;
 	//delete shop_;
 	shop_ = nullptr;
+	delete font_;
+	font_ = nullptr;
 }
 
 
@@ -129,7 +131,7 @@ void ShopState::buySelected()
 	{
 		lastClicked_ = SDL_GetTicks();
 
-		if (shop_->inventoryFull())
+		if (shop_->inventoryFull(selected_))
 			textError_ = "Inventory full";
 		else 
 			textError_ = "Not enough money";

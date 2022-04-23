@@ -5,8 +5,8 @@ class Player;
 
 class Pickaxe : public InventoryObject{
 private:
-	int uses_;//regula el uso del pico
+	int level_;//el nivel del pico
 public:
-	Pickaxe(Texture* tex, Game* game);
+	Pickaxe(Texture* tex, Game* game,int level,Player* player);
 	bool useObject() override;
 };

@@ -146,9 +146,6 @@
     <ClCompile Include="Src\Control\States\MapState.cpp">
       <Filter>Source\Control\States</Filter>
     </ClCompile>
-    <ClCompile Include="Src\Logic\MAPPoint.cpp">
-      <Filter>Source\Logic\InteractuableObjectsMap</Filter>
-    </ClCompile>
     <ClCompile Include="Src\Control\UI\Buttons\Menu.cpp">
       <Filter>Source\Control\UI\Buttons</Filter>
     </ClCompile>
@@ -205,9 +202,6 @@
     </ClCompile>
     <ClCompile Include="Src\Player\Player.cpp">
       <Filter>Source\Logic\Player</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Logic\PlayerIcon.cpp">
-      <Filter>Source\Logic\InteractuableObjectsMap</Filter>
     </ClCompile>
     <ClCompile Include="Src\Control\States\PlayingState.cpp">
       <Filter>Source\Control\States</Filter>
@@ -295,6 +289,12 @@
     </ClCompile>
     <ClCompile Include="Src\Logic\Target.cpp">
       <Filter>Source\Logic\InteractuableObjectsMap</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Logic\MAPPoint.cpp">
+      <Filter>Source\Logic\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Logic\PlayerIcon.cpp">
+      <Filter>Source\Logic\Map</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -461,9 +461,6 @@
     <ClInclude Include="Src\Control\MapCommand.h">
       <Filter>Header\Control\Commands</Filter>
     </ClInclude>
-    <ClInclude Include="Src\Logic\MAPPoint.h">
-      <Filter>Header\Logic\InteractuableObjectsMap</Filter>
-    </ClInclude>
     <ClInclude Include="Src\Control\States\MapState.h">
       <Filter>Header\Control\States</Filter>
     </ClInclude>
@@ -532,9 +529,6 @@
     </ClInclude>
     <ClInclude Include="Src\Player\Player.h">
       <Filter>Header\Logic\Player</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Logic\PlayerIcon.h">
-      <Filter>Header\Logic\InteractuableObjectsMap</Filter>
     </ClInclude>
     <ClInclude Include="Src\sdlutils\RandomNumberGenerator.h">
       <Filter>Header\Utils</Filter>
@@ -631,6 +625,12 @@
     </ClInclude>
     <ClInclude Include="Src\Control\ViewController.h">
       <Filter>Header\Control</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Logic\MAPPoint.h">
+      <Filter>Header\Logic\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Logic\PlayerIcon.h">
+      <Filter>Header\Logic\Map</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -1167,6 +1167,12 @@
     </Filter>
     <Filter Include="Header\Utils\Fonts">
       <UniqueIdentifier>{cd109e57-2b98-489d-bdff-a6d75310da7c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header\Logic\Map">
+      <UniqueIdentifier>{49b0fb65-753c-4fdc-a368-bc52603a84c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Logic\Map">
+      <UniqueIdentifier>{d03959b5-a3ef-4363-9acf-bc5463db7f1d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

@@ -1,10 +1,13 @@
 #include "InventoryObject.h"
 #include "../Player/Player.h"
+#include "Game.h"
+InventoryObject::InventoryObject(Texture* tex, Game* game,Player* player) : myTexture_(tex), game_(game),player_(player){
+	 typeObject = UNSIGNED; 
+}
 
 InventoryObject::~InventoryObject(){
 	//delete myTexture_;
 	myTexture_ = nullptr;
-
 }
 
 /// <summary>

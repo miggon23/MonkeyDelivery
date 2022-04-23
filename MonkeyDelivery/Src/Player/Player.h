@@ -47,9 +47,9 @@ private:
 	//Velocidad base (sin modificaciones que mantiene el player)
 	double INIT_VEL_;
 	bool isRunning = false;
-	float fear_;
-	float walkingSpeedFactor_; //A esto se le multiplica la velocidad actual
-	float runningSpeedFactor_; // A esto se le multiplica la velocidad actual
+	double fear_;
+	double walkingSpeedFactor_; //A esto se le multiplica la velocidad actual
+	double runningSpeedFactor_; // A esto se le multiplica la velocidad actual
 	//Velocidad actual del jugador
 	double vel_;
 	double dirX_ = 0; // 1, 0 o -1
@@ -65,13 +65,13 @@ private:
 
 #pragma region Mission activeMission	
 	int money_;
-	float fieldOfView_;
+	double fieldOfView_;
 #pragma endregion
 
 #pragma region Energy
-	float walkingEnergy_;
-	float runningEnergy_;
-	float decreasingEnergyLevel_;
+	double walkingEnergy_;
+	double runningEnergy_;
+	double decreasingEnergyLevel_;
 	energyLevel* energyLevel_ = nullptr;
 	FearLevel* fearLevel_ = nullptr;
 	//FearBar* fearBar_ = nullptr;
@@ -142,13 +142,10 @@ public:
 	inline bool hasMissionObject() { return inventory_->hasMissionObject(); };
 	inline void addMissionObject(InventoryObject* p) { inventory_->addMisionObject(p); };
 	inline void removeMissionObject() { inventory_->removeMisionObject(); };
-	inline bool inventoryFull() { return inventory_->inventoryFull(); };
+	//inline bool inventoryFull() { return inventory_->inventoryFull(); };
+	inline bool inventoryFull(InventoryObject* x) { return inventory_->inventoryFull(x); };
 	inline void addObjectToInventory(InventoryObject* p) { inventory_->addObject(p); };
-
-	//DEVUELVE EL OBJECTO ACTIVADO POR EL JUGADOR
-	inline string getActiveItemObject() {
-		return inventory_->activeObject();
-	};
+	
 	inline void selectObject(int index) {
 		inventory_->selectObject(index);
 	};

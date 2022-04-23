@@ -61,7 +61,7 @@ void MissionSelectionState::draw()
 		paper_->render(textureBox2);
 	}*/
 
-	SDL_Rect textureBox = { 0, 0, game->getWindowWidth(), game->getWindowHeight() };
+	SDL_Rect textureBox = { 0, 0, (int)game->getWindowWidth(), (int)game->getWindowHeight() };
 	background_->render(textureBox);
 
 	int x = 100;

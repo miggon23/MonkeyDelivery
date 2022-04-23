@@ -20,7 +20,7 @@ Shop::Shop(Player* player, Game* game)
 Shop::~Shop()
 {
 	clearElements();
-
+	game = nullptr;
 	player = nullptr;
 }
 
@@ -50,16 +50,16 @@ void Shop::addElements(int level)
 	switch (level)
 	{
 	case 1:
-		objects.push_back({ new EnergyDrink(game->getTexture(shop_Soda), game), 0, 0, 1, 20 });
-		objects.push_back({ new Bike(game->getTexture(shop_Boots01), game), 1, 0, 1, 30});
-		objects.push_back({ new Skates(game->getTexture(shop_Boots02), game), 2, 0, 1, 25});
-		objects.push_back({ new Flashlight(game->getTexture(shop_Boots02), game), 3, 0, 1, 10});
+		objects.push_back({ new EnergyDrink(game->getTexture(shop_Soda), game,game->getPlayer()), 0, 0, 1, 20 });
+		objects.push_back({ new Bike(game->getTexture(shop_Boots01), game,game->getPlayer()), 1, 0, 1, 30});
+		objects.push_back({ new Skates(game->getTexture(shop_Boots02), game,game->getPlayer()), 2, 0, 1, 25});
+		objects.push_back({ new Flashlight(game->getTexture(shop_Boots02), game,game->getPlayer()), 3, 0, 1, 10});
 		//objects.push_back({ new Bike(game->getTexture(bullTexture)), 0, 105, 1, 1000});
 		//objects.push_back({ new Bike(game->getTexture(bullTexture)), 1, 105, 1, 1000});
 		//objects.push_back({ new Bike(game->getTexture(bullTexture)), 2, 105, 1, 1000});
 		break;
 	case 2:
-		objects.push_back({ new Lantern(game->getTexture(Item_Lantern01), game), 3, 0, 1, 10 });
+		objects.push_back({ new Lantern(game->getTexture(Item_Lantern01), game,game->getPlayer()), 3, 0, 1, 10 });
 		break;
 	case 3:
 		break;
@@ -71,7 +71,7 @@ void Shop::addElements(int level)
 
 bool Shop::buyObject(int id, int price)
 {
-	if (id < objects.size() && objects[id].stock>0 &&!player->inventoryFull() && player->moneyChange(-price)){	
+	if (id < objects.size() && objects[id].stock>0 &&!player->inventoryFull(objects[id].inventoryObject) && player->moneyChange(-price)){
 		player->addObjectToInventory(objects[id].inventoryObject);		
 		objects[id].inventoryObject = nullptr;
 		objects[id].stock--;		
@@ -80,7 +80,7 @@ bool Shop::buyObject(int id, int price)
 	else return false; 	
 }
 
-bool Shop::inventoryFull()
+bool Shop::inventoryFull(int selected)
 {
-	return player->inventoryFull();
+	return player->inventoryFull(objects[selected].inventoryObject);
 }
