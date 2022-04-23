@@ -26,6 +26,7 @@ Target::Target(MissionsPanel* mp, Game* g, string texture) : GameObject(g), miss
 Target::~Target()
 {
 	missionsPanel_ = nullptr;
+	delete myTexture_;
 	myTexture_ = nullptr;
 }
 

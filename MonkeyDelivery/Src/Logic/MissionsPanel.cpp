@@ -98,7 +98,7 @@ void MissionsPanel::onMissionSelected(string missionId)
 		currentMission_ = new Mission(missionId, m.isExpress); 
 
 		// comunicarlo al inventario o spawnear el objeto, dependiendo del tipo de misión
-		game->getPlayer()->addMissionObject(new Package(new Texture(game->getRenderer(), "./Images/items/Item_Package.png"), game, game->getPlayer()));
+		game->getPlayer()->addMissionObject(new Package(game->getTexture(Item_Package), game, game->getPlayer()));
 	
 		//Misiones express
 		endTime_ = initialTicks_ + m.minTime;

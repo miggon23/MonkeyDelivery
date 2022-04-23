@@ -5,8 +5,7 @@ InventoryObject::InventoryObject(Texture* tex, Game* game,Player* player) : myTe
 	 typeObject = UNSIGNED; 
 }
 
-InventoryObject::~InventoryObject(){
-	//delete myTexture_;
+InventoryObject::~InventoryObject(){	
 	myTexture_ = nullptr;
 }
 
