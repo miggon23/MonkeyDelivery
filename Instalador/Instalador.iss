@@ -41,7 +41,7 @@ Name: "espanol"; MessagesFile: "compiler:Languages\Spanish.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "..\MonkeyDelivery\x64\Debug\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\MonkeyDelivery\x64\Release\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\MonkeyDelivery\libFLAC-8.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\MonkeyDelivery\libfreetype-6.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\MonkeyDelivery\libjpeg-9.dll"; DestDir: "{app}"; Flags: ignoreversion

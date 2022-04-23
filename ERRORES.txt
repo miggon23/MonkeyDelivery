@@ -3,13 +3,10 @@ ALGUNA TEXTURA PETA
 INTERFAZ BARRAS DE  MIEDO Y ENERGIA
 Si entras al panel de misiones, sales y vuelvs a entrar peta, y si coges una mision la primera vez tambien
 La linterna no sale la luz, ta jodida
-Configurar el proyecto para el release
-Si le das al espacio y no hay nada la rueda ya no va
 Te sales por el mapa abajo a la izquierda (hay 2 hueco en los colliders)
 El toro persigue mas rapido cuando corres con las botas
 Memory leaks
 Pantalla completa y ajustarlo todo
-Cambiar el sprite de la roca
 Las texturas estan cambiadas la cama es el libro tutorial
 Cuando me perseguia el toro le he dado al 2 del inventario y ha petado en el render (supongo que será que falta la textura de los enemigos muriendose)
 Tiles girados
@@ -25,7 +22,8 @@ Toro - Sprite
 Escorpion - Sprite
 
 Actualizar Misiones----
-
+Texturas del pico
+Cambiar el sprite de la roca
 Terminar de Arrelgar los tiles que faltan--------
 
 Items------

@@ -46,8 +46,10 @@ bool InventoryCommand::parse(SDL_Event& event) {
 }
 
 void InventoryCommand::execute() {
-	if (use) { game->getPlayer()->useSelectedObject(); return; }
-	else if (ruedaRton) { game->getPlayer()->mouseWheelSelectedObject(id); ruedaRton = false; return; }
+	if (use) { game->getPlayer()->useSelectedObject(); use = false; return; }
+	else if (ruedaRton) { 
+		//std::cout << "entra" << std::endl;
+		game->getPlayer()->mouseWheelSelectedObject(-id); ruedaRton = false; return; }
 	game->getPlayer()->selectObject(id);
 	
 	//game->useInventory(id);

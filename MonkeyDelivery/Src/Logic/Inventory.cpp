@@ -205,7 +205,7 @@ void Inventory::changeSelectedObject(int x){
 	if (selectedInventoryObject < inventory_.size() && inventory_[selectedInventoryObject] != nullptr &&inventory_[selectedInventoryObject]->getActive()) { useSelectedObject(); };
 	selectedInventoryObject += x;
 	selectedInventoryObject %= INVENTORY_SIZE;
-
+	//std::cout << selectedInventoryObject << std::endl;
 	if (selectedInventoryObject < 0)selectedInventoryObject = INVENTORY_SIZE-1;
 	
 }
