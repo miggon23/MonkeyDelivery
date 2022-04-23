@@ -31,6 +31,6 @@ void InventoryObject::attachPlayer(Player* player)
 
 void InventoryObject::setMyTexture(Texture* tex)
 {
-	if (myTexture_ != nullptr) delete myTexture_;
-	myTexture_ = tex;
+	if (myTexture_ != nullptr)
+		myTexture_ = tex;
 }

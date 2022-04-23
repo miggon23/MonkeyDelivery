@@ -34,8 +34,11 @@ MissionsPanel::MissionsPanel(Game* game) : GameObject(game, true)
 MissionsPanel::~MissionsPanel()
 {
 	missions_.clear();
-	delete currentMission_;
-	currentMission_ = nullptr;
+	if (currentMission_ != nullptr)
+	{
+		delete currentMission_;
+		currentMission_ = nullptr;
+	}
 }
 
 void MissionsPanel::onPlayerInteraction(Player* player)

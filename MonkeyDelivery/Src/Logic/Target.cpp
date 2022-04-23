@@ -26,7 +26,7 @@ Target::Target(MissionsPanel* mp, Game* g, string texture) : GameObject(g), miss
 Target::~Target()
 {
 	missionsPanel_ = nullptr;
-	delete myTexture_;
+	myTexture_ = nullptr;
 }
 
 void Target::onPlayerInteraction(Player* player)
@@ -56,8 +56,7 @@ void Target::draw() {
 }
 
 void Target::setTexture(string tex)
-{
-	delete myTexture_;
+{	
 	string route = "./Images/NPCs/" + tex + ".png";
 	myTexture_ = new Texture(game->getRenderer(), route);
 }
