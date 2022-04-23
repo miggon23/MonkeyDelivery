@@ -38,12 +38,12 @@ MissionSelectionState::MissionSelectionState(Game* game, vector<pair<string,stri
 MissionSelectionState::~MissionSelectionState()
 {
 	for (auto a : allTextures_) {
-		delete a;
+		a = nullptr;
 	}
 	for (auto b : currentTextures_) {
-		delete b;
+		b = nullptr;
 	}
-	delete box_;
+	box_ = nullptr;
 }
 
 
