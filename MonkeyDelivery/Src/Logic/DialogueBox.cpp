@@ -51,8 +51,10 @@ void DialogueBox::changeText(string id)
 
 					//reinicio del texto
 					reiniciateText();
-
-					int iconId = vObj["icon"]->AsNumber();
+					
+					int iconId = -1;
+					if(vObj["icon"] != nullptr)
+						iconId = vObj["icon"]->AsNumber();
 					//cambio a la nueva textura de icono
 					getIcon(iconId);
 					
@@ -137,9 +139,6 @@ void DialogueBox::getIcon(unsigned int iconId)
 {
 	switch (iconId)
 	{
-	case 0:
-		currentIcon_ = nullptr;
-		break;
 	case 1:
 		currentIcon_ = game->getTexture(npc_Fox);
 		break;
