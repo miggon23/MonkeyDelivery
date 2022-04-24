@@ -107,10 +107,10 @@ public:
 	void NoSleepText(); //si presionas la e pero no puedes dormir para que renderize el texto
 	inline void bedPos(int x, int y) { bedX_ = x; bedY_ = y; }
 	// ENERGY
-	void drainEnergy(float amount) { energyLevel_->drain(amount); };
+	void drainEnergy(double amount) { energyLevel_->drain(amount); };
 	inline void recoverEnergy(int amount) {};
-	inline float getEnergy() { return energyLevel_->getEnergy(); };
-	inline float getMaxEnergy() { return energyLevel_->getMaxEnergy(); };
+	inline double getEnergy() { return energyLevel_->getEnergy(); };
+	inline double getMaxEnergy() { return energyLevel_->getMaxEnergy(); };
 
 	// FEAR
 	inline void getScared(int amount) { fearLevel_->getScared(amount); };
@@ -152,7 +152,9 @@ public:
 	inline void mouseWheelSelectedObject(int index) {
 		inventory_->changeSelectedObject(index);
 	}
-	inline void useSelectedObject() { inventory_->useSelectedObject(); };
+	inline void useSelectedObject() { 
+		inventory_->useSelectedObject(); 
+	};
 
 	// LIGHTS
 	const SDL_Rect lightZoneFL();

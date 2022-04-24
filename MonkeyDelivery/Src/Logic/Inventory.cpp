@@ -6,7 +6,7 @@
 #include "../View/Texture.h"
 #include <string>
 
-Inventory::Inventory(Game* game, Player* player, SDL_Renderer* renderer) : player_(player), selectedInventoryObjectLast(0), selectedInventoryObject(0){
+Inventory::Inventory(Game* game, Player* player, SDL_Renderer* renderer) : player_(player), selectedInventoryObjectLast(0), selectedInventoryObject(0),overlayRect_(){
 	missionObject_ = nullptr;
 
 	base_ = game->getTexture(UI_InventoryBar);

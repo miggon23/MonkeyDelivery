@@ -193,15 +193,15 @@ void Game::update()
 void Game::draw()
 {
     // Dibujado del mapa
-    SDL_Rect dst = { 0, 0, getWindowWidth(), getWindowHeight() };
+    SDL_Rect dst = { 0, 0, (int)getWindowWidth(), (int)getWindowHeight() };
     if (mCamera_->getCameraPosition().getX() - trunc(mCamera_->getCameraPosition().getX()) > 0 ||
         mCamera_->getCameraPosition().getY() - trunc(mCamera_->getCameraPosition().getY()) > 0) {
         cout << "eu";
     }
-    SDL_Rect src = { lround(mCamera_->getCameraPosition().getX() / (getWindowWidth() / mCamera_->getWidth())),
-                     lround(mCamera_->getCameraPosition().getY() / (getWindowHeight() / mCamera_->getHeight())),
-                     lround(mCamera_->getWidth()),
-                     lround(mCamera_->getHeight()) };
+    SDL_Rect src = { (int)lround(mCamera_->getCameraPosition().getX() / (getWindowWidth() / mCamera_->getWidth())),
+                     (int)lround(mCamera_->getCameraPosition().getY() / (getWindowHeight() / mCamera_->getHeight())),
+                     (int)lround(mCamera_->getWidth()),
+                     (int)lround(mCamera_->getHeight()) };
     SDL_RenderCopy(renderer, background_, &src, &dst);
 
   
@@ -306,7 +306,7 @@ void Game::addEnemies(Enemy* enemy)
 
 void Game::scare(double scariness)
 {
-    player_->getScared(scariness);
+    player_->getScared((int)scariness);
 }
 
 void Game::interactDialogue()
@@ -479,11 +479,11 @@ void Game::loadMap(string const& filename)
 
                  //   if (obj.getName() == "collision") 
 
-                rect.width *= (getWindowWidth() / mCamera_->getWidth());
-                rect.height *= (getWindowHeight() / mCamera_->getHeight());
+                rect.width *= (float)(getWindowWidth() / mCamera_->getWidth());
+                rect.height *= (float)(getWindowHeight() / mCamera_->getHeight());
 
-                rect.left *= (getWindowWidth() / mCamera_->getWidth());
-                rect.top *= (getWindowHeight() / mCamera_->getHeight());
+                rect.left *= (float)(getWindowWidth() / mCamera_->getWidth());
+                rect.top *= (float)(getWindowHeight() / mCamera_->getHeight());
 
                 auto a = new ColliderTile(this, Vector2D<double>(rect.left, rect.top), rect.width, rect.height );
                 collisions_.push_back(a);
@@ -503,7 +503,7 @@ void Game::initOptionsState()
 
 void Game::drawMap()
 { 
-    SDL_Rect rectPanel = { minimapinfo_.xOrigin, minimapinfo_.yOrigin, minimapinfo_.w, minimapinfo_.h };
+    SDL_Rect rectPanel = { minimapinfo_.xOrigin, minimapinfo_.yOrigin, (int)minimapinfo_.w, (int)minimapinfo_.h };
     maptexture->render(rectPanel);
 
     if (isMapPointerPut) 

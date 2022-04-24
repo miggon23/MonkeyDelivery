@@ -13,7 +13,7 @@
 OptionsState::OptionsState(Game* game/*, int num*/) : State(game){
 	registerCommands();
 	
-	addButton(new Back(game->getWindowWidth() / 2 - 50, game->getWindowHeight() - 250, 100, 75, game));
+	addButton(new Back((int)game->getWindowWidth() / 2 - 50, (int)game->getWindowHeight() - 250, 100, 75, game));
 	
 	addSlider(new GeneralVolumeSlider(game, 200, 200));
 	addSlider(new BrightnessSlider(game, 200, 500));
@@ -26,14 +26,14 @@ OptionsState::OptionsState(Game* game/*, int num*/) : State(game){
 }
 
 void OptionsState::update(){
-	sdlutils().musics().at("menumusic").setMusicVolume(game->getMusicVolume() * game->getGeneralVolume());
+	sdlutils().musics().at("menumusic").setMusicVolume((int)(game->getMusicVolume() * game->getGeneralVolume()));
 	for (auto b : getSlidersUI()) {
 		b->update();
 	}
 }
 
 void OptionsState::draw(){
-	SDL_Rect rectPanel = { 0,0,game->getWindowWidth(),game->getWindowHeight() };
+	SDL_Rect rectPanel = { 0,0,(int)game->getWindowWidth(),(int)game->getWindowHeight() };
 	backgroundTexture->render(rectPanel);
 	/*rectPanel = { 100,100,200,400 };
 	signsTexture->render(rectPanel);*/

@@ -15,7 +15,7 @@ private:
 
 	Directions chooseDirection(Player* player);
 public:
-	ColliderTile(Game* g, Vector2D<double> p, int w, int h) : GameObject(g, true){
+	ColliderTile(Game* g, Vector2D<double> p, double w, double h) : GameObject(g, true){
 		setPosition(p.getX(), p.getY());
 		setDimension(w, h);
 		topLeft_ = p;

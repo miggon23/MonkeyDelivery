@@ -4,9 +4,9 @@ class Game;
 class energyLevel: public GameObject {
 private:
 	
-	float place_;
-	float energy_;
-	float maxEnergy_;
+	double place_;
+	double energy_;
+	double maxEnergy_;
 
 
 public:
@@ -14,12 +14,12 @@ public:
 	~energyLevel() { };
 
 	void update() override {};
-	bool drain(float energyDrained);
+	bool drain(double energyDrained);
 	void resetEnergy();
 	void draw() override;
 
-	inline float getEnergy() { return energy_; };
-	inline float getMaxEnergy() { return maxEnergy_; };
+	inline double getEnergy() { return energy_; };
+	inline double getMaxEnergy() { return maxEnergy_; };
 	//porcentaje de enegia que tiene el personaje
-	inline float percentEnergy() { return (energy_ / maxEnergy_) * 100; };
+	inline double percentEnergy() { return (energy_ / maxEnergy_) * 100; };
 };

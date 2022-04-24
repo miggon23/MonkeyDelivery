@@ -6,7 +6,7 @@
 class ShopCommand : public Command
 {
 public:
-    ShopCommand(ShopState* state) : shopState_(state) {};
+    ShopCommand(ShopState* state) : shopState_(state),moveCursor_(-1),interaccion_(-1) {};
     
 
     ~ShopCommand() = default;

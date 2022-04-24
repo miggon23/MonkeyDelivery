@@ -54,8 +54,8 @@ void Target::draw() {
 		 SDL_Rect pos = getCollider();
 
         //Dibujamos respecto a la camara
-        pos.x -= game->getCamera()->getCameraPosition().getX();
-        pos.y -= game->getCamera()->getCameraPosition().getY();
+        pos.x -= (int)game->getCamera()->getCameraPosition().getX();
+        pos.y -= (int)game->getCamera()->getCameraPosition().getY();
 
         texture->render(pos);
 	}

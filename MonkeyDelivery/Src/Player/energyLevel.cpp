@@ -12,7 +12,7 @@ energyLevel::energyLevel(Game* game) :GameObject(game) {
 }
 
 // Drena energía y devuelve true si se queda a 0
-bool energyLevel::drain(float energyDrained)
+bool energyLevel::drain(double energyDrained)
 {
 	energy_ -= energyDrained;
 	//if (energy_ > maxEnergy_)energy_ = maxEnergy_;

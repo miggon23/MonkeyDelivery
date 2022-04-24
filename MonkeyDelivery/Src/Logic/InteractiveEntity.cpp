@@ -12,7 +12,7 @@ InteractiveEntity::InteractiveEntity(Game* game, TextureName textureName, int po
 
 void InteractiveEntity::update()
 {
-    if (collide(game->getPlayer()->getCollider()));
+    if (collide(game->getPlayer()->getCollider()))return;
        // cout<<"COLLISION"<<endl;
         
 }

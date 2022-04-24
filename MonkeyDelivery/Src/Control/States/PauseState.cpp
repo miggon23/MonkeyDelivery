@@ -24,9 +24,9 @@ void PauseState::update()
 
 void PauseState::draw()
 {
-	SDL_Rect rectPanel = { 0,0,game->getWindowWidth(),game->getWindowHeight() };
+	SDL_Rect rectPanel = { 0,0,(int)game->getWindowWidth(),(int)game->getWindowHeight() };
 	backgroundTexture->render(rectPanel);
-	game->renderText("PAUSED", game->getWindowWidth() / 2 - 65, game->getWindowHeight() / 2 - 170);
+	game->renderText("PAUSED", (int)game->getWindowWidth() / 2 - 65, (int)game->getWindowHeight() / 2 - 170);
 
 	for (auto b : getButtonsUI()) {
 		b->draw();

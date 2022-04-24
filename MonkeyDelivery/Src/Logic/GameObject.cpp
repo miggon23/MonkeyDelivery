@@ -15,8 +15,8 @@ void GameObject::drawTexture(Texture* texture) {
         SDL_Rect pos = getCollider();
 
         //Dibujamos respecto a la camara
-        pos.x -= game->getCamera()->getCameraPosition().getX();
-        pos.y -= game->getCamera()->getCameraPosition().getY();
+        pos.x -= (int)game->getCamera()->getCameraPosition().getX();
+        pos.y -= (int)game->getCamera()->getCameraPosition().getY();
 
         texture->render(pos);
     };
@@ -34,8 +34,8 @@ void GameObject::drawDebug()
 {
     SDL_Rect c = { getX(), getY(),
          getWidth(), getHeight() };
-    c.x -= game->getCamera()->getCameraPosition().getX();
-    c.y -= game->getCamera()->getCameraPosition().getY();
+    c.x -= (int)game->getCamera()->getCameraPosition().getX();
+    c.y -= (int)game->getCamera()->getCameraPosition().getY();
     Box(c, RED).render(game->getRenderer());
     //Box(getCenter(), BLUE).render(game->getRenderer());
 }

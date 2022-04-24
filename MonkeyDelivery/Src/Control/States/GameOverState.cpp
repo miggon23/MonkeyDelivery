@@ -12,7 +12,7 @@ void GameOverState::update()
 
 void GameOverState::draw()
 {
-	game->renderText("GAME OVER", game->getWindowWidth() / 2 - 100, game->getWindowHeight() / 2);
+	game->renderText("GAME OVER", (int)game->getWindowWidth() / 2 - 100, (int)game->getWindowHeight() / 2);
 	
 }
 

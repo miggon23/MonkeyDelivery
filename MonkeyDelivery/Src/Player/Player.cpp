@@ -20,7 +20,7 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game), anima
 
 	//inicializacion de variables
 	fear_ = 0;
-	money_ = 0;
+	money_ = 100;
 	vel_ = 0;
 	orientation_ = "";
 	runningSpeedFactor_ = 1.5;
@@ -41,12 +41,12 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game), anima
 	inventory_ = new Inventory(game, this, game->getRenderer());
 
 	//Objetos de inventario
-	inventory_->addObject(new Skates(game->getTexture(Item_Boots01), game,this));
+	/*inventory_->addObject(new Skates(game->getTexture(Item_Boots01), game,this));
 	inventory_->addObject(new Flashlight(game->getTexture(Item_Lantern01), game,this));
 	inventory_->addObject(new EnergyDrink(game->getTexture(Item_Soda), game,this));
-	inventory_->addObject(new EnergyDrink(game->getTexture(Item_Soda), game,this));
+	inventory_->addObject(new EnergyDrink(game->getTexture(Item_Soda), game,this));*/
 	//falta la textura del pico
-	inventory_->addObject(new Pickaxe(game->getTexture(Item_Soda), game, 1,this));
+	//inventory_->addObject(new Pickaxe(game->getTexture(Item_Soda), game, 1,this));
 
 	setInventoryVisibility(true);
 	textureRect = { 0, 0, 16, 18 };
@@ -225,8 +225,8 @@ void Player::draw()
 
 	SDL_Rect pos = getCollider();
 
-	pos.x -= game->getCamera()->getCameraPosition().getX();
-	pos.y -= game->getCamera()->getCameraPosition().getY();
+	pos.x -= (int)game->getCamera()->getCameraPosition().getX();
+	pos.y -= (int)game->getCamera()->getCameraPosition().getY();
 	
 	animationManager->getFrameImagePlayer(pos, textureRect, texture, timerAnimation, AnimationManager::LastDir{ (int)dirX_, (int)dirY_ });
 
@@ -240,16 +240,16 @@ void Player::draw()
 	if (usingFlashLight) {
 
 		auto a = lightZoneFL();
-		a.x -= game->getCamera()->getCameraPosition().getX();
-		a.y -= game->getCamera()->getCameraPosition().getY();
+		a.x -= (int)game->getCamera()->getCameraPosition().getX();
+		a.y -= (int)game->getCamera()->getCameraPosition().getY();
 		flashlightTex_->render(a);
 	}
 
 	if (usingLantern) {
 		
 		auto b = lightZoneL();
-		b.x -= game->getCamera()->getCameraPosition().getX();
-		b.y -= game->getCamera()->getCameraPosition().getY();
+		b.x -= (int)game->getCamera()->getCameraPosition().getX();
+		b.y -= (int)game->getCamera()->getCameraPosition().getY();
 		lanternTex_->render(b);
 	}
 

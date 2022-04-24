@@ -10,7 +10,7 @@ protected:
 	int y_;
 
 public:
-	Button(Game* game, int wight, int height, int x, int y);
+	Button(Game* game, double wight, double height, int x, int y);
 	Button(Game* game, int x, int y);
 	~Button() { };
 	bool onClick();

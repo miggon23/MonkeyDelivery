@@ -71,8 +71,8 @@ void Bat::onPlayerInteraction(Player* player)
 void Bat::draw(){
 	if (isAlive()) {
 		auto pos = getCollider();
-		pos.x -= game->getCamera()->getCameraPosition().getX();
-		pos.y -= game->getCamera()->getCameraPosition().getY();
+		pos.x -= (int)game->getCamera()->getCameraPosition().getX();
+		pos.y -= (int)game->getCamera()->getCameraPosition().getY();
 		if (collided && (game->getPlayer()->isUsingFlashLight() || game->getPlayer()->isUsingLantern())) 
 			setTexture(batSS_Death);
 		

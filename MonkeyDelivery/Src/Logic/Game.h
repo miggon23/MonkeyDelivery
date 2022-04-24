@@ -93,7 +93,7 @@ private:
     MapInfo mapInfo;
     tileset_map tilesets_; // textures map (string -> texture)
     void loadSpriteSheets();
-    const float MAPSCALE_ = 0.3;
+    const double MAPSCALE_ = 0.3;
 
     Camera* mCamera_;
     SDL_Rect srcRect_;
@@ -172,7 +172,7 @@ public:
     inline void setPlayerDirY(int y) { player_->setDirY(y); };
     inline Point2D<double> getPosisitionPlayer() { return player_->getPosition(); };
     void useInventory(int slot);
-    inline void drainPlayerEnergy(float amount) { player_->drainEnergy(amount); };
+    inline void drainPlayerEnergy(double amount) { player_->drainEnergy(amount); };
 
     // rendering
     void setRenderer(SDL_Renderer* renderer);

@@ -31,8 +31,8 @@ public:
         game = nullptr;
         texture = nullptr;
     };
-    int getX() { return position_.getX(); };
-    int getY() { return position_.getY(); };
+    int getX() { return (int)position_.getX(); };
+    int getY() { return (int)position_.getY(); };
     void setPosition(double x, double y);
     Point2D<double> getPosition() { return position_; }
     void setDimension(double width, double height);

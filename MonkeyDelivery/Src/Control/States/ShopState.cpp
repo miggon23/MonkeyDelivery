@@ -33,7 +33,7 @@ void ShopState::draw()
 {
 	//renderizado del fondo
 	
-	SDL_Rect rectPanel = { 0,0,game->getWindowWidth(),game->getWindowHeight() };
+	SDL_Rect rectPanel = { 0,0,(int)game->getWindowWidth(),(int)game->getWindowHeight() };
 	panelTexture->render(rectPanel);
 	std::cout << selected_ << std::endl;
 	int i = 0;
