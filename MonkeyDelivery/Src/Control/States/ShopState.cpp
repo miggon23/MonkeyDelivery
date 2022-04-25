@@ -131,7 +131,9 @@ void ShopState::buySelected()
 	{
 		lastClicked_ = SDL_GetTicks();
 
-		if (shop_->inventoryFull(selected_))
+		if(!shop_->buyObject(selected_, shop_->objects[selected_].price)) textError_ = "You already have bought this object";
+
+		else if (shop_->inventoryFull(selected_))
 			textError_ = "Inventory full";
 		else 
 			textError_ = "Not enough money";

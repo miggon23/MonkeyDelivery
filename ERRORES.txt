@@ -9,7 +9,7 @@ Tiles girados
 Cuando le das al 2 en el inventario y luego al espacio peta en el render (fatarán texturas "Linterna")
 Fatan colliders (valla del cementerio, troncos a la derecha del mapa)
 Cuando se abre el panel de misiones y se selecciona una mision, si se vuelve a entrar se puede seguir seleccionando
-En la tienda cuando compras un objeto y dejas ese hueco libre, y luego le das al espacio otra vez, peta
+
 
 Enemigos----
 Murcielago - Hecho (hay que subirlo)
