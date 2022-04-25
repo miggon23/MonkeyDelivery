@@ -167,6 +167,7 @@ void MissionsPanel::onMissionCompleted()
 	levelsCompleted_[m.level]++;
 	if (levelsCompleted_[m.level] == levels_[m.level]) {
 		if (currentLevel_ != NLEVELS_) {
+			game->addPickaxe(currentLevel_);
 			currentLevel_++;
 		}
 		else {

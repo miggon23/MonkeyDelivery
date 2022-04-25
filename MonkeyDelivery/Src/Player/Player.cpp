@@ -446,3 +446,8 @@ const SDL_Rect Player::lightZoneL()
 	};
 	return hitZone;
 }
+
+void Player::addPickaxe(int level)
+{
+	
+}

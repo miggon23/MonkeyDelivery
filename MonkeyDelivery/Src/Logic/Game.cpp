@@ -543,3 +543,9 @@ void Game::scalePlayerIcon()
 
     pIcon->setPosition(x, y);
 }
+
+// Añadir pico después de las misiones
+void Game::addPickaxe(int level)
+{
+    
+}

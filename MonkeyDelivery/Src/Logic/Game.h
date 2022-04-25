@@ -141,7 +141,7 @@ private:
     //Particle System
     ParticleExample* partSystem;
 
-
+    
 public:
 
 
@@ -234,4 +234,7 @@ public:
 
     //Animaciones
     inline AnimationManager* getAnimationManager() { return animationManager_; }
+
+    // Añadir pico después de las misiones
+    void addPickaxe(int level);
 };

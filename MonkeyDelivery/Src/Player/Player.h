@@ -102,7 +102,7 @@ public:
 	
 	void update() override;
 	void draw() override;
-
+	
 	// SLEEP
 	void sleep(); //efecto de dormir
 	void changeSleep(); //mirar si puede dormir
@@ -179,4 +179,7 @@ public:
 	// COLLISIONS
 	void onCollision(int dir);
 	void onCollisionExit();
+
+	// PICKAXE
+	void addPickaxe(int level);
 };
