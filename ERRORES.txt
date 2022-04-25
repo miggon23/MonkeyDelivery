@@ -9,7 +9,8 @@ Tiles girados
 Cuando le das al 2 en el inventario y luego al espacio peta en el render (fatarán texturas "Linterna")
 Fatan colliders (valla del cementerio, troncos a la derecha del mapa)
 Cuando se abre el panel de misiones y se selecciona una mision, si se vuelve a entrar se puede seguir seleccionando
-
+La velocidad aumenta mucho cuando se cambian los estados
+Al hacer el fade out se muestra una pantalla random
 
 Enemigos----
 Murcielago - Hecho (hay que subirlo)
