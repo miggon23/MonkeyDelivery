@@ -25,6 +25,8 @@ private:
 	int selectedInventoryObject;
 	int selectedInventoryObjectLast;
 
+	int xInventory, yInventory;
+
 public:
 	Inventory(Game* game, Player* player, SDL_Renderer* renderer);
 	~Inventory();
