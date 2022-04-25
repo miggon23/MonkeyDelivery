@@ -38,7 +38,7 @@ private:
 	//int nLevel2_;
 	//int nLevel3_;
 	
-	const int NLEVELS_ = 2;
+	const int NLEVELS_ = 3;
 	vector<int>levels_;
 	vector<int>levelsCompleted_;
 

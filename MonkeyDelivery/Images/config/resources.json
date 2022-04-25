@@ -9,11 +9,11 @@
       "maxmoney": 100,
       "minmoney": 50,
       "mintime": 100000,
-      "express": true,
+      "express": false,
       "special": false,
       "target": "NPC_Tucan",
-      "targetPositionX": 1700,
-      "targetPositionY": 750,
+      "targetPositionX": 2850,
+      "targetPositionY": 1550,
       "targetWidth": 60,
       "targetHeight": 60
     },
@@ -26,9 +26,9 @@
       "maxmoney": 100,
       "minmoney": 50,
       "mintime": 10000,
-      "express": false,
+      "express": true,
       "special": false,
-      "target": "NPC_Frog",
+      "target": "NPC_Hipo",
       "targetPositionX": -250,
       "targetPositionY": 730,
       "targetWidth": 60,
@@ -36,7 +36,7 @@
     },
     {
       "id": "Mission3",
-      "level": 2,
+      "level": 1,
       "completed": false,
       "image": "./Images/missions/Mission03.png",
       "helperImage": "./Images/missions/mission_UI_Helper.png",
@@ -44,8 +44,8 @@
       "minmoney": 50,
       "mintime": 10000,
       "express": false,
-      "special": false,
-      "target": "hipopotamo",
+      "special": true,
+      "target": "NPC_Pavo",
       "targetPositionX": -250,
       "targetPositionY": 730,
       "targetWidth": 60,
@@ -61,8 +61,93 @@
       "minmoney": 50,
       "mintime": 10000,
       "express": false,
+      "special": true,
+      "target": "NPC_Fish",
+      "targetPositionX": -250,
+      "targetPositionY": 730,
+      "targetWidth": 70,
+      "targetHeight": 90
+    },
+    {
+      "id": "Mission5",
+      "level": 2,
+      "completed": false,
+      "image": "./Images/missions/Mission03.png",
+      "helperImage": "./Images/missions/mission_UI_Helper.png",
+      "maxmoney": 100,
+      "minmoney": 50,
+      "mintime": 10000,
+      "express": true,
       "special": false,
-      "target": "cocodrilo",
+      "target": "NPC_Eagle",
+      "targetPositionX": -250,
+      "targetPositionY": 730,
+      "targetWidth": 70,
+      "targetHeight": 90
+    },  
+    {
+      "id": "Mission6",
+      "level": 2,
+      "completed": false,
+      "image": "./Images/missions/Mission03.png",
+      "helperImage": "./Images/missions/mission_UI_Helper.png",
+      "maxmoney": 100,
+      "minmoney": 50,
+      "mintime": 10000,
+      "express": false,
+      "special": false,
+      "target": "NPC_Rabbit",
+      "targetPositionX": -250,
+      "targetPositionY": 730,
+      "targetWidth": 70,
+      "targetHeight": 90
+    },    
+    {
+      "id": "Mission7",
+      "level": 3,
+      "completed": false,
+      "image": "./Images/missions/Mission03.png",
+      "helperImage": "./Images/missions/mission_UI_Helper.png",
+      "maxmoney": 100,
+      "minmoney": 50,
+      "mintime": 10000,
+      "express": false,
+      "special": true,
+      "target": "NPC_Frog",
+      "targetPositionX": -250,
+      "targetPositionY": 730,
+      "targetWidth": 70,
+      "targetHeight": 90
+    },    
+    {
+      "id": "Mission8",
+      "level": 3,
+      "completed": false,
+      "image": "./Images/missions/Mission03.png",
+      "helperImage": "./Images/missions/mission_UI_Helper.png",
+      "maxmoney": 100,
+      "minmoney": 50,
+      "mintime": 10000,
+      "express": true,
+      "special": false,
+      "target": "NPC_Fox",
+      "targetPositionX": -250,
+      "targetPositionY": 730,
+      "targetWidth": 70,
+      "targetHeight": 90
+    },    
+    {
+      "id": "Mission9",
+      "level": 3,
+      "completed": false,
+      "image": "./Images/missions/Mission03.png",
+      "helperImage": "./Images/missions/mission_UI_Helper.png",
+      "maxmoney": 100,
+      "minmoney": 50,
+      "mintime": 10000,
+      "express": false,
+      "special": false,
+      "target": "NPC_Coco",
       "targetPositionX": -250,
       "targetPositionY": 730,
       "targetWidth": 70,
@@ -77,22 +162,47 @@
   ],
   "Mission1Text": [
     {
-      "text": "Al fin. Se me estaba empezando a agrietar el pico."
+      "text": "Muchas gracias. Debes ser el nuevo repartidor, buen trabajo. Si sigues asi te aseguro que te iran las cosas genial en Todesfall."
     }
   ],
   "Mission2Text": [
     {
-      "text": "Mis pacientes agradeceran este bisturi... El cuchillo jamonero no era lo mejor."
+      "text": "Menos mal que has encontrado mis chocolatinas. Las ultimas Flappy Hippo que comi estaban mas crujientes de lo normal... El ultimo tu nunca me las traia a tiempo y ya estaba harta."
     }
   ],
   "Mission3Text": [
     {
-      "text": "Mis funny hippo, por fin. Me quedaba sin hijos ya."
+      "text": "Por fin. Ahora podre volver a lucir mi pluma- esto, mis plumas. Tengo que admitir que tu eres mas agradable a la vista que el anterior repartidor... Espero que tu dures mas."
     }
   ],
   "Mission4Text": [
     {
-      "text": "Ya me estaba quedando sin ropa limpia que ponerme..."
+      "text": "Wilson. Como te he echado de menos. Muchas gracias amigo, sin ti, a saber que le habria pasado a Wilson. Hasta la proxima... si sigues haciendo bien tu trabajo claro, de lo contrario, acabaras como Wilson..."
+    }
+  ],
+  "Mission5Text": [
+    {
+      "text": "Muchas gracias por el paquete, ahora podran atacar mi cuerpo pero mi mente estara a salvo. No se como tienes el valor para lidiar con los vecinos, con las cosas horribles que hiciceron... Solo te dire que tengas cuidado."
+    }
+  ],
+  "Mission6Text": [
+    {
+      "text": "Gracias. Estoy harta de ese maldito zorro y su acoso constante, parece que no sabe de lo que soy capaz. Tranquilo, no voy a hacerle dano, siempre que no se me acerque claro..."
+    }
+  ],
+  "Mission7Text": [
+    {
+      "text": "Vaya, vaya. Veo que has encontrado mi producto... Mis pacientes lo echaban en falta. Estaban en el cementerio, al lado de la tumba. Jaja, tranquilo, estaba enterrando a la ultima victi- digo, al ultimo paciente, cuando las perdi."
+    }
+  ],
+  "Mission8Text": [
+    {
+      "text": "Zorro"
+    }
+  ],  
+  "Mission9Text": [
+    {
+      "text":"Cocodrilo"
     }
   ],
   "MissionsFinished": [
