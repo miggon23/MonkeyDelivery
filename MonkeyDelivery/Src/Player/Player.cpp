@@ -32,7 +32,7 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game), anima
 	resetVelocity(); //Se inicializa al valor de INIT_VEL_X e ..._Y
 
 	setDimension(48, 54);
-	setPosition(2000, 600);
+	setPosition(3150, 1400);
 
 
 	energyLevel_ = new energyLevel(game);

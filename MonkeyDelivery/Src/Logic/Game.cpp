@@ -149,12 +149,12 @@ void Game::start()
     // dialogueBox_->show();
     info = new UI_Info(this);
     auto* bed = new Bed(this);
-    bed->setPosition(670, 760);
-    player_->bedPos(670, 760);
+    bed->setPosition(1820, 1560);
+    player_->bedPos(1820, 1560);
     add(bed);
     //add(new Rock(this,2500,800));
     auto cama = new Bed(this);
-    cama->setPosition(2500, 500);
+    cama->setPosition(3650, 1300);
     add(cama);
     partSystem = new ParticleExample();
     partSystem->setRenderer(renderer);             // set the renderer
