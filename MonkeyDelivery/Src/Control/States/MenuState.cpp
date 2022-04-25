@@ -24,13 +24,18 @@ MenuState::MenuState(Game* game) : State(game) {
 	backgroundTexture = game->getTexture(bckg_Image);
 	titleTexture = game->getTexture(bckg_GameTitle);
 	game->clearSavedState();	
-	sdlutils().musics().at("menumusic").play(-1);
+	
 }
 
 void MenuState::registerCommands()
 {
 	commandFactory->add(new CommandClick());
 	commandFactory->add(new CommandExit());
+}
+
+void MenuState::onEnterState()
+{
+	sdlutils().musics().at("menumusic").play(-1);
 }
 
 void MenuState::update() {

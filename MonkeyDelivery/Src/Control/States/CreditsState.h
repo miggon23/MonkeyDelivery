@@ -11,6 +11,8 @@ public:
 	void update()override;
 
 	void next()override;
+	void onExitState() override;
+	void onEnterState() override;
 
 	string getStateName() const {
 		return "Credits state";

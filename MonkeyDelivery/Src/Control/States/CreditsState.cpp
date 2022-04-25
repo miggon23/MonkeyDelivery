@@ -7,6 +7,7 @@ CreditsState::CreditsState(Game* game) : State(game)
 	
 	addButton(new Back1((int)game->getWindowWidth() / 2 - 50, (int)game->getWindowHeight() - 250, 100, 75, game));
 	registerCommands();
+	
 }
 
 
@@ -39,6 +40,16 @@ void CreditsState::update()
 
 void CreditsState::next()
 {
+}
+
+void CreditsState::onExitState()
+{
+	
+}
+
+void CreditsState::onEnterState()
+{
+	sdlutils().musics().at("creditsmusic").play(-1);
 }
 
 void CreditsState::registerCommands()

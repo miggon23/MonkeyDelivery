@@ -185,8 +185,16 @@
 
   "musics": [
     {
-      "id": "menumusic",
+      "id": "gamemusic",
       "file": "./Sounds/menumusic.wav"
+    },
+    {
+        "id": "creditsmusic",
+        "file": "./Sounds/creditsmusic.wav"
+    },
+    {
+        "id": "menumusic",
+        "file": "./Sounds/menumusic2.wav"
     }
   ],
 

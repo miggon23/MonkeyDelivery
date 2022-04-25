@@ -50,6 +50,8 @@ public:
     virtual void registerCommands() = 0;
 
     virtual void resetInitTime() {};
+    virtual void onExitState() {};
+    virtual void onEnterState() {};
 
     inline vector<Button*> getButtonsUI() { return buttonsUI; };
     inline vector<Slider*> getSlidersUI() { return slidersUI; };

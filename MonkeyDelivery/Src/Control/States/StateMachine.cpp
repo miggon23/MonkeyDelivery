@@ -2,7 +2,10 @@
 #include "State.h"
 
 void StateMachine::setState(State* state) {
+	if(getState() != nullptr)
+		getState()->onExitState();
 	this->state = state;
+	state->onEnterState();
 }
 
 State* StateMachine::getState() {

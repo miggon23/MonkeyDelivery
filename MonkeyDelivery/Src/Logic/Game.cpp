@@ -162,6 +162,8 @@ void Game::start()
     partSystem->setStyle(ParticleExample::SMOKE);  // set the example effects
 
     scalePlayerIcon();
+
+    sdlutils().musics().at("gamemusic").play(-1);
 }
 
 void Game::update()
@@ -187,6 +189,7 @@ void Game::update()
     for (auto enemy : enemyContainer_)
         enemy->update();
 
+    sdlutils().musics().at("gamemusic").setMusicVolume(getMusicVolume() * getGeneralVolume());
 }
 
 //Normal draw for entities(no Tiles)

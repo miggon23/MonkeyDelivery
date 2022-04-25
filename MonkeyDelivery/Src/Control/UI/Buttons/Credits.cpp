@@ -9,5 +9,7 @@ Credits::Credits(int x, int y, int w, int h, Game* game):Button(game,w,h,x,y){
 
 void Credits::onCursorCollision(){
 	//game->setState(new CreditsState(game));
+	/*sdlutils().musics().at("menumusic").pauseMusic();
+	sdlutils().musics().at("creditsmusic").play(-1);*/	
 	ChangeToNewState(new CreditsState(game),true);
 }
