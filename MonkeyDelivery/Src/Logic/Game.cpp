@@ -49,8 +49,21 @@ void Game::updateCameraPos()
 
 Game::Game(string n, double w, double h) : name(n), width(w), height(h), doExit(false), mCamera_(nullptr), mapOpened(false), mapPoint(nullptr), pIcon(nullptr)
 {
-    SDLUtils::init("Monkey Delivery", 1800, 1000,
+
+    
+  /*  SDL_DisplayMode* desktop = new SDL_DisplayMode();
+    SDL_GetDesktopDisplayMode(0, desktop);*/
+       
+
+    SDLUtils::init("Monkey Delivery", 100, 100,
         "Images/config/resources.json");
+
+    SDL_DisplayMode DM;
+    SDL_GetCurrentDisplayMode(0, &DM);
+    width = DM.w;
+    height = DM.h;
+
+    SDL_SetWindowSize(window_, width, height);
 
     setRenderer(sdlutils().renderer());
 
