@@ -38,7 +38,7 @@ void InputManager::run()
 		auto state = game->getState();
 		state->handleEvents();
 
-		if (timer_->DeltaTime() >= 1.0f / 100) {
+		if (timer_->DeltaTime() >= 1.0f / 80) {
 			timer_->Reset();
 			clearBackground();
 			game->getState()->update();

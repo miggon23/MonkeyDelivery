@@ -3,6 +3,8 @@
 
 Directions ColliderTile::chooseDirection(Player* player)
 {
+	margin_ = 20.0;
+
 	Vector2D<double> pTopLeft = player->getPosition();
 	Vector2D<double> pBottomLeft = { pTopLeft.getX(), pTopLeft.getY() + player->getHeight() };
 	Vector2D<double> pTopRight = { pTopLeft.getX() + player->getWidth(), pTopLeft.getY() };

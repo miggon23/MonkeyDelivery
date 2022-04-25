@@ -16,7 +16,7 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game), anima
 	setTexture(monkeySS_Default);
 	setOrientation("off");
 	setMovState(WALKING);
-	INIT_VEL_ = 1.0;
+	INIT_VEL_ = 0.225;
 
 	//inicializacion de variables
 	fear_ = 0;
@@ -34,6 +34,7 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game), anima
 	setDimension(48, 54);
 	setPosition(3150, 1400);
 
+	lastUpdate = timer.currTime();
 
 	energyLevel_ = new energyLevel(game);
 	fearLevel_ = new FearLevel(game);
@@ -110,11 +111,12 @@ void Player::move()
 
 	//Normalizamos el vector para que no se desplaze m�s en diagonal
 	speed.normalize();
-	speed = speed * vel_;
+	speed = speed * vel_ * (timer.currTime() - lastUpdate);
+	lastUpdate = timer.currTime();
 
 	if (dirX_ != 0 || dirY_ != 0) {
 		if (isRunning) { //Esto se puede implementar desde el runCommand, evitando que el jugador tenga muchos estados como el de corriendo
-			speed = speed * 1.5;			
+			speed = speed * 1.05;			
 		}
 
 		// Comprobar si hay que cancelar el movimiento en alguna direcci�n por las colisiones
@@ -130,6 +132,8 @@ void Player::move()
 	//setPosition(getPosition().getX() + dirX_, getPosition().getY() + dirY_);
 	
 	setPosition(getPosition().getX() + speed.getX(), getPosition().getY() + speed.getY());
+
+	std::cout << speed.magnitude() << endl;
 }
 
 void Player::setIsRunning(bool run)

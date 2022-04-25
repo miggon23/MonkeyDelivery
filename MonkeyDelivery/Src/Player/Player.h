@@ -26,6 +26,7 @@ class Player : public GameObject {
 	enum MovState { WALKING, RUNNING, RIDING };
 	
 private:
+
 	Inventory* inventory_ = nullptr;
 	bool inventoryVisibility;
 	bool fade = false;
@@ -43,6 +44,7 @@ private:
 #pragma endregion
 
 #pragma region Movement/Fear
+	uint lastUpdate; // para el movimiento
 	MovState movState_;
 	//Velocidad base (sin modificaciones que mantiene el player)
 	double INIT_VEL_;

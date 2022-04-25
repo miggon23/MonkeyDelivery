@@ -11,7 +11,7 @@ private:
 	bool isColliding_ = false;
 
 	Vector2D<double> topLeft_, topRight_, bottomLeft_, bottomRight_;
-	const double margin_ = 5.0; // Margen para comprobar por qué lado se está haciendo la colisión
+	double margin_ = 5.0; // Margen para comprobar por qué lado se está haciendo la colisión
 
 	Directions chooseDirection(Player* player);
 public:
