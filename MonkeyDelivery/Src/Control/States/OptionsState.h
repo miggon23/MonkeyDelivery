@@ -6,6 +6,7 @@ class OptionsState : public State
 {
 	Texture* backgroundTexture;
 	Texture* signsTexture;
+	const int buttonW = 300, buttonH = 140;
 public:
 	OptionsState(Game* game/*, int num*/);
 	~OptionsState() = default;

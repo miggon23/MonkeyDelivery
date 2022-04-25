@@ -13,14 +13,14 @@
 OptionsState::OptionsState(Game* game/*, int num*/) : State(game){
 	registerCommands();
 	
-	addButton(new Back((int)game->getWindowWidth() / 2 - 50, (int)game->getWindowHeight() - 250, 100, 75, game));
+	addButton(new Back((int)game->getWindowWidth() / 2 - buttonW/2, (int)game->getWindowHeight() - 250, buttonW, buttonH, game));
 	
-	addSlider(new GeneralVolumeSlider(game, 200, 200));
-	addSlider(new BrightnessSlider(game, 200, 500));
-	addSlider(new GeneralMusicSlider(game, 1000, 200));
-	addSlider(new GeneralSoundsEffectSlider(game, 1000, 500));
-
-	backgroundTexture = game->getTexture(button_Main_Options);
+	addSlider(new GeneralVolumeSlider(game, game->getWindowWidth()/2 - 450, game->getWindowHeight()/4 - 50));
+	addSlider(new BrightnessSlider(game, game->getWindowWidth() / 2 - 450, 450));
+	addSlider(new GeneralMusicSlider(game, game->getWindowWidth() / 2 , game->getWindowHeight() / 4 - 50));
+	addSlider(new GeneralSoundsEffectSlider(game, game->getWindowWidth() / 2, 450));
+	backgroundTexture = game->getTexture(bckg_options);
+	
 	//signsTexture = game->getTexture(settingsSignsTexture);
 	//settingsSignsTexture
 }

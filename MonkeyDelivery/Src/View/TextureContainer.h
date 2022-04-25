@@ -20,7 +20,7 @@ enum TextureName
 	//1-Background (UI Menu) - 4
 		bckg_GameTitle,
 		bckg_Image,
-		bckg_WoodPanneling,
+		bckg_options,
 		bckg_woodWall,
 	
 	//3-Decorations (House) - 8
