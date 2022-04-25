@@ -124,7 +124,7 @@ void Enemy::checkDistance()
 			if (lastUpdate_ + 1500 < SDL_GetTicks()) {
 				double minDis = min(distanceX, distanceY);
 				scariness_ = range / (minDis * 3);
-				if (scariness_ > 20) scariness_ = 20; //Como mximo quita un 20% cada vez
+				if (scariness_ > 25) scariness_ = 25; //Como mximo quita un 25% cada vez
 				game->scare(scariness_);
 				lastUpdate_ = SDL_GetTicks();
 				//cout << "MIEDO: " << scariness_ << endl;

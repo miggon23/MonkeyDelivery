@@ -85,7 +85,7 @@ void Bull::checkDistance()
 			if (lastUpdate_ + 1500 < SDL_GetTicks()) {
 				double minDis = min(distanceX, distanceY);
 				scariness_ = range / (minDis * 3);
-				if (scariness_ > 5) scariness_ = 5; //Como mximo quita un 5% cada vez
+				if (scariness_ > 10) scariness_ = 10; //Como mximo quita un 10% cada vez
 				game->scare(scariness_);
 				lastUpdate_ = SDL_GetTicks();
 				//cout << "MIEDO: " << scariness_ << endl;

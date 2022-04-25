@@ -63,7 +63,7 @@ void Cat::checkDistance()
 			if (lastUpdate_ + 1500 < SDL_GetTicks()) {
 				double minDis = min(distanceX, distanceY);
 				scariness_ = range / (minDis*3);
-				if (scariness_ > 12) scariness_ = 12; //Como mximo quita un 12% cada vez
+				if (scariness_ > 30) scariness_ = 30; //Como mximo quita un 30% cada vez
 				game->scare(scariness_);
 				lastUpdate_ = SDL_GetTicks();
 			}

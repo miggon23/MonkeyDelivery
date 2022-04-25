@@ -110,33 +110,35 @@ void Player::move(pair<double, double> speed)
 
 void Player::move()
 {
-	Vector2D<double> speed = { (double)dirX_, (double)dirY_ };
+	if (!fade) {
+		Vector2D<double> speed = { (double)dirX_, (double)dirY_ };
 
-	//Normalizamos el vector para que no se desplaze m�s en diagonal
-	speed.normalize();
-	speed = speed * vel_ * (timer.currTime() - lastUpdate);
-	lastUpdate = timer.currTime();
+		//Normalizamos el vector para que no se desplaze m�s en diagonal
+		speed.normalize();
+		speed = speed * vel_ * (timer.currTime() - lastUpdate);
+		lastUpdate = timer.currTime();
 
-	if (dirX_ != 0 || dirY_ != 0) {
-		if (isRunning) { //Esto se puede implementar desde el runCommand, evitando que el jugador tenga muchos estados como el de corriendo
-			speed = speed * 1.05;			
+		if (dirX_ != 0 || dirY_ != 0) {
+			if (isRunning) { //Esto se puede implementar desde el runCommand, evitando que el jugador tenga muchos estados como el de corriendo
+				speed = speed * 1.05;			
+			}
+
+			// Comprobar si hay que cancelar el movimiento en alguna direcci�n por las colisiones
+			if (topCollision && speed.getY() < 0  || bottomCollision && speed.getY() > 0) {
+				speed = { speed.getX(), 0 };
+			}
+			if (leftCollision && speed.getX() < 0 || rightCollision && speed.getX() > 0) {
+				speed = {0, speed.getY()};
+			}
+
+			drainEnergy(decreasingEnergyLevel_);
 		}
-
-		// Comprobar si hay que cancelar el movimiento en alguna direcci�n por las colisiones
-		if (topCollision && speed.getY() < 0  || bottomCollision && speed.getY() > 0) {
-			speed = { speed.getX(), 0 };
-		}
-		if (leftCollision && speed.getX() < 0 || rightCollision && speed.getX() > 0) {
-			speed = {0, speed.getY()};
-		}
-
-		drainEnergy(decreasingEnergyLevel_);
-	}
-	//setPosition(getPosition().getX() + dirX_, getPosition().getY() + dirY_);
+		//setPosition(getPosition().getX() + dirX_, getPosition().getY() + dirY_);
 	
-	setPosition(getPosition().getX() + speed.getX(), getPosition().getY() + speed.getY());
+		setPosition(getPosition().getX() + speed.getX(), getPosition().getY() + speed.getY());
 
-	//std::cout << speed.magnitude() << endl;
+		//std::cout << speed.magnitude() << endl;
+	}
 }
 
 void Player::setIsRunning(bool run)
@@ -285,7 +287,7 @@ void Player::FadeOut()
 	{
 		alpha = 0;
 		fadeTex_->changeAlpha(alpha);
-		fadeTex_->render({ 0, 0, 1800, 1000 });
+		//fadeTex_->render({ 0, 0, 1800, 1000 });
 
 
 		// Establece la posici�n en la cama m�s cercana
