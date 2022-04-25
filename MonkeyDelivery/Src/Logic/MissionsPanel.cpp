@@ -151,6 +151,9 @@ void MissionsPanel::onMissionCompleted()
 	// Marcar la mision como acabada
 	m.completed = true;
 
+	sdlutils().soundEffects().at("reward").setVolume(game->getSoundEfectsVolume() * 2);
+	sdlutils().soundEffects().at("reward").play(0, 1);
+
 	delete currentMission_;
 	currentMission_ = nullptr;
 

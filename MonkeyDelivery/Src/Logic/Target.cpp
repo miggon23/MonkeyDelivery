@@ -35,6 +35,7 @@ void Target::onPlayerInteraction(Player* player)
 	if (active_) {
 
 		if (player->hasMissionObject()) {
+			
 
 			game->newDialogue(textPath_);
 

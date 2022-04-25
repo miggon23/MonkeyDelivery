@@ -180,6 +180,10 @@
     {
       "id": "walk",
       "file": "./Sounds/walk.wav"
+    },
+    {
+        "id": "reward",
+        "file": "./Sounds/reward.wav"
     }
   ],
 
