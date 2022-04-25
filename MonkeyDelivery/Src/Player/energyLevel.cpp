@@ -15,18 +15,18 @@ energyLevel::energyLevel(Game* game) :GameObject(game) {
 bool energyLevel::drain(double energyDrained)
 {
 	energy_ -= energyDrained;
-	//if (energy_ > maxEnergy_)energy_ = maxEnergy_;
-	//if (energy_ > 0) {
-	//	setDimension(energy_, 50);
-	//	setPosition(50 - (energyDrained/2), 10);
-	//	return false;
-	//}
-	//else {
-	//	energy_ = 0;
-	//	// avisa al player de que está sin energía
-	//	//cout << "ME DUERMO" << endl;
-	//	return true;
-	//}
+	if (energy_ > maxEnergy_)energy_ = maxEnergy_;
+	if (energy_ > 0) {
+		setDimension(energy_, 50);
+		setPosition(50 - (energyDrained/2), 10);
+		return false;
+	}
+	else {
+		energy_ = 0;
+		// avisa al player de que está sin energía
+		//cout << "ME DUERMO" << endl;
+		return true;
+	}
 	return true;
 }
 
