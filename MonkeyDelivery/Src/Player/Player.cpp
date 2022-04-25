@@ -42,10 +42,10 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game), anima
 	inventory_ = new Inventory(game, this, game->getRenderer());
 
 	//Objetos de inventario
-	/*inventory_->addObject(new Skates(game->getTexture(Item_Boots01), game,this));
+	inventory_->addObject(new Skates(game->getTexture(Item_Boots01), game,this));
 	inventory_->addObject(new Flashlight(game->getTexture(Item_Lantern01), game,this));
 	inventory_->addObject(new EnergyDrink(game->getTexture(Item_Soda), game,this));
-	inventory_->addObject(new EnergyDrink(game->getTexture(Item_Soda), game,this));*/
+	inventory_->addObject(new EnergyDrink(game->getTexture(Item_Soda), game,this));
 	//falta la textura del pico
 	//inventory_->addObject(new Pickaxe(game->getTexture(Item_Soda), game, 1,this));
 

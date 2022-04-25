@@ -296,6 +296,9 @@
     <ClCompile Include="Src\Logic\PlayerIcon.cpp">
       <Filter>Source\Logic\Map</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Logic\PowerUpsManager.cpp">
+      <Filter>Source\Logic\Managers/Game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MonkeyDelivery.h" />
@@ -631,6 +634,9 @@
     </ClInclude>
     <ClInclude Include="Src\Logic\PlayerIcon.h">
       <Filter>Header\Logic\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Logic\PowerUpsManager.h">
+      <Filter>Header\Logic\Managers/Game</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -230,6 +230,7 @@
     <ClInclude Include="Src\Items\Pickaxe.h" />
     <ClInclude Include="Src\Enemies\Plant.h" />
     <ClInclude Include="Src\Logic\PlayerIcon.h" />
+    <ClInclude Include="Src\Logic\PowerUpsManager.h" />
     <ClInclude Include="Src\Player\energyLevel.h" />
     <ClInclude Include="Src\Player\FearBar.h" />
     <ClInclude Include="Src\Player\FearLevel.h" />
@@ -342,6 +343,7 @@
     <ClCompile Include="Src\Items\Pickaxe.cpp" />
     <ClCompile Include="Src\Enemies\Plant.cpp" />
     <ClCompile Include="Src\Logic\PlayerIcon.cpp" />
+    <ClCompile Include="Src\Logic\PowerUpsManager.cpp" />
     <ClCompile Include="Src\Player\energyLevel.cpp" />
     <ClCompile Include="Src\Player\FearBar.cpp" />
     <ClCompile Include="Src\Player\FearLevel.cpp" />
