@@ -5,7 +5,6 @@
 #include "FearLevel.h"
 #include "../Logic/Inventory.h"
 #include "../Logic/InventoryObject.h"
-
 #include "../sdlutils/SDLUtils.h"
 
 class Game;
@@ -18,8 +17,13 @@ enum Directions {
 	RIGHT = 2,
 	DOWN = 3
 };
-
-
+enum PowerUps {
+	energyDrink,
+	boots,
+	banana,
+	cofee
+};
+class PowerUpsManager;
 class Player : public GameObject {
 
 	friend class UI_Info;
@@ -28,6 +32,7 @@ class Player : public GameObject {
 private:
 
 	Inventory* inventory_ = nullptr;
+	PowerUpsManager* powerUpsManager = nullptr;
 	bool inventoryVisibility;
 	bool fade = false;
 	bool usingFlashLight = false;
@@ -113,6 +118,7 @@ public:
 	inline void recoverEnergy(int amount) {};
 	inline double getEnergy() { return energyLevel_->getEnergy(); };
 	inline double getMaxEnergy() { return energyLevel_->getMaxEnergy(); };
+	inline void setStopSpending(bool set) { energyLevel_->setStopSpending(set); };
 
 	// FEAR
 	inline void getScared(int amount) { fearLevel_->getScared(amount); };
@@ -139,7 +145,8 @@ public:
 	void removeMoney(int amount);
 
 	// INVENTORY
-	inline void useObject(int index) { inventory_->useObject(index); };
+	inline void useObject(int index) { inventory_->useObject(index);};
+	void initPowerUp(PowerUps x);
 	inline void setInventoryVisibility(bool visible) { inventoryVisibility = visible; };
 	inline bool hasMissionObject() { return inventory_->hasMissionObject(); };
 	inline void addMissionObject(InventoryObject* p) { inventory_->addMisionObject(p); };

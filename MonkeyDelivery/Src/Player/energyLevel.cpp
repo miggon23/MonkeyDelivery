@@ -1,6 +1,6 @@
 #include "energyLevel.h"
 
-energyLevel::energyLevel(Game* game) :GameObject(game) {
+energyLevel::energyLevel(Game* game) :GameObject(game),stopSpeeding(false) {
 	this->game = game;
 
 	place_ = 50;
@@ -14,7 +14,8 @@ energyLevel::energyLevel(Game* game) :GameObject(game) {
 // Drena energía y devuelve true si se queda a 0
 bool energyLevel::drain(double energyDrained)
 {
-	energy_ -= energyDrained;
+	if(!stopSpeeding)
+		energy_ -= energyDrained;
 	if (energy_ > maxEnergy_)energy_ = maxEnergy_;
 	if (energy_ > 0) {
 		setDimension(energy_, 50);

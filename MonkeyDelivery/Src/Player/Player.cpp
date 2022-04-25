@@ -6,6 +6,7 @@
 #include "../Items/Skates.h"
 #include "../Items/Pickaxe.h"
 #include "../Logic/Game.h"
+#include "../Logic/PowerUpsManager.h"
 #include "SDL.h"
 
 
@@ -40,12 +41,12 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game), anima
 	fearLevel_ = new FearLevel(game);
 	//fearBar_ = new FearBar(game);
 	inventory_ = new Inventory(game, this, game->getRenderer());
-
+	powerUpsManager = new PowerUpsManager(this->game,this);
 	//Objetos de inventario
 	inventory_->addObject(new Skates(game->getTexture(Item_Boots01), game,this));
 	inventory_->addObject(new Flashlight(game->getTexture(Item_Lantern01), game,this));
-	inventory_->addObject(new EnergyDrink(game->getTexture(Item_Soda), game,this));
-	inventory_->addObject(new EnergyDrink(game->getTexture(Item_Soda), game,this));
+	inventory_->addObject(new EnergyDrink(game->getTexture(Item_Soda), game, this));
+	inventory_->addObject(new EnergyDrink(game->getTexture(Item_Soda), game, this));
 	//falta la textura del pico
 	//inventory_->addObject(new Pickaxe(game->getTexture(Item_Soda), game, 1,this));
 
@@ -64,17 +65,19 @@ Player::~Player()
 	delete inventory_;
 	delete flashlightTex_; //CUIDADO!!!!
 	delete lanternTex_; //CUIDADO!!!!
-	
+	delete powerUpsManager;
 	flashlightTex_ = nullptr; //CUIDADO!!!!
 	lanternTex_ = nullptr; //CUIDADO!!!!
 	energyLevel_ = nullptr;
 	fearLevel_ = nullptr;
 	inventory_ = nullptr;
+	powerUpsManager = nullptr;
 	std::cout << "PLAYER DELETED" << std::endl;
 }
 
 void Player::update()
 {
+	powerUpsManager->update();
 	if (sleeping)
 		sleep();//si esta durmiendo
 	else move();//si no esta durmiendo habilitanmos el movimiento
@@ -133,7 +136,7 @@ void Player::move()
 	
 	setPosition(getPosition().getX() + speed.getX(), getPosition().getY() + speed.getY());
 
-	std::cout << speed.magnitude() << endl;
+	//std::cout << speed.magnitude() << endl;
 }
 
 void Player::setIsRunning(bool run)
@@ -199,8 +202,8 @@ void Player::changeSleep()
 
 void Player::NoSleepText()
 {
-	int x = game->getWindowWidth() / 2 - 250;
-	int y = game->getWindowHeight() / 2 - 50;
+	int x = (int)game->getWindowWidth() / 2 - 250;
+	int y = (int)game->getWindowHeight() / 2 - 50;
 	//Textos q renderiza
 	vector<string> texts = {
 			"No Puedes Dormir "," ",
@@ -216,6 +219,10 @@ void Player::removeMoney(int amount)
 {
 	money_ -= amount;
 	if (money_ < 0) money_ = 0;
+}
+
+void Player::initPowerUp(PowerUps x){
+	 powerUpsManager->InitTimer(x); 
 }
 
 void Player::draw() 
