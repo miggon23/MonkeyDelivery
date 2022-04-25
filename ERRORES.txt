@@ -3,7 +3,6 @@ ALGUNA TEXTURA PETA
 INTERFAZ BARRAS DE  MIEDO Y ENERGIA
 La linterna no sale la luz, ta jodida
 Te sales por el mapa abajo a la izquierda (hay 2 hueco en los colliders)
-El toro persigue mas rapido cuando corres con las botas
 Memory leaks
 Pantalla completa y ajustarlo todo
 Las texturas estan cambiadas la cama es el libro tutorial
