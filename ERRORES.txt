@@ -1,12 +1,8 @@
 ALGUNA TEXTURA PETA
 INTERFAZ BARRAS DE  MIEDO Y ENERGIA
-La linterna no sale la luz, ta jodida
 Memory leaks
 Pantalla completa y ajustarlo todo
-Las texturas estan cambiadas la cama es el libro tutorial
-Cuando me perseguia el toro le he dado al 2 del inventario y ha petado en el render (supongo que será que falta la textura de los enemigos muriendose)
 Tiles girados
-Cuando le das al 2 en el inventario y luego al espacio peta en el render (fatarán texturas "Linterna")
 Fatan colliders (valla del cementerio, troncos a la derecha del mapa)
 Cuando se abre el panel de misiones y se selecciona una mision, si se vuelve a entrar se puede seguir seleccionando
 El cuadro de diálogo es muy pequeño
@@ -19,6 +15,7 @@ Enemigos----
 Gato - Hecho (hay que subirlo)
 Toro - Sprite
 Escorpion - Sprite
+Sprites luces linternas
 
 Actualizar Misiones----
 Terminar de Arrelgar los tiles que faltan--------
