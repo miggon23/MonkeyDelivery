@@ -10,10 +10,10 @@ Pickaxe::Pickaxe(Texture* tex, Game* game,int level,Player* player):InventoryObj
 	switch (level_)
 	{
 	case 1:
-		//tex = game->getTexture();
+		tex = game->getTexture(Item_pickaxe01);
 		break;
 	case 2:
-		//tex = game->getTexture();
+		tex = game->getTexture(Item_pickaxe02);
 		break;
 	default:
 		break;

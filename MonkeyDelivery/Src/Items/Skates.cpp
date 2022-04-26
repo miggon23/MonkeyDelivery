@@ -18,6 +18,7 @@ bool Skates::useObject()
 		player_->setVel(player_->getVel() / speedMult);
 		cout << "Me quito los patines";
 	}
+	player_->initPowerUp(boots);
 	cout << endl;
 	auto c = player_->getVel();
 	active = !active;
