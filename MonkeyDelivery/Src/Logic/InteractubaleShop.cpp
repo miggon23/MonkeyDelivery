@@ -3,9 +3,9 @@
 #include "../Control/States/ShopState.h"
 
 IntectuableShop::IntectuableShop(Game* game,int x , int y) :GameObject(game, true) {
-	setTexture(missingTex);
-	setPosition(x, y);
-	setDimension(280.0, 680.0);
+	setTexture(ShopPanel_Interact);
+	setPosition(3350, 1450);
+	setDimension(108, 160);
 }
 
 IntectuableShop::~IntectuableShop() {}

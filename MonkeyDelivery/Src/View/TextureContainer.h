@@ -107,6 +107,7 @@ enum TextureName
 		shop_Soda,
 		shop_UI_PanelShop,
 		shop_UI_Selector,
+		ShopPanel_Interact,
 	
 	//11-UI Overlay (InGame) - 7
 		UI_dialogueBox,
@@ -141,7 +142,7 @@ enum TextureName
 		missingTex,
 };
 
-const int NUM_TEXTURES = 96;
+const int NUM_TEXTURES = 97;
 
 typedef struct {
 	string filename;
@@ -245,6 +246,7 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
 	{"shop/shop_Soda.png",1,1},
 	{"shop/shop_UI_PanelShop.png",1,1},
 	{"shop/shop_UI_Selector.png",1,1},
+	{"shop/ShopPanel_Interact.png",1,1},
 
 	//UI Overlay (InGame)
 	{"ui/InGame/dialoguebox.png",1,1},
