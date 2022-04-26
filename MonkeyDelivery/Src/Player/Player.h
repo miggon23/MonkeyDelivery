@@ -165,9 +165,7 @@ public:
 		inventory_->changeSelectedObject(index);
 	}
 	inline void useSelectedObject() { 
-		if (!isTalking_) {
-			inventory_->useSelectedObject(); 
-		}
+		inventory_->useSelectedObject(); 
 	};
 
 	// LIGHTS
