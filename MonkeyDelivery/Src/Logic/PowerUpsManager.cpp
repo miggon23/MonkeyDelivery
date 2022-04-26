@@ -25,11 +25,7 @@ PowerUpsManager::~PowerUpsManager(){
 void PowerUpsManager::update(){
 	if (activatedEnergyDrink_) {
 		if (timerEnergyDrink_->currTime() >= timeEnergyDrinkLimit_) {
-			player_->resetVelocity();
-			player_->setBonusSpending(0.0);
-			activatedEnergyDrink_ = false;
-			timerEnergyDrink_->pause();
-			std::cout << "energydrink desactivado" << std::endl;
+			desactivate(energyDrink);
 		}
 	}
 	if (activatedFearBuff) {
@@ -66,6 +62,29 @@ void PowerUpsManager::InitTimer(PowerUps x){
 		break;
 	case boots:
 		activateBoots_ = !activateBoots_;
+		break;
+	default:
+		break;
+	}
+}
+
+void PowerUpsManager::desactivate(PowerUps x)
+{
+	switch (x)
+	{
+	case energyDrink:
+		player_->resetVelocity();
+		player_->setBonusSpending(0.0);
+		activatedEnergyDrink_ = false;
+		timerEnergyDrink_->pause();
+		std::cout << "energydrink desactivado" << std::endl;
+		break;
+	case boots:
+		break;
+	case banana:
+		break;
+	case cofee:
+		break;
 	default:
 		break;
 	}

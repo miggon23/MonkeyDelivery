@@ -27,5 +27,6 @@ public:
 	void update();
 	void draw();
 	void InitTimer(PowerUps x);
+	void desactivate(PowerUps x);
 };
 
