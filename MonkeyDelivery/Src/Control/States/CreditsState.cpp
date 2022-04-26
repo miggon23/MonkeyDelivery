@@ -5,7 +5,8 @@
 CreditsState::CreditsState(Game* game) : State(game)
 {
 	
-	addButton(new Back1((int)game->getWindowWidth() / 2 - 50, (int)game->getWindowHeight() - 250, 100, 75, game));
+	addButton(new Back1((int)game->getWindowWidth() / 2 - buttonW/2, (int)game->getWindowHeight() - 250, buttonW, buttonH, game));
+	backgroundTexture = game->getTexture(bckg_options);
 	registerCommands();
 	
 }
@@ -13,6 +14,8 @@ CreditsState::CreditsState(Game* game) : State(game)
 
 void CreditsState::draw()
 {
+	SDL_Rect rectPanel = { 0,0,(int)game->getWindowWidth(),(int)game->getWindowHeight() };
+	backgroundTexture->render(rectPanel);
 	for (auto b : getButtonsUI()) {
 		b->draw();
 	}

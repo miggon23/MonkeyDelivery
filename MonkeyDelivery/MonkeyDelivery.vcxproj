@@ -244,6 +244,7 @@
     <ClInclude Include="Src\Logic\Target.h" />
     <ClInclude Include="Src\Items\TutorialBook.h" />
     <ClInclude Include="Src\Logic\UI_Info.h" />
+    <ClInclude Include="Src\Player\playerHUD.h" />
     <ClInclude Include="Src\sdlutils\FontUtils.h" />
     <ClInclude Include="Src\sdlutils\InputHandler.h" />
     <ClInclude Include="Src\sdlutils\macros.h" />
@@ -358,6 +359,7 @@
     <ClCompile Include="Src\Logic\Target.cpp" />
     <ClCompile Include="Src\Items\TutorialBook.cpp" />
     <ClCompile Include="Src\Logic\UI_Info.cpp" />
+    <ClCompile Include="Src\Player\playerHUD.cpp" />
     <ClCompile Include="Src\sdlutils\SDLUtils.cpp" />
     <ClCompile Include="Src\sdlutils\SoundEffect.cpp" />
     <ClCompile Include="Src\sdlutils\TextureUtils.cpp" />

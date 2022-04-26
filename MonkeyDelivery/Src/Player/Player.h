@@ -3,6 +3,7 @@
 #include "../Logic/GameObject.h"
 #include "energyLevel.h"
 #include "FearLevel.h"
+#include "playerHUD.h"
 #include "../Logic/Inventory.h"
 #include "../Logic/InventoryObject.h"
 #include "../sdlutils/SDLUtils.h"
@@ -89,6 +90,7 @@ private:
 	double decreasingEnergyLevel_;
 	energyLevel* energyLevel_ = nullptr;
 	FearLevel* fearLevel_ = nullptr;
+	playerHUD* playerHUD_ = nullptr;
 	//FearBar* fearBar_ = nullptr;
 #pragma endregion
 

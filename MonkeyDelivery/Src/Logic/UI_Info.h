@@ -12,7 +12,6 @@ private:
 	Font* font_;
 	Game* game;
 
-
 public:
 	UI_Info(Game* game);
 	~UI_Info();

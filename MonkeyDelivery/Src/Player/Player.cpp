@@ -39,14 +39,15 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game), anima
 	flashlightTex_ = game->getTexture(Item_Boots01);
 	energyLevel_ = new energyLevel(game);
 	fearLevel_ = new FearLevel(game);
+	playerHUD_ = new playerHUD(game);
 	//fearBar_ = new FearBar(game);
 	inventory_ = new Inventory(game, this, game->getRenderer());
-	powerUpsManager = new PowerUpsManager(this->game,this);
+	powerUpsManager = new PowerUpsManager(this->game, this);
 	//Objetos de inventario
-	inventory_->addObject(new Skates(game->getTexture(Item_Boots01), game,this));
-	inventory_->addObject(new Flashlight(game->getTexture(Item_Lantern01), game,this));
+	inventory_->addObject(new Skates(game->getTexture(Item_Boots01), game, this));
+	inventory_->addObject(new Flashlight(game->getTexture(Item_Lantern01), game, this));
+	inventory_->addObject(new EnergyDrink(game->getTexture(Item_Soda01), game, this));
 	inventory_->addObject(new EnergyDrink(game->getTexture(Item_Soda02), game, this));
-	//inventory_->addObject(new EnergyDrink(game->getTexture(Item_Soda02), game, this));
 	//falta la textura del pico
 	//inventory_->addObject(new Pickaxe(game->getTexture(Item_Soda), game, 1,this));
 
@@ -62,6 +63,7 @@ Player::~Player()
 {
 	delete energyLevel_;
 	delete fearLevel_;
+	delete playerHUD_;
 	delete inventory_;
 	//delete flashlightTex_; //CUIDADO!!!!
 	//delete lanternTex_; //CUIDADO!!!!
@@ -70,6 +72,7 @@ Player::~Player()
 	//lanternTex_ = nullptr; //CUIDADO!!!!
 	energyLevel_ = nullptr;
 	fearLevel_ = nullptr;
+	playerHUD_ = nullptr;
 	inventory_ = nullptr;
 	powerUpsManager = nullptr;
 	std::cout << "PLAYER DELETED" << std::endl;
@@ -123,21 +126,21 @@ void Player::move()
 
 		if (dirX_ != 0 || dirY_ != 0) {
 			if (isRunning) { //Esto se puede implementar desde el runCommand, evitando que el jugador tenga muchos estados como el de corriendo
-				speed = speed * 1.05;	
+				speed = speed * 1.05;
 			}
 
 			// Comprobar si hay que cancelar el movimiento en alguna direcci�n por las colisiones
-			if (topCollision && speed.getY() < 0  || bottomCollision && speed.getY() > 0) {
+			if (topCollision && speed.getY() < 0 || bottomCollision && speed.getY() > 0) {
 				speed = { speed.getX(), 0 };
 			}
 			if (leftCollision && speed.getX() < 0 || rightCollision && speed.getX() > 0) {
-				speed = {0, speed.getY()};
+				speed = { 0, speed.getY() };
 			}
 
 			drainEnergy(decreasingEnergyLevel_);
 		}
 		//setPosition(getPosition().getX() + dirX_, getPosition().getY() + dirY_);
-	
+
 		setPosition(getPosition().getX() + speed.getX(), getPosition().getY() + speed.getY());
 
 		//std::cout << speed.magnitude() << endl;
@@ -226,14 +229,14 @@ void Player::removeMoney(int amount)
 	if (money_ < 0) money_ = 0;
 }
 
-void Player::initPowerUp(PowerUps x){
-	 powerUpsManager->InitTimer(x); 
+void Player::initPowerUp(PowerUps x) {
+	powerUpsManager->InitTimer(x);
 }
 
-void Player::draw() 
+void Player::draw()
 {
 	if (!sleeping) {
-		if (energyLevel_->percentEnergy() <= 20) 
+		if (energyLevel_->percentEnergy() <= 20)
 			animationManager->setState(AnimationManager::PlayerState::GoToSleep);
 		else if (fearLevel_->percentFear() >= 50)
 			animationManager->setState(AnimationManager::PlayerState::Scared);
@@ -243,14 +246,17 @@ void Player::draw()
 
 	pos.x -= (int)game->getCamera()->getCameraPosition().getX();
 	pos.y -= (int)game->getCamera()->getCameraPosition().getY();
-	
+
 	animationManager->getFrameImagePlayer(pos, textureRect, texture, timerAnimation, AnimationManager::LastDir{ (int)dirX_, (int)dirY_ });
+
 
 	energyLevel_->draw();
 	fearLevel_->draw();
-	powerUpsManager->draw();
+	playerHUD_->draw();
+
+
 	if (boolrenderSleepText) NoSleepText();
-	
+
 	if (inventoryVisibility) inventory_->draw();
 
 	if (usingFlashLight) {
@@ -262,14 +268,14 @@ void Player::draw()
 	}
 
 	if (usingLantern) {
-		
+
 		auto b = lightZoneL();
 		b.x -= (int)game->getCamera()->getCameraPosition().getX();
 		b.y -= (int)game->getCamera()->getCameraPosition().getY();
 		lanternTex_->render(b);
 	}
 
-	if(fade)
+	if (fade)
 	{
 		fadeTex_->render({ 0, 0, 1800, 1000 }); // Renderizar la textura del rectangulo negro en ese rect
 
@@ -304,9 +310,9 @@ void Player::FadeOut()
 void Player::sendToBed()
 {
 	fade = false;
-	sdlutils().soundEffects().at("scary").setVolume(game->getSoundEfectsVolume()*game->getGeneralVolume());
+	sdlutils().soundEffects().at("scary").setVolume(game->getSoundEfectsVolume() * game->getGeneralVolume());
 	sdlutils().soundEffects().at("scary").play(0, 1);
-	setPosition((double) bedX_ + 15, bedY_);//colocar en la cama
+	setPosition((double)bedX_ + 15, bedY_);//colocar en la cama
 }
 
 /// <summary>
@@ -357,7 +363,7 @@ bool Player::moneyChange(int money)
 		sdlutils().soundEffects().at("getMoney").setVolume(game->getSoundEfectsVolume());
 		sdlutils().soundEffects().at("getMoney").play(0, 1);
 	}
-	
+
 
 	return true;
 }
@@ -423,7 +429,7 @@ const SDL_Rect Player::lightZoneFL()
 					getHeight() };
 			//setTexture(flashlightSides);
 		}
-			
+
 		else if (getOrientation() == "up") {
 			hitZone = { int(getX()),
 					int(getY() - 100),
@@ -431,13 +437,13 @@ const SDL_Rect Player::lightZoneFL()
 					getHeight() + 50 };
 			//setTexture(flashlightUp);
 		}
-			
+
 		else if (getOrientation() == "down") {
 			hitZone = { int(getX()),
 					int(getY() + 50),
 					getWidth(),
 					getHeight() + 50 };
-			
+
 		}
 		else {
 			hitZone = getCollider();
@@ -461,5 +467,5 @@ const SDL_Rect Player::lightZoneL()
 
 void Player::addPickaxe(int level)
 {
-	
+
 }

@@ -21,6 +21,8 @@ public:
 	void registerCommands()override;
 
 private:
+	Texture* backgroundTexture;
+	const int buttonW = 300, buttonH = 140;
 	vector<string> credits_ =
 	{
 		"Elisa Todd",

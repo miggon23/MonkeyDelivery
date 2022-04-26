@@ -48,8 +48,10 @@ void UI_Info::drawInfo()
 			renderText(to_string(game->getMissionsPanel()->getTime()/10), 1325, 70, darkBlue);
 		}
 	}
+	
 	//renderText("Money  " + to_string(game->getPlayer()->money_), 1300, 20, BLACK);
 }
+
 
 void UI_Info::draw()
 {

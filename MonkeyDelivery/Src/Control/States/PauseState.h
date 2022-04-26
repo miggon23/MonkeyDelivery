@@ -4,6 +4,7 @@
 class PauseState : public State
 {
 	Texture* backgroundTexture;
+	const int buttonW = 300, buttonH = 140;
 public:
 	PauseState(Game* game);
 	~PauseState() = default;
