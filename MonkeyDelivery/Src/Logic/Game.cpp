@@ -154,7 +154,7 @@ void Game::start()
     add(bed);*/
     //add(new Rock(this,2500,800));
     auto cama = new Bed(this);
-    cama->setPosition(3650, 1300);
+    cama->setPosition(3280, 1120);
     player_->bedPos(3650, 1300);
     add(cama);
     partSystem = new ParticleExample();
