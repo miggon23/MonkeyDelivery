@@ -36,7 +36,7 @@ void Target::onPlayerInteraction(Player* player)
 
 		if (player->hasMissionObject()) {
 
-			game->newDialogue(textPath_);
+			game->newMissionDialogue(textPath_);
 
 			player->removeMissionObject();
 			missionsPanel_->onMissionCompleted();

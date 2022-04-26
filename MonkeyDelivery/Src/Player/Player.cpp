@@ -120,7 +120,7 @@ void Player::move()
 
 		if (dirX_ != 0 || dirY_ != 0) {
 			if (isRunning) { //Esto se puede implementar desde el runCommand, evitando que el jugador tenga muchos estados como el de corriendo
-				speed = speed * 1.05;	
+				speed = speed * 2.0;	
 			}
 
 			// Comprobar si hay que cancelar el movimiento en alguna direcci�n por las colisiones
