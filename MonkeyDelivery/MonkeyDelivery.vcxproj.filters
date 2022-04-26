@@ -299,7 +299,9 @@
     <ClCompile Include="Src\Logic\PowerUpsManager.cpp">
       <Filter>Source\Logic\Managers/Game</Filter>
     </ClCompile>
-    <ClCompile Include="Src\Logic\MissionObject.cpp" />
+    <ClCompile Include="Src\Logic\MissionObject.cpp">
+      <Filter>Source\Logic\InteractuableObjectsMap</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MonkeyDelivery.h" />

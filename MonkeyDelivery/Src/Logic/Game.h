@@ -92,7 +92,7 @@ private:
     SDL_Texture* background_;
     MapInfo mapInfo;
     tileset_map tilesets_; // textures map (string -> texture)
-    void loadSpriteSheets();
+    //void loadSpriteSheets();
     const double MAPSCALE_ = 0.3;
 
     Camera* mCamera_;

@@ -19,7 +19,7 @@ class SDLUtils: public Singleton<SDLUtils> {
 	friend Singleton<SDLUtils> ; // needed to give access to private constructors
 
 public:
-
+	
 	// we abstract away the actual data structure we use for
 	// tables. All we assume is that is has the following
 	// methods

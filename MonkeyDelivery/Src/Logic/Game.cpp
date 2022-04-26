@@ -4,42 +4,42 @@
 #include <cmath>
 
 
-void Game::loadSpriteSheets()
-{
-    string filename = "Images/config/resources.json";
-
-    std::unique_ptr<JSONValue> jValueRoot(JSON::ParseFromFile(filename));
-
-    if (jValueRoot == nullptr || !jValueRoot->IsObject()) {
-        throw "Something went wrong while load/parsing '" + filename + "'";
-    }
-
-    JSONObject root = jValueRoot->AsObject();
-    JSONValue* jValue = nullptr;
-
-    // load tilesets
-    jValue = root["tilesets"];
-    if (jValue != nullptr) {
-        if (jValue->IsArray()) {
-            for (auto& v : jValue->AsArray()) {
-                if (v->IsObject()) {
-                    JSONObject vObj = v->AsObject();
-                    std::string key = vObj["id"]->AsString();
-                    std::string file = vObj["file"]->AsString();
-                    auto a = new Texture(renderer, file);
-                    tilesets_.emplace(std::make_pair(key, a));
-                }
-                else {
-                    throw "'tilesets' array in '" + filename
-                        + "' includes and invalid value";
-                }
-            }
-        }
-        else {
-            throw "'tilesets' is not an array";
-        }
-    }
-}
+//void Game::loadSpriteSheets()
+//{
+//    string filename = "Images/config/resources.json";
+//
+//    std::unique_ptr<JSONValue> jValueRoot(JSON::ParseFromFile(filename));
+//
+//    if (jValueRoot == nullptr || !jValueRoot->IsObject()) {
+//        throw "Something went wrong while load/parsing '" + filename + "'";
+//    }
+//
+//    JSONObject root = jValueRoot->AsObject();
+//    JSONValue* jValue = nullptr;
+//
+//    // load tilesets
+//    jValue = root["tilesets"];
+//    if (jValue != nullptr) {
+//        if (jValue->IsArray()) {
+//            for (auto& v : jValue->AsArray()) {
+//                if (v->IsObject()) {
+//                    JSONObject vObj = v->AsObject();
+//                    std::string key = vObj["id"]->AsString();
+//                    std::string file = vObj["file"]->AsString();
+//                    auto a = new Texture(renderer, file);
+//                    tilesets_.emplace(std::make_pair(key, a));
+//                }
+//                else {
+//                    throw "'tilesets' array in '" + filename
+//                        + "' includes and invalid value";
+//                }
+//            }
+//        }
+//        else {
+//            throw "'tilesets' is not an array";
+//        }
+//    }
+//}
 
 void Game::updateCameraPos()
 {

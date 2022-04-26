@@ -97,8 +97,8 @@ enum TextureName
 		npc_Hipo,
 		npc_Pavo,
 		npc_Tucan,
+		npc_Rabbit,
 		npc_Kangaroo,
-		npc_Turtle,
 
 	//10-Shop - 6
 		shop_Boots01,
@@ -235,10 +235,10 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
 	{"npcs/NPC_Fox.png",1,1},
 	{"npcs/NPC_Frog.png",1,1},
 	{"npcs/NPC_Hipo.png",1,1},
-	{"npcs/NPC_Kangaroo.png",1,1},
 	{"npcs/NPC_Pavo.png",1,1},
 	{"NPCs/NPC_Tucan.png",1,1},
-	{"npcs/NPC_Turtle.png",1,1},
+	{"npcs/NPC_Rabbit.png",1,1},
+	{"npcs/NPC_Kangaroo.png",1,1},
 
 	//10-Shop
 	{"shop/shop_Boots01.png",1,1},

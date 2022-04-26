@@ -7,7 +7,6 @@ class Target : public GameObject
 {
 public:
 	Target(MissionsPanel* mp, Game* g);
-	Target(MissionsPanel* mp, Game* g, string texture);
 	~Target();
 
 	void onPlayerInteraction(Player* player) override;

@@ -12,15 +12,13 @@ MissionObject::MissionObject(MissionsPanel* mp, Game* g) : GameObject(g, true), 
 	setDimension(50, 50);
 	setPosition(0, 0);
 
-	string route = "./Images/missingTex.png";
-	this->texture = new Texture(g->getRenderer(), route);
+	this->texture = game->getTexture(missingTex);
+
 }
 
 MissionObject::~MissionObject()
 {
 	missionsPanel_ = nullptr;
-	delete texture;
-	texture = nullptr;
 }
 
 void MissionObject::onPlayerInteraction(Player* player)
@@ -51,8 +49,9 @@ void MissionObject::draw()
 
 void MissionObject::setTexture(string tex)
 {
-	if (texture != nullptr)
-		delete texture;
-	string route = "./Images/NPCs/" + tex + ".png";
-	texture = new Texture(game->getRenderer(), route);
+	this->texture = game->getTexture(missingTex);
+
+	//if (tex == "a") {
+	//	this->texture = game->getTexture(a);
+	//}
 }
