@@ -501,7 +501,7 @@ void Game::loadMap(string const& filename)
 
 void Game::dialogueEnd(bool isMission)
 {
-    player_->changeTalking();
+    player_->changeTalking(false);
     if (isMission) {
         missionsPanel_->dialogueEnd();
     }
