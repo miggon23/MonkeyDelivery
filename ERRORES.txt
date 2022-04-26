@@ -9,8 +9,6 @@ Tiles girados
 Cuando le das al 2 en el inventario y luego al espacio peta en el render (fatarán texturas "Linterna")
 Fatan colliders (valla del cementerio, troncos a la derecha del mapa)
 Cuando se abre el panel de misiones y se selecciona una mision, si se vuelve a entrar se puede seguir seleccionando
-La velocidad aumenta mucho cuando se cambian los estados
-No desaparece el diálogo post misión
 El cuadro de diálogo es muy pequeño
 JSON no admite caracteres especiales ( !, ?, tíldes)
 
