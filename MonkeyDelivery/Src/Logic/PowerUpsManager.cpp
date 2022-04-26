@@ -4,7 +4,7 @@
 #include "../sdlutils/VirtualTimer.h"
 PowerUpsManager::PowerUpsManager(Game* game, Player* player):game_(game),player_(player),
 activatedEnergyDrink_(false),activateBoots_(false),timerEnergyDrink_(new VirtualTimer()),
-activatedFearBuff(false),timerFearBuff_(new VirtualTimer()){
+activatedAntiBanana(false), timerAntiBanana_(new VirtualTimer()){
 	texEnergyBuff_ = game->getTexture(UI_energyBuff);
 	texFearBuff_ = game->getTexture(UI_fearBuff);
 	texSpeedBuff_ = game->getTexture(UI_speedBuff);
@@ -14,9 +14,9 @@ PowerUpsManager::~PowerUpsManager(){
 	player_ = nullptr;
 	game_ = nullptr;
 	delete timerEnergyDrink_;
-	delete timerFearBuff_;
+	delete timerAntiBanana_;
 	timerEnergyDrink_ = nullptr;
-	timerFearBuff_ = nullptr;
+	timerAntiBanana_ = nullptr;
 	texEnergyBuff_ = nullptr;
 	texFearBuff_ = nullptr;
 	texSpeedBuff_ = nullptr;
@@ -28,8 +28,10 @@ void PowerUpsManager::update(){
 			desactivate(energyDrink);
 		}
 	}
-	if (activatedFearBuff) {
-
+	if (activatedAntiBanana) {
+		if (timerAntiBanana_->currTime() >= timeEnergyDrinkLimit_) {
+			desactivate(antibanana);
+		}
 	}
 }
 void PowerUpsManager::draw(){
@@ -48,7 +50,7 @@ void PowerUpsManager::draw(){
 		texSpeedBuff_->render(rect);
 	}
 	aux += 0.2;
-	if (activatedFearBuff) {
+	if (activatedAntiBanana) {
 		//MOSTAR EL ICONO FEAR
 		SDL_Rect rect = { (int)(game_->getWindowWidth() * aux / 3),(int)(game_->getWindowHeight() * 3.5 / 4 - 20) ,texSpeedBuff_->getW() * 5,texSpeedBuff_->getH() * 5 };
 		texFearBuff_->render(rect);
@@ -59,16 +61,30 @@ void PowerUpsManager::InitTimer(PowerUps x){
 	case energyDrink:
 		//Si no estaba activado el energy drink
 		if (!activatedEnergyDrink_) {
-			activatedEnergyDrink_ = true;
-			timerEnergyDrink_->reset();
-			player_->setVel(player_->getVel() * energyDrinkSpeedBonus_);
+			//Aplicamos el PU al player
+			player_->setVel(player_->getVel() * energyDrinkSpeedBonus_); 
 			player_->recoverEnergy(player_->getMaxEnergy() * energyDrinkEnergyBonus_);
 			player_->setBonusSpending(energyDrinkEnergyBonus_);
+			activatedEnergyDrink_ = true; //Activamos el PU
+			timerEnergyDrink_->reset(); //Inicializamos el timer
 		}else
 			timerEnergyDrink_->reset();
 		break;
 	case boots:
 		activateBoots_ = !activateBoots_;
+		break;
+	case banana:
+		break;
+	case monkeycola:
+		break;
+	case antibanana:
+		if (!activatedAntiBanana)
+		{
+			player_->setFearBonusFactor(monkeycolaFearBuff_);
+			activatedAntiBanana = true;
+			timerAntiBanana_->reset();
+		}else
+			timerAntiBanana_->reset();
 		break;
 	default:
 		break;
@@ -90,7 +106,13 @@ void PowerUpsManager::desactivate(PowerUps x)
 		break;
 	case banana:
 		break;
-	case cofee:
+	case monkeycola:
+		break;
+	case antibanana:
+		player_->setFearBonusFactor(1);
+		activatedAntiBanana = false;
+		timerAntiBanana_->pause();
+		std::cout << "antibanana desactivado" << std::endl;
 		break;
 	default:
 		break;

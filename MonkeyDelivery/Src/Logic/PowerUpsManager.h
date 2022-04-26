@@ -11,12 +11,18 @@ class PowerUpsManager{
 	VirtualTimer* timerEnergyDrink_;
 	bool activatedEnergyDrink_;
 	int timeEnergyDrinkLimit_ = 30000;
-	float energyDrinkSpeedBonus_ = 1.25;
+	float energyDrinkSpeedBonus_ = 1.15;
 	float energyDrinkEnergyBonus_ = 0.05;
 
-	VirtualTimer* timerFearBuff_;
-	bool activatedFearBuff;
-	int timeFearLimit_ = 30000;
+	VirtualTimer* timerAntiBanana_;
+	bool activatedAntiBanana;
+	int antiBananaLimit_ = 60000;
+	float antiBananaFearBuff_ = 1.3;
+
+	VirtualTimer* timerMonkeycola_;
+	bool activatedMonkeycola;
+	int monkeycolaLimit_ = 60000;
+	float monkeycolaFearBuff_ = 1.3;
 
 	Texture* texFearBuff_;
 	Texture* texEnergyBuff_;

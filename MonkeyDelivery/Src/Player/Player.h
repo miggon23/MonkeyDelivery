@@ -17,12 +17,15 @@ enum Directions {
 	RIGHT = 2,
 	DOWN = 3
 };
+
 enum PowerUps {
 	energyDrink,
 	boots,
 	banana,
-	cofee
+	monkeycola,
+	antibanana
 };
+
 class PowerUpsManager;
 class Player : public GameObject {
 
@@ -58,8 +61,10 @@ private:
 	double INIT_VEL_;
 	bool isRunning = false;
 	double fear_;
+	double fearBonusFactor = 1;
 	double walkingSpeedFactor_; //A esto se le multiplica la velocidad actual
 	double runningSpeedFactor_; // A esto se le multiplica la velocidad actual
+
 	//Velocidad actual del jugador
 	double vel_;
 	double dirX_ = 0; // 1, 0 o -1
@@ -124,7 +129,8 @@ public:
 	inline void setBonusSpending(double set) { energyLevel_->setBonusSpending(set); };
 
 	// FEAR
-	inline void getScared(int amount) { fearLevel_->getScared(amount); };
+	inline void getScared(int amount) { fearLevel_->getScared(amount / fearBonusFactor); }; //Por defecto fearBonusFactor = 1
+	inline void setFearBonusFactor(double d = 1) { fearBonusFactor = d; };
 	inline void recoverFear(int amount) {};
 
 	// MOVEMENT
