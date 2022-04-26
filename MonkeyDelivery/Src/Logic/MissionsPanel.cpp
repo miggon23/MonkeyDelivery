@@ -130,7 +130,7 @@ void MissionsPanel::onMissionSelected(string missionId)
 	State* tmp = game->getState();
 	State* saved = game->getSavedState();
 	saved->resetInitTime();
-	saved->registerCommands();
+	//saved->registerCommands();
 	game->setState(saved);
 	game->removeSavedState();
 	delete tmp;
