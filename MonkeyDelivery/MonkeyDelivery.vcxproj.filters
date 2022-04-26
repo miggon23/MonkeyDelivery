@@ -303,6 +303,8 @@
       <Filter>Source\Logic\InteractuableObjectsMap</Filter>
     </ClCompile>
     <ClCompile Include="Src\Items\Repel.cpp" />
+    <ClCompile Include="Src\Player\playerHUD.cpp" />
+    <ClCompile Include="Src\Items\Monkeycola.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MonkeyDelivery.h" />
@@ -644,6 +646,8 @@
     </ClInclude>
     <ClInclude Include="Src\Logic\MissionObject.h" />
     <ClInclude Include="Src\Items\Repel.h" />
+    <ClInclude Include="Src\Player\playerHUD.h" />
+    <ClInclude Include="Src\Items\Monkeycola.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="MonkeyDelivery.rc" />
