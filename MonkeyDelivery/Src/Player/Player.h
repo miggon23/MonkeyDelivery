@@ -165,7 +165,9 @@ public:
 		inventory_->changeSelectedObject(index);
 	}
 	inline void useSelectedObject() { 
-		inventory_->useSelectedObject(); 
+		if (!isTalking_) {
+			inventory_->useSelectedObject(); 
+		}
 	};
 
 	// LIGHTS
@@ -194,4 +196,5 @@ public:
 	void addPickaxe(int level);
 
 	inline void changeTalking() { isTalking_ = !isTalking_; };
+	inline bool isTalking() { return isTalking_; };
 };

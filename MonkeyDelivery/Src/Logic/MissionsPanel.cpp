@@ -198,7 +198,6 @@ string MissionsPanel::getMissionImage()
 	if (currentMission_ != nullptr) {
 
 		MissionInfo m = missions_.at(currentMission_->getName());
-		std::cout << m.helpImgRoute;
 		return m.helpImgRoute;
 	}
 	else
