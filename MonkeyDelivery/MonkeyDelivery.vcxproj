@@ -200,6 +200,7 @@
     <ClInclude Include="Src\Control\UI\Sliders\SliderClick.h" />
     <ClInclude Include="Src\Control\ViewController.h" />
     <ClInclude Include="Src\Enemies\Enemy.h" />
+    <ClInclude Include="Src\Items\Repel.h" />
     <ClInclude Include="Src\json\JSON.h" />
     <ClInclude Include="Src\json\JSONValue.h" />
     <ClInclude Include="Src\Logic\AnimationManager.h" />
@@ -314,6 +315,7 @@
     <ClCompile Include="Src\Control\UI\Sliders\SliderBase.cpp" />
     <ClCompile Include="Src\Control\UI\Sliders\SliderClick.cpp" />
     <ClCompile Include="Src\Control\ViewController.cpp" />
+    <ClCompile Include="Src\Items\Repel.cpp" />
     <ClCompile Include="Src\json\JSON.cpp" />
     <ClCompile Include="Src\json\JSONValue.cpp" />
     <ClCompile Include="Src\Logic\AnimationManager.cpp" />

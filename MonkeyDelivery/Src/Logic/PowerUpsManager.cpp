@@ -30,7 +30,7 @@ void PowerUpsManager::update(){
 	}
 	if (activatedAntiBanana) {
 		if (timerAntiBanana_->currTime() >= timeEnergyDrinkLimit_) {
-			desactivate(antibanana);
+			desactivate(repelente);
 		}
 	}
 }
@@ -77,7 +77,7 @@ void PowerUpsManager::InitTimer(PowerUps x){
 		break;
 	case monkeycola:
 		break;
-	case antibanana:
+	case repelente:
 		if (!activatedAntiBanana)
 		{
 			player_->setFearBonusFactor(monkeycolaFearBuff_);
@@ -108,7 +108,7 @@ void PowerUpsManager::desactivate(PowerUps x)
 		break;
 	case monkeycola:
 		break;
-	case antibanana:
+	case repelente:
 		player_->setFearBonusFactor(1);
 		activatedAntiBanana = false;
 		timerAntiBanana_->pause();

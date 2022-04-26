@@ -24,7 +24,7 @@ enum PowerUps {
 	boots,
 	banana,
 	monkeycola,
-	antibanana
+	repelente
 };
 
 class PowerUpsManager;

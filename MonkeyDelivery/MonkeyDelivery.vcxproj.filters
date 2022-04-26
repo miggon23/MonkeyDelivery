@@ -302,6 +302,7 @@
     <ClCompile Include="Src\Logic\MissionObject.cpp">
       <Filter>Source\Logic\InteractuableObjectsMap</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Items\Repel.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MonkeyDelivery.h" />
@@ -642,6 +643,7 @@
       <Filter>Header\Logic\Managers/Game</Filter>
     </ClInclude>
     <ClInclude Include="Src\Logic\MissionObject.h" />
+    <ClInclude Include="Src\Items\Repel.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="MonkeyDelivery.rc" />
