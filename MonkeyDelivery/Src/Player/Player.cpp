@@ -36,7 +36,7 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game), anima
 	setPosition(3150, 1400);
 
 	lastUpdate = timer.currTime();
-
+	flashlightTex_ = game->getTexture(Item_Boots01);
 	energyLevel_ = new energyLevel(game);
 	fearLevel_ = new FearLevel(game);
 	//fearBar_ = new FearBar(game);
@@ -63,11 +63,11 @@ Player::~Player()
 	delete energyLevel_;
 	delete fearLevel_;
 	delete inventory_;
-	delete flashlightTex_; //CUIDADO!!!!
-	delete lanternTex_; //CUIDADO!!!!
+	//delete flashlightTex_; //CUIDADO!!!!
+	//delete lanternTex_; //CUIDADO!!!!
 	delete powerUpsManager;
-	flashlightTex_ = nullptr; //CUIDADO!!!!
-	lanternTex_ = nullptr; //CUIDADO!!!!
+	//flashlightTex_ = nullptr; //CUIDADO!!!!
+	//lanternTex_ = nullptr; //CUIDADO!!!!
 	energyLevel_ = nullptr;
 	fearLevel_ = nullptr;
 	inventory_ = nullptr;
