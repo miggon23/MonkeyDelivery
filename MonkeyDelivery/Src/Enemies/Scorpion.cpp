@@ -13,6 +13,7 @@ Scorpion::Scorpion(Game* game, int Aleatorio, Point2D<int> centroRadio, Animatio
 	iniPlayerVel = game->getPlayer()->getVel();
 	inRange = false;
 	setResistance(2500);
+	setMaxFearPercent(25);
 	textureRect = { 0, 0, animationManager->getWidthScorpion(),animationManager->getHeigthScorpion() };
 }
 
@@ -50,13 +51,12 @@ void Scorpion::checkDistance()
 			sdlutils().soundEffects().at("scorpion").play(0, 1);
 			inRange = true;
 		}
-		if (lastUpdate_ + 1500 < SDL_GetTicks()) {
+		if (lastUpdate_ + timeLimit_ < SDL_GetTicks()) {
 			double minDis = min(distanceX, distanceY);
 			scariness_ = range / minDis;
-			if (scariness_ > 25) scariness_ = 25; //Como mximo quita un 25% cada vez
+			if (scariness_ > maxFearPercent_) setScariness(maxFearPercent_); //Como mximo quita un 25% cada vez
 			game->scare(scariness_);
 			lastUpdate_ = SDL_GetTicks();
-			// << "MIEDO: " << scariness_ << endl;
 		}
 	}
 	//Si no esta en el rango la velocidad sera normal
@@ -78,6 +78,6 @@ void Scorpion::draw()
 		
 		else setTexture(scorpionSS_Default);
 		
-		animationManager->getFrameImageScorpion(pos, textureRect, texture, timerAnimation);
+		animationManager->getFrameImageScorpion(pos, textureRect, texture, timerAnimation_);
 	}
 }

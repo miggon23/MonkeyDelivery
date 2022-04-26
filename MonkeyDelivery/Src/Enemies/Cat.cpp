@@ -12,6 +12,7 @@ Cat::Cat(Game* game,int Aleatorio, Point2D<int>centroRadio, AnimationManager* an
 	setDimension(50, 60);
 	createCheckPoints();
 	setResistance(5000);
+	setMaxFearPercent(30);
 	textureRect = { 0,0,animationManager->getWidthCat(),animationManager->getHeightcat() };
 }
 
@@ -45,7 +46,7 @@ void Cat::draw()
 		
 		else setTexture(catSS_Default);
 		
-		animationManager->getFrameImageCat(pos, textureRect, texture, timerAnimation);
+		animationManager->getFrameImageCat(pos, textureRect, texture, timerAnimation_);
 	}
 }
 
@@ -60,10 +61,10 @@ void Cat::checkDistance()
 		if (distanceX <= range && distanceY <= range) {
 			sdlutils().soundEffects().at("cat").setVolume(game->getSoundEfectsVolume());
 			sdlutils().soundEffects().at("cat").play(0, 1);
-			if (lastUpdate_ + 1500 < SDL_GetTicks()) {
+			if (lastUpdate_ + timeLimit_ < SDL_GetTicks()) {
 				double minDis = min(distanceX, distanceY);
 				scariness_ = range / (minDis*3);
-				if (scariness_ > 30) scariness_ = 30; //Como mximo quita un 30% cada vez
+				if (scariness_ > maxFearPercent_) setScariness(maxFearPercent_); //Como mximo quita un 30% cada vez
 				game->scare(scariness_);
 				lastUpdate_ = SDL_GetTicks();
 			}

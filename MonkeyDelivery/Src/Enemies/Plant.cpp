@@ -19,16 +19,7 @@ void Plant::update()
 	die();
 	respawn();
 }
-//void Plant::die() {
-//	if (game->getPlayer()->usingFlashLight) {
-//		if (collide(game->getPlayer()->lightZone())) {
-//			if (timeOnFlash_ + 5000 < SDL_GetTicks()) {
-//				setAlive(false);
-//			}
-//			timeOnFlash_ = SDL_GetTicks();
-//		}
-//	}
-//}
+
 void Plant::checkDistance()
 {
 	int range = 200; //rango
@@ -40,7 +31,7 @@ void Plant::checkDistance()
 		game->drainPlayerEnergy(0.2);
 
 		//Realmente esto no se si comentarlo porque la planta no da miedo, de momento lo dejo
-		if (lastUpdate_ + 1000 < SDL_GetTicks())
+		if (lastUpdate_ + timeLimit_ < SDL_GetTicks())
 		{
 			game->scare(scariness_);
 			sdlutils().soundEffects().at("plant").setVolume(game->getSoundEfectsVolume());
@@ -62,6 +53,6 @@ void Plant::draw()
 		else 
 			setTexture(plantSS_Default);
 		
-		animationManager->getFrameImagePlant(pos, textureRect, texture, timerAnimation);
+		animationManager->getFrameImagePlant(pos, textureRect, texture, timerAnimation_);
 	}
 }

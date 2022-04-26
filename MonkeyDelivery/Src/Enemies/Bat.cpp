@@ -9,7 +9,7 @@ Bat::Bat(Game* game, int Aleatorio, Point2D<int> centroRadio, int nLoop, Animati
 	setDimension(70, 42);
 	initialPos = getPosition();
 	stealTimer_ = SDL_GetTicks();
-	speed = 1;
+	speed_ = 1;
 	player_ = game->getPlayer();
 	
 	loops = nLoop;
@@ -21,7 +21,7 @@ Bat::Bat(Game* game, int Aleatorio, Point2D<int> centroRadio, int nLoop, Animati
 
 void Bat::update()
 {
-	patrol(speed);
+	patrol(speed_);
 
 	SDL_Rect r1 = player_->getCollider();
 	SDL_Rect r2 = this->getCollider();
@@ -53,7 +53,6 @@ void Bat::createCheckPoints()
 		addCheckPoint(Point2D<double>(initialPos.getX() + (double) move * i, initialPos.getY() - 200));
 		addCheckPoint(Point2D<double>(initialPos.getX() - 100 + (double) move * i, initialPos.getY() - 100));
 		addCheckPoint(Point2D<double>(initialPos.getX() + (double) move * i, initialPos.getY()));
-
 	}
 }
 
@@ -79,6 +78,6 @@ void Bat::draw(){
 		else 
 			setTexture(batSS_Default);
 		
-		animationManager->getFrameImageBat(pos, textureRect, texture, timerAnimation);
+		animationManager->getFrameImageBat(pos, textureRect, texture, timerAnimation_);
 	}
 }

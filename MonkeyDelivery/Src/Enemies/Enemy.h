@@ -5,34 +5,35 @@
 class AnimationManager;
 class Enemy : public GameObject
 {
-private:
-
 
 protected:
-	//timers
-	Uint32 lastUpdate_;//para timer del miedo
-	Uint32 respawnTimer;//timer respawn
-	Uint32 timeOnFlash_;// timer morir enemigo
-	double speed;
-	bool alive;
-	double scariness_;
+	//TIMERS
+	Uint32 lastUpdate_; //para timer del miedo
+	Uint32 respawnTimer; //timer respawn
+	Uint32 timeOnFlash_; // timer morir enemigo
+	float timerAnimation_; //tiempo entre los frames
+
+	double speed_;
+	double scariness_; //Miedo inflingido
+
 	float dieTime;
-	SpawnZone zone;
-	vector<Point2D<double>> checkpoints;
+
+	int maxFearPercent_; //porcentaje maximo de miedo que puede dar el enemigo
 	int indexCheckPoint;
-	bool back;
 	int resistence_;
+	int nearLimit_;
+	int timeLimit_; //Lapso de tiempo que pasa desda la ultima vez que dio miedo, para que no sea constante
+
 	bool collided = false;
 	bool startTimer = false;
+	bool back;
+	bool alive;
+	
+	SpawnZone zone;
+	vector<Point2D<double>> checkpoints;
 	AnimationManager* animationManager;
 	SDL_Rect textureRect;
-	float timerAnimation;
-
-
-	//movimiento enemigos respecto a camara
-	Point2D<double> offsetCamera;
-
-	int nearLimit_;
+	Point2D<double> offsetCamera; //movimiento enemigos respecto a camara
 
 public:
 
@@ -51,8 +52,9 @@ public:
 	void spawn();
 	void respawn();
 	virtual void checkDistance();
-	inline virtual void setScariness(double fear) { scariness_ = fear; }
-	inline virtual void setResistance(int res) { resistence_ = res; }
+	inline void setScariness(double fear) { scariness_ = fear; }
+	inline void setResistance(int res) { resistence_ = res; }
+	inline void setMaxFearPercent(int max) { maxFearPercent_ = max; }
 
 	//ajuste del offset
 	inline void changeOffset(Point2D<double> newMove) { offsetCamera = offsetCamera + newMove; }

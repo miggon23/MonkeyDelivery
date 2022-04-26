@@ -7,11 +7,13 @@ Enemy::Enemy(Game* game, int radio, Point2D<int>centroRadio, AnimationManager* a
 	setAlive(true);
 	indexCheckPoint = 0;
 	back = false; //Boolenao que indica cuando se da la vuelta el enemigo en su patrulla
-	timerAnimation = 0;
+	timerAnimation_ = 0;
 	lastUpdate_ = SDL_GetTicks();
 	timeOnFlash_ = SDL_GetTicks();
 	respawnTimer = SDL_GetTicks();
 	nearLimit_ = 2;
+	timeLimit_ = 1000;
+	setMaxFearPercent(30);
 }
 
 void Enemy::patrol(double speed)
@@ -50,8 +52,6 @@ void Enemy::patrol(double speed)
 
 void Enemy::die()
 {
-	
-
 	if (game->getPlayer()->isUsingFlashLight()) {
 		
 		// se guardan los ticks al colisionar con la luz
@@ -99,7 +99,6 @@ void Enemy::spawn()
 	setPosition(randomPos.getX(), randomPos.getY());
 }
 
-
 void Enemy::respawn()
 {
 	if (!isAlive()) {
@@ -123,18 +122,15 @@ void Enemy::checkDistance()
 
 		double shouldFlip = getPosition().getX() - game->getPosisitionPlayer().getX();
 		SDL_RendererFlip flip = SDL_FLIP_HORIZONTAL;
-
-		
 		
 		if (distanceX <= range && distanceY <= range) {
 
-			if (lastUpdate_ + 1500 < SDL_GetTicks()) {
+			if (lastUpdate_ + timeLimit_ < SDL_GetTicks()) {
 				double minDis = min(distanceX, distanceY);
 				scariness_ = range / (minDis * 3);
-				if (scariness_ > 25) scariness_ = 25; //Como mximo quita un 25% cada vez
+				if (scariness_ > maxFearPercent_) setScariness(maxFearPercent_); //Como mximo quita un 25% cada vez
 				game->scare(scariness_);
 				lastUpdate_ = SDL_GetTicks();
-				//cout << "MIEDO: " << scariness_ << endl;
 			}
 		}
 	}
