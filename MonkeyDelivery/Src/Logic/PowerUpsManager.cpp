@@ -41,20 +41,20 @@ void PowerUpsManager::draw(){
 	if (activatedEnergyDrink_) {
 
 		//Mostrar el ICONO SPEED
-		SDL_Rect rect = { (int)game_->getWindowWidth()*aux/ 3,(int)game_->getWindowHeight() * 3.5 / 4 -20 ,texSpeedBuff_->getW()*5,texSpeedBuff_->getH()*5 };		
+		SDL_Rect rect = { (int)(game_->getWindowWidth()*aux/ 3),(int)(game_->getWindowHeight() * 3.5 / 4 -20) ,texSpeedBuff_->getW()*5,texSpeedBuff_->getH()*5 };		
 		texEnergyBuff_->render(rect);
 		
 	}
 	aux += 0.2;
 	if (activateBoots_||activatedEnergyDrink_) {
 		//MOSTAR EL ICONO ENERGY
-		SDL_Rect rect = { (int)game_->getWindowWidth() * aux / 3,(int)game_->getWindowHeight() * 3.5 / 4 - 20 ,texSpeedBuff_->getW() * 5,texSpeedBuff_->getH() * 5 };
+		SDL_Rect rect = { (int)(game_->getWindowWidth() * aux / 3),(int)(game_->getWindowHeight() * 3.5 / 4 - 20 ),texSpeedBuff_->getW() * 5,texSpeedBuff_->getH() * 5 };
 		texSpeedBuff_->render(rect);
 	}
 	aux += 0.2;
 	if (activatedFearBuff) {
 		//MOSTAR EL ICONO FEAR
-		SDL_Rect rect = { (int)game_->getWindowWidth() * aux / 3,(int)game_->getWindowHeight() * 3.5 / 4 - 20 ,texSpeedBuff_->getW() * 5,texSpeedBuff_->getH() * 5 };
+		SDL_Rect rect = { (int)(game_->getWindowWidth() * aux / 3),(int)(game_->getWindowHeight() * 3.5 / 4 - 20) ,texSpeedBuff_->getW() * 5,texSpeedBuff_->getH() * 5 };
 		texFearBuff_->render(rect);
 	}
 }
