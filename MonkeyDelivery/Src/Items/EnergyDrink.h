@@ -9,8 +9,8 @@ class EnergyDrink : public InventoryObject
 {
 
 private:
-	const float speedBonus_ = 3;
-	const float energyBonus_ = 1.2;
+	const float speedBonus_ = 1.15;
+	const float energyBonus_ = 0.05;
 	const float timeLimit_ = 30000; // 30 seg
 public:
 

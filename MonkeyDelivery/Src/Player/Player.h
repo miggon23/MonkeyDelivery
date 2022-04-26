@@ -118,7 +118,7 @@ public:
 	inline void recoverEnergy(int amount) {};
 	inline double getEnergy() { return energyLevel_->getEnergy(); };
 	inline double getMaxEnergy() { return energyLevel_->getMaxEnergy(); };
-	inline void setStopSpending(bool set) { energyLevel_->setStopSpending(set); };
+	inline void setBonusSpending(double set) { energyLevel_->setBonusSpending(set); };
 
 	// FEAR
 	inline void getScared(int amount) { fearLevel_->getScared(amount); };

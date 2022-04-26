@@ -20,7 +20,7 @@ void PowerUpsManager::update(){
 
 		if (timerEnergyDrink_->currTime() >= timeEnergyDrinkLimit_) {
 			player_->resetVelocity();
-			player_->setStopSpending(false);
+			player_->setBonusSpending(0.0);
 			activatedEnergyDrink_ = false;
 			timerEnergyDrink_->pause();
 			std::cout << "energydrink desactivado" << std::endl;
