@@ -10,8 +10,9 @@ MissionSelectionState::MissionSelectionState(Game* game) : State(game)
 	registerCommands();
 
 	//// Aquí se cargan todas las texturas de todas las misiones 
-	//allTextures_.push_back(game->getTexture(mission1Texture));
-	//allTextures_.push_back(game->getTexture(mission2Texture));
+	//allTextures_.push_back(game->getTexture(Mission01));
+	//allTextures_.push_back(game->getTexture(Mission02));
+	//allTextures_.push_back(game->getTexture(Mission07));
 	
 }
 
@@ -22,7 +23,29 @@ MissionSelectionState::MissionSelectionState(Game* game, vector<pair<string,stri
 
 	// Bucle for que cargue solo las imagenes que se indican en missionImg
 	for (auto a : missionImg) {
-		currentTextures_.push_back(new Texture(game->getRenderer(), a.second));
+		Texture* tex = nullptr;
+		if (a.second == "Mission01") {
+			tex = game->getTexture(Mission01);
+		}else if (a.second == "Mission02") {
+			tex = game->getTexture(Mission02);
+		}else if (a.second == "Mission03") {
+			tex = game->getTexture(Mission07);
+		}else if (a.second == "Mission04") {
+			tex = game->getTexture(Mission07);
+		}else if (a.second == "Mission05") {
+			tex = game->getTexture(Mission07);
+		}else if (a.second == "Mission06") {
+			tex = game->getTexture(Mission07);
+		}else if (a.second == "Mission07") {
+			tex = game->getTexture(Mission07);
+		}else if (a.second == "Mission08") {
+			tex = game->getTexture(Mission07);
+		}else if (a.second == "Mission09") {
+			tex = game->getTexture(Mission07);
+		}
+		if (tex != nullptr)
+			currentTextures_.push_back(tex);
+
 		missionData_.push_back(a.first);
 	}
 
@@ -40,10 +63,6 @@ MissionSelectionState::~MissionSelectionState()
 	for (auto a : allTextures_) {
 		delete a;
 		a = nullptr;
-	}
-	for (auto b : currentTextures_) {
-		delete b;
-		b = nullptr;
 	}
 	box_ = nullptr;
 	background_ = nullptr;
