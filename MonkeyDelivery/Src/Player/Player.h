@@ -201,6 +201,6 @@ public:
 	// PICKAXE
 	void addPickaxe(int level);
 
-	inline void changeTalking() { isTalking_ = !isTalking_; };
+	inline void changeTalking(bool a) { isTalking_ = a; };
 	inline bool isTalking() { return isTalking_; };
 };
