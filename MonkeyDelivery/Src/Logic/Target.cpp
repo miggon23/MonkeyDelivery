@@ -35,12 +35,14 @@ void Target::onPlayerInteraction(Player* player)
 	if (active_) {
 
 		if (player->hasMissionObject()) {
-			
 
 			game->newDialogue(textPath_);
 
 			player->removeMissionObject();
 			missionsPanel_->onMissionCompleted();
+		}
+		else {
+			// activar un dialogo que diga que busques su paquete
 		}
 	}
 }

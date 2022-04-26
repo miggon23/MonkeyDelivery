@@ -80,7 +80,7 @@ enum TextureName
 		mission_UI_Selector,
 		Mission01,
 		Mission02,
-		Mission03,
+		Mission07,
 		MissionPanel_Interact,
 	
 	//8-Monkey SpriteSheets - 3
@@ -218,7 +218,7 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
 	{"missions/mission_UI_Selector.png",1,1},
 	{"missions/Mission01.png",1,1},
 	{"missions/Mission02.png",1,1},
-	{"missions/Mission03.png",1,1},
+	{"missions/Mission07.png",1,1},
 	{"missions/MissionPanel_Interact.png",1,1},
 
 	//8-Monkey SpriteSheets

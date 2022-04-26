@@ -15,7 +15,9 @@
       "targetPositionX": 2850,
       "targetPositionY": 1550,
       "targetWidth": 60,
-      "targetHeight": 60
+      "targetHeight": 60,
+      "objectPositionX": 0,
+      "objectPositionY": 0
     },
     {
       "id": "Mission2",
@@ -32,13 +34,15 @@
       "targetPositionX": 7255,
       "targetPositionY": 1065,
       "targetWidth": 60,
-      "targetHeight": 60
+      "targetHeight": 60,
+      "objectPositionX": 0,
+      "objectPositionY": 0
     },
     {
       "id": "Mission3",
       "level": 1,
       "completed": false,
-      "image": "./Images/missions/Mission03.png",
+      "image": "./Images/missions/Mission07.png",
       "helperImage": "./Images/missions/mission_UI_Helper.png",
       "maxmoney": 100,
       "minmoney": 50,
@@ -49,13 +53,15 @@
       "targetPositionX": 8700,
       "targetPositionY": 1650,
       "targetWidth": 60,
-      "targetHeight": 80
+      "targetHeight": 80,
+      "objectPositionX": 2850,
+      "objectPositionY": 1550
     },
     {
       "id": "Mission4",
       "level": 2,
       "completed": false,
-      "image": "./Images/missions/Mission03.png",
+      "image": "./Images/missions/Mission07.png",
       "helperImage": "./Images/missions/mission_UI_Helper.png",
       "maxmoney": 100,
       "minmoney": 50,
@@ -66,13 +72,15 @@
       "targetPositionX": -250,
       "targetPositionY": 730,
       "targetWidth": 70,
-      "targetHeight": 90
+      "targetHeight": 90,
+      "objectPositionX": 2850,
+      "objectPositionY": 1550
     },
     {
       "id": "Mission5",
       "level": 2,
       "completed": false,
-      "image": "./Images/missions/Mission03.png",
+      "image": "./Images/missions/Mission07.png",
       "helperImage": "./Images/missions/mission_UI_Helper.png",
       "maxmoney": 100,
       "minmoney": 50,
@@ -83,13 +91,15 @@
       "targetPositionX": -250,
       "targetPositionY": 730,
       "targetWidth": 70,
-      "targetHeight": 90
-    },  
+      "targetHeight": 90,
+      "objectPositionX": 0,
+      "objectPositionY": 0
+    },
     {
       "id": "Mission6",
       "level": 2,
       "completed": false,
-      "image": "./Images/missions/Mission03.png",
+      "image": "./Images/missions/Mission07.png",
       "helperImage": "./Images/missions/mission_UI_Helper.png",
       "maxmoney": 100,
       "minmoney": 50,
@@ -100,13 +110,15 @@
       "targetPositionX": -250,
       "targetPositionY": 730,
       "targetWidth": 70,
-      "targetHeight": 90
-    },    
+      "targetHeight": 90,
+      "objectPositionX": 0,
+      "objectPositionY": 0
+    },
     {
       "id": "Mission7",
       "level": 3,
       "completed": false,
-      "image": "./Images/missions/Mission03.png",
+      "image": "./Images/missions/Mission07.png",
       "helperImage": "./Images/missions/mission_UI_Helper.png",
       "maxmoney": 100,
       "minmoney": 50,
@@ -117,13 +129,15 @@
       "targetPositionX": -250,
       "targetPositionY": 730,
       "targetWidth": 70,
-      "targetHeight": 90
-    },    
+      "targetHeight": 90,
+      "objectPositionX": 2850,
+      "objectPositionY": 1550
+    },
     {
       "id": "Mission8",
       "level": 3,
       "completed": false,
-      "image": "./Images/missions/Mission03.png",
+      "image": "./Images/missions/Mission07.png",
       "helperImage": "./Images/missions/mission_UI_Helper.png",
       "maxmoney": 100,
       "minmoney": 50,
@@ -134,13 +148,15 @@
       "targetPositionX": -250,
       "targetPositionY": 730,
       "targetWidth": 70,
-      "targetHeight": 90
-    },    
+      "targetHeight": 90,
+      "objectPositionX": 0,
+      "objectPositionY": 0
+    },
     {
       "id": "Mission9",
       "level": 3,
       "completed": false,
-      "image": "./Images/missions/Mission03.png",
+      "image": "./Images/missions/Mission07.png",
       "helperImage": "./Images/missions/mission_UI_Helper.png",
       "maxmoney": 100,
       "minmoney": 50,
@@ -151,7 +167,9 @@
       "targetPositionX": -250,
       "targetPositionY": 730,
       "targetWidth": 70,
-      "targetHeight": 90
+      "targetHeight": 90,
+      "objectPositionX": 0,
+      "objectPositionY": 0
     }
   ],
 

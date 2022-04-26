@@ -29,6 +29,9 @@ MissionsPanel::MissionsPanel(Game* game) : GameObject(game, true)
 	activeTarget_ = new Target(this, game);
 	game->add(activeTarget_);
 
+	missionObject_ = new MissionObject(this, game);
+	game->add(missionObject_);
+
 }
 
 MissionsPanel::~MissionsPanel()
@@ -98,7 +101,13 @@ void MissionsPanel::onMissionSelected(string missionId)
 		currentMission_ = new Mission(missionId, m.isExpress); 
 
 		// comunicarlo al inventario o spawnear el objeto, dependiendo del tipo de misión
-		game->getPlayer()->addMissionObject(new Package(game->getTexture(Item_Package), game, game->getPlayer()));
+		if (m.isSpecial) {
+			missionObject_->changeActive();
+			missionObject_->setPosition(m.xObjPos, m.yObjPos);
+		}
+		else {
+			game->getPlayer()->addMissionObject(new Package(game->getTexture(Item_Package), game, game->getPlayer()));
+		}
 	
 		//Misiones express
 		endTime_ = initialTicks_ + m.minTime;
@@ -113,6 +122,7 @@ void MissionsPanel::onMissionSelected(string missionId)
 
 		//iniciar el contador
 		initialTicks_ = SDL_GetTicks();
+
 	}
 
 	// hide pannel
@@ -221,21 +231,8 @@ void MissionsPanel::loadMissions(std::string filename)
 					int tH = vObj["targetHeight"]->AsNumber();
 					bool isExpress = vObj["express"]->AsBool();
 					bool isSpecial = vObj["special"]->AsBool();
-
-				/* switch (level)
-					{
-					case 1:
-						nLevel1_ += 1;
-						break;
-					case 2:
-						nLevel2_ += 1;
-						break;
-					case 3:
-						nLevel3_ += 1;
-						break;
-					default:
-						break;
-					}*/
+					int oX = vObj["objectPositionX"]->AsNumber();
+					int oY = vObj["objectPositionY"]->AsNumber();
 
 					levels_[level]++;
 
@@ -253,7 +250,9 @@ void MissionsPanel::loadMissions(std::string filename)
 						tH,
 						maxMoney,
 						minMoney,
-						minTime
+						minTime,
+						oX,
+						oY
 					};
 #ifdef _DEBUG
 					std::cout << "Loading mission with id: " << key << std::endl;

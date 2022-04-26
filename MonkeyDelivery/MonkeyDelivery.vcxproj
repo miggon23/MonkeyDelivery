@@ -225,6 +225,7 @@
     <ClInclude Include="Src\Logic\MAPPoint.h" />
     <ClInclude Include="Src\Logic\Mission.h" />
     <ClInclude Include="Src\Logic\MissionManager.h" />
+    <ClInclude Include="Src\Logic\MissionObject.h" />
     <ClInclude Include="Src\Logic\MissionsPanel.h" />
     <ClInclude Include="Src\Items\Package.h" />
     <ClInclude Include="Src\Items\Pickaxe.h" />
@@ -338,6 +339,7 @@
     <ClCompile Include="Src\Logic\MAPPoint.cpp" />
     <ClCompile Include="Src\Logic\Mission.cpp" />
     <ClCompile Include="Src\Logic\MissionManager.cpp" />
+    <ClCompile Include="Src\Logic\MissionObject.cpp" />
     <ClCompile Include="Src\Logic\MissionsPanel.cpp" />
     <ClCompile Include="Src\Items\Package.cpp" />
     <ClCompile Include="Src\Items\Pickaxe.cpp" />

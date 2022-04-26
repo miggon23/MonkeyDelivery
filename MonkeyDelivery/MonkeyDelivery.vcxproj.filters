@@ -299,6 +299,7 @@
     <ClCompile Include="Src\Logic\PowerUpsManager.cpp">
       <Filter>Source\Logic\Managers/Game</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Logic\MissionObject.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MonkeyDelivery.h" />
@@ -638,6 +639,7 @@
     <ClInclude Include="Src\Logic\PowerUpsManager.h">
       <Filter>Header\Logic\Managers/Game</Filter>
     </ClInclude>
+    <ClInclude Include="Src\Logic\MissionObject.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="MonkeyDelivery.rc" />

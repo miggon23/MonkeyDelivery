@@ -2,6 +2,8 @@
 #include "GameObject.h"
 #include "Mission.h"
 #include "Target.h"
+#include "MissionObject.h"
+
 #include <map>
 
 struct MissionInfo {
@@ -19,6 +21,8 @@ struct MissionInfo {
 	int maxMoney;
 	int minMoney;
 	int minTime;
+	int xObjPos;
+	int yObjPos;
 };
 
 using sdl_resource_table = std::map<std::string, MissionInfo>;
@@ -44,6 +48,9 @@ private:
 
 	// Vecino activo
 	Target* activeTarget_;
+
+	// Item para misiones especiales
+	MissionObject* missionObject_;
 
 	Uint32 initialTicks_; // valor de los ticks cuando se activó la misión
 	Uint32 endTime_;
