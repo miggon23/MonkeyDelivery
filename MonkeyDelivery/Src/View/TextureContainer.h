@@ -54,6 +54,8 @@ enum TextureName
 		Item_Package,
 		Item_Soda01,
 		Item_Soda02,
+		Item_pickaxe01,
+		Item_pickaxe02,
 
 	//5,2-Items (World)
 		lanternCircular,
@@ -65,6 +67,7 @@ enum TextureName
 	//5,1-Items (Light)
 		worldObject_Bed,
 		worldObject_blockRock01,
+		worldObject_blockRock02,
 		worldObject_Chest_Closed,
 		worldObject_Chest_Opened,
 		worldObject_Gold,
@@ -118,8 +121,12 @@ enum TextureName
 		UI_InventoryBarOverlay,
 		UI_InventorySelector,
 		UI_playerHUD,
-	
-	//12-UI Overlay (Menu) - 19
+   //12-UI Overlay (InGame Buffs) - 3
+		UI_energyBuff,
+		UI_fearBuff,
+		UI_speedBuff,
+
+   //13-UI Overlay (Menu) - 19
 		UI_Black,
 		UI_Brightness,
 		button_Back,
@@ -143,7 +150,7 @@ enum TextureName
 		missingTex,
 };
 
-const int NUM_TEXTURES = 98;
+const int NUM_TEXTURES = 104;
 
 typedef struct {
 	string filename;
@@ -193,6 +200,8 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
 	{"items/Item_Package.png",1,1},
 	{"items/Item_Soda01.png",1,1},
 	{"items/Item_Soda02.png",1,1},
+	{"items/Item_pickaxe01.png",1,1},
+	{"items/Item_pickaxe02.png",1,1},
 	
 	//Items Light
 		{"items/light/lanternCircular.png",1,1},
@@ -204,6 +213,7 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
 	//Items World
 		{"items/world/worldObject_Bed.png",1,1},
 		{"items/world/worldObject_blockRock01.png",1,1},
+		{"items/world/worldObject_blockRock02.png",1,1},
 		{"items/world/worldObject_Chest_Closed.png",1,1},
 		{"items/world/worldObject_Chest_Opened.png",1,1},
 		{"items/world/worldObject_Gold.png",1,1},
@@ -259,6 +269,11 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
 	{"ui/InGame/UI_InventorySelector.png",1,1},
 	{"ui/InGame/UI_playerHUD.png",1,1},
 
+    //UI Overlay (InGame Buffs)
+	{"ui/InGame/UI_energyBuff.png",1,1 },
+	{"ui/InGame/UI_fearBuff.png",1,1 },
+	{"ui/InGame/UI_speedBuff.png",1,1 },
+		
 	//UI Overlay (Menu)
 	{"ui/Menu/black.png",1,1},
 	{"ui/Menu/Brightness.png",1,1},

@@ -17,6 +17,7 @@ bool Bike::useObject() {
 		player_->setVel(player_->getVel() / speedMult);
 		cout << "Me bajo de la Bici";
 	}
+	player_->initPowerUp(boots);
 	cout << endl;
 	auto c = player_->getVel();
 	active = !active;
