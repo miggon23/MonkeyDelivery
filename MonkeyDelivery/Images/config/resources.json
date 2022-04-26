@@ -46,7 +46,7 @@
       "helperImage": "./Images/missions/mission_UI_Helper.png",
       "maxmoney": 100,
       "minmoney": 50,
-      "mintime": 45000,
+      "mintime": 10000,
       "express": true,
       "special": false,
       "target": "NPC_Pavo",
@@ -173,64 +173,62 @@
     }
   ],
 
-  "DialogueBox1": [
+  "dialogues": [
     {
+      "id": "DialogueBox1",
       "text": "Buenisimas tardes monos y senioras, bienvenido a DocTocs"
-    }
-  ],
-  "Mission1Text": [
+    },
     {
+      "id": "Mission1Text",
       "text": "Muchas gracias. Debes ser el nuevo repartidor, buen trabajo. Si sigues asi te aseguro que te iran las cosas genial en Todesfall."
-    }
-  ],
-  "Mission2Text": [
+    },
     {
+      "id": "Mission2Text",
       "text": "Menos mal que has encontrado mis chocolatinas. Las ultimas Flappy Hippo que comi estaban mas crujientes de lo normal... El ultimo tu nunca me las traia a tiempo y ya estaba harta."
-    }
-  ],
-  "Mission3Text": [
+    },
     {
+      "id": "Mission3Text",
       "text": "Por fin. Ahora podre volver a lucir mi pluma- esto, mis plumas. Tengo que admitir que tu eres mas agradable a la vista que el anterior repartidor... Espero que tu dures mas."
-    }
-  ],
-  "Mission4Text": [
+    },
     {
+      "id": "Mission4Text",
       "text": "Wilson. Como te he echado de menos. Muchas gracias amigo, sin ti, a saber que le habria pasado a Wilson. Hasta la proxima... si sigues haciendo bien tu trabajo claro, de lo contrario, acabaras como Wilson..."
-    }
-  ],
-  "Mission5Text": [
+    },
     {
+      "id": "Mission5Text",
       "text": "Muchas gracias por el paquete, ahora podran atacar mi cuerpo pero mi mente estara a salvo. No se como tienes el valor para lidiar con los vecinos, con las cosas horribles que hiciceron... Solo te dire que tengas cuidado."
-    }
-  ],
-  "Mission6Text": [
+    },
     {
+      "id": "Mission6Text",
       "text": "Gracias. Estoy harta de ese maldito zorro y su acoso constante, parece que no sabe de lo que soy capaz. Tranquilo, no voy a hacerle dano, siempre que no se me acerque claro..."
-    }
-  ],
-  "Mission7Text": [
+    },
     {
+      "id": "Mission7Text",
       "text": "Vaya, vaya. Veo que has encontrado mi producto... Mis pacientes lo echaban en falta. Estaban en el cementerio, al lado de la tumba. Jaja, tranquilo, estaba enterrando a la ultima victi- digo, al ultimo paciente, cuando las perdi."
-    }
-  ],
-  "Mission8Text": [
+    },
     {
+      "id": "Mission8Text",
       "text": "Zorro"
-    }
-  ],
-  "Mission9Text": [
+    },
     {
+      "id": "Mission9Text",
       "text": "Cocodrilo"
-    }
-  ],
-  "MissionsFinished": [
+    },
     {
+      "id": "Mission1Text",
+      "text": "Muchas gracias. Debes ser el nuevo repartidor, buen trabajo. Si sigues asi te aseguro que te iran las cosas genial en Todesfall."
+    },
+    {
+      "id": "MissionsFinished",
       "text": "Has terminado todas las misiones, enhorabuena."
-    }
-  ],
-  "ChestMoneyText": [
+    },
     {
-      "text" :  "Has encontrado unas monedas"
+      "id": "ChestMoneyText",
+      "text": "Has encontrado unas monedas"
+    },
+    {
+      "id": "MissionAlreadySelected",
+      "text": "Tienes un pedido pendiente. Completalo antes de comenzar otro. El cliente espera."
     }
   ],
 

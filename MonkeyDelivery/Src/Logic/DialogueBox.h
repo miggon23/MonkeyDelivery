@@ -2,6 +2,8 @@
 
 #include <string>
 #include <vector>
+#include <map>
+
 #include "../View/TextureContainer.h"
 #include "../View/Texture.h"
 #include "../utils/Vector2D.h"
@@ -14,6 +16,9 @@ class Game;
 class DialogueBox : public GameObject
 {
 private:
+
+	map<string, string> textList_;
+
 	Font* font_;
 	string text_;
 	Point2D<int> textPos_;
@@ -49,6 +54,8 @@ public:
 	DialogueBox(Game* game);
 	~DialogueBox();
 	
+	void loadTexts();
+
 	void changeText(string id);
 	void changeMissionText(string id); // los textos de mision tienen una función distinta al acabar
 	void inShow();

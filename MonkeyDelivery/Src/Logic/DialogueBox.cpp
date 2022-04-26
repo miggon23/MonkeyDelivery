@@ -20,6 +20,8 @@ DialogueBox::DialogueBox(Game* game) : GameObject(game)
 	setPosition(xPos_, yPos_);
 	setDimension(width_, height_);
 	textPos_ = { xText_, yText_ };
+
+	loadTexts();
 }
 
 DialogueBox::~DialogueBox()
@@ -30,47 +32,16 @@ DialogueBox::~DialogueBox()
 
 void DialogueBox::changeText(string id)
 {
-	std::unique_ptr<JSONValue> jValueRoot(JSON::ParseFromFile("Images/config/resources.json"));
+	// cambiar texto
+	text_ = textList_.at(id);
 
+	//reinicio del texto
+	reiniciateText();
 
-	if (jValueRoot == nullptr || !jValueRoot->IsObject()) {
-		throw "Something went wrong while load/parsing 'Images/config/resources.json'";
-	}
-
-	JSONObject root = jValueRoot->AsObject();
-	JSONValue* jValue = nullptr;
-
-	jValue = root[id];
-	if (jValue != nullptr) {
-		if (jValue->IsArray()) {			
-			for (auto& v : jValue->AsArray()) {
-				if (v->IsObject()) {
-					JSONObject vObj = v->AsObject();
-
-					text_ = vObj["text"]->AsString();
-
-					//reinicio del texto
-					reiniciateText();
-					
-					double iconId = -1;
-					if(vObj["icon"] != nullptr)
-						iconId = vObj["icon"]->AsNumber();
-					//cambio a la nueva textura de icono
-					getIcon(iconId);
-					
-				}
-				else {
-					throw "'missions' array in '" + id
-						+ "' includes and invalid value";
-				}
-			}
-
-			
-		}
-		else {
-			throw "'fonts' is not an array in '" + id + "'";
-		}
-	}
+	// cambiar icono
+	double iconId = -1;
+	//cambio a la nueva textura de icono
+	getIcon(iconId);
 }
 
 void DialogueBox::changeMissionText(string id) {
@@ -161,6 +132,47 @@ void DialogueBox::interact()
 		hide();
 		game->dialogueEnd(isMissionText);
 		isMissionText = false;
+	}
+}
+
+void DialogueBox::loadTexts()
+{
+	string filename = "Images/config/resources.json";
+	std::unique_ptr<JSONValue> jValueRoot(JSON::ParseFromFile(filename));
+
+	if (jValueRoot == nullptr || !jValueRoot->IsObject()) {
+		throw "Something went wrong while load/parsing 'Images/config/resources.json'";
+	}
+
+	JSONObject root = jValueRoot->AsObject();
+	JSONValue* jValue = nullptr;
+
+	jValue = root["dialogues"];
+	if (jValue != nullptr) {
+		if (jValue->IsArray()) {
+			for (auto& v : jValue->AsArray()) {
+				if (v->IsObject()) {
+					JSONObject vObj = v->AsObject();
+
+					std::string id = vObj["id"]->AsString();
+					std::string text = vObj["text"]->AsString();
+
+					textList_.insert(std::make_pair(id, text));
+
+					// cargar iconos
+
+					//if (vObj["icon"] != nullptr)
+					//	iconId = vObj["icon"]->AsNumber();
+				}
+				else {
+					throw "'missions' array in '" + filename
+						+ "' includes and invalid value";
+				}
+			}
+		}
+		else {
+			throw "'fonts' is not an array in '" + filename + "'";
+		}
 	}
 }
 

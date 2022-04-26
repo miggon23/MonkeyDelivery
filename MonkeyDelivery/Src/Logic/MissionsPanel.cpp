@@ -46,33 +46,39 @@ MissionsPanel::~MissionsPanel()
 
 void MissionsPanel::onPlayerInteraction(Player* player)
 {
-	if (!missionsFinished_) {
-		std::cout << "Activating Mission Selection State\n";
-
-		vector<pair<string, string>> missionsSent;
-
-		int a = 0;
-		string b = "Mission";
-
-		missionsSent.reserve(levels_[currentLevel_]);
-		for (int i = levelsCompleted_[currentLevel_ - 1] + 1; i <= levelsCompleted_[currentLevel_ - 1] + levels_[currentLevel_]; ++i) {
-			b += to_string(i);
-			if (!missions_.at(b).completed) {
-				missionsSent.push_back(make_pair(b, missions_.at(b).imgRoute));
-			}
-			b = "Mission";
-		}
-
-
-		// show pannel
-		game->InGame();
-		game->setSaveState(game->getState());
-		game->setState(new MissionSelectionState(game, missionsSent));
+	// Si tengo una misión, no dejo acceder al panel
+	if (currentMission_ != nullptr){
+		game->newDialogue("MissionAlreadySelected");
 	}
 	else {
-		// mostrar mensaje de que ya no quedan más misiones
-		string a = "MissionsFinished";
-		game->newDialogue(a);
+		if (!missionsFinished_) {
+			std::cout << "Activating Mission Selection State\n";
+
+			vector<pair<string, string>> missionsSent;
+
+			int a = 0;
+			string b = "Mission";
+
+			missionsSent.reserve(levels_[currentLevel_]);
+			for (int i = levelsCompleted_[currentLevel_ - 1] + 1; i <= levelsCompleted_[currentLevel_ - 1] + levels_[currentLevel_]; ++i) {
+				b += to_string(i);
+				if (!missions_.at(b).completed) {
+					missionsSent.push_back(make_pair(b, missions_.at(b).imgRoute));
+				}
+				b = "Mission";
+			}
+
+
+			// show pannel
+			game->InGame();
+			game->setSaveState(game->getState());
+			game->setState(new MissionSelectionState(game, missionsSent));
+		}
+		else {
+			// mostrar mensaje de que ya no quedan más misiones
+			string a = "MissionsFinished";
+			game->newDialogue(a);
+		}
 	}
 }
 
@@ -85,6 +91,7 @@ void MissionsPanel::update()
 
 		// terminar misión express
 		onMissionCompleted();
+		dialogueEnd();
 	}
 }
 
@@ -148,11 +155,6 @@ void MissionsPanel::dialogueEnd()
 	// Despawnear vecino -> cuando acabe el dialogo
 	activeTarget_->changeActive();
 	
-	// sonido de ganar
-	sdlutils().soundEffects().at("reward").setVolume(game->getSoundEfectsVolume() * 2);
-	sdlutils().soundEffects().at("reward").play(0, 1);
-
-
 	MissionInfo& m = missions_.at(currentMission_->getName());
 
 	// Dar la recompensa
@@ -164,11 +166,19 @@ void MissionsPanel::dialogueEnd()
 	}
 	endTime_ = 0; // resetea la variable
 
-	if (m.isExpress && reward < 0) { // si es express y se ha retrasado tanto que el dinero es negativo
+	if (m.isExpress && reward <= 0) { // si es express y se ha retrasado tanto que el dinero es negativo
 		reward = 0;
+
+		// sonido de perder
+		sdlutils().soundEffects().at("reward").setVolume(game->getSoundEfectsVolume() * 2);
+		sdlutils().soundEffects().at("reward").play(0, 1);
 	}
 	else if (reward < m.minMoney) { // si no es express le aseguro un mínimo de dinero
 		reward = m.minMoney;
+
+		// sonido de ganar
+		sdlutils().soundEffects().at("reward").setVolume(game->getSoundEfectsVolume() * 2);
+		sdlutils().soundEffects().at("reward").play(0, 1);
 	}
 
 	game->changeMoneyPlayer(reward);
