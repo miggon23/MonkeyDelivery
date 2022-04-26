@@ -12,7 +12,7 @@
 
 MissionsPanel::MissionsPanel(Game* game) : GameObject(game, true)
 {
-	setPosition(3150, 1450);
+	setPosition(4005, 1150);
 	setDimension(108, 160);
 	setTexture(MissionPanel_Interact);
 

@@ -4,7 +4,7 @@
 
 IntectuableShop::IntectuableShop(Game* game,int x , int y) :GameObject(game, true) {
 	setTexture(ShopPanel_Interact);
-	setPosition(3350, 1450);
+	setPosition(3700, 1600);
 	setDimension(108, 160);
 }
 

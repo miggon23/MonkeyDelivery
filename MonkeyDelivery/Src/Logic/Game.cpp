@@ -137,6 +137,7 @@ void Game::start()
     
     mapPoint = new MAPPoint(this);
     pIcon = new PlayerIcon(this);
+
     add(new IntectuableShop(this, 2000, 400));
     shop_ = new Shop(player_, this);
 
@@ -145,9 +146,9 @@ void Game::start()
     GameObjectGenerator::generateLevel(this);
 
     dialogueBox_ = new DialogueBox(this);
-    // dialogueBox_->changeText("DialogueBox1");
-    // dialogueBox_->show();
+
     info = new UI_Info(this);
+
    /* auto* bed = new Bed(this);
     bed->setPosition(1820, 1560);
     player_->bedPos(1820, 1560);
@@ -157,6 +158,7 @@ void Game::start()
     cama->setPosition(3280, 1120);
     player_->bedPos(3650, 1300);
     add(cama);
+
     partSystem = new ParticleExample();
     partSystem->setRenderer(renderer);             // set the renderer
     partSystem->setPosition(670, 600);             // set the position
