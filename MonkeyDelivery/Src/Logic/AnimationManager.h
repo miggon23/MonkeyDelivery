@@ -110,43 +110,68 @@ public:
 		}
 		else if (playerState_ == GoToSleep) {
 
-			texturaRect.x = x1;
-			texturaRect.y = 300;
+			texturaRect.x = 0;
+			texturaRect.y = 90;
 			tex->render(texturaRect, player);
 
 			if (timer_->TimeScale() - timer >= playerFrameSpeed) {
-				x1 += 100;
-				if (texturaRect.x >= 500) {
-					texturaRect.x = 100;
-					x1 = 100;
+				x1 += 16;
+				if (texturaRect.x >= playerLimit) {
+					texturaRect.x = 0;
+					x1 = 16;
 				}
 				timer = timer_->TimeScale();
 			}
 		}
 		else if (playerState_ == Scared) {
-			texturaRect.x = x1;
-			texturaRect.y = 200;
+			texturaRect.x = 0;
+			texturaRect.y = 90;
 			tex->render(texturaRect, player);
 
 			if (timer_->TimeScale() - timer >= playerFrameSpeed) {
-				x1 += 100;
-				if (texturaRect.x >= 500) {
-					texturaRect.x = 100;
-					x1 = 100;
+				x1 += 16;
+				if (texturaRect.x >= playerLimit) {
+					texturaRect.x = 0;
+					x1 = 16;
 				}
 				timer = timer_->TimeScale();
 			}
 		}
-		else if (playerState_ == Sleeping) {
-			texturaRect.y = 600;
+		if (playerState_ == Sleeping)
+		{
+			//las x
+			switch (newDir.x)
+			{
+			case 1: //Derecha
+				texturaRect.y = 54 + 90;
+				break;
+			case -1: //Izquierda
+				texturaRect.y = 36 + 90;
+				break;
+			default:
+				break;
+			}
+			//las y
+			switch (newDir.y)
+			{
+			case 1: //Abajo
+				texturaRect.y = 0 + 90;
+				break;
+			case -1: //Arriba
+				texturaRect.y = 72+ 90;
+				break;
+			default:
+				break;
+			}
+
 			tex->render(texturaRect, player);
-			if (timer_->TimeScale() - timer >= 400) {
-				texturaRect.x += 100;
-				if (texturaRect.x >= 200) {
+
+			if (timer_->TimeScale() - timer >= playerFrameSpeed) {
+				texturaRect.x += 16;
+				if (texturaRect.x >= playerLimit) {
 					texturaRect.x = 0;
 				}
 				timer = timer_->TimeScale();
-				cout << texturaRect.x << endl;
 			}
 		}
 	}
