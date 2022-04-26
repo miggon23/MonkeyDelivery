@@ -12,20 +12,22 @@ Cuando se abre el panel de misiones y se selecciona una mision, si se vuelve a e
 El cuadro de diálogo es muy pequeño
 JSON no admite caracteres especiales ( !, ?, tíldes)
 
+Animaciones del mono no van bien, añadir Idle
+
+ARTE
 Enemigos----
-Murcielago - Hecho (hay que subirlo)
 Gato - Hecho (hay que subirlo)
 Toro - Sprite
 Escorpion - Sprite
 
 Actualizar Misiones----
-Texturas del pico
-Cambiar el sprite de la roca
 Terminar de Arrelgar los tiles que faltan--------
 
 Items------
-Soda_02 - Hecho(hay que subirlo)
-Platanos - Hecho(hay que subirlo)
+Caja Flappy Hippo(puede ser el paquete)
+Pescado Muerto
+DROGA
+Arreglar Luces
                                        
 Creditos-------
 Marco Minimapa -------                                                                 
