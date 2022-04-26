@@ -57,8 +57,15 @@ void PowerUpsManager::draw(){
 void PowerUpsManager::InitTimer(PowerUps x){
 	switch (x){
 	case energyDrink:
-		activatedEnergyDrink_ = true;
-		timerEnergyDrink_->reset();
+		//Si no estaba activado el energy drink
+		if (!activatedEnergyDrink_) {
+			activatedEnergyDrink_ = true;
+			timerEnergyDrink_->reset();
+			player_->setVel(player_->getVel() * energyDrinkSpeedBonus_);
+			player_->recoverEnergy(player_->getMaxEnergy() * energyDrinkEnergyBonus_);
+			player_->setBonusSpending(energyDrinkEnergyBonus_);
+		}else
+			timerEnergyDrink_->reset();
 		break;
 	case boots:
 		activateBoots_ = !activateBoots_;
@@ -73,7 +80,7 @@ void PowerUpsManager::desactivate(PowerUps x)
 	switch (x)
 	{
 	case energyDrink:
-		player_->resetVelocity();
+		player_->setVel(player_->getVel() / energyDrinkSpeedBonus_);
 		player_->setBonusSpending(0.0);
 		activatedEnergyDrink_ = false;
 		timerEnergyDrink_->pause();

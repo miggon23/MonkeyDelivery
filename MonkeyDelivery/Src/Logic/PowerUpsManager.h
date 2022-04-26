@@ -7,10 +7,12 @@ class Game;
 class PowerUpsManager{
 	Player* player_;
 	Game* game_;
-	//necesitaremos un timer por powerUp y un booleano
+	//necesitaremos un timer por powerUp y un booleano, además del efecto que produzca
 	VirtualTimer* timerEnergyDrink_;
 	bool activatedEnergyDrink_;
 	int timeEnergyDrinkLimit_ = 30000;
+	float energyDrinkSpeedBonus_ = 1.25;
+	float energyDrinkEnergyBonus_ = 0.05;
 
 	VirtualTimer* timerFearBuff_;
 	bool activatedFearBuff;

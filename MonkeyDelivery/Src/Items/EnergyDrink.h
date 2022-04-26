@@ -7,11 +7,7 @@ class Player;
 // Aumenta la energía un 20% 
 class EnergyDrink : public InventoryObject
 {
-
-private:
-	const float speedBonus_ = 1.15;
-	const float energyBonus_ = 0.05;
-	const float timeLimit_ = 30000; // 30 seg
+	
 public:
 
 	EnergyDrink(Texture* tex, Game* game,Player* player);
