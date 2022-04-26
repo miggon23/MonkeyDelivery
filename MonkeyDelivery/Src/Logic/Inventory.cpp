@@ -10,6 +10,7 @@ Inventory::Inventory(Game* game, Player* player, SDL_Renderer* renderer) : playe
 	missionObject_ = nullptr;
 
 	base_ = game->getTexture(UI_InventoryBar);
+	selector_ = game->getTexture(UI_InventorySelector);
 	overlay_ = game->getTexture(UI_InventoryBarOverlay);
 	baseRect_ = {650, 900, 120*4, 18*4}; //hay que cambiarlo por window H/H	
 	InventoryObject* relleno = new InventoryObject(game->getTexture(UI_Black), game, game->getPlayer());
@@ -195,7 +196,7 @@ void Inventory::draw()
 			inventory_[i]->getTexture()->render(oRect);
 				
 		if (i == selectedInventoryObject) 
-			base_->render(oRect);
+			selector_->render(oRect);
 		
 	}
 	overlay_->render(baseRect_);

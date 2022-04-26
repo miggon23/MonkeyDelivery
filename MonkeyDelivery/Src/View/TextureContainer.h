@@ -46,12 +46,14 @@ enum TextureName
 		scorpionSS_Default,
 	
 	//5-Items (General) - 17
+		Item_Banana,
 		Item_Boots01,
 		Item_Boots02,
 		Item_Boots03,
 		Item_Lantern01,
 		Item_Package,
-		Item_Soda,
+		Item_Soda01,
+		Item_Soda02,
 
 	//5,2-Items (World)
 		lanternCircular,
@@ -116,6 +118,7 @@ enum TextureName
 		UI_fearLevel,
 		UI_InventoryBar,
 		UI_InventoryBarOverlay,
+		UI_InventorySelector,
 		UI_playerHUD,
 	
 	//12-UI Overlay (Menu) - 19
@@ -142,7 +145,7 @@ enum TextureName
 		missingTex,
 };
 
-const int NUM_TEXTURES = 97;
+const int NUM_TEXTURES = 100;
 
 typedef struct {
 	string filename;
@@ -184,12 +187,14 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
 	{"enemies/scorpionSS_Default.png",1,1},
 
 	//5-Items
+	{"items/Item_Banana.png",1,1},
 	{"items/Item_Boots01.png",1,1},
 	{"items/Item_Boots02.png",1,1},
 	{"items/Item_Boots03.png",1,1},
 	{"items/Item_Lantern01.png",1,1},
 	{"items/Item_Package.png",1,1},
-	{"items/Item_Soda.png",1,1},
+	{"items/Item_Soda01.png",1,1},
+	{"items/Item_Soda02.png",1,1},
 	
 	//Items Light
 		{"items/light/lanternCircular.png",1,1},
@@ -255,6 +260,7 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
 	{"ui/InGame/UI_fearLevel.png",1,1},
 	{"ui/InGame/UI_InventoryBar.png",1,1},
 	{"ui/InGame/UI_InventoryBarOverlay.png",1,1},
+	{"ui/InGame/UI_InventorySelector.png",1,1},
 	{"ui/InGame/UI_playerHUD.png",1,1},
 
 	//UI Overlay (Menu)
