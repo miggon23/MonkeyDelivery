@@ -159,10 +159,8 @@ void DialogueBox::interact()
 		showLetterTime_ = fastUpdateTime_;
 	else {
 		hide();
-		if (isMissionText) {
-			game->dialogueEnd();
-			isMissionText = false;
-		}
+		game->dialogueEnd(isMissionText);
+		isMissionText = false;
 	}
 }
 

@@ -40,6 +40,9 @@ private:
 	int alpha = SDL_ALPHA_TRANSPARENT;
 	VirtualTimer timer;
 
+	bool isTalking_ = false; // determina si el player está con un diálogo abierto
+	// para bloquear su movimiento y acciones
+
 #pragma region Sleep
 	bool sleeping = false;
 	bool boolrenderSleepText = false;
@@ -189,4 +192,6 @@ public:
 
 	// PICKAXE
 	void addPickaxe(int level);
+
+	inline void changeTalking() { isTalking_ = !isTalking_; };
 };

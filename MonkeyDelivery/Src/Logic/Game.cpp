@@ -499,9 +499,12 @@ void Game::loadMap(string const& filename)
     SDL_SetRenderTarget(renderer, nullptr);
 }
 
-void Game::dialogueEnd()
+void Game::dialogueEnd(bool isMission)
 {
-    missionsPanel_->dialogueEnd();
+    player_->changeTalking();
+    if (isMission) {
+        missionsPanel_->dialogueEnd();
+    }
 }
 
 

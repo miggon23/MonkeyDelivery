@@ -196,9 +196,9 @@ public:
 
     //texts
     void interactDialogue();   
-    inline void newDialogue(const string& text) { dialogueBox_->changeText(text); };
-    inline void newMissionDialogue(const string& text) { dialogueBox_->changeMissionText(text); };
-    void dialogueEnd();
+    inline void newDialogue(const string& text) { dialogueBox_->changeText(text); player_->changeTalking(); };
+    inline void newMissionDialogue(const string& text) { dialogueBox_->changeMissionText(text); player_->changeTalking();};
+    void dialogueEnd(bool isMission);
 
     //Tilemap
     void loadMap(string const& filename);
