@@ -217,9 +217,10 @@ void Game::draw()
     for (auto enemy : enemyContainer_)
         enemy->draw();
 
-    for (auto c : collisions_) {
-        c->drawDebug();
-    }
+    // Dibujar colliders
+    //for (auto c : collisions_) {
+    //    c->drawDebug();
+    //}
 
     info->draw();
 
@@ -229,7 +230,6 @@ void Game::draw()
     scalePlayerIcon();
 
     player_->draw();
-    /*player_->drawDebug();*/
 
     //partSystem->draw();
     missionsPanel_->draw();
@@ -497,6 +497,14 @@ void Game::loadMap(string const& filename)
     }
 
     SDL_SetRenderTarget(renderer, nullptr);
+}
+
+void Game::dialogueEnd(bool isMission)
+{
+    player_->changeTalking();
+    if (isMission) {
+        missionsPanel_->dialogueEnd();
+    }
 }
 
 

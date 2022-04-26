@@ -217,15 +217,20 @@
     {
       "text": "Zorro"
     }
-  ],  
+  ],
   "Mission9Text": [
     {
-      "text":"Cocodrilo"
+      "text": "Cocodrilo"
     }
   ],
   "MissionsFinished": [
     {
       "text": "Has terminado todas las misiones, enhorabuena."
+    }
+  ],
+  "ChestMoneyText": [
+    {
+      "text" :  "Has encontrado unas monedas"
     }
   ],
 

@@ -68,6 +68,9 @@ public:
 	// llamado desde el target (vecino) cuando interactúe y la misión se complete
 	void onMissionCompleted();
 
+	// llamado desde el game cuando acabe el diálogo de fin de misión
+	void dialogueEnd();
+
 	// el map en el que se guarda la info de las misiones
 	inline sdl_resource_table getMissions() {
 		return missions_;

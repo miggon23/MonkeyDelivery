@@ -42,6 +42,7 @@ private:
 
 	vector<string> textLines_;
 
+	bool isMissionText = false;
 public:
 
 	//textura nombre, texto por id json
@@ -49,6 +50,7 @@ public:
 	~DialogueBox();
 	
 	void changeText(string id);
+	void changeMissionText(string id); // los textos de mision tienen una función distinta al acabar
 	void inShow();
 
 	void interact();

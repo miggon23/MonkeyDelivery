@@ -77,13 +77,16 @@ Player::~Player()
 
 void Player::update()
 {
-	powerUpsManager->update();
-	if (sleeping)
-		sleep();//si esta durmiendo
-	else move();//si no esta durmiendo habilitanmos el movimiento
+	if (!fade && !isTalking_) {
 
-	if ((energyLevel_->percentEnergy() == 0 || fearLevel_->percentFear() == 100) && !fade) {
-		fade = true;
+		powerUpsManager->update();
+		if (sleeping)
+			sleep();//si esta durmiendo
+		else move();//si no esta durmiendo habilitanmos el movimiento
+
+		if ((energyLevel_->percentEnergy() == 0 || fearLevel_->percentFear() == 100) && !fade) {
+			fade = true;
+		}
 	}
 }
 
@@ -110,7 +113,7 @@ void Player::move(pair<double, double> speed)
 
 void Player::move()
 {
-	if (!fade) {
+	if (1 == 1) {
 		Vector2D<double> speed = { (double)dirX_, (double)dirY_ };
 
 		//Normalizamos el vector para que no se desplaze m�s en diagonal

@@ -139,7 +139,22 @@ void MissionsPanel::onMissionSelected(string missionId)
 
 void MissionsPanel::onMissionCompleted()
 {
+	// Quitar paquete
+	game->getPlayer()->removeMissionObject();
+}
+
+void MissionsPanel::dialogueEnd()
+{
+	// Despawnear vecino -> cuando acabe el dialogo
+	activeTarget_->changeActive();
+	
+	// sonido de ganar
+	sdlutils().soundEffects().at("reward").setVolume(game->getSoundEfectsVolume() * 2);
+	sdlutils().soundEffects().at("reward").play(0, 1);
+
+
 	MissionInfo& m = missions_.at(currentMission_->getName());
+
 	// Dar la recompensa
 	int reward = m.maxMoney;
 
@@ -158,21 +173,6 @@ void MissionsPanel::onMissionCompleted()
 
 	game->changeMoneyPlayer(reward);
 
-	// Marcar la mision como acabada
-	m.completed = true;
-
-	sdlutils().soundEffects().at("reward").setVolume(game->getSoundEfectsVolume() * 2);
-	sdlutils().soundEffects().at("reward").play(0, 1);
-
-	delete currentMission_;
-	currentMission_ = nullptr;
-
-	// Despawnear vecino
-	activeTarget_->changeActive();
-
-	// Quitar paquete
-	game->getPlayer()->removeMissionObject();
-
 	// comprobar si todas las misiones de este nivel están completadas -> tandas de misiones
 	levelsCompleted_[m.level]++;
 	if (levelsCompleted_[m.level] == levels_[m.level]) {
@@ -185,6 +185,12 @@ void MissionsPanel::onMissionCompleted()
 			missionsFinished_ = true;
 		}
 	}
+
+	// Marcar la mision como acabada
+	m.completed = true;
+
+	delete currentMission_;
+	currentMission_ = nullptr;
 }
 
 string MissionsPanel::getMissionImage()

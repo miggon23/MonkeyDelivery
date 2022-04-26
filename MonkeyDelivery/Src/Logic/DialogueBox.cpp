@@ -73,6 +73,10 @@ void DialogueBox::changeText(string id)
 	}
 }
 
+void DialogueBox::changeMissionText(string id) {
+	isMissionText = true;
+	changeText(id);
+}
 void DialogueBox::inShow()
 {
 	//actualizacion por tiempo
@@ -153,7 +157,11 @@ void DialogueBox::interact()
 
 	if (inShow_)
 		showLetterTime_ = fastUpdateTime_;
-	else hide();
+	else {
+		hide();
+		game->dialogueEnd(isMissionText);
+		isMissionText = false;
+	}
 }
 
 void DialogueBox::draw()
