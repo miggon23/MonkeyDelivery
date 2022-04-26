@@ -131,9 +131,11 @@ public:
 	inline void setBonusSpending(double set) { energyLevel_->setBonusSpending(set); };
 
 	// FEAR
-	inline void getScared(int amount) { fearLevel_->getScared(amount / fearBonusFactor); }; //Por defecto fearBonusFactor = 1
+	inline void getScared(double amount) { fearLevel_->getScared(amount / fearBonusFactor); }; //Por defecto fearBonusFactor = 1
 	inline void setFearBonusFactor(double d = 1) { fearBonusFactor = d; };
-	inline void recoverFear(int amount) {};
+	inline void recoverFear(double amount) { fearLevel_->getScared(-amount); };
+	inline double getFear() { return fearLevel_->getFear(); };
+	inline double getFearPercent() { return fearLevel_->percentFear(); };
 
 	// MOVEMENT
 	void move(pair<double, double> speed);

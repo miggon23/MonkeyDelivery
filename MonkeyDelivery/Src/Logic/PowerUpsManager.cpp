@@ -5,6 +5,7 @@
 PowerUpsManager::PowerUpsManager(Game* game, Player* player):game_(game),player_(player),
 activatedEnergyDrink_(false),activateBoots_(false),timerEnergyDrink_(new VirtualTimer()),
 activatedAntiBanana(false), timerAntiBanana_(new VirtualTimer()){
+
 	texEnergyBuff_ = game->getTexture(UI_energyBuff);
 	texFearBuff_ = game->getTexture(UI_fearBuff);
 	texSpeedBuff_ = game->getTexture(UI_speedBuff);
@@ -76,11 +77,17 @@ void PowerUpsManager::InitTimer(PowerUps x){
 	case banana:
 		break;
 	case monkeycola:
+		//Menor que 80%, recupera el 20% del miedo
+		if (player_->getFearPercent() < 80.0)
+			player_->recoverFear(player_->getFear() * monkeycolaReduction_);
+		else
+			player_->recoverFear(player_->getFear() * monkeycolaReductionHigh_);
+		
 		break;
 	case repelente:
 		if (!activatedAntiBanana)
 		{
-			player_->setFearBonusFactor(monkeycolaFearBuff_);
+			player_->setFearBonusFactor(monkeycolaReduction_);
 			activatedAntiBanana = true;
 			timerAntiBanana_->reset();
 		}else

@@ -19,10 +19,9 @@ class PowerUpsManager{
 	int antiBananaLimit_ = 60000;
 	float antiBananaFearBuff_ = 1.3;
 
-	VirtualTimer* timerMonkeycola_;
-	bool activatedMonkeycola;
-	int monkeycolaLimit_ = 60000;
-	float monkeycolaFearBuff_ = 1.3;
+
+	float monkeycolaReduction_ = 0.2; //20%
+	float monkeycolaReductionHigh_ = 0.3; //30%
 
 	Texture* texFearBuff_;
 	Texture* texEnergyBuff_;

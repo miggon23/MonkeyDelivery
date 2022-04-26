@@ -5,8 +5,8 @@ class FearLevel: public GameObject {
 private:
 	
 	float place_;
-	float fear_;
-	float maxFear_;
+	double fear_;
+	double maxFear_;
 
 
 public:
@@ -14,9 +14,10 @@ public:
 	~FearLevel() { };
 
 	void update() override {};
-	bool getScared(int amount);
+	bool getScared(double amount);
 	void resetFear();
 	void draw() override;
 
-	inline float percentFear() { return (fear_ / maxFear_) * 100; };
+	inline double percentFear() { return (fear_ / maxFear_) * 100; };
+	inline double getFear() { return fear_; };
 };

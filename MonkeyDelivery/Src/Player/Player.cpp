@@ -165,7 +165,8 @@ void Player::setIsRunning(bool run)
 
 void Player::sleep()
 {
-	getScared(-1);
+	//getScared(-1);
+	recoverFear(1);
 	drainEnergy(-1);
 	//sdlutils().soundEffects().at("sleep").play(0, 1);
 }
