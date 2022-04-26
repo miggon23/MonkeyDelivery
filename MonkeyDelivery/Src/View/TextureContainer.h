@@ -45,7 +45,7 @@ enum TextureName
 		scorpionSS_Death,
 		scorpionSS_Default,
 	
-	//5-Items (General) - 17
+	//5-Items (General) - 18
 		Item_Banana,
 		Item_Boots01,
 		Item_Boots02,
@@ -56,6 +56,7 @@ enum TextureName
 		Item_Soda02,
 		Item_pickaxe01,
 		Item_pickaxe02,
+		Item_Spray,
 
 	//5,2-Items (World)
 		lanternCircular,
@@ -150,7 +151,7 @@ enum TextureName
 		missingTex,
 };
 
-const int NUM_TEXTURES = 104;
+const int NUM_TEXTURES = 105;
 
 typedef struct {
 	string filename;
@@ -202,22 +203,23 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
 	{"items/Item_Soda02.png",1,1},
 	{"items/Item_pickaxe01.png",1,1},
 	{"items/Item_pickaxe02.png",1,1},
+	{"items/Item_Spray.png",1,1},
 	
 	//Items Light
-		{"items/light/lanternCircular.png",1,1},
-		{"items/light/lanternDown.png",1,1},
-		{"items/light/lanternLeft.png",1,1},
-		{"items/light/lanternUp.png",1,1},
-		{"items/light/lightGeneric.png",1,1},
+	{"items/light/lanternCircular.png",1,1},
+	{"items/light/lanternDown.png",1,1},
+	{"items/light/lanternLeft.png",1,1},
+	{"items/light/lanternUp.png",1,1},
+	{"items/light/lightGeneric.png",1,1},
 
 	//Items World
-		{"items/world/worldObject_Bed.png",1,1},
-		{"items/world/worldObject_blockRock01.png",1,1},
-		{"items/world/worldObject_blockRock02.png",1,1},
-		{"items/world/worldObject_Chest_Closed.png",1,1},
-		{"items/world/worldObject_Chest_Opened.png",1,1},
-		{"items/world/worldObject_Gold.png",1,1},
-		{"items/world/worldObject_Tutorial.png",1,1},
+	{"items/world/worldObject_Bed.png",1,1},
+	{"items/world/worldObject_blockRock01.png",1,1},
+	{"items/world/worldObject_blockRock02.png",1,1},
+	{"items/world/worldObject_Chest_Closed.png",1,1},
+	{"items/world/worldObject_Chest_Opened.png",1,1},
+	{"items/world/worldObject_Gold.png",1,1},
+	{"items/world/worldObject_Tutorial.png",1,1},
 
 
 	//6-Map
@@ -295,8 +297,6 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
 	{"ui/Menu/UI_Checker02.png",1,1},
 	{"ui/Menu/UI_Checker03.png",1,1},
 	{"missingTex.png",1,1},
-
-
 };
 
 class TextureContainer {

@@ -58,8 +58,8 @@ void Cat::checkDistance()
 		double distanceY = abs(getPosition().getY() - game->getPosisitionPlayer().getY());
 
 		if (distanceX <= range && distanceY <= range) {
-			/*sdlutils().soundEffects().at("cat").setVolume(game->getSoundEfectsVolume());
-			sdlutils().soundEffects().at("cat").play(0, 1);*/
+			sdlutils().soundEffects().at("cat").setVolume(game->getSoundEfectsVolume());
+			sdlutils().soundEffects().at("cat").play(0, 1);
 			if (lastUpdate_ + 1500 < SDL_GetTicks()) {
 				double minDis = min(distanceX, distanceY);
 				scariness_ = range / (minDis*3);
