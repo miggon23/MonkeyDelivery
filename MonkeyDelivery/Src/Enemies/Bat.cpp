@@ -6,14 +6,14 @@ Bat::Bat(Game* game, int Aleatorio, Point2D<int> centroRadio, int nLoop, Animati
 	Vector2D<double> zonePoint = zone.generatePoint();
 	setPosition(zonePoint.getX(), zonePoint.getY());
 	setTexture(batSS_Default);
-	setDimension(90, 100);
+	setDimension(70, 42);
 	initialPos = getPosition();
 	stealTimer_ = SDL_GetTicks();
 	speed = 1;
 	player_ = game->getPlayer();
 	
 	loops = nLoop;
-	textureRect = { 0,0,animationManager->getWidthBat(),animationManager->getHeightBat() };
+	textureRect = { 0,0,-animationManager->getWidthBat(),animationManager->getHeightBat() };
 	createCheckPoints();
 	setResistance(2000);
 	setScariness(0.12);

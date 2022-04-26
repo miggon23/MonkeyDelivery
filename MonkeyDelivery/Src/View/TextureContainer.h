@@ -62,7 +62,7 @@ enum TextureName
 
 	//5,1-Items (Light)
 		worldObject_Bed,
-		worldObject_blockRock,
+		worldObject_blockRock01,
 		worldObject_Chest_Closed,
 		worldObject_Chest_Opened,
 		worldObject_Gold,
@@ -199,7 +199,7 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
 
 	//Items World
 		{"items/world/worldObject_Bed.png",1,1},
-		{"items/world/worldObject_blockRock.png",1,1},
+		{"items/world/worldObject_blockRock01.png",1,1},
 		{"items/world/worldObject_Chest_Closed.png",1,1},
 		{"items/world/worldObject_Chest_Opened.png",1,1},
 		{"items/world/worldObject_Gold.png",1,1},

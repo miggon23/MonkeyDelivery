@@ -50,6 +50,8 @@ void Enemy::patrol(double speed)
 
 void Enemy::die()
 {
+	
+
 	if (game->getPlayer()->isUsingFlashLight()) {
 		
 		// se guardan los ticks al colisionar con la luz
@@ -119,6 +121,11 @@ void Enemy::checkDistance()
 		double distanceX = abs(getPosition().getX() - game->getPosisitionPlayer().getX());
 		double distanceY = abs(getPosition().getY() - game->getPosisitionPlayer().getY());
 
+		double shouldFlip = getPosition().getX() - game->getPosisitionPlayer().getX();
+		SDL_RendererFlip flip = SDL_FLIP_HORIZONTAL;
+
+		
+		
 		if (distanceX <= range && distanceY <= range) {
 
 			if (lastUpdate_ + 1500 < SDL_GetTicks()) {

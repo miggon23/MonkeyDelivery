@@ -24,8 +24,8 @@ private:
 		playerFrameSpeed = 200;
 	
 	//Murcielago	
-	int wBat_ = 100,
-		hBat_ = 100; 
+	int wBat_ = 35,
+		hBat_ = 21; 
 	//Gato
 	int wCat_ = 100,
 		hCat_ = 100;
@@ -161,14 +161,10 @@ public:
 	/// <param name="tex"> Textura del muercielago</param>
 	/// <param name="timer">variable timerAnimation para que me cambie la imagen cada cierto numero de ticks</param>
 	inline void getFrameImageBat(SDL_Rect bat, SDL_Rect& texturaRect, Texture* tex, float& timer) {
-		if (timer_->TimeScale() - timer >= 200) {
+		if (timer_->TimeScale() - timer >= 250) {
 			texturaRect.x += wBat_;
-			if (texturaRect.x >= 200/*&&texturaRect.y<300*/) {
+			if (texturaRect.x >= 70) {
 				texturaRect.x = 0;
-				texturaRect.y += hBat_;
-			}
-			if (texturaRect.y >= 200 && texturaRect.x >= 100) {
-				texturaRect.y = 0; texturaRect.x = 0;
 			}
 			timer = timer_->TimeScale();
 		}
