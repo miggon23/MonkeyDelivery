@@ -446,7 +446,6 @@ const SDL_Rect Player::lightZoneFL()
 					int(getY() + 50),
 					getWidth(),
 					getHeight() + 50 };
-
 		}
 		else {
 			hitZone = getCollider();
