@@ -6,7 +6,7 @@ Scorpion::Scorpion(Game* game, int Aleatorio, Point2D<int> centroRadio, Animatio
 	setTexture(scorpionSS_Default);
 	Vector2D<double> zonePoint = zone.generatePoint();
 	setPosition(zonePoint.getX(), zonePoint.getY());
-	setDimension(100, 110);
+	setDimension(60, 60);
 	initialPos_ = getPosition();
 	createCheckPoints();
 	lastUpdate_ = SDL_GetTicks();

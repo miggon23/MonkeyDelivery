@@ -35,8 +35,8 @@ private:
 		hBull_ = 100;
 
 	//Escorpion
-	int wScorpion_ = 100,
-		hScorpion_ = 100;
+	int wScorpion_ = 18,
+		hScorpion_ = 18;
 
 	//Planta
 	int wPlant_ = 55,
@@ -233,14 +233,10 @@ public:
 	inline int getWidthScorpion() { return wScorpion_; };
 	inline int getHeigthScorpion() { return hScorpion_; };
 	inline void getFrameImageScorpion(SDL_Rect scorpion, SDL_Rect& texturaRect, Texture* tex, float& timer) {
-		if (timer_->TimeScale() - timer >= 350) {
+		if (timer_->TimeScale() - timer >= 200) {
 			texturaRect.x += wScorpion_;
-			if (texturaRect.y >= 200 && texturaRect.x >= 200) {
-				texturaRect.y = 0; texturaRect.x = 0;
-			}
-			if (texturaRect.x >= 200) {
+			if (texturaRect.x >= 144) {
 				texturaRect.x = 0;
-				texturaRect.y += hScorpion_;
 			}
 			timer = timer_->TimeScale();
 		}
@@ -278,4 +274,44 @@ public:
 		}
 		tex->render(texturaRect, plant);
 	};
+
+	inline void getFrameImageCat(SDL_Rect catRect, SDL_Rect& texturaRect, Texture* tex, float& timer, LastDir newDir) 
+	{
+		if (lastDir.x != newDir.x || lastDir.y != newDir.y) {//Si la direccion cambia (da igual de que componente)
+			texturaRect.x = 0;
+			lastDir = newDir;
+			if (timer_->TimeScale() - timer >= playerFrameSpeed) {
+				texturaRect.x += 16;
+				if (texturaRect.x >= playerLimit) {
+					texturaRect.x = 0;
+				}
+				timer = timer_->TimeScale();
+			}
+		}
+
+		//las x
+		switch (newDir.x)
+		{
+		case 1: //Derecha
+			texturaRect.y = 54;
+			break;
+		case -1: //Izquierda
+			texturaRect.y = 36;
+			break;
+		default:
+			break;
+		}
+		//las y
+		switch (newDir.y)
+		{
+		case 1: //Abajo
+			texturaRect.y = 0;
+			break;
+		case -1: //Arriba
+			texturaRect.y = 72;
+			break;
+		default:
+			break;
+		}
+	}
 };

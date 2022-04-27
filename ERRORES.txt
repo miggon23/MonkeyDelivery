@@ -29,7 +29,5 @@ Arreglar Luces
 Creditos-------
 Marco Minimapa -------                                                                 
 
-Selector de Inventario---------
-
 Menu de ajustes arte
 Menu de creditos arte
