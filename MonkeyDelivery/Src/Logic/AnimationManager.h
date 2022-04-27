@@ -17,6 +17,7 @@ private:
 	Timer* timer_ = Timer::Instance();
 	int limit = 600;
 	int playerLimit = 64;
+	bool isTired_;
 
 	int wPlayer_ = 16,
 		hPlayer_ = 18,
@@ -57,6 +58,8 @@ public:
 
 	//JUGADOR
 	inline PlayerState setState(PlayerState state) { return playerState_ = state; };
+	inline bool getIsTired() { return isTired_; }
+	inline void setIsTired(bool t) { isTired_ = t; }
 	inline int getWidthPlayer() { return wPlayer_; };
 	inline int getHeightPlayer() { return hPlayer_; };
 
@@ -113,7 +116,8 @@ public:
 		}
 		else if (playerState_ == Idle) {
 			texturaRect.x = x1;
-			texturaRect.y = 18;
+			if(isTired_) texturaRect.y = 108;
+			else texturaRect.y = 18;
 			tex->render(texturaRect, player);
 			if (timer_->TimeScale() - timer >= playerFrameSpeed) {
 				x1 += 16;
@@ -123,6 +127,7 @@ public:
 				}
 				timer = timer_->TimeScale();
 			}
+			isTired_ = false;
 		}
 		else if (playerState_ == GoToSleep) {
 
