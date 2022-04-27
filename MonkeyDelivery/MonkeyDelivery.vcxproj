@@ -200,6 +200,7 @@
     <ClInclude Include="Src\Control\UI\Sliders\SliderClick.h" />
     <ClInclude Include="Src\Control\ViewController.h" />
     <ClInclude Include="Src\Enemies\Enemy.h" />
+    <ClInclude Include="Src\Items\Banana.h" />
     <ClInclude Include="Src\Items\Monkeycola.h" />
     <ClInclude Include="Src\Items\Repel.h" />
     <ClInclude Include="Src\json\JSON.h" />
@@ -271,6 +272,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MessageOverlay.cpp" />
+    <ClCompile Include="Src\Items\Banana.cpp" />
     <ClCompile Include="Src\Items\Monkeycola.cpp" />
     <ClCompile Include="MonkeyDelivery.cpp" />
     <ClCompile Include="Src\Control\Button.cpp" />
