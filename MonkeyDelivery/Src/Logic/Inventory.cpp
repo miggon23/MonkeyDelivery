@@ -12,7 +12,14 @@ Inventory::Inventory(Game* game, Player* player, SDL_Renderer* renderer) : playe
 	base_ = game->getTexture(UI_InventoryBar);
 	selector_ = game->getTexture(UI_InventorySelector);
 	overlay_ = game->getTexture(UI_InventoryBarOverlay);
-	baseRect_ = {650, 900, 120*4, 18*4}; //hay que cambiarlo por window H/H	
+
+	xObj = game->getWindowWidth() / 25;
+	yObj = game->getWindowHeight() / 14;
+	xInventory = game->getWindowWidth() / 2 - xObj * 7 / 2;
+	yInventory = game->getWindowHeight() - game->getWindowHeight() / 10;
+
+	baseRect_ = { xInventory, yInventory, xObj * 7, yObj }; 
+
 	InventoryObject* relleno = new InventoryObject(game->getTexture(UI_Black), game, game->getPlayer());
 	//Inicializar InventoryObjects
 	for (int i = 0; i < INVENTORY_SIZE+1; i++){
@@ -167,27 +174,30 @@ bool Inventory::inventoryFull(InventoryObject* x){
 void Inventory::draw() 
 {
 	base_->render(baseRect_);
-	
-															
+
+
 	if (hasMissionObject()) { // si hay mission object, renderiza su textura
-		SDL_Rect oRect = { 650 + base_->getW() / 7 * 6 * 4, 900 , 18 * 4, 18 * 4 };
+		SDL_Rect oRect = { xInventory + base_->getW() / 7 * 6 * 4, yObj , xObj, yObj };
 		missionObject_->getTexture()->render(oRect);
 	}
 	int size = inventory_.size();
-	
-	for (int i = 0; i < INVENTORY_SIZE; i++) 
+
+	for (int i = 0; i < INVENTORY_SIZE; i++)
 	{
 		SDL_Rect oRect;
-		if (i > 3) oRect = { 650 + base_->getW() / 7 * (i+1) * 4, 900 , 18 * 4, 18 * 4 };		
-		else oRect = { 650 + base_->getW() / 7 * i * 4, 900 , 18 * 4, 18 * 4 };
-		
-		
-		if (i < inventory_.size()&&inventory_[i]!=nullptr) 						
+		if (i > 3) oRect = { xInventory + xObj*i + xObj, yInventory , xObj,yObj };
+		else oRect = { xInventory + xObj*i, yInventory , xObj, yObj };
+
+
+		if (i < inventory_.size() && inventory_[i] != nullptr)
 			inventory_[i]->getTexture()->render(oRect);
-				
-		if (i == selectedInventoryObject) 
-			selector_->render(oRect);
-		
+
+		if (i == selectedInventoryObject)
+		{			
+			base_->render(oRect);
+		}
+
+
 	}
 	overlay_->render(baseRect_);
 }
