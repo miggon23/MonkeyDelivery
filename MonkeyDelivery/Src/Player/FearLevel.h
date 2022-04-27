@@ -1,3 +1,4 @@
+#pragma once
 #include "../Logic/GameObject.h"
 class Game;
 
@@ -8,6 +9,7 @@ private:
 	double fear_;
 	double maxFear_;
 
+	int x, y, w, h;
 
 public:
 	FearLevel(Game* game);
