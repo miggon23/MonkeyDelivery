@@ -8,6 +8,9 @@
 #include "../Items/Skates.h"
 #include "../Items/Flashlight.h"
 #include "../Items/Lantern.h"
+#include "../Items/Banana.h"
+#include "../Items/Repel.h"
+#include "../Items/Monkeycola.h"
 #include "Game.h"
 
 Shop::Shop(Player* player, Game* game)
@@ -50,7 +53,7 @@ void Shop::addElements(int level)
 	switch (level)
 	{
 	case 1:
-		objects.push_back({ new EnergyDrink(game->getTexture(shop_Soda), game,game->getPlayer()), 0, 0, 1, 20 });
+		objects.push_back({ new EnergyDrink(game->getTexture(shop_Soda), game,game->getPlayer()), 0, 0, 3, 20 });
 		objects.push_back({ new Bike(game->getTexture(shop_Boots01), game,game->getPlayer()), 1, 0, 1, 30});
 		objects.push_back({ new Skates(game->getTexture(shop_Boots02), game,game->getPlayer()), 2, 0, 1, 25});
 		objects.push_back({ new Flashlight(game->getTexture(shop_Boots02), game,game->getPlayer()), 3, 0, 1, 10});
@@ -59,9 +62,11 @@ void Shop::addElements(int level)
 		//objects.push_back({ new Bike(game->getTexture(bullTexture)), 2, 105, 1, 1000});
 		break;
 	case 2:
-		objects.push_back({ new Lantern(game->getTexture(Item_Lantern01), game,game->getPlayer()), 3, 0, 1, 10 });
+		objects.push_back({ new Lantern(game->getTexture(Item_Lantern01), game,game->getPlayer()), 0, 0, 1, 10 });
+		objects.push_back({ new Banana(game->getTexture(Item_Banana), game,game->getPlayer()), 1, 0, 1, 20 });
 		break;
 	case 3:
+		objects.push_back({ new Repel(game->getTexture(Item_Spray), game,game->getPlayer()), 0, 0, 3, 40 });
 		break;
 	default:
 		std::cout << "nivel de tienda no valido" << endl;
