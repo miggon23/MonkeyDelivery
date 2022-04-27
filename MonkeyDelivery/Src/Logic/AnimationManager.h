@@ -111,7 +111,6 @@ public:
 				timer = timer_->TimeScale();
 			}
 		}
-
 		else if (playerState_ == Idle) {
 			texturaRect.x = x1;
 			texturaRect.y = 18;
@@ -125,18 +124,41 @@ public:
 				timer = timer_->TimeScale();
 			}
 		}
-
 		else if (playerState_ == GoToSleep) {
 
-			texturaRect.x = 0;
-			texturaRect.y = 90;
+			//las x
+			switch (newDir.x)
+			{
+			case 1: //Derecha
+				texturaRect.y = 144;
+				break;
+			case -1: //Izquierda
+				texturaRect.y = 126;
+				break;
+			default:
+				break;
+			}
+			//las y
+			switch (newDir.y)
+			{
+			case 1: //Abajo
+				texturaRect.y = 90;
+				break;
+			case -1: //Arriba
+				texturaRect.y = 162;
+				break;
+			default:
+				break;
+			}
+
+			texturaRect.x = x1;
 			tex->render(texturaRect, player);
 
 			if (timer_->TimeScale() - timer >= playerFrameSpeed) {
 				x1 += 16;
-				if (texturaRect.x >= playerLimit) {
+				if (texturaRect.x >= playerLimit-wPlayer_) {
 					texturaRect.x = 0;
-					x1 = 16;
+					x1 = 0;
 				}
 				timer = timer_->TimeScale();
 			}
@@ -157,40 +179,19 @@ public:
 		}
 		if (playerState_ == Sleeping)
 		{
-			//las x
-			switch (newDir.x)
-			{
-			case 1: //Derecha
-				texturaRect.y = 54 + 90;
-				break;
-			case -1: //Izquierda
-				texturaRect.y = 36 + 90;
-				break;
-			default:
-				break;
-			}
-			//las y
-			switch (newDir.y)
-			{
-			case 1: //Abajo
-				texturaRect.y = 0 + 90;
-				break;
-			case -1: //Arriba
-				texturaRect.y = 72+ 90;
-				break;
-			default:
-				break;
-			}
-
+			/*texturaRect.x = 0;
+			texturaRect.y = 90;
 			tex->render(texturaRect, player);
 
 			if (timer_->TimeScale() - timer >= playerFrameSpeed) {
-				texturaRect.x += 16;
+				x1 += 16;
 				if (texturaRect.x >= playerLimit) {
 					texturaRect.x = 0;
+					x1 = 16;
 				}
 				timer = timer_->TimeScale();
-			}
+			}*/
+			
 		}
 	}
 	//MURCIELAGO
