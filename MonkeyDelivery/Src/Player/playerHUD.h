@@ -1,3 +1,5 @@
+#pragma once
+
 #include "../Logic/GameObject.h"
 class Game;
 

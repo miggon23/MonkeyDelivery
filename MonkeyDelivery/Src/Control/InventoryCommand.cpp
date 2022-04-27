@@ -36,7 +36,7 @@ bool InventoryCommand::parse(SDL_Event& event) {
 				id--;
 			if (id == 0) id = 5;
 		}
-		if (ihdlr.getButtonState(0, 0))use = true;
+		if (ihdlr.getButtonState(0, 2))use = true;
 		//cout << id;
 		if (id != -1 || use)
 			return true;
