@@ -33,7 +33,10 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game), anima
 	walkingEnergy_ = 0.05;
 	runningEnergy_ = walkingEnergy_ * 1.5;
 	decreasingEnergyLevel_ = walkingEnergy_; // Cambiar esto despu�s a un m�todo set <---
-	reducedSpeed = false;
+	reducedSpeed_ = false;
+	reduceFactor_ = 2.2;
+	maxEnergyPercent_ = 45;
+	reduceEnergyFactor_ = 0.1;
 
 	resetVelocity(); //Se inicializa al valor de INIT_VEL_X e ..._Y
 
@@ -45,7 +48,7 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game), anima
 	energyLevel_ = new energyLevel(game);
 	fearLevel_ = new FearLevel(game);
 	playerHUD_ = new playerHUD(game);
-	//fearBar_ = new FearBar(game);
+
 	inventory_ = new Inventory(game, this, game->getRenderer());
 	powerUpsManager = new PowerUpsManager(this->game, this);
 	//Objetos de inventario
@@ -65,20 +68,11 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game), anima
 
 Player::~Player()
 {
-	delete energyLevel_;
-	delete fearLevel_;
-	delete playerHUD_;
-	delete inventory_;
-	//delete flashlightTex_; //CUIDADO!!!!
-	//delete lanternTex_; //CUIDADO!!!!
-	delete powerUpsManager;
-	//flashlightTex_ = nullptr; //CUIDADO!!!!
-	//lanternTex_ = nullptr; //CUIDADO!!!!
-	energyLevel_ = nullptr;
-	fearLevel_ = nullptr;
-	playerHUD_ = nullptr;
-	inventory_ = nullptr;
-	powerUpsManager = nullptr;
+	delete energyLevel_;		energyLevel_ = nullptr;
+	delete fearLevel_;			fearLevel_ = nullptr;
+	delete playerHUD_;			playerHUD_ = nullptr;
+	delete inventory_;			inventory_ = nullptr;
+	delete powerUpsManager;		powerUpsManager = nullptr;
 	std::cout << "PLAYER DELETED" << std::endl;
 }
 
@@ -95,12 +89,13 @@ void Player::update()
 			fade = true;
 			removeMoney(20);
 		}
-		if (energyLevel_->percentEnergy() == 0 && !reducedSpeed)
+		if (energyLevel_->percentEnergy() == 0 && !reducedSpeed_)
 		{
-			reducedSpeed = true;
-			setVel(getVel() / reduceFactor);
+			previusVel_ = getVel();
+			reducedSpeed_ = true;
+			setVel(INIT_VEL_ / reduceFactor_);
 		}
-		else if (energyLevel_->percentEnergy() != 0) { reducedSpeed = false;}
+		else if (energyLevel_->percentEnergy() != 0) { reducedSpeed_ = false;}
 	}
 	lastUpdate = timer.currTime();
 }
@@ -156,18 +151,11 @@ void Player::move()
 	 
 	//SI LA VELOCIDAD ES 0 RECUPERA ENERGIA HASTA UN MAX
 	if (speed.getX() == 0 && speed.getY() == 0) 
-
-		if (energyLevel_->percentEnergy() < 45){
-			energyLevel_->drain(-0.1);
-			if(energyLevel_->percentEnergy() <= 2)
-				setVel(getVel() * reducedSpeed);
+		if (energyLevel_->percentEnergy() < maxEnergyPercent_){
+			energyLevel_->drain(-reduceEnergyFactor_);
+			if (energyLevel_->percentEnergy() <= reduceEnergyFactor_) 
+				setVel(previusVel_);
 		}
-			
-
-		if (energyLevel_->percentEnergy() < 45) 
-			energyLevel_->drain(-1);
-	//cout << "Energía: " << energyLevel_->percentEnergy() << endl;
-
 }
 
 void Player::setIsRunning(bool run)

@@ -35,43 +35,38 @@ class Player : public GameObject {
 	
 private:
 
-	Inventory* inventory_ = nullptr;
 	PowerUpsManager* powerUpsManager = nullptr;
-	bool inventoryVisibility;
-	bool fade = false;
-	bool usingFlashLight = false;
-	bool usingLantern = false;
-	int alpha = SDL_ALPHA_TRANSPARENT;
+	
 	VirtualTimer timer;
 
 	bool isTalking_ = false; // determina si el player está con un diálogo abierto
-	// para bloquear su movimiento y acciones
+							 // para bloquear su movimiento y acciones
 
-#pragma region Sleep
+	//INVENTARIO
+	Inventory* inventory_ = nullptr;
+	bool inventoryVisibility;
+
+	//DORMIR
 	bool sleeping = false;
 	bool boolrenderSleepText = false;
 	int timerSleepText;
-	bool flashLOn = false;
-	bool lanternOn = false;
-#pragma endregion
 
-#pragma region Movement/Fear
+	//MOVIMIENTO
 	uint lastUpdate; // para el movimiento
 	MovState movState_;
 	//Velocidad base (sin modificaciones que mantiene el player)
 	double INIT_VEL_;
 	bool isRunning = false;
-	double fear_;
-	double fearBonusFactor = 1;
 	double walkingSpeedFactor_; //A esto se le multiplica la velocidad actual
 	double runningSpeedFactor_; // A esto se le multiplica la velocidad actual
 
 	//Velocidad actual del jugador
 	double vel_;
-	double dirX_ = 0; // 1, 0 o -1
-	int dirY_ = 0; // 1, 0 o -1
-	bool reducedSpeed;
-	int reduceFactor = 2;
+	double dirX_ = 0;		// 1, 0 o -1
+	int dirY_ = 0;			// 1, 0 o -1
+	bool reducedSpeed_;		//Cuanto disminuye la velocidad
+	int reduceFactor_;		//Indica si la velocidad ha sido reducida, para que no se reduzca constantemente
+	double previusVel_;		//Velocidad antes de reducirla al quedarse sin energia
 
 	// Direcciones en las que no se puede mover por colisiones
 	bool topCollision = false;
@@ -79,40 +74,44 @@ private:
 	bool leftCollision = false;
 	bool rightCollision = false;
 
-#pragma endregion
+	//MIEDO
+	double fear_;
+	double fearBonusFactor = 1;
 
-#pragma region Mission activeMission	
+	//MISION ACTIVA
 	int money_;
 	double fieldOfView_;
-#pragma endregion
 
-#pragma region Energy
-
-	int maxEnergyPercent_;
+	//ENERGIA
+	int maxEnergyPercent_;		//Limite de energia que se rellena al estar parado
+	double reduceEnergyFactor_; //Cantidad en la que aumenta la energia cada frame al estar parado
 	double walkingEnergy_;
 	double runningEnergy_;
 	double decreasingEnergyLevel_;
 	energyLevel* energyLevel_ = nullptr;
 	FearLevel* fearLevel_ = nullptr;
 	playerHUD* playerHUD_ = nullptr;
-	//FearBar* fearBar_ = nullptr;
-#pragma endregion
 
-#pragma region Animations	
+	//ANIMACIONES
 	AnimationManager* animationManager;
 	SDL_Rect textureRect;
 	float timerAnimation;
-#pragma endregion	
 
-	//orientacion para la linterna
+	//LINTERNAS
 	string orientation_;
 	Texture* flashlightTex_;
 	Texture* lanternTex_;
+	bool usingFlashLight = false;
+	bool usingLantern = false;
+	bool flashLOn = false;
+	bool lanternOn = false;
 
+	//FADE OUT
 	Texture* fadeTex_ = nullptr;
-
 	int bedX_;
 	int bedY_;
+	bool fade = false;
+	int alpha = SDL_ALPHA_TRANSPARENT;
 
 public:
 
@@ -151,7 +150,6 @@ public:
 	inline void setDirX(int x) { dirX_ = x; };
 	inline void setDirY(int y) { dirY_ = y; };
 	inline void setDir(int x, int y) { dirX_ = x; dirY_ = y; };
-
 	inline MovState getMovState() { return movState_; };
 	inline void setMovState(MovState m) { movState_ = m; };
 
