@@ -254,6 +254,7 @@ void Player::draw()
 	energyLevel_->draw();
 	fearLevel_->draw();
 	playerHUD_->draw();
+	game->renderText(to_string(money_), 250, 120);
 	powerUpsManager->draw();
 
 	if (boolrenderSleepText) NoSleepText();
