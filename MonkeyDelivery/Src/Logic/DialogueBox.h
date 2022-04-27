@@ -25,10 +25,10 @@ private:
 	SDL_Color color_;
 	Texture* currentIcon_;
 
-	const int xPos_ = 800,
+	const int xPos_ = 500,
 		yPos_ = 700,
-		width_ = 400,
-		height_ = 200,
+		width_ = 240*2,
+		height_ = 88*2,
 		xText_ = 15,
 		yText_ = 20,
 		xIcon = -50,

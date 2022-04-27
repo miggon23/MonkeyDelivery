@@ -21,6 +21,7 @@ Bat::Bat(Game* game, int Aleatorio, Point2D<int> centroRadio, int nLoop, Animati
 
 void Bat::update()
 {
+	std::cout << "BAT";
 	patrol(speed_);
 
 	SDL_Rect r1 = player_->getCollider();
