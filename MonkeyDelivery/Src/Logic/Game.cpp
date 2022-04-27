@@ -158,7 +158,7 @@ void Game::start()
     add(bed);*/
     //add(new Rock(this,2500,800));
     auto cama = new Bed(this);
-    cama->setPosition(3280, 1120);
+    cama->setPosition(3280, 1090);
     player_->bedPos(3650, 1300);
     add(cama);
 
