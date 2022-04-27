@@ -1,10 +1,6 @@
-ALGUNA TEXTURA PETA
-INTERFAZ BARRAS DE  MIEDO Y ENERGIA
 Memory leaks
 Pantalla completa y ajustarlo todo
 Tiles girados
-Fatan colliders (valla del cementerio, troncos a la derecha del mapa)
-Cuando se abre el panel de misiones y se selecciona una mision, si se vuelve a entrar se puede seguir seleccionando
 El cuadro de diálogo es muy pequeño
 JSON no admite caracteres especiales ( !, ?, tíldes)
 
@@ -31,3 +27,4 @@ Marco Minimapa -------
 
 Menu de ajustes arte
 Menu de creditos arte
+Menu de Pausa

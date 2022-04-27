@@ -188,7 +188,7 @@ public:
 	inline void getFrameImageBat(SDL_Rect bat, SDL_Rect& texturaRect, Texture* tex, float& timer, SDL_RendererFlip flip) {
 		if (timer_->TimeScale() - timer >= 250) {
 			texturaRect.x += wBat_;
-			if (texturaRect.x >= 70) {
+			if (texturaRect.x > 35) {
 				texturaRect.x = 0;
 			}
 			timer = timer_->TimeScale();
