@@ -36,4 +36,6 @@ private:
 	int boxXPos_; // posición en la que está el seleccionador
 
 	int xInc_ = 550; // separacion entre cada papel de mision
+	int offsetX_, ySize_, wSize_, hSize_, h2Size_;
+	int buttonsX_, buttonsY_, buttonsW_, buttonsH_;
 };
