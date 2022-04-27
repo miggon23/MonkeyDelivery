@@ -168,6 +168,7 @@
     <ClInclude Include="Src\Control\MapCommand.h" />
     <ClInclude Include="Src\Control\NextStateCommand.h" />
     <ClInclude Include="Src\Control\PauseCommand.h" />
+    <ClInclude Include="Src\Control\SelectButtonCommand.h" />
     <ClInclude Include="Src\Control\SelectMissionCommand.h" />
     <ClInclude Include="Src\Control\ShopCommand.h" />
     <ClInclude Include="Src\Control\States\CreditsState.h" />
@@ -272,6 +273,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MessageOverlay.cpp" />
+    <ClCompile Include="Src\Control\SelectButtonCommand.cpp" />
     <ClCompile Include="Src\Items\Banana.cpp" />
     <ClCompile Include="Src\Items\Monkeycola.cpp" />
     <ClCompile Include="MonkeyDelivery.cpp" />
