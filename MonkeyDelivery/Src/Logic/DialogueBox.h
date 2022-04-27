@@ -25,7 +25,7 @@ private:
 	SDL_Color color_;
 	Texture* currentIcon_;
 
-	const int xPos_ = 500,
+	int xPos_ = 500,
 		yPos_ = 700,
 		width_ = 240*2,
 		height_ = 88*2,

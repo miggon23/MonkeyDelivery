@@ -177,7 +177,7 @@ void Inventory::draw()
 
 
 	if (hasMissionObject()) { // si hay mission object, renderiza su textura
-		SDL_Rect oRect = { xInventory + base_->getW() / 7 * 6 * 4, yObj , xObj, yObj };
+		SDL_Rect oRect = { xInventory +xObj*6, yInventory , xObj, yObj };
 		missionObject_->getTexture()->render(oRect);
 	}
 	int size = inventory_.size();

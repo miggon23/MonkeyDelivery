@@ -17,6 +17,21 @@ DialogueBox::DialogueBox(Game* game) : GameObject(game)
 	texture = game->getTexture(UI_dialogueBox);
 	color_ = BLACK;
 
+
+	
+	yPos_ = game->getWindowHeight()/1.43;
+	width_ = game->getWindowWidth()/7.5 * 2;
+	xPos_ = game->getWindowWidth() / 2 - width_ / 2;
+	height_ = game->getWindowHeight()/11.37 * 2;
+	xText_ = game->getWindowWidth()/120.0;
+	yText_ = game->getWindowHeight()/50.0;
+	xIcon = - game->getWindowWidth()/36.0;
+	yIcon = -game->getWindowHeight()/17.24;
+	wIcon = game->getWindowWidth()/14.4;
+	hIcon = game->getWindowHeight()/8.0;
+	
+	
+
 	setPosition(xPos_, yPos_);
 	setDimension(width_, height_);
 	textPos_ = { xText_, yText_ };
