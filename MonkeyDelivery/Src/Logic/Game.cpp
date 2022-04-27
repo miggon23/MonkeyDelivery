@@ -365,10 +365,6 @@ void Game::loadMap(string const& filename)
     SDL_SetTextureBlendMode(background_, SDL_BLENDMODE_BLEND);
     SDL_SetRenderTarget(renderer, background_);
 
-
-    //Establecemos los bordes de la camara con respecto al tamaño del tilemap
-        //Camera::mainCamera->setBounds(0, 0, mapInfo.cols * mapInfo.tile_width, mapInfo.rows * mapInfo.tile_height);
-
     //Cargamos y almacenamos los tilesets utilizados por el tilemap
     // (el mapa utiliza el �ndice [gid] del primer tile cargado del tileset como clave)
     // (para poder cargar los tilesets del archivo .tmx, les ponemos de nombre 
@@ -438,17 +434,6 @@ void Game::loadMap(string const& filename)
                     auto x_pos = x * mapInfo.tile_width;
                     auto y_pos = y * mapInfo.tile_height;
 
-
-                    //bool is_wall = false; // Booleano de control
-                    //// Acceso a las propiedades de una tile dentro de un tileset (.tsx)
-                    //vector<tmx::Property> tile_props = mapInfo.tile_map.getTilesets()[tsx_file - 1].getTiles()[cur_gid].properties;
-                    //if (tile_props.size() > 0) {
-                    //	// Lo separo aqui por si en algun futuro creamos m�s propiedades, realmente habria que hacer una busqueda
-                    //	// de la propiedad y si esta en el vector usarla acorde
-                    //	if (tile_props[0].getName() == "wall")
-                    //		is_wall = tile_props[0].getBoolValue();
-                    //}
-
                     // metemos el tile
                     auto tileTex = mapInfo.tilesets[tset_gid];
 
@@ -466,21 +451,7 @@ void Game::loadMap(string const& filename)
                     int tileRot = layer_tiles[tile_index].flipFlags;
                     float rotCorrection = 45;
                     SDL_RendererFlip tileFlip = SDL_FLIP_NONE;
-                    //switch (tileRot)
-                    //{
-                    //default:break;
-                    //case 2:  rotCorrection = 180; break;
-                    //case 4:  tileFlip = SDL_FLIP_HORIZONTAL; rotCorrection = 45; break;
-                    //case 6:  rotCorrection = 225; break;
-                    //case 8:  tileFlip = SDL_FLIP_HORIZONTAL; rotCorrection = 90; break;
-                    //case 10:  tileFlip = SDL_FLIP_HORIZONTAL; rotCorrection = 90; break;
-                    //case 12:  rotCorrection = 45; break;
-                    //case 14:  rotCorrection = 225; tileFlip = SDL_FLIP_HORIZONTAL; tileFlip = SDL_FLIP_VERTICAL; break;
-                    //    /*case 12:  tileFlip = SDL_FLIP_HORIZONTAL; rotCorrection = 90; break;
-                    //    case 14:  tileFlip = SDL_FLIP_HORIZONTAL; rotCorrection = 90; break;*/
-                    //    //case 14:   rotCorrection = 40; break;
-                    //}
-
+                     
                     //Multiplicamos por 45 porque esta multiplicado por factor de 45 (lo que devuelve rot)
                     mapInfo.tilesets[tset_gid]->render(src, dest, (double) tileRot * rotCorrection, nullptr, tileFlip);
                 }
