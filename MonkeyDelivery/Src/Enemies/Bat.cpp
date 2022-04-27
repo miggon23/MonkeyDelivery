@@ -78,6 +78,6 @@ void Bat::draw(){
 		else 
 			setTexture(batSS_Default);
 		
-		animationManager->getFrameImageBat(pos, textureRect, texture, timerAnimation_);
+		animationManager->getFrameImageBat(pos, textureRect, texture, timerAnimation_, flip);
 	}
 }

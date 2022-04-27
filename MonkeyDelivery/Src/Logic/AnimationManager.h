@@ -58,7 +58,7 @@ public:
 	inline int getWidthPlayer() { return wPlayer_; };
 	inline int getHeightPlayer() { return hPlayer_; };
 
-	inline void getFrameImagePlayer(SDL_Rect player, SDL_Rect& texturaRect, Texture* tex, float& timer/*,PlayerState state*/, LastDir newDir) {
+	inline void getFrameImagePlayer(SDL_Rect player, SDL_Rect& texturaRect, Texture* tex, float& timer, LastDir newDir) {
 		if (lastDir.x != newDir.x || lastDir.y != newDir.y) {//Si la direccion cambia (da igual de que componente)
 			texturaRect.x = 0;
 			lastDir = newDir;
@@ -185,7 +185,7 @@ public:
 	/// <param name="texturaRect">textureRect DEL MURCIELAGO(es una variable es lo q vamos a recortar de la sprite sheet)</param>
 	/// <param name="tex"> Textura del muercielago</param>
 	/// <param name="timer">variable timerAnimation para que me cambie la imagen cada cierto numero de ticks</param>
-	inline void getFrameImageBat(SDL_Rect bat, SDL_Rect& texturaRect, Texture* tex, float& timer) {
+	inline void getFrameImageBat(SDL_Rect bat, SDL_Rect& texturaRect, Texture* tex, float& timer, SDL_RendererFlip flip) {
 		if (timer_->TimeScale() - timer >= 250) {
 			texturaRect.x += wBat_;
 			if (texturaRect.x >= 70) {
@@ -193,12 +193,12 @@ public:
 			}
 			timer = timer_->TimeScale();
 		}
-		tex->render(texturaRect, bat);
+		tex->render(texturaRect, bat, 0, nullptr, flip);
 	}
 	//GATO
 	inline int getWidthCat() { return wCat_; };
 	inline int getHeightcat() { return hCat_; };
-	inline void getFrameImageCat(SDL_Rect cat, SDL_Rect& texturaRect, Texture* tex, float& timer) {
+	inline void getFrameImageCat(SDL_Rect cat, SDL_Rect& texturaRect, Texture* tex, float& timer, SDL_RendererFlip flip) {
 		if (timer_->TimeScale() - timer >= 450) {
 			texturaRect.y += hCat_;
 			if (texturaRect.y >= 200) {
@@ -206,7 +206,7 @@ public:
 			}
 			timer = timer_->TimeScale();
 		}
-		tex->render(texturaRect, cat);
+		tex->render(texturaRect, cat, 0, nullptr, flip);
 	}
 
 	//TORO
@@ -232,7 +232,7 @@ public:
 	//ESCORPION
 	inline int getWidthScorpion() { return wScorpion_; };
 	inline int getHeigthScorpion() { return hScorpion_; };
-	inline void getFrameImageScorpion(SDL_Rect scorpion, SDL_Rect& texturaRect, Texture* tex, float& timer) {
+	inline void getFrameImageScorpion(SDL_Rect scorpion, SDL_Rect& texturaRect, Texture* tex, float& timer, SDL_RendererFlip flip) {
 		if (timer_->TimeScale() - timer >= 200) {
 			texturaRect.x += wScorpion_;
 			if (texturaRect.x >= 144) {
@@ -240,14 +240,14 @@ public:
 			}
 			timer = timer_->TimeScale();
 		}
-		tex->render(texturaRect, scorpion);
+		tex->render(texturaRect, scorpion, 0, nullptr, flip);
 
 	};
 
 	//PLANTA
 	inline int getWidthPlant() { return wPlant_; };
 	inline int getHeigthPlant() { return hPlant_; };
-	inline void getFrameImagePlant(SDL_Rect plant, SDL_Rect& texturaRect, Texture* tex, float& timer) {
+	inline void getFrameImagePlant(SDL_Rect plant, SDL_Rect& texturaRect, Texture* tex, float& timer, SDL_RendererFlip flip) {
 		if (timer_->TimeScale() - timer >= 150) {
 			texturaRect.x += wPlant_;
 			if (texturaRect.y >= 55 && texturaRect.x >= 220) {
@@ -259,7 +259,7 @@ public:
 			}
 			timer = timer_->TimeScale();
 		}
-		tex->render(texturaRect, plant);
+		tex->render(texturaRect, plant, 0, nullptr, flip);
 	};
 
 
@@ -275,43 +275,43 @@ public:
 		tex->render(texturaRect, plant);
 	};
 
-	inline void getFrameImageCat(SDL_Rect catRect, SDL_Rect& texturaRect, Texture* tex, float& timer, LastDir newDir) 
-	{
-		if (lastDir.x != newDir.x || lastDir.y != newDir.y) {//Si la direccion cambia (da igual de que componente)
-			texturaRect.x = 0;
-			lastDir = newDir;
-			if (timer_->TimeScale() - timer >= playerFrameSpeed) {
-				texturaRect.x += 16;
-				if (texturaRect.x >= playerLimit) {
-					texturaRect.x = 0;
-				}
-				timer = timer_->TimeScale();
-			}
-		}
+	//inline void getFrameImageCat(SDL_Rect catRect, SDL_Rect& texturaRect, Texture* tex, float& timer, LastDir newDir) 
+	//{
+	//	if (lastDir.x != newDir.x || lastDir.y != newDir.y) {//Si la direccion cambia (da igual de que componente)
+	//		texturaRect.x = 0;
+	//		lastDir = newDir;
+	//		if (timer_->TimeScale() - timer >= playerFrameSpeed) {
+	//			texturaRect.x += 16;
+	//			if (texturaRect.x >= playerLimit) {
+	//				texturaRect.x = 0;
+	//			}
+	//			timer = timer_->TimeScale();
+	//		}
+	//	}
 
-		//las x
-		switch (newDir.x)
-		{
-		case 1: //Derecha
-			texturaRect.y = 54;
-			break;
-		case -1: //Izquierda
-			texturaRect.y = 36;
-			break;
-		default:
-			break;
-		}
-		//las y
-		switch (newDir.y)
-		{
-		case 1: //Abajo
-			texturaRect.y = 0;
-			break;
-		case -1: //Arriba
-			texturaRect.y = 72;
-			break;
-		default:
-			break;
-		}
-	}
+	//	//las x
+	//	switch (newDir.x)
+	//	{
+	//	case 1: //Derecha
+	//		texturaRect.y = 54;
+	//		break;
+	//	case -1: //Izquierda
+	//		texturaRect.y = 36;
+	//		break;
+	//	default:
+	//		break;
+	//	}
+	//	//las y
+	//	switch (newDir.y)
+	//	{
+	//	case 1: //Abajo
+	//		texturaRect.y = 0;
+	//		break;
+	//	case -1: //Arriba
+	//		texturaRect.y = 72;
+	//		break;
+	//	default:
+	//		break;
+	//	}
+	//}
 };

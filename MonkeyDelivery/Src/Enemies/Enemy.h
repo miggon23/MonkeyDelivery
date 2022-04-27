@@ -28,7 +28,6 @@ protected:
 	bool startTimer = false;
 	bool back;
 	bool alive;
-	bool hasBeenFliped=false;
 	
 	SpawnZone zone;
 	vector<Point2D<double>> checkpoints;

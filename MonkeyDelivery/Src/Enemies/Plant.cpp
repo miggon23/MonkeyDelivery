@@ -23,10 +23,14 @@ void Plant::update()
 void Plant::checkDistance()
 {
 	int range = 200; //rango
-	double distanceX = abs(getPosition().getX() - game->getPosisitionPlayer().getX()); //distancia en valor absoluto en las x
+	double dirX = getPosition().getX() - game->getPosisitionPlayer().getX(); //direccion en las x
+	double distanceX = abs(dirX); //distancia en valor absoluto en las x
 	double distanceY = abs(getPosition().getY() - game->getPosisitionPlayer().getY()); //distacia en valor absoluto en las y
 
 	if (distanceX <= range && distanceY <= range) {
+		//flip
+		if(dirX<0) setFlip(SDL_FLIP_HORIZONTAL);
+		else setFlip(SDL_FLIP_NONE);
 
 		game->drainPlayerEnergy(0.2);
 
@@ -53,6 +57,6 @@ void Plant::draw()
 		else 
 			setTexture(plantSS_Default);
 		
-		animationManager->getFrameImagePlant(pos, textureRect, texture, timerAnimation_);
+		animationManager->getFrameImagePlant(pos, textureRect, texture, timerAnimation_, flip);
 	}
 }

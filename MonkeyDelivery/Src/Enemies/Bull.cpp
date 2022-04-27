@@ -47,20 +47,17 @@ void Bull::chase(double x, double y)
 	else if (y > 1) newY = getPosition().getY() - speed / 2.0;	//el mono esta por encima
 	setPosition(newX, newY);
 	*/
-	//SDL_RendererFlip flip = SDL_FLIP_NONE;
-
+	
 	Vector2D<double> newP;
-	//double newX = getPosition().getX(), newY = getPosition().getY();
-	if (x < -1) { 
+	
+	if (x < -1) { //el mono esta a la derecha
 		newP.setX(1); 
 		setFlip(SDL_FLIP_HORIZONTAL);
-		
-	}	//el mono esta a la derecha
-	else if (x > 1) 
-	{ 
+	}	
+	else if (x > 1) { //el mono esta a la izquierda
 		newP.setX(-1);
 		setFlip(SDL_FLIP_NONE);
-	}	//el mono esta a la izquierda
+	}	
 	if (y < -1) newP.setY(+1);		//el mono esta por debajo
 	else if (y > 1) newP.setY(-1);	//el mono esta por encima
 

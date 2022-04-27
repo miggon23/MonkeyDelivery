@@ -46,7 +46,7 @@ void Cat::draw()
 		
 		else setTexture(catSS_Default);
 		
-		animationManager->getFrameImageCat(pos, textureRect, texture, timerAnimation_);
+		animationManager->getFrameImageCat(pos, textureRect, texture, timerAnimation_, flip);
 	}
 }
 
@@ -55,12 +55,18 @@ void Cat::checkDistance()
 	if (isAlive()) {
 		
 		int range = 300;
-		double distanceX = abs(getPosition().getX() - game->getPosisitionPlayer().getX());
+		double dirX = getPosition().getX() - game->getPosisitionPlayer().getX(); //direccion en las x
+		double distanceX = abs(dirX);
 		double distanceY = abs(getPosition().getY() - game->getPosisitionPlayer().getY());
 
 		if (distanceX <= range && distanceY <= range) {
+			//flip
+			if (dirX < 0) setFlip(SDL_FLIP_HORIZONTAL);
+			else setFlip(SDL_FLIP_NONE);
+			//sonidos
 			sdlutils().soundEffects().at("cat").setVolume(game->getSoundEfectsVolume());
 			sdlutils().soundEffects().at("cat").play(0, 1);
+			//miedo
 			if (lastUpdate_ + timeLimit_ < SDL_GetTicks()) {
 				double minDis = min(distanceX, distanceY);
 				scariness_ = range / (minDis*3);

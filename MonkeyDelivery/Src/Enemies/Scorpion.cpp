@@ -36,7 +36,8 @@ void Scorpion::createCheckPoints()
 void Scorpion::checkDistance()
 {
 	int range = 120; //rango
-	double distanceX = abs(getPosition().getX() - game->getPosisitionPlayer().getX()); //distancia en valor absoluto en las x
+	double dirX = getPosition().getX() - game->getPosisitionPlayer().getX(); //direccion en las x
+	double distanceX = abs(dirX); //distancia en valor absoluto en las x
 	double distanceY = abs(getPosition().getY() - game->getPosisitionPlayer().getY()); //distacia en valor absoluto en las y
 
 	double playerVel = game->getPlayer()->getVel();
@@ -44,6 +45,10 @@ void Scorpion::checkDistance()
 	//Si esta en el rango
 	if (distanceX <= range && distanceY <= range)
 	{
+		//flip
+		if (dirX > 0) setFlip(SDL_FLIP_HORIZONTAL);
+		else setFlip(SDL_FLIP_NONE);
+
 		//Si la velocidad del jugador no ha sido reducida, es decir, no había entrado en el rango
 		if (!inRange) { 
 			game->setVel(playerVel / 2.0);
@@ -78,6 +83,6 @@ void Scorpion::draw()
 		
 		else setTexture(scorpionSS_Default);
 		
-		animationManager->getFrameImageScorpion(pos, textureRect, texture, timerAnimation_);
+		animationManager->getFrameImageScorpion(pos, textureRect, texture, timerAnimation_, flip);
 	}
 }

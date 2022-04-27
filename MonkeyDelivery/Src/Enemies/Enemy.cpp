@@ -117,14 +117,18 @@ void Enemy::checkDistance()
 {
 	if (isAlive()) {
 		int range = 300;
-		double distanceX = abs(getPosition().getX() - game->getPosisitionPlayer().getX());
+		double dirX = getPosition().getX() - game->getPosisitionPlayer().getX(); //direccion en las x
+		double distanceX = abs(dirX);
 		double distanceY = abs(getPosition().getY() - game->getPosisitionPlayer().getY());
 
 		double shouldFlip = getPosition().getX() - game->getPosisitionPlayer().getX();
 		SDL_RendererFlip flip = SDL_FLIP_HORIZONTAL;
 		
 		if (distanceX <= range && distanceY <= range) {
-
+			//flip
+			if (dirX < 0) setFlip(SDL_FLIP_HORIZONTAL);
+			else setFlip(SDL_FLIP_NONE);
+			//miedo
 			if (lastUpdate_ + timeLimit_ < SDL_GetTicks()) {
 				double minDis = min(distanceX, distanceY);
 				scariness_ = range / (minDis * 3);
