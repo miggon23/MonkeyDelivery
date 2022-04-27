@@ -467,15 +467,5 @@ const SDL_Rect Player::lightZoneL()
 
 void Player::addPickaxe(int level)
 {
-	switch (level)
-	{
-	case 1:
-		inventory_->addObject(new Pickaxe(game->getTexture(Item_pickaxe01), game, level, this));
-		break;
-	case 2:
-		inventory_->addObject(new Pickaxe(game->getTexture(Item_pickaxe02), game, level, this));
-		break;
-	default:
-		break;
-	}
+
 }
