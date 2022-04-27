@@ -7,7 +7,7 @@
 Pickaxe::Pickaxe(Texture* tex, Game* game,int level,Player* player):InventoryObject(tex, game,player) {
 	isConsumable_ = true;
 	level_ = level % 2;
-	switch (level_)
+	/*switch (level_)
 	{
 	case 1:
 		tex = game->getTexture(Item_pickaxe01);
@@ -17,7 +17,7 @@ Pickaxe::Pickaxe(Texture* tex, Game* game,int level,Player* player):InventoryObj
 		break;
 	default:
 		break;
-	}
+	}*/
 
 	setTypeObject(PICKAXE);
 }
