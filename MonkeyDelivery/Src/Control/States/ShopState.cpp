@@ -9,6 +9,8 @@ ShopState::ShopState(Game* game) : State(game){
 
 	panelTexture=game->getTexture(shop_UI_PanelShop);
 	controlsTexture = game->getTexture(shop_UI_Controls);
+	coinTexture = game->getTexture(UI_Coin);
+
 	font_ = new Font("Images/fonts/Pixellari.ttf", 40);
 
 	xObj = game->getWindowWidth() / 5;
@@ -20,6 +22,16 @@ ShopState::ShopState(Game* game) : State(game){
 	xText = game->getWindowWidth() / 2.65;
 	yText = game->getWindowHeight() / 1.2;
 
+	buttonsX_ = game->getWindowWidth() / 1.3;
+	buttonsY_ = game->getWindowHeight() / 1.3;
+	buttonsW_ = game->getWindowWidth() / 5.7;
+	buttonsH_ = game->getWindowHeight() / 5.7;
+
+	coinsX_ = game->getWindowWidth() / 2.25;
+	coinsY_ = game->getWindowHeight() / 1.26;
+	coinsW_ = game->getWindowWidth() / 35.0;
+	double d = game->getWindowWidth() / game->getWindowHeight(); // para que tengan el mismo W y H
+	coinsH_ = game->getWindowHeight() / 35.0 * d;
 
 	shop_ = game->getShop();
 	shop_->actualice();
@@ -111,14 +123,17 @@ void ShopState::draw()
 			closeFailed_ = false;
 	}
 
-	int buttonsX_ = game->getWindowWidth() / 1.3;
-	int buttonsY_ = game->getWindowHeight() / 1.3;
-	int buttonsW_ = game->getWindowWidth() / 5.7;
-	int buttonsH_ = game->getWindowHeight() / 5.7;
 	// renderizado de los controles
 	rectPanel = {buttonsX_, buttonsY_, buttonsW_, buttonsH_};
 	controlsTexture->render(rectPanel);
 	
+	// renderizado del icono moneda
+	rectPanel = { coinsX_, coinsY_, coinsW_, coinsH_ };
+	coinTexture->render(rectPanel);
+
+	rectPanel.x += coinsX_/2 + 75;
+	coinTexture->render(rectPanel);
+
 }
 
 void ShopState::next()
