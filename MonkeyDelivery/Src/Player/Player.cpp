@@ -249,7 +249,11 @@ void Player::initPowerUp(PowerUps x) {
 void Player::draw()
 {
 	if (!sleeping) {
-		if (energyLevel_->percentEnergy() <= 20)
+		if (energyLevel_->percentEnergy() <= 20 && isStopped_) { 
+			animationManager->setIsTired(true); 
+			animationManager->setState(AnimationManager::PlayerState::Idle);
+		}
+		else if (energyLevel_->percentEnergy() <= 20)
 			animationManager->setState(AnimationManager::PlayerState::GoToSleep);
 		else if (fearLevel_->percentFear() >= 50)
 			animationManager->setState(AnimationManager::PlayerState::Scared);
