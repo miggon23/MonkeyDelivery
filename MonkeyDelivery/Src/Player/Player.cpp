@@ -119,35 +119,34 @@ void Player::move(pair<double, double> speed)
 
 void Player::move()
 {
-	if (1 == 1) {
-		Vector2D<double> speed = { (double)dirX_, (double)dirY_ };
+	Vector2D<double> speed = { (double)dirX_, (double)dirY_ };
 
-		//Normalizamos el vector para que no se desplaze m�s en diagonal
-		speed.normalize();
-		speed = speed * vel_ * (timer.currTime() - lastUpdate);
-		lastUpdate = timer.currTime();
+	//Normalizamos el vector para que no se desplaze m�s en diagonal
+	speed.normalize();
+	speed = speed * vel_ * (timer.currTime() - lastUpdate);
+	lastUpdate = timer.currTime();
 
-		if (dirX_ != 0 || dirY_ != 0) {
-			if (isRunning) { //Esto se puede implementar desde el runCommand, evitando que el jugador tenga muchos estados como el de corriendo
-				speed = speed * 1.05;
-			}
-
-			// Comprobar si hay que cancelar el movimiento en alguna direcci�n por las colisiones
-			if (topCollision && speed.getY() < 0 || bottomCollision && speed.getY() > 0) {
-				speed = { speed.getX(), 0 };
-			}
-			if (leftCollision && speed.getX() < 0 || rightCollision && speed.getX() > 0) {
-				speed = { 0, speed.getY() };
-			}
-
-			drainEnergy(decreasingEnergyLevel_);
+	if (dirX_ != 0 || dirY_ != 0) {
+		if (isRunning) { //Esto se puede implementar desde el runCommand, evitando que el jugador tenga muchos estados como el de corriendo
+			speed = speed * 1.05;
 		}
-		//setPosition(getPosition().getX() + dirX_, getPosition().getY() + dirY_);
 
-		setPosition(getPosition().getX() + speed.getX(), getPosition().getY() + speed.getY());
+		// Comprobar si hay que cancelar el movimiento en alguna direcci�n por las colisiones
+		if (topCollision && speed.getY() < 0 || bottomCollision && speed.getY() > 0) {
+			speed = { speed.getX(), 0 };
+		}
+		if (leftCollision && speed.getX() < 0 || rightCollision && speed.getX() > 0) {
+			speed = { 0, speed.getY() };
+		}
 
-		//std::cout << speed.magnitude() << endl;
+		drainEnergy(decreasingEnergyLevel_);
 	}
+	//setPosition(getPosition().getX() + dirX_, getPosition().getY() + dirY_);
+
+	setPosition(getPosition().getX() + speed.getX(), getPosition().getY() + speed.getY());
+
+	//std::cout << speed.magnitude() << endl;
+	
 }
 
 void Player::setIsRunning(bool run)
