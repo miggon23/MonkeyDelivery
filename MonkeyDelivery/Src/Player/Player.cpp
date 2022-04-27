@@ -37,6 +37,7 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game), anima
 	reduceFactor_ = 2.2;
 	maxEnergyPercent_ = 45;
 	reduceEnergyFactor_ = 0.1;
+	isStopped_ = false;
 
 	resetVelocity(); //Se inicializa al valor de INIT_VEL_X e ..._Y
 
@@ -148,14 +149,17 @@ void Player::move()
 	setPosition(getPosition().getX() + speed.getX(), getPosition().getY() + speed.getY());
 
 	//std::cout << speed.magnitude() << endl;
-	 
+
 	//SI LA VELOCIDAD ES 0 RECUPERA ENERGIA HASTA UN MAX
-	if (speed.getX() == 0 && speed.getY() == 0) 
-		if (energyLevel_->percentEnergy() < maxEnergyPercent_){
+	if (speed.getX() == 0 && speed.getY() == 0) {
+		isStopped_ = true;
+		if (energyLevel_->percentEnergy() < maxEnergyPercent_) {
 			energyLevel_->drain(-reduceEnergyFactor_);
-			if (energyLevel_->percentEnergy() <= reduceEnergyFactor_) 
+			if (energyLevel_->percentEnergy() <= reduceEnergyFactor_)
 				setVel(previusVel_);
 		}
+	}
+	else isStopped_ = false;
 }
 
 void Player::setIsRunning(bool run)
@@ -249,6 +253,9 @@ void Player::draw()
 			animationManager->setState(AnimationManager::PlayerState::GoToSleep);
 		else if (fearLevel_->percentFear() >= 50)
 			animationManager->setState(AnimationManager::PlayerState::Scared);
+		else if (isStopped_)
+			animationManager->setState(AnimationManager::PlayerState::Idle);
+		else animationManager->setState(AnimationManager::PlayerState::Running);
 	}
 
 	SDL_Rect pos = getCollider();
@@ -288,14 +295,12 @@ void Player::draw()
 	if (fade)
 	{
 		fadeTex_->render({ 0, 0, 1800, 1000 }); // Renderizar la textura del rectangulo negro en ese rect
-
 		FadeOut(); // Realiza un fadeout sobre la pantalla
 	}
 }
 
 void Player::FadeOut()
 {
-
 	if (alpha < SDL_ALPHA_OPAQUE && timer.currTime() > 50)
 	{
 		alpha += 5;
@@ -375,7 +380,6 @@ bool Player::moneyChange(int money)
 		sdlutils().soundEffects().at("getMoney").setVolume(game->getSoundEfectsVolume());
 		sdlutils().soundEffects().at("getMoney").play(0, 1);
 	}
-
 
 	return true;
 }

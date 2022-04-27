@@ -59,6 +59,7 @@ private:
 	bool isRunning = false;
 	double walkingSpeedFactor_; //A esto se le multiplica la velocidad actual
 	double runningSpeedFactor_; // A esto se le multiplica la velocidad actual
+	bool isStopped_;
 
 	//Velocidad actual del jugador
 	double vel_;
