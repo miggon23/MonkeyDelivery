@@ -1,12 +1,18 @@
 #include "CreditsState.h"
 #include "../CommandClick.h"
 #include "../../Control/UI/Buttons/Back1.h"
+#include "../../json/JSON.h"
+
+
 
 CreditsState::CreditsState(Game* game) : State(game)
 {
 	
 	addButton(new Back1((int)game->getWindowWidth() / 2 - buttonW/2, (int)game->getWindowHeight() - 250, buttonW, buttonH, game));
 	backgroundTexture = game->getTexture(bckg_options);
+
+	loadCredits("Images/config/resources.json");
+
 	registerCommands();
 	
 }
@@ -20,7 +26,7 @@ void CreditsState::draw()
 		b->draw();
 	}
 
-	game->renderText( "CREDITS", sdlutils().width()/2 - 100, 20);
+	game->renderText( "CREDITS", sdlutils().width()/2 + 100, 20);
 
 	for (int i = 0; i < index_; i++)
 	{
@@ -40,6 +46,37 @@ void CreditsState::update()
 		lastName_ = SDL_GetTicks();
 	}
 }
+
+void CreditsState::loadCredits(std::string filename)
+{
+	std::unique_ptr<JSONValue> jValueRoot(JSON::ParseFromFile(filename));
+
+	if (jValueRoot == nullptr || !jValueRoot->IsObject()) {
+		throw "Something went wrong while load/parsing '" + filename + "'";
+	}
+
+	JSONObject root = jValueRoot->AsObject();
+	JSONValue* jValue = nullptr;
+	
+
+	jValue = root["credits"];
+	if (jValue != nullptr) {
+		if (jValue->IsArray()) {
+			for (auto& v : jValue->AsArray()) {
+				if (v->IsObject()) {
+					
+					JSONObject vObj = v->AsObject();
+					std::string key = vObj["name"]->AsString();
+					credits_.push_back(key);
+
+			
+				}
+			}
+		}
+	}
+}
+
+
 
 void CreditsState::next()
 {

@@ -366,5 +366,39 @@
       "id": "WaterTileset",
       "file": "./Src/TilemapSrc/Spritesheets/TilesetWater.png"
     }
+  ],
+
+  "credits":
+  [
+    {
+      "name": "Elisa Todd"
+      
+    },
+    {
+      "name": "Miguel Gonzales"
+    },
+    {
+      "name": "Antonio Povedano"
+    },
+    {
+      "name": "Adrian Montero"
+    },
+    {
+      "name": "Javier Comas"
+    },
+    {
+      "name": "Sara Isabel"
+    },
+    {
+      "name": "Raul Saavedra"
+    },
+    {
+      "name": "Alejandro Segarra"
+    },
+    {
+      "name": "Jacobo Alonso"
+    }
   ]
+
+  
 }
