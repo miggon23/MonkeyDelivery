@@ -281,6 +281,12 @@ void Game::renderText(vector<string> text, int x, int y, int incX, int incY, SDL
     }
 }
 
+void Game::restart()
+{
+    // comienza a sonar la música de juego de nuevo
+    sdlutils().musics().at("gamemusic").setMusicVolume(getMusicVolume() * getGeneralVolume());
+}
+
 //economy
 //modifica el dinero del jugador y devulve bool de confirmaci�n en caso de compra
 //actua como enlace al m�todo del jugador

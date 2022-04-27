@@ -156,6 +156,7 @@ public:
     vector<GameObject*> getGameObjects() { return gameObjects_; };
     void removeGameObject(GameObject* gameObject);
     void start();
+    void restart(); // llamado cuando salimos al menú, y luego volvemos
     void update();   
     inline void setUserExit() { doExit = true; };
     inline bool isUserExit() { return doExit; };

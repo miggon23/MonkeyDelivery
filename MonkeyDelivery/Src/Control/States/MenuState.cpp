@@ -28,8 +28,7 @@ MenuState::MenuState(Game* game) : State(game) {
 	backgroundTexture = game->getTexture(bckg_Image);
 	titleTexture = game->getTexture(bckg_GameTitle);
 	selectorTexture = game->getTexture(mission_UI_Selector);
-	game->clearSavedState();	
-	
+	game->clearSavedState();
 }
 
 void MenuState::registerCommands()
