@@ -24,6 +24,7 @@ public:
 
 private:
 	Texture* panelTexture;
+	Texture* controlsTexture;
 
 	int xObj = 420, yObj = 300, wObj = 405, hObj = 512, xOffset = 90, yOffset = 250, //Valores para el Hito2
 		

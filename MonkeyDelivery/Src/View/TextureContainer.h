@@ -104,7 +104,7 @@ enum TextureName
 		npc_Rabbit,
 		npc_Kangaroo,
 
-	//10-Shop - 6
+	//10-Shop - 7
 		shop_Boots01,
 		shop_Boots02,
 		shop_Boots03,
@@ -112,6 +112,7 @@ enum TextureName
 		shop_UI_PanelShop,
 		shop_UI_Selector,
 		ShopPanel_Interact,
+		shop_UI_Controls,
 	
 	//11-UI Overlay (InGame) - 7
 		UI_dialogueBox,
@@ -127,7 +128,7 @@ enum TextureName
 		UI_fearBuff,
 		UI_speedBuff,
 
-   //13-UI Overlay (Menu) - 19
+   //13-UI Overlay (Menu) - 20
 		UI_Black,
 		UI_Brightness,
 		button_Back,
@@ -152,7 +153,7 @@ enum TextureName
 		missingTex,
 };
 
-const int NUM_TEXTURES = 106;
+const int NUM_TEXTURES = 107;
 
 typedef struct {
 	string filename;
@@ -261,6 +262,7 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
 	{"shop/shop_UI_PanelShop.png",1,1},
 	{"shop/shop_UI_Selector.png",1,1},
 	{"shop/ShopPanel_Interact.png",1,1},
+	{"shop/shopControls.png",1,1},
 
 	//UI Overlay (InGame)
 	{"ui/InGame/dialoguebox.png",1,1},

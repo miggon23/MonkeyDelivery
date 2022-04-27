@@ -8,6 +8,7 @@ ShopState::ShopState(Game* game) : State(game){
 	registerCommands();
 
 	panelTexture=game->getTexture(shop_UI_PanelShop);
+	controlsTexture = game->getTexture(shop_UI_Controls);
 	font_ = new Font("Images/fonts/Pixellari.ttf", 40);
 
 	xObj = game->getWindowWidth() / 5;
@@ -109,6 +110,14 @@ void ShopState::draw()
 		if (SDL_GetTicks() > lastClicked_ + FAIL_TIMESHOWED) 
 			closeFailed_ = false;
 	}
+
+	int buttonsX_ = game->getWindowWidth() / 1.3;
+	int buttonsY_ = game->getWindowHeight() / 1.3;
+	int buttonsW_ = game->getWindowWidth() / 5.7;
+	int buttonsH_ = game->getWindowHeight() / 5.7;
+	// renderizado de los controles
+	rectPanel = {buttonsX_, buttonsY_, buttonsW_, buttonsH_};
+	controlsTexture->render(rectPanel);
 	
 }
 
