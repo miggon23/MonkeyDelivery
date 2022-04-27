@@ -203,10 +203,10 @@ void Game::draw()
 {
     // Dibujado del mapa
     SDL_Rect dst = { 0, 0, (int)getWindowWidth(), (int)getWindowHeight() };
-    if (mCamera_->getCameraPosition().getX() - trunc(mCamera_->getCameraPosition().getX()) > 0 ||
+    /*if (mCamera_->getCameraPosition().getX() - trunc(mCamera_->getCameraPosition().getX()) > 0 ||
         mCamera_->getCameraPosition().getY() - trunc(mCamera_->getCameraPosition().getY()) > 0) {
         cout << "eu";
-    }
+    }*/
     SDL_Rect src = { (int)lround(mCamera_->getCameraPosition().getX() / (getWindowWidth() / mCamera_->getWidth())),
                      (int)lround(mCamera_->getCameraPosition().getY() / (getWindowHeight() / mCamera_->getHeight())),
                      (int)lround(mCamera_->getWidth()),
@@ -524,8 +524,15 @@ void Game::initOptionsState()
 
 void Game::drawMap()
 { 
+
     SDL_Rect rectPanel = { minimapinfo_.xOrigin, minimapinfo_.yOrigin, (int)minimapinfo_.w, (int)minimapinfo_.h };
-    maptexture->render(rectPanel);
+
+    SDL_Rect src = { (int)lround(mCamera_->getCameraPosition().getX() / (getWindowWidth() / mCamera_->getWidth())),
+                     (int)lround(mCamera_->getCameraPosition().getY() / (getWindowHeight() / mCamera_->getHeight())),
+                     (int)lround(mCamera_->getWidth() * 1.25),
+                     (int)lround(mCamera_->getHeight() * 1.25) };
+    SDL_RenderCopy(renderer, background_, &src, &rectPanel);
+    //background_->render(rectPanel);
 
     if (isMapPointerPut) 
         mapPoint->draw();
