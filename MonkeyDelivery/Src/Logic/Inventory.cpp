@@ -194,7 +194,7 @@ void Inventory::draw()
 
 		if (i == selectedInventoryObject)
 		{			
-			base_->render(oRect);
+			selector_->render(oRect);
 		}
 
 
