@@ -28,12 +28,14 @@ protected:
 	bool startTimer = false;
 	bool back;
 	bool alive;
+	bool hasBeenFliped=false;
 	
 	SpawnZone zone;
 	vector<Point2D<double>> checkpoints;
 	AnimationManager* animationManager;
 	SDL_Rect textureRect;
 	Point2D<double> offsetCamera; //movimiento enemigos respecto a camara
+	
 
 public:
 

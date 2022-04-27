@@ -8,7 +8,7 @@ void GameObject::drawTexture(Texture* texture) {
     {
         SDL_Rect c = getCollider();
         SDL_Rect textureBox = { c.x , c.y , c.w, c.h };
-        texture->render(textureBox);
+        texture->render(textureBox, flip);
     }
     else
     {
@@ -18,7 +18,7 @@ void GameObject::drawTexture(Texture* texture) {
         pos.x -= (int)game->getCamera()->getCameraPosition().getX();
         pos.y -= (int)game->getCamera()->getCameraPosition().getY();
 
-        texture->render(pos);
+        texture->render(pos, flip);
     };
 }
 
