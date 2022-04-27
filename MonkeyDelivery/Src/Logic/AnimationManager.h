@@ -7,7 +7,7 @@ class Game;
 class AnimationManager
 {
 public:
-	enum PlayerState { Sleeping, GoToSleep, Running, Scared };
+	enum PlayerState { Sleeping, GoToSleep, Running, Scared, Idle };
 
 private:
 	Game* game_;
@@ -50,16 +50,19 @@ public:
 		int y;
 	};
 	LastDir lastDir;
+
 	inline AnimationManager() : game_(nullptr) { lastDir = {0,0}; };
 	inline AnimationManager(Game* game) :game_(game) { lastDir = { 0,0 }; };
 	inline ~AnimationManager() { timer_ = nullptr; cout << "animationManager Deleted" << endl; };
+
 	//JUGADOR
 	inline PlayerState setState(PlayerState state) { return playerState_ = state; };
 	inline int getWidthPlayer() { return wPlayer_; };
 	inline int getHeightPlayer() { return hPlayer_; };
 
 	inline void getFrameImagePlayer(SDL_Rect player, SDL_Rect& texturaRect, Texture* tex, float& timer, LastDir newDir) {
-		if (lastDir.x != newDir.x || lastDir.y != newDir.y) {//Si la direccion cambia (da igual de que componente)
+		//Si la direccion cambia (da igual de que componente)
+		if (lastDir.x != newDir.x || lastDir.y != newDir.y) {
 			texturaRect.x = 0;
 			lastDir = newDir;
 			if (timer_->TimeScale() - timer >= playerFrameSpeed) {
@@ -108,6 +111,21 @@ public:
 				timer = timer_->TimeScale();
 			}
 		}
+
+		else if (playerState_ == Idle) {
+			texturaRect.x = x1;
+			texturaRect.y = 18;
+			tex->render(texturaRect, player);
+			if (timer_->TimeScale() - timer >= playerFrameSpeed) {
+				x1 += 16;
+				if (texturaRect.x >= playerLimit- wPlayer_) {
+					texturaRect.x = 0;
+					x1 = 0;
+				}
+				timer = timer_->TimeScale();
+			}
+		}
+
 		else if (playerState_ == GoToSleep) {
 
 			texturaRect.x = 0;
@@ -261,7 +279,6 @@ public:
 		}
 		tex->render(texturaRect, plant, 0, nullptr, flip);
 	};
-
 
 	//MENSAJE PANEL MISIONES
 	inline void getFrameImageMission(SDL_Rect plant, SDL_Rect& texturaRect, Texture* tex, int& timer) {
