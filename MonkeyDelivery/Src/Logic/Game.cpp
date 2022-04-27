@@ -532,8 +532,8 @@ void Game::drawMap()
 
     SDL_Rect rectPanel = { minimapinfo_.xOrigin, minimapinfo_.yOrigin, (int)minimapinfo_.w, (int)minimapinfo_.h };
 
-    SDL_Rect src = { (int)lround(mCamera_->getCameraPosition().getX() / (getWindowWidth() / mCamera_->getWidth())),
-                     (int)lround(mCamera_->getCameraPosition().getY() / (getWindowHeight() / mCamera_->getHeight())),
+    SDL_Rect src = { (int)lround((mCamera_->getCameraPosition().getX() - mCamera_->getWidth() * miniMapScale_ / 2 - player_->getWidth() / 2) / (getWindowWidth() / mCamera_->getWidth())),
+                     (int)lround((mCamera_->getCameraPosition().getY() - mCamera_->getHeight() * miniMapScale_ / 2 - player_->getHeight() / 2) / (getWindowHeight() / mCamera_->getHeight())),
                      (int)lround(mCamera_->getWidth() * miniMapScale_),
                      (int)lround(mCamera_->getHeight() * miniMapScale_) };
     SDL_RenderCopy(renderer, background_, &src, &rectPanel);
@@ -567,8 +567,10 @@ void Game::scalePlayerIcon()
 
     pIcon->setDimension(smallDimension, smallDimension);
 
-    double x = minimapinfo_.xOrigin + (player_->getX() * (minimapinfo_.w / minimapinfo_.realW) - offset);
-    double y = minimapinfo_.yOrigin + (player_->getY() * (minimapinfo_.h / minimapinfo_.realH) - offset);
+    /*double x = minimapinfo_.xOrigin + (player_->getX() * (minimapinfo_.w / minimapinfo_.realW) - offset);
+    double y = minimapinfo_.yOrigin + (player_->getY() * (minimapinfo_.h / minimapinfo_.realH) - offset);*/
+    double x = minimapinfo_.xOrigin + minimapinfo_.w / 2 - offset / 2;
+    double y = minimapinfo_.yOrigin + minimapinfo_.h / 2;
 
     pIcon->setPosition(x, y);
 }
