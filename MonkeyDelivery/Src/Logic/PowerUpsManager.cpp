@@ -28,6 +28,7 @@ void PowerUpsManager::update(){
 		if (timerEnergyDrink_->currTime() >= timeEnergyDrinkLimit_) {
 			desactivate(energyDrink);
 		}
+		player_->drainEnergy(energyDrinkEnergyBonus_);
 	}
 	if (activatedAntiBanana) {
 		if (timerAntiBanana_->currTime() >= timeEnergyDrinkLimit_) {
@@ -65,7 +66,7 @@ void PowerUpsManager::ActivatePowerUp(PowerUps x){
 			//Aplicamos el PU al player
 			player_->setVel(player_->getVel() * energyDrinkSpeedBonus_); 
 			player_->drainEnergy(-(player_->getMaxEnergy() * energyDrinkEnergyBonus_));
-			player_->setBonusSpending(energyDrinkEnergyBonus_);
+			//player_->setBonusSpending(energyDrinkEnergyBonus_);
 			activatedEnergyDrink_ = true; //Activamos el PU
 			timerEnergyDrink_->reset(); //Inicializamos el timer
 		}else
