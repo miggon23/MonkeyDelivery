@@ -52,8 +52,9 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game), anima
 	inventory_->addObject(new Skates(game->getTexture(Item_Boots01), game, this));
 	inventory_->addObject(new Flashlight(game->getTexture(Item_Lantern01), game, this));
 	inventory_->addObject(new EnergyDrink(game->getTexture(Item_Soda02), game, this));
-	inventory_->addObject(new Monkeycola(game->getTexture(Item_Soda01), game, this));
-	inventory_->addObject(new Banana(game->getTexture(Item_Banana), game,this));
+	//inventory_->addObject(new Monkeycola(game->getTexture(Item_Soda01), game, this));
+	//inventory_->addObject(new Banana(game->getTexture(Item_Banana), game,this));
+	inventory_->addObject(new Repel(game->getTexture(Item_Spray), game,this));
 	setInventoryVisibility(true);
 	textureRect = { 0, 0, 16, 18 };
 	timerAnimation = 0;
