@@ -6,6 +6,12 @@ UI_Info::UI_Info(Game* game)
 {
 	this->game = game;
 	font_ = new Font("./Images/fonts/Pixellari.ttf", 20);
+
+	xP = textX = game->getWindowWidth() / 1.36;
+	textY = game->getWindowHeight() / 13.28;
+	yP = game->getWindowHeight() / 100.0;
+	wP = game->getWindowWidth() / 4.14;
+	hP = game->getWindowWidth() / 13.0;
 	
 }
 UI_Info::~UI_Info()	
@@ -32,7 +38,7 @@ void UI_Info::renderText(vector<string> text, int x, int y, SDL_Color color)
 void UI_Info::renderImage(string imgRoute)
 {
 	Texture* t = new Texture(game->getRenderer(), imgRoute);
-	SDL_Rect rect = {1300, 10, 435, 77};
+	SDL_Rect rect = {xP, yP, wP, hP};
 	t->render(rect);
 	delete t;
 }
@@ -45,7 +51,7 @@ void UI_Info::drawInfo()
 		renderImage(game->getMissionsPanel()->getMissionImage());
 		if (g->isExpress()) {
 			SDL_Color darkBlue = { 7, 24, 32, 0};
-			renderText(to_string(game->getMissionsPanel()->getTime()/10), 1325, 70, darkBlue);
+			renderText(to_string(game->getMissionsPanel()->getTime()/10), textX, textY, darkBlue);
 		}
 	}
 	

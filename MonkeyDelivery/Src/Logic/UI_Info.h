@@ -12,6 +12,8 @@ private:
 	Font* font_;
 	Game* game;
 
+	int textX, textY, xP, yP, wP, hP;
+
 public:
 	UI_Info(Game* game);
 	~UI_Info();
