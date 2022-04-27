@@ -118,7 +118,7 @@ void MissionsPanel::onMissionSelected(string missionId)
 		}
 	
 		//Misiones express
-		endTime_ = initialTicks_ + m.minTime;
+		endTime_ = SDL_GetTicks() + m.minTime;
 
 		// spawn Vecino
 		activeTarget_->changeActive();
@@ -149,13 +149,8 @@ void MissionsPanel::onMissionCompleted()
 {
 	// Quitar paquete
 	game->getPlayer()->removeMissionObject();
-}
 
-void MissionsPanel::dialogueEnd()
-{
-	// Despawnear vecino -> cuando acabe el dialogo
-	activeTarget_->changeActive();
-	
+
 	MissionInfo& m = missions_.at(currentMission_->getName());
 
 	// Dar la recompensa
@@ -164,6 +159,9 @@ void MissionsPanel::dialogueEnd()
 	// Restar dinero si se pasa del tiempo -> Resta 1 oro por segundo que se retrase
 	if (SDL_GetTicks() > endTime_) {
 		reward -= ((SDL_GetTicks() - initialTicks_ - m.minTime) / 1000); // valor de tiempo que se ha pasado del tiempo mínimo
+		if (m.isExpress) {
+			reward = 0;
+		}
 	}
 	endTime_ = 0; // resetea la variable
 
@@ -202,6 +200,12 @@ void MissionsPanel::dialogueEnd()
 
 	delete currentMission_;
 	currentMission_ = nullptr;
+}
+
+void MissionsPanel::dialogueEnd()
+{
+	// Despawnear vecino -> cuando acabe el dialogo
+	activeTarget_->changeActive();
 }
 
 string MissionsPanel::getMissionImage()
