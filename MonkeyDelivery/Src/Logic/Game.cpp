@@ -529,8 +529,8 @@ void Game::drawMap()
 
     SDL_Rect src = { (int)lround(mCamera_->getCameraPosition().getX() / (getWindowWidth() / mCamera_->getWidth())),
                      (int)lround(mCamera_->getCameraPosition().getY() / (getWindowHeight() / mCamera_->getHeight())),
-                     (int)lround(mCamera_->getWidth() * 1.25),
-                     (int)lround(mCamera_->getHeight() * 1.25) };
+                     (int)lround(mCamera_->getWidth() * miniMapScale_),
+                     (int)lround(mCamera_->getHeight() * miniMapScale_) };
     SDL_RenderCopy(renderer, background_, &src, &rectPanel);
     //background_->render(rectPanel);
 

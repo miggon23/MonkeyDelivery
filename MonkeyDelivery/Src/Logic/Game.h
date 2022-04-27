@@ -138,6 +138,7 @@ private:
     bool isMapPointerPut = false;
     Texture* maptexture;
     PlayerIcon* pIcon;
+    double miniMapScale_ = 1.4;
 
     //Particle System
     ParticleExample* partSystem;
