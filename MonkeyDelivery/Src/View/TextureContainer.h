@@ -231,7 +231,7 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
 	{"map/playerIcon.png",1,1},
 
 	//7-Missions
-	{"missions/mission_UI_Helper.png",1,1},
+	{"missions/mission01_UI_Helper.png",1,1},
 	{"missions/mission_UI_Panel.png",1,1},
 	{"missions/mission_UI_Selector.png",1,1},
 	{"missions/Mission01.png",1,1},

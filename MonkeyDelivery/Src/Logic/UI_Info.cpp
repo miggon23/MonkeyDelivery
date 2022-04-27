@@ -32,7 +32,7 @@ void UI_Info::renderText(vector<string> text, int x, int y, SDL_Color color)
 void UI_Info::renderImage(string imgRoute)
 {
 	Texture* t = new Texture(game->getRenderer(), imgRoute);
-	SDL_Rect rect = {1300, 10, 24 * 4, 24 * 4};
+	SDL_Rect rect = {1300, 10, 435, 77};
 	t->render(rect);
 	delete t;
 }
