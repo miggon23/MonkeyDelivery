@@ -30,7 +30,7 @@ void CreditsState::draw()
 
 	for (int i = 0; i < index_; i++)
 	{
-		game->renderText(credits_[i], sdlutils().width()/2 - 100, 100  *i);
+		game->renderText(credits_[i], sdlutils().width()/2 - 350, 100  *i);
 		
 	}
 	
@@ -68,8 +68,6 @@ void CreditsState::loadCredits(std::string filename)
 					JSONObject vObj = v->AsObject();
 					std::string key = vObj["name"]->AsString();
 					credits_.push_back(key);
-
-			
 				}
 			}
 		}
