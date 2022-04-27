@@ -6,7 +6,7 @@ Bat::Bat(Game* game, int Aleatorio, Point2D<int> centroRadio, int nLoop, Animati
 	Vector2D<double> zonePoint = zone.generatePoint();
 	setPosition(zonePoint.getX(), zonePoint.getY());
 	setTexture(batSS_Default);
-	setDimension(70, 42);
+	setDimension(105, 90);
 	initialPos = getPosition();
 	stealTimer_ = SDL_GetTicks();
 	speed_ = 1;

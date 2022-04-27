@@ -25,7 +25,7 @@ private:
 	
 	//Murcielago	
 	int wBat_ = 35,
-		hBat_ = 21; 
+		hBat_ = 30; 
 	//Gato
 	int wCat_ = 100,
 		hCat_ = 100;
