@@ -19,6 +19,7 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game), anima
 	setTexture(monkeySS_Default);
 	setOrientation("off");
 	setMovState(WALKING);
+	setFlip(SDL_FLIP_NONE);
 	INIT_VEL_ = 0.225;
 
 	//inicializacion de variables

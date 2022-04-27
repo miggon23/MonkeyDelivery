@@ -20,10 +20,12 @@ protected:
     Game* game;
 
     Texture* texture;
+    SDL_RendererFlip flip;
 
     void drawTexture(Texture* texture);
 public:
     void setTexture(TextureName textureName);
+    inline void setFlip(SDL_RendererFlip f) { flip = f; }
 
     GameObject(Game* game, bool rel = false) : game(game), relative_(rel), texture(nullptr) {
     };

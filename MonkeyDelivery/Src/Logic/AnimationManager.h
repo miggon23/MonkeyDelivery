@@ -212,7 +212,7 @@ public:
 	//TORO
 	inline int getWidthBull() { return wBull_; };
 	inline int getHeigthBull() { return hBull_; };
-	inline void getFrameImageBull(SDL_Rect bull, SDL_Rect& texturaRect, Texture* tex, float& timer) {
+	inline void getFrameImageBull(SDL_Rect bull, SDL_Rect& texturaRect, Texture* tex, float& timer, SDL_RendererFlip flip) {
 		if (timer_->TimeScale() - timer >= 350) {
 			texturaRect.x += wBull_;
 			if (texturaRect.y >= 100 && texturaRect.x >= 200) {
@@ -226,7 +226,7 @@ public:
 			timer = timer_->TimeScale();
 
 		}
-		tex->render(texturaRect, bull);
+		tex->render(texturaRect, bull, 0, nullptr, flip);
 	};
 
 	//ESCORPION

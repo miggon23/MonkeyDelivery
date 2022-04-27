@@ -64,10 +64,10 @@ public:
 
     // renders the complete texture at a destination rectangle (dest),
     // with rotation
-    inline void render(const SDL_Rect& dest, float rotation) {
+    /*inline void render(const SDL_Rect& dest, float rotation) {
         SDL_Rect src = { 0, 0, w, h };
         render(src, dest, rotation);
-    }
+    }*/
     inline void changeAlpha(Uint8 alpha) {
         SDL_SetTextureBlendMode( texture,SDL_BLENDMODE_BLEND);
         SDL_SetTextureAlphaMod(texture, alpha);

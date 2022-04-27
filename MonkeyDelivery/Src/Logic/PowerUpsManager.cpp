@@ -86,7 +86,7 @@ void PowerUpsManager::InitTimer(PowerUps x){
 		break;
 	case repelente:
 		if (!activatedAntiBanana){
-			player_->setFearBonusFactor(monkeycolaReduction_);
+			player_->setFearBonusFactor(antiBananaFearBuff_);
 			activatedAntiBanana = true;
 			timerAntiBanana_->reset();
 		}else
