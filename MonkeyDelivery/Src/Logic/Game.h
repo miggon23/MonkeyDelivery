@@ -179,6 +179,7 @@ public:
     void setRenderer(SDL_Renderer* renderer);
     void loadTextures();
     Texture* getTexture(TextureName name);
+    inline int getMoney() { return player_->getMoney(); };
     inline SDL_Renderer* getRenderer() { return renderer; };
     inline Player* getPlayer() { return player_; }
    // inline MissionManager* getMissionManager() { return missions_; }

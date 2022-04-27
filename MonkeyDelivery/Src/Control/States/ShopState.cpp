@@ -93,10 +93,11 @@ void ShopState::draw()
 		rectPanel = { xOffset + xObj * (selected_ - 4), yOffset + yObj, xObj, yObj };
 	
 	game->getTexture(shop_UI_Selector)->render(rectPanel);
-
+	// current money
+	font_->render(game->getRenderer(), "Monedas: " + std::to_string(game->getMoney()), game->getWindowWidth() - 800, game->getWindowHeight() - 200, BLACK);
 	//renderizado del texto
 	if (shop_->objects.size()>selected_&&shop_->objects[selected_].stock > 0) {
-		font_->render(game->getRenderer(), std::to_string(shop_->objects[selected_].price), xText, yText, BLACK);
+		font_->render(game->getRenderer(), "Coste: " + std::to_string(shop_->objects[selected_].price), 600, game->getWindowHeight() - 200, BLACK);
 	}
 	else {
 		font_->render(game->getRenderer(), " ", xText, yText, BLACK);
