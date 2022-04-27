@@ -1,4 +1,6 @@
+#pragma once
 #include "../Logic/GameObject.h"
+
 class Game;
 
 class energyLevel: public GameObject {
@@ -7,6 +9,8 @@ private:
 	double place_;
 	double energy_;
 	double maxEnergy_;
+
+	int x, y, w, h;
 public:
 	energyLevel(Game* game);
 	~energyLevel() { };
