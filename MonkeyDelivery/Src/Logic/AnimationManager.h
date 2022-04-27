@@ -274,44 +274,4 @@ public:
 		}
 		tex->render(texturaRect, plant);
 	};
-
-	//inline void getFrameImageCat(SDL_Rect catRect, SDL_Rect& texturaRect, Texture* tex, float& timer, LastDir newDir) 
-	//{
-	//	if (lastDir.x != newDir.x || lastDir.y != newDir.y) {//Si la direccion cambia (da igual de que componente)
-	//		texturaRect.x = 0;
-	//		lastDir = newDir;
-	//		if (timer_->TimeScale() - timer >= playerFrameSpeed) {
-	//			texturaRect.x += 16;
-	//			if (texturaRect.x >= playerLimit) {
-	//				texturaRect.x = 0;
-	//			}
-	//			timer = timer_->TimeScale();
-	//		}
-	//	}
-
-	//	//las x
-	//	switch (newDir.x)
-	//	{
-	//	case 1: //Derecha
-	//		texturaRect.y = 54;
-	//		break;
-	//	case -1: //Izquierda
-	//		texturaRect.y = 36;
-	//		break;
-	//	default:
-	//		break;
-	//	}
-	//	//las y
-	//	switch (newDir.y)
-	//	{
-	//	case 1: //Abajo
-	//		texturaRect.y = 0;
-	//		break;
-	//	case -1: //Arriba
-	//		texturaRect.y = 72;
-	//		break;
-	//	default:
-	//		break;
-	//	}
-	//}
 };
