@@ -23,6 +23,9 @@ class PowerUpsManager{
 	double monkeycolaReduction_ = 0.2; //20%
 	double monkeycolaReductionHigh_ = 0.3; //30%
 
+	double bananaBuff_ = 0.1; //10%
+	double bananaBuffHigh_ = 0.25;//25%
+
 	Texture* texFearBuff_;
 	Texture* texEnergyBuff_;
 	Texture* texSpeedBuff_;
@@ -32,7 +35,7 @@ public:
 	~PowerUpsManager();
 	void update();
 	void draw();
-	void InitTimer(PowerUps x);
+	void ActivatePowerUp(PowerUps x);
 	void desactivate(PowerUps x);
 	void desactivateAllPowerUps();
 	

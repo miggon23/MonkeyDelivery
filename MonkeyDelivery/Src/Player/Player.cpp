@@ -7,6 +7,7 @@
 #include "../Items/Pickaxe.h"
 #include "../Items/Repel.h"
 #include "../Items/Monkeycola.h"
+#include "../Items/Banana.h"
 #include "../Logic/Game.h"
 #include "../Logic/PowerUpsManager.h"
 #include "SDL.h"
@@ -52,7 +53,7 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game), anima
 	inventory_->addObject(new EnergyDrink(game->getTexture(Item_Soda02), game, this));
 	inventory_->addObject(new Monkeycola(game->getTexture(Item_Soda01), game, this));
 	inventory_->addObject(new Pickaxe(game->getTexture(Item_pickaxe01), game, 1,this));
-	inventory_->addObject(new Repel(game->getTexture(Item_Spray), game, this));
+	inventory_->addObject(new Banana(game->getTexture(Item_Banana), game,this));
 	setInventoryVisibility(true);
 	textureRect = { 0, 0, 16, 18 };
 	timerAnimation = 0;
@@ -230,7 +231,7 @@ void Player::removeMoney(int amount)
 }
 
 void Player::initPowerUp(PowerUps x) {
-	powerUpsManager->InitTimer(x);
+	powerUpsManager->ActivatePowerUp(x);
 }
 
 void Player::draw()
