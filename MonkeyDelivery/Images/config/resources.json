@@ -315,6 +315,14 @@
     {
         "id": "reward",
         "file": "./Sounds/reward.wav"
+    },
+    {
+        "id": "alarm",
+        "file": "./Sounds/alarm.wav"
+    },
+    {
+        "id": "lose",
+        "file": "./Sounds/missionLost.wav"
     }
   ],
 

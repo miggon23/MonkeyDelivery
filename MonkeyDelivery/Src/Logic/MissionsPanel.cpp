@@ -171,8 +171,8 @@ void MissionsPanel::dialogueEnd()
 		reward = 0;
 
 		// sonido de perder
-		sdlutils().soundEffects().at("reward").setVolume(game->getSoundEfectsVolume() * 2);
-		sdlutils().soundEffects().at("reward").play(0, 1);
+		sdlutils().soundEffects().at("lose").setVolume(game->getSoundEfectsVolume() * 2);
+		sdlutils().soundEffects().at("lose").play(0, 1);
 	}
 	else if (reward < m.minMoney) { // si no es express le aseguro un mínimo de dinero
 		reward = m.minMoney;
