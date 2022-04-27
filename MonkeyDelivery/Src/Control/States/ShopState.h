@@ -25,10 +25,10 @@ public:
 private:
 	Texture* panelTexture;
 
-	const int xObj = 420, yObj = 300, wObj = 405, hObj = 512, xOffset = 90, yOffset = 250, //Valores para el Hito2
+	int xObj = 420, yObj = 300, wObj = 405, hObj = 512, xOffset = 90, yOffset = 250, //Valores para el Hito2
 		
-	xText = 680, yText = 830; //Coordenadas  para el Hito2
-	const int MAX_SELECTED = 8, FAIL_TIMESHOWED = 3000;
+	xText = 680, yText = 830, maxSelected; //Coordenadas  para el Hito2
+	const int FAIL_TIMESHOWED = 3000;
 
 	int selected_ = 0, lastClicked_;	
 	bool closeFailed_ = false;
