@@ -119,6 +119,7 @@ private:
     AnimationManager* animationManager_;
 
     Font* font_;
+    Font* moneyFont_;
     UI_Info* info;
 
     //prueba cuadro dialogo
@@ -182,6 +183,7 @@ public:
     inline Player* getPlayer() { return player_; }
    // inline MissionManager* getMissionManager() { return missions_; }
     void renderText(string text, int x, int y, SDL_Color color = { 0,0,0 }); // Escribir una sola l�nea
+    void renderMoney(string text, int x, int y, SDL_Color color = { 0,0,0 });
     void renderText(vector<string> text, int x, int y, int incX, int incY, SDL_Color color = { 0,0,0 }); // Escribir varias l�neas
 
     // missions

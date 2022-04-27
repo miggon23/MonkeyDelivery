@@ -59,6 +59,7 @@ Game::Game(string n, double w, double h) : name(n), width(w), height(h), doExit(
    
     //maptexture = getTexture(Item_Package);
     font_ = new Font("./Images/fonts/Pixellari.ttf", 50);
+
     animationManager_ = new AnimationManager(this);
 }
 
@@ -264,6 +265,11 @@ Texture* Game::getTexture(TextureName name) {
 void Game::renderText(string text, int x, int y, SDL_Color color)
 {
     font_->render(renderer, text.c_str(), x, y, color);
+}
+void Game::renderMoney(string text, int x, int y, SDL_Color color)
+{
+    moneyFont_ = new Font("./Images/fonts/Pixellari.ttf", 26);
+    moneyFont_->render(renderer, text.c_str(), x, y, color);
 }
 
 void Game::renderText(vector<string> text, int x, int y, int incX, int incY, SDL_Color color)
