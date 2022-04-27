@@ -57,7 +57,7 @@ void PowerUpsManager::draw(){
 		texFearBuff_->render(rect);
 	}
 }
-void PowerUpsManager::InitTimer(PowerUps x){
+void PowerUpsManager::ActivatePowerUp(PowerUps x){
 	switch (x){
 	case energyDrink:
 		//Si no estaba activado el energy drink
@@ -75,6 +75,11 @@ void PowerUpsManager::InitTimer(PowerUps x){
 		activateBoots_ = !activateBoots_;
 		break;
 	case banana:
+		//Si es menor que el 10%
+		if(player_->getEnergy() / player_->getMaxEnergy() < 0.1)
+			player_->drainEnergy(-(player_->getMaxEnergy() * bananaBuffHigh_)); //sobre el total de enería
+		else
+			player_->drainEnergy(-(player_->getEnergy() * bananaBuff_)); //sobre la energía actual
 		break;
 	case monkeycola:
 		//Menor que 80%, recupera el 20% del miedo
