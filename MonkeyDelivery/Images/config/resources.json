@@ -46,7 +46,7 @@
       "helperImage": "./Images/missions/mission_UI_Helper.png",
       "maxmoney": 100,
       "minmoney": 50,
-      "mintime": 10000,
+      "mintime": 45000,
       "express": true,
       "special": false,
       "target": "NPC_Pavo",

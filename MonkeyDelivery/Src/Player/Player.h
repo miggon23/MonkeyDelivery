@@ -143,7 +143,7 @@ public:
 	inline void setVel(double x) { vel_ = x; };
 	inline void resetVelocity() { setVel(INIT_VEL_); }; // Resetea la velocidad del jugador a la de por defecto (sin modificaciones)
 	inline double getVel() { return vel_; };
-
+	inline int getMoney() { return money_; };
 	inline void setDirX(int x) { dirX_ = x; };
 	inline void setDirY(int y) { dirY_ = y; };
 	inline void setDir(int x, int y) { dirX_ = x; dirY_ = y; };
