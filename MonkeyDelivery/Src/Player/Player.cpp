@@ -33,6 +33,7 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game), anima
 	walkingEnergy_ = 0.05;
 	runningEnergy_ = walkingEnergy_ * 1.5;
 	decreasingEnergyLevel_ = walkingEnergy_; // Cambiar esto despu�s a un m�todo set <---
+	reducedSpeed = false;
 
 	resetVelocity(); //Se inicializa al valor de INIT_VEL_X e ..._Y
 
@@ -89,9 +90,16 @@ void Player::update()
 			sleep();//si esta durmiendo
 		else move();//si no esta durmiendo habilitanmos el movimiento
 
-		if ((energyLevel_->percentEnergy() == 0 || fearLevel_->percentFear() == 100) && !fade) {
+		if (fearLevel_->percentFear() == 100) {
 			fade = true;
+			removeMoney(20);
 		}
+		if (energyLevel_->percentEnergy() == 0 && !reducedSpeed)
+		{
+			reducedSpeed = true;
+			setVel(getVel() / 2);
+		}
+		else reducedSpeed = false;
 	}
 }
 
@@ -140,12 +148,16 @@ void Player::move()
 
 		drainEnergy(decreasingEnergyLevel_);
 	}
-	//setPosition(getPosition().getX() + dirX_, getPosition().getY() + dirY_);
 
 	setPosition(getPosition().getX() + speed.getX(), getPosition().getY() + speed.getY());
 
 	//std::cout << speed.magnitude() << endl;
-	
+	 
+	//SI LA VELOCIDAD ES 0 RECUPERA ENERGIA HASTA UN MAX
+	if (speed.getX() == 0 && speed.getY() == 0) 
+		if (energyLevel_->percentEnergy() < 45) 
+			energyLevel_->drain(-1);
+	cout << "Energía: " << energyLevel_->percentEnergy() << endl;
 }
 
 void Player::setIsRunning(bool run)
