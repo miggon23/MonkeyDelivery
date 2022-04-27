@@ -156,12 +156,18 @@ void Player::move()
 	 
 	//SI LA VELOCIDAD ES 0 RECUPERA ENERGIA HASTA UN MAX
 	if (speed.getX() == 0 && speed.getY() == 0) 
+
 		if (energyLevel_->percentEnergy() < 45){
 			energyLevel_->drain(-0.1);
 			if(energyLevel_->percentEnergy() <= 2)
 				setVel(getVel() * reducedSpeed);
 		}
 			
+
+		if (energyLevel_->percentEnergy() < 45) 
+			energyLevel_->drain(-1);
+	//cout << "Energía: " << energyLevel_->percentEnergy() << endl;
+
 }
 
 void Player::setIsRunning(bool run)
