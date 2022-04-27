@@ -196,15 +196,15 @@ void Game::draw()
 
     dialogueBox_->draw();
 
-    if (!mapOpened) drawMap();
-    scalePlayerIcon();
-
-    player_->draw();
-
     //partSystem->draw();
     missionsPanel_->draw();
 
     tutorialBook_->draw();
+
+    if (!mapOpened && !player_->isInTutorial()) drawMap();
+    scalePlayerIcon();
+
+    player_->draw();
 }
 
 Point2D<int> Game::getOrigin() {

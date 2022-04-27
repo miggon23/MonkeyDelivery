@@ -79,7 +79,7 @@ Player::~Player()
 
 void Player::update()
 {
-	if (!fade && !isTalking_) {
+	if (!fade && !isTalking_ && !isInTutorial_) {
 
 		powerUpsManager->update();
 		if (sleeping)
@@ -248,58 +248,61 @@ void Player::initPowerUp(PowerUps x) {
 
 void Player::draw()
 {
-	if (!sleeping) {
-		if (energyLevel_->percentEnergy() <= 20 && isStopped_) { 
-			animationManager->setIsTired(true); 
-			animationManager->setState(AnimationManager::PlayerState::Idle);
+	if (!isInTutorial_) { // no dibujamos nada si estamos en el tutorial
+
+		if (!sleeping) {
+			if (energyLevel_->percentEnergy() <= 20 && isStopped_) { 
+				animationManager->setIsTired(true); 
+				animationManager->setState(AnimationManager::PlayerState::Idle);
+			}
+			else if (energyLevel_->percentEnergy() <= 20)
+				animationManager->setState(AnimationManager::PlayerState::GoToSleep);
+			else if (fearLevel_->percentFear() >= 50)
+				animationManager->setState(AnimationManager::PlayerState::Scared);
+			else if (isStopped_)
+				animationManager->setState(AnimationManager::PlayerState::Idle);
+			else animationManager->setState(AnimationManager::PlayerState::Running);
 		}
-		else if (energyLevel_->percentEnergy() <= 20)
-			animationManager->setState(AnimationManager::PlayerState::GoToSleep);
-		else if (fearLevel_->percentFear() >= 50)
-			animationManager->setState(AnimationManager::PlayerState::Scared);
-		else if (isStopped_)
-			animationManager->setState(AnimationManager::PlayerState::Idle);
-		else animationManager->setState(AnimationManager::PlayerState::Running);
-	}
 
-	SDL_Rect pos = getCollider();
+		SDL_Rect pos = getCollider();
 
-	pos.x -= (int)game->getCamera()->getCameraPosition().getX();
-	pos.y -= (int)game->getCamera()->getCameraPosition().getY();
+		pos.x -= (int)game->getCamera()->getCameraPosition().getX();
+		pos.y -= (int)game->getCamera()->getCameraPosition().getY();
 
-	animationManager->getFrameImagePlayer(pos, textureRect, texture, timerAnimation, AnimationManager::LastDir{ (int)dirX_, (int)dirY_ });
+		animationManager->getFrameImagePlayer(pos, textureRect, texture, timerAnimation, AnimationManager::LastDir{ (int)dirX_, (int)dirY_ });
 
 
-	energyLevel_->draw();
-	fearLevel_->draw();
-	playerHUD_->draw();
-	game->renderMoney(to_string(money_), 265, 134);
-	powerUpsManager->draw();
+		energyLevel_->draw();
+		fearLevel_->draw();
+		playerHUD_->draw();
+		game->renderMoney(to_string(money_), 265, 134);
+		powerUpsManager->draw();
 
-	if (boolrenderSleepText) NoSleepText();
+		if (boolrenderSleepText) NoSleepText();
 
-	if (inventoryVisibility) inventory_->draw();
+		if (inventoryVisibility) inventory_->draw();
 
-	if (usingFlashLight) {
+		if (usingFlashLight) {
 
-		auto a = lightZoneFL();
-		a.x -= (int)game->getCamera()->getCameraPosition().getX();
-		a.y -= (int)game->getCamera()->getCameraPosition().getY();
-		flashlightTex_->render(a);
-	}
+			auto a = lightZoneFL();
+			a.x -= (int)game->getCamera()->getCameraPosition().getX();
+			a.y -= (int)game->getCamera()->getCameraPosition().getY();
+			flashlightTex_->render(a);
+		}
 
-	if (usingLantern) {
+		if (usingLantern) {
 
-		auto b = lightZoneL();
-		b.x -= (int)game->getCamera()->getCameraPosition().getX();
-		b.y -= (int)game->getCamera()->getCameraPosition().getY();
-		lanternTex_->render(b);
-	}
+			auto b = lightZoneL();
+			b.x -= (int)game->getCamera()->getCameraPosition().getX();
+			b.y -= (int)game->getCamera()->getCameraPosition().getY();
+			lanternTex_->render(b);
+		}
 
-	if (fade)
-	{
-		fadeTex_->render({ 0, 0, 1800, 1000 }); // Renderizar la textura del rectangulo negro en ese rect
-		FadeOut(); // Realiza un fadeout sobre la pantalla
+		if (fade)
+		{
+			fadeTex_->render({ 0, 0, 1800, 1000 }); // Renderizar la textura del rectangulo negro en ese rect
+			FadeOut(); // Realiza un fadeout sobre la pantalla
+		}
 	}
 }
 

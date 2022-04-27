@@ -41,6 +41,7 @@ private:
 
 	bool isTalking_ = false; // determina si el player está con un diálogo abierto
 							 // para bloquear su movimiento y acciones
+	bool isInTutorial_ = false;
 
 	//INVENTARIO
 	Inventory* inventory_ = nullptr;
@@ -207,4 +208,9 @@ public:
 
 	inline void changeTalking(bool a) { isTalking_ = a; };
 	inline bool isTalking() { return isTalking_; };
+	
+	inline void changeTutorial(bool a) { isInTutorial_ = a; };
+	inline bool isInTutorial() { return isInTutorial_; };
+
+
 };
