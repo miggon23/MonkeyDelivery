@@ -71,6 +71,7 @@ private:
 	double dirX_ = 0; // 1, 0 o -1
 	int dirY_ = 0; // 1, 0 o -1
 	bool reducedSpeed;
+	int reduceFactor = 2;
 
 	// Direcciones en las que no se puede mover por colisiones
 	bool topCollision = false;

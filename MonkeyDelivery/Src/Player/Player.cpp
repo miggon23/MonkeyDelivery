@@ -98,9 +98,9 @@ void Player::update()
 		if (energyLevel_->percentEnergy() == 0 && !reducedSpeed)
 		{
 			reducedSpeed = true;
-			setVel(getVel() / 2);
+			setVel(getVel() / reduceFactor);
 		}
-		else reducedSpeed = false;
+		else if (energyLevel_->percentEnergy() != 0) { reducedSpeed = false;}
 	}
 }
 
@@ -156,9 +156,12 @@ void Player::move()
 	 
 	//SI LA VELOCIDAD ES 0 RECUPERA ENERGIA HASTA UN MAX
 	if (speed.getX() == 0 && speed.getY() == 0) 
-		if (energyLevel_->percentEnergy() < 45) 
-			energyLevel_->drain(-1);
-	cout << "Energía: " << energyLevel_->percentEnergy() << endl;
+		if (energyLevel_->percentEnergy() < 45){
+			energyLevel_->drain(-0.1);
+			if(energyLevel_->percentEnergy() <= 2)
+				setVel(getVel() * reducedSpeed);
+		}
+			
 }
 
 void Player::setIsRunning(bool run)
@@ -177,7 +180,7 @@ void Player::setIsRunning(bool run)
 
 void Player::sleep(){
 	recoverFear(1);
-	drainEnergy(-1);
+	drainEnergy(-0.1);
 }
 
 //cambiar la variable de dormir y establecer la textura
