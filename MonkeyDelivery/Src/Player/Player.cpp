@@ -50,10 +50,8 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game), anima
 	inventory_->addObject(new Flashlight(game->getTexture(Item_Lantern01), game, this));
 	inventory_->addObject(new EnergyDrink(game->getTexture(Item_Soda02), game, this));
 	inventory_->addObject(new Monkeycola(game->getTexture(Item_Soda01), game, this));
-	//inventory_->addObject(new EnergyDrink(game->getTexture(Item_Soda02), game, this));
-	//falta la textura del pico
-	//inventory_->addObject(new Pickaxe(game->getTexture(Item_Soda), game, 1,this));
-
+	inventory_->addObject(new Pickaxe(game->getTexture(Item_pickaxe01), game, 1,this));
+	inventory_->addObject(new Repel(game->getTexture(Item_Spray), game, this));
 	setInventoryVisibility(true);
 	textureRect = { 0, 0, 16, 18 };
 	timerAnimation = 0;
@@ -164,12 +162,9 @@ void Player::setIsRunning(bool run)
 	}
 }
 
-void Player::sleep()
-{
-	//getScared(-1);
+void Player::sleep(){
 	recoverFear(1);
 	drainEnergy(-1);
-	//sdlutils().soundEffects().at("sleep").play(0, 1);
 }
 
 //cambiar la variable de dormir y establecer la textura
@@ -189,7 +184,7 @@ void Player::changeSleep()
 				usingLantern = false;
 				lanternOn = true;
 			}
-			sdlutils().soundEffects().at("sleep").setVolume(game->getGeneralVolume() * game->getSoundEfectsVolume());
+			sdlutils().soundEffects().at("sleep").setVolume((int)(game->getGeneralVolume() * game->getSoundEfectsVolume()));
 			sdlutils().soundEffects().at("sleep").play(-1, 1);
 		}
 		else {
@@ -257,7 +252,7 @@ void Player::draw()
 	energyLevel_->draw();
 	fearLevel_->draw();
 	playerHUD_->draw();
-
+	powerUpsManager->draw();
 
 	if (boolrenderSleepText) NoSleepText();
 
@@ -314,7 +309,9 @@ void Player::FadeOut()
 void Player::sendToBed()
 {
 	fade = false;
-	sdlutils().soundEffects().at("scary").setVolume(game->getSoundEfectsVolume() * game->getGeneralVolume());
+	powerUpsManager->desactivateAllPowerUps();
+	inventory_->desactivateUseSelectedObject();
+	sdlutils().soundEffects().at("scary").setVolume((int)(game->getSoundEfectsVolume() * game->getGeneralVolume()));
 	sdlutils().soundEffects().at("scary").play(0, 1);
 	setPosition((double)bedX_ + 15, bedY_);//colocar en la cama
 }

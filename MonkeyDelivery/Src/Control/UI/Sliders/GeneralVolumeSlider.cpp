@@ -5,6 +5,6 @@ GeneralVolumeSlider::GeneralVolumeSlider(Game* game, double x, double y):Slider(
 }
 
 void GeneralVolumeSlider::Utility(){
-	float x = Percent();
+	double x = Percent();
 	game_->ChangeGeneralVolume(x);
 }

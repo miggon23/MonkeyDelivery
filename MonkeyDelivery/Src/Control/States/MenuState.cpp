@@ -16,10 +16,10 @@
 MenuState::MenuState(Game* game) : State(game) {
 	game->clearSavedState();
 	registerCommands();
-	addButton(new Start(game->getWindowWidth() / 2 - buttonW / 2, game->getWindowHeight() / 2 - buttonH, buttonW, buttonH, game));
-	addButton(new Options(game->getWindowWidth() / 2 - buttonW / 2, game->getWindowHeight() / 2, buttonW, buttonH, game, 1));
-	addButton(new Credits(game->getWindowWidth() / 2 - buttonW / 2, game->getWindowHeight() / 2 + buttonH, buttonW, buttonH, game));
-	addButton(new ExitButton(game->getWindowWidth() / 2 - buttonW / 2, game->getWindowHeight() / 2 + buttonH*2, buttonW, buttonH, game));
+	addButton(new Start((int)(game->getWindowWidth() / 2 - buttonW / 2), (int)(game->getWindowHeight() / 2 - buttonH), buttonW, buttonH, game));
+	addButton(new Options((int)(game->getWindowWidth() / 2 - buttonW / 2), (int)(game->getWindowHeight() / 2), buttonW, buttonH, game, 1));
+	addButton(new Credits((int)(game->getWindowWidth() / 2 - buttonW / 2), (int)(game->getWindowHeight() / 2 + buttonH), buttonW, buttonH, game));
+	addButton(new ExitButton((int)(game->getWindowWidth() / 2 - buttonW / 2), (int)(game->getWindowHeight() / 2 + buttonH*2), buttonW, buttonH, game));
 
 	backgroundTexture = game->getTexture(bckg_Image);
 	titleTexture = game->getTexture(bckg_GameTitle);
@@ -44,7 +44,7 @@ void MenuState::update() {
 
 void MenuState::draw()
 {
-	SDL_Rect rectPanel = { 0,0,game->getWindowWidth(),game->getWindowHeight() };
+	SDL_Rect rectPanel = { 0,0,(int)game->getWindowWidth(),(int)game->getWindowHeight() };
 	backgroundTexture->render(rectPanel);
 	rectPanel = { (int)game->getWindowWidth() / 2 - titleW / 2, titleH / 3, titleW, titleH };
 	titleTexture->render(rectPanel);

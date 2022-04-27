@@ -38,9 +38,6 @@
     <ClCompile Include="Src\Logic\ColliderTile.cpp">
       <Filter>Source\Tile</Filter>
     </ClCompile>
-    <ClCompile Include="Src\Control\CommandFactory.cpp">
-      <Filter>Header\Control</Filter>
-    </ClCompile>
     <ClCompile Include="Src\Control\Command.cpp">
       <Filter>Source\Control\Commands</Filter>
     </ClCompile>
@@ -302,9 +299,18 @@
     <ClCompile Include="Src\Logic\MissionObject.cpp">
       <Filter>Source\Logic\InteractuableObjectsMap</Filter>
     </ClCompile>
-    <ClCompile Include="Src\Items\Repel.cpp" />
-    <ClCompile Include="Src\Player\playerHUD.cpp" />
-    <ClCompile Include="Src\Items\Monkeycola.cpp" />
+    <ClCompile Include="Src\Items\Monkeycola.cpp">
+      <Filter>Source\Logic\InventoryObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Items\Repel.cpp">
+      <Filter>Source\Logic\InventoryObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Player\playerHUD.cpp">
+      <Filter>Source\Logic\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Control\CommandFactory.cpp">
+      <Filter>Source\Control</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MonkeyDelivery.h" />
@@ -644,10 +650,18 @@
     <ClInclude Include="Src\Logic\PowerUpsManager.h">
       <Filter>Header\Logic\Managers/Game</Filter>
     </ClInclude>
-    <ClInclude Include="Src\Logic\MissionObject.h" />
-    <ClInclude Include="Src\Items\Repel.h" />
-    <ClInclude Include="Src\Player\playerHUD.h" />
-    <ClInclude Include="Src\Items\Monkeycola.h" />
+    <ClInclude Include="Src\Items\Repel.h">
+      <Filter>Header\Logic\InventoryObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Player\playerHUD.h">
+      <Filter>Header\Logic\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Logic\MissionObject.h">
+      <Filter>Header\Logic\BasicElements</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Items\Monkeycola.h">
+      <Filter>Header\Logic\InventoryObjects</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="MonkeyDelivery.rc" />

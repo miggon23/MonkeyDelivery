@@ -21,7 +21,7 @@ void MapState::update() {}
 void MapState::draw()
 {
 	//Mapa
-	SDL_Rect rectPanel = { 0,0,game->getWindowWidth(), game->getWindowHeight() };
+	SDL_Rect rectPanel = { 0,0,(int)game->getWindowWidth(), (int)game->getWindowHeight() };
 	backgroundTex_->render(rectPanel);
 	
 	//Baliza

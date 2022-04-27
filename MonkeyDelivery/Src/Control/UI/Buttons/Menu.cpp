@@ -3,7 +3,7 @@
 #include "../../States/MenuState.h"
 #include "../../States/PlayingState.h"
 
-Menu::Menu(int x, int y, int w, int h, Game* game) :Button(game, w, h, x, y)
+Menu::Menu(int x, int y, double w, double h, Game* game) :Button(game, w, h, x, y)
 {
 	setTexture(button_Back);
 }

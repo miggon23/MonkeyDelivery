@@ -41,19 +41,25 @@ bool Inventory::addObject(InventoryObject* iO){
 	TypeObjectInventory aux = iO->getTypeObject();
 	switch (aux) {
 	case BOOTS:
+		removeObject(inventory_[0]);
 		inventory_[0] =iO;
 		break;
 	case CONSUMABLES:
 		if (inventory_[2] == nullptr) inventory_[2] = iO;		
-		else inventory_[3] = iO;				
+		else { 
+			removeObject(inventory_[3]);
+			inventory_[3] = iO; }
 		break;
 	case PICKAXE:
-		 inventory_[4] = iO;
+		removeObject(inventory_[4]);
+		inventory_[4] = iO;
 		break;
 	case LANTERN:
+		removeObject(inventory_[1]);
 		inventory_[1] = iO;
 		break;
 	case PACKAGE:
+		removeObject(inventory_[5]);
 		inventory_[5] = iO;
 		break;
 	default:
@@ -131,22 +137,6 @@ void Inventory::clearInventory()
 	removeMisionObject();
 }
 
-/// <summary>
-/// Recorre el inventario en b�squeda de objetos que sean nullptr. Si no encuentra ninguno
-/// devuelve true
-/// </summary>
-/// <returns>True si el inventario est� lleno</returns>
-//bool Inventory::inventoryFull(){
-//
-//	if (inventory_.size() >= INVENTORY_SIZE) {	
-//		int i = 0;
-//		while (i < inventory_.size() && inventory_[i] != nullptr)
-//			i++;
-//		return i == inventory_.size();
-//	}
-//	return false;
-//}
-
 bool Inventory::inventoryFull(InventoryObject* x){
 	TypeObjectInventory aux =x->getTypeObject();
 	switch (aux){
@@ -202,6 +192,13 @@ void Inventory::draw()
 	overlay_->render(baseRect_);
 }
 
+void Inventory::removeObject(InventoryObject* x){
+	if (x != nullptr) {
+		delete x;
+		x = nullptr;
+	}
+}
+
 void Inventory::changeSelectedObject(int x){
 	if (selectedInventoryObject < inventory_.size() && inventory_[selectedInventoryObject] != nullptr &&inventory_[selectedInventoryObject]->getActive()) { useSelectedObject(); };
 	selectedInventoryObject += x;
@@ -219,4 +216,8 @@ void Inventory::selectObject(int index){
 
 void Inventory::useSelectedObject(){
 	useObject(selectedInventoryObject);
+}
+
+void Inventory::desactivateUseSelectedObject(){	
+	if (selectedInventoryObject < inventory_.size() && inventory_[selectedInventoryObject] != nullptr && inventory_[selectedInventoryObject]->getActive()) { useSelectedObject(); };	
 }

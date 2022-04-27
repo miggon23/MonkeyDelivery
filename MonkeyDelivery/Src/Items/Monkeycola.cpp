@@ -11,7 +11,7 @@ Monkeycola::Monkeycola(Texture* tex, Game* game, Player* player) : InventoryObje
 bool Monkeycola::useObject()
 {
 	player_->initPowerUp(monkeycola);
-	sdlutils().soundEffects().at("soda").setVolume(game_->getSoundEfectsVolume() * game_->getGeneralVolume());
+	sdlutils().soundEffects().at("soda").setVolume((int)(game_->getSoundEfectsVolume() * game_->getGeneralVolume()));
 	sdlutils().soundEffects().at("soda").play(0, 1);
 	return true;
 }

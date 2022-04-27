@@ -233,21 +233,21 @@ void MissionsPanel::loadMissions(std::string filename)
 					JSONObject vObj = v->AsObject();
 
 					std::string key = vObj["id"]->AsString();
-					int level = vObj["level"]->AsNumber();
+					int level = (int)vObj["level"]->AsNumber();
 					std::string imgRoute = vObj["image"]->AsString(); 
 					std::string helpImgRoute = vObj["helperImage"]->AsString();
-					int maxMoney = vObj["maxmoney"]->AsNumber();
-					int minMoney = vObj["minmoney"]->AsNumber();
-					int minTime = vObj["mintime"]->AsNumber();
+					int maxMoney = (int)vObj["maxmoney"]->AsNumber();
+					int minMoney = (int)vObj["minmoney"]->AsNumber();
+					int minTime = (int)vObj["mintime"]->AsNumber();
 					std::string target = vObj["target"]->AsString(); 
-					int tX = vObj["targetPositionX"]->AsNumber();
-					int tY = vObj["targetPositionY"]->AsNumber();
-					int tW = vObj["targetWidth"]->AsNumber();
-					int tH = vObj["targetHeight"]->AsNumber();
+					double tX = vObj["targetPositionX"]->AsNumber();
+					double tY = vObj["targetPositionY"]->AsNumber();
+					double tW = vObj["targetWidth"]->AsNumber();
+					double tH = vObj["targetHeight"]->AsNumber();
 					bool isExpress = vObj["express"]->AsBool();
 					bool isSpecial = vObj["special"]->AsBool();
-					int oX = vObj["objectPositionX"]->AsNumber();
-					int oY = vObj["objectPositionY"]->AsNumber();
+					int oX = (int)vObj["objectPositionX"]->AsNumber();
+					int oY = (int)vObj["objectPositionY"]->AsNumber();
 
 					levels_[level]++;
 

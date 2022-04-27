@@ -64,7 +64,7 @@ void PowerUpsManager::InitTimer(PowerUps x){
 		if (!activatedEnergyDrink_) {
 			//Aplicamos el PU al player
 			player_->setVel(player_->getVel() * energyDrinkSpeedBonus_); 
-			player_->recoverEnergy(player_->getMaxEnergy() * energyDrinkEnergyBonus_);
+			player_->drainEnergy(-(player_->getMaxEnergy() * energyDrinkEnergyBonus_));
 			player_->setBonusSpending(energyDrinkEnergyBonus_);
 			activatedEnergyDrink_ = true; //Activamos el PU
 			timerEnergyDrink_->reset(); //Inicializamos el timer
@@ -85,8 +85,7 @@ void PowerUpsManager::InitTimer(PowerUps x){
 		
 		break;
 	case repelente:
-		if (!activatedAntiBanana)
-		{
+		if (!activatedAntiBanana){
 			player_->setFearBonusFactor(monkeycolaReduction_);
 			activatedAntiBanana = true;
 			timerAntiBanana_->reset();
@@ -100,20 +99,13 @@ void PowerUpsManager::InitTimer(PowerUps x){
 
 void PowerUpsManager::desactivate(PowerUps x)
 {
-	switch (x)
-	{
+	switch (x){
 	case energyDrink:
 		player_->setVel(player_->getVel() / energyDrinkSpeedBonus_);
 		player_->setBonusSpending(0.0);
 		activatedEnergyDrink_ = false;
 		timerEnergyDrink_->pause();
 		std::cout << "energydrink desactivado" << std::endl;
-		break;
-	case boots:
-		break;
-	case banana:
-		break;
-	case monkeycola:
 		break;
 	case repelente:
 		player_->setFearBonusFactor(1);
@@ -124,4 +116,9 @@ void PowerUpsManager::desactivate(PowerUps x)
 	default:
 		break;
 	}
+}
+
+void PowerUpsManager::desactivateAllPowerUps(){
+	desactivate(energyDrink);
+	desactivate(repelente);
 }

@@ -124,8 +124,7 @@ public:
 	void NoSleepText(); //si presionas la e pero no puedes dormir para que renderize el texto
 	inline void bedPos(int x, int y) { bedX_ = x; bedY_ = y; }
 	// ENERGY
-	void drainEnergy(double amount) { energyLevel_->drain(amount); };
-	inline void recoverEnergy(int amount) {};
+	inline void drainEnergy(double amount) { energyLevel_->drain(amount); };
 	inline double getEnergy() { return energyLevel_->getEnergy(); };
 	inline double getMaxEnergy() { return energyLevel_->getMaxEnergy(); };
 	inline void setBonusSpending(double set) { energyLevel_->setBonusSpending(set); };

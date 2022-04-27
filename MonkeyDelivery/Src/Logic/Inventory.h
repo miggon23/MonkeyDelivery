@@ -45,7 +45,9 @@ public:
 	bool inventoryFull(InventoryObject* x);
 	void draw();
 
+	void removeObject(InventoryObject* x);
 	void changeSelectedObject(int x);
 	void selectObject(int index);
 	void useSelectedObject();
+	void desactivateUseSelectedObject();
 };

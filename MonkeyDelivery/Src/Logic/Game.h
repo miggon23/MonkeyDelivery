@@ -130,7 +130,7 @@ private:
     //Sounds&Music
     int musicVolume_ = 64;
     int soundEfectsVolume_ = 64;
-    float generalVolume_ = 0.5;
+    double generalVolume_ = 0.5;
     
     //Mapa
     MAPPoint* mapPoint;    
@@ -213,11 +213,11 @@ public:
     //Sounds&Music
     inline void ChangeMusicVolume(int volume) { musicVolume_ = volume;/* std::cout << musicVolume_ << std::endl;*/ };
     inline void ChangeSoundEfectsVolume(int volume) { soundEfectsVolume_ = volume; /*std::cout << soundEfectsVolume_ << std::endl;*/};
-    inline void ChangeGeneralVolume(float volume) { generalVolume_ = volume; /*std::cout << generalVolume_ << std::endl;*/};
+    inline void ChangeGeneralVolume(double volume) { generalVolume_ = volume; /*std::cout << generalVolume_ << std::endl;*/};
 
     int getMusicVolume() { return musicVolume_; };
     int getSoundEfectsVolume() { return soundEfectsVolume_; };
-    float getGeneralVolume() { return generalVolume_; };
+    double getGeneralVolume() { return generalVolume_; };
 
     //MiniMapa
     inline void setOpenedMap(bool m) { mapOpened = m; }
