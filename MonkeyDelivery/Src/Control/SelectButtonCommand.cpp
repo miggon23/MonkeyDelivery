@@ -16,7 +16,7 @@ bool SelectButtonCommand::parse(SDL_Event& event)
 			move = 1;
 			return true;
 		}
-		else if (key == SDLK_SPACE) {
+		else if (key == SDLK_SPACE || key == SDLK_RETURN) {
 			move = 0;
 			return true;
 		}
@@ -27,7 +27,7 @@ bool SelectButtonCommand::parse(SDL_Event& event)
 void SelectButtonCommand::execute()
 {
 	if (move == 0) {
-
+		menuState->getCurrentButton()->onCursorCollision();
 	}
 	else {
 		menuState->moveBox(move);

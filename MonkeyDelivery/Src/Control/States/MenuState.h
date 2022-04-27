@@ -27,6 +27,7 @@ public:
     void onEnterState() override;
 
     void moveBox(int i);
+    inline Button* getCurrentButton() { return buttonsUI[currentSelection]; };
 
     string getStateName() const override {
         return "Menu state";
