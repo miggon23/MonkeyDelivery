@@ -59,6 +59,7 @@ Game::Game(string n, double w, double h) : name(n), width(w), height(h), doExit(
    
     //maptexture = getTexture(Item_Package);
     font_ = new Font("./Images/fonts/Pixellari.ttf", 50);
+    moneyFont_ = new Font("./Images/fonts/Pixellari.ttf", 26);
 
     animationManager_ = new AnimationManager(this);
 }
@@ -81,6 +82,7 @@ Game::~Game() {
     delete player_;
     delete textureContainer_;
     delete font_;
+    delete moneyFont_;
     delete info;
     delete optionsState;
     //delete missionsPanel_; //solo poner si no va en el vector de gameobjects
@@ -268,7 +270,6 @@ void Game::renderText(string text, int x, int y, SDL_Color color)
 }
 void Game::renderMoney(string text, int x, int y, SDL_Color color)
 {
-    moneyFont_ = new Font("./Images/fonts/Pixellari.ttf", 26);
     moneyFont_->render(renderer, text.c_str(), x, y, color);
 }
 
