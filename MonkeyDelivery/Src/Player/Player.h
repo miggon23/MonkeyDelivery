@@ -130,7 +130,7 @@ public:
 	inline void drainEnergy(double amount) { energyLevel_->drain(amount); };
 	inline double getEnergy() { return energyLevel_->getEnergy(); };
 	inline double getMaxEnergy() { return energyLevel_->getMaxEnergy(); };
-	inline void setBonusSpending(double set) { energyLevel_->setBonusSpending(set); };
+	
 
 	// FEAR
 	inline void getScared(double amount) { fearLevel_->getScared(amount / fearBonusFactor); }; //Por defecto fearBonusFactor = 1
