@@ -5,7 +5,7 @@ energyLevel::energyLevel(Game* game) :GameObject(game) {
 
 	place_ = 50;
 	energy_ = 168;
-	maxEnergy_ = 200;
+	maxEnergy_ = 100;
 	setTexture(UI_energyLevel);
 	setPosition(55*4 + 20, 5*4 + 20);
 	setDimension(42*4, 6*4);
