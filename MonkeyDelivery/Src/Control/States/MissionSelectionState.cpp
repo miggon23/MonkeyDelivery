@@ -14,6 +14,9 @@ MissionSelectionState::MissionSelectionState(Game* game) : State(game)
 	//allTextures_.push_back(game->getTexture(Mission01));
 	//allTextures_.push_back(game->getTexture(Mission02));
 	//allTextures_.push_back(game->getTexture(Mission07));
+
+	
+
 	
 }
 
@@ -49,13 +52,25 @@ MissionSelectionState::MissionSelectionState(Game* game, vector<pair<string,stri
 			currentTextures_.push_back(tex);
 
 		missionData_.push_back(a.first);
+
+		offsetX_ = game->getWindowWidth() / 18;
+		xInc_ = game->getWindowWidth() / 3.27;
+		ySize_ = game->getWindowHeight() / 6.66;
+		wSize_ = game->getWindowWidth() / 3.6;
+		hSize_ = game->getWindowHeight() / 1.6;
+		h2Size_ = game->getWindowHeight() / 1.7;
+
+		buttonsX_ = game->getWindowWidth()/1.3;
+		buttonsY_ = game->getWindowHeight()/1.3;
+		buttonsW_ = game->getWindowWidth()/6.0;
+		buttonsH_ = game->getWindowHeight()/5.88;
 	}
 
 	//currentSelection_ = missionImg[0].first; ->if it's string
 	currentSelection_ = 0;
 
 	box_ = game->getTexture(mission_UI_Selector);
-	boxXPos_ = 100;
+	boxXPos_ = offsetX_;
 
 	registerCommands();
 }
@@ -88,22 +103,22 @@ void MissionSelectionState::draw()
 	SDL_Rect textureBox = { 0, 0, (int)game->getWindowWidth(), (int)game->getWindowHeight() };
 	background_->render(textureBox);
 
-	int x = 100;
+	int x = offsetX_;
 	for (auto a : currentTextures_) {
-		textureBox = { x, 150, 500, 640 };
+		textureBox = { x, ySize_, wSize_, hSize_ };
 		a->render(textureBox);
 		x += xInc_;
 	}
 
-	SDL_Rect textureBox2 = { boxXPos_, 150, 500, 614 };
+	SDL_Rect textureBox2 = { boxXPos_, ySize_, wSize_, h2Size_ };
 	box_->render(textureBox2);
 
-	double xPosRatio = game->getWindowWidth() / 1380.0;
-	double yPosRatio = game->getWindowHeight() / 770.0;
-	double xRatio = game->getWindowWidth() / 300.0;
-	double yRatio = game->getWindowHeight() / 170.0;
+	//double xPosRatio = game->getWindowWidth() / 1380.0;
+	//double yPosRatio = game->getWindowHeight() / 770.0;
+	//double xRatio = game->getWindowWidth() / 300.0;
+	//double yRatio = game->getWindowHeight() / 170.0;
 
-	SDL_Rect textureBox3 = { game->getWindowWidth()/xPosRatio, game->getWindowHeight()/yPosRatio, game->getWindowWidth() / xRatio, game->getWindowHeight() / yRatio };
+	SDL_Rect textureBox3 = { buttonsX_, buttonsY_, buttonsW_, buttonsH_ };
 	controls_->render(textureBox3);
 	
 }

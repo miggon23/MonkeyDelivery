@@ -13,7 +13,7 @@ Bat::Bat(Game* game, int Aleatorio, Point2D<int> centroRadio, int nLoop, Animati
 	player_ = game->getPlayer();
 	
 	loops = nLoop;
-	textureRect = { 0,0,-animationManager->getWidthBat(),animationManager->getHeightBat() };
+	textureRect = { 0, 0, animationManager->getWidthBat(), animationManager->getHeightBat() };
 	createCheckPoints();
 	setResistance(2000);
 	setScariness(0.12);
@@ -21,7 +21,6 @@ Bat::Bat(Game* game, int Aleatorio, Point2D<int> centroRadio, int nLoop, Animati
 
 void Bat::update()
 {
-	std::cout << "BAT";
 	patrol(speed_);
 
 	SDL_Rect r1 = player_->getCollider();
