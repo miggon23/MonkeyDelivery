@@ -6,6 +6,7 @@
 MissionSelectionState::MissionSelectionState(Game* game) : State(game)
 {
 	background_ = game->getTexture(mission_UI_Panel);
+	controls_ = game->getTexture(UI_MissionsControls);
 	
 	registerCommands();
 
@@ -20,6 +21,7 @@ MissionSelectionState::MissionSelectionState(Game* game) : State(game)
 MissionSelectionState::MissionSelectionState(Game* game, vector<pair<string,string>> missionImg) :  State(game)
 {
 	background_ = game->getTexture(mission_UI_Panel);
+	controls_ = game->getTexture(UI_MissionsControls);
 
 	// Bucle for que cargue solo las imagenes que se indican en missionImg
 	for (auto a : missionImg) {
@@ -95,6 +97,14 @@ void MissionSelectionState::draw()
 
 	SDL_Rect textureBox2 = { boxXPos_, 150, 500, 614 };
 	box_->render(textureBox2);
+
+	double xPosRatio = game->getWindowWidth() / 1380.0;
+	double yPosRatio = game->getWindowHeight() / 770.0;
+	double xRatio = game->getWindowWidth() / 300.0;
+	double yRatio = game->getWindowHeight() / 170.0;
+
+	SDL_Rect textureBox3 = { game->getWindowWidth()/xPosRatio, game->getWindowHeight()/yPosRatio, game->getWindowWidth() / xRatio, game->getWindowHeight() / yRatio };
+	controls_->render(textureBox3);
 	
 }
 

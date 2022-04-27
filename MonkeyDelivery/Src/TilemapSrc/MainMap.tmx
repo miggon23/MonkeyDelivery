@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.8" tiledversion="1.8.2" orientation="orthogonal" renderorder="right-down" width="180" height="150" tilewidth="16" tileheight="16" infinite="0" nextlayerid="9" nextobjectid="812">
+<map version="1.8" tiledversion="1.8.2" orientation="orthogonal" renderorder="right-down" width="180" height="150" tilewidth="16" tileheight="16" infinite="0" nextlayerid="9" nextobjectid="814">
  <editorsettings>
   <export target="MainMap.tmx" format="tmx"/>
  </editorsettings>
@@ -1581,7 +1581,7 @@
   <object id="495" x="629" y="1127" width="16" height="20"/>
   <object id="496" x="641.5" y="1140.5" width="21" height="16.5"/>
   <object id="497" x="535" y="1159.5" width="28.5" height="34.5"/>
-  <object id="498" x="688.5" y="644.5" width="31" height="27"/>
+  <object id="498" x="687.167" y="639.833" width="32.3333" height="31.6667"/>
   <object id="499" x="684.5" y="607" width="43" height="24"/>
   <object id="500" x="724" y="596.5" width="35.5" height="19"/>
   <object id="501" x="320" y="376.5" width="39.5" height="23"/>
@@ -1811,5 +1811,6 @@
   <object id="808" x="1519.33" y="784" width="31" height="15"/>
   <object id="809" x="518.667" y="1378.67" width="19.3333" height="10.6667"/>
   <object id="810" x="532.333" y="1379" width="9" height="41.3333"/>
+  <object id="813" x="671.333" y="625.333" width="24.3333" height="24.6667"/>
  </objectgroup>
 </map>

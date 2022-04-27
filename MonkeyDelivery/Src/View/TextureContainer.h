@@ -147,11 +147,12 @@ enum TextureName
 		UI_Checker01,
 		UI_Checker02,
 		UI_Checker03,
+		UI_MissionsControls,
 
 		missingTex,
 };
 
-const int NUM_TEXTURES = 105;
+const int NUM_TEXTURES = 106;
 
 typedef struct {
 	string filename;
@@ -296,6 +297,8 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
 	{"ui/Menu/UI_Checker01.png",1,1},
 	{"ui/Menu/UI_Checker02.png",1,1},
 	{"ui/Menu/UI_Checker03.png",1,1},
+	{"ui/controlsmissions.png",1,1},
+
 	{"missingTex.png",1,1},
 };
 

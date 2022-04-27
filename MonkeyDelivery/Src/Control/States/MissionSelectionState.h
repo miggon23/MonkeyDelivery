@@ -24,6 +24,7 @@ public:
 
 private:
 	Texture* background_;
+	Texture* controls_;
 
 	vector<Texture*> allTextures_;
 	vector<Texture*> currentTextures_;
