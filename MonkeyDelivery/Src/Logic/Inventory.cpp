@@ -12,9 +12,13 @@ Inventory::Inventory(Game* game, Player* player, SDL_Renderer* renderer) : playe
 	base_ = game->getTexture(UI_InventoryBar);
 	overlay_ = game->getTexture(UI_InventoryBarOverlay);
 
-	xInventory = (int)game->getWindowWidth() / 3;
-	yInventory = (int)game->getWindowHeight() - 100;
-	baseRect_ = {xInventory, yInventory, 120*4, 18*4}; //hay que cambiarlo por window H/H	
+	
+	xObj = game->getWindowWidth() / 25;
+	yObj = game->getWindowHeight() / 14;
+	xInventory = game->getWindowWidth() / 2 - xObj * 7 / 2;
+	yInventory = game->getWindowHeight() - game->getWindowHeight() / 10;
+
+	baseRect_ = {xInventory, yInventory, xObj*7, yObj}; //hay que cambiarlo por window H/H	
 	InventoryObject* relleno = new InventoryObject(game->getTexture(UI_Black), game, game->getPlayer());
 	//Inicializar InventoryObjects
 	for (int i = 0; i < INVENTORY_SIZE+1; i++){
@@ -182,7 +186,7 @@ void Inventory::draw()
 	
 															
 	if (hasMissionObject()) { // si hay mission object, renderiza su textura
-		SDL_Rect oRect = { 650 + base_->getW() / 7 * 6 * 4, 900 , 18 * 4, 18 * 4 };
+		SDL_Rect oRect = { xInventory + base_->getW() / 7 * 6 * 4, yObj , xObj,yObj };
 		missionObject_->getTexture()->render(oRect);
 	}
 	int size = inventory_.size();
@@ -190,15 +194,19 @@ void Inventory::draw()
 	for (int i = 0; i < INVENTORY_SIZE; i++) 
 	{
 		SDL_Rect oRect;
-		if (i > 3) oRect = { xInventory + base_->getW() / 7 * (i+1) * 4, yInventory , 18 * 4, 18 * 4 };		
-		else oRect = { xInventory + base_->getW() / 7 * i * 4, yInventory , 18 * 4, 18 * 4 };
+		if (i > 3) oRect = { xInventory + base_->getW() / 7 * (i+1) * 4, yInventory , xObj,yObj };		
+		else oRect = { xInventory + base_->getW() / 7 * i * 4, yInventory , xObj, yObj };
 		
 		
 		if (i < inventory_.size()&&inventory_[i]!=nullptr) 						
 			inventory_[i]->getTexture()->render(oRect);
 				
-		if (i == selectedInventoryObject) 
+		if (i == selectedInventoryObject)
+		{
+			oRect.x += xObj / 9 * i;
 			base_->render(oRect);
+		}
+			
 		
 	}
 	overlay_->render(baseRect_);
