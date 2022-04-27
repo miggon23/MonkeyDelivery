@@ -17,8 +17,9 @@ class PowerUpsManager{
 	VirtualTimer* timerAntiBanana_;
 	bool activatedAntiBanana;
 	int antiBananaLimit_ = 60000;
+	int antiBananaLimitFecoverFear_ = 2000;
 	double antiBananaFearBuff_ = 1.3;
-
+	double  antiBananaFearRecoverBuff_ = 0.15;
 
 	double monkeycolaReduction_ = 0.2; //20%
 	double monkeycolaReductionHigh_ = 0.3; //30%
