@@ -88,6 +88,7 @@ using namespace std;
 class Game : public StateMachine {
 
 private:
+    TutorialBook* tutorialBook_;
 
     SDL_Texture* background_;
     MapInfo mapInfo;
@@ -99,7 +100,6 @@ private:
     SDL_Window* window_;
     const Vector2D<float> CAMSIZE_ = { 500.0, 300.0 };
     void updateCameraPos();
-
 
     string name;
     bool doExit, mapOpened,inGame;

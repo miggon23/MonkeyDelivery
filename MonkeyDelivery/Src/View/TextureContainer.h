@@ -128,7 +128,7 @@ enum TextureName
 		UI_fearBuff,
 		UI_speedBuff,
 
-   //13-UI Overlay (Menu) - 20
+   //13-UI Overlay (Menu) - 21
 		UI_Black,
 		UI_Brightness,
 		button_Back,
@@ -149,11 +149,12 @@ enum TextureName
 		UI_Checker02,
 		UI_Checker03,
 		UI_MissionsControls,
+		UI_Controls,
 
 		missingTex,
 };
 
-const int NUM_TEXTURES = 107;
+const int NUM_TEXTURES = 108;
 
 typedef struct {
 	string filename;
@@ -300,6 +301,7 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
 	{"ui/Menu/UI_Checker02.png",1,1},
 	{"ui/Menu/UI_Checker03.png",1,1},
 	{"ui/controlsmissions.png",1,1},
+	{"tutorial/Tutorial.png",1,1},
 
 	{"missingTex.png",1,1},
 };

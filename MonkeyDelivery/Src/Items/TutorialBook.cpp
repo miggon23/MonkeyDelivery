@@ -1,34 +1,28 @@
-#include "TutorialBook.h"
 #include "../Logic/Game.h"
-#include "../Logic/DialogueBox.h"
-#include "../json/JSON.h"
 
-TutorialBook::TutorialBook(Game* game, int x, int y, int w, int h) : GameObject(game, true) {
+TutorialBook::TutorialBook(Game* game, int x, int y, int w, int h) : ColliderTile(game, Point2D<double>(x,y), w, h) {
 	setTexture(worldObject_Tutorial);
-	setDimension(w, h);
-	setPosition(x, y);
-	//MissionsPanel::loadMissions("Images/config/resources.json");
-	//setText("pachuco");
+	tutorialTexture_ = game->getTexture(UI_Controls);
+	tutorialRect_ = {0, 0, (int)game->getWindowWidth(), (int)game->getWindowHeight() };
 }
 
 void TutorialBook::onPlayerInteraction(Player* player)
 {
-	active = !active;
-	if (active) {
-		cout << "Interaccion libro tutorial asie asie" << endl;
-		string a = "Tutorial";
-		game->newDialogue(a);
-	}
+	isActive_ = false;
+	isColliding_ = false;
+	onPlayerCollisionExit();
+
+	showingImage_ = !showingImage_;
+	player->changeTalking(showingImage_);
 }
+
 void TutorialBook::draw()
 {
 	drawTexture(texture);
-	// drawDebug();
-}
 
-bool TutorialBook::collide(SDL_Rect other) {
-	auto c = this->getCollider();
-	return (SDL_HasIntersection(&c, &other));
+	if (showingImage_) {
+		tutorialTexture_->render(tutorialRect_);
+	}
 }
 
 bool TutorialBook::isInteractive() {

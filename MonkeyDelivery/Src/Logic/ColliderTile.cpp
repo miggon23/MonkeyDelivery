@@ -25,14 +25,16 @@ Directions ColliderTile::chooseDirection(Player* player)
 
 void ColliderTile::update()
 {
-	if (collide(game->getPlayer()->getCollider())) {
-		isColliding_ = true;
-		onPlayerCollision();
-	}
-	else if (isColliding_) { // La colisión estaba activa pero ha parado
+	if (isActive_) {
+		if (collide(game->getPlayer()->getCollider())) {
+			isColliding_ = true;
+			onPlayerCollision();
+		}
+		else if (isColliding_) { // La colisión estaba activa pero ha parado
 		 
-		isColliding_ = false;
-		onPlayerCollisionExit();
+			isColliding_ = false;
+			onPlayerCollisionExit();
+		}
 	}
 }
 

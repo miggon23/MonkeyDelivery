@@ -4,43 +4,6 @@
 #include <cmath>
 
 
-//void Game::loadSpriteSheets()
-//{
-//    string filename = "Images/config/resources.json";
-//
-//    std::unique_ptr<JSONValue> jValueRoot(JSON::ParseFromFile(filename));
-//
-//    if (jValueRoot == nullptr || !jValueRoot->IsObject()) {
-//        throw "Something went wrong while load/parsing '" + filename + "'";
-//    }
-//
-//    JSONObject root = jValueRoot->AsObject();
-//    JSONValue* jValue = nullptr;
-//
-//    // load tilesets
-//    jValue = root["tilesets"];
-//    if (jValue != nullptr) {
-//        if (jValue->IsArray()) {
-//            for (auto& v : jValue->AsArray()) {
-//                if (v->IsObject()) {
-//                    JSONObject vObj = v->AsObject();
-//                    std::string key = vObj["id"]->AsString();
-//                    std::string file = vObj["file"]->AsString();
-//                    auto a = new Texture(renderer, file);
-//                    tilesets_.emplace(std::make_pair(key, a));
-//                }
-//                else {
-//                    throw "'tilesets' array in '" + filename
-//                        + "' includes and invalid value";
-//                }
-//            }
-//        }
-//        else {
-//            throw "'tilesets' is not an array";
-//        }
-//    }
-//}
-
 void Game::updateCameraPos()
 {
     Vector2D<double> v = { round(player_->getPosition().getX() - getWindowWidth() / 2), round(player_->getPosition().getY() - getWindowHeight() / 2) };
@@ -87,6 +50,7 @@ Game::~Game() {
     delete optionsState;
     //delete missionsPanel_; //solo poner si no va en el vector de gameobjects
     delete dialogueBox_;
+    delete tutorialBook_;
     delete iE_;
     delete animationManager_;
     delete shop_;
@@ -141,10 +105,10 @@ void Game::start()
     mapPoint = new MAPPoint(this);
     pIcon = new PlayerIcon(this);
 
-    add(new IntectuableShop(this, 2000, 400));
+    add(new IntectuableShop(this, 3700, 1600));
     shop_ = new Shop(player_, this);
 
-    add(new TutorialBook(this, 500, 500, 100, 75));
+    tutorialBook_ = new TutorialBook(this, 4025, 1700, 100, 75);
 
     GameObjectGenerator::generateLevel(this);
 
@@ -180,6 +144,7 @@ void Game::update()
     for (auto c : collisions_) {
         c->update();
     }
+    tutorialBook_->update();
 
     for (auto gO : gameObjects_) {
 
@@ -213,9 +178,10 @@ void Game::draw()
     SDL_RenderCopy(renderer, background_, &src, &dst);
 
   
-    for (auto gO : gameObjects_)
+    for (auto gO : gameObjects_) {
         if(gO!=nullptr)
-        gO->draw();
+            gO->draw();
+    }
 
     
     for (auto enemy : enemyContainer_)
@@ -237,6 +203,8 @@ void Game::draw()
 
     //partSystem->draw();
     missionsPanel_->draw();
+
+    tutorialBook_->draw();
 }
 
 Point2D<int> Game::getOrigin() {
@@ -308,6 +276,8 @@ vector<GameObject*> Game::getCollisions(SDL_Rect rect)
             interactEnt.push_back(gameObjects_[i]);
         }
     }
+
+    interactEnt.push_back(tutorialBook_);
 
     return interactEnt;
 }

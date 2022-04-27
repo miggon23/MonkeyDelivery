@@ -1,21 +1,18 @@
 #pragma once
-#include "../Logic/GameObject.h"
+#include "../Logic/ColliderTile.h"
 
-class TutorialBook:public GameObject {
+class TutorialBook : public ColliderTile {
 
-    bool active = false;
-    string textPath_;
+    bool showingImage_ = false;
+    Texture* tutorialTexture_;
+    SDL_Rect tutorialRect_;
+
 public:
 
     TutorialBook(Game* game, int x, int y, int w, int h);
     
     void onPlayerInteraction(Player* player) override;
     void draw() override;
-    void update() override{}
-    bool collide(SDL_Rect other);
 
     bool isInteractive();
-    inline void setText(const string& textName) {
-        textPath_ = textName + "Text";
-    };
 };

@@ -7,8 +7,11 @@ class Game;
 
 class ColliderTile : public GameObject
 {
-private:
+protected:
+	bool isActive_ = true; // para el libro tutorial, colliders que en algun momento se desactivan
 	bool isColliding_ = false;
+
+private:
 
 	Vector2D<double> topLeft_, topRight_, bottomLeft_, bottomRight_;
 	double margin_ = 5.0; // Margen para comprobar por qué lado se está haciendo la colisión
