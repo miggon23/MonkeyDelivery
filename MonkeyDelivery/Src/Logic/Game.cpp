@@ -284,7 +284,7 @@ void Game::renderText(vector<string> text, int x, int y, int incX, int incY, SDL
 void Game::restart()
 {
     // comienza a sonar la música de juego de nuevo
-    sdlutils().musics().at("gamemusic").setMusicVolume(getMusicVolume() * getGeneralVolume());
+    sdlutils().musics().at("gamemusic").play(-1);
 }
 
 //economy
