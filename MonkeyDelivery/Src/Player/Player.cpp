@@ -102,6 +102,7 @@ void Player::update()
 		}
 		else if (energyLevel_->percentEnergy() != 0) { reducedSpeed = false;}
 	}
+	lastUpdate = timer.currTime();
 }
 
 /// <summary>
@@ -132,7 +133,6 @@ void Player::move()
 	//Normalizamos el vector para que no se desplaze m�s en diagonal
 	speed.normalize();
 	speed = speed * vel_ * (timer.currTime() - lastUpdate);
-	lastUpdate = timer.currTime();
 
 	if (dirX_ != 0 || dirY_ != 0) {
 		if (isRunning) { //Esto se puede implementar desde el runCommand, evitando que el jugador tenga muchos estados como el de corriendo

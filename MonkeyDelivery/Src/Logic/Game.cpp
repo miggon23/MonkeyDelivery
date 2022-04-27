@@ -177,7 +177,6 @@ void Game::update()
     player_->update();
     updateCameraPos();
    
-
     for (auto c : collisions_) {
         c->update();
     }

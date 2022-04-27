@@ -16,7 +16,7 @@ bool CommandMove::parse(SDL_Event& event)
 	else if (ihdlr.yvalue(0, 0) == 1 || ihdlr.isKeyDown(SDL_SCANCODE_S))
 		game->setPlayerDirY(1);
 	else game->setPlayerDirY(0);
-
+	
 	return false;
 }
 
