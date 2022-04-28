@@ -276,8 +276,8 @@ vector<GameObject*> Game::getCollisions(SDL_Rect rect)
             interactEnt.push_back(gameObjects_[i]);
         }
     }
-
-    interactEnt.push_back(tutorialBook_);
+    if (tutorialBook_->collide(rect))
+        interactEnt.push_back(tutorialBook_);
 
     return interactEnt;
 }

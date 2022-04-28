@@ -10,18 +10,13 @@ TutorialBook::TutorialBook(Game* game, int x, int y, int w, int h) : ColliderTil
 
 void TutorialBook::onPlayerInteraction(Player* player)
 {
-	SDL_Rect r1 = player->getCollider();
-	SDL_Rect r2 = this->getCollider();
+	isActive_ = false;
+	isColliding_ = false;
+	onPlayerCollisionExit();
 
-	if (SDL_HasIntersection(&r2, &r1))
-	{
-		isActive_ = false;
-		isColliding_ = false;
-		onPlayerCollisionExit();
-
-		showingImage_ = !showingImage_;
-		player->changeTutorial(showingImage_);
-	}
+	showingImage_ = !showingImage_;
+	player->changeTutorial(showingImage_);
+	
 }
 
 void TutorialBook::draw()
