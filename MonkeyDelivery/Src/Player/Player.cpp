@@ -101,27 +101,6 @@ void Player::update()
 	lastUpdate = timer.currTime();
 }
 
-/// <summary>
-/// Se le suma a la pos la x y la y del parametro
-/// </summary>
-/// <param name="speed"> La primera componente es la x y la segunda la y</param>
-void Player::move(pair<double, double> speed)
-{
-
-	/*if (velX != 0 || velY != 0) {
-		if (isRunning) {
-			setPosition(getX() + speed.first*2, getY() + speed.second*2);
-			drainEnergy(runningEnergy_);
-		}
-		else{
-			setPosition(getX() + speed.first, getY() + speed.second);
-			drainEnergy(walkingEnergy_);
-		}
-	}*/
-	//cout << "POSICION PLAYER:" << getX() << "," << getY() << endl;
-	//cout << "POSICION BARRA:" << energyLevel_->getX() << "," << energyLevel_->getY() << endl;
-}
-
 void Player::move()
 {
 	Vector2D<double> speed = { (double)dirX_, (double)dirY_ };

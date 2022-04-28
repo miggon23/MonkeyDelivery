@@ -142,7 +142,6 @@ public:
 	inline double getFearPercent() { return fearLevel_->percentFear(); };
 
 	// MOVEMENT
-	void move(pair<double, double> speed);
 	void move();
 	void setIsRunning(bool run);
 	inline void setVel(double x) { vel_ = x; };

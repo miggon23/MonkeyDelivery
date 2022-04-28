@@ -12,7 +12,7 @@ void GameObjectGenerator::createChest()
 
 void GameObjectGenerator::creteBulls()
 {
-	posBulls.push_back({ 6800, 1950 }); posBulls.push_back({ /*6200, 5450*/0,0 });
+	posBulls.push_back({ 6800, 1950 }); posBulls.push_back({ 6200, 5450});
 	posBulls.push_back({ 5300, 4700 }); posBulls.push_back({ 550, 4600 });
 }
 
@@ -58,7 +58,7 @@ void GameObjectGenerator::createScorpions()
 void GameObjectGenerator::createRocks()
 {
 	posRock.push_back({ 1000, 1590 });		posRock.push_back({ 950, 2500 });
-	posRock.push_back({ /*1425, 2980*/ 0,0});		posRock.push_back({ 1325, 3000 });
+	posRock.push_back({ 1425, 2980 });		posRock.push_back({ 1325, 3000 });
 	posRock.push_back({ 4200, 2450 });		posRock.push_back({ 5770, 2180 });
 	posRock.push_back({ 5850, 2200 });		posRock.push_back({ 6960, 2100 });
 	posRock.push_back({ 6550, 5250 });		posRock.push_back({ 6600, 5325 });

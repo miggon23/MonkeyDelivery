@@ -167,7 +167,6 @@ public:
     inline bool getInGame() { return inGame; }
 
     //Player
-    inline void move(pair<double, double> speed) { player_->move(speed); };
     inline void setIsRunning(bool run) { player_->setIsRunning(run); };
     inline void setVel(double x) { player_->setVel(x); };
     inline void setPlayerDirX(int x) { player_->setDirX(x); };
