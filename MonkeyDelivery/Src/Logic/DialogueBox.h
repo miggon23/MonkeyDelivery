@@ -60,7 +60,7 @@ public:
 	void changeMissionText(string id); // los textos de mision tienen una función distinta al acabar
 	void inShow();
 
-	void interact();
+	bool interact();
 
 	void advanceLetter();
 

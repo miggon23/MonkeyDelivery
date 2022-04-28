@@ -13,10 +13,12 @@ bool CommandInteract::parse(SDL_Event& event)
 
 void CommandInteract::execute()
 {
+	if (game->interactDialogue()) {
+		return;
+	}
 	/*if (game->getPlayer()->isTalking())
 		return;*/
 
-	game->interactDialogue();
 	for (GameObject* o : game->getCollisions(game->getPlayer()->getCollider())) {
 
 		//o->exampleInter(game->getPlayer());

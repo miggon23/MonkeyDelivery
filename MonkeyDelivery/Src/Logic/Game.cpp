@@ -66,7 +66,7 @@ Game::~Game() {
     }
     SDL_SetWindowBrightness(sdlutils().window(), 1);
 
-    delete maptexture; maptexture = nullptr;
+    delete maptexture; maptexture = nullptr;    
 }
 
 void Game::add(GameObject* gameObject) {//a�adir gO al vector
@@ -297,9 +297,9 @@ void Game::scare(double scariness)
     player_->getScared((int)scariness);
 }
 
-void Game::interactDialogue()
+bool Game::interactDialogue()
 {
-    dialogueBox_->interact();
+    return dialogueBox_->interact();
 }
 
 

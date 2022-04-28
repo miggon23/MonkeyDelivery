@@ -137,9 +137,9 @@ void DialogueBox::getIcon(unsigned int iconId)
 	}
 }
 
-void DialogueBox::interact()
+bool DialogueBox::interact()
 {
-	if (!draw_) return;
+	if (!draw_) return false;
 
 	if (inShow_)
 		showLetterTime_ = fastUpdateTime_;
@@ -148,6 +148,7 @@ void DialogueBox::interact()
 		game->dialogueEnd(isMissionText);
 		isMissionText = false;
 	}
+	return true;
 }
 
 void DialogueBox::loadTexts()
