@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "MonkeyDelivery"
-#define MyAppVersion "1.3.2"
+#define MyAppVersion "1.3.3"
 #define MyAppPublisher "MonkeyDelivery"
 #define MyAppURL "https://www.example.com/"
 #define MyAppExeName "MonkeyDelivery.exe"
