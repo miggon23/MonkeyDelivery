@@ -31,7 +31,6 @@ void MapCommand::execute()
 		State* tmp = game->getState();
 		State* saved = game->getSavedState();
 		saved->resetInitTime();
-		saved->registerCommands();
 		game->setState(saved);
 		game->scalePoint();
 		game->removeSavedState();

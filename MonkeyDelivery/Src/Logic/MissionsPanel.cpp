@@ -219,6 +219,17 @@ string MissionsPanel::getMissionImage()
 		return "No Mission Active";
 }
 
+string MissionsPanel::getMissionPaper()
+{
+	if (currentMission_ != nullptr) {
+
+		MissionInfo m = missions_.at(currentMission_->getName());
+		return m.imgRoute;
+	}
+	else
+		return "No Mission Active";
+}
+
 void MissionsPanel::loadMissions(std::string filename)
 {
 	std::unique_ptr<JSONValue> jValueRoot(JSON::ParseFromFile(filename));
