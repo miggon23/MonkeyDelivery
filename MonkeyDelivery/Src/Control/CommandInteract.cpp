@@ -5,7 +5,7 @@
 bool CommandInteract::parse(SDL_Event& event)
 {
 	auto& ihdlr = ih();
-	if ((event.type == SDL_KEYDOWN&& event.key.keysym.sym==SDLK_e) || ihdlr.getButtonState(0, 3))
+	if ((event.type == SDL_KEYDOWN&& event.key.keysym.sym==SDLK_e) || ihdlr.getButtonState(0, 3)&&(!game->getPlayer()->isMonkeyTalking()))
 		return true;
 	
 	return false;
@@ -13,6 +13,9 @@ bool CommandInteract::parse(SDL_Event& event)
 
 void CommandInteract::execute()
 {
+	/*if (game->getPlayer()->isMonkeyTalking())
+		return;*/
+
 	game->interactDialogue();
 	for (GameObject* o : game->getCollisions(game->getPlayer()->getCollider())) {
 

@@ -211,5 +211,7 @@ public:
 	inline void changeTutorial(bool a) { isInTutorial_ = a; };
 	inline bool isInTutorial() { return isInTutorial_; };
 
+	inline bool isMonkeyTalking() { return isTalking_; }
+
 
 };
