@@ -10,12 +10,9 @@ Bike::Bike(Texture* tex, Game* game,Player* player) : speedMult(2.5), InventoryO
 bool Bike::useObject() {
 	if ( !active ) {
 		player_->setVel(player_->getVel() * speedMult);
-		cout << "Montando en Bici";
-
 	}
 	else {
 		player_->setVel(player_->getVel() / speedMult);
-		cout << "Me bajo de la Bici";
 	}
 	player_->initPowerUp(boots);
 	cout << endl;

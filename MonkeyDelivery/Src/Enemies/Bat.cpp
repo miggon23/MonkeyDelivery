@@ -61,6 +61,8 @@ void Bat::onPlayerInteraction(Player* player)
 	if (isAlive()) {
 		if (stealTimer_ + 750 < SDL_GetTicks()) {
 			player->removeMoney(1);
+
+			sdlutils().soundEffects().at("bat").setVolume(game->getSoundEfectsVolume() * game->getGeneralVolume());
 			sdlutils().soundEffects().at("bat").play(0, 1);
 			stealTimer_ = SDL_GetTicks();
 		}
