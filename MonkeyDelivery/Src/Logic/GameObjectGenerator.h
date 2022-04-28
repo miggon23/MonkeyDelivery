@@ -6,11 +6,12 @@
 #include "../Enemies/Bat.h"
 #include "../Enemies/Plant.h"
 #include "../Enemies/Cat.h"
+#include "../Items/Rock.h"
 #include <vector>
 
 class GameObjectGenerator
 {
-	int nBulls=4, nCats=13, nPlants=14, nBats=10, nScorpions=8, nChest=8;
+	int nBulls=4, nCats=13, nPlants=14, nBats=10, nScorpions=8, nChest=8, nRocks=16;
 
 	struct ChestDimension
 	{
@@ -34,6 +35,7 @@ class GameObjectGenerator
 	vector<Point2D<int>> posPlants;
 	vector<Point2D<int>> posBats;
 	vector<Point2D<int>> posScorpions;
+	vector<pair<int, int>> posRock;
 
 	void createChest();
 	void creteBulls();
@@ -41,6 +43,7 @@ class GameObjectGenerator
 	void createPlants();
 	void createBats();
 	void createScorpions();
+	void createRocks();
 
 public:
 	static void generateLevel(Game* game) //Lo llamas en las rocas
@@ -51,6 +54,7 @@ public:
 		gOGenerator.createBats();
 		gOGenerator.createPlants();
 		gOGenerator.createCats();
+		gOGenerator.createRocks();
 
 		Point2D<int> mapOffset = { 1150, 800 }; // variable para ajustar los objetos al mapa tras haber hecho una redimension de este
 
@@ -71,6 +75,11 @@ public:
 		
 		for (int i = 0; i < gOGenerator.nCats; i++)
 			game->addEnemies(new Cat(game, gOGenerator.radios_.catR, gOGenerator.posCats[i] + mapOffset, game->getAnimationManager()));
+
+		for (int i = 0; i < gOGenerator.nRocks; i++)
+		{
+			game->add(new Rock(game, gOGenerator.posRock[i].first + mapOffset.getX(), gOGenerator.posRock[i].second + mapOffset.getY(), sdlutils().rand().nextInt(1,2)));
+		}
 	}
 	static GameObjectGenerator gOGenerator;
 };

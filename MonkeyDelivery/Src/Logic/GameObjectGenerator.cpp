@@ -12,7 +12,7 @@ void GameObjectGenerator::createChest()
 
 void GameObjectGenerator::creteBulls()
 {
-	posBulls.push_back({ 6800, 1950 }); posBulls.push_back({ 6200, 5450 });
+	posBulls.push_back({ 6800, 1950 }); posBulls.push_back({ /*6200, 5450*/0,0 });
 	posBulls.push_back({ 5300, 4700 }); posBulls.push_back({ 550, 4600 });
 }
 
@@ -29,7 +29,7 @@ void GameObjectGenerator::createCats()
 
 void GameObjectGenerator::createPlants()
 {
-	posPlants.push_back({ 300, 2200 });			posPlants.push_back({ 2400, 1900 });
+	posPlants.push_back({ 310, 2200 });			posPlants.push_back({ 2400, 1900 });
 	posPlants.push_back({ 3400, 2800 });		posPlants.push_back({ 800, 5700 });
 	posPlants.push_back({ 1200, 440 });			posPlants.push_back({ 1600, 4800 });
 	posPlants.push_back({ 7250, 2950 });		posPlants.push_back({ 7100, 800 });
@@ -53,4 +53,16 @@ void GameObjectGenerator::createScorpions()
 	posScorpions.push_back({ 5100, 5600 });		posScorpions.push_back({ 2300, 4700 });
 	posScorpions.push_back({ 1750, 2800 });		posScorpions.push_back({ 300, 2600 });
 	posScorpions.push_back({ 3200, 2300 });		posScorpions.push_back({ 5100, 1000 });
+}
+
+void GameObjectGenerator::createRocks()
+{
+	posRock.push_back({ 1000, 1590 });		posRock.push_back({ 950, 2500 });
+	posRock.push_back({ /*1425, 2980*/ 0,0});		posRock.push_back({ 1325, 3000 });
+	posRock.push_back({ 4200, 2450 });		posRock.push_back({ 5770, 2180 });
+	posRock.push_back({ 5850, 2200 });		posRock.push_back({ 6960, 2100 });
+	posRock.push_back({ 6550, 5250 });		posRock.push_back({ 6600, 5325 });
+	posRock.push_back({ 6650, 5400 });      posRock.push_back({ 3400, 5850 });
+	posRock.push_back({ 3450, 5950 });		posRock.push_back({ 3500, 6000 });
+	posRock.push_back({ 3600, 5970 });		posRock.push_back({ 3610, 5870 });
 }
