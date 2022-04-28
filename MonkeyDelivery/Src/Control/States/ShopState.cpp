@@ -118,7 +118,7 @@ void ShopState::draw()
 
 	if (closeFailed_)
 	{
-		font_->render(game->getRenderer(), textError_, xText + 150, yText - 5, BLACK);
+		font_->render(game->getRenderer(), textError_, xText + 25, yText + 25, BLACK);
 		if (SDL_GetTicks() > lastClicked_ + FAIL_TIMESHOWED) 
 			closeFailed_ = false;
 	}
@@ -173,7 +173,7 @@ void ShopState::buySelected()
 	{
 		lastClicked_ = SDL_GetTicks();
 
-		if(!shop_->buyObject(selected_, shop_->objects[selected_].price)) textError_ = "You already have bought this object";
+		if(!shop_->buyObject(selected_, shop_->objects[selected_].price)) textError_ = "You  have already bought this object";
 
 		else if (shop_->inventoryFull(selected_))
 			textError_ = "Inventory full";
