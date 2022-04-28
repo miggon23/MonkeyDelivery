@@ -6,6 +6,8 @@ JSON no admite caracteres especiales ( !, ?, tíldes)
 
 Animaciones del mono no van bien, añadir Idle
 
+Cuando se pulsa la letra e se activa el tutorial
+
 ARTE
 Enemigos----
 Gato - Hecho (hay que subirlo)
