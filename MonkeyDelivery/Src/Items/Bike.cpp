@@ -15,7 +15,6 @@ bool Bike::useObject() {
 		player_->setVel(player_->getVel() / speedMult);
 	}
 	player_->initPowerUp(boots);
-	cout << endl;
 	auto c = player_->getVel();
 	active = !active;
 	return false; //devolvemos false indicando que el objeto no debe destruirse tras ser usado

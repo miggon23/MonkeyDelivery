@@ -127,8 +127,6 @@ void Player::move()
 
 	setPosition(getPosition().getX() + speed.getX(), getPosition().getY() + speed.getY());
 
-	//std::cout << speed.magnitude() << endl;
-
 	//SI LA VELOCIDAD ES 0 RECUPERA ENERGIA HASTA UN MAX
 	if (speed.getX() == 0 && speed.getY() == 0) {
 		isStopped_ = true;

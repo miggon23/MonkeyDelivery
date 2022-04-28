@@ -28,35 +28,37 @@ Game::Game(string n, double w, double h) : name(n), width(w), height(h), doExit(
 }
 
 Game::~Game() {
+    cout << "[DEBUG] deleting game" << endl;
 
     for (auto gO : gameObjects_)
-    {
         delete gO;
-    }
     for (auto enemy : enemyContainer_)
         delete enemy;
-
     for (auto col : collisions_)
         delete col;
     collisions_.clear();
     gameObjects_.clear();
     enemyContainer_.clear();
-    cout << "[DEBUG] deleting game" << endl;
+    delete iE_;
+
+    delete mCamera_;
     delete player_;
+    delete tutorialBook_;
+
     delete textureContainer_;
+    delete animationManager_;
     delete font_;
     delete moneyFont_;
+
     delete info;
     delete optionsState;
-    //delete missionsPanel_; //solo poner si no va en el vector de gameobjects
     delete dialogueBox_;
-    delete tutorialBook_;
-    delete iE_;
-    delete animationManager_;
     delete shop_;
-    delete mCamera_;
+
     delete mapPoint;
     delete pIcon; pIcon = nullptr;
+    delete maptexture; maptexture = nullptr; 
+
     for (auto a : tilesets_) {
         a.second->free();
         delete a.second;
@@ -64,9 +66,11 @@ Game::~Game() {
     for (auto x : savedStates) {
         delete x;
     }
-    SDL_SetWindowBrightness(sdlutils().window(), 1);
 
-    delete maptexture; maptexture = nullptr;    
+    delete partSystem;
+
+    SDL_SetWindowBrightness(sdlutils().window(), 1);
+    delete window_;
 }
 
 void Game::add(GameObject* gameObject) {//a�adir gO al vector
@@ -167,10 +171,6 @@ void Game::draw()
 {
     // Dibujado del mapa
     SDL_Rect dst = { 0, 0, (int)getWindowWidth(), (int)getWindowHeight() };
-    /*if (mCamera_->getCameraPosition().getX() - trunc(mCamera_->getCameraPosition().getX()) > 0 ||
-        mCamera_->getCameraPosition().getY() - trunc(mCamera_->getCameraPosition().getY()) > 0) {
-        cout << "eu";
-    }*/
     SDL_Rect src = { (int)lround(mCamera_->getCameraPosition().getX() / (getWindowWidth() / mCamera_->getWidth())),
                      (int)lround(mCamera_->getCameraPosition().getY() / (getWindowHeight() / mCamera_->getHeight())),
                      (int)lround(mCamera_->getWidth()),

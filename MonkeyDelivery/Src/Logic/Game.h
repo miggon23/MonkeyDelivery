@@ -142,7 +142,6 @@ private:
     //Particle System
     ParticleExample* partSystem;
 
-    
 public:
 
 

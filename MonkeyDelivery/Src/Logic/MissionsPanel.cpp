@@ -53,7 +53,6 @@ void MissionsPanel::onPlayerInteraction(Player* player)
 	}
 	else {
 		if (!missionsFinished_) {
-			std::cout << "Activating Mission Selection State\n";
 
 			vector<pair<string, string>> missionsSent;
 
@@ -98,8 +97,6 @@ void MissionsPanel::update()
 
 void MissionsPanel::onMissionSelected(string missionId)
 {
-	std::cout << "Deactivating Mission Selection State\n";
-
 	MissionInfo m = missions_.at(missionId);
 	
 	// solo se hace si no había una misión activa, es decir si el vecino no estaba activo
