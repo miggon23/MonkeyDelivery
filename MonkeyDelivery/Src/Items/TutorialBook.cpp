@@ -5,7 +5,7 @@ TutorialBook::TutorialBook(Game* game, int x, int y, int w, int h) : ColliderTil
 	tutorialTexture_ = game->getTexture(UI_Controls);
 	tutorialKeyTexture_ = game->getTexture(UI_ControlsKey);
 	tutorialRect_ = {0, 0, (int)game->getWindowWidth(), (int)game->getWindowHeight() };
-	tutorialKeyRect_ = {x + 20 , y - 50, 50, 50 };
+	tutorialKeyRect_ = {x + 25 , y - 40, 50, 50 };
 }
 
 void TutorialBook::onPlayerInteraction(Player* player)
