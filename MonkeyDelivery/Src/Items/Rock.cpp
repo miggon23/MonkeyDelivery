@@ -1,7 +1,7 @@
 #include "Rock.h"
 #include "../Logic/game.h"
 
-Rock::Rock(Game* game, int x, int y,int levelToDestroy) :ColliderTile(game,Vector2D<double>(x,y),w,h) {
+Rock::Rock(Game* game, int x, int y,int levelToDestroy) : ColliderTile(game,Vector2D<double>(x,y), 75.0, 75.0) {
 	levelToDestroy_ = levelToDestroy % 2;
 	switch (levelToDestroy_){
 	case 1:
@@ -11,8 +11,6 @@ Rock::Rock(Game* game, int x, int y,int levelToDestroy) :ColliderTile(game,Vecto
 		setTexture(worldObject_blockRock02);
 		break;
 	}
-	setDimension(w, h);
-	setPosition(x, y);
 }
 
 Rock::~Rock(){
