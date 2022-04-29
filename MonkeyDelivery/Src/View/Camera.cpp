@@ -16,6 +16,11 @@ Camera::Camera(Game* g, const Vector2D<double>& initialPos, double camW, double 
 	scale_ = windowWidth_ / width_;
 }
 
+Camera::~Camera()
+{
+	game_ = nullptr;
+}
+
 void Camera::Move(const Vector2D<double>& newPos)
 {
 	pos_ = newPos;

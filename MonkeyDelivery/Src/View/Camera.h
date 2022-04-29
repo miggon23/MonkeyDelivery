@@ -15,6 +15,7 @@ private:
 	Game* game_;
 public:
 	Camera(Game* g, const Vector2D<double>& initialPos, double camW, double camH);
+	~Camera();
 
 	void Move(const Vector2D<double>& newPos);
 	void MoveDir(const Vector2D<double>& newDir);

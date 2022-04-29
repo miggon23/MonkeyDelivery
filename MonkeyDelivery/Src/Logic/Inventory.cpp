@@ -35,6 +35,11 @@ Inventory::~Inventory()
 	clearInventory();
 	delete missionObject_;	
 
+	//no se pueden eliminar estas texturas
+	//delete base_;
+	//delete overlay_;
+
+	player_ = nullptr;
 	base_ = nullptr;
 	overlay_ = nullptr;
 }

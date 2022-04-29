@@ -1,6 +1,10 @@
 #include "StateMachine.h"
 #include "State.h"
 
+StateMachine::~StateMachine()
+{
+}
+
 void StateMachine::setState(State* state) {
 	if(getState() != nullptr)
 		getState()->onExitState();

@@ -12,7 +12,8 @@ protected:
 	//State* savedState = nullptr;
 	std::vector<State*> savedStates;	
 public:
-	
+	~StateMachine();
+
 	void setState(State* state);
 	void setSaveState(State* state);
 	void setOptionsState(State* state);
