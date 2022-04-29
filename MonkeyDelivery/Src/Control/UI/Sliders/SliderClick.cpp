@@ -5,9 +5,6 @@ SliderClick::SliderClick(Game* game, double topPosition,double minPosition ,doub
 	setPosition(x, y);
 }
 
-SliderClick::~SliderClick(){
-}
-
 void SliderClick::update(){
 	if (onMoving_) {
 		move();

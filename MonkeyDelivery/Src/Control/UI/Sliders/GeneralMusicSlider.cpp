@@ -9,9 +9,6 @@ GeneralMusicSlider::GeneralMusicSlider(Game* game, double x, double y):Slider(ga
 	sliderClick_->setDimension(50, 50);
 }
 
-GeneralMusicSlider::~GeneralMusicSlider(){
-}
-
 void GeneralMusicSlider::Utility(){
 	double x = 128 * Percent();
 	game_->ChangeMusicVolume(int(x));

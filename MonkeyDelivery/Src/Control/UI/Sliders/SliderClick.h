@@ -8,7 +8,7 @@ public:
 	Texture* texture_;
 
 	SliderClick(Game* game,double topPosition,double minPosition,double x, double y);
-	~SliderClick();
+	~SliderClick() {};
 	void update() override;
 	void onCursorCollision() override;
 	void move();

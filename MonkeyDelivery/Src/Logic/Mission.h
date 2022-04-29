@@ -13,8 +13,8 @@ private:
 
 public:
 
-	Mission(string name, bool exp);
-	~Mission();
+	Mission(string name, bool exp) : name_(name), isExpress_(exp) {};
+	~Mission() {};
 
 	inline string getName() { return name_; }
 	inline bool isExpress() { return isExpress_; }

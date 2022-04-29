@@ -278,10 +278,8 @@
     <ClCompile Include="Src\Items\Monkeycola.cpp" />
     <ClCompile Include="MonkeyDelivery.cpp" />
     <ClCompile Include="Src\Control\Button.cpp" />
-    <ClCompile Include="Src\Control\Command.cpp" />
     <ClCompile Include="Src\Control\CommandClick.cpp" />
     <ClCompile Include="Src\Control\CommandExit.cpp" />
-    <ClCompile Include="Src\Control\CommandFactory.cpp" />
     <ClCompile Include="Src\Control\CommandInteract.cpp" />
     <ClCompile Include="Src\Control\CommandMove.cpp" />
     <ClCompile Include="Src\Control\CommandRun.cpp" />
@@ -324,7 +322,6 @@
     <ClCompile Include="Src\Items\Repel.cpp" />
     <ClCompile Include="Src\json\JSON.cpp" />
     <ClCompile Include="Src\json\JSONValue.cpp" />
-    <ClCompile Include="Src\Logic\AnimationManager.cpp" />
     <ClCompile Include="Src\Enemies\Bat.cpp" />
     <ClCompile Include="Src\Items\Bike.cpp" />
     <ClCompile Include="Src\Items\Bed.cpp" />
@@ -346,7 +343,6 @@
     <ClCompile Include="Src\Logic\InventoryObject.cpp" />
     <ClCompile Include="Src\Items\Lantern.cpp" />
     <ClCompile Include="Src\Logic\MAPPoint.cpp" />
-    <ClCompile Include="Src\Logic\Mission.cpp" />
     <ClCompile Include="Src\Logic\MissionManager.cpp" />
     <ClCompile Include="Src\Logic\MissionObject.cpp" />
     <ClCompile Include="Src\Logic\MissionsPanel.cpp" />
@@ -376,7 +372,6 @@
     <ClCompile Include="Src\Utils\Timer.cpp" />
     <ClCompile Include="Src\View\Camera.cpp" />
     <ClCompile Include="Src\View\Texture.cpp" />
-    <ClCompile Include="Src\View\TextureContainer.cpp" />
     <ClCompile Include="Src\View\Texture_manipulation.cpp" />
   </ItemGroup>
   <ItemGroup>

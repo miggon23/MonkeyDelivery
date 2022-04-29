@@ -72,10 +72,4 @@ void Target::setTexture(string tex)
 	}else if (tex == "NPC_Rabbit") {
 		texture = game->getTexture(npc_Rabbit);
 	}
-
-	// forma antigua, sin texture container
-	//if (texture != nullptr)
-	//	delete texture;
-	//string route = "./Images/NPCs/" + tex + ".png";
-	//texture = new Texture(game->getRenderer(), route);
 }

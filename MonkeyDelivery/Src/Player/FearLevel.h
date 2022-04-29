@@ -9,7 +9,7 @@ private:
 	double fear_;
 	double maxFear_;
 
-	int x, y, w, h;
+	double x, y, w, h;
 
 public:
 	FearLevel(Game* game);

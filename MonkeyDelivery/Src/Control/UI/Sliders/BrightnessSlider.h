@@ -5,6 +5,6 @@ class BrightnessSlider :public Slider {
 	
 public:
 	BrightnessSlider(Game* game, double x, double y);
-	~BrightnessSlider();
+	~BrightnessSlider() {};
 	void Utility() override;
 };

@@ -10,9 +10,6 @@ BrightnessSlider::BrightnessSlider(Game* game, double x, double y):Slider(game,x
 	sliderClick_->setDimension(35, 35);
 }
 
-BrightnessSlider::~BrightnessSlider(){
-}
-
 void BrightnessSlider::Utility(){
 	float x = (float)Percent();
 	

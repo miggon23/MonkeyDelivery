@@ -14,9 +14,6 @@
     <ClCompile Include="Src\Items\Bed.cpp">
       <Filter>Source\Logic\InteractuableObjectsMap</Filter>
     </ClCompile>
-    <ClCompile Include="Src\Logic\AnimationManager.cpp">
-      <Filter>Source\Logic\Managers/Game</Filter>
-    </ClCompile>
     <ClCompile Include="Src\Items\Bike.cpp">
       <Filter>Source\Logic\InventoryObjects</Filter>
     </ClCompile>
@@ -37,9 +34,6 @@
     </ClCompile>
     <ClCompile Include="Src\Logic\ColliderTile.cpp">
       <Filter>Source\Tile</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\Command.cpp">
-      <Filter>Source\Control\Commands</Filter>
     </ClCompile>
     <ClCompile Include="Src\Control\CommandClick.cpp">
       <Filter>Source\Control\Commands</Filter>
@@ -152,9 +146,6 @@
     <ClCompile Include="MessageOverlay.cpp">
       <Filter>Source\View</Filter>
     </ClCompile>
-    <ClCompile Include="Src\Logic\Mission.cpp">
-      <Filter>Source\Logic\Player</Filter>
-    </ClCompile>
     <ClCompile Include="Src\Logic\MissionManager.cpp">
       <Filter>Source\Logic\Managers/Game</Filter>
     </ClCompile>
@@ -263,9 +254,6 @@
     <ClCompile Include="Src\sdlutils\TextureUtils.cpp">
       <Filter>Source\View\Textures</Filter>
     </ClCompile>
-    <ClCompile Include="Src\View\TextureContainer.cpp">
-      <Filter>Source\View\Textures</Filter>
-    </ClCompile>
     <ClCompile Include="Src\View\Texture_manipulation.cpp">
       <Filter>Source\View\Textures</Filter>
     </ClCompile>
@@ -307,9 +295,6 @@
     </ClCompile>
     <ClCompile Include="Src\Player\playerHUD.cpp">
       <Filter>Source\Logic\Player</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\CommandFactory.cpp">
-      <Filter>Source\Control</Filter>
     </ClCompile>
     <ClCompile Include="Src\Items\Banana.cpp">
       <Filter>Source\Logic\InventoryObjects</Filter>

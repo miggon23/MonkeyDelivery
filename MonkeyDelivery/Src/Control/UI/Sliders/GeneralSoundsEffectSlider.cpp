@@ -10,9 +10,6 @@ GeneralSoundsEffectSlider::GeneralSoundsEffectSlider(Game* game, double x, doubl
 	sliderClick_->setDimension(70, 70);
 }
 
-GeneralSoundsEffectSlider::~GeneralSoundsEffectSlider(){
-}
-
 void GeneralSoundsEffectSlider::Utility(){
 	double x = 128 * Percent();
 	game_->ChangeSoundEfectsVolume(int(x));

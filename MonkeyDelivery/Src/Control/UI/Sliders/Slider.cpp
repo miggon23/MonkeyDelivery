@@ -3,7 +3,7 @@
 
 Slider::Slider(Game* game, double x, double y) :game_(game) {
 	sliderBase_ = new SliderBase(game, x, y);
-	sliderClick_ = new SliderClick(game, x + sliderBase_->getWidth() / 2, y/*- sliderBase_->getWidth()*/, x, y);
+	sliderClick_ = new SliderClick(game, x + sliderBase_->getWidth() / 2, y, x, y);
 	setSize(384, 168);
 }
 
@@ -17,8 +17,6 @@ Slider::~Slider() {
 void Slider::draw() {
 	sliderBase_->draw();
 	sliderClick_->draw();
-	/*sliderBase_->drawDebug();
-	sliderClick_->drawDebug();*/
 }
 
 void Slider::update() {
