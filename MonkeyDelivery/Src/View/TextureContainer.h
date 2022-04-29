@@ -133,18 +133,14 @@ enum TextureName
 		UI_Black,
 		UI_Brightness,
 		button_Back,
-		button_BackMenu,
 		button_Continue,
 		button_Main_Credits,
 		button_Main_ExitButton,
 		button_Main_Options,
 		button_Main_StartButton,
-		button_Options,
 		button_Pause,
 		UI_Fade,
 		UI_label,
-		UI_SliderBase,
-		UI_SliderClicker,
 		UI_Checker00,
 		UI_Checker01,
 		UI_Checker02,
@@ -156,7 +152,7 @@ enum TextureName
 		missingTex,
 };
 
-const int NUM_TEXTURES = 110;
+const int NUM_TEXTURES = 106;
 
 typedef struct {
 	string filename;
@@ -287,18 +283,14 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
 	{"ui/Menu/black.png",1,1},
 	{"ui/Menu/Brightness.png",1,1},
 	{"ui/Menu/button_Back.png",1,1 },
-	{"ui/Menu/button_BackMenu.png",1,1 },
 	{"ui/Menu/button_Continue.png",1,1 },
 	{"ui/Menu/button_Main_Credits.png",1,1 },
 	{"ui/Menu/button_Main_ExitButton.png",1,1 },
 	{"ui/Menu/button_Main_Options.png",1,1 },
 	{"ui/Menu/button_Main_StartButton.png",1,1 },
-	{"ui/Menu/button_Options.png",1,1 },
 	{"ui/Menu/button_Pause.png",1,1 },
 	{"ui/Menu/fade.png",1,1},
 	{"ui/Menu/label.png",1,1},
-	{"ui/Menu/sliderBase.png",1,1},
-	{"ui/Menu/sliderClicker.png",1,1},
 	{"ui/Menu/UI_Checker00.png",1,1},
 	{"ui/Menu/UI_Checker01.png",1,1},
 	{"ui/Menu/UI_Checker02.png",1,1},
