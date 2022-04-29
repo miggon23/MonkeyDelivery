@@ -471,13 +471,17 @@ void Game::initOptionsState()
 void Game::drawMap()
 { 
 
-    SDL_Rect rectPanel = { minimapinfo_.xOrigin, minimapinfo_.yOrigin, (int)minimapinfo_.w, (int)minimapinfo_.h };
+    SDL_Rect rectPanel = { minimapinfo_.xOrigin, minimapinfo_.yOrigin, 300, 150 };
 
     SDL_Rect src = { (int)lround((mCamera_->getCameraPosition().getX() - mCamera_->getWidth() * miniMapScale_ / 2 - player_->getWidth() / 2) / (getWindowWidth() / mCamera_->getWidth())),
                      (int)lround((mCamera_->getCameraPosition().getY() - mCamera_->getHeight() * miniMapScale_ / 2 - player_->getHeight() / 2) / (getWindowHeight() / mCamera_->getHeight())),
                      (int)lround(mCamera_->getWidth() * miniMapScale_),
                      (int)lround(mCamera_->getHeight() * miniMapScale_) };
     SDL_RenderCopy(renderer, background_, &src, &rectPanel);
+
+    //Marco?
+    Texture* selector_ = getTexture(minimapBorder);
+    selector_->render(rectPanel);
     //background_->render(rectPanel);
 
     if (isMapPointerPut) 

@@ -78,6 +78,7 @@ enum TextureName
 		mapMarker,
 		mapOverlay,
 		minimapOverlay,
+		minimapBorder,
 		playerIconTex,
 	
 	//7-Missions - 6
@@ -155,7 +156,7 @@ enum TextureName
 		missingTex,
 };
 
-const int NUM_TEXTURES = 109;
+const int NUM_TEXTURES = 110;
 
 typedef struct {
 	string filename;
@@ -230,6 +231,7 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
 	{"map/mapMarker.png",1,1},
 	{"map/mapOverlay.png",1,1},
 	{"map/minimapOverlay.png",1,1},
+	{"map/minimapBorder.png",1,1},
 	{"map/playerIcon.png",1,1},
 
 	//7-Missions
