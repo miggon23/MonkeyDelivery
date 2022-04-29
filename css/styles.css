@@ -46,8 +46,8 @@ html {
 	height: 100%;
 }
 
-body, p {
-	color: rgb(201, 56, 56); 
+body, p {/*textodescripcion*/
+	color: rgb(2, 2, 2); 
 	font: 400 1rem/1.75rem "Open Sans", sans-serif;
 }
 
@@ -64,7 +64,7 @@ body, p {
 	text-align: center;
 }
 
-h1 {
+ h1 {/*color letrero Monkey texto*/
 	color: #333;
 	font: 700 2.625rem/3.375rem "Open Sans", sans-serif;
 }
@@ -770,7 +770,7 @@ input[type='checkbox'] {
 	overflow: hidden;
 	padding-top: 8rem;
 	padding-bottom: 3rem;
-	background-color: #f7fafd;
+	background-color: #e29b18;/*fondo */
 	text-align: center;
 }
 
