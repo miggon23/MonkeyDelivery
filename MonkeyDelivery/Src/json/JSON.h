@@ -92,6 +92,7 @@ public:
 protected:
 	static bool SkipWhitespace(const char **data);
 	static bool ExtractString(const char **data, std::string &str);
+	static bool esValida(char c);
 	static double ParseInt(const char **data);
 	static double ParseDecimal(const char **data);
 private:

@@ -215,7 +215,7 @@ bool JSON::ExtractString(const char **data, std::string &str)
 		}
 		
 		// Disallowed char?
-		else if (next_char!='¡' && next_char < ' ' && next_char != '\t')
+		else if (!esValida(next_char) && next_char < ' ' && next_char != '\t')
 		{
 			// SPEC Violation: Allow tabs due to real world cases
 			return false;
@@ -230,6 +230,11 @@ bool JSON::ExtractString(const char **data, std::string &str)
 	
 	// If we're here, the string ended incorrectly
 	return false;
+}
+
+bool JSON::esValida(char c)
+{
+	return (c == '¿' || c == '¡' || c == '!' || c == '?' || c == 'ñ');
 }
 
 /**
