@@ -55,6 +55,7 @@ Game::~Game() {
     delete dialogueBox_;
     delete shop_;
 
+    delete minimapBorder_;
     delete mapPoint;
     delete pIcon; pIcon = nullptr;
     delete maptexture; maptexture = nullptr; 
@@ -480,8 +481,8 @@ void Game::drawMap()
     SDL_RenderCopy(renderer, background_, &src, &rectPanel);
 
     //Marco?
-    Texture* selector_ = getTexture(minimapBorder);
-    selector_->render(rectPanel);
+    minimapBorder_ = getTexture(minimapBorder);
+    minimapBorder_->render(rectPanel);
     //background_->render(rectPanel);
 
     if (isMapPointerPut) 
