@@ -187,6 +187,10 @@ bool JSON::ExtractString(const char **data, std::string &str)
 							next_char |= (10 + (**data - 'A'));
 						else if (**data >= 'a' && **data <= 'f')
 							next_char |= (10 + (**data - 'a'));
+						/*else if (**data == '¡') next_char |= '¡';
+						else if (**data == '¿') next_char |= '¿';
+						else if (**data == '!') next_char |= '!';
+						else if (**data == '?') next_char |= '?';*/
 						else
 						{
 							// Invalid hex digit = invalid JSON
@@ -211,7 +215,7 @@ bool JSON::ExtractString(const char **data, std::string &str)
 		}
 		
 		// Disallowed char?
-		else if (next_char < ' ' && next_char != '\t')
+		else if (next_char!='¡' && next_char < ' ' && next_char != '\t')
 		{
 			// SPEC Violation: Allow tabs due to real world cases
 			return false;
