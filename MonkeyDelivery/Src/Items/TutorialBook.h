@@ -5,9 +5,8 @@ class TutorialBook : public ColliderTile {
 
     bool showingImage_ = false;
     Texture* tutorialTexture_;
-    Texture* tutorialKeyTexture_;
     SDL_Rect tutorialRect_;
-    SDL_Rect tutorialKeyRect_;
+    SDL_Rect tutorialSignRect_;
 
 public:
 

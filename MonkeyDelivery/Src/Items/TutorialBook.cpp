@@ -4,7 +4,7 @@ TutorialBook::TutorialBook(Game* game, int x, int y, int w, int h) : ColliderTil
 	setTexture(worldObject_Tutorial);
 	tutorialTexture_ = game->getTexture(UI_Controls);
 	tutorialRect_ = {0, 0, (int)game->getWindowWidth(), (int)game->getWindowHeight() };
-	tutorialKeyRect_ = {x + 25 , y - 40, 68, 132 };
+	tutorialSignRect_ = {x + 25 , y - 40, 68, 132 };
 }
 
 void TutorialBook::onPlayerInteraction(Player* player)
@@ -20,7 +20,7 @@ void TutorialBook::onPlayerInteraction(Player* player)
 
 void TutorialBook::draw()
 {
-	SDL_Rect a = tutorialKeyRect_;
+	SDL_Rect a = tutorialSignRect_;
 	a.x -= (int)game->getCamera()->getCameraPosition().getX();
 	a.y -= (int)game->getCamera()->getCameraPosition().getY();
 
