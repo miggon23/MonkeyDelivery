@@ -8,9 +8,9 @@ FearLevel::FearLevel(Game* game) :GameObject(game) {
 	fear_ = 0;
 	maxFear_ = 100;
 
-	x = game->getWindowWidth()/8.18;
-	y = game->getWindowHeight() / 16.67;	
-	h = game->getWindowHeight() / 20.0;
+	x = (int)(game->getWindowWidth()/8.18);
+	y = (int)(game->getWindowHeight() / 16.67);
+	h = (int)(game->getWindowHeight() / 20.0);
 
 	setTexture(UI_fearLevel);
 	setPosition(x + 20, y + 20);

@@ -7,11 +7,16 @@ UI_Info::UI_Info(Game* game)
 	this->game = game;
 	font_ = new Font("./Images/fonts/Pixellari.ttf", 20);
 
-	xP = textX = game->getWindowWidth() / 1.36;
-	textY = game->getWindowHeight() / 13.28;
-	yP = game->getWindowHeight() / 100.0;
-	//wP = game->getWindowWidth() / 4.14;//si pones esto así no consigues que escale, solo se estira
-	//hP = game->getWindowWidth() / 13.0;//si pones esto así no consigues que escale, solo se estira
+	xP = textX = (int)(game->getWindowWidth() / 1.36);
+	textY = (int)(game->getWindowHeight() / 13.28);
+	yP = (int)(game->getWindowHeight() / 100.0);
+	//wP = game->getWindowWidth() / 4.14;//si pones esto asï¿½ no consigues que escale, solo se estira
+	//hP = game->getWindowWidth() / 13.0;//si pones esto asï¿½ no consigues que escale, solo se estira
+	xP = textX = (int)(game->getWindowWidth() / 1.36);
+	textY = (int)(game->getWindowHeight() / 13.28);
+	yP = (int)(game->getWindowHeight() / 100.0);
+	wP = (int)(game->getWindowWidth() / 4.14);
+	hP = (int)(game->getWindowWidth() / 13.0);
 	
 }
 UI_Info::~UI_Info()	

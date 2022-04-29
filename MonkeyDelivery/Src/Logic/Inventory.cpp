@@ -13,10 +13,10 @@ Inventory::Inventory(Game* game, Player* player, SDL_Renderer* renderer) : playe
 	selector_ = game->getTexture(UI_InventorySelector);
 	overlay_ = game->getTexture(UI_InventoryBarOverlay);
 
-	xObj = game->getWindowWidth() / 25;
-	yObj = game->getWindowHeight() / 14;
-	xInventory = game->getWindowWidth() / 2 - xObj * 7 / 2;
-	yInventory = game->getWindowHeight() - game->getWindowHeight() / 10;
+	xObj = (int)game->getWindowWidth() / 25;
+	yObj = (int)game->getWindowHeight() / 14;
+	xInventory = (int)game->getWindowWidth() / 2 - xObj * 7 / 2;
+	yInventory = (int)game->getWindowHeight() - game->getWindowHeight() / 10;
 
 	baseRect_ = { xInventory, yInventory, xObj * 7, yObj }; 
 

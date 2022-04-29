@@ -26,13 +26,13 @@ PowerUpsManager::~PowerUpsManager(){
 void PowerUpsManager::update(){
 	if (activatedEnergyDrink_) {
 		player_->drainEnergy(-energyDrinkEnergyBonus_);
-		if (timerEnergyDrink_->currTime() >= timeEnergyDrinkLimit_) {
+		if ((int)timerEnergyDrink_->currTime() >= timeEnergyDrinkLimit_) {
 			desactivate(energyDrink);
 		}		
 	}
 	if (activatedAntiBanana) {
-		if(timerAntiBanana_->currTime()<= antiBananaLimitFecoverFear_)player_->recoverFear(antiBananaFearRecoverBuff_);
-		if (timerAntiBanana_->currTime() >= timeEnergyDrinkLimit_) {
+		if((int)timerAntiBanana_->currTime()<= antiBananaLimitFecoverFear_)player_->recoverFear(antiBananaFearRecoverBuff_);
+		if ((int)timerAntiBanana_->currTime() >= timeEnergyDrinkLimit_) {
 			desactivate(repelente);
 		}
 	}

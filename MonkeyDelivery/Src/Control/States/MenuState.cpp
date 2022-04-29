@@ -22,8 +22,8 @@ MenuState::MenuState(Game* game) : State(game) {
 	addButton(new Credits((int)(game->getWindowWidth() / 2 - buttonW / 2), (int)(game->getWindowHeight() / 2 + buttonH), buttonW, buttonH, game));
 	addButton(new ExitButton((int)(game->getWindowWidth() / 2 - buttonW / 2), (int)(game->getWindowHeight() / 2 + buttonH*2), buttonW, buttonH, game));
 
-	selectorX = game->getWindowWidth() / 2 - buttonW / 2;
-	selectorY = game->getWindowHeight() / 2 - buttonH;
+	selectorX = (int)(game->getWindowWidth() / 2 - buttonW / 2);
+	selectorY = (int)(game->getWindowHeight() / 2 - buttonH);
 
 	backgroundTexture = game->getTexture(bckg_Image);
 	titleTexture = game->getTexture(bckg_GameTitle);
@@ -44,7 +44,7 @@ void MenuState::onEnterState()
 }
 
 void MenuState::update() {
-	sdlutils().musics().at("menumusic").setMusicVolume(game->getMusicVolume()*game->getGeneralVolume());
+	sdlutils().musics().at("menumusic").setMusicVolume((int)(game->getMusicVolume()*game->getGeneralVolume()));
 }
 
 void MenuState::draw()
