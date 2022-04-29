@@ -1,5 +1,6 @@
 #include "CreditsState.h"
 #include "../CommandClick.h"
+#include "../SelectButtonCommand.h"
 #include "../../Control/UI/Buttons/Back1.h"
 #include "../../json/JSON.h"
 
@@ -10,11 +11,11 @@ CreditsState::CreditsState(Game* game) : State(game)
 	
 	addButton(new Back1((int)game->getWindowWidth() / 2 - buttonW/2, (int)game->getWindowHeight() - 250, buttonW, buttonH, game));
 	backgroundTexture = game->getTexture(bckg_options);
+	selectorTexture = game->getTexture(mission_UI_Selector);
 
 	loadCredits("Images/config/resources.json");
 
 	registerCommands();
-	
 }
 
 
@@ -31,8 +32,10 @@ void CreditsState::draw()
 	for (int i = 0; i < index_; i++)
 	{
 		game->renderText(credits_[i], sdlutils().width()/2 - 350, 100  *i);
-		
 	}
+
+	rectPanel = { (int)buttonsUI[0]->getPosition().getX(), (int)buttonsUI[0]->getPosition().getY(), (int)buttonsUI[0]->getWidth(), (int)buttonsUI[0]->getHeight() };
+	selectorTexture->render(rectPanel);
 	
 }
 
@@ -93,4 +96,5 @@ void CreditsState::onEnterState()
 void CreditsState::registerCommands()
 {
 	commandFactory->add(new CommandClick());
+	commandFactory->add(new SelectButtonCommand(this));
 }

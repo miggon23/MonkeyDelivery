@@ -65,7 +65,6 @@ void MenuState::draw()
 	}
 
 	// Dibujar selector
-	//rectPanel = {selectorX, selectorY, selectorW, selectorH};
 	rectPanel = { (int)getCurrentButton()->getPosition().getX(), (int)getCurrentButton()->getPosition().getY(), (int)getCurrentButton()->getWidth(), (int)getCurrentButton()->getHeight() };
 	selectorTexture->render(rectPanel);
 }
