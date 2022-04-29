@@ -2,6 +2,7 @@
 #include "../../../Logic/Game.h"
 
 GeneralMusicSlider::GeneralMusicSlider(Game* game, double x, double y):Slider(game,x,y){
+	sliderClick_->setTexture(UI_Checker02);
 }
 
 GeneralMusicSlider::~GeneralMusicSlider(){
