@@ -15,7 +15,6 @@ BrightnessSlider::~BrightnessSlider(){
 
 void BrightnessSlider::Utility(){
 	float x = (float)Percent();
-	//game_->ChangeAlphaBrightness(int(x));	
 	
 	SDL_SetWindowBrightness(sdlutils().window(), x);
 }
