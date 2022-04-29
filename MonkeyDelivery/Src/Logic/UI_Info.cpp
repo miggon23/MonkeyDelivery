@@ -10,8 +10,8 @@ UI_Info::UI_Info(Game* game)
 	xP = textX = game->getWindowWidth() / 1.36;
 	textY = game->getWindowHeight() / 13.28;
 	yP = game->getWindowHeight() / 100.0;
-	wP = game->getWindowWidth() / 4.14;
-	hP = game->getWindowWidth() / 13.0;
+	//wP = game->getWindowWidth() / 4.14;//si pones esto así no consigues que escale, solo se estira
+	//hP = game->getWindowWidth() / 13.0;//si pones esto así no consigues que escale, solo se estira
 	
 }
 UI_Info::~UI_Info()	
@@ -38,7 +38,7 @@ void UI_Info::renderText(vector<string> text, int x, int y, SDL_Color color)
 void UI_Info::renderImage(string imgRoute)
 {
 	Texture* t = new Texture(game->getRenderer(), imgRoute);
-	SDL_Rect rect = {xP, yP, wP, hP};
+	SDL_Rect rect = {xP, yP, 435, 77}; //ancho largo es fijo para todos los helpers
 	t->render(rect);
 	delete t;
 }
