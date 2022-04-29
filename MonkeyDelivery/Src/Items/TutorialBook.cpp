@@ -3,9 +3,8 @@
 TutorialBook::TutorialBook(Game* game, int x, int y, int w, int h) : ColliderTile(game, Point2D<double>(x,y), w, h) {
 	setTexture(worldObject_Tutorial);
 	tutorialTexture_ = game->getTexture(UI_Controls);
-	tutorialKeyTexture_ = game->getTexture(UI_ControlsKey);
 	tutorialRect_ = {0, 0, (int)game->getWindowWidth(), (int)game->getWindowHeight() };
-	tutorialKeyRect_ = {x + 25 , y - 40, 50, 50 };
+	tutorialKeyRect_ = {x + 25 , y - 40, 68, 132 };
 }
 
 void TutorialBook::onPlayerInteraction(Player* player)
@@ -25,8 +24,8 @@ void TutorialBook::draw()
 	a.x -= (int)game->getCamera()->getCameraPosition().getX();
 	a.y -= (int)game->getCamera()->getCameraPosition().getY();
 
-	tutorialKeyTexture_->render(a);
-	drawTexture(texture);
+	//drawTexture(texture);
+	texture->render(a);
 	if (showingImage_) {
 		tutorialTexture_->render(tutorialRect_);
 	}
