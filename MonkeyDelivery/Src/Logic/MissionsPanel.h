@@ -3,8 +3,9 @@
 #include "Mission.h"
 #include "Target.h"
 #include "MissionObject.h"
-
+#include "AnimationManager.h"
 #include <map>
+
 
 struct MissionInfo {
 	int level;
@@ -31,6 +32,10 @@ using sdl_resource_table = std::map<std::string, MissionInfo>;
 class MissionsPanel : public GameObject
 {
 private:
+	AnimationManager* animationManager;
+	SDL_Rect textureRect;
+	float timerAnimation_; //tiempo entre los frames
+
 	bool missionsFinished_;
 	int currentLevel_; // nivel de misiones en el que se está
 	Mission* currentMission_; // Misión activa
@@ -56,11 +61,12 @@ private:
 	Uint32 endTime_;
 	
 public:
-	MissionsPanel(Game* game);
+	MissionsPanel(Game* game, AnimationManager* anim);
 	~MissionsPanel();
 	// Debe activar el estado SeleccionDeMisión con ciertos parámetros que mira en el JSON
 	void onPlayerInteraction(Player* player) override;
 	void update() override;
+	void draw() override;
 
 	// llamado desde el estado de SeleccionDeMisión, cuando se sale de él
 	void onMissionSelected(string missionId);

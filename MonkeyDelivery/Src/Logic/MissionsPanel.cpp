@@ -10,12 +10,15 @@
 #include "../Items/Package.h"
 #include "DialogueBox.h"
 
-
-MissionsPanel::MissionsPanel(Game* game) : GameObject(game, true)
+MissionsPanel::MissionsPanel(Game* game, AnimationManager* anim) : GameObject(game, true)
 {
-	setPosition(4005, 1150);
+	setPosition(4005, 1125);
 	setDimension(108, 160);
 	setTexture(MissionPanel_Interact);
+
+	animationManager = anim;
+	textureRect = { 0, 0, animationManager->getWidthMissions(), animationManager->getHeightMissions() };
+	timerAnimation_ = 0; // ¿puede ser const?
 
 	missionsFinished_ = false;
 	currentLevel_ = 1;
@@ -93,6 +96,17 @@ void MissionsPanel::update()
 		onMissionCompleted();
 		dialogueEnd();
 	}
+}
+
+void MissionsPanel::draw()
+{
+	auto pos = getCollider();
+	pos.x -= (int)game->getCamera()->getCameraPosition().getX();
+	pos.y -= (int)game->getCamera()->getCameraPosition().getY();
+
+	animationManager->getFrameImageMission(pos, textureRect, texture, timerAnimation_);
+
+	drawDebug();
 }
 
 void MissionsPanel::onMissionSelected(string missionId)

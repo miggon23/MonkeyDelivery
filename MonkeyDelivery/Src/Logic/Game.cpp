@@ -104,7 +104,7 @@ void Game::start()
     mapInfo.path = ".\\Src\\TilemapSrc\\MainMap.tmx";
     loadMap(mapInfo.path);
 
-    missionsPanel_ = new MissionsPanel(this);
+    missionsPanel_ = new MissionsPanel(this, animationManager_);
     add(missionsPanel_);
     
     mapPoint = new MAPPoint(this);

@@ -43,6 +43,10 @@ private:
 	int wPlant_ = 55,
 		hPlant_ = 55;
 
+	//Icono Misiones
+	int wMissions_ = 34;
+	int hMissions_ = 48;
+
 public:
 
 	struct LastDir
@@ -287,14 +291,16 @@ public:
 	};
 
 	//MENSAJE PANEL MISIONES
-	inline void getFrameImageMission(SDL_Rect plant, SDL_Rect& texturaRect, Texture* tex, int& timer) {
-		if (timer_->TimeScale() - timer >= 150) {
-			texturaRect.x += 200;
-			if (texturaRect.x >= 400) {
+	inline int getWidthMissions() { return wMissions_; };
+	inline int getHeightMissions() { return hMissions_; };
+	inline void getFrameImageMission(SDL_Rect icon, SDL_Rect& texturaRect, Texture* tex, float& timer) {
+		if (timer_->TimeScale() - timer >= 300) {
+			texturaRect.x += wMissions_;
+			if (texturaRect.x > 35) {
 				texturaRect.x = 0;
 			}
-			timer = (int)timer_->TimeScale();
+			timer = timer_->TimeScale();
 		}
-		tex->render(texturaRect, plant);
+		tex->render(texturaRect, icon, 0, nullptr, SDL_FLIP_NONE);
 	};
 };
