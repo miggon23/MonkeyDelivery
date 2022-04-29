@@ -24,7 +24,7 @@ void Bull::update()
 	die();
 	respawn();
 	//Si han pasado 3 segundos y el toro esta persiguiendo
-	if (!stop && SDL_GetTicks() > timer_ + 3000) {
+	if (!stop && (int)SDL_GetTicks() > timer_ + 3000) {
 		stop = true;
 	}
 }
@@ -94,7 +94,7 @@ void Bull::checkDistance()
 				lastUpdate_ = SDL_GetTicks();
 			}
 		}
-		else if (SDL_GetTicks() <= timer_ + 3000) //Si no esta en el rango y no han pasado los 3 segundos 
+		else if ((int)SDL_GetTicks() <= timer_ + 3000) //Si no esta en el rango y no han pasado los 3 segundos 
 			chase(dirX, dirY); //Persigo
 
 		else  //Si no esta en el rango y han pasado los 3 segundos

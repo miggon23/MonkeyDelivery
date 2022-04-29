@@ -12,7 +12,7 @@ class MenuState : public State {
     const int titleW = 700, titleH = 258;
     const int selectorW = 300, selectorH = 140;
     int selectorY, selectorX;
-    const int selectorInc = buttonH; // el valor debe ser la separacion entre botones
+    const int selectorInc = (int)buttonH; // el valor debe ser la separacion entre botones
 
     int currentSelection = 0; // boton seleccionado (en el array buttonsUI)
 

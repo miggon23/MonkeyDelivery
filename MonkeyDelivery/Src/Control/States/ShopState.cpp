@@ -13,25 +13,25 @@ ShopState::ShopState(Game* game) : State(game){
 
 	font_ = new Font("Images/fonts/Pixellari.ttf", 40);
 
-	xObj = game->getWindowWidth() / 5;
-	yObj = game->getWindowHeight() / 3;
-	wObj = game->getWindowWidth() / 2.5;
-	hObj = game->getWindowHeight() / 2;
-	xOffset = game->getWindowWidth() / 10;
-	yOffset = game->getWindowHeight() / 4;
-	xText = game->getWindowWidth() / 2.65;
-	yText = game->getWindowHeight() / 1.2;
+	xObj = (int)game->getWindowWidth() / 5;
+	yObj = (int)game->getWindowHeight() / 3;
+	wObj = (int)(game->getWindowWidth() / 2.5);
+	hObj = (int)game->getWindowHeight() / 2;
+	xOffset = (int)game->getWindowWidth() / 10;
+	yOffset = (int)game->getWindowHeight() / 4;
+	xText = (int)(game->getWindowWidth() / 2.65);
+	yText = (int)(game->getWindowHeight() / 1.2);
 
-	buttonsX_ = game->getWindowWidth() / 1.3;
-	buttonsY_ = game->getWindowHeight() / 1.3;
-	buttonsW_ = game->getWindowWidth() / 5.7;
-	buttonsH_ = game->getWindowHeight() / 5.7;
+	buttonsX_ = (int)(game->getWindowWidth() / 1.3);
+	buttonsY_ = (int)(game->getWindowHeight() / 1.3);
+	buttonsW_ = (int)(game->getWindowWidth() / 5.7);
+	buttonsH_ = (int)(game->getWindowHeight() / 5.7);
 
-	coinsX_ = game->getWindowWidth() / 2.25;
-	coinsY_ = game->getWindowHeight() / 1.26;
-	coinsW_ = game->getWindowWidth() / 35.0;
+	coinsX_ = (int)(game->getWindowWidth() / 2.25);
+	coinsY_ = (int)(game->getWindowHeight() / 1.26);
+	coinsW_ = (int)(game->getWindowWidth() / 35.0);
 	double d = game->getWindowWidth() / game->getWindowHeight(); // para que tengan el mismo W y H
-	coinsH_ = game->getWindowHeight() / 35.0 * d;
+	coinsH_ = (int)(game->getWindowHeight() / 35.0 * d);
 
 	shop_ = game->getShop();
 	shop_->actualice();
@@ -107,10 +107,10 @@ void ShopState::draw()
 	
 	game->getTexture(shop_UI_Selector)->render(rectPanel);
 	// current money
-	font_->render(game->getRenderer(), "Monedas: " + std::to_string(game->getMoney()), game->getWindowWidth() - 800, game->getWindowHeight() - 200, BLACK);
+	font_->render(game->getRenderer(), "Monedas: " + std::to_string(game->getMoney()), (int)game->getWindowWidth() - 800, (int)game->getWindowHeight() - 200, BLACK);
 	//renderizado del texto
 	if (shop_->objects.size()>selected_&&shop_->objects[selected_].stock > 0) {
-		font_->render(game->getRenderer(), "Coste: " + std::to_string(shop_->objects[selected_].price), 600, game->getWindowHeight() - 200, BLACK);
+		font_->render(game->getRenderer(), "Coste: " + std::to_string(shop_->objects[selected_].price), 600, (int)game->getWindowHeight() - 200, BLACK);
 	}
 	else {
 		font_->render(game->getRenderer(), " ", xText, yText, BLACK);
@@ -119,7 +119,7 @@ void ShopState::draw()
 	if (closeFailed_)
 	{
 		font_->render(game->getRenderer(), textError_, xText + 25, yText + 25, BLACK);
-		if (SDL_GetTicks() > lastClicked_ + FAIL_TIMESHOWED) 
+		if ((int)SDL_GetTicks() > lastClicked_ + FAIL_TIMESHOWED) 
 			closeFailed_ = false;
 	}
 
@@ -185,7 +185,7 @@ void ShopState::buySelected()
 	else
 	{
 		closeFailed_ = false;
-		sdlutils().soundEffects().at("buy").setVolume(game->getSoundEfectsVolume()*game->getGeneralVolume());
+		sdlutils().soundEffects().at("buy").setVolume((int)(game->getSoundEfectsVolume()*game->getGeneralVolume()));
 		sdlutils().soundEffects().at("buy").play(0, 1);
 	}
 }

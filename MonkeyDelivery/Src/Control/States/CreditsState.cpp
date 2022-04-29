@@ -40,7 +40,7 @@ void CreditsState::update()
 {
 	if (index_ == credits_.size()) return;
 
-	if (SDL_GetTicks() > timeNewName_ + lastName_)
+	if ((int)SDL_GetTicks() > timeNewName_ + lastName_)
 	{
 		index_++;
 		lastName_ = SDL_GetTicks();

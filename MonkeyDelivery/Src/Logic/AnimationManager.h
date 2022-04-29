@@ -52,8 +52,8 @@ public:
 	};
 	LastDir lastDir;
 
-	inline AnimationManager() : game_(nullptr) { lastDir = {0,0}; };
-	inline AnimationManager(Game* game) :game_(game) { lastDir = { 0,0 }; };
+	inline AnimationManager() : game_(nullptr) { lastDir = { 0,0 }; isTired_ = false; };
+	inline AnimationManager(Game* game) :game_(game) { lastDir = { 0,0 }; isTired_ = false;};
 	inline ~AnimationManager() { timer_ = nullptr; cout << "animationManager Deleted" << endl; };
 
 	//JUGADOR
