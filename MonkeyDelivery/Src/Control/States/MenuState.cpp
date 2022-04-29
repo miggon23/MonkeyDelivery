@@ -22,9 +22,6 @@ MenuState::MenuState(Game* game) : State(game) {
 	addButton(new Credits((int)(game->getWindowWidth() / 2 - buttonW / 2), (int)(game->getWindowHeight() / 2 + buttonH), buttonW, buttonH, game));
 	addButton(new ExitButton((int)(game->getWindowWidth() / 2 - buttonW / 2), (int)(game->getWindowHeight() / 2 + buttonH*2), buttonW, buttonH, game));
 
-	selectorX = (int)(game->getWindowWidth() / 2 - buttonW / 2);
-	selectorY = (int)(game->getWindowHeight() / 2 - buttonH);
-
 	backgroundTexture = game->getTexture(bckg_Image);
 	titleTexture = game->getTexture(bckg_GameTitle);
 	selectorTexture = game->getTexture(mission_UI_Selector);
@@ -68,7 +65,8 @@ void MenuState::draw()
 	}
 
 	// Dibujar selector
-	rectPanel = {selectorX, selectorY, selectorW, selectorH};
+	//rectPanel = {selectorX, selectorY, selectorW, selectorH};
+	rectPanel = { (int)getCurrentButton()->getPosition().getX(), (int)getCurrentButton()->getPosition().getY(), (int)getCurrentButton()->getWidth(), (int)getCurrentButton()->getHeight() };
 	selectorTexture->render(rectPanel);
 }
 
@@ -78,13 +76,13 @@ void MenuState::next() {
 	delete this;
 }
 
-void MenuState::moveBox(int i) {
-	if (i == -1 && currentSelection != 0) {
-		selectorY -= selectorInc;
-		currentSelection--;
+void MenuState::moveBox(Vector2D<int> i) {
+	
+	currentSelection += i.getY();
+	if (currentSelection < 0) {
+		currentSelection = 0;
 	}
-	else if (i == 1 && currentSelection != buttonsUI.size() - 1) {
-		selectorY += selectorInc;
-		currentSelection++;
+	else if (currentSelection > buttonsUI.size() - 1) {
+		currentSelection = buttonsUI.size()- 1;
 	}
 }

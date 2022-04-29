@@ -4,7 +4,10 @@
 class PauseState : public State
 {
 	Texture* backgroundTexture;
+	Texture* selectorTexture;
 	const int buttonW = 300, buttonH = 140;
+
+	int currentSelection = 0; // boton seleccionado (en el array buttonsUI)
 public:
 	PauseState(Game* game);
 	~PauseState() = default;
@@ -12,6 +15,9 @@ public:
 	void update()override;
 	void draw()override;
 	void next()override;
+
+	void moveBox(Vector2D<int> i) override;
+	inline Button* getCurrentButton() override { return buttonsUI[currentSelection]; };
 
 	string getStateName() const {
 		return "Pause state";

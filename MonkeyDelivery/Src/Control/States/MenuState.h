@@ -10,9 +10,6 @@ class MenuState : public State {
 
     const double buttonW = 300, buttonH = 140;
     const int titleW = 700, titleH = 258;
-    const int selectorW = 300, selectorH = 140;
-    int selectorY, selectorX;
-    const int selectorInc = (int)buttonH; // el valor debe ser la separacion entre botones
 
     int currentSelection = 0; // boton seleccionado (en el array buttonsUI)
 
@@ -26,8 +23,8 @@ public:
     void registerCommands() override;
     void onEnterState() override;
 
-    void moveBox(int i);
-    inline Button* getCurrentButton() { return buttonsUI[currentSelection]; };
+    void moveBox(Vector2D<int> i) override;
+    inline Button* getCurrentButton() override { return buttonsUI[currentSelection]; };
 
     string getStateName() const override {
         return "Menu state";

@@ -2,6 +2,7 @@
 #include "../PauseCommand.h"
 #include "../CommandExit.h"
 #include "../CommandClick.h"
+#include "../SelectButtonCommand.h"
 
 #include "../UI/Buttons/Options.h"
 #include "../UI/Buttons/Menu.h"
@@ -16,6 +17,7 @@ PauseState::PauseState(Game* game) : State(game)
 	addButton(new Menu((int)(game->getWindowWidth() / 2 - buttonW / 2), (int)(game->getWindowHeight() / 2 + buttonH*1.45), buttonW, buttonH, game));
 
 	backgroundTexture = game->getTexture(bckg_options);
+	selectorTexture = game->getTexture(mission_UI_Selector);
 }
 
 void PauseState::update()
@@ -31,6 +33,9 @@ void PauseState::draw()
 	for (auto b : getButtonsUI()) {
 		b->draw();
 	}
+
+	rectPanel = { (int)getCurrentButton()->getPosition().getX(), (int)getCurrentButton()->getPosition().getY(), (int)getCurrentButton()->getWidth(), (int)getCurrentButton()->getHeight() };
+	selectorTexture->render(rectPanel);
 }
 
 void PauseState::next()
@@ -41,9 +46,21 @@ void PauseState::next()
 	}*/
 }
 
+void PauseState::moveBox(Vector2D<int> i)
+{
+	currentSelection += i.getY();
+	if (currentSelection < 0) {
+		currentSelection = 0;
+	}
+	else if (currentSelection > buttonsUI.size() - 1) {
+		currentSelection = buttonsUI.size() - 1;
+	}
+}
+
 void PauseState::registerCommands()
 {
 	commandFactory->add(new PauseCommand());
 	commandFactory->add(new CommandClick());
 	commandFactory->add(new CommandExit());
+	commandFactory->add(new SelectButtonCommand(this));
 }

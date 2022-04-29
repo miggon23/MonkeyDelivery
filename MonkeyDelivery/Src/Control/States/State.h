@@ -44,6 +44,10 @@ public:
     virtual void draw() = 0;
     virtual void next() = 0;
     virtual void jump(State* state);
+
+    virtual Button* getCurrentButton() { return nullptr; };
+    virtual void moveBox(Vector2D<int> a) {};
+
     bool doQuit();
     virtual string getStateName() const = 0;
     void handleEvents();

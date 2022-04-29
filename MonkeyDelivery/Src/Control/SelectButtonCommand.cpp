@@ -1,7 +1,8 @@
 #include "SelectButtonCommand.h"
 
-SelectButtonCommand::SelectButtonCommand(MenuState* ms) : menuState(ms)
+SelectButtonCommand::SelectButtonCommand(State* ms) : state(ms)
 {
+	move = { 0, 0 };
 }
 
 bool SelectButtonCommand::parse(SDL_Event& event)
@@ -9,15 +10,23 @@ bool SelectButtonCommand::parse(SDL_Event& event)
 	if (event.type == SDL_KEYDOWN) {
 		SDL_Keycode key = event.key.keysym.sym;
 		if (key == SDLK_UP) {
-			move = -1;
+			move = { 0, -1 };
 			return true;
 		}
 		else if (key == SDLK_DOWN) {
-			move = 1;
+			move = { 0, 1 };
+			return true;
+		}
+		else if (key == SDLK_RIGHT) {
+			move = { 1, 0 };
+			return true;
+		}
+		else if (key == SDLK_LEFT) {
+			move = { -1, 0 };
 			return true;
 		}
 		else if (key == SDLK_SPACE || key == SDLK_RETURN) {
-			move = 0;
+			move = { 0, 0 };
 			return true;
 		}
 	}
@@ -26,10 +35,11 @@ bool SelectButtonCommand::parse(SDL_Event& event)
 
 void SelectButtonCommand::execute()
 {
-	if (move == 0) {
-		menuState->getCurrentButton()->onCursorCollision();
+	if (move.getX() == 0 && move.getY() == 0) {
+		if (state->getCurrentButton() != nullptr)
+			state->getCurrentButton()->onCursorCollision();
 	}
 	else {
-		menuState->moveBox(move);
+		state->moveBox(move);
 	}
 }

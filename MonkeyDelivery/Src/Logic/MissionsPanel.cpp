@@ -105,8 +105,6 @@ void MissionsPanel::draw()
 	pos.y -= (int)game->getCamera()->getCameraPosition().getY();
 
 	animationManager->getFrameImageMission(pos, textureRect, texture, timerAnimation_);
-
-	drawDebug();
 }
 
 void MissionsPanel::onMissionSelected(string missionId)
