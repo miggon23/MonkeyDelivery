@@ -302,6 +302,7 @@
     <ClCompile Include="Src\Control\SelectButtonCommand.cpp">
       <Filter>Source\Control\Commands</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Logic\InteractuableCarrot.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MonkeyDelivery.h" />
@@ -659,6 +660,7 @@
     <ClInclude Include="Src\Control\SelectButtonCommand.h">
       <Filter>Header\Control\Commands</Filter>
     </ClInclude>
+    <ClInclude Include="Src\Logic\InteractuableCarrot.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="MonkeyDelivery.rc" />
