@@ -9,7 +9,7 @@ Skates::Skates(Texture* tex, Game* game,Player* player) : speedMult(1.8), Invent
 }
 
 void Skates::setCorrectTexture(){
-	setMyTexture(game_->getTexture(Item_Boots03));
+	setMyTexture(game_->getTexture(Item_Boots02));
 }
 
 bool Skates::useObject()
