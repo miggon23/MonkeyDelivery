@@ -76,10 +76,11 @@ void Shop::addElements(int level)
 
 bool Shop::buyObject(int id, int price)
 {
-	if (id < objects.size() && objects[id].stock>0 &&!player->inventoryFull(objects[id].inventoryObject) && player->moneyChange(-price)){
-		player->addObjectToInventory(objects[id].inventoryObject);		
-		objects[id].inventoryObject = nullptr;
-		objects[id].stock--;		
+	if (id < objects.size() && objects[id].stock>0 &&!player->inventoryFull(objects[id].inventoryObject) && player->moneyChange(-price)){		
+		objects[id].inventoryObject->setCorrectTexture();
+		player->addObjectToInventory(objects[id].inventoryObject);
+		objects[id].stock--;
+		objects[id].inventoryObject=nullptr;
 		return true;
 	}
 	else return false; 	
@@ -89,3 +90,4 @@ bool Shop::inventoryFull(int selected)
 {
 	return player->inventoryFull(objects[selected].inventoryObject);
 }
+

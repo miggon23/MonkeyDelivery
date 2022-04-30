@@ -7,8 +7,11 @@
 Pickaxe::Pickaxe(Texture* tex, Game* game,int level,Player* player):InventoryObject(tex, game,player) {
 	isConsumable_ = true;
 	level_ = level % 2;
-
 	setTypeObject(PICKAXE);
+}
+void Pickaxe::setCorrectTexture(){
+	if(level_==0)setMyTexture(game_->getTexture(Item_pickaxe01));
+	else setMyTexture(game_->getTexture(Item_pickaxe02));
 }
 bool Pickaxe::useObject(){
 	

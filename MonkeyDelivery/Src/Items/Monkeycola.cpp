@@ -8,6 +8,10 @@ Monkeycola::Monkeycola(Texture* tex, Game* game, Player* player) : InventoryObje
 	setTypeObject(CONSUMABLES);
 }
 
+void Monkeycola::setCorrectTexture(){
+	setMyTexture(game_->getTexture(Item_Soda01));
+}
+
 bool Monkeycola::useObject()
 {
 	player_->initPowerUp(monkeycola);

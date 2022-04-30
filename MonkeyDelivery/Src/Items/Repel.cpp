@@ -7,6 +7,10 @@ Repel::Repel(Texture* tex, Game* game, Player* player) : InventoryObject(tex, ga
     setTypeObject(CONSUMABLES);
 }
 
+void Repel::setCorrectTexture(){
+    setMyTexture(game_->getTexture(Item_Spray));
+}
+
 bool Repel::useObject(){
     player_->initPowerUp(repelente);
     sdlutils().soundEffects().at("soda").setVolume(game_->getSoundEfectsVolume() * game_->getGeneralVolume());

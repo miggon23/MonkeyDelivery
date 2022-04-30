@@ -11,7 +11,7 @@ enum TypeObjectInventory {
 	LANTERN,
 	PACKAGE, //
 	UNSIGNED
-}; 
+};
 class InventoryObject{
 private:
 	Texture* myTexture_ = nullptr;
@@ -37,7 +37,10 @@ public:
 	inline bool isConsumable() { return isConsumable_; };
 
 	inline void setTypeObject(TypeObjectInventory x) { typeObject= x; };
-	inline TypeObjectInventory getTypeObject() { return typeObject; }
+	inline TypeObjectInventory getTypeObject() { return typeObject; }	
+
+	virtual void setCorrectTexture();
 	inline bool getActive() { return active; };
+
 	
 };
