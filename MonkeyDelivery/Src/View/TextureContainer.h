@@ -73,6 +73,8 @@ enum TextureName
 		worldObject_Chest_Opened,
 		worldObject_Gold,
 		worldObject_Tutorial,
+		worldObject_TutorialComplete,
+		worldObject_HappyHippo,
 	
 	//6-Map - 4
 		mapMarker,
@@ -124,6 +126,8 @@ enum TextureName
 		UI_InventoryBarOverlay,
 		UI_InventorySelector,
 		UI_playerHUD,
+		UI_timer,
+
    //12-UI Overlay (InGame Buffs) - 3
 		UI_energyBuff,
 		UI_fearBuff,
@@ -147,12 +151,11 @@ enum TextureName
 		UI_Checker03,
 		UI_MissionsControls,
 		UI_Controls,
-		UI_ControlsKey,
 
 		missingTex,
 };
 
-const int NUM_TEXTURES = 106;
+const int NUM_TEXTURES = 108;
 
 typedef struct {
 	string filename;
@@ -221,7 +224,8 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
 	{"items/world/worldObject_Chest_Opened.png",1,1},
 	{"items/world/worldObject_Gold.png",1,1},
 	{"items/world/worldObject_Tutorial.png",1,1},
-
+	{"items/world/worldObject_TutorialDone.png",1,1},
+	{"items/world/Item_HappyHippo.png",1,1},
 
 	//6-Map
 	{"map/mapMarker.png",1,1},
@@ -273,6 +277,7 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
 	{"ui/InGame/UI_InventoryBarOverlay.png",1,1},
 	{"ui/InGame/UI_InventorySelector.png",1,1},
 	{"ui/InGame/UI_playerHUD.png",1,1},
+	{"ui/InGame/timer.png",1,1},
 
     //UI Overlay (InGame Buffs)
 	{"ui/InGame/UI_energyBuff.png",1,1 },
@@ -297,7 +302,6 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
 	{"ui/Menu/UI_Checker03.png",1,1},
 	{"ui/controlsmissions.png",1,1},
 	{"tutorial/Tutorial.png",1,1},
-	{"tutorial/tutorialKey.png",1,1},
 
 	{"missingTex.png",1,1},
 };

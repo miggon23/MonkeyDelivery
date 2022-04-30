@@ -6,11 +6,14 @@
 #include <vector>
 
 class Game;
+class Texture;
+
 class UI_Info
 {
 private:
 	Font* font_;
 	Game* game;
+	Texture* clock_;
 
 	int textX, textY, xP, yP, wP, hP;
 

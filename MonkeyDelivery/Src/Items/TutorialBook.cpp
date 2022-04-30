@@ -9,9 +9,12 @@ TutorialBook::TutorialBook(Game* game, int x, int y, int w, int h) : ColliderTil
 
 void TutorialBook::onPlayerInteraction(Player* player)
 {
-	isActive_ = false;
-	isColliding_ = false;
-	onPlayerCollisionExit();
+	if (isActive_) {
+		setTexture(worldObject_TutorialComplete);
+		isActive_ = false;
+		isColliding_ = false;
+		onPlayerCollisionExit();
+	}
 
 	showingImage_ = !showingImage_;
 	player->changeTutorial(showingImage_);

@@ -6,15 +6,14 @@ UI_Info::UI_Info(Game* game)
 {
 	this->game = game;
 	font_ = new Font("./Images/fonts/Pixellari.ttf", 20);
+	clock_ = game->getTexture(UI_timer);
 
-	xP = textX = (int)(game->getWindowWidth() / 1.36);
-	textY = (int)(game->getWindowHeight() / 13.28);
-	yP = (int)(game->getWindowHeight() / 100.0);
 	//wP = game->getWindowWidth() / 4.14;//si pones esto as� no consigues que escale, solo se estira
 	//hP = game->getWindowWidth() / 13.0;//si pones esto as� no consigues que escale, solo se estira
-	xP = textX = (int)(game->getWindowWidth() / 1.36);
-	textY = (int)(game->getWindowHeight() / 13.28);
+	xP = (int)(game->getWindowWidth() / 1.46);
+	textX = (int)(game->getWindowWidth() / 1.53);
 	yP = (int)(game->getWindowHeight() / 100.0);
+	textY = (int)(game->getWindowHeight() / 14.7);
 	wP = (int)(game->getWindowWidth() / 4.14);
 	hP = (int)(game->getWindowWidth() / 13.0);
 	
@@ -55,8 +54,10 @@ void UI_Info::drawInfo()
 	{
 		renderImage(game->getMissionsPanel()->getMissionImage());
 		if (g->isExpress()) {
+			SDL_Rect r = {xP - 85, yP, 80, 77};
+			clock_->render(r);
 			SDL_Color darkBlue = { 7, 24, 32, 0};
-			renderText(to_string(game->getMissionsPanel()->getTime()/10), textX, textY, darkBlue);
+			renderText(to_string(game->getMissionsPanel()->getTime()/1000), textX, textY, darkBlue);
 		}
 	}
 	

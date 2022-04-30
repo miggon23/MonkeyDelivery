@@ -113,7 +113,7 @@ void Game::start()
     add(new IntectuableShop(this, 3700, 1600));
     shop_ = new Shop(player_, this);
 
-    tutorialBook_ = new TutorialBook(this, 3825, 1250, 100, 75);
+    tutorialBook_ = new TutorialBook(this, 4000, 1660, 100, 75);
 
     GameObjectGenerator::generateLevel(this);
 

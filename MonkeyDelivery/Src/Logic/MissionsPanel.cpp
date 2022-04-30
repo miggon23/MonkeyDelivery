@@ -76,8 +76,6 @@ void MissionsPanel::onPlayerInteraction(Player* player)
 				}
 				b = "Mission";
 			}
-
-
 			// show pannel
 			game->InGame();
 			game->setSaveState(game->getState());
@@ -142,6 +140,7 @@ void MissionsPanel::onMissionSelected(string missionId)
 		activeTarget_->setTexture(m.target);
 		string txt = missionId;
 		activeTarget_->setText(txt);
+		missionObject_->setTexture(m.target);
 
 		//iniciar el contador
 		initialTicks_ = SDL_GetTicks();

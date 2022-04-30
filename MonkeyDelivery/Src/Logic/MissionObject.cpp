@@ -49,9 +49,9 @@ void MissionObject::draw()
 
 void MissionObject::setTexture(string tex)
 {
-	this->texture = game->getTexture(missingTex);
-
-	//if (tex == "a") {
-	//	this->texture = game->getTexture(a);
-	//}
+	if (tex == "NPC_Hipo") { // segun el npc se pone un objeto u otro
+		this->texture = game->getTexture(worldObject_HappyHippo);
+	}
+	else
+		this->texture = game->getTexture(missingTex);
 }
