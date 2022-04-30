@@ -21,6 +21,13 @@ protected:
 
     Texture* texture;
     SDL_RendererFlip flip;
+    SDL_Rect textureRect;
+    int width_;
+    int height_;
+    int maxX_;
+    int maxY_;
+    int time_;
+    float timerAnimation_; //tiempo entre los frames
 
     void drawTexture(Texture* texture);
 public:

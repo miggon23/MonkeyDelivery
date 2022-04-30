@@ -36,7 +36,7 @@ MissionsPanel::MissionsPanel(Game* game, AnimationManager* anim) : GameObject(ga
 
 	loadMissions("Images/config/resources.json");
 	
-	activeTarget_ = new Target(this, game);
+	activeTarget_ = new Target(this, game,animationManager);
 	game->add(activeTarget_);
 
 	missionObject_ = new MissionObject(this, game);

@@ -1,12 +1,13 @@
 #pragma once
 #include "GameObject.h"
+#include "AnimationManager.h"
 
 class MissionsPanel;
 
 class Target : public GameObject
 {
 public:
-	Target(MissionsPanel* mp, Game* g);
+	Target(MissionsPanel* mp, Game* g, AnimationManager* animation);
 	~Target();
 
 	void onPlayerInteraction(Player* player) override;
@@ -31,4 +32,6 @@ private:
 	MissionsPanel* missionsPanel_;
 	bool active_;
 	string textPath_;
+	
+	AnimationManager* animationManager;
 };

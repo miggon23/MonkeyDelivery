@@ -11,7 +11,6 @@ protected:
 	Uint32 lastUpdate_; //para timer del miedo
 	Uint32 respawnTimer; //timer respawn
 	Uint32 timeOnFlash_; // timer morir enemigo
-	float timerAnimation_; //tiempo entre los frames
 
 	double speed_;
 	double scariness_; //Miedo inflingido
@@ -23,11 +22,7 @@ protected:
 	int resistence_;
 	int nearLimit_;
 	int timeLimit_; //Lapso de tiempo que pasa desda la ultima vez que dio miedo, para que no sea constante
-	int width_;
-	int height_;
-	int maxX_;
-	int maxY_;
-	int time_;
+	
 
 	bool collided = false;
 	bool startTimer = false;
@@ -37,7 +32,6 @@ protected:
 	SpawnZone zone;
 	vector<Point2D<double>> checkpoints;
 	AnimationManager* animationManager;
-	SDL_Rect textureRect;
 	Point2D<double> offsetCamera; //movimiento enemigos respecto a camara
 	
 

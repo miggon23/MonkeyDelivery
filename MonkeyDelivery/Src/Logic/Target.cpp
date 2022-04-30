@@ -3,13 +3,20 @@
 #include "../Player/Player.h"
 #include "Game.h"
 
-Target::Target(MissionsPanel* mp, Game* g) : GameObject(g, true), missionsPanel_(mp)
+Target::Target(MissionsPanel* mp, Game* g, AnimationManager* animation) : GameObject(g, true), missionsPanel_(mp), animationManager(animation)
 {
 	active_ = false;
 
 	setDimension(1, 1);
 	setPosition(0, 0);
 
+	timerAnimation_ = 0;
+	width_ = height_ = 20;
+	time_ = 300;
+	maxY_ = 0;
+	maxX_ = 40;
+
+	textureRect = { 0, 0, width_, height_ };
 }
 
 Target::~Target()
@@ -47,7 +54,8 @@ void Target::draw() {
         pos.x -= (int)game->getCamera()->getCameraPosition().getX();
         pos.y -= (int)game->getCamera()->getCameraPosition().getY();
 
-        texture->render(pos);
+		animationManager->getFrameImage(pos, textureRect, texture, timerAnimation_, flip, width_, height_, maxX_, maxY_, time_);
+        //texture->render(pos);
 	}
 }
 

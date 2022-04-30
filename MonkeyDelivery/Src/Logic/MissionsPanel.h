@@ -33,8 +33,6 @@ class MissionsPanel : public GameObject
 {
 private:
 	AnimationManager* animationManager;
-	SDL_Rect textureRect;
-	float timerAnimation_; //tiempo entre los frames
 
 	bool missionsFinished_;
 	int currentLevel_; // nivel de misiones en el que se está
@@ -60,11 +58,6 @@ private:
 	Uint32 initialTicks_; // valor de los ticks cuando se activó la misión
 	Uint32 endTime_;
 
-	int width_;
-	int height_;
-	int maxX_;
-	int maxY_;
-	int time_;
 	
 public:
 	MissionsPanel(Game* game, AnimationManager* anim);
