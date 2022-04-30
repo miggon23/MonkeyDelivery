@@ -187,10 +187,6 @@ bool JSON::ExtractString(const char **data, std::string &str)
 							next_char |= (10 + (**data - 'A'));
 						else if (**data >= 'a' && **data <= 'f')
 							next_char |= (10 + (**data - 'a'));
-						/*else if (**data == '¡') next_char |= '¡';
-						else if (**data == '¿') next_char |= '¿';
-						else if (**data == '!') next_char |= '!';
-						else if (**data == '?') next_char |= '?';*/
 						else
 						{
 							// Invalid hex digit = invalid JSON

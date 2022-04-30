@@ -23,6 +23,11 @@ protected:
 	int resistence_;
 	int nearLimit_;
 	int timeLimit_; //Lapso de tiempo que pasa desda la ultima vez que dio miedo, para que no sea constante
+	int width_;
+	int height_;
+	int maxX_;
+	int maxY_;
+	int time_;
 
 	bool collided = false;
 	bool startTimer = false;

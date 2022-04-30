@@ -10,7 +10,11 @@ Plant::Plant(Game* game, int Aleatorio, Point2D<int> centroRadio, AnimationManag
 	setResistance(4000);
 	lastUpdate_ = SDL_GetTicks();
 	setScariness(0.0); //NO DA MIEDO
-	textureRect = { 0, 0, animationManager->getWidthPlant(),animationManager->getHeigthPlant() };
+	width_ = height_ = 55;
+	time_ = 150;
+	maxX_ = 220;
+	maxY_ = 55;
+	textureRect = { 0, 0, width_, height_ };
 }
 
 void Plant::update()
@@ -57,6 +61,6 @@ void Plant::draw()
 		else 
 			setTexture(plantSS_Default);
 		
-		animationManager->getFrameImagePlant(pos, textureRect, texture, timerAnimation_, flip);
+		animationManager->getFrameImage(pos, textureRect, texture, timerAnimation_, flip, width_, height_, maxX_, maxY_, time_);
 	}
 }

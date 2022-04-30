@@ -13,7 +13,11 @@ Cat::Cat(Game* game,int Aleatorio, Point2D<int>centroRadio, AnimationManager* an
 	createCheckPoints();
 	setResistance(5000);
 	setMaxFearPercent(30);
-	textureRect = { 0,0,animationManager->getWidthCat(),animationManager->getHeightcat() };
+	width_ = height_ = 100;
+	time_ = 450;
+	maxX_ = 200;
+	maxY_ = 0;
+	textureRect = { 0, 0, width_, height_ };
 }
 
 void Cat::update()
@@ -46,7 +50,7 @@ void Cat::draw()
 		
 		else setTexture(catSS_Default);
 		
-		animationManager->getFrameImageCat(pos, textureRect, texture, timerAnimation_, flip);
+		animationManager->getFrameImage(pos, textureRect, texture, timerAnimation_, flip, width_, height_, maxX_, maxY_, time_);
 	}
 }
 

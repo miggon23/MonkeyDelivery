@@ -59,6 +59,12 @@ private:
 
 	Uint32 initialTicks_; // valor de los ticks cuando se activó la misión
 	Uint32 endTime_;
+
+	int width_;
+	int height_;
+	int maxX_;
+	int maxY_;
+	int time_;
 	
 public:
 	MissionsPanel(Game* game, AnimationManager* anim);

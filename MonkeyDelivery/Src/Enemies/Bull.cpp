@@ -13,8 +13,11 @@ Bull::Bull(Game* game, int radio, Point2D<int> centroRadio, AnimationManager* an
 	stop = true; //Patrulla y no persigue
 	setResistance(1500);
 	setMaxFearPercent(10);
-
-	textureRect = { 0, 0, animationManager->getWidthBull(),animationManager->getHeigthBull() };
+	width_ = height_ = 100;
+	time_ = 350;
+	maxX_ = 200;
+	maxY_ = 50;
+	textureRect = { 0, 0, width_, height_ };
 }
 
 void Bull::update()
@@ -104,6 +107,6 @@ void Bull::draw()
 		
 		else setTexture(bullSS_Default);
 		
-		animationManager->getFrameImageBull(pos, textureRect, texture, timerAnimation_, flip);
+		animationManager->getFrameImage(pos, textureRect, texture, timerAnimation_, flip, width_, height_, maxX_, maxY_, time_);
 	}
 }

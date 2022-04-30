@@ -14,7 +14,11 @@ Scorpion::Scorpion(Game* game, int Aleatorio, Point2D<int> centroRadio, Animatio
 	inRange = false;
 	setResistance(2500);
 	setMaxFearPercent(25);
-	textureRect = { 0, 0, animationManager->getWidthScorpion(),animationManager->getHeigthScorpion() };
+	width_ = height_ = 18;
+	time_ = 200;
+	maxX_ = 144;
+	maxY_ = 0;
+	textureRect = { 0, 0, width_, height_ };
 }
 
 void Scorpion::update()
@@ -83,6 +87,6 @@ void Scorpion::draw()
 		
 		else setTexture(scorpionSS_Default);
 		
-		animationManager->getFrameImageScorpion(pos, textureRect, texture, timerAnimation_, flip);
+		animationManager->getFrameImage(pos, textureRect, texture, timerAnimation_, flip, width_, height_, maxX_, maxY_, time_);
 	}
 }

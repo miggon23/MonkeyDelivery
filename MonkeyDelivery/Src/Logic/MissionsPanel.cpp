@@ -17,7 +17,13 @@ MissionsPanel::MissionsPanel(Game* game, AnimationManager* anim) : GameObject(ga
 	setTexture(MissionPanel_Interact);
 
 	animationManager = anim;
-	textureRect = { 0, 0, animationManager->getWidthMissions(), animationManager->getHeightMissions() };
+
+	width_ = 34;
+	height_ = 48;
+	time_ = 300;
+	maxX_ = 35;
+	maxY_ = 0;
+	textureRect = { 0, 0, width_, height_};
 	timerAnimation_ = 0; // ¿puede ser const?
 
 	missionsFinished_ = false;
@@ -104,7 +110,7 @@ void MissionsPanel::draw()
 	pos.x -= (int)game->getCamera()->getCameraPosition().getX();
 	pos.y -= (int)game->getCamera()->getCameraPosition().getY();
 
-	animationManager->getFrameImageMission(pos, textureRect, texture, timerAnimation_);
+	animationManager->getFrameImage(pos, textureRect, texture, timerAnimation_, flip, width_, height_, maxX_, maxY_, time_);
 }
 
 void MissionsPanel::onMissionSelected(string missionId)

@@ -24,29 +24,6 @@ private:
 		x1 = 16,
 		playerFrameSpeed = 200;
 	
-	//Murcielago	
-	int wBat_ = 35,
-		hBat_ = 30; 
-	//Gato
-	int wCat_ = 100,
-		hCat_ = 100;
-
-	//Toro
-	int wBull_ = 100,
-		hBull_ = 100;
-
-	//Escorpion
-	int wScorpion_ = 18,
-		hScorpion_ = 18;
-
-	//Planta
-	int wPlant_ = 55,
-		hPlant_ = 55;
-
-	//Icono Misiones
-	int wMissions_ = 34;
-	int hMissions_ = 48;
-
 public:
 
 	struct LastDir
@@ -66,7 +43,6 @@ public:
 	inline void setIsTired(bool t) { isTired_ = t; }
 	inline int getWidthPlayer() { return wPlayer_; };
 	inline int getHeightPlayer() { return hPlayer_; };
-
 	inline void getFrameImagePlayer(SDL_Rect player, SDL_Rect& texturaRect, Texture* tex, float& timer, LastDir newDir) {
 		//Si la direccion cambia (da igual de que componente)
 		if (lastDir.x != newDir.x || lastDir.y != newDir.y) {
@@ -203,104 +179,22 @@ public:
 			
 		}
 	}
-	//MURCIELAGO
-	inline int getWidthBat() { return wBat_; };
-	inline int getHeightBat() { return hBat_; };
-	/// <summary>
-	/// Recortar una imagen del SpriteSheet del murcielago
-	/// </summary>
-	/// <param name="bat">COLLIDER DEL MUERCIELAGO</param>
-	/// <param name="texturaRect">textureRect DEL MURCIELAGO(es una variable es lo q vamos a recortar de la sprite sheet)</param>
-	/// <param name="tex"> Textura del muercielago</param>
-	/// <param name="timer">variable timerAnimation para que me cambie la imagen cada cierto numero de ticks</param>
-	inline void getFrameImageBat(SDL_Rect bat, SDL_Rect& texturaRect, Texture* tex, float& timer, SDL_RendererFlip flip) {
-		if (timer_->TimeScale() - timer >= 250) {
-			texturaRect.x += wBat_;
-			if (texturaRect.x > 35) {
-				texturaRect.x = 0;
-			}
-			timer = timer_->TimeScale();
-		}
-		tex->render(texturaRect, bat, 0, nullptr, flip);
-	}
-	//GATO
-	inline int getWidthCat() { return wCat_; };
-	inline int getHeightcat() { return hCat_; };
-	inline void getFrameImageCat(SDL_Rect cat, SDL_Rect& texturaRect, Texture* tex, float& timer, SDL_RendererFlip flip) {
-		if (timer_->TimeScale() - timer >= 450) {
-			texturaRect.y += hCat_;
-			if (texturaRect.y >= 200) {
-				texturaRect.y = 0;
-			}
-			timer = timer_->TimeScale();
-		}
-		tex->render(texturaRect, cat, 0, nullptr, flip);
-	}
 
-	//TORO
-	inline int getWidthBull() { return wBull_; };
-	inline int getHeigthBull() { return hBull_; };
-	inline void getFrameImageBull(SDL_Rect bull, SDL_Rect& texturaRect, Texture* tex, float& timer, SDL_RendererFlip flip) {
-		if (timer_->TimeScale() - timer >= 350) {
-			texturaRect.x += wBull_;
-			if (texturaRect.y >= 100 && texturaRect.x >= 200) {
+	//ENEMIGOS Y PANEL DE MISIONES
+	inline void getFrameImage(SDL_Rect rect, SDL_Rect& texturaRect, Texture* tex, float& timer, SDL_RendererFlip flip,
+		int w, int h, int maxX, int maxY, int time) {
+		if (timer_->TimeScale() - timer >= time) {
+			texturaRect.x += w;
+			if (texturaRect.y >= maxY && texturaRect.x >= maxX) {
 				texturaRect.y = 0; texturaRect.x = 0;
 			}
-			if (texturaRect.x >= 200) {
+			if (texturaRect.x >= maxX) {
 				texturaRect.x = 0;
-				texturaRect.y += hBull_;
-			}
-
-			timer = timer_->TimeScale();
-
-		}
-		tex->render(texturaRect, bull, 0, nullptr, flip);
-	};
-
-	//ESCORPION
-	inline int getWidthScorpion() { return wScorpion_; };
-	inline int getHeigthScorpion() { return hScorpion_; };
-	inline void getFrameImageScorpion(SDL_Rect scorpion, SDL_Rect& texturaRect, Texture* tex, float& timer, SDL_RendererFlip flip) {
-		if (timer_->TimeScale() - timer >= 200) {
-			texturaRect.x += wScorpion_;
-			if (texturaRect.x >= 144) {
-				texturaRect.x = 0;
+				texturaRect.y += h;
 			}
 			timer = timer_->TimeScale();
 		}
-		tex->render(texturaRect, scorpion, 0, nullptr, flip);
-
-	};
-
-	//PLANTA
-	inline int getWidthPlant() { return wPlant_; };
-	inline int getHeigthPlant() { return hPlant_; };
-	inline void getFrameImagePlant(SDL_Rect plant, SDL_Rect& texturaRect, Texture* tex, float& timer, SDL_RendererFlip flip) {
-		if (timer_->TimeScale() - timer >= 150) {
-			texturaRect.x += wPlant_;
-			if (texturaRect.y >= 55 && texturaRect.x >= 220) {
-				texturaRect.y = 0; texturaRect.x = 0;
-			}
-			if (texturaRect.x >= 220) {
-				texturaRect.x = 0;
-				texturaRect.y += hPlant_;
-			}
-			timer = timer_->TimeScale();
-		}
-		tex->render(texturaRect, plant, 0, nullptr, flip);
-	};
-
-	//MENSAJE PANEL MISIONES
-	inline int getWidthMissions() { return wMissions_; };
-	inline int getHeightMissions() { return hMissions_; };
-	inline void getFrameImageMission(SDL_Rect icon, SDL_Rect& texturaRect, Texture* tex, float& timer) {
-		if (timer_->TimeScale() - timer >= 300) {
-			texturaRect.x += wMissions_;
-			if (texturaRect.x > 35) {
-				texturaRect.x = 0;
-			}
-			timer = timer_->TimeScale();
-		}
-		tex->render(texturaRect, icon, 0, nullptr, SDL_FLIP_NONE);
-	};
+		tex->render(texturaRect, rect, 0, nullptr, flip);
+	}
+	
 };

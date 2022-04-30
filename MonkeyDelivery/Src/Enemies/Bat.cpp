@@ -11,9 +11,14 @@ Bat::Bat(Game* game, int Aleatorio, Point2D<int> centroRadio, int nLoop, Animati
 	stealTimer_ = SDL_GetTicks();
 	speed_ = 1;
 	player_ = game->getPlayer();
-	
 	loops = nLoop;
-	textureRect = { 0, 0, animationManager->getWidthBat(), animationManager->getHeightBat() };
+	width_ = 35;
+	height_ = 30;
+	time_ = 250;
+	maxX_ = 70;
+	maxY_ = 0;
+	textureRect = { 0, 0, width_, height_ };
+	
 	createCheckPoints();
 	setResistance(2000);
 	setScariness(0.12);
@@ -80,6 +85,6 @@ void Bat::draw(){
 		else 
 			setTexture(batSS_Default);
 		
-		animationManager->getFrameImageBat(pos, textureRect, texture, timerAnimation_, flip);
+		animationManager->getFrameImage(pos, textureRect, texture, timerAnimation_, flip, width_, height_, maxX_, maxY_, time_);
 	}
 }
