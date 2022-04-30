@@ -6,6 +6,11 @@ Banana::Banana(Texture* tex, Game* game, Player* player) : InventoryObject(tex, 
 {
 	isConsumable_ = true;
 	setTypeObject(CONSUMABLES);
+	
+}
+
+void Banana::setCorrectTexture(){
+	setMyTexture(game_->getTexture(Item_Banana));
 }
 
 bool Banana::useObject()

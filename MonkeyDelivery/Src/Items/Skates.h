@@ -7,7 +7,7 @@ class Skates : public InventoryObject
 	double speedMult;
 public:
 	Skates(Texture* tex, Game* game,Player* player);
-
+	void setCorrectTexture() override;
 	bool useObject() override;
 	inline void setBikeSkatesMultiplier(double speed) { speedMult = speed; };
 	inline double getBikeSkatesMultiplier() { return speedMult; };

@@ -11,5 +11,6 @@ public:
 
 	bool useObject() override;
 	inline void setBikeSpeedMultiplier(double speed) { speedMult = speed; };
+	void setCorrectTexture() override;
 	inline double getBikeSpeedMultiplier() { return speedMult; };
 };

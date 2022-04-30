@@ -9,6 +9,10 @@ Lantern::Lantern(Texture* tex, Game* game,Player* player) : InventoryObject(tex,
 	setTypeObject(LANTERN);
 }
 
+void Lantern::setCorrectTexture(){
+	setMyTexture(game_->getTexture(Item_Lantern01));
+}
+
 bool Lantern::useObject() {
 	if (!player_->isAsleep()) {
 		if (!active) {

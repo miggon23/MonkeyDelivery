@@ -33,3 +33,7 @@ void InventoryObject::setMyTexture(Texture* tex)
 	if (myTexture_ != nullptr)
 		myTexture_ = tex;
 }
+
+void InventoryObject::setCorrectTexture(){
+	setMyTexture(game_->getTexture(missingTex));
+}

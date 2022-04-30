@@ -9,6 +9,10 @@ Flashlight::Flashlight(Texture* tex, Game* game,Player* player) : InventoryObjec
 	setTypeObject(LANTERN);
 }
 
+void Flashlight::setCorrectTexture(){
+	setMyTexture(game_->getTexture(Item_Lantern01));
+}
+
 bool Flashlight::useObject() {
 	if (!player_->isAsleep()) {
 		if (!active) {
