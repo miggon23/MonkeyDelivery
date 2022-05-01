@@ -26,6 +26,7 @@ bool FearLevel::getScared(double amount)
 	if (fear_ < maxFear_) {
 		setDimension(fear_*1.68, h);
 		setPosition(x + 20 - (amount/2), y + 20);
+		draw();
 		return false;
 	}
 	else return true;
@@ -39,5 +40,7 @@ void FearLevel::resetFear()
 
 void FearLevel::draw()
 {
+	setDimension(fear_ * 1.68, h);
+	setPosition(x + 20, y + 20);
 	drawTexture(texture);
 }

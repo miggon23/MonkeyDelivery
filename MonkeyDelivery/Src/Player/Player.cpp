@@ -103,6 +103,7 @@ void Player::update()
 			setVel(INIT_VEL_ / reduceFactor_);
 		}
 		else if (energyLevel_->percentEnergy() != 0) { reducedSpeed_ = false;}
+		cout << "MIEDO: " << fearLevel_->percentFear() << endl;
 	}
 	lastUpdate = timer.currTime();
 }
