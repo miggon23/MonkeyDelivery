@@ -49,6 +49,7 @@ public:
 	static void generateLevel(Game* game) //Lo llamas en las rocas
 	{
 		gOGenerator.createChest();
+		//gOGenerator.createCarrots();
 		gOGenerator.creteBulls();
 		gOGenerator.createScorpions();
 		gOGenerator.createBats();

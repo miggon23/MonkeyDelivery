@@ -9,13 +9,14 @@ Cat::Cat(Game* game,int Aleatorio, Point2D<int>centroRadio, AnimationManager* an
 	setPosition(zonePoint.getX(), zonePoint.getY()); //Coloca al enemigo en ese punto
 	initialPos = getPosition();
 	setTexture(catSS_Default);
-	setDimension(50, 60);
+	setDimension(52, 70);
 	createCheckPoints();
-	setResistance(5000);
+	setResistance(1000);
 	setMaxFearPercent(30);
-	width_ = height_ = 100;
-	time_ = 450;
-	maxX_ = 200;
+	width_ = 16;
+	height_ = 20;
+	time_ = 250;
+	maxX_ = 64;
 	maxY_ = 0;
 	textureRect = { 0, 0, width_, height_ };
 }

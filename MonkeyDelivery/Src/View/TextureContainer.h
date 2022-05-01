@@ -41,7 +41,10 @@ enum TextureName
 		catSS_Death,
 		catSS_Default,
 		plantSS_Death,
-		plantSS_Default,
+		plantSS_Yellow,
+		plantSS_Red,
+		plantSS_Purple,
+		plantSS_Orange,
 		scorpionSS_Death,
 		scorpionSS_Default,
 	
@@ -155,7 +158,7 @@ enum TextureName
 		missingTex,
 };
 
-const int NUM_TEXTURES = 108;
+const int NUM_TEXTURES = 111;
 
 typedef struct {
 	string filename;
@@ -192,7 +195,10 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
 	{"enemies/catSS_Death.png",1,1},
 	{"enemies/catSS_Default.png",1,1},
 	{"enemies/plantSS_Death.png",1,1},
-	{"enemies/plantSS_Default.png",1,1},
+	{"enemies/plantSS_Yellow.png",1,1},
+	{"enemies/plantSS_Red.png",1,1},
+	{"enemies/plantSS_Purple.png",1,1},
+	{"enemies/plantSS_Orange.png",1,1},
 	{"enemies/scorpionSS_Death.png",1,1},
 	{"enemies/scorpionSS_Default.png",1,1},
 

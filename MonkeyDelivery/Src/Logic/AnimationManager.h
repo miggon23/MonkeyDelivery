@@ -57,7 +57,7 @@ public:
 			}
 		}
 
-		if (playerState_==Running) 
+		if (playerState_ == Running) 
 		{
 			//las x
 			switch (newDir.x)

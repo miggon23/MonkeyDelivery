@@ -1,19 +1,31 @@
 #include "Plant.h"
 #include "../Logic/Game.h"
 
-Plant::Plant(Game* game, int Aleatorio, Point2D<int> centroRadio, AnimationManager* animation) :Enemy(game, Aleatorio, centroRadio, animation)
+Plant::Plant(Game* game, int Aleatorio, Point2D<int> centroRadio, AnimationManager* animation) :Enemy(game, Aleatorio, centroRadio, animation )
 {
 	Vector2D<double> zonePoint = zone.generatePoint(); //genera un punto en la zona de spawn
 	setPosition(zonePoint.getX(), zonePoint.getY()); //Coloca al enemigo en ese punto
-	setTexture(plantSS_Default);
-	setDimension(80, 90);
+	
+	//EJEJEJE le pone una textura aleatoria a la planta entre los cuatro colores que hay
+	//totalmente irrelevante pero queda bonito y es mas divertido que arreglar el juego 
+	//Jacobo :D
+	int randomInt = sdlutils().rand().nextInt(0,4);
+	switch (randomInt)
+	{
+		case 0: randomTex = plantSS_Yellow; break;
+		case 1: randomTex = plantSS_Red; break;
+		case 2: randomTex = plantSS_Purple; break;
+		case 3: randomTex = plantSS_Orange; break;
+	}
+	setTexture(randomTex);
+	setDimension(112, 112);
 	setResistance(4000);
 	lastUpdate_ = SDL_GetTicks();
 	setScariness(0.0); //NO DA MIEDO
-	width_ = height_ = 55;
-	time_ = 150;
-	maxX_ = 220;
-	maxY_ = 55;
+	width_ = height_ = 28;
+	time_ = 350;
+	maxX_ = 56;
+	maxY_ = 0;
 	textureRect = { 0, 0, width_, height_ };
 }
 
@@ -59,7 +71,7 @@ void Plant::draw()
 			setTexture(plantSS_Death);
 		
 		else 
-			setTexture(plantSS_Default);
+			setTexture(randomTex);
 		
 		animationManager->getFrameImage(pos, textureRect, texture, timerAnimation_, flip, width_, height_, maxX_, maxY_, time_);
 	}
