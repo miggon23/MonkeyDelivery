@@ -9,7 +9,7 @@ bool PauseCommand::parse(SDL_Event& event)
 {
 	if (event.type == SDL_KEYDOWN) {
 		SDL_Keycode key = event.key.keysym.sym;
-		if (key == SDLK_p)
+		if (key == SDLK_ESCAPE)
 			return true;
 	}
 	return false;
