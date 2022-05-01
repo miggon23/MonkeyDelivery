@@ -45,7 +45,7 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game), anima
 	setPosition(4050, 1800);
 
 	lastUpdate = timer.currTime();
-	flashlightTex_ = game->getTexture(Item_Boots01);
+	flashlightTex_ = game->getTexture(lightGeneric);
 	energyLevel_ = new energyLevel(game);
 	fearLevel_ = new FearLevel(game);
 	playerHUD_ = new playerHUD(game);
@@ -376,13 +376,13 @@ const SDL_Rect Player::lightZoneFL()
 	SDL_Rect hitZone{ int(getX() + 50),
 					int(getY()),
 					getWidth(),
-					getHeight() + 50
+					getHeight()
 	};
 	//ejeX
 	if (dirX_ == 1 /*&& dirY_==0*/) {
 		hitZone = { int(getX() + 50),
 					int(getY()),
-					getWidth() + 50,
+					getWidth(),
 					getHeight() };
 		setOrientation("right");
 	}
@@ -390,7 +390,7 @@ const SDL_Rect Player::lightZoneFL()
 	{
 		hitZone = { int(getX() - 100),
 					int(getY()),
-					getWidth() + 50 ,
+					getWidth(),
 					getHeight() };
 		setOrientation("left");
 	}
@@ -399,13 +399,13 @@ const SDL_Rect Player::lightZoneFL()
 		hitZone = { int(getX()),
 					int(getY() - 100),
 					getWidth(),
-					getHeight() + 50 };
+					getHeight()};
 		setOrientation("up");
 	}
 	else if (dirY_ == 1)
 	{
 		hitZone = { int(getX()),
-					int(getY() + 50),
+					int(getY()),
 					getWidth(),
 					getHeight() + 50 };
 		setOrientation("down");
@@ -416,7 +416,7 @@ const SDL_Rect Player::lightZoneFL()
 		if (getOrientation() == "left") {
 			hitZone = { int(getX() - 100),
 					int(getY()),
-					getWidth() + 50,
+					getWidth(),
 					getHeight() };
 
 			//SDL_RenderCopy(renderer, flashlightSides, NULL, &hitzone);
@@ -425,7 +425,7 @@ const SDL_Rect Player::lightZoneFL()
 		else if (getOrientation() == "right") {
 			hitZone = { int(getX() + 50),
 					int(getY()),
-					getWidth() + 50 ,
+					getWidth(),
 					getHeight() };
 			//setTexture(flashlightSides);
 		}
@@ -434,7 +434,7 @@ const SDL_Rect Player::lightZoneFL()
 			hitZone = { int(getX()),
 					int(getY() - 100),
 					getWidth(),
-					getHeight() + 50 };
+					getHeight()};
 			//setTexture(flashlightUp);
 		}
 
@@ -442,7 +442,7 @@ const SDL_Rect Player::lightZoneFL()
 			hitZone = { int(getX()),
 					int(getY() + 50),
 					getWidth(),
-					getHeight() + 50 };
+					getHeight()};
 		}
 		else {
 			hitZone = getCollider();
