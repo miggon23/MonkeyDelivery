@@ -109,10 +109,23 @@ void Player::update()
 void Player::move()
 {
 	Vector2D<double> speed = { (double)dirX_, (double)dirY_ };
-
+	
 	//Normalizamos el vector para que no se desplaze m�s en diagonal
 	speed.normalize();
 	speed = speed * vel_ * (timer.currTime() - lastUpdate);
+
+	//SI LA VELOCIDAD ES 0 RECUPERA ENERGIA HASTA UN MAX
+	if (speed.getX() == 0 && speed.getY() == 0) {
+		isStopped_ = true;
+		if (energyLevel_->percentEnergy() < maxEnergyPercent_) {
+			energyLevel_->drain(-reduceEnergyFactor_);
+			if (energyLevel_->percentEnergy() <= reduceEnergyFactor_) {
+				setVel(previusVel_);
+				speed = speed * vel_ * (timer.currTime() - lastUpdate);
+			}
+		}
+	}
+	else isStopped_ = false;
 
 	if (dirX_ != 0 || dirY_ != 0) {
 		if (isRunning) { //Esto se puede implementar desde el runCommand, evitando que el jugador tenga muchos estados como el de corriendo
@@ -131,17 +144,6 @@ void Player::move()
 	}
 
 	setPosition(getPosition().getX() + speed.getX(), getPosition().getY() + speed.getY());
-
-	//SI LA VELOCIDAD ES 0 RECUPERA ENERGIA HASTA UN MAX
-	if (speed.getX() == 0 && speed.getY() == 0) {
-		isStopped_ = true;
-		if (energyLevel_->percentEnergy() < maxEnergyPercent_) {
-			energyLevel_->drain(-reduceEnergyFactor_);
-			if (energyLevel_->percentEnergy() <= reduceEnergyFactor_)
-				setVel(previusVel_);
-		}
-	}
-	else isStopped_ = false;
 }
 
 void Player::setIsRunning(bool run)
