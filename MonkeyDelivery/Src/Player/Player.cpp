@@ -97,6 +97,7 @@ void Player::update()
 		}
 		if (energyLevel_->percentEnergy() == 0 && !reducedSpeed_)
 		{
+			if(isRunning) setVel(getVel() / runningSpeedFactor_);
 			previusVel_ = getVel();
 			reducedSpeed_ = true;
 			setVel(INIT_VEL_ / reduceFactor_);
