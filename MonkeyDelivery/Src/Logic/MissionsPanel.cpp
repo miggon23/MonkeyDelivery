@@ -10,7 +10,7 @@
 #include "../Items/Package.h"
 #include "DialogueBox.h"
 
-MissionsPanel::MissionsPanel(Game* game, AnimationManager* anim) : GameObject(game, true)
+MissionsPanel::MissionsPanel(Game* game, AnimationManager* anim) : GameObject(game, true, anim)
 {
 	setPosition(4005, 1125);
 	setDimension(108, 160);

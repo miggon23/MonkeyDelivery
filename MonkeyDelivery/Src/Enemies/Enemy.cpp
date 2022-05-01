@@ -1,7 +1,7 @@
 #include "Enemy.h"
 #include "../Logic/Game.h"
 
-Enemy::Enemy(Game* game, int radio, Point2D<int>centroRadio, AnimationManager* animation) : GameObject(game, true), animationManager(animation) {
+Enemy::Enemy(Game* game, int radio, Point2D<int>centroRadio, AnimationManager* animation) : GameObject(game, true, animation) {
 
 	zone = SpawnZone(radio, centroRadio); //Creaccion de la zona de spawn
 	setAlive(true);

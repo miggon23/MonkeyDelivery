@@ -31,7 +31,6 @@ protected:
 	
 	SpawnZone zone;
 	vector<Point2D<double>> checkpoints;
-	AnimationManager* animationManager;
 	Point2D<double> offsetCamera; //movimiento enemigos respecto a camara
 	
 

@@ -2,6 +2,7 @@
 #define MONKEYDELIVERY_GAMEOBJECT_H
 
 #include "../View/TextureContainer.h"
+#include "./AnimationManager.h"
 #include "../View/Texture.h"
 #include "../utils/Vector2D.h"
 #include "../View/Box.h"
@@ -17,6 +18,8 @@ class GameObject {
     bool relative_; // Si tiene que dibujarse relativo al mapa o no -> por defecto a false
 
 protected:
+    AnimationManager* animationManager;
+
     Game* game;
 
     Texture* texture;
@@ -34,7 +37,7 @@ public:
     void setTexture(TextureName textureName);
     inline void setFlip(SDL_RendererFlip f) { flip = f; }
 
-    GameObject(Game* game, bool rel = false) : game(game), relative_(rel), texture(nullptr), flip(SDL_FLIP_NONE) {
+    GameObject(Game* game,  bool rel = false, AnimationManager* anim = nullptr) : game(game), relative_(rel), texture(nullptr), flip(SDL_FLIP_NONE), animationManager(anim) {
     };
     virtual ~GameObject() {
         game = nullptr;

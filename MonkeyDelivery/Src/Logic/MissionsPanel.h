@@ -32,7 +32,6 @@ using sdl_resource_table = std::map<std::string, MissionInfo>;
 class MissionsPanel : public GameObject
 {
 private:
-	AnimationManager* animationManager;
 
 	bool missionsFinished_;
 	int currentLevel_; // nivel de misiones en el que se está

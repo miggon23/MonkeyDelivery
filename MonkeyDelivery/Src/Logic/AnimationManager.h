@@ -180,7 +180,7 @@ public:
 		}
 	}
 
-	//ENEMIGOS Y PANEL DE MISIONES
+	//ENEMIGOS, PANEL DE MISIONES Y TIENDA
 	inline void getFrameImage(SDL_Rect rect, SDL_Rect& texturaRect, Texture* tex, float& timer, SDL_RendererFlip flip,
 		int w, int h, int maxX, int maxY, int time) {
 		if (timer_->TimeScale() - timer >= time) {
