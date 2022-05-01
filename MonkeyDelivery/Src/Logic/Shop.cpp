@@ -83,7 +83,7 @@ bool Shop::buyObject(int id, int price)
 		if (objects[id].inventoryObject->getTypeObject() != CONSUMABLES) { 
 			objects[id].inventoryObject->setCorrectTexture();
 			player->addObjectToInventory(objects[id].inventoryObject); 
-			
+			objects[id].inventoryObject = nullptr;
 		}
 		else CreateNewObject(objects[id].inventoryObject);
 		objects[id].stock--;
