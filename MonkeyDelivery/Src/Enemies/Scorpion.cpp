@@ -13,7 +13,7 @@ Scorpion::Scorpion(Game* game, int Aleatorio, Point2D<int> centroRadio, Animatio
 	iniPlayerVel = game->getPlayer()->getVel();
 	inRange = false;
 	setResistance(2500);
-	setMaxFearPercent(25);
+	setMaxFearPercent(35);
 	width_ = height_ = 18;
 	time_ = 200;
 	maxX_ = 144;

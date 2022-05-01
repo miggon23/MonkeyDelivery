@@ -12,8 +12,8 @@ Enemy::Enemy(Game* game, int radio, Point2D<int>centroRadio, AnimationManager* a
 	timeOnFlash_ = SDL_GetTicks();
 	respawnTimer = SDL_GetTicks();
 	nearLimit_ = 2;
-	timeLimit_ = 1000;
-	setMaxFearPercent(30);
+	timeLimit_ = 250;
+	setMaxFearPercent(50);
 }
 
 void Enemy::patrol(double speed)

@@ -21,7 +21,7 @@ class GameObjectGenerator
 	{
 		int bullR = 60;
 		int catR = 100;
-		int plantsR = 150;
+		int plantsR = 80;
 		int batsR = 50;
 		int scorpionsR = 70;
 	};

@@ -12,7 +12,7 @@ Bull::Bull(Game* game, int radio, Point2D<int> centroRadio, AnimationManager* an
 	lastUpdate_ = SDL_GetTicks();
 	stop = true; //Patrulla y no persigue
 	setResistance(1500);
-	setMaxFearPercent(10);
+	setMaxFearPercent(25);
 	width_ = height_ = 100;
 	time_ = 350;
 	maxX_ = 200;

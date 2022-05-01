@@ -12,7 +12,7 @@ Cat::Cat(Game* game,int Aleatorio, Point2D<int>centroRadio, AnimationManager* an
 	setDimension(52, 70);
 	createCheckPoints();
 	setResistance(1000);
-	setMaxFearPercent(30);
+	setMaxFearPercent(45);
 	width_ = 16;
 	height_ = 20;
 	time_ = 250;
@@ -59,7 +59,7 @@ void Cat::checkDistance()
 {
 	if (isAlive()) {
 		
-		int range = 300;
+		int range = 400;
 		double dirX = getPosition().getX() - game->getPosisitionPlayer().getX(); //direccion en las x
 		double distanceX = abs(dirX);
 		double distanceY = abs(getPosition().getY() - game->getPosisitionPlayer().getY());

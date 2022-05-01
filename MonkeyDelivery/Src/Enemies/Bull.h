@@ -20,5 +20,4 @@ public:
 	void chase(double x, double y);
 
 	void draw() override;
-	void bullScares();//metodo de miedo especifico para el toro
 };

@@ -18,7 +18,7 @@ Plant::Plant(Game* game, int Aleatorio, Point2D<int> centroRadio, AnimationManag
 		case 3: randomTex = plantSS_Orange; break;
 	}
 	setTexture(randomTex);
-	setDimension(112, 112);
+	setDimension(100, 100);
 	setResistance(4000);
 	lastUpdate_ = SDL_GetTicks();
 	setScariness(0.0); //NO DA MIEDO
