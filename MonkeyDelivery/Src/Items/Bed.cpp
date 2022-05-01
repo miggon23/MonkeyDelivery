@@ -6,6 +6,13 @@ Bed::Bed(Game* game) :GameObject(game, true) {
 	setDimension(93, 138);
 }
 
+Bed::Bed(Game* game, int x, int y) : GameObject(game, true)
+{
+	setPosition(x, y);
+	setTexture(worldObject_Bed);
+	setDimension(93, 138);
+}
+
 Bed::~Bed(){}
 
 void Bed::update(){}

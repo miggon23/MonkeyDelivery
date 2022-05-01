@@ -126,10 +126,16 @@ void Game::start()
     player_->bedPos(1820, 1560);
     add(bed);*/
     //add(new Rock(this,2500,800));
+
+    //banco principal
     auto cama = new Bed(this);
     cama->setPosition(3280, 1090);
     player_->bedPos(3650, 1300);
     add(cama);
+    //bancos secundarios
+    add(new Bed(this, 8000, 1970));
+    add(new Bed(this, 7050, 5820));
+    add(new Bed(this, 2450, 4565));
 
     partSystem = new ParticleExample();
     partSystem->setRenderer(renderer);             // set the renderer
