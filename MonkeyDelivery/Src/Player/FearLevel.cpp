@@ -8,7 +8,7 @@ FearLevel::FearLevel(Game* game) :GameObject(game), w(0) {
 	fear_ = 0;
 	maxFear_ = 100;
 
-	x = game->getWindowWidth()/8.18;
+	x = game->getWindowWidth()/8.19;
 	y = game->getWindowHeight() / 16.67;
 	h = game->getWindowHeight() / 20.0;
 
