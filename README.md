@@ -12,7 +12,7 @@ Datos generales:
 
 Género: Aventura
 
-Subgéneros: Exploración y Mundo abierto
+Subgéneros: Exploración, Gestión y Mundo abierto
 
 Público objetivo:
 - Edad: +10 años
@@ -78,6 +78,11 @@ Personajes:
 -Rana
 -Tortuga
 
+Especiales:
+-Mapa
+-Bancos
+-Tienda
+
 Descripción
 
 En Monkey Delivery tomarás el papel de Monkey, un pequeño mono que se dedica a repartir paquetes a los vecinos de Selva Banana, su localidad natal. Simultáneamente, deberás mantener tu sueño a raya, durmiendo cuando sea necesario. En tu misión habrá enemigos que asustarán a Monkey, por lo que tendrás que evitarlos. Al completar trabajos recibirás dinero, que te será útil para comprar diferentes materiales y objetos en las tiendas.
@@ -98,7 +103,9 @@ Cada sección de este documento, debidamente numerada
 
 Aspectos generales
 
-Párrafos donde se describe la experiencia que deseamos ofrecer a los jugadores, sus claves estéticas como obra interactiva, la narrativa del juego, su tema, su ambientación, etc. También el tipo de dinámica que esperamos establecer en el juego, el clásico planteamiento de “¿a qué juega el jugador?”, etc. y alguna descripción de la mecánica del juego, el tipo de las acciones que puede realizar el jugador y el comportamiento del sistema
+Es un juego que se basará fundamentalmente en la exploración: conociendo las ubicaciones tanto de los vecinos como de los enemgios, obteniendo recompensas escondidas por el mapa y descubriendo el rico mundo donde se encuentra la aldea de nuestro protagonista.  
+El segundo elemento que más relevancia cobra será el de la gestión. La principal recompensa de las misiones, además de conocer la historia del pueblo donde has llegado, es la de monedas con la que adquirir objetos en la tienda que te ayudarán en las futuras misiones.
+Con esto buscamos que el jugador pase una experiencia agradable descubriendo un mundo colorido mientras juega y experimenta con las diferentes mecánicas y situaciones que se le brindarán en este mundo abierto.
 
 Vista general
 
@@ -118,15 +125,16 @@ Jugabilidad
 
 Párrafos e ilustraciones donde se describe toda la jugabilidad del juego, toda la mecánica, dinámica y estética, aunque sin entrar a hablar de todos los elementos posibles que aparecen en el juego sino sólo sus “familias” o tipologías, clasificadas según su comportamiento.
 
-En Monkey Delivery te encargarás del reparto de envíos en tu pueblo. Al completar estos repartos ganarás dinero con el que podrás comprar diferentes objetos en las tiendas, mejorando tus habilidades de reparto.
+En Monkey Delivery te encargarás del reparto de envíos en un pueblo al que acabas de llegar. El gran impedimento y core del juego será llegar entregar estos paquetes en peligrosos recorridos llenos de enemigos donde el cansancio y el miedo te pueden suponer una mala pasada. Al completar estos repartos ganarás dinero con el que podrás comprar diferentes objetos en las tiendas, mejorando tus habilidades de reparto o consumbiles con los que salir de una situación peliaguda.  
+Explorar también será un gran aliciente que se verá recompensado con recompensas y caminos secundarios que facilitarán la llegada a las lejanas casas de los vecinos.  
 
-Mecánica
+### 2.1 Mecánica
 
-### 2.1.1. Mecánicas del personaje
+## 2.1.1. Mecánicas del personaje
 
-Energía: barra de estadística del jugador, de tamaño X, que se muestra por pantalla todo el tiempo. Mide su cansancio.
+**Energía**: Esta es limitada y se irá gastando con el movimiento, en caso de que se reduzca a 0, su velocidad se verá muy reducida haciendole mucho más complicado el reparto. Se verá reflejada en la esquina izquierda en forma de barra y s epodrá recuperar tanto durmiendo como con consumibles. A su vez se podrá regenerar un 45% si se queda quieto.
 
-Miedo: barra de estadística del jugador, de tamaño X, que se muestra por pantalla todo el tiempo. Mide su nivel de miedo. Según pase el tiempo irá bajando poco a poco.
+**Miedo:** El sentimiento que siente Monkey cuando ve a los enemigos. or norma general estos rellenan la barra al estar cerca del jugador y si llega al máximo, el jugador se desmayará y reaparecerá en el centro del pueblo. Se puede reducir con consumibles o durmiendo.
 
 Inventario: El jugador tiene 6 slots de inventario para guardar los objetos que compre y  otro más para el paquete u objeto de la misión. Con este slot no se puede interactuar. . Estos se colocan automáticamente en el primer slot disponible al ser comprados. Cuando se utilicen se eliminan, en caso de ser consumibles.
 
