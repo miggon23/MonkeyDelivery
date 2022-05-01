@@ -126,3 +126,23 @@ void PowerUpsManager::desactivateAllPowerUps(){
 	desactivate(energyDrink);
 	desactivate(repelente);
 }
+
+void PowerUpsManager::onPauseEnter()
+{
+	if (activatedEnergyDrink_) {
+		timerEnergyDrink_->pause();
+	}
+	if (activatedAntiBanana) {
+		timerAntiBanana_->pause();
+	}
+}
+
+void PowerUpsManager::onPauseExit()
+{
+	if (activatedEnergyDrink_) {
+		timerEnergyDrink_->resume();
+	}
+	if (activatedAntiBanana) {
+		timerAntiBanana_->resume();
+	}
+}

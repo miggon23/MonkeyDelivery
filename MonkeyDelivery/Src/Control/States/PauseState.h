@@ -15,6 +15,7 @@ public:
 	void update()override;
 	void draw()override;
 	void next()override;
+	void onEnterState() override;
 
 	void moveBox(Vector2D<int> i) override;
 	inline Button* getCurrentButton() override { return buttonsUI[currentSelection]; };

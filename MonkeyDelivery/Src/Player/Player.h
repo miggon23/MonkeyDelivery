@@ -173,6 +173,9 @@ public:
 	//inline bool inventoryFull() { return inventory_->inventoryFull(); };
 	inline bool inventoryFull(InventoryObject* x) { return inventory_->inventoryFull(x); };
 	inline void addObjectToInventory(InventoryObject* p) { inventory_->addObject(p); };
+	void pausePowerUps();
+	void resumePowerUps();
+
 	
 	inline void selectObject(int index) {
 		inventory_->selectObject(index);

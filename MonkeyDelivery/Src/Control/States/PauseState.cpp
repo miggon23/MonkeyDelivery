@@ -46,6 +46,11 @@ void PauseState::next()
 	}*/
 }
 
+void PauseState::onEnterState()
+{
+	game->getPlayer()->pausePowerUps();
+}
+
 void PauseState::moveBox(Vector2D<int> i)
 {
 	currentSelection += i.getY();

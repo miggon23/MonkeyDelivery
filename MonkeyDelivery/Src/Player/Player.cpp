@@ -229,6 +229,15 @@ void Player::removeMoney(int amount)
 	money_ -= amount;
 	if (money_ < 0) money_ = 0;
 }
+
+void Player::pausePowerUps()
+{
+	powerUpsManager->onPauseEnter();
+}
+void Player::resumePowerUps()
+{
+	powerUpsManager->onPauseExit();
+}
 
 void Player::initPowerUp(PowerUps x) {
 	powerUpsManager->ActivatePowerUp(x);

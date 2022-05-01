@@ -40,5 +40,7 @@ public:
 	void desactivate(PowerUps x);
 	void desactivateAllPowerUps();
 	
+	void onPauseEnter();
+	void onPauseExit();
 };
 
