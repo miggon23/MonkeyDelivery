@@ -71,7 +71,7 @@ void AnimationManager::getFrameImagePlayer(SDL_Rect player, SDL_Rect& texturaRec
 		switch (newDir.x)
 		{
 			//Derecha
-			case 1: texturaRect.y = 234; break;
+			case 1: texturaRect.y = 144; break;
 			//Izquierda
 			case -1: texturaRect.y = 126; break;
 			default: break;
@@ -135,19 +135,18 @@ void AnimationManager::getFrameImagePlayer(SDL_Rect player, SDL_Rect& texturaRec
 	}
 	if (playerState_ == Sleeping)
 	{
-		/*texturaRect.x = 0;
-		texturaRect.y = 90;
+		texturaRect.x = x2;
+		texturaRect.y = 270;
 		tex->render(texturaRect, player);
 
 		if (game_->getTimer()->TimeScale() - timer >= playerFrameSpeed) {
-			x1 += 16;
-			if (texturaRect.x >= playerLimit) {
+			x2 += 24;
+			if (texturaRect.x >= 24) {
 				texturaRect.x = 0;
-				x1 = 16;
+				x2 = 0;
 			}
 			timer = game_->getTimer()->TimeScale();
-		}*/
-
+		}
 	}
 }
 

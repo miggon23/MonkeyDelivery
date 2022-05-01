@@ -133,7 +133,7 @@ void Game::start()
     //banco principal
     auto cama = new Bed(this);
     cama->setPosition(3280, 1090);
-    player_->bedPos(3650, 1300);
+    player_->bedPos(3280, 1090);
     add(cama);
     //bancos secundarios
     add(new Bed(this, 8000, 1970));

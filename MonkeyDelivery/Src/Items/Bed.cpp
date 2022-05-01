@@ -24,7 +24,7 @@ void Bed::onPlayerInteraction(Player* player){
 	if (player->isAsleep())//si te vas a dormir
 	{
 		player->savePosBeforeSleep();
-		player->setPosition((double)getX() + 15, getY());//colocar en la cama
+		player->setPosition(getX() + 15.0, getY() + 60.0);//colocar en la cama
 	}
 	
 }

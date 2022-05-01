@@ -229,7 +229,8 @@ void Player::removeMoney(int amount)
 	money_ -= amount;
 	if (money_ < 0) money_ = 0;
 }
-
+
+
 void Player::pausePowerUps()
 {
 	powerUpsManager->onPauseEnter();
@@ -337,7 +338,7 @@ void Player::sendToBed()
 	inventory_->desactivateUseSelectedObject();
 	sdlutils().soundEffects().at("scary").setVolume((int)(game->getSoundEfectsVolume() * game->getGeneralVolume()));
 	sdlutils().soundEffects().at("scary").play(0, 1);
-	setPosition((double)bedX_ + 15, bedY_);//colocar en la cama
+	setPosition(bedX_ , bedY_ + 60.0);//colocar en la cama
 }
 
 /// <summary>

@@ -23,6 +23,7 @@ private:
 	int wPlayer_ = 16,
 		hPlayer_ = 18,
 		x1 = 16,
+		x2=24,
 		playerFrameSpeed = 200;
 	
 public:
