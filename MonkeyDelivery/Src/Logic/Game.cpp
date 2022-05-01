@@ -30,6 +30,8 @@ Game::Game(string n, double w, double h) : name(n), width(w), height(h), doExit(
 Game::~Game() {
     cout << "[DEBUG] deleting game" << endl;
 
+    timer_ = nullptr;
+
     for (auto gO : gameObjects_)
         delete gO;
     for (auto enemy : enemyContainer_)

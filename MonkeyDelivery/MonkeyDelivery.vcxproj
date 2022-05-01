@@ -327,6 +327,7 @@
     <ClCompile Include="Src\Items\Bed.cpp" />
     <ClCompile Include="Src\Enemies\Bull.cpp" />
     <ClCompile Include="Src\Enemies\Cat.cpp" />
+    <ClCompile Include="Src\Logic\AnimationManager.cpp" />
     <ClCompile Include="Src\Logic\ColliderTile.cpp" />
     <ClCompile Include="Src\Logic\DialogueBox.cpp" />
     <ClCompile Include="Src\Enemies\Enemy.cpp" />

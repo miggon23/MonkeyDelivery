@@ -52,6 +52,7 @@
 
 #include "../json/JSON.h"
 #include "../sdlutils/SDLUtils.h"
+#include "../utils/Timer.h"
 
 #define TILE_SIZE 16
 
@@ -88,6 +89,8 @@ using namespace std;
 class Game : public StateMachine {
 
 private:
+    Timer* timer_ = Timer::Instance();
+
     TutorialBook* tutorialBook_;
 
     SDL_Texture* background_;
@@ -145,11 +148,12 @@ private:
 
 public:
 
-
     Game(string name, double width, double height);
     ~Game();
 
     inline string getGameName() { return name; };
+
+    inline Timer* getTimer() { return timer_; };
 
     void add(GameObject* gameObject);
     vector<GameObject*> getGameObjects() { return gameObjects_; };

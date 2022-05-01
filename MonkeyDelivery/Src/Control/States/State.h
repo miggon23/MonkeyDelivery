@@ -6,25 +6,25 @@
 #include "../../Logic/InputManager.h"
 #include "../Button.h"
 #include "../UI/Sliders/Slider.h"
+
 class Game;
 using namespace std;
 
 class State {
 
 protected:
+
     Game* game = nullptr;
     CommandFactory* commandFactory = nullptr;
-   // Uint32 initTime;
-    unsigned int initTime;
-   // Uint32 totalTime;
-    unsigned int totalTime;
+    //unsigned int initTime;
+    //unsigned int totalTime;
 
     bool isFullscreen = false;
     vector<Button*> buttonsUI;
     vector<Slider*> slidersUI;
  
 public:
-    State(Game* game) : game(game), initTime(0), totalTime(0) {
+    State(Game* game) : game(game)/*, initTime(SDL_GetTicks()), totalTime(0)*/ {
         commandFactory = new CommandFactory(game);       
     };
 
@@ -62,4 +62,5 @@ public:
     inline void addButton(Button* button) { buttonsUI.push_back(button); };
     inline void addSlider(Slider* slider) { slidersUI.push_back(slider); };
     vector<SDL_Event>& GetFrameEvents();
+
 };
