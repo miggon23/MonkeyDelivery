@@ -34,7 +34,7 @@ ShopState::ShopState(Game* game) : State(game){
 	coinsH_ = (int)(game->getWindowHeight() / 35.0 * d);
 
 	shop_ = game->getShop();
-	shop_->actualice();
+	//shop_->actualice();
 	maxSelected = shop_->getSize();
 }
 

@@ -25,6 +25,7 @@ Game::Game(string n, double w, double h) : name(n), width(w), height(h), doExit(
     moneyFont_ = new Font("./Images/fonts/Pixellari.ttf", 26);
 
     animationManager_ = new AnimationManager(this);
+    
 }
 
 Game::~Game() {
@@ -95,7 +96,7 @@ void Game::removeGameObject(GameObject* gameObject){
 void Game::start()
 {
     inGame = true;
-
+  
     animationManager_ = new AnimationManager(this);
     player_ = new Player(this, animationManager_); //Creacion del jugador
 
@@ -114,7 +115,7 @@ void Game::start()
 
     add(new IntectuableShop(this, 3700, 1600, animationManager_));
     shop_ = new Shop(player_, this);
-
+    shop_->actualice(1);
     tutorialBook_ = new TutorialBook(this, 4000, 1660, 100, 75);
 
     GameObjectGenerator::generateLevel(this);

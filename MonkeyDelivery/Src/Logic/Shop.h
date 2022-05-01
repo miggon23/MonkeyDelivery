@@ -27,7 +27,7 @@ public:
 	Shop(Player* player, Game* game);
 	~Shop();
 
-	void actualice();
+	void actualice(int level);
 	void clearElements();
 	void addElements(int level);
 	bool buyObject(int id, int price);

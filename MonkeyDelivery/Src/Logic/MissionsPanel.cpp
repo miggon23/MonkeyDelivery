@@ -198,6 +198,7 @@ void MissionsPanel::onMissionCompleted()
 		if (currentLevel_ != NLEVELS_) {
 			game->addPickaxe(currentLevel_);
 			currentLevel_++;
+			game->getShop()->actualice(currentLevel_);
 		}
 		else {
 			// terminar partida
