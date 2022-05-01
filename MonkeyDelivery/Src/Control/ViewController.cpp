@@ -23,7 +23,7 @@ ViewController::ViewController(Game* _game) {
 void ViewController::run() {
     
     while (!game->getState()->doQuit()) {
-        timer_->Update();
+        //timer_->Update();
 
         handleEvents();
 

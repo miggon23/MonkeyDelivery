@@ -33,9 +33,8 @@ InputManager::~InputManager()
 void InputManager::run()
 {
 	while (!game->getState()->doQuit()) {
-		timer_->Update();
-
 		auto state = game->getState();
+		timer_->Update(state->getStateName());
 		state->handleEvents();
 
 		if (timer_->DeltaTime() >= 1.0f / FRAME_RATE) {

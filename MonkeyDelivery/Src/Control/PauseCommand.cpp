@@ -32,7 +32,6 @@ void PauseCommand::execute()
 		game->ClearState();
 		State* saved = game->getSavedState();
 		//saved->resetInitTime();
-		game->getTimer()->Reset();
 		game->setState(saved);
 		game->removeSavedState();
 		delete tmp;

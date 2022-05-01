@@ -1,4 +1,7 @@
 #pragma once
+
+#include <string>
+
 class Timer{
 
 private:
@@ -16,6 +19,7 @@ public:
 	static void Release();
 
 	void Reset();
+	void UnPause(); // volver a playing tras la pausa
 	/// <summary>
 	/// Nosa da el tiempo en segundos
 	/// </summary>
@@ -27,7 +31,7 @@ public:
 	/// </summary>
 	/// <returns></returns>
 	float TimeScale();
-	void Update();
+	void Update(std::string s);
 
 private:
 	Timer();

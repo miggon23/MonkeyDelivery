@@ -143,21 +143,17 @@ void MissionsPanel::onMissionSelected(string missionId)
 		missionObject_->setTexture(m.target);
 
 		//iniciar el contador
-		initialTicks_ = SDL_GetTicks();
+		initialTicks_ = game->getTimer()->TimeScale();
 		endTime_ =  m.minTime;
-
 	}
 
 	// hide pannel
 	game->InGame();
 	State* tmp = game->getState();
 	State* saved = game->getSavedState();
-	saved->resetInitTime();
-	//saved->registerCommands();
 	game->setState(saved);
 	game->removeSavedState();
 	delete tmp;
-	//delete tmp;
 }
 
 void MissionsPanel::onMissionCompleted()
@@ -224,8 +220,8 @@ void MissionsPanel::dialogueEnd()
 
 int MissionsPanel::getTime()
 {
-	//return initialTicks_ + endTime_ - game->getTimer()->TimeScale();
-	return initialTicks_ + endTime_ - SDL_GetTicks();
+	return initialTicks_ + endTime_ - game->getTimer()->TimeScale();
+	//return initialTicks_ + endTime_ - SDL_GetTicks();
 }
 
 string MissionsPanel::getMissionImage()

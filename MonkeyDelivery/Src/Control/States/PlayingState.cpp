@@ -44,6 +44,11 @@ void PlayingState::registerCommands() {
     commandFactory->add(new MapCommand());
 }
 
+void PlayingState::onEnterState()
+{
+    game->getTimer()->UnPause();
+}
+
 void PlayingState::update() {
     game->update();
 }

@@ -1,5 +1,6 @@
 #include "Timer.h"
 #include "SDL.h"
+
 #include <iostream>
 
 Timer* Timer::sInstance = nullptr;
@@ -29,16 +30,23 @@ void Timer::Reset(){
 	mDeltaTime = 0.0f;
 }
 
+void Timer::UnPause()
+{
+	startGame = (SDL_GetTicks() - mTimeScale);
+}
+
 float Timer::TimeScale(){
 	mTimeScale = SDL_GetTicks() - startGame;
 	return mTimeScale;
 }
 
-void Timer::Update(){
-	mElapsedTicks = SDL_GetTicks()-mStartTicks; //miliseconds
+void Timer::Update(std::string s){
+	if (s == "Playing State") {
+
+		mTimeScale = (SDL_GetTicks() - startGame);
+	}
+	mElapsedTicks = SDL_GetTicks() - mStartTicks; //miliseconds
 	mDeltaTime = mElapsedTicks * 0.001f; //seconds
-	mTimeScale = SDL_GetTicks() - startGame;
-	//std::cout << mTimeScale << std::endl;
 }
 
 Timer::Timer(){
