@@ -35,8 +35,8 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game), anima
 	decreasingEnergyLevel_ = walkingEnergy_; // Cambiar esto despu�s a un m�todo set <---
 	reducedSpeed_ = false;
 	reduceFactor_ = 2.2;
-	maxEnergyPercent_ = 45;
-	reduceEnergyFactor_ = 0.1;
+	maxEnergyPercent_ = 20;
+	reduceEnergyFactor_ = 0.025;
 	isStopped_ = false;
 
 	resetVelocity(); //Se inicializa al valor de INIT_VEL_X e ..._Y
@@ -166,7 +166,7 @@ void Player::sleep(){
 //cambiar la variable de dormir y establecer la textura
 void Player::changeSleep()
 {
-	if (energyLevel_->percentEnergy() <= 20.0 || sleeping || fade) {
+	if (energyLevel_->percentEnergy() <= maxEnergyPercent_ || sleeping || fade) {
 		sleeping = !sleeping;
 		//actulizo la textura
 		if (sleeping) {
