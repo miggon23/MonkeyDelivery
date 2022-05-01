@@ -7,7 +7,7 @@
 #include <vector>
 #include "../Control/CommandFactory.h"
 
-const int FRAME_RATE = 60;
+const int FRAME_RATE = 80;
 class Game;
 
 class InputManager {

@@ -10,6 +10,8 @@
 #include "../Items/Package.h"
 #include "DialogueBox.h"
 
+#include "../Utils/Timer.h"
+
 MissionsPanel::MissionsPanel(Game* game, AnimationManager* anim) : GameObject(game, true, anim)
 {
 	setPosition(4005, 1125);
@@ -130,8 +132,6 @@ void MissionsPanel::onMissionSelected(string missionId)
 			game->getPlayer()->addMissionObject(new Package(game->getTexture(Item_Package), game, game->getPlayer()));
 		}
 	
-		//Misiones express
-		endTime_ = SDL_GetTicks() + m.minTime;
 
 		// spawn Vecino
 		activeTarget_->changeActive();
@@ -144,6 +144,7 @@ void MissionsPanel::onMissionSelected(string missionId)
 
 		//iniciar el contador
 		initialTicks_ = SDL_GetTicks();
+		endTime_ =  m.minTime;
 
 	}
 
@@ -171,17 +172,16 @@ void MissionsPanel::onMissionCompleted()
 	int reward = m.maxMoney;
 
 	// Restar dinero si se pasa del tiempo -> Resta 1 oro por segundo que se retrase
-	if (SDL_GetTicks() > endTime_) {
-		reward -= ((SDL_GetTicks() - initialTicks_ - m.minTime) / 1000); // valor de tiempo que se ha pasado del tiempo mínimo
+	auto ticks = SDL_GetTicks();
+	if (ticks > (initialTicks_+endTime_)) {
 		if (m.isExpress) {
 			reward = 0;
-		}
+		}else
+			reward -= ((SDL_GetTicks() - initialTicks_ - m.minTime) / 1000); // valor de tiempo que se ha pasado del tiempo mínimo
 	}
 	endTime_ = 0; // resetea la variable
 
-	if (m.isExpress && reward <= 0) { // si es express y se ha retrasado tanto que el dinero es negativo
-		reward = 0;
-
+	if (m.isExpress && reward <= 0) { // quitar esto cuando esté el sonido de los 10 segundos
 		// sonido de perder
 		sdlutils().soundEffects().at("lose").setVolume(game->getSoundEfectsVolume() * 2);
 		sdlutils().soundEffects().at("lose").play(0, 1);
@@ -220,6 +220,12 @@ void MissionsPanel::dialogueEnd()
 {
 	// Despawnear vecino -> cuando acabe el dialogo
 	activeTarget_->changeActive();
+}
+
+int MissionsPanel::getTime()
+{
+	//return initialTicks_ + endTime_ - game->getTimer()->TimeScale();
+	return initialTicks_ + endTime_ - SDL_GetTicks();
 }
 
 string MissionsPanel::getMissionImage()
