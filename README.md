@@ -2,73 +2,87 @@
 
 ## Documento de diseño de videojuego
 
-Moon Key
+MoonKey Studios
 
 gamesmoonkey@gmail.com
 
-Versión 1.1 – 29 de enero de 2022
+Versión 1.4 – 30 de abril de 2022
 
-Resumen
+Datos generales:
 
-Géneros: Aventura y Exploración
+Género: Aventura
 
-Modos: Mapa Abierto
+Subgéneros: Exploración y Mundo abierto
 
 Público objetivo:
-
-Edad, sexo, región e idioma
-
 - Edad: +10 años
 - Sexo: Hombre/Mujer
 - Idioma: Español
 
-Plataformas: PC
+Plataformas disponibles: PC
 
-Requisitos mínimos y recomendamos
+Requisitos mínimos y recomendamos: Que tu ordenador mueva el buscaminas online
 
-Cantidades:
+Hitos y objetivos:
 
-Escenarios: Mapa
+Fecha de propuesta del concepto
+---
+Lograr concebir una idea atractiva tanto para el equipo como el consumidor que pueda ser llevada a cabo.
+
+Fechas de pre-producción
+---
+Haber desarrollado la idea, teniendo todos los puntos importantes de la experiencia definidos para poder realizar la producción sin tener a penas que tocar el diseño y con una hoja de ruta que permita a cualquier mieembro del equipo saber que tiene que realizar en su tarea sin dpeender de tiempos de reuniones extra.
+
+Fechas de producción
+---
+Tener un juego completamente jugable, con la mayor parte del contenido disponible. Con toda la arquitectura completada para poder añadir y realizar las modificaciones necesarias rápidamente y sin dificultades.
+
+Fecha de lanzamiento
+06/05/2022
+Tener un juego completamente jugable, con todo el contenido disponible y estructurado en una historia. Sin bugs que afecten a la experiencia de forma relevante.
+
+## Alcance del proyecto:
+
+Escenarios disponibles: 
+
+Un solo nivel de 10.000x10.000 píxeles divido en diferentes biomas.
 
 Objetos:
 
-Linterna-Bebida Energética-Repelente Anti Bananas-Patines-Monopatin-Banana-Cafe
+No consumibles: 
+-Linterna cónica
+-Linterna circular
+-Botas viejas
+-Botas
+-Pico 
+-Patines
+-Monopatin
+
+Consumibles:
+-Bebida Energética
+-Repelente Anti Bananas
+-Banana
+-Cafe
+
+De la historia:
+-Diferentes paquetes a entregar, uno para cada misión
 
 Personajes:
-
-Erizo-PatasLArgas Cocodrilo Croki- Hipopótamo Pepi- Cebra Ceci-Wallaby Willy- Capitán Pescaniva- Tucán Aitana-Rana-Tortuga
-
-Hitos:
-
-Fecha de propuesta del concepto
-
-Fechas de pre-producción
-
-Fechas de producción
-
-Fecha de lanzamiento
-
-…
-
-
-
-
+-Erizo PatasLargas
+-Cocodrilo Croki
+-Hipopótamo Pepi
+-Cebra Ceci
+-Wallaby Willy
+-Capitán Pescaniva
+-Tucana Aitana
+-Rana
+-Tortuga
 
 Descripción
-
-Párrafo breve que condensa lo esencial de este proyecto y su contexto, así como su historia (si forma parte de una saga o franquicia) y la competencia prevista para su lanzamiento
-
-Los aspectos del proceso de producción, de la gestión del proyecto, previsiones de ventas y otros datos de marketing, etc. suelen ir en documentos aparte.
-
-Los aspectos tecnológicos y a veces también los artísticos pueden ir en documentos aparte, o ser incluidos en este de alguna manera (en las propias secciones o en anexos al final) dando lugar a lo que se conoce como una “biblia de producto”
 
 En Monkey Delivery tomarás el papel de Monkey, un pequeño mono que se dedica a repartir paquetes a los vecinos de Selva Banana, su localidad natal. Simultáneamente, deberás mantener tu sueño a raya, durmiendo cuando sea necesario. En tu misión habrá enemigos que asustarán a Monkey, por lo que tendrás que evitarlos. Al completar trabajos recibirás dinero, que te será útil para comprar diferentes materiales y objetos en las tiendas.
 
 Logotipo y portada del juego
-
-
-
-
 
 Índice para el GDD:
 
