@@ -48,27 +48,12 @@ void OptionsState::draw(){
 	}
 	
 	// Dibujar selector
-	if (currentSelection == slidersUI.size())
-		rectPanel = { (int)buttonsUI[0]->getPosition().getX(), (int)buttonsUI[0]->getPosition().getY(), (int)buttonsUI[0]->getWidth(), (int)buttonsUI[0]->getHeight() };
-	else
-		rectPanel = { (int)slidersUI[currentSelection]->getSliderBase()->getPosition().getX(), (int)slidersUI[currentSelection]->getSliderBase()->getPosition().getY(), (int)slidersUI[currentSelection]->getSliderBase()->getWidth(), (int)slidersUI[currentSelection]->getSliderBase()->getHeight() };
-
+	rectPanel = { (int)buttonsUI[0]->getPosition().getX(), (int)buttonsUI[0]->getPosition().getY(), (int)buttonsUI[0]->getWidth(), (int)buttonsUI[0]->getHeight() };
 	selectorTexture->render(rectPanel);
 }
 
 void OptionsState::next(){
 
-}
-
-void OptionsState::moveBox(Vector2D<int> i)
-{
-	currentSelection += i.getX();
-	currentSelection += i.getY();
-
-	if (currentSelection < 0)
-		currentSelection = 0;
-	else if (currentSelection > slidersUI.size())
-		currentSelection = slidersUI.size();
 }
 
 void OptionsState::registerCommands(){	
