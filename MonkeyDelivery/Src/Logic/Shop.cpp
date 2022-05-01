@@ -77,10 +77,15 @@ void Shop::addElements(int level)
 bool Shop::buyObject(int id, int price)
 {
 	if (id < objects.size() && objects[id].stock>0 &&!player->inventoryFull(objects[id].inventoryObject) && player->moneyChange(-price)){		
-		objects[id].inventoryObject->setCorrectTexture();
-		player->addObjectToInventory(objects[id].inventoryObject);
+		
+		if (objects[id].inventoryObject->getTypeObject() != CONSUMABLES) { 
+			objects[id].inventoryObject->setCorrectTexture();
+			player->addObjectToInventory(objects[id].inventoryObject); 
+			
+		}
+		else CreateNewObject(objects[id].inventoryObject);
 		objects[id].stock--;
-		objects[id].inventoryObject=nullptr;
+		
 		return true;
 	}
 	else return false; 	
@@ -89,5 +94,23 @@ bool Shop::buyObject(int id, int price)
 bool Shop::inventoryFull(int selected)
 {
 	return player->inventoryFull(objects[selected].inventoryObject);
+}
+
+void Shop::CreateNewObject(InventoryObject* O){
+	//NOTA: NECESITO MIRAR QUE CLASE DE OBJECTO CONSUMIBLE ES PARA PODER DUPLICARLO
+	Banana* possible = dynamic_cast<Banana*>(O);
+	if (possible != nullptr) { player->addObjectToInventory(new Banana(game->getTexture(Item_Banana), game, player)); return; }
+	possible = nullptr;
+
+	EnergyDrink* possible2 = dynamic_cast<EnergyDrink*>(O);
+	if (possible2 != nullptr) { player->addObjectToInventory(new Banana(game->getTexture(Item_Soda02), game, player)); return; }
+	possible2 = nullptr;
+
+	Monkeycola* possible3 = dynamic_cast<Monkeycola*>(O);
+	if (possible2 != nullptr) { player->addObjectToInventory(new Banana(game->getTexture(Item_Soda01), game, player)); return; }
+	possible3 = nullptr;
+
+	Repel* possible4 = dynamic_cast<Repel*>(O);
+	if (possible2 != nullptr) { player->addObjectToInventory(new Banana(game->getTexture(Item_Spray), game, player)); return; }
 }
 

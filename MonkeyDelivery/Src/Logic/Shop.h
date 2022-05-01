@@ -33,4 +33,5 @@ public:
 	bool buyObject(int id, int price);
 	bool inventoryFull(int selected); 
 	int getSize() { return (int)objects.size(); }
+	void CreateNewObject(InventoryObject* O);
 };

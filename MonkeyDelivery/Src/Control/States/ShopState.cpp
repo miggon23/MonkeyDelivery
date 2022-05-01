@@ -85,7 +85,7 @@ void ShopState::draw()
 					{ xOffset + xObj * shop_->objects[i].positionRectX - 50 * i, yOffset + (shop_->objects[i].positionRectY * 3), wObj, hObj });
 			}*/
 
-		if (shop_->objects[i].stock > 0&& shop_->objects[i].inventoryObject!=nullptr) {
+		if (shop_->objects[i].stock > 0) {
 			if (i >= 4) {
 				shop_->objects[i].inventoryObject->getTexture()->render(
 					{ xOffset + (xObj *( i * - 4)) , yOffset , xObj, yObj });
