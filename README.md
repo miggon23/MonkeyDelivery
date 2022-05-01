@@ -25,19 +25,19 @@ Requisitos mínimos y recomendamos: Que tu ordenador mueva el buscaminas online
 
 ## Hitos y objetivos:
 
-Fecha de propuesta del concepto
+**Fecha de propuesta del concepto**
 a
 Lograr concebir una idea atractiva tanto para el equipo como el consumidor que pueda ser llevada a cabo.
 
-Fechas de pre-producción
+**Fechas de pre-producción**
 a
 Haber desarrollado la idea, teniendo todos los puntos importantes de la experiencia definidos para poder realizar la producción sin tener a penas que tocar el diseño y con una hoja de ruta que permita a cualquier mieembro del equipo saber que tiene que realizar en su tarea sin dpeender de tiempos de reuniones extra.
 
-Fechas de producción
+**Fechas de producción**
 a
 Tener un juego completamente jugable, con la mayor parte del contenido disponible. Con toda la arquitectura completada para poder añadir y realizar las modificaciones necesarias rápidamente y sin dificultades.
 
-Fecha de lanzamiento
+**Fecha de lanzamiento**
 06/05/2022
 Tener un juego completamente jugable, con todo el contenido disponible y estructurado en una historia. Sin bugs que afecten a la experiencia de forma relevante.
 
