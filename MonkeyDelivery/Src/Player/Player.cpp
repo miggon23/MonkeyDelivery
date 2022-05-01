@@ -83,7 +83,12 @@ void Player::update()
 
 		powerUpsManager->update();
 		if (sleeping)
+		{
 			sleep();//si esta durmiendo
+			if (energyLevel_->percentEnergy() == 100.0)
+				changeSleep();
+		}
+			
 		else move();//si no esta durmiendo habilitanmos el movimiento
 
 		if (fearLevel_->percentFear() == 100) {
