@@ -100,7 +100,7 @@ bool Inventory::useObject(int indexObject)
 	//selectedInventoryObject = indexObject;
 
 	//Devuelve false si el objeto no pudo ser utilizado
-	if (indexObject >= inventory_.size())
+	if (indexObject >= inventory_.size() || player_->isAsleep())
 		return false;
 	//Si el objeto es de un solo uso (useObject() devuelve true)
 	//Lo eliminamos

@@ -115,6 +115,9 @@ private:
 	bool fade = false;
 	int alpha = SDL_ALPHA_TRANSPARENT;
 
+	//INFORMACION 
+	Vector2D<int> posBeforeSleep;
+
 public:
 
 	Player(Game* game, AnimationManager* animation);
@@ -153,6 +156,7 @@ public:
 	inline void setDir(int x, int y) { dirX_ = x; dirY_ = y; };
 	inline MovState getMovState() { return movState_; };
 	inline void setMovState(MovState m) { movState_ = m; };
+	inline void savePosBeforeSleep() { posBeforeSleep.setX(getX()); posBeforeSleep.setY(getY()); };
 
 	// ECONOMY
 	bool moneyChange(int money);

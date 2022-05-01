@@ -170,6 +170,7 @@ void Player::changeSleep()
 		sleeping = !sleeping;
 		//actulizo la textura
 		if (sleeping) {
+
 			animationManager->setState(AnimationManager::PlayerState::Sleeping);
 			if (usingFlashLight) {
 				usingFlashLight = false;
@@ -184,6 +185,8 @@ void Player::changeSleep()
 			sdlutils().soundEffects().at("sleep").play(-1, 1);
 		}
 		else {
+			//recoloca al player en su posición anterior
+			setPosition(posBeforeSleep.getX(), posBeforeSleep.getY());
 			animationManager->setState(AnimationManager::PlayerState::Running);
 			if (flashLOn) {
 				usingFlashLight = true;
