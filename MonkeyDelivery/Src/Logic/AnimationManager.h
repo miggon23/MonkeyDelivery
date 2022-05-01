@@ -18,6 +18,7 @@ private:
 	int limit = 600;
 	int playerLimit = 64;
 	bool isTired_;
+	bool isScared_;
 
 	int wPlayer_ = 16,
 		hPlayer_ = 18,
@@ -33,14 +34,14 @@ public:
 	};
 	LastDir lastDir;
 
-	inline AnimationManager() : game_(nullptr) { lastDir = { 0,0 }; isTired_ = false;  };
-	inline AnimationManager(Game* game) :game_(game) { lastDir = { 0,0 }; isTired_ = false;};
+	inline AnimationManager() : game_(nullptr) { lastDir = { 0,0 }; isTired_ = false; isScared_ = false; };
+	inline AnimationManager(Game* game) :game_(game) { lastDir = { 0,0 }; isTired_ = false; isScared_ = false;};
 	inline ~AnimationManager() {  };
 
 	//JUGADOR
 	inline PlayerState setState(PlayerState state) { return playerState_ = state; };
-	inline bool getIsTired() { return isTired_; }
 	inline void setIsTired(bool t) { isTired_ = t; }
+	inline void setIsScared(bool s) { isScared_ = s; }
 	inline int getWidthPlayer() { return wPlayer_; };
 	inline int getHeightPlayer() { return hPlayer_; };
 	void getFrameImagePlayer(SDL_Rect player, SDL_Rect& texturaRect, Texture* tex, float& timer, LastDir newDir);

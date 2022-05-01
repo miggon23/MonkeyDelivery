@@ -248,14 +248,18 @@ void Player::draw()
 	if (!isInTutorial_) { // no dibujamos nada si estamos en el tutorial
 
 		if (!sleeping) {
-			if (energyLevel_->percentEnergy() <= 20 && isStopped_) { 
+			if (fearLevel_->percentFear() >= 50 && isStopped_) {
+				animationManager->setIsScared(true);
+				animationManager->setState(AnimationManager::PlayerState::Idle);
+			}
+			else if(fearLevel_->percentFear() >= 50)
+				animationManager->setState(AnimationManager::PlayerState::Scared);
+			else if (energyLevel_->percentEnergy() <= 20 && isStopped_) { 
 				animationManager->setIsTired(true); 
 				animationManager->setState(AnimationManager::PlayerState::Idle);
 			}
 			else if (energyLevel_->percentEnergy() <= 20)
 				animationManager->setState(AnimationManager::PlayerState::GoToSleep);
-			else if (fearLevel_->percentFear() >= 50)
-				animationManager->setState(AnimationManager::PlayerState::Scared);
 			else if (isStopped_)
 				animationManager->setState(AnimationManager::PlayerState::Idle);
 			else animationManager->setState(AnimationManager::PlayerState::Running);

@@ -21,26 +21,21 @@ void AnimationManager::getFrameImagePlayer(SDL_Rect player, SDL_Rect& texturaRec
 		//las x
 		switch (newDir.x)
 		{
-		case 1: //Derecha
-			texturaRect.y = 54;
-			break;
-		case -1: //Izquierda
-			texturaRect.y = 36;
-			break;
-		default:
-			break;
+			//Derecha
+			case 1: texturaRect.y = 54; break;
+			//Izquierda
+			case -1: texturaRect.y = 36; break;
+			default: break;
 		}
+
 		//las y
 		switch (newDir.y)
 		{
-		case 1: //Abajo
-			texturaRect.y = 0;
-			break;
-		case -1: //Arriba
-			texturaRect.y = 72;
-			break;
-		default:
-			break;
+			//Abajo
+			case 1: texturaRect.y = 0; break;
+			//Arriba
+			case -1: texturaRect.y = 72; break;
+			default: break;
 		}
 
 		tex->render(texturaRect, player);
@@ -55,7 +50,8 @@ void AnimationManager::getFrameImagePlayer(SDL_Rect player, SDL_Rect& texturaRec
 	}
 	else if (playerState_ == Idle) {
 		texturaRect.x = x1;
-		if (isTired_) texturaRect.y = 108;
+		if(isScared_)texturaRect.y = 198;
+		else if (isTired_) texturaRect.y = 108;
 		else texturaRect.y = 18;
 		tex->render(texturaRect, player);
 		if (game_->getTimer()->TimeScale() - timer >= playerFrameSpeed) {
@@ -67,32 +63,27 @@ void AnimationManager::getFrameImagePlayer(SDL_Rect player, SDL_Rect& texturaRec
 			timer = game_->getTimer()->TimeScale();
 		}
 		isTired_ = false;
+		isScared_ = false;
 	}
 	else if (playerState_ == GoToSleep) {
 
 		//las x
 		switch (newDir.x)
 		{
-		case 1: //Derecha
-			texturaRect.y = 144;
-			break;
-		case -1: //Izquierda
-			texturaRect.y = 126;
-			break;
-		default:
-			break;
+			//Derecha
+			case 1: texturaRect.y = 234; break;
+			//Izquierda
+			case -1: texturaRect.y = 126; break;
+			default: break;
 		}
 		//las y
 		switch (newDir.y)
 		{
-		case 1: //Abajo
-			texturaRect.y = 90;
-			break;
-		case -1: //Arriba
-			texturaRect.y = 162;
-			break;
-		default:
-			break;
+			//Abajo
+			case 1: texturaRect.y = 90; break;
+			//Arriba
+			case -1: texturaRect.y = 162; break;
+			default: break;
 		}
 
 		texturaRect.x = x1;
@@ -108,17 +99,38 @@ void AnimationManager::getFrameImagePlayer(SDL_Rect player, SDL_Rect& texturaRec
 		}
 	}
 	else if (playerState_ == Scared) {
-		texturaRect.x = 0;
-		texturaRect.y = 90;
+		//las x
+		switch (newDir.x)
+		{
+			//Derecha
+			case 1: texturaRect.y = 234; break;
+			//Izquierda
+			case -1: texturaRect.y = 216; break;
+			default: break;
+		}
+
+		//las y
+		switch (newDir.y)
+		{
+			//Abajo
+			case 1: texturaRect.y = 180; break;
+			//Arriba
+			case -1: texturaRect.y = 252; break;
+			default: break;
+		}
+
+		texturaRect.x = x1;
 		tex->render(texturaRect, player);
 
 		if (game_->getTimer()->TimeScale() - timer >= playerFrameSpeed) {
-			x1 += 16;
-			if (texturaRect.x >= playerLimit) {
-				texturaRect.x = 0;
-				x1 = 16;
+			if (game_->getTimer()->TimeScale() - timer >= playerFrameSpeed) {
+				x1 += 16;
+				if (texturaRect.x >= playerLimit - wPlayer_) {
+					texturaRect.x = 0;
+					x1 = 0;
+				}
+				timer = game_->getTimer()->TimeScale();
 			}
-			timer = game_->getTimer()->TimeScale();
 		}
 	}
 	if (playerState_ == Sleeping)
