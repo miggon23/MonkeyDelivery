@@ -111,6 +111,8 @@ void Player::update()
 
 void Player::move()
 {
+	cout << vel_ << "\n";
+
 	Vector2D<double> speed = { (double)dirX_, (double)dirY_ };
 	
 	//Normalizamos el vector para que no se desplaze m�s en diagonal
@@ -131,9 +133,6 @@ void Player::move()
 	else isStopped_ = false;
 
 	if (dirX_ != 0 || dirY_ != 0) {
-		if (isRunning) { //Esto se puede implementar desde el runCommand, evitando que el jugador tenga muchos estados como el de corriendo
-			speed = speed * 1.05;
-		}
 
 		// Comprobar si hay que cancelar el movimiento en alguna direcci�n por las colisiones
 		if (topCollision && speed.getY() < 0 || bottomCollision && speed.getY() > 0) {
@@ -192,6 +191,7 @@ void Player::changeSleep()
 		else {
 			//recoloca al player en su posición anterior
 			setPosition(posBeforeSleep.getX(), posBeforeSleep.getY());
+			vel_ = INIT_VEL_; // se resetea la velocidad
 			animationManager->setState(AnimationManager::PlayerState::Running);
 			if (flashLOn) {
 				usingFlashLight = true;
@@ -348,7 +348,7 @@ void Player::sendToBed()
 /// <summary>
 /// Manejar velocidad al chocar con una pared
 /// </summary>
-/// <param name="ud"> direccion en la que se cancela la velocidad</param> 
+/// <param name="dir"> direccion en la que se cancela la velocidad</param> 
 void Player::onCollision(int dir)
 {
 	switch (dir) {

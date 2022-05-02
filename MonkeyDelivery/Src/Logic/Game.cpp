@@ -141,12 +141,6 @@ void Game::start()
 
     info = new UI_Info(this);
 
-   /* auto* bed = new Bed(this);
-    bed->setPosition(1820, 1560);
-    player_->bedPos(1820, 1560);
-    add(bed);*/
-    //add(new Rock(this,2500,800));
-
     //banco principal
     auto cama = new Bed(this);
    

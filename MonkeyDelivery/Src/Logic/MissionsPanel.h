@@ -57,7 +57,7 @@ private:
 	Uint32 initialTicks_; // valor de los ticks cuando se activó la misión
 	Uint32 endTime_;
 
-	
+	bool upgradeAchieved_; // variable para que salga un diálogo tras acabar una mision, indicando que tienes un nuevo objeto
 public:
 	MissionsPanel(Game* game, AnimationManager* anim);
 	~MissionsPanel();

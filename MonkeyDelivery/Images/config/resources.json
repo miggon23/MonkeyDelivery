@@ -46,7 +46,7 @@
       "helperImage": "./Images/missions/mission03_UI_Helper.png",
       "maxmoney": 100,
       "minmoney": 50,
-      "mintime": 45000,
+      "mintime": 12000,
       "express": true,
       "special": false,
       "target": "NPC_Pavo",
@@ -229,6 +229,10 @@
     {
       "id": "MissionAlreadySelected",
       "text": "Tienes un pedido pendiente. Completalo antes de comenzar otro. El cliente espera."
+    },
+    {
+      "id": "Upgrade",
+      "text": "¡Has conseguido un pico! Pulsa E para utilizarlo y romper algunas rocas."
     }
   ],
 
@@ -321,8 +325,12 @@
         "file": "./Sounds/alarm.wav"
     },
     {
-        "id": "lose",
-        "file": "./Sounds/missionLost.wav"
+      "id": "lose",
+      "file": "./Sounds/missionLost.wav"
+    },
+    {
+      "id": "countdown",
+      "file": "./Sounds/ten_seconds_left.wav"
     }
   ],
 

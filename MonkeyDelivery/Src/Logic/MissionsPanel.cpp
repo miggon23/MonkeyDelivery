@@ -97,12 +97,16 @@ void MissionsPanel::onPlayerInteraction(Player* player)
 void MissionsPanel::update()
 {
 	if (currentMission_ != nullptr &&
-		currentMission_->isExpress() &&
-		getTime() <= 0) {
-
-		// terminar misión express
-		onMissionCompleted();
-		dialogueEnd();
+		currentMission_->isExpress()) {
+		if (getTime() <= 0) {
+			// terminar misión express
+			onMissionCompleted();
+			dialogueEnd();
+		}
+		else if (getTime()/1000 == 10 ) { // cuando queden 10 s
+			sdlutils().soundEffects().at("countdown").setVolume(game->getSoundEfectsVolume() * 2);
+			sdlutils().soundEffects().at("countdown").play(0, 2);
+		}
 	}
 }
 
@@ -179,12 +183,7 @@ void MissionsPanel::onMissionCompleted()
 	}
 	endTime_ = 0; // resetea la variable
 
-	if (m.isExpress && reward <= 0) { // quitar esto cuando esté el sonido de los 10 segundos
-		// sonido de perder
-		sdlutils().soundEffects().at("lose").setVolume(game->getSoundEfectsVolume() * 2);
-		sdlutils().soundEffects().at("lose").play(0, 1);
-	}
-	else if (reward < m.minMoney) { // si no es express le aseguro un mínimo de dinero
+	if ( !m.isExpress && reward < m.minMoney) { // si no es express le aseguro un mínimo de dinero
 		reward = m.minMoney;
 
 		// sonido de ganar
@@ -198,9 +197,10 @@ void MissionsPanel::onMissionCompleted()
 	levelsCompleted_[m.level]++;
 	if (levelsCompleted_[m.level] == levels_[m.level]) {
 		if (currentLevel_ != NLEVELS_) {
-			game->addPickaxe(currentLevel_);
+			game->addPickaxe(currentLevel_); // se le da la recompensa
 			currentLevel_++;
 			game->getShop()->actualice(currentLevel_);
+			upgradeAchieved_ = true;
 		}
 		else {
 			// terminar partida
@@ -219,12 +219,16 @@ void MissionsPanel::dialogueEnd()
 {
 	// Despawnear vecino -> cuando acabe el dialogo
 	activeTarget_->changeActive();
+
+	if (upgradeAchieved_) {
+		game->newDialogue("Upgrade");
+		upgradeAchieved_ = false;
+	}
 }
 
 int MissionsPanel::getTime()
 {
 	return initialTicks_ + endTime_ - game->getTimer()->TimeScale();
-	//return initialTicks_ + endTime_ - SDL_GetTicks();
 }
 
 string MissionsPanel::getMissionImage()
