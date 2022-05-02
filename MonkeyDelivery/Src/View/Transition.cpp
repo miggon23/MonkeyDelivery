@@ -30,7 +30,7 @@ void Transition::draw()
 		//SDL_RenderCopy(game->getRenderer(), maskTexture, NULL, &dest);
 
 	  /*5- Figure out when the effect has finished. */
-		if (size >= game->getWindowWidth() + 200) { // offset para que la animacion sea más fluida
+		if (size >= game->getWindowWidth() + 1500) { // offset para que la animacion sea más fluida
 			completed = true;
 		}
 	}
