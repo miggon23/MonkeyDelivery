@@ -163,7 +163,7 @@ void Player::setIsRunning(bool run)
 
 void Player::sleep(){
 	recoverFear(1);
-	drainEnergy(-0.1);
+	drainEnergy(-0.4);
 }
 
 //cambiar la variable de dormir y establecer la textura
