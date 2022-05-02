@@ -211,11 +211,13 @@ void Player::changeSleep()
 
 void Player::NoSleepText()
 {
-	int x = (int)game->getWindowWidth() / 2 - 250;
-	int y = (int)game->getWindowHeight() / 2 - 50;
+	//int x = (int)game->getWindowWidth() / 2 - 250;
+	//int y = (int)game->getWindowHeight() / 2 - 50;	
+	int x = 80;
+	int y = 200;
 	//Textos q renderiza
 	vector<string> texts = {
-			"No Puedes Dormir "," ",
+			"Ahora No Puedes Dormir "," ",
 			"Tienes Mucha Energia"
 	};
 

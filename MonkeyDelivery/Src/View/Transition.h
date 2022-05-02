@@ -8,7 +8,7 @@ class Transition
 private:
 	Game* game;
 	int size = 0;
-	int increase = 20;
+	int increase = 30;
 	Texture* maskTexture;
 	bool completed = false;
 
