@@ -48,6 +48,7 @@ void PlayingState::onEnterState()
 {
     game->getTimer()->UnPause();
     game->getPlayer()->resumePowerUps();
+
 }
 
 void PlayingState::update() {

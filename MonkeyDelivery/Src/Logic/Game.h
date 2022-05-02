@@ -49,10 +49,12 @@
 #include "../View/Camera.h"
 #include "../utils/Vector2D.h"
 #include "../utils/Particles/ParticleExample.h"
+#include "../View/Transition.h"
 
 #include "../json/JSON.h"
 #include "../sdlutils/SDLUtils.h"
 #include "../utils/Timer.h"
+
 
 #define TILE_SIZE 16
 
@@ -145,6 +147,8 @@ private:
 
     //Particle System
     ParticleExample* partSystem;
+
+    Transition* initialTransition;
 
 public:
 
@@ -246,4 +250,6 @@ public:
 
     // Añadir pico después de las misiones
     void addPickaxe(int level);
+
+    Transition* getInitialTransition();
 };

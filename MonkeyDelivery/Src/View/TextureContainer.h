@@ -156,9 +156,10 @@ enum TextureName
 		UI_Controls,
 
 		missingTex,
+		transitionTex
 };
 
-const int NUM_TEXTURES = 111;
+const int NUM_TEXTURES = 112;
 
 typedef struct {
 	string filename;
@@ -310,6 +311,7 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
 	{"tutorial/Tutorial.png",1,1},
 
 	{"missingTex.png",1,1},
+	{"transition.png",1,1}
 };
 
 class TextureContainer {

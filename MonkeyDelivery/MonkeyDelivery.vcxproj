@@ -270,6 +270,7 @@
     <ClInclude Include="Src\View\Font.h" />
     <ClInclude Include="Src\View\Texture.h" />
     <ClInclude Include="Src\View\TextureContainer.h" />
+    <ClInclude Include="Src\View\Transition.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
@@ -376,6 +377,7 @@
     <ClCompile Include="Src\View\Camera.cpp" />
     <ClCompile Include="Src\View\Texture.cpp" />
     <ClCompile Include="Src\View\Texture_manipulation.cpp" />
+    <ClCompile Include="Src\View\Transition.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="MonkeyDelivery.rc" />

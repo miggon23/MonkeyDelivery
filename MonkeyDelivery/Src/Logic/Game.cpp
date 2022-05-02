@@ -25,7 +25,6 @@ Game::Game(string n, double w, double h) : name(n), width(w), height(h), doExit(
     moneyFont_ = new Font("./Images/fonts/Pixellari.ttf", 26);
 
     animationManager_ = new AnimationManager(this);
-    
 }
 
 Game::~Game() {
@@ -72,6 +71,7 @@ Game::~Game() {
     }
 
     delete partSystem;
+    delete initialTransition;
 
     SDL_SetWindowBrightness(sdlutils().window(), 1);
     delete window_;
@@ -145,6 +145,8 @@ void Game::start()
     partSystem->setPosition(670, 600);             // set the position
     partSystem->setStyle(ParticleExample::SMOKE);  // set the example effects
 
+    initialTransition = new Transition(this);
+
     scalePlayerIcon();
 
     sdlutils().musics().at("gamemusic").play(-1);
@@ -172,13 +174,20 @@ void Game::update()
 
     for (auto enemy : enemyContainer_)
         enemy->update();
-
+    
     sdlutils().musics().at("gamemusic").setMusicVolume(getMusicVolume() * getGeneralVolume());
 }
 
 //Normal draw for entities(no Tiles)
 void Game::draw()
 {
+    // Para la animación inicial
+    if (!initialTransition->isComplete()) {
+        // 1- Clear the screen with black
+        SDL_SetRenderDrawColor(getRenderer(), 0, 0, 0, SDL_ALPHA_OPAQUE);
+        SDL_RenderClear(getRenderer());
+    }
+
     // Dibujado del mapa
     SDL_Rect dst = { 0, 0, (int)getWindowWidth(), (int)getWindowHeight() };
     SDL_Rect src = { (int)lround(mCamera_->getCameraPosition().getX() / (getWindowWidth() / mCamera_->getWidth())),
@@ -215,6 +224,11 @@ void Game::draw()
     scalePlayerIcon();
 
     player_->draw();
+    
+
+    if (!initialTransition->isComplete()) {
+        initialTransition->draw();
+    }
 }
 
 Point2D<int> Game::getOrigin() {
@@ -263,6 +277,8 @@ void Game::restart()
 {
     // comienza a sonar la música de juego de nuevo
     sdlutils().musics().at("gamemusic").play(-1);
+
+    initialTransition->restart();
 }
 
 //economy
@@ -548,4 +564,9 @@ void Game::scalePlayerIcon(){
 void Game::addPickaxe(int level)
 {
     player_->addPickaxe(level);
+}
+
+Transition* Game::getInitialTransition()
+{
+    return initialTransition;
 }
