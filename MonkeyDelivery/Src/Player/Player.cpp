@@ -41,8 +41,10 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game), anima
 
 	resetVelocity(); //Se inicializa al valor de INIT_VEL_X e ..._Y
 
+	Point2D<double> relative = { (double)(game->getWindowWidth() / 1800), (double)(game->getWindowHeight() / 1000) };
+
 	setDimension(48, 54);
-	setPosition(4050, 1800);
+	setPosition(4050 * relative.getX(), 1800 * relative.getY());
 
 	lastUpdate = timer.currTime();
 	flashlightTex_ = game->getTexture(lightGeneric);

@@ -14,7 +14,9 @@
 
 MissionsPanel::MissionsPanel(Game* game, AnimationManager* anim) : GameObject(game, true, anim)
 {
-	setPosition(4005, 1125);
+	Point2D<double> relative = { (double)(game->getWindowWidth() / 1800), (double)(game->getWindowHeight() / 1000) };
+
+	setPosition(4005 * relative.getX(), 1125 * relative.getY());
 	setDimension(108, 160);
 	setTexture(MissionPanel_Interact);
 

@@ -36,6 +36,7 @@ public:
     Vector2D operator+(const Vector2D<T>& v) const;
     Vector2D operator*(double d) const;
     double operator*(const Vector2D<T>& d) const;
+    Vector2D operator*=(const Vector2D<T>& d) const;
     Vector2D operator/(double d) const;
 };
 
@@ -179,6 +180,13 @@ Vector2D<T> Vector2D<T>::operator*(double d) const {
 template <typename T>
 double Vector2D<T>::operator*(const Vector2D<T>& d) const {
     return d.x * x + d.y * y;
+}
+
+template <typename T>
+Vector2D<T> Vector2D<T>::operator*=(const Vector2D<T>& d) const {
+    Vector2D<T> r;
+    r = { x * d.x, y * d.y };
+    return r;
 }
 
 template <typename T>

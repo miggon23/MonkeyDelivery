@@ -11,13 +11,13 @@
 
 class GameObjectGenerator
 {
-	int nBulls=4, nCats=13, nPlants=14, nBats=10, nScorpions=8, nChest=8, nRocks=16;
+	int nBulls = 4, nCats = 13, nPlants = 14, nBats = 10, nScorpions = 8, nChest = 8, nRocks = 16;
 
 	struct ChestDimension
 	{
-		int w=50, h=50;
+		int w = 50, h = 50;
 	};
-	struct Radios 
+	struct Radios
 	{
 		int bullR = 60;
 		int catR = 100;
@@ -57,29 +57,66 @@ public:
 		gOGenerator.createCats();
 		gOGenerator.createRocks();
 
-		Point2D<int> mapOffset = { 1150, 800 }; // variable para ajustar los objetos al mapa tras haber hecho una redimension de este
-
+		Point2D<int> mapOffset = { 1150, 800 }, newP; // variable para ajustar los objetos al mapa tras haber hecho una redimension de este
+		Point2D<double> relative = { (double)(game->getWindowWidth() / 1800), (double)(game->getWindowHeight() / 1000) };
 		for (int i = 0; i < gOGenerator.nChest; i++)
-			game->add(new InteractuableChest(game, gOGenerator.posChest[i].first + mapOffset.getX(), gOGenerator.posChest[i].second + mapOffset.getY(), gOGenerator.chestDimension_.w, gOGenerator.chestDimension_.h));
+		{
+			game->add(new InteractuableChest(game, (gOGenerator.posChest[i].first + mapOffset.getX())*relative.getX(), (gOGenerator.posChest[i].first + mapOffset.getX()) * relative.getY(), 
+				gOGenerator.chestDimension_.w, gOGenerator.chestDimension_.h));
+
+		}
 
 		for (int i = 0; i < gOGenerator.nBulls; i++)
-			game->addEnemies(new Bull(game, gOGenerator.radios_.bullR, gOGenerator.posBulls[i] + mapOffset, game->getAnimationManager()));
-		
+		{
+			newP = gOGenerator.posBulls[i] + mapOffset;
+			newP.setX(newP.getX() * relative.getX());
+			newP.setY(newP.getY() * relative.getY());
+			game->addEnemies(new Bull(game, gOGenerator.radios_.bullR, newP, game->getAnimationManager()));
+		}
+
+
 		for (int i = 0; i < gOGenerator.nScorpions; i++)
-			game->addEnemies(new Scorpion(game, gOGenerator.radios_.scorpionsR, gOGenerator.posScorpions[i] + mapOffset, game->getAnimationManager()));
+		{
+			newP = gOGenerator.posScorpions[i] + mapOffset;
+			newP.setX(newP.getX() * relative.getX());
+			newP.setY(newP.getY() * relative.getY());
+			game->addEnemies(new Scorpion(game, gOGenerator.radios_.scorpionsR, newP, game->getAnimationManager()));
+		}
+
 
 		for (int i = 0; i < gOGenerator.nBats; i++)
-			game->addEnemies(new Bat(game, gOGenerator.radios_.batsR, gOGenerator.posBats[i] + mapOffset, 3, game->getAnimationManager()));
+		{
+			newP = gOGenerator.posBats[i] + mapOffset;
+			newP.setX(newP.getX() * relative.getX());
+			newP.setY(newP.getY() * relative.getY());
+			game->addEnemies(new Bat(game, gOGenerator.radios_.batsR, newP, 3, game->getAnimationManager()));
+
+
+		}
+
 
 		for (int i = 0; i < gOGenerator.nPlants; i++)
-			game->addEnemies(new Plant(game, gOGenerator.radios_.plantsR, gOGenerator.posPlants[i] + mapOffset, game->getAnimationManager()));
-		
+		{
+			newP = gOGenerator.posPlants[i] + mapOffset;
+			newP.setX(newP.getX() * relative.getX());
+			newP.setY(newP.getY() * relative.getY());
+			game->addEnemies(new Plant(game, gOGenerator.radios_.plantsR, newP, game->getAnimationManager()));
+		}
+
+
 		for (int i = 0; i < gOGenerator.nCats; i++)
-			game->addEnemies(new Cat(game, gOGenerator.radios_.catR, gOGenerator.posCats[i] + mapOffset, game->getAnimationManager()));
+		{
+			newP = gOGenerator.posCats[i] + mapOffset;
+			newP.setX(newP.getX() * relative.getX());
+			newP.setY(newP.getY() * relative.getY());
+			game->addEnemies(new Cat(game, gOGenerator.radios_.catR, newP, game->getAnimationManager()));
+		}
+
 
 		for (int i = 0; i < gOGenerator.nRocks; i++)
 		{
-			game->add(new Rock(game, gOGenerator.posRock[i].first + mapOffset.getX(), gOGenerator.posRock[i].second + mapOffset.getY(), sdlutils().rand().nextInt(1,2)));
+			game->add(new Rock(game, (gOGenerator.posRock[i].first + mapOffset.getX()) * relative.getX(), (gOGenerator.posRock[i].second + mapOffset.getY()) * relative.getY(), 
+				sdlutils().rand().nextInt(1, 2)));
 		}
 	}
 	static GameObjectGenerator gOGenerator;

@@ -12,8 +12,21 @@ void Game::updateCameraPos()
 
 Game::Game(string n, double w, double h) : name(n), width(w), height(h), doExit(false), mCamera_(nullptr), mapOpened(false), mapPoint(nullptr), pIcon(nullptr)
 {
-    SDLUtils::init("Monkey Delivery", 1800, 1000,
+
+
+    /*  SDL_DisplayMode* desktop = new SDL_DisplayMode();
+      SDL_GetDesktopDisplayMode(0, desktop);*/
+
+
+    SDLUtils::init("Monkey Delivery", 100, 100,
         "Images/config/resources.json");
+
+    SDL_DisplayMode DM;
+    SDL_GetCurrentDisplayMode(0, &DM);
+    width = DM.w;
+    height = DM.h;
+
+    SDL_SetWindowSize(window_, width, height);
 
     setRenderer(sdlutils().renderer());
 
@@ -100,6 +113,7 @@ void Game::start()
     animationManager_ = new AnimationManager(this);
     player_ = new Player(this, animationManager_); //Creacion del jugador
 
+ 
     // Cámara:
     Vector2D<double> vJug = { (player_->getPosition().getX() - width / 2), (player_->getPosition().getY() - height / 2) };
     mCamera_ = new Camera(this, vJug, CAMSIZE_.getX(), CAMSIZE_.getY()); // Tamaño que se ve del mapa -> debe conservar la proporción de la ventana
@@ -113,10 +127,13 @@ void Game::start()
     mapPoint = new MAPPoint(this);
     pIcon = new PlayerIcon(this);
 
-    add(new IntectuableShop(this, 3700, 1600, animationManager_));
+    Point2D<double> relative = { (double)(getWindowWidth() / 1800), (double)(getWindowHeight() / 1000) };
+
+
+    add(new IntectuableShop(this, 3700*relative.getX(), 1600*relative.getY(), animationManager_));
     shop_ = new Shop(player_, this);
     shop_->actualice(1);
-    tutorialBook_ = new TutorialBook(this, 4000, 1660, 100, 75);
+    tutorialBook_ = new TutorialBook(this, 4000*relative.getX(), 1660*relative.getY(), 100, 75);
 
     GameObjectGenerator::generateLevel(this);
 
@@ -132,13 +149,14 @@ void Game::start()
 
     //banco principal
     auto cama = new Bed(this);
-    cama->setPosition(3280, 1090);
-    player_->bedPos(3280, 1090);
+   
+    cama->setPosition(3280 * relative.getX(), 1090 * relative.getY());
+    player_->bedPos(3280 * relative.getX(), 1090 * relative.getY());
     add(cama);
     //bancos secundarios
-    add(new Bed(this, 8000, 1970));
-    add(new Bed(this, 7050, 5820));
-    add(new Bed(this, 2450, 4565));
+    add(new Bed(this, 8000 * relative.getX(), 1970 * relative.getY()));
+    add(new Bed(this, 7050 * relative.getX(), 5820 * relative.getY()));
+    add(new Bed(this, 2450 * relative.getX(), 4565 * relative.getY()));
 
     partSystem = new ParticleExample();
     partSystem->setRenderer(renderer);             // set the renderer
