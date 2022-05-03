@@ -25,7 +25,7 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game), anima
 
 	//inicializacion de variables
 	fear_ = 0;
-	money_ = 100;
+	money_ = 0;
 	vel_ = 0;
 	orientation_ = "";
 	runningSpeedFactor_ = 1.5;

@@ -520,8 +520,8 @@ void Game::drawMap()
     minimapBorder_->render(rectPanel);
     //background_->render(rectPanel);
 
-    if (isMapPointerPut) 
-        mapPoint->draw();
+    /*if (isMapPointerPut) 
+        mapPoint->draw();*/
 
     pIcon->draw();
 }
