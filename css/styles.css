@@ -770,7 +770,7 @@ input[type='checkbox'] {
 	overflow: hidden;
 	padding-top: 8rem;
 	padding-bottom: 3rem;
-	background-color: #e29b18;/*fondo */
+	background-color: #e8eff6;/*fondo */
 	text-align: center;
 }
 
@@ -885,7 +885,8 @@ input[type='checkbox'] {
 .basic-1 {
 	padding-top: 3rem;
 	padding-bottom: 8rem;
-	background-color: #f7fafd;
+	/* background-color: #f7fafd; */
+	background-color: #e8eff6;
 }
 
 .basic-1 .image-container {
