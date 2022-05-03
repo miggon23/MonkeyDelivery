@@ -111,7 +111,7 @@ void Game::start()
     inGame = true;
   
     animationManager_ = new AnimationManager(this);
-    player_ = new Player(this, animationManager_); //Creacion del jugadorIn
+   if(player_==nullptr) player_ = new Player(this, animationManager_); //Creacion del jugadorIn
  
     // Cámara:
     Vector2D<double> vJug = { (player_->getPosition().getX() - width / 2), (player_->getPosition().getY() - height / 2) };
@@ -129,10 +129,10 @@ void Game::start()
     Point2D<double> relative = { (double)(getWindowWidth() / 1800), (double)(getWindowHeight() / 1000) };
 
 
-    add(new IntectuableShop(this, 3700*relative.getX(), 1600*relative.getY(), animationManager_));
+    add(new IntectuableShop(this, (int)(3700*relative.getX()), (int)(1600*relative.getY()), animationManager_));
     shop_ = new Shop(player_, this);
     shop_->actualice(1);
-    tutorialBook_ = new TutorialBook(this, 4000*relative.getX(), 1660*relative.getY(), 100, 75);
+    tutorialBook_ = new TutorialBook(this, (int)(4000*relative.getX()), (int)(1660*relative.getY()), 100, 75);
 
     GameObjectGenerator::generateLevel(this);
 
@@ -143,13 +143,13 @@ void Game::start()
     //banco principal
     auto cama = new Bed(this);
    
-    cama->setPosition(3280 * relative.getX(), 1090 * relative.getY());
-    player_->bedPos(3280 * relative.getX(), 1090 * relative.getY());
+    cama->setPosition((int)(3280 * relative.getX()), (int)(1090 * relative.getY()));
+    player_->bedPos((int)(3280 * relative.getX()), (int)(1090 * relative.getY()));
     add(cama);
     //bancos secundarios
-    add(new Bed(this, 8000 * relative.getX(), 1970 * relative.getY()));
-    add(new Bed(this, 7050 * relative.getX(), 5820 * relative.getY()));
-    add(new Bed(this, 2450 * relative.getX(), 4565 * relative.getY()));
+    add(new Bed(this, (int)(8000 * relative.getX()), (int)(1970 * relative.getY())));
+    add(new Bed(this, (int)(7050 * relative.getX()), (int)(5820 * relative.getY())));
+    add(new Bed(this, (int)(2450 * relative.getX()), (int)(4565 * relative.getY())));
 
     partSystem = new ParticleExample();
     partSystem->setRenderer(renderer);             // set the renderer
@@ -517,6 +517,7 @@ void Game::drawMap()
 
     //Marco?
     minimapBorder_ = getTexture(minimapOverlay02);
+    rectPanel.x -= 13; rectPanel.y -= 13; rectPanel.w += 25; rectPanel.h += 25;
     minimapBorder_->render(rectPanel);
     //background_->render(rectPanel);
 

@@ -143,8 +143,8 @@ void Enemy::checkDistance()
 bool Enemy::inPoint()
 {
 	auto point = checkpoints[indexCheckPoint] + offsetCamera;
-	int x = getPosition().getX() - point.getX(),
+	double x = getPosition().getX() - point.getX(),
 		y = getPosition().getY() - point.getY();
 
-	return abs(x) + abs(y) < nearLimit_;
+	return abs((int)x) + abs((int)y) < nearLimit_;
 }

@@ -16,7 +16,7 @@ UI_Info::UI_Info(Game* game)
 	textY = (int)(game->getWindowHeight() / 14.7);
 	wP = (int)(game->getWindowWidth() / 4.14);
 	hP = (int)(game->getWindowWidth() / 13.0);
-	xpressX = game->getWindowWidth() / 21.18;
+	xpressX = (int)(game->getWindowWidth() / 21.18);
 	
 }
 UI_Info::~UI_Info()	

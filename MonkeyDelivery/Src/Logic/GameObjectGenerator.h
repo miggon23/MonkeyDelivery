@@ -60,7 +60,7 @@ public:
 		Point2D<double> relative = { (double)(game->getWindowWidth() / 1800), (double)(game->getWindowHeight() / 1000) };
 		for (int i = 0; i < gOGenerator.nChest; i++)
 		{
-			game->add(new InteractuableChest(game, (gOGenerator.posChest[i].first + mapOffset.getX())*relative.getX(), (gOGenerator.posChest[i].second + mapOffset.getY()) * relative.getY(), 
+			game->add(new InteractuableChest(game, (int)((gOGenerator.posChest[i].first + mapOffset.getX())*relative.getX()), (int)((gOGenerator.posChest[i].second + mapOffset.getY()) * relative.getY()),
 				gOGenerator.chestDimension_.w, gOGenerator.chestDimension_.h));
 
 		}
@@ -68,8 +68,8 @@ public:
 		for (int i = 0; i < gOGenerator.nBulls; i++)
 		{
 			newP = gOGenerator.posBulls[i] + mapOffset;
-			newP.setX(newP.getX() * relative.getX());
-			newP.setY(newP.getY() * relative.getY());
+			newP.setX((int)(newP.getX() * relative.getX()));
+			newP.setY((int)(newP.getY() * relative.getY()));
 			game->addEnemies(new Bull(game, gOGenerator.radios_.bullR, newP, game->getAnimationManager()));
 		}
 
@@ -77,8 +77,8 @@ public:
 		for (int i = 0; i < gOGenerator.nScorpions; i++)
 		{
 			newP = gOGenerator.posScorpions[i] + mapOffset;
-			newP.setX(newP.getX() * relative.getX());
-			newP.setY(newP.getY() * relative.getY());
+			newP.setX((int)(newP.getX() * relative.getX()));
+			newP.setY((int)(newP.getY() * relative.getY()));
 			game->addEnemies(new Scorpion(game, gOGenerator.radios_.scorpionsR, newP, game->getAnimationManager()));
 		}
 
@@ -86,8 +86,8 @@ public:
 		for (int i = 0; i < gOGenerator.nBats; i++)
 		{
 			newP = gOGenerator.posBats[i] + mapOffset;
-			newP.setX(newP.getX() * relative.getX());
-			newP.setY(newP.getY() * relative.getY());
+			newP.setX((int)(newP.getX() * relative.getX()));
+			newP.setY((int)(newP.getY() * relative.getY()));
 			game->addEnemies(new Bat(game, gOGenerator.radios_.batsR, newP, 3, game->getAnimationManager()));
 
 
@@ -97,8 +97,8 @@ public:
 		for (int i = 0; i < gOGenerator.nPlants; i++)
 		{
 			newP = gOGenerator.posPlants[i] + mapOffset;
-			newP.setX(newP.getX() * relative.getX());
-			newP.setY(newP.getY() * relative.getY());
+			newP.setX((int)(newP.getX() * relative.getX()));
+			newP.setY((int)(newP.getY() * relative.getY()));
 			game->addEnemies(new Plant(game, gOGenerator.radios_.plantsR, newP, game->getAnimationManager()));
 		}
 
@@ -106,15 +106,15 @@ public:
 		for (int i = 0; i < gOGenerator.nCats; i++)
 		{
 			newP = gOGenerator.posCats[i] + mapOffset;
-			newP.setX(newP.getX() * relative.getX());
-			newP.setY(newP.getY() * relative.getY());
+			newP.setX((int)(newP.getX() * relative.getX()));
+			newP.setY((int)(newP.getY() * relative.getY()));
 			game->addEnemies(new Cat(game, gOGenerator.radios_.catR, newP, game->getAnimationManager()));
 		}
 
 
 		for (int i = 0; i < gOGenerator.nRocks; i++)
 		{
-			game->add(new Rock(game, (gOGenerator.posRock[i].first + mapOffset.getX()) * relative.getX(), (gOGenerator.posRock[i].second + mapOffset.getY()) * relative.getY(), 
+			game->add(new Rock(game, (int)((gOGenerator.posRock[i].first + mapOffset.getX()) * relative.getX()), (int)((gOGenerator.posRock[i].second + mapOffset.getY()) * relative.getY()),
 				sdlutils().rand().nextInt(1, 2)));
 		}
 	}
