@@ -9,23 +9,10 @@ Animaciones del mono no van bien, añadir Idle
 Cuando se pulsa la letra e se activa el tutorial
 
 ARTE
-Enemigos----
-Gato - Hecho (hay que subirlo)
-Toro - Sprite
-Escorpion - Sprite
 Sprites luces linternas
-
-Actualizar Misiones----
 Terminar de Arrelgar los tiles que faltan--------
-
-Items------
-Caja Flappy Hippo(puede ser el paquete)
-Pescado Muerto
-DROGA
-Arreglar Luces
                                        
-Creditos-------
-Marco Minimapa -------                                                                 
+Creditos-------                                                            
 
 Menu de ajustes arte
 Menu de creditos arte
