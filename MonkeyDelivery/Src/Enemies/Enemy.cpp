@@ -106,7 +106,7 @@ void Enemy::respawn()
 			respawnTimer = SDL_GetTicks();
 			startTimer = true;
 		}
-		if (respawnTimer + 15000 < SDL_GetTicks()) {
+		if (respawnTimer + 210000 < SDL_GetTicks()) {
 			spawn();
 			respawnTimer = SDL_GetTicks();
 		}
