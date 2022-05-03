@@ -282,8 +282,8 @@ void Player::draw()
 		energyLevel_->draw();
 		fearLevel_->draw();
 		playerHUD_->drawOverHUD();
-		game->renderMoney(to_string(money_), 145, 134);
-		game->renderMoney(to_string(chestsOpened), 305, 130);
+		game->renderMoney(to_string(money_), 165, 137, SDL_Color{255,255,255,255});
+		game->renderMoney(to_string(chestsOpened), 320, 130);
 		powerUpsManager->draw();
 
 		if (boolrenderSleepText) NoSleepText();

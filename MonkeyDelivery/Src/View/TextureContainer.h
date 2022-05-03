@@ -148,6 +148,7 @@ enum TextureName
 		button_Main_Options,
 		button_Main_StartButton,
 		button_Pause,
+		button_Selector,
 		UI_Fade,
 		UI_label,
 		UI_Checker00,
@@ -161,7 +162,7 @@ enum TextureName
 		transitionTex
 };
 
-const int NUM_TEXTURES = 114;
+const int NUM_TEXTURES = 115;
 
 typedef struct {
 	string filename;
@@ -305,6 +306,7 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
 	{"ui/Menu/button_Main_Options.png",1,1 },
 	{"ui/Menu/button_Main_StartButton.png",1,1 },
 	{"ui/Menu/button_Pause.png",1,1 },
+	{"ui/Menu/button_Selector.png",1,1 },
 	{"ui/Menu/fade.png",1,1},
 	{"ui/Menu/label.png",1,1},
 	{"ui/Menu/UI_Checker00.png",1,1},

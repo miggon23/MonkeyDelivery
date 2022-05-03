@@ -13,8 +13,8 @@ ShopState::ShopState(Game* game) : State(game){
 
 	font_ = new Font("Images/fonts/Pixellari.ttf", 40);
 
-	xObj = (int)game->getWindowWidth() / 5;
-	yObj = (int)game->getWindowHeight() / 3;
+	xObj = 405;
+	yObj = 512;
 	wObj = (int)(game->getWindowWidth() / 2.5);
 	hObj = (int)game->getWindowHeight() / 2;
 	xOffset = (int)game->getWindowWidth() / 10;

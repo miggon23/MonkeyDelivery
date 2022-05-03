@@ -64,8 +64,8 @@ MissionSelectionState::MissionSelectionState(Game* game, vector<pair<string,stri
 
 	buttonsX_ = (int)(game->getWindowWidth()/1.3);
 	buttonsY_ = (int)(game->getWindowHeight()/1.3);
-	buttonsW_ = (int)(game->getWindowWidth()/6.0);
-	buttonsH_ = (int)(game->getWindowHeight()/5.88);
+	buttonsW_ = 450;
+	buttonsH_ = 200;
 
 	//currentSelection_ = missionImg[0].first; ->if it's string
 	currentSelection_ = 0;
