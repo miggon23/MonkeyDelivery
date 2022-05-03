@@ -85,6 +85,7 @@ private:
 	double fieldOfView_;
 	//CHEST
 	int chestsOpened;
+	int xChest, xMoney, yChests, yMoney;
 
 	//ENERGIA
 	int maxEnergyPercent_;		//Limite de energia que se rellena al estar parado

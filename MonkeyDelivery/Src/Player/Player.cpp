@@ -67,6 +67,11 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game), anima
 	//timer = sdlutils().virtualTimer();
 
 	fadeTex_ = game->getTexture(UI_Fade);
+
+	xMoney = game->getWindowWidth() / 10.91;
+	yMoney = yChests = game->getWindowHeight() / 7.30;
+	xChest = game->getWindowWidth() / 5.625;
+	
 }
 
 Player::~Player()
@@ -283,8 +288,10 @@ void Player::draw()
 		fearLevel_->draw();
 		playerHUD_->drawOverHUD();
 		
-		game->renderMoney(to_string(money_), 165, 137, SDL_Color{255,255,255,255});
-		game->renderMoney(to_string(chestsOpened), 320, 130);
+		
+
+		game->renderMoney(to_string(money_), xMoney, yMoney, SDL_Color{255,255,255,255});
+		game->renderMoney(to_string(chestsOpened), xChest, yChests);
 		powerUpsManager->draw();
 
 		if (boolrenderSleepText) NoSleepText();

@@ -15,7 +15,7 @@ private:
 	Game* game;
 	Texture* clock_;
 
-	int textX, textY, xP, yP, wP, hP;
+	int textX, textY, xP, yP, wP, hP, xpressX;
 
 public:
 	UI_Info(Game* game);
