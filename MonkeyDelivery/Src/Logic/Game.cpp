@@ -516,7 +516,7 @@ void Game::drawMap()
     SDL_RenderCopy(renderer, background_, &src, &rectPanel);
 
     //Marco?
-    minimapBorder_ = getTexture(minimapBorder);
+    minimapBorder_ = getTexture(minimapOverlay02);
     minimapBorder_->render(rectPanel);
     //background_->render(rectPanel);
 

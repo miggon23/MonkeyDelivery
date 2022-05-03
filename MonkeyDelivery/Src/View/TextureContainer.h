@@ -85,6 +85,7 @@ enum TextureName
 		minimapOverlay,
 		minimapBorder,
 		playerIconTex,
+		minimapOverlay02,
 	
 	//7-Missions - 6
 		mission_UI_Helper,
@@ -162,7 +163,7 @@ enum TextureName
 		transitionTex
 };
 
-const int NUM_TEXTURES = 115;
+const int NUM_TEXTURES = 116;
 
 typedef struct {
 	string filename;
@@ -243,6 +244,7 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
 	{"map/minimapOverlay.png",1,1},
 	{"map/minimapBorder.png",1,1},
 	{"map/playerIcon.png",1,1},
+	{"map/minimapOverlay02.png",1,1},
 
 	//7-Missions
 	{"missions/mission01_UI_Helper.png",1,1},
