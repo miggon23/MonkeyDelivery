@@ -11,7 +11,7 @@
 #include "../UI/Sliders/GeneralMusicSlider.h"
 #include "../UI/Sliders/BrightnessSlider.h"
 
-OptionsState::OptionsState(Game* game/*, int num*/) : State(game){
+OptionsState::OptionsState(Game* game) : State(game){
 	registerCommands();
 	
 	addButton(new Back((int)game->getWindowWidth() / 2 - buttonW/2, (int)game->getWindowHeight() - 250, buttonW, buttonH, game));
@@ -21,9 +21,6 @@ OptionsState::OptionsState(Game* game/*, int num*/) : State(game){
 	addSlider(new GeneralMusicSlider(game, game->getWindowWidth() / 2 , game->getWindowHeight() / 4 - 50));
 	addSlider(new GeneralSoundsEffectSlider(game, game->getWindowWidth() / 2, 450));
 	backgroundTexture = game->getTexture(bckg_options);
-	
-	//signsTexture = game->getTexture(settingsSignsTexture);
-	//settingsSignsTexture
 
 	selectorTexture = game->getTexture(mission_UI_Selector);
 }
@@ -38,8 +35,7 @@ void OptionsState::update(){
 void OptionsState::draw(){
 	SDL_Rect rectPanel = { 0,0,(int)game->getWindowWidth(),(int)game->getWindowHeight() };
 	backgroundTexture->render(rectPanel);
-	/*rectPanel = { 100,100,200,400 };
-	signsTexture->render(rectPanel);*/
+	
 	for (auto b : getButtonsUI()) {
 		b->draw();
 	}
@@ -50,10 +46,6 @@ void OptionsState::draw(){
 	// Dibujar selector
 	rectPanel = { (int)buttonsUI[0]->getPosition().getX(), (int)buttonsUI[0]->getPosition().getY(), (int)buttonsUI[0]->getWidth(), (int)buttonsUI[0]->getHeight() };
 	selectorTexture->render(rectPanel);
-}
-
-void OptionsState::next(){
-
 }
 
 void OptionsState::registerCommands(){	

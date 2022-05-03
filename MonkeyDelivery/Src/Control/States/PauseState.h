@@ -12,9 +12,9 @@ public:
 	PauseState(Game* game);
 	~PauseState() = default;
 
-	void update()override;
+	inline void update()override {};
 	void draw()override;
-	void next()override;
+	inline void next()override {};
 	void onEnterState() override;
 
 	void moveBox(Vector2D<int> i) override;

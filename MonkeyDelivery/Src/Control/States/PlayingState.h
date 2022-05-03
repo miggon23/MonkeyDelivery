@@ -9,7 +9,7 @@ public:
     PlayingState(Game* game);
     ~PlayingState() = default;
 
-    void update() override;
+    inline void update() override { game->update(); };
     void draw() override;
     void next() override;
     void registerCommands() override;

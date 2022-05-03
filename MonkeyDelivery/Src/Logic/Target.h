@@ -11,7 +11,7 @@ public:
 	~Target();
 
 	void onPlayerInteraction(Player* player) override;
-	void update() override;
+	inline void update() override {};
 	void draw() override;
 
 	inline void changeActive() {

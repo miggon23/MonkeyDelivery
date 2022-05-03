@@ -4,6 +4,7 @@
 #include "../ShopCommand.h"
 #include "../../Logic/Shop.h"
 #include <string>
+
 ShopState::ShopState(Game* game) : State(game){
 	registerCommands();
 
@@ -34,43 +35,25 @@ ShopState::ShopState(Game* game) : State(game){
 	coinsH_ = (int)(game->getWindowHeight() / 35.0 * d);
 
 	shop_ = game->getShop();
-	//shop_->actualice();
 	maxSelected = shop_->getSize();
 }
 
 ShopState::~ShopState()
 {
-	
 	panelTexture = nullptr;
-	//delete shop_;
 	shop_ = nullptr;
 	delete font_;
 	font_ = nullptr;
 }
 
-
-void ShopState::update()
-{
-}
-
 void ShopState::draw()
 {
 	//renderizado del fondo
-	
 	SDL_Rect rectPanel = { 0,0,(int)game->getWindowWidth(),(int)game->getWindowHeight() };
 	panelTexture->render(rectPanel);
 	std::cout << selected_ << std::endl;
 	int i = 0;
 
-	
-	//pruebas
-	//while (i < 4 && i < shop_->getSize())
-	//{
-	//	//shop_->objects[i]->getTexture()->render({ xOffset + xObj * i, yOffset, wObj, hObj });
-	//	shop_->objects2[i].inventoryObject->getTexture()->render({ xOffset + xObj * shop_->objects2[i].positionRectX, yOffset, wObj, hObj });
-	//	i++;
-	//}	
-	
 	//renderizado de los objetos	
 	while (i < shop_->getSize())
 	{
@@ -99,7 +82,6 @@ void ShopState::draw()
 	}
 
 	//renderizado del objeto seleccionado
-
 	if(selected_ < 4)
 		rectPanel = { xOffset + xObj * selected_ , yOffset , xObj, yObj };
 	else
@@ -133,11 +115,6 @@ void ShopState::draw()
 
 	rectPanel.x += coinsX_/2 + 75;
 	coinTexture->render(rectPanel);
-
-}
-
-void ShopState::next()
-{
 }
 
 void ShopState::registerCommands()
@@ -149,13 +126,6 @@ void ShopState::registerCommands()
 
 void ShopState::moveSelectedX(int to)
 {
-	//pruebas, sustituir 6 shop_->getSize()-1
-	//if (selected_ == shop_->getSize() - 1 && to > 0)
-	//	selected_ = 0;
-	//else if (selected_ == 0 && to < 0)
-	//	selected_ = shop_->getSize() - 1;
-	//else
-	//	selected_ += to;
 	if (selected_ + to < maxSelected && selected_ + to >= 0)
 		selected_ += to;	
 }

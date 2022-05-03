@@ -9,15 +9,6 @@ MissionSelectionState::MissionSelectionState(Game* game) : State(game)
 	controls_ = game->getTexture(UI_MissionsControls);
 	
 	registerCommands();
-
-	//// Aquí se cargan todas las texturas de todas las misiones 
-	//allTextures_.push_back(game->getTexture(Mission01));
-	//allTextures_.push_back(game->getTexture(Mission02));
-	//allTextures_.push_back(game->getTexture(Mission07));
-
-	
-
-	
 }
 
 // Constructora cuando cambiemos las texturas
@@ -52,7 +43,6 @@ MissionSelectionState::MissionSelectionState(Game* game, vector<pair<string,stri
 			currentTextures_.push_back(tex);
 
 		missionData_.push_back(a.first);
-
 	}
 
 	offsetX_ = (int)game->getWindowWidth() / 18;
@@ -86,21 +76,8 @@ MissionSelectionState::~MissionSelectionState()
 	background_ = nullptr;
 }
 
-
-
 void MissionSelectionState::draw()
 {
-	/*SDL_Rect textureBox = { 0, 0, game->getWindowWidth(), game->getWindowHeight()};
-	background_->render(textureBox);
-	
-	SDL_Rect textureBox2 = { 150, 15, 500, 375};
-	paper_->render(textureBox2);*/
-
-	/*for (auto c : missionImages_) {
-		SDL_Rect textureBox2 = { 150, 15, 500, 375 };
-		paper_->render(textureBox2);
-	}*/
-
 	SDL_Rect textureBox = { 0, 0, (int)game->getWindowWidth(), (int)game->getWindowHeight() };
 	background_->render(textureBox);
 
@@ -114,22 +91,9 @@ void MissionSelectionState::draw()
 	SDL_Rect textureBox2 = { boxXPos_, ySize_, wSize_, h2Size_ };
 	box_->render(textureBox2);
 
-	//double xPosRatio = game->getWindowWidth() / 1380.0;
-	//double yPosRatio = game->getWindowHeight() / 770.0;
-	//double xRatio = game->getWindowWidth() / 300.0;
-	//double yRatio = game->getWindowHeight() / 170.0;
-
 	SDL_Rect textureBox3 = { buttonsX_, buttonsY_, buttonsW_, buttonsH_ };
 	controls_->render(textureBox3);
 	
-}
-
-void MissionSelectionState::update()
-{
-}
-
-void MissionSelectionState::next()
-{
 }
 
 void MissionSelectionState::registerCommands()

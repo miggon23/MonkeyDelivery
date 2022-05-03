@@ -11,12 +11,12 @@ class OptionsState : public State
 
 	int currentSelection = 0; // slider seleccionado (en el array slidersUI)
 public:
-	OptionsState(Game* game/*, int num*/);
+	OptionsState(Game* game);
 	~OptionsState() = default;
 
 	void update()override;
 	void draw()override;
-	void next()override;
+	inline void next()override {};
 
 	inline Button* getCurrentButton() override { 
 		// en esta pantalla solo está este botón
@@ -29,5 +29,3 @@ public:
 
 	void registerCommands()override;
 };
-
-

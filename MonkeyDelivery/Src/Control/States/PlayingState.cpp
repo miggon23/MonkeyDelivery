@@ -2,7 +2,6 @@
 
 #include "../../Logic/Game.h"
 
-//#include "../NextStateCommand.h"
 #include "../CommandMove.h"
 #include "../CommandRun.h"
 #include "../CommandInteract.h"
@@ -31,8 +30,7 @@ PlayingState::PlayingState(Game* game) : State(game) {
 }
 
 void PlayingState::registerCommands() {
-
-    //commandFactory->add(new NextStateCommand());
+    
     commandFactory->add(new CommandMove());
     commandFactory->add(new CommandExit());
     commandFactory->add(new CommandInteract());
@@ -48,11 +46,6 @@ void PlayingState::onEnterState()
 {
     game->getTimer()->UnPause();
     game->getPlayer()->resumePowerUps();
-
-}
-
-void PlayingState::update() {
-    game->update();
 }
 
 void PlayingState::draw() {
@@ -61,11 +54,9 @@ void PlayingState::draw() {
     for (auto b : getButtonsUI()) {
         b->draw();
     }
-    //game->DrawBrightness();
 }
 
 void PlayingState::next() {
     cout << "Next State " << endl;
-    //game->setState(new MenuState(game));
     delete this;
 }

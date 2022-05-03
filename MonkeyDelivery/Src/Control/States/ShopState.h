@@ -8,9 +8,9 @@ public:
 	ShopState(Game* game);
 	~ShopState();
 
-	void update()override;
+	inline void update()override {};
 	void draw ()override;
-	void next()override;
+	inline void next()override {};
 
 	string getStateName() const {
 		return "Shop state";

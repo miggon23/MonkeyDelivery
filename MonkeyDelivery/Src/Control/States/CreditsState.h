@@ -12,8 +12,8 @@ public:
 
 	void loadCredits(std::string filename);
 
-	void next()override;
-	void onExitState() override;
+	inline void next()override {};
+	inline void onExitState() override {};
 	void onEnterState() override;
 
 	string getStateName() const {
@@ -43,10 +43,3 @@ private:
 
 	int lastName_, index_ = 0;
 };
-
-
-
-
-
-
-

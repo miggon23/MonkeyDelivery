@@ -22,6 +22,7 @@ Target::Target(MissionsPanel* mp, Game* g, AnimationManager* animation) : GameOb
 Target::~Target()
 {
 	missionsPanel_ = nullptr;
+	animationManager = nullptr;
 }
 
 void Target::onPlayerInteraction(Player* player)
@@ -41,13 +42,9 @@ void Target::onPlayerInteraction(Player* player)
 	}
 }
 
-void Target::update()
-{
-}
-
 void Target::draw() {
 	if (active_) {
-		//drawTexture(texture);
+		
 		 SDL_Rect pos = getCollider();
 
         //Dibujamos respecto a la camara
@@ -55,7 +52,6 @@ void Target::draw() {
         pos.y -= (int)game->getCamera()->getCameraPosition().getY();
 
 		animationManager->getFrameImage(pos, textureRect, texture, timerAnimation_, flip, width_, height_, maxX_, maxY_, time_);
-        //texture->render(pos);
 	}
 }
 

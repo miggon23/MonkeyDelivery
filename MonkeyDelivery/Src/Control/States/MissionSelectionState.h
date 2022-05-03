@@ -10,8 +10,8 @@ public:
 	~MissionSelectionState();
 
 	void draw() override;
-	void update() override;
-	void next() override;
+	inline void update() override {};
+	inline void next() override {};
 
 	string getStateName() const {
 		return "Mission Selection state";

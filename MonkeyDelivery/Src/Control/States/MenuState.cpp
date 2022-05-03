@@ -48,18 +48,9 @@ void MenuState::draw()
 {
 	SDL_Rect rectPanel = { 0,0,(int)game->getWindowWidth(),(int)game->getWindowHeight() };
 	backgroundTexture->render(rectPanel);
-	rectPanel = { (int)game->getWindowWidth() / 2 - titleW / 2, titleH / 3, titleW, titleH };
+	rectPanel = { (int)game->getWindowWidth() / 2 - titleW / 2, titleH / 6, titleW, titleH };
 	titleTexture->render(rectPanel);
 
-	/*int x = game->getWindowWidth() / 2 - 250;
-	int y = game->getWindowHeight() / 2 - 350;
-
-	vector<string> texts = {
-			"Welcome to Monkey Delivery"
-	};
-
-	game->renderText(texts, x, y, 75, 75);*/
-	//game->DrawBrightness();
 	for (auto b : getButtonsUI()) {
 		b->draw();
 	}

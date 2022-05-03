@@ -20,10 +20,6 @@ PauseState::PauseState(Game* game) : State(game)
 	selectorTexture = game->getTexture(mission_UI_Selector);
 }
 
-void PauseState::update()
-{
-}
-
 void PauseState::draw()
 {
 	SDL_Rect rectPanel = { 0,0,(int)game->getWindowWidth(),(int)game->getWindowHeight() };
@@ -38,13 +34,6 @@ void PauseState::draw()
 	selectorTexture->render(rectPanel);
 }
 
-void PauseState::next()
-{
-	/*for (auto b : buttonsUI) {
-		delete b;
-		b = nullptr;
-	}*/
-}
 
 void PauseState::onEnterState()
 {
