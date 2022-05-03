@@ -228,7 +228,7 @@ void MissionsPanel::dialogueEnd()
 
 int MissionsPanel::getTime()
 {
-	return initialTicks_ + endTime_ - game->getTimer()->TimeScale();
+	return initialTicks_ + endTime_ - (int)game->getTimer()->TimeScale();
 }
 
 string MissionsPanel::getMissionImage()

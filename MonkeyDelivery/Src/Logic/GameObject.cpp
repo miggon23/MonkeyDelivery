@@ -63,8 +63,8 @@ void GameObject::setPosition(double x, double y)
 
 void GameObject::setDimension(double width, double height)
 {
-    w = width;
-    h = height;
+    w = (int)width;
+    h = (int)height;
 }
 
 void GameObject::draw()

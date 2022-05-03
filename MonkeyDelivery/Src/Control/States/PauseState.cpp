@@ -58,7 +58,7 @@ void PauseState::moveBox(Vector2D<int> i)
 		currentSelection = 0;
 	}
 	else if (currentSelection > buttonsUI.size() - 1) {
-		currentSelection = buttonsUI.size() - 1;
+		currentSelection = (int)buttonsUI.size() - 1;
 	}
 }
 

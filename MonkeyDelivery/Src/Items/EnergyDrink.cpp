@@ -20,7 +20,7 @@ bool EnergyDrink::useObject()
     player_->setBonusSpending(energyBonus_);*/
     std::cout << "energydrink activado: NO GASTA ENERGIA EL JUGADOR Y VA MAS RAPIDO" << std::endl;
     player_->initPowerUp(energyDrink);
-    sdlutils().soundEffects().at("soda").setVolume(game_->getSoundEfectsVolume()*game_->getGeneralVolume());
+    sdlutils().soundEffects().at("soda").setVolume((int)(game_->getSoundEfectsVolume()*game_->getGeneralVolume()));
     sdlutils().soundEffects().at("soda").play(0, 1);
     return true;
 }

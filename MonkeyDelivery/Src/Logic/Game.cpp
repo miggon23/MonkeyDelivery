@@ -26,7 +26,7 @@ Game::Game(string n, double w, double h) : name(n), width(w), height(h), doExit(
     width = DM.w;
     height = DM.h;
 
-    SDL_SetWindowSize(window_, width, height);
+    SDL_SetWindowSize(window_, (int)width, (int)height);
 
     setRenderer(sdlutils().renderer());
 
@@ -167,7 +167,6 @@ void Game::update()
 {
     player_->update();
     updateCameraPos();
-   
     for (auto c : collisions_) {
         c->update();
     }
@@ -186,7 +185,7 @@ void Game::update()
     for (auto enemy : enemyContainer_)
         enemy->update();
     
-    sdlutils().musics().at("gamemusic").setMusicVolume(getMusicVolume() * getGeneralVolume());
+    sdlutils().musics().at("gamemusic").setMusicVolume((int)(getMusicVolume() * getGeneralVolume()));
 }
 
 //Normal draw for entities(no Tiles)
