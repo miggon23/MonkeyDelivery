@@ -829,6 +829,7 @@ input[type='checkbox'] {
 	margin-left: auto;
 	border-radius: 50%;
 	background-color: #ebe7fa;
+	margin-top: 5em;
 }
 
 .cards-1 .card-image .fas {
@@ -1931,6 +1932,10 @@ a:hover.back-to-top {
 		border-radius: 10px;
 		box-shadow: 0 0 15px #ddd;
 		background: #fff;
+	}
+
+	.video-container {
+		margin-top: 2em;
 	}
 
 	/* Footer */
