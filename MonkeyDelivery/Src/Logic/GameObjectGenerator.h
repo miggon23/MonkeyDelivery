@@ -49,7 +49,6 @@ public:
 	static void generateLevel(Game* game) //Lo llamas en las rocas
 	{
 		gOGenerator.createChest();
-		//gOGenerator.createCarrots();
 		gOGenerator.creteBulls();
 		gOGenerator.createScorpions();
 		gOGenerator.createBats();
@@ -61,7 +60,7 @@ public:
 		Point2D<double> relative = { (double)(game->getWindowWidth() / 1800), (double)(game->getWindowHeight() / 1000) };
 		for (int i = 0; i < gOGenerator.nChest; i++)
 		{
-			game->add(new InteractuableChest(game, (gOGenerator.posChest[i].first + mapOffset.getX())*relative.getX(), (gOGenerator.posChest[i].first + mapOffset.getX()) * relative.getY(), 
+			game->add(new InteractuableChest(game, (gOGenerator.posChest[i].first + mapOffset.getX())*relative.getX(), (gOGenerator.posChest[i].second + mapOffset.getY()) * relative.getY(), 
 				gOGenerator.chestDimension_.w, gOGenerator.chestDimension_.h));
 
 		}
