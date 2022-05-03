@@ -1926,6 +1926,12 @@ a:hover.back-to-top {
 	}
 	/* end of download */
 
+	.image-blurred-edge {
+		margin-top: 4em;
+		border-radius: 10px;
+		box-shadow: 0 0 15px #ddd;
+		background: #fff;
+	}
 
 	/* Footer */
 	.footer .footer-col.first {
