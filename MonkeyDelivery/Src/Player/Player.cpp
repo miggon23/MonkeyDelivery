@@ -398,6 +398,7 @@ bool Player::moneyChange(int money)
 
 	return true;
 }
+
 //linterna
 const SDL_Rect Player::lightZoneFL()
 {
@@ -407,13 +408,13 @@ const SDL_Rect Player::lightZoneFL()
 	SDL_Rect hitZone{ int(getX() + 50),
 					int(getY()),
 					getWidth(),
-					getHeight()
+					getHeight() + 50
 	};
 	//ejeX
 	if (dirX_ == 1 /*&& dirY_==0*/) {
 		hitZone = { int(getX() + 50),
 					int(getY()),
-					getWidth(),
+					getWidth() + 50,
 					getHeight() };
 		setOrientation("right");
 	}
@@ -421,7 +422,7 @@ const SDL_Rect Player::lightZoneFL()
 	{
 		hitZone = { int(getX() - 100),
 					int(getY()),
-					getWidth(),
+					getWidth() + 50 ,
 					getHeight() };
 		setOrientation("left");
 	}
@@ -430,13 +431,13 @@ const SDL_Rect Player::lightZoneFL()
 		hitZone = { int(getX()),
 					int(getY() - 100),
 					getWidth(),
-					getHeight()};
+					getHeight() + 50 };
 		setOrientation("up");
 	}
 	else if (dirY_ == 1)
 	{
 		hitZone = { int(getX()),
-					int(getY()),
+					int(getY() + 50),
 					getWidth(),
 					getHeight() + 50 };
 		setOrientation("down");
@@ -447,7 +448,7 @@ const SDL_Rect Player::lightZoneFL()
 		if (getOrientation() == "left") {
 			hitZone = { int(getX() - 100),
 					int(getY()),
-					getWidth(),
+					getWidth() + 50,
 					getHeight() };
 
 			//SDL_RenderCopy(renderer, flashlightSides, NULL, &hitzone);
@@ -456,7 +457,7 @@ const SDL_Rect Player::lightZoneFL()
 		else if (getOrientation() == "right") {
 			hitZone = { int(getX() + 50),
 					int(getY()),
-					getWidth(),
+					getWidth() + 50 ,
 					getHeight() };
 			//setTexture(flashlightSides);
 		}
@@ -465,7 +466,7 @@ const SDL_Rect Player::lightZoneFL()
 			hitZone = { int(getX()),
 					int(getY() - 100),
 					getWidth(),
-					getHeight()};
+					getHeight() + 50 };
 			//setTexture(flashlightUp);
 		}
 
@@ -473,7 +474,7 @@ const SDL_Rect Player::lightZoneFL()
 			hitZone = { int(getX()),
 					int(getY() + 50),
 					getWidth(),
-					getHeight()};
+					getHeight() + 50 };
 		}
 		else {
 			hitZone = getCollider();
