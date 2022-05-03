@@ -172,13 +172,12 @@ void ShopState::buySelected()
 	if (shop_->getSize()>selected_&&!shop_->buyObject(selected_, shop_->objects[selected_].price))
 	{
 		lastClicked_ = SDL_GetTicks();
-
-		if(!shop_->buyObject(selected_, shop_->objects[selected_].price)) textError_ = "You  have already bought this object";
-
-		else if (shop_->inventoryFull(selected_))
-			textError_ = "Inventory full";
-		else 
-			textError_ = "Not enough money";
+		if(shop_->objects[selected_].price>game->getPlayer()->getMoney())textError_ = "Not enough money";
+		else if(!shop_->buyObject(selected_, shop_->objects[selected_].price)) textError_ = "Inventory full";
+		///*else if (shop_->inventoryFull(selected_))
+		//	textError_ = "Inventory full";
+		//else 
+		//	textError_ = "Not enough money";*/
 
 		closeFailed_ = true;
 	}

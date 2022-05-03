@@ -148,18 +148,15 @@ bool Inventory::inventoryFull(InventoryObject* x){
 	TypeObjectInventory aux =x->getTypeObject();
 	switch (aux){
 	case BOOTS:
-		//return inventory_[0] != nullptr;
 		return false;
 		break;
 	case CONSUMABLES:
 		return inventory_[2] != nullptr&& inventory_[3] != nullptr;;
 		break;
 	case PICKAXE:
-		//return inventory_[4] != nullptr;
 		return false;
 		break;
 	case LANTERN:
-		//return inventory_[1] != nullptr;
 		return false;
 		break;
 	case PACKAGE:
