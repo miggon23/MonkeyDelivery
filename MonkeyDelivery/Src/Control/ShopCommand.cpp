@@ -1,7 +1,8 @@
 #include "ShopCommand.h"
-
+#include "../sdlutils/InputHandler.h"
 bool ShopCommand::parse(SDL_Event& event)
 {
+	auto& ihl = ih();
 	if (event.type == SDL_KEYDOWN) {
 		SDL_Keycode key = event.key.keysym.sym;
 		
@@ -31,6 +32,10 @@ bool ShopCommand::parse(SDL_Event& event)
 			interaccion_ = 1;
 			return true;
 		}
+	}
+	if (ihl.getButtonState(0, 0)) {
+		interaccion_ = -1;
+		return true;
 	}
 	return false;
 }
