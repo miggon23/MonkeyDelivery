@@ -506,8 +506,8 @@ void Game::initOptionsState()
 
 void Game::drawMap()
 { 
-
-    SDL_Rect rectPanel = { minimapinfo_.xOrigin, minimapinfo_.yOrigin, (int)minimapinfo_.w, (int)minimapinfo_.h };
+    Point2D<double> relative = { (double)(getWindowWidth() / 1800), (double)(getWindowHeight() / 1000) };
+    SDL_Rect rectPanel = { minimapinfo_.xOrigin*relative.getX(), minimapinfo_.yOrigin*relative.getY(), (int)minimapinfo_.w, (int)minimapinfo_.h };
 
     SDL_Rect src = { (int)lround((mCamera_->getCameraPosition().getX() - mCamera_->getWidth() * miniMapScale_ / 2 - player_->getWidth() / 2) / (getWindowWidth() / mCamera_->getWidth())),
                      (int)lround((mCamera_->getCameraPosition().getY() - mCamera_->getHeight() * miniMapScale_ / 2 - player_->getHeight() / 2) / (getWindowHeight() / mCamera_->getHeight())),
@@ -560,15 +560,16 @@ void Game::scalePoint()
 
 void Game::scalePlayerIcon(){
     //PLAYER
+    Point2D<double> relative = { (double)(getWindowWidth() / 1800), (double)(getWindowHeight() / 1000) };
     int smallDimension = 20;
     int offset = smallDimension / 2;
 
     pIcon->setDimension(smallDimension, smallDimension);
 
-    double x = minimapinfo_.xOrigin + minimapinfo_.w / 2 - offset / 2;
-    double y = minimapinfo_.yOrigin + minimapinfo_.h / 2;
+    double x = minimapinfo_.xOrigin + (minimapinfo_.w / 2) +smallDimension*1.5;
+    double y = minimapinfo_.yOrigin + (minimapinfo_.h / 2) + smallDimension;
 
-    pIcon->setPosition(x, y);
+    pIcon->setPosition(x*relative.getX(), y*relative.getY());
 }
 
 // Añadir pico después de las misiones
