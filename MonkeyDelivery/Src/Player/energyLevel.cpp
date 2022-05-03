@@ -23,7 +23,7 @@ bool energyLevel::drain(double energyDrained){
 	if (energy_ > maxEnergy_)energy_ = maxEnergy_;
 	if (energy_ > 0) {
 		setDimension((energy_) * 1.68, h);
-		setPosition(x + 20 - (energyDrained / 2), y + 20);
+		setPosition(x  - (energyDrained / 2), y + 20);
 		return false;
 	}
 	else {

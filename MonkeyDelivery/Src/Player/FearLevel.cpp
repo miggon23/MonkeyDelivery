@@ -41,6 +41,6 @@ void FearLevel::resetFear()
 void FearLevel::draw()
 {
 	setDimension(fear_ * 1.68, h);
-	setPosition(x + 20, y + 20);
+	setPosition(x , y);
 	drawTexture(texture);
 }

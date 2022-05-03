@@ -130,6 +130,7 @@ enum TextureName
 		UI_InventoryBarOverlay,
 		UI_InventorySelector,
 		UI_playerHUD,
+		UI_playerHUD_BackFill,
 		UI_timer,
 
    //12-UI Overlay (InGame Buffs) - 3
@@ -160,7 +161,7 @@ enum TextureName
 		transitionTex
 };
 
-const int NUM_TEXTURES = 113;
+const int NUM_TEXTURES = 114;
 
 typedef struct {
 	string filename;
@@ -286,6 +287,7 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
 	{"ui/InGame/UI_InventoryBarOverlay.png",1,1},
 	{"ui/InGame/UI_InventorySelector.png",1,1},
 	{"ui/InGame/UI_playerHUD.png",1,1},
+	{"ui/InGame/UI_playerHUD_BackFill.png",1,1},
 	{"ui/InGame/timer.png",1,1},
 
     //UI Overlay (InGame Buffs)

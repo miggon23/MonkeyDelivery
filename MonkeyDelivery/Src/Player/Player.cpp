@@ -278,9 +278,10 @@ void Player::draw()
 		animationManager->getFrameImagePlayer(pos, textureRect, texture, timerAnimation, AnimationManager::LastDir{ (int)dirX_, (int)dirY_ });
 
 
+		playerHUD_->drawFillHUD();
 		energyLevel_->draw();
 		fearLevel_->draw();
-		playerHUD_->draw();
+		playerHUD_->drawOverHUD();
 		game->renderMoney(to_string(money_), 265, 134);
 		powerUpsManager->draw();
 
