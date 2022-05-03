@@ -83,6 +83,8 @@ private:
 	//MISION ACTIVA
 	int money_;
 	double fieldOfView_;
+	//CHEST
+	int chestsOpened;
 
 	//ENERGIA
 	int maxEnergyPercent_;		//Limite de energia que se rellena al estar parado
@@ -162,6 +164,8 @@ public:
 	bool moneyChange(int money);
 	inline void addMoney(int amount) { money_ += amount; };
 	void removeMoney(int amount);
+	//CHEST
+	inline void addChestCount() { chestsOpened++; };
 
 	// INVENTORY
 	inline void useObject(int index) { inventory_->useObject(index);};
