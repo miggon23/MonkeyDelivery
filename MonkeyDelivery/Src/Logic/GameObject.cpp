@@ -57,7 +57,6 @@ SDL_Rect GameObject::getCenter()
 
 void GameObject::setPosition(double x, double y)
 {
-    
     position_= Point2D<double>(x, y);
 }
 

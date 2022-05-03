@@ -129,10 +129,12 @@ void MissionsPanel::onMissionSelected(string missionId)
 		// settear la misión como activa
 		currentMission_ = new Mission(missionId, m.isExpress); 
 
+		Point2D<double> relative = { (double)(game->getWindowWidth() / 1800), (double)(game->getWindowHeight() / 1000) };
+
 		// comunicarlo al inventario o spawnear el objeto, dependiendo del tipo de misión
 		if (m.isSpecial) {
 			missionObject_->changeActive();
-			missionObject_->setPosition(m.xObjPos, m.yObjPos);
+			missionObject_->setPosition(m.xObjPos*relative.getX(), m.yObjPos*relative.getY());
 		}
 		else {
 			game->getPlayer()->addMissionObject(new Package(game->getTexture(Item_Package), game, game->getPlayer()));
@@ -142,7 +144,8 @@ void MissionsPanel::onMissionSelected(string missionId)
 		// spawn Vecino
 		activeTarget_->changeActive();
 		activeTarget_->setDimension(m.width, m.height);
-		activeTarget_->setPosition(m.xPos, m.yPos);
+
+		activeTarget_->setPosition(m.xPos*relative.getX(), m.yPos*relative.getY());
 		activeTarget_->setTexture(m.target);
 		string txt = missionId;
 		activeTarget_->setText(txt);

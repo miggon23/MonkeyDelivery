@@ -14,10 +14,12 @@ Rock::Rock(Game* game, int x, int y,int levelToDestroy) : ColliderTile(game,Vect
 }
 
 Rock::~Rock(){
+	isActive_ = false;
+	isColliding_ = false;
+	onPlayerCollisionExit();
 }
 
 void Rock::draw(){
 	drawTexture(texture);
-	drawDebug();
 }
 
