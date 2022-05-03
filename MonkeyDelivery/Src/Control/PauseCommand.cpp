@@ -1,16 +1,20 @@
 #include "PauseCommand.h"
 #include "./States/PauseState.h"
-
+#include "../sdlutils/InputHandler.h"
 
 PauseCommand::PauseCommand(){
 }
 
 bool PauseCommand::parse(SDL_Event& event)
 {
+	auto& ihld = ih();
 	if (event.type == SDL_KEYDOWN) {
 		SDL_Keycode key = event.key.keysym.sym;
 		if (key == SDLK_ESCAPE)
 			return true;
+	}
+	else if (ihld.getButtonState(0, 1)) {
+		return true;
 	}
 	return false;
 }
