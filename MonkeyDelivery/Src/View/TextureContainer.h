@@ -111,6 +111,7 @@ enum TextureName
 		npc_Kangaroo,
 
 	//10-Shop - 7
+		shop_Banana,
 		shop_Boots01,
 		shop_Boots02,
 		shop_Boots03,
@@ -159,7 +160,7 @@ enum TextureName
 		transitionTex
 };
 
-const int NUM_TEXTURES = 112;
+const int NUM_TEXTURES = 113;
 
 typedef struct {
 	string filename;
@@ -266,6 +267,7 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
 	{"npcs/NPC_Kangaroo.png",1,1},
 
 	//10-Shop
+	{"shop/shop_Banana.png",1,1},
 	{"shop/shop_Boots01.png",1,1},
 	{"shop/shop_Boots02.png",1,1},
 	{"shop/shop_Boots03.png",1,1},

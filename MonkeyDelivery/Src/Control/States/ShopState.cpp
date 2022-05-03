@@ -24,8 +24,8 @@ ShopState::ShopState(Game* game) : State(game){
 
 	buttonsX_ = (int)(game->getWindowWidth() / 1.3);
 	buttonsY_ = (int)(game->getWindowHeight() / 1.3);
-	buttonsW_ = (int)(game->getWindowWidth() / 5.7);
-	buttonsH_ = (int)(game->getWindowHeight() / 5.7);
+	buttonsW_ = 450;
+	buttonsH_ = 200;
 
 	coinsX_ = (int)(game->getWindowWidth() / 2.25);
 	coinsY_ = (int)(game->getWindowHeight() / 1.26);
