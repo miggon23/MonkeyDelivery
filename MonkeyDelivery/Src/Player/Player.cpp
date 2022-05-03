@@ -316,7 +316,7 @@ void Player::draw()
 
 		if (fade)
 		{
-			fadeTex_->render({ 0, 0, 1800, 1000 }); // Renderizar la textura del rectangulo negro en ese rect
+			fadeTex_->render({ 0, 0, (int)game->getWindowWidth(), (int)game->getWindowHeight() }); // Renderizar la textura del rectangulo negro en ese rect
 			FadeOut(); // Realiza un fadeout sobre la pantalla
 		}
 	}
