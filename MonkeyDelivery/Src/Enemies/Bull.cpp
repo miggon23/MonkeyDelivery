@@ -77,7 +77,7 @@ void Bull::checkDistance()
 			timer_ = SDL_GetTicks();
 			chase(dirX, dirY); //Persigo
 
-			sdlutils().soundEffects().at("bull").setVolume(game->getSoundEfectsVolume() * game->getGeneralVolume());
+			sdlutils().soundEffects().at("bull").setVolume((int)(game->getSoundEfectsVolume() * game->getGeneralVolume()));
 			sdlutils().soundEffects().at("bull").play(0, 1);
 
 			if (lastUpdate_ + timeLimit_ < SDL_GetTicks()) {

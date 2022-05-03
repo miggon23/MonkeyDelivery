@@ -58,7 +58,7 @@ public:
 		gOGenerator.createRocks();
 
 		Point2D<int> mapOffset = { 1150, 800 }, newP; // variable para ajustar los objetos al mapa tras haber hecho una redimension de este
-		Point2D<double> relative = { (double)(game->getWindowWidth() / 1800), (double)(game->getWindowHeight() / 1000) };
+		Point2D<int> relative = { (int)(game->getWindowWidth() / 1800), (int)(game->getWindowHeight() / 1000) };
 		for (int i = 0; i < gOGenerator.nChest; i++)
 		{
 			game->add(new InteractuableChest(game, (gOGenerator.posChest[i].first + mapOffset.getX())*relative.getX(), (gOGenerator.posChest[i].first + mapOffset.getX()) * relative.getY(), 
