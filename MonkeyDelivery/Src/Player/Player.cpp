@@ -278,10 +278,10 @@ void Player::draw()
 		animationManager->getFrameImagePlayer(pos, textureRect, texture, timerAnimation, AnimationManager::LastDir{ (int)dirX_, (int)dirY_ });
 
 
-		playerHUD_->drawFillHUD();
-		playerHUD_->drawOverHUD();
+		playerHUD_->drawFillHUD();		
 		energyLevel_->draw();
 		fearLevel_->draw();
+		playerHUD_->drawOverHUD();
 		
 		game->renderMoney(to_string(money_), 165, 137, SDL_Color{255,255,255,255});
 		game->renderMoney(to_string(chestsOpened), 320, 130);
