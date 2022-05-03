@@ -6,17 +6,18 @@ Bull::Bull(Game* game, int radio, Point2D<int> centroRadio, AnimationManager* an
 	setTexture(bullSS_Default);
 	Vector2D<double> zonePoint = zone.generatePoint();
 	setPosition(zonePoint.getX(), zonePoint.getY());
-	setDimension(120, 120);
+	setDimension(100, 112);
 	initialPos_ = getPosition();
 	createCheckPoints();
 	lastUpdate_ = SDL_GetTicks();
 	stop = true; //Patrulla y no persigue
 	setResistance(1500);
 	setMaxFearPercent(25);
-	width_ = height_ = 100;
-	time_ = 350;
-	maxX_ = 200;
-	maxY_ = 50;
+	width_ = 25;
+	height_ = 28;
+	time_ = 200;
+	maxX_ = 100;
+	maxY_ = 0;
 	textureRect = { 0, 0, width_, height_ };
 }
 
