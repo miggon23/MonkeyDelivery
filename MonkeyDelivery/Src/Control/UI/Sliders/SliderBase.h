@@ -3,7 +3,7 @@
 
 class SliderBase: public GameObject{
 public:
-	SliderBase(Game* game, double x, double y);
+	SliderBase(Game* game, int x, int y);
 	~SliderBase();
 	void update() override{};
 

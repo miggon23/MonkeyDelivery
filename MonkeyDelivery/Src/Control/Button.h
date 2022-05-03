@@ -10,8 +10,8 @@ protected:
 	int y_;
 
 public:
-	Button(Game* game, double wight, double height, double x, double y);
-	Button(Game* game, double x, double y);
+	Button(Game* game, double wight, double height, int x, int y);
+	Button(Game* game, int x, int y);
 	~Button() { };
 	bool onClick();
 	virtual void  update() override;

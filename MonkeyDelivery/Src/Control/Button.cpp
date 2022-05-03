@@ -1,14 +1,14 @@
 #include "Button.h"
 #include "../Control/States/State.h"
 
-Button::Button(Game* game, double wight, double height, double x, double y) :GameObject(game), y_(0), x_(0) {
+Button::Button(Game* game, double wight, double height, int x, int y) :GameObject(game), y_(0), x_(0) {
 
 	setDimension(wight, height);
 	setPosition(x, y);
 
 }
 
-Button::Button(Game* game, double x, double y):GameObject(game), y_(0), x_(0) {
+Button::Button(Game* game, int x, int y):GameObject(game), y_(0), x_(0) {
 	setDimension(100, 100);
 	setPosition(x, y);
 }

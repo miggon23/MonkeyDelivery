@@ -17,16 +17,16 @@ DialogueBox::DialogueBox(Game* game) : GameObject(game)
 	texture = game->getTexture(UI_dialogueBox);
 	color_ = BLACK;
 
-	yPos_ = (int)(game->getWindowHeight()/1.43);
-	width_ = (int)(game->getWindowWidth() / 16 * 10);
-	xPos_ = (int)(game->getWindowWidth() / 2 - width_ / 2);
-	height_ = (int)(game->getWindowHeight()/9 * 2);
-	xText_ = (int)(game->getWindowWidth()/120.0);
-	yText_ = (int)(game->getWindowHeight()/50.0);
-	xIcon = -(int)(game->getWindowWidth()/36.0);
-	yIcon = -(int)(game->getWindowHeight()/17.24);
-	wIcon = (int)(game->getWindowWidth()/14.4);
-	hIcon = (int)(game->getWindowHeight()/8.0);
+	yPos_ = game->getWindowHeight()/1.43;
+	width_ = game->getWindowWidth() / 16 * 10;
+	xPos_ = game->getWindowWidth() / 2 - width_ / 2;
+	height_ = game->getWindowHeight()/9 * 2;
+	xText_ = game->getWindowWidth()/120.0;
+	yText_ = game->getWindowHeight()/50.0;
+	xIcon = - game->getWindowWidth()/36.0;
+	yIcon = -game->getWindowHeight()/17.24;
+	wIcon = game->getWindowWidth()/14.4;
+	hIcon = game->getWindowHeight()/8.0;
 	
 	
 
@@ -52,7 +52,7 @@ void DialogueBox::changeText(string id)
 	reiniciateText();
 
 	// cambiar icono
-	int iconId = -1;
+	double iconId = -1;
 	//cambio a la nueva textura de icono
 	getIcon(iconId);
 }

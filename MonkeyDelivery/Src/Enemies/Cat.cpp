@@ -69,7 +69,7 @@ void Cat::checkDistance()
 			if (dirX < 0) setFlip(SDL_FLIP_HORIZONTAL);
 			else setFlip(SDL_FLIP_NONE);
 			//sonidos
-			sdlutils().soundEffects().at("cat").setVolume((int)(game->getSoundEfectsVolume() * game->getGeneralVolume()));
+			sdlutils().soundEffects().at("cat").setVolume(game->getSoundEfectsVolume() * game->getGeneralVolume());
 			sdlutils().soundEffects().at("cat").play(0, 1);
 			//miedo
 			if (lastUpdate_ + timeLimit_ < SDL_GetTicks()) {

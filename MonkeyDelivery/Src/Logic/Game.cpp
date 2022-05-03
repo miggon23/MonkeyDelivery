@@ -26,7 +26,7 @@ Game::Game(string n, double w, double h) : name(n), width(w), height(h), doExit(
     width = DM.w;
     height = DM.h;
 
-    SDL_SetWindowSize(window_, (int)width, (int)height);
+    SDL_SetWindowSize(window_, width, height);
 
     setRenderer(sdlutils().renderer());
 
@@ -126,7 +126,7 @@ void Game::start()
     mapPoint = new MAPPoint(this);
     pIcon = new PlayerIcon(this);
 
-    Point2D<int> relative = { (int)(getWindowWidth() / 1800), (int)(getWindowHeight() / 1000) };
+    Point2D<double> relative = { (double)(getWindowWidth() / 1800), (double)(getWindowHeight() / 1000) };
 
 
     add(new IntectuableShop(this, 3700*relative.getX(), 1600*relative.getY(), animationManager_));
@@ -159,7 +159,7 @@ void Game::start()
     initialTransition = new Transition(this);
 
     scalePlayerIcon();
-    sdlutils().musics().at("gamemusic").setMusicVolume((int)(getGeneralVolume() * getMusicVolume()));
+
     sdlutils().musics().at("gamemusic").play(-1);
 }
 
@@ -167,7 +167,7 @@ void Game::update()
 {
     player_->update();
     updateCameraPos();
-    sdlutils().musics().at("gamemusic").setMusicVolume((int)(getGeneralVolume() * getMusicVolume()));
+   
     for (auto c : collisions_) {
         c->update();
     }
@@ -186,7 +186,7 @@ void Game::update()
     for (auto enemy : enemyContainer_)
         enemy->update();
     
-    sdlutils().musics().at("gamemusic").setMusicVolume((int)(getMusicVolume() * getGeneralVolume()));
+    sdlutils().musics().at("gamemusic").setMusicVolume(getMusicVolume() * getGeneralVolume());
 }
 
 //Normal draw for entities(no Tiles)

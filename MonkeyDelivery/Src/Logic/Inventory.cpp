@@ -16,7 +16,7 @@ Inventory::Inventory(Game* game, Player* player, SDL_Renderer* renderer) : playe
 	xObj = (int)game->getWindowWidth() / 25;
 	yObj = (int)game->getWindowHeight() / 14;
 	xInventory = (int)game->getWindowWidth() / 2 - xObj * 7 / 2;
-	yInventory = (int)game->getWindowHeight() - (int)game->getWindowHeight() / 10;
+	yInventory = (int)game->getWindowHeight() - game->getWindowHeight() / 10;
 
 	baseRect_ = { xInventory, yInventory, xObj * 7, yObj }; 
 
@@ -180,7 +180,7 @@ void Inventory::draw()
 		SDL_Rect oRect = { xInventory +xObj*6, yInventory , xObj, yObj };
 		missionObject_->getTexture()->render(oRect);
 	}
-	int size = (int)inventory_.size();
+	int size = inventory_.size();
 
 	for (int i = 0; i < INVENTORY_SIZE; i++)
 	{

@@ -63,8 +63,8 @@ void ViewController::initSDL() {
     window = SDL_CreateWindow(game->getGameName().c_str(),
         SDL_WINDOWPOS_CENTERED,
         SDL_WINDOWPOS_CENTERED,
-        (int)game->getWindowWidth(),
-        (int)game->getWindowHeight(),
+        game->getWindowWidth(),
+        game->getWindowHeight(),
         SDL_WINDOW_SHOWN);
     setWindow(window);
 
