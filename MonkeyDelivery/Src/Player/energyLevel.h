@@ -9,6 +9,7 @@ private:
 	double place_;
 	double energy_;
 	double maxEnergy_;
+	double scale_;
 
 	int x, y, w, h;
 public:

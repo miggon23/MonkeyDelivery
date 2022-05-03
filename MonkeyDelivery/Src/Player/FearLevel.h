@@ -8,6 +8,7 @@ private:
 	float place_;
 	double fear_;
 	double maxFear_;
+	double scale_;
 
 	double x, y, w, h;
 

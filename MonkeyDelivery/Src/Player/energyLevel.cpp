@@ -10,11 +10,13 @@ energyLevel::energyLevel(Game* game) :GameObject(game) {
 	setTexture(UI_energyLevel);
 	
 
-	x = (int)(game->getWindowWidth() / 8.18);
-	y = (int)(game->getWindowHeight() / 50);
-	h = (int)(game->getWindowHeight() / 38);
-	setPosition(x + 20, y + 20);
-	setDimension(x, h);
+	x = (int)(game->getWindowWidth() / 8);
+	y = (int)(game->getWindowHeight() / 27.5);
+	h = (int)(game->getWindowHeight() / 60);
+	scale_ = 1.68 / 1.75 * (game->getWindowWidth() / game->getWindowHeight());
+
+	setPosition(x, y);
+	setDimension(100*scale_, h);
 }
 
 // Drena energía y devuelve true si se queda a 0
@@ -22,8 +24,8 @@ bool energyLevel::drain(double energyDrained){
 	energy_ -= energyDrained;
 	if (energy_ > maxEnergy_)energy_ = maxEnergy_;
 	if (energy_ > 0) {
-		setDimension((energy_) * 1.68, h);
-		setPosition(x  - (energyDrained / 2), y + 20);
+		setDimension((energy_) * scale_, h);
+		setPosition(x - (energyDrained / 2), y);
 		return false;
 	}
 	else {
