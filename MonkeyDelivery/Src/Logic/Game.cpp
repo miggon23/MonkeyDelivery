@@ -111,8 +111,7 @@ void Game::start()
     inGame = true;
   
     animationManager_ = new AnimationManager(this);
-    player_ = new Player(this, animationManager_); //Creacion del jugador
-
+    player_ = new Player(this, animationManager_); //Creacion del jugadorIn
  
     // Cámara:
     Vector2D<double> vJug = { (player_->getPosition().getX() - width / 2), (player_->getPosition().getY() - height / 2) };

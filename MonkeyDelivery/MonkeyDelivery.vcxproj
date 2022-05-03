@@ -216,6 +216,7 @@
     <ClInclude Include="Src\Logic\DialogueBox.h" />
     <ClInclude Include="Src\Items\EnergyDrink.h" />
     <ClInclude Include="Src\Items\Flashlight.h" />
+    <ClInclude Include="Src\Logic\EndGameTarget.h" />
     <ClInclude Include="Src\Logic\Game.h" />
     <ClInclude Include="Src\Logic\GameObject.h" />
     <ClInclude Include="Src\Logic\GameObjectGenerator.h" />
@@ -335,6 +336,7 @@
     <ClCompile Include="Src\Enemies\Enemy.cpp" />
     <ClCompile Include="Src\Items\EnergyDrink.cpp" />
     <ClCompile Include="Src\Items\Flashlight.cpp" />
+    <ClCompile Include="Src\Logic\EndGameTarget.cpp" />
     <ClCompile Include="Src\Logic\Game.cpp" />
     <ClCompile Include="Src\Logic\GameObject.cpp" />
     <ClCompile Include="Src\Logic\GameObjectGenerator.cpp" />

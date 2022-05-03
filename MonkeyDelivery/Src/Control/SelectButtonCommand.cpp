@@ -1,4 +1,5 @@
 #include "SelectButtonCommand.h"
+#include "../sdlutils/InputHandler.h"
 
 SelectButtonCommand::SelectButtonCommand(State* ms) : state(ms)
 {
@@ -7,28 +8,27 @@ SelectButtonCommand::SelectButtonCommand(State* ms) : state(ms)
 
 bool SelectButtonCommand::parse(SDL_Event& event)
 {
-	if (event.type == SDL_KEYDOWN) {
-		SDL_Keycode key = event.key.keysym.sym;
-		if (key == SDLK_UP) {
-			move = { 0, -1 };
-			return true;
-		}
-		else if (key == SDLK_DOWN) {
-			move = { 0, 1 };
-			return true;
-		}
-		else if (key == SDLK_RIGHT) {
-			move = { 1, 0 };
-			return true;
-		}
-		else if (key == SDLK_LEFT) {
-			move = { -1, 0 };
-			return true;
-		}
-		else if (key == SDLK_SPACE || key == SDLK_RETURN) {
-			move = { 0, 0 };
-			return true;
-		}
+	auto& ihdlr = ih();
+
+	if (ihdlr.yvalue(0, 0) == -1  || ihdlr.isKeyDown(SDL_SCANCODE_UP)) {
+		move = { 0, -1 };
+		return true;
+	}
+	else if (ihdlr.yvalue(0, 0) == 1 || ihdlr.isKeyDown(SDL_SCANCODE_DOWN)) {
+		move = { 0, 1 };
+		return true;
+	}
+	else if (ihdlr.isKeyDown(SDL_SCANCODE_RIGHT) || ihdlr.xvalue(0, 0) == 1) {
+		move = { 1, 0 };
+		return true;
+	}
+	else if (ihdlr.isKeyDown(SDL_SCANCODE_LEFT) || ihdlr.xvalue(0, 0) == -1) {
+		move = { -1, 0 };
+		return true;
+	}
+	else if (ihdlr.isKeyDown(SDL_SCANCODE_SPACE) || ihdlr.isKeyDown(SDL_SCANCODE_RETURN) || ihdlr.getButtonState(0, 0)) {
+		move = { 0, 0 };
+		return true;
 	}
 	return false;
 }

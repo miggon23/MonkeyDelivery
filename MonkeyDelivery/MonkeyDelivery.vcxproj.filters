@@ -311,6 +311,9 @@
     <ClCompile Include="Src\View\Transition.cpp">
       <Filter>Source\View</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Logic\EndGameTarget.cpp">
+      <Filter>Source\Logic\InteractuableObjectsMap</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MonkeyDelivery.h" />
@@ -673,6 +676,9 @@
     </ClInclude>
     <ClInclude Include="Src\View\Transition.h">
       <Filter>Header\View</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Logic\EndGameTarget.h">
+      <Filter>Header\Logic\InteractuableObjectsMap</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
