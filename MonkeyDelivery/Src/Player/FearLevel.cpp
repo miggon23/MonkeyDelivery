@@ -13,7 +13,7 @@ FearLevel::FearLevel(Game* game) :GameObject(game), w(0) {
 
 
 	x = (int)(game->getWindowWidth() / 8);
-	y = (int)(game->getWindowHeight() / 14);
+	y = (int)(game->getWindowHeight() / 13.3);
 	h = (int)(game->getWindowHeight() / 60);
 
 

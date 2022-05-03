@@ -11,7 +11,7 @@ energyLevel::energyLevel(Game* game) :GameObject(game) {
 	
 
 	x = (int)(game->getWindowWidth() / 8);
-	y = (int)(game->getWindowHeight() / 27.5);
+	y = (int)(game->getWindowHeight() / 23);
 	h = (int)(game->getWindowHeight() / 60);
 	scale_ = 1.68 / 1.75 * (game->getWindowWidth() / game->getWindowHeight());
 
