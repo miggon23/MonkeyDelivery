@@ -3,7 +3,7 @@
 #include "../Player/Player.h"
 #include "../Logic/Game.h"
 
-Skates::Skates(Texture* tex, Game* game,Player* player) : speedMult(1.8), InventoryObject(tex, game,player){
+Skates::Skates(Texture* tex, Game* game,Player* player) : speedMult(1.2), InventoryObject(tex, game,player){
 	setTypeObject(BOOTS);
 	active = false;
 }
@@ -14,17 +14,13 @@ void Skates::setCorrectTexture(){
 
 bool Skates::useObject()
 {
-	if (!active) {
+	/*if (!active) {
 		player_->setVel(player_->getVel() * speedMult);
-		cout << "Patines";
 	}
 	else {
 		player_->setVel(player_->getVel() / speedMult);
-		cout << "Me quito los patines";
-	}
+	}*/
 	player_->initPowerUp(boots);
-	cout << endl;
-	auto c = player_->getVel();
-	active = !active;
+	//active = !active;
 	return false;
 }

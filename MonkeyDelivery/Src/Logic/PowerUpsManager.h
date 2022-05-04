@@ -31,6 +31,8 @@ class PowerUpsManager{
 	Texture* texEnergyBuff_;
 	Texture* texSpeedBuff_;
 	bool activateBoots_;
+
+	double speedNormalBootsMult_ = 1.2;
 public:
 	PowerUpsManager(Game* game,Player* player);
 	~PowerUpsManager();
@@ -42,5 +44,6 @@ public:
 	
 	void onPauseEnter();
 	void onPauseExit();
+	inline bool playerHasBoots() { return activateBoots_; };
 };
 

@@ -72,6 +72,12 @@ void PowerUpsManager::ActivatePowerUp(PowerUps x){
 			timerEnergyDrink_->reset();
 		break;
 	case boots:
+		if (!activateBoots_) {
+			player_->setVel(player_->getVel() * speedNormalBootsMult_);
+		}
+		else {
+			player_->setVel(player_->getVel() / speedNormalBootsMult_);
+		}
 		activateBoots_ = !activateBoots_;
 		break;
 	case banana:
@@ -117,6 +123,10 @@ void PowerUpsManager::desactivate(PowerUps x)
 		timerAntiBanana_->pause();
 		std::cout << "antibanana desactivado" << std::endl;
 		break;
+	case boots:
+		if(activateBoots_)
+			player_->setVel(player_->getVel() / speedNormalBootsMult_);
+		activateBoots_ = false;
 	default:
 		break;
 	}
@@ -125,6 +135,7 @@ void PowerUpsManager::desactivate(PowerUps x)
 void PowerUpsManager::desactivateAllPowerUps(){
 	desactivate(energyDrink);
 	desactivate(repelente);
+	desactivate(boots);
 }
 
 void PowerUpsManager::onPauseEnter()

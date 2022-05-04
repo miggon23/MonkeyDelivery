@@ -104,7 +104,7 @@ void Player::update()
 		}
 		if (energyLevel_->percentEnergy() == 0 && !reducedSpeed_)
 		{
-			if(isRunning) setVel(getVel() / runningSpeedFactor_);
+			//if(isRunning) setVel(getVel() / runningSpeedFactor_); <-- da bug al dormir
 			previusVel_ = getVel();
 			reducedSpeed_ = true;
 			setVel(getVel() / reduceFactor_);
@@ -183,6 +183,10 @@ void Player::changeSleep()
 		sleeping = !sleeping;
 		//actulizo la textura
 		if (sleeping) {
+			if (reducedSpeed_) {
+				reducedSpeed_ = false;
+				setVel(getVel() * reduceFactor_);
+			}
 
 			animationManager->setState(AnimationManager::PlayerState::Sleeping);
 			if (usingFlashLight) {
@@ -200,7 +204,14 @@ void Player::changeSleep()
 		else {
 			//recoloca al player en su posición anterior
 			setPosition(posBeforeSleep.getX(), posBeforeSleep.getY());
-			vel_ = INIT_VEL_; // se resetea la velocidad
+			//bool hadBoots = powerUpsManager->playerHasBoots();
+			//if (hadBoots) // SI tenía botas se las desactivamos y las volvemos activar una vez se levante
+			//	powerUpsManager->desactivate(boots);
+			//vel_ = INIT_VEL_; // se resetea la velocidad
+			// 
+			//if (hadBoots)
+			//	powerUpsManager->ActivatePowerUp(boots);			
+			
 			animationManager->setState(AnimationManager::PlayerState::Running);
 			if (flashLOn) {
 				usingFlashLight = true;
