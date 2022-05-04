@@ -3,7 +3,7 @@
 TutorialBook::TutorialBook(Game* game, int x, int y, int w, int h) : ColliderTile(game, Point2D<double>(x,y), w, h) {
 	setTexture(worldObject_Tutorial);
 	tutorialTexture_ = game->getTexture(UI_Controls);
-	tutorialRect_ = {0, 0, (int)game->getWindowWidth(), (int)game->getWindowHeight() };
+	tutorialRect_ = {500/2, 300/2, (int)game->getWindowWidth() - 500, (int)game->getWindowHeight() - 300 };
 	tutorialSignRect_ = {x + 25 , y - 40, 68, 132 };
 }
 
