@@ -11,7 +11,7 @@ class PowerUpsManager{
 	VirtualTimer* timerEnergyDrink_;
 	bool activatedEnergyDrink_;
 	int timeEnergyDrinkLimit_ = 30000;
-	double energyDrinkSpeedBonus_ = 1.15;
+	double energyDrinkSpeedBonus_ = 1.05;
 	double energyDrinkEnergyBonus_ = 0.05;
 
 	VirtualTimer* timerAntiBanana_;
