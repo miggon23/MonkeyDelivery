@@ -58,13 +58,11 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game), anima
 	inventory_->addObject(new Skates(game->getTexture(Item_Boots01), game, this));
 	inventory_->addObject(new Flashlight(game->getTexture(Item_Lantern01), game, this));
 	inventory_->addObject(new EnergyDrink(game->getTexture(Item_Soda02), game, this));
-	//inventory_->addObject(new Monkeycola(game->getTexture(Item_Soda01), game, this));
-	//inventory_->addObject(new Banana(game->getTexture(Item_Banana), game,this));
+	
 	inventory_->addObject(new Repel(game->getTexture(Item_Spray), game,this));
 	setInventoryVisibility(true);
 	textureRect = { 0, 0, 16, 18 };
 	timerAnimation = 0;
-	//timer = sdlutils().virtualTimer();
 
 	fadeTex_ = game->getTexture(UI_Fade);
 
@@ -104,7 +102,6 @@ void Player::update()
 		}
 		if (energyLevel_->percentEnergy() == 0 && !reducedSpeed_)
 		{
-			//if(isRunning) setVel(getVel() / runningSpeedFactor_); <-- da bug al dormir
 			previusVel_ = getVel();
 			reducedSpeed_ = true;
 			setVel(getVel() / reduceFactor_);
@@ -125,16 +122,13 @@ void Player::move()
 	
 	//Normalizamos el vector para que no se desplaze m�s en diagonal
 	speed.normalize();
-	//speed = speed * vel_ * (timer.currTime() - lastUpdate);
+	
 
 	//SI LA VELOCIDAD ES 0 RECUPERA ENERGIA HASTA UN MAX
 	if (speed.getX() == 0 && speed.getY() == 0) {
 		isStopped_ = true;
 		if (energyLevel_->percentEnergy() < maxEnergyPercent_) {
 			energyLevel_->drain(-reduceEnergyFactor_);
-			/*if (energyLevel_->percentEnergy() <= reduceEnergyFactor_) {
-				setVel(getVel() * reduceFactor_);
-			}*/
 		}
 	}
 	else isStopped_ = false;
@@ -204,13 +198,6 @@ void Player::changeSleep()
 		else {
 			//recoloca al player en su posición anterior
 			setPosition(posBeforeSleep.getX(), posBeforeSleep.getY());
-			//bool hadBoots = powerUpsManager->playerHasBoots();
-			//if (hadBoots) // SI tenía botas se las desactivamos y las volvemos activar una vez se levante
-			//	powerUpsManager->desactivate(boots);
-			//vel_ = INIT_VEL_; // se resetea la velocidad
-			// 
-			//if (hadBoots)
-			//	powerUpsManager->ActivatePowerUp(boots);			
 			
 			animationManager->setState(AnimationManager::PlayerState::Running);
 			if (flashLOn) {
@@ -233,8 +220,7 @@ void Player::changeSleep()
 
 void Player::NoSleepText()
 {
-	//int x = (int)game->getWindowWidth() / 2 - 250;
-	//int y = (int)game->getWindowHeight() / 2 - 50;	
+	
 	int x = 80;
 	int y = 200;
 	//Textos q renderiza
@@ -349,8 +335,6 @@ void Player::FadeOut()
 	{
 		alpha = 0;
 		fadeTex_->changeAlpha(alpha);
-		//fadeTex_->render({ 0, 0, 1800, 1000 });
-
 
 		// Establece la posici�n en la cama m�s cercana
 		sendToBed();
@@ -436,14 +420,14 @@ const SDL_Rect Player::lightZoneFL()
 					getHeight() + 50
 	};
 	//ejeX
-	if (dirX_ == 1 /*&& dirY_==0*/) {
+	if (dirX_ == 1) {
 		hitZone = { int(getX() + 50),
 					int(getY()),
 					getWidth() + 50,
 					getHeight() };
 		setOrientation("right");
 	}
-	else if (dirX_ == -1 /*&& dirY_==0*/)
+	else if (dirX_ == -1)
 	{
 		hitZone = { int(getX() - 100),
 					int(getY()),
@@ -451,7 +435,7 @@ const SDL_Rect Player::lightZoneFL()
 					getHeight() };
 		setOrientation("left");
 	}
-	else if (/*dirX_ == 1 &&*/ dirY_ == -1)
+	else if (dirY_ == -1)
 	{
 		hitZone = { int(getX()),
 					int(getY() - 100),
@@ -475,16 +459,12 @@ const SDL_Rect Player::lightZoneFL()
 					int(getY()),
 					getWidth() + 50,
 					getHeight() };
-
-			//SDL_RenderCopy(renderer, flashlightSides, NULL, &hitzone);
-			//setTexture(flashlightSides);
 		}
 		else if (getOrientation() == "right") {
 			hitZone = { int(getX() + 50),
 					int(getY()),
 					getWidth() + 50 ,
 					getHeight() };
-			//setTexture(flashlightSides);
 		}
 
 		else if (getOrientation() == "up") {
@@ -492,7 +472,6 @@ const SDL_Rect Player::lightZoneFL()
 					int(getY() - 100),
 					getWidth(),
 					getHeight() + 50 };
-			//setTexture(flashlightUp);
 		}
 
 		else if (getOrientation() == "down") {
