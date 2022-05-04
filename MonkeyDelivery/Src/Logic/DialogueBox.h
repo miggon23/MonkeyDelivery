@@ -18,6 +18,7 @@ class DialogueBox : public GameObject
 private:
 
 	map<string, string> textList_;
+	map<string, int> iconList_;
 
 	Font* font_;
 	string text_;
@@ -35,6 +36,7 @@ private:
 		yIcon = -58,
 		wIcon = 125,
 		hIcon = 125,
+		iconId=-1,
 		letterPerLine_ = 50,
 		sizeBtwLines_ = 40,
 		normalUpdateTime_ = 50,

@@ -166,10 +166,19 @@ enum TextureName
 		UI_Controls,
 
 		missingTex,
-		transitionTex
+		transitionTex,
+		coco_Icon,
+		eagle_Icon,
+		fish_Icon,
+		frog_Icon,
+		hipo_Icon,
+		pavo_Icon,
+		rabit_Icon,
+		tucan_Icon,
+		fox_Icon
 };
 
-const int NUM_TEXTURES = 122;
+const int NUM_TEXTURES = 131;
 
 typedef struct {
 	string filename;
@@ -331,7 +340,17 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
 	{"tutorial/Tutorial.png",1,1},
 
 	{"missingTex.png",1,1},
-	{"transition.png",1,1}
+	{"transition.png",1,1},
+
+	{ "ui/cocoIcon.png",1,1 },
+	{ "ui/eagleIcon.png",1,1 },
+	{ "ui/fishIcon.png",1,1 },
+	{ "ui/frogIcon.png",1,1 },
+	{ "ui/hipoIcon.png",1,1 },
+	{ "ui/pavoIcon.png",1,1 },
+	{ "ui/rabitIcon.png",1,1 },
+	{ "ui/tucanIcon.png",1,1 },
+	{ "ui/foxIcon.png",1,1 }
 };
 
 class TextureContainer {

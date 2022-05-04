@@ -52,7 +52,7 @@ void DialogueBox::changeText(string id)
 	reiniciateText();
 
 	// cambiar icono
-	int iconId = -1;
+	iconId = iconList_.at(id);
 	//cambio a la nueva textura de icono
 	getIcon(iconId);
 }
@@ -127,7 +127,31 @@ void DialogueBox::getIcon(unsigned int iconId)
 	switch (iconId)
 	{
 	case 1:
-		currentIcon_ = game->getTexture(npc_Fox);
+		currentIcon_ = game->getTexture(tucan_Icon);
+		break;
+	case 2:
+		currentIcon_ = game->getTexture(hipo_Icon);
+		break;
+	case 3:
+		currentIcon_ = game->getTexture(pavo_Icon);
+		break;
+	case 4:
+		currentIcon_ = game->getTexture(fish_Icon);
+		break;
+	case 5:
+		currentIcon_ = game->getTexture(eagle_Icon);
+		break;
+	case 6:
+		currentIcon_ = game->getTexture(rabit_Icon);
+		break;
+	case 7:
+		currentIcon_ = game->getTexture(frog_Icon);
+		break;
+	case 8:
+		currentIcon_ = game->getTexture(coco_Icon);
+		break;
+	case 9:
+		currentIcon_ = game->getTexture(fox_Icon);
 		break;
 	default:
 		currentIcon_ = nullptr;
@@ -174,9 +198,10 @@ void DialogueBox::loadTexts()
 					textList_.insert(std::make_pair(id, text));
 
 					// cargar iconos
-
-					//if (vObj["icon"] != nullptr)
-					//	iconId = vObj["icon"]->AsNumber();
+					if (vObj["icon"] != nullptr) {
+						int icon= vObj["icon"]->AsNumber();
+						iconList_.insert(std::make_pair(id, icon));
+					}
 				}
 				else {
 					throw "'missions' array in '" + filename
