@@ -30,7 +30,7 @@ void CreditsState::draw()
 
 	for (int i = 0; i < index_; i++)
 	{
-		game->renderText(credits_[i], sdlutils().width()/2 + 350, 100  *i);
+		game->renderText(credits_[i], sdlutils().width()/2 + 350, 100  *(i+1));
 	}
 
 	rectPanel = { (int)buttonsUI[0]->getPosition().getX(), (int)buttonsUI[0]->getPosition().getY(), (int)buttonsUI[0]->getWidth(), (int)buttonsUI[0]->getHeight() };
