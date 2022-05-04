@@ -12,8 +12,6 @@ void Game::updateCameraPos()
 
 Game::Game(string n, double w, double h) : name(n), width(w), height(h), doExit(false), mCamera_(nullptr), mapOpened(false), mapPoint(nullptr), pIcon(nullptr)
 {
-
-
     /*  SDL_DisplayMode* desktop = new SDL_DisplayMode();
       SDL_GetDesktopDisplayMode(0, desktop);*/
 
@@ -581,6 +579,11 @@ void Game::addPickaxe(int level)
 Transition* Game::getInitialTransition()
 {
     return initialTransition;
+}
+
+bool Game::isInitialTransitionComplete()
+{
+    return initialTransition->isComplete();
 }
 
 void Game::resetInitialTransition()

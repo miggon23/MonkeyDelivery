@@ -21,7 +21,7 @@ bool PauseCommand::parse(SDL_Event& event)
 
 void PauseCommand::execute()
 {
-	if (game->getInGame()) {
+	if (game->getInGame() && game->isInitialTransitionComplete()) {
 		//pause
 		game->setSaveState(game->getState());
 		game->setState(new PauseState(game));
