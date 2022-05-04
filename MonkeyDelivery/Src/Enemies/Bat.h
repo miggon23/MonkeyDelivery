@@ -11,7 +11,7 @@ class Bat : public Enemy
 
 public:
 
-	Bat(Game* game, int Aleatorio, Point2D<int>centroRadio, int nLoop, AnimationManager* animation);
+	Bat(Game* game, int Aleatorio, Point2D<int>centroRadio, int nLoop);
 	~Bat() {};
 
 	void update() override;

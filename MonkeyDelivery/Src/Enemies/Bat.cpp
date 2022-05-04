@@ -1,7 +1,7 @@
 #include "Bat.h"
 #include "../Logic/Game.h"
 
-Bat::Bat(Game* game, int Aleatorio, Point2D<int> centroRadio, int nLoop, AnimationManager* animation) : Enemy(game, Aleatorio, centroRadio,animation)
+Bat::Bat(Game* game, int Aleatorio, Point2D<int> centroRadio, int nLoop) : Enemy(game, Aleatorio, centroRadio)
 {
 	Vector2D<double> zonePoint = zone.generatePoint();
 	setPosition(zonePoint.getX(), zonePoint.getY());

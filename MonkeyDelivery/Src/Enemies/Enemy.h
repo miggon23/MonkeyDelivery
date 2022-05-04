@@ -36,7 +36,7 @@ protected:
 
 public:
 
-	Enemy(Game* game, int radio, Point2D<int>centroRadio, AnimationManager* animation);
+	Enemy(Game* game, int radio, Point2D<int>centroRadio);
 	~Enemy() {};
 
 	void patrol(double speed);

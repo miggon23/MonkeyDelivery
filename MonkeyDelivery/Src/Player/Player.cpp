@@ -13,7 +13,7 @@
 #include "SDL.h"
 
 
-Player::Player(Game* game, AnimationManager* animation) :GameObject(game), animationManager(animation) {
+Player::Player(Game* game) :GameObject(game), animationManager(AnimationManager::Instance()) {
 	this->game = game;
 
 	texture = nullptr;
@@ -66,9 +66,9 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game), anima
 
 	fadeTex_ = game->getTexture(UI_Fade);
 
-	xMoney = game->getWindowWidth() / 10.91;
-	yMoney = yChests = game->getWindowHeight() / 7.30;
-	xChest = game->getWindowWidth() / 5.625;
+	xMoney = (int)(game->getWindowWidth() / 10.91);
+	yMoney = yChests = (int)(game->getWindowHeight() / 7.30);
+	xChest = (int)(game->getWindowWidth() / 5.625);
 	
 }
 

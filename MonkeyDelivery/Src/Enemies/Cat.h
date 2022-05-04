@@ -11,7 +11,7 @@ protected:
 
 public:
 
-	Cat(Game* game, int Aleatorio, Point2D<int>centroRadio, AnimationManager* animation);
+	Cat(Game* game, int Aleatorio, Point2D<int>centroRadio);
 	~Cat() {};
 
 	void update() override;

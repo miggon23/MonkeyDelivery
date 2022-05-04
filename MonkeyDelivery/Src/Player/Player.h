@@ -123,7 +123,7 @@ private:
 
 public:
 
-	Player(Game* game, AnimationManager* animation);
+	Player(Game* game);
 	~Player();
 	
 	void update() override;

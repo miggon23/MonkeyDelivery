@@ -3,7 +3,7 @@
 class IntectuableShop:public GameObject
 {
 public:
-	IntectuableShop(Game* game,int x, int y, AnimationManager* anim);
+	IntectuableShop(Game* game,int x, int y);
 	~IntectuableShop();
 	void update() override;
 	void draw() override;

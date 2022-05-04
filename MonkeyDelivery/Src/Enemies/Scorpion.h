@@ -15,7 +15,7 @@ private:
 	bool attacked = false;
 
 public:
-	Scorpion(Game* game, int Aleatorio, Point2D<int>centroRadio, AnimationManager* animation);
+	Scorpion(Game* game, int Aleatorio, Point2D<int>centroRadio);
 	~Scorpion() {};
 
 	void update() override;

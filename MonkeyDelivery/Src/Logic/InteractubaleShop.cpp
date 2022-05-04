@@ -2,7 +2,7 @@
 #include "../Player/Player.h"
 #include "../Control/States/ShopState.h"
 
-IntectuableShop::IntectuableShop(Game* game,int x , int y, AnimationManager* anim) : GameObject(game, true, anim) {
+IntectuableShop::IntectuableShop(Game* game,int x , int y) : GameObject(game, true) {
 	setTexture(ShopPanel_Interact);
 	setPosition(x, y);
 	setDimension(108, 160);

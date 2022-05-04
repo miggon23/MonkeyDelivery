@@ -70,7 +70,7 @@ public:
 			newP = gOGenerator.posBulls[i] + mapOffset;
 			newP.setX((int)(newP.getX() * relative.getX()));
 			newP.setY((int)(newP.getY() * relative.getY()));
-			game->addEnemies(new Bull(game, gOGenerator.radios_.bullR, newP, game->getAnimationManager()));
+			game->addEnemies(new Bull(game, gOGenerator.radios_.bullR, newP));
 		}
 
 
@@ -79,7 +79,7 @@ public:
 			newP = gOGenerator.posScorpions[i] + mapOffset;
 			newP.setX((int)(newP.getX() * relative.getX()));
 			newP.setY((int)(newP.getY() * relative.getY()));
-			game->addEnemies(new Scorpion(game, gOGenerator.radios_.scorpionsR, newP, game->getAnimationManager()));
+			game->addEnemies(new Scorpion(game, gOGenerator.radios_.scorpionsR, newP));
 		}
 
 
@@ -88,7 +88,7 @@ public:
 			newP = gOGenerator.posBats[i] + mapOffset;
 			newP.setX((int)(newP.getX() * relative.getX()));
 			newP.setY((int)(newP.getY() * relative.getY()));
-			game->addEnemies(new Bat(game, gOGenerator.radios_.batsR, newP, 3, game->getAnimationManager()));
+			game->addEnemies(new Bat(game, gOGenerator.radios_.batsR, newP, 3));
 
 
 		}
@@ -99,7 +99,7 @@ public:
 			newP = gOGenerator.posPlants[i] + mapOffset;
 			newP.setX((int)(newP.getX() * relative.getX()));
 			newP.setY((int)(newP.getY() * relative.getY()));
-			game->addEnemies(new Plant(game, gOGenerator.radios_.plantsR, newP, game->getAnimationManager()));
+			game->addEnemies(new Plant(game, gOGenerator.radios_.plantsR, newP));
 		}
 
 
@@ -108,7 +108,7 @@ public:
 			newP = gOGenerator.posCats[i] + mapOffset;
 			newP.setX((int)(newP.getX() * relative.getX()));
 			newP.setY((int)(newP.getY() * relative.getY()));
-			game->addEnemies(new Cat(game, gOGenerator.radios_.catR, newP, game->getAnimationManager()));
+			game->addEnemies(new Cat(game, gOGenerator.radios_.catR, newP));
 		}
 
 

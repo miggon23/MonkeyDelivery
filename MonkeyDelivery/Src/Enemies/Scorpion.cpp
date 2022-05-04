@@ -1,7 +1,7 @@
 #include "Scorpion.h"
 #include "../Logic/Game.h"
 
-Scorpion::Scorpion(Game* game, int Aleatorio, Point2D<int> centroRadio, AnimationManager* animation) : Enemy(game, Aleatorio, centroRadio, animation)
+Scorpion::Scorpion(Game* game, int Aleatorio, Point2D<int> centroRadio) : Enemy(game, Aleatorio, centroRadio)
 {
 	setTexture(scorpionSS_Default);
 	Vector2D<double> zonePoint = zone.generatePoint();

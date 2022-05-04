@@ -2,6 +2,17 @@
 #include "Game.h"
 #include "../Utils/Timer.h"
 
+AnimationManager* AnimationManager::sInstance = nullptr;
+
+AnimationManager* AnimationManager::Instance(){
+	return sInstance;
+}
+AnimationManager* AnimationManager::initialInstance(Game* game ) {
+	if (sInstance == nullptr) {
+		sInstance = new AnimationManager(game);
+	}
+	return sInstance;
+}
 void AnimationManager::getFrameImagePlayer(SDL_Rect player, SDL_Rect& texturaRect, Texture* tex, float& timer, LastDir newDir) {
 	//Si la direccion cambia (da igual de que componente)
 	if (lastDir.x != newDir.x || lastDir.y != newDir.y) {

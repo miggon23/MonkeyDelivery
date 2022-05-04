@@ -1,7 +1,7 @@
 #include "Bull.h"
 #include "../Logic/Game.h"
 
-Bull::Bull(Game* game, int radio, Point2D<int> centroRadio, AnimationManager* animation) : Enemy(game, radio, centroRadio, animation)
+Bull::Bull(Game* game, int radio, Point2D<int> centroRadio) : Enemy(game, radio, centroRadio)
 {
 	setTexture(bullSS_Default);
 	Vector2D<double> zonePoint = zone.generatePoint();

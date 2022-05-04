@@ -9,7 +9,7 @@ class AnimationManager
 {
 public:
 	enum PlayerState { Sleeping, GoToSleep, Running, Scared, Idle };
-
+	static AnimationManager* sInstance;
 private:
 	Game* game_;
 	//Player	
@@ -34,11 +34,11 @@ public:
 		int y;
 	};
 	LastDir lastDir;
-
-	inline AnimationManager() : game_(nullptr) { lastDir = { 0,0 }; isTired_ = false; isScared_ = false; };
+	static AnimationManager* Instance();
+	static AnimationManager* initialInstance(Game* game);	
 	inline AnimationManager(Game* game) :game_(game) { lastDir = { 0,0 }; isTired_ = false; isScared_ = false;};
 	inline ~AnimationManager() {  };
-
+	inline void DestroyInstance() { delete sInstance; sInstance = nullptr; };
 	//JUGADOR
 	inline PlayerState setState(PlayerState state) { return playerState_ = state; };
 	inline void setIsTired(bool t) { isTired_ = t; }

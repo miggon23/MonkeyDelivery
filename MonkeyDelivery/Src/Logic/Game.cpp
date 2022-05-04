@@ -37,7 +37,7 @@ Game::Game(string n, double w, double h) : name(n), width(w), height(h), doExit(
     font_ = new Font("./Images/fonts/Pixellari.ttf", 50);
     moneyFont_ = new Font("./Images/fonts/Pixellari.ttf", 26);
 
-    animationManager_ = new AnimationManager(this);
+    animationManager_ =AnimationManager::initialInstance(this);
 }
 
 Game::~Game() {
@@ -61,6 +61,7 @@ Game::~Game() {
     delete tutorialBook_;
 
     delete textureContainer_;
+    animationManager_->DestroyInstance();
     delete animationManager_;
     delete font_;
     delete moneyFont_;
@@ -111,7 +112,7 @@ void Game::start()
     inGame = true;
   
     animationManager_ = new AnimationManager(this);
-   if(player_==nullptr) player_ = new Player(this, animationManager_); //Creacion del jugadorIn
+   if(player_==nullptr) player_ = new Player(this); //Creacion del jugadorIn
  
     // Cámara:
     Vector2D<double> vJug = { (player_->getPosition().getX() - width / 2), (player_->getPosition().getY() - height / 2) };
@@ -129,7 +130,7 @@ void Game::start()
     Point2D<double> relative = { (double)(getWindowWidth() / 1800), (double)(getWindowHeight() / 1000) };
 
 
-    add(new IntectuableShop(this, (int)(3700*relative.getX()), (int)(1600*relative.getY()), animationManager_));
+    add(new IntectuableShop(this, (int)(3700*relative.getX()), (int)(1600*relative.getY())));
     shop_ = new Shop(player_, this);
     shop_->actualice(1);
     tutorialBook_ = new TutorialBook(this, (int)(4000*relative.getX()), (int)(1660*relative.getY()), 100, 75);

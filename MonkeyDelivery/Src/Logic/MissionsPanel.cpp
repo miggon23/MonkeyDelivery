@@ -12,7 +12,7 @@
 
 #include "../Utils/Timer.h"
 
-MissionsPanel::MissionsPanel(Game* game, AnimationManager* anim) : GameObject(game, true, anim)
+MissionsPanel::MissionsPanel(Game* game, AnimationManager* anim) : GameObject(game, true)
 {
 	Point2D<double> relative = { (double)(game->getWindowWidth() / 1800), (double)(game->getWindowHeight() / 1000) };
 

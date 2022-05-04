@@ -37,7 +37,7 @@ public:
     void setTexture(TextureName textureName);
     inline void setFlip(SDL_RendererFlip f) { flip = f; }
 
-    GameObject(Game* game,  bool rel = false, AnimationManager* anim = nullptr) : game(game), relative_(rel), texture(nullptr), flip(SDL_FLIP_NONE), animationManager(anim),
+    GameObject(Game* game,  bool rel = false) : game(game), relative_(rel), texture(nullptr), flip(SDL_FLIP_NONE), animationManager(AnimationManager::Instance()),
         height_(),maxX_(),maxY_(),textureRect(),timerAnimation_(),time_(),width_() {
     };
     virtual ~GameObject() {

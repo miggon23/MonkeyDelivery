@@ -4,7 +4,7 @@
 class Plant : public Enemy
 {
 public:
-	Plant(Game* game, int Aleatorio, Point2D<int>centroRadio, AnimationManager* animation);
+	Plant(Game* game, int Aleatorio, Point2D<int>centroRadio);
 	~Plant() {};
 
 	void update() override;

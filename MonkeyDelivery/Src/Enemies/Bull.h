@@ -11,7 +11,7 @@ private:
 	float speed = 1.5;
 
 public:
-	Bull(Game* game, int Aleatorio, Point2D<int>centroRadio, AnimationManager* animation);
+	Bull(Game* game, int Aleatorio, Point2D<int>centroRadio);
 	~Bull() {};
 
 	void update() override;

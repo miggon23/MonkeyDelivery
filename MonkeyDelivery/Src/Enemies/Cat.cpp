@@ -3,7 +3,7 @@
 #include <cmath>
 #include <algorithm>
 
-Cat::Cat(Game* game,int Aleatorio, Point2D<int>centroRadio, AnimationManager* animation):Enemy(game, Aleatorio, centroRadio, animation){
+Cat::Cat(Game* game,int Aleatorio, Point2D<int>centroRadio):Enemy(game, Aleatorio, centroRadio){
 
 	Vector2D<double> zonePoint = zone.generatePoint(); //genera un punto en la zona de spawn
 	setPosition(zonePoint.getX(), zonePoint.getY()); //Coloca al enemigo en ese punto

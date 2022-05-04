@@ -33,7 +33,7 @@ bool Lantern::useObject() {
 
 		}
 		cout << endl;
-		active = !active;
-		return false; //devolvemos false indicando que el objeto no debe destruirse tras ser usado
+		active = !active;		
 	}
+	return false; //devolvemos false indicando que el objeto no debe destruirse tras ser usado
 }

@@ -33,8 +33,8 @@ bool Flashlight::useObject() {
 		}
 		cout << endl;
 		active = !active;
-		return false; //devolvemos false indicando que el objeto no debe destruirse tras ser usado
 	}
+	return false;//devolvemos false indicando que el objeto no debe destruirse tras ser usado
 }
 
 void Flashlight::setActive(bool b)
