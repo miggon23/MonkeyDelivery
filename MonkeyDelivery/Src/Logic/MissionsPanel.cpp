@@ -152,7 +152,7 @@ void MissionsPanel::onMissionSelected(string missionId)
 		missionObject_->setTexture(m.target);
 
 		//iniciar el contador
-		initialTicks_ = game->getTimer()->TimeScale();
+		initialTicks_ =Uint32( game->getTimer()->TimeScale());
 		endTime_ =  m.minTime;
 	}
 

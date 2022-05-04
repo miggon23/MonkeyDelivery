@@ -29,7 +29,7 @@
 /// Color for debug drawing. Each value has the range [0,1].
 struct B2_API b2Color
 {
-	b2Color() {}
+	b2Color():r(),g(),b(),a() {}
 	b2Color(float rIn, float gIn, float bIn, float aIn = 1.0f)
 	{
 		r = rIn; g = gIn; b = bIn; a = aIn;

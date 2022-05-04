@@ -507,7 +507,7 @@ void Game::initOptionsState()
 void Game::drawMap()
 { 
     Point2D<double> relative = { (double)(getWindowWidth() / 1800), (double)(getWindowHeight() / 1000) };
-    SDL_Rect rectPanel = { minimapinfo_.xOrigin*relative.getX(), minimapinfo_.yOrigin*relative.getY(), (int)minimapinfo_.w, (int)minimapinfo_.h };
+    SDL_Rect rectPanel = { (int)(minimapinfo_.xOrigin*relative.getX()), (int)(minimapinfo_.yOrigin*relative.getY()), (int)minimapinfo_.w, (int)minimapinfo_.h };
 
     SDL_Rect src = { (int)lround((mCamera_->getCameraPosition().getX() - mCamera_->getWidth() * miniMapScale_ / 2 - player_->getWidth() / 2) / (getWindowWidth() / mCamera_->getWidth())),
                      (int)lround((mCamera_->getCameraPosition().getY() - mCamera_->getHeight() * miniMapScale_ / 2 - player_->getHeight() / 2) / (getWindowHeight() / mCamera_->getHeight())),

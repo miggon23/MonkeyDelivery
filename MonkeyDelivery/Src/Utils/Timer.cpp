@@ -32,18 +32,18 @@ void Timer::Reset(){
 
 void Timer::UnPause()
 {
-	startGame = (SDL_GetTicks() - mTimeScale);
+	startGame = ((float)SDL_GetTicks() - mTimeScale);
 }
 
 float Timer::TimeScale(){
-	mTimeScale = SDL_GetTicks() - startGame;
+	mTimeScale = (int)(SDL_GetTicks() - startGame);
 	return mTimeScale;
 }
 
 void Timer::Update(std::string s){
 	if (s == "Playing State") {
 
-		mTimeScale = (SDL_GetTicks() - startGame);
+		mTimeScale = (int)(SDL_GetTicks() - startGame);
 	}
 	mElapsedTicks = SDL_GetTicks() - mStartTicks; //miliseconds
 	mDeltaTime = mElapsedTicks * 0.001f; //seconds
