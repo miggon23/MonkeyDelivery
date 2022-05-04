@@ -13,7 +13,7 @@ Enemy::Enemy(Game* game, int radio, Point2D<int>centroRadio, AnimationManager* a
 	respawnTimer = SDL_GetTicks();
 	nearLimit_ = 2;
 	timeLimit_ = 250;
-	setMaxFearPercent(50);
+	setMaxFearPercent(30);
 }
 
 void Enemy::patrol(double speed)
@@ -131,7 +131,7 @@ void Enemy::checkDistance()
 			//miedo
 			if (lastUpdate_ + timeLimit_ < SDL_GetTicks()) {
 				double minDis = min(distanceX, distanceY);
-				scariness_ = range / (minDis * 3);
+				setScariness(range / (minDis * 3));
 				if (scariness_ > maxFearPercent_) setScariness(maxFearPercent_); //Como mximo quita un 25% cada vez
 				game->scare(scariness_);
 				lastUpdate_ = SDL_GetTicks();

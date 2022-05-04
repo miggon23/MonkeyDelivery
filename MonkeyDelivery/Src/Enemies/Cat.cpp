@@ -12,7 +12,7 @@ Cat::Cat(Game* game,int Aleatorio, Point2D<int>centroRadio, AnimationManager* an
 	setDimension(52, 70);
 	createCheckPoints();
 	setResistance(1000);
-	setMaxFearPercent(45);
+	setMaxFearPercent(25);
 	width_ = 16;
 	height_ = 20;
 	time_ = 250;
@@ -59,7 +59,7 @@ void Cat::checkDistance()
 {
 	if (isAlive()) {
 		
-		int range = 400;
+		int range = 350;
 		double dirX = getPosition().getX() - game->getPosisitionPlayer().getX(); //direccion en las x
 		double distanceX = abs(dirX);
 		double distanceY = abs(getPosition().getY() - game->getPosisitionPlayer().getY());
@@ -74,7 +74,7 @@ void Cat::checkDistance()
 			//miedo
 			if (lastUpdate_ + timeLimit_ < SDL_GetTicks()) {
 				double minDis = min(distanceX, distanceY);
-				scariness_ = range / (minDis*3);
+				setScariness(range / (minDis * 3));
 				if (scariness_ > maxFearPercent_) setScariness(maxFearPercent_); //Como mximo quita un 30% cada vez
 				game->scare(scariness_);
 				lastUpdate_ = SDL_GetTicks();

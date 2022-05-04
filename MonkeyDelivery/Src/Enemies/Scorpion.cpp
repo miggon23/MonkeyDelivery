@@ -13,7 +13,7 @@ Scorpion::Scorpion(Game* game, int Aleatorio, Point2D<int> centroRadio, Animatio
 	iniPlayerVel = game->getPlayer()->getVel();
 	inRange = false;
 	setResistance(2500);
-	setMaxFearPercent(35);
+	setMaxFearPercent(50);
 	width_ = height_ = 18;
 	time_ = 200;
 	maxX_ = 144;
@@ -62,7 +62,7 @@ void Scorpion::checkDistance()
 		}
 		if (lastUpdate_ + timeLimit_ < SDL_GetTicks()) {
 			double minDis = min(distanceX, distanceY);
-			scariness_ = range / minDis;
+			setScariness(range / (minDis * 3));
 			if (scariness_ > maxFearPercent_) setScariness(maxFearPercent_); //Como mximo quita un 25% cada vez
 			game->scare(scariness_);
 			lastUpdate_ = SDL_GetTicks();

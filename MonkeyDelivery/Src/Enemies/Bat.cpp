@@ -21,7 +21,6 @@ Bat::Bat(Game* game, int Aleatorio, Point2D<int> centroRadio, int nLoop, Animati
 	
 	createCheckPoints();
 	setResistance(2000);
-	setScariness(0.12);
 }
 
 void Bat::update()
