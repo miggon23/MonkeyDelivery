@@ -354,6 +354,8 @@ void Player::sendToBed()
 	sdlutils().soundEffects().at("scary").setVolume((int)(game->getSoundEfectsVolume() * game->getGeneralVolume()));
 	sdlutils().soundEffects().at("scary").play(0, 1);
 	setPosition(bedX_ , bedY_ + 60.0);//colocar en la cama
+
+	game->resetInitialTransition();
 }
 
 /// <summary>

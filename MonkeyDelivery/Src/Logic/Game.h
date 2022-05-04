@@ -252,4 +252,5 @@ public:
     void addPickaxe(int level);
 
     Transition* getInitialTransition();
+    void resetInitialTransition();
 };

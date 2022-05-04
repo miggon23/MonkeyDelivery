@@ -287,8 +287,7 @@ void Game::restart()
 {
     // comienza a sonar la música de juego de nuevo
     sdlutils().musics().at("gamemusic").play(-1);
-
-    initialTransition->restart();
+    resetInitialTransition();
 }
 
 //economy
@@ -581,4 +580,9 @@ void Game::addPickaxe(int level)
 Transition* Game::getInitialTransition()
 {
     return initialTransition;
+}
+
+void Game::resetInitialTransition()
+{
+    initialTransition->restart();
 }
