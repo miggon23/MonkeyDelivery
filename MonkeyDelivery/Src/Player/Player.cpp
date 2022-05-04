@@ -107,9 +107,12 @@ void Player::update()
 			if(isRunning) setVel(getVel() / runningSpeedFactor_);
 			previusVel_ = getVel();
 			reducedSpeed_ = true;
-			setVel(INIT_VEL_ / reduceFactor_);
+			setVel(getVel() / reduceFactor_);
 		}
-		else if (energyLevel_->percentEnergy() != 0) { reducedSpeed_ = false;}
+		else if (energyLevel_->percentEnergy() > 0 && reducedSpeed_) { 
+			reducedSpeed_ = false;
+			setVel(getVel() * reduceFactor_);
+		}
 	}
 	lastUpdate = timer.currTime();
 }
@@ -122,20 +125,21 @@ void Player::move()
 	
 	//Normalizamos el vector para que no se desplaze m�s en diagonal
 	speed.normalize();
-	speed = speed * vel_ * (timer.currTime() - lastUpdate);
+	//speed = speed * vel_ * (timer.currTime() - lastUpdate);
 
 	//SI LA VELOCIDAD ES 0 RECUPERA ENERGIA HASTA UN MAX
 	if (speed.getX() == 0 && speed.getY() == 0) {
 		isStopped_ = true;
 		if (energyLevel_->percentEnergy() < maxEnergyPercent_) {
 			energyLevel_->drain(-reduceEnergyFactor_);
-			if (energyLevel_->percentEnergy() <= reduceEnergyFactor_) {
-				setVel(previusVel_);
-				speed = speed * vel_ * (timer.currTime() - lastUpdate);
-			}
+			/*if (energyLevel_->percentEnergy() <= reduceEnergyFactor_) {
+				setVel(getVel() * reduceFactor_);
+			}*/
 		}
 	}
 	else isStopped_ = false;
+
+	speed = speed * vel_ * (timer.currTime() - lastUpdate);
 
 	if (dirX_ != 0 || dirY_ != 0) {
 
@@ -348,7 +352,9 @@ void Player::FadeOut()
 void Player::sendToBed()
 {
 	fade = false;
+	reducedSpeed_ = false;
 	powerUpsManager->desactivateAllPowerUps();
+	resetVelocity();
 	inventory_->desactivateUseSelectedObject();
 	sdlutils().soundEffects().at("scary").setVolume((int)(game->getSoundEfectsVolume() * game->getGeneralVolume()));
 	sdlutils().soundEffects().at("scary").play(0, 1);
