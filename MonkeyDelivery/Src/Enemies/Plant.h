@@ -11,7 +11,6 @@ public:
 	void createCheckPoints() override {};
 	void checkDistance() override;
 	void draw() override;
-	//Textura aleatoria ejejejej
+	//Textura aleatoria 
 	TextureName randomTex;
-	//void die() override;
 };

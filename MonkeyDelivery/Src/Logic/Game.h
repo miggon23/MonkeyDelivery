@@ -222,9 +222,9 @@ public:
     Shop* getShop() { return shop_; }
 
     //Sounds&Music
-    inline void ChangeMusicVolume(int volume) { musicVolume_ = volume;/* std::cout << musicVolume_ << std::endl;*/ };
-    inline void ChangeSoundEfectsVolume(int volume) { soundEfectsVolume_ = volume; /*std::cout << soundEfectsVolume_ << std::endl;*/};
-    inline void ChangeGeneralVolume(double volume) { generalVolume_ = volume; /*std::cout << generalVolume_ << std::endl;*/};
+    inline void ChangeMusicVolume(int volume) { musicVolume_ = volume; };
+    inline void ChangeSoundEfectsVolume(int volume) { soundEfectsVolume_ = volume;};
+    inline void ChangeGeneralVolume(double volume) { generalVolume_ = volume; };
 
     int getMusicVolume() { return musicVolume_; };
     int getSoundEfectsVolume() { return soundEfectsVolume_; };

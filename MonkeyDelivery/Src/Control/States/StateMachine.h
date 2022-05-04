@@ -9,7 +9,6 @@ class StateMachine
 protected:
 	State* state = nullptr;
 	State* optionsState=nullptr;
-	//State* savedState = nullptr;
 	std::vector<State*> savedStates;	
 public:
 	~StateMachine();

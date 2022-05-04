@@ -16,15 +16,13 @@ protected:
 
     Game* game = nullptr;
     CommandFactory* commandFactory = nullptr;
-    //unsigned int initTime;
-    //unsigned int totalTime;
-
+  
     bool isFullscreen = false;
     vector<Button*> buttonsUI;
     vector<Slider*> slidersUI;
  
 public:
-    State(Game* game) : game(game)/*, initTime(SDL_GetTicks()), totalTime(0)*/ {
+    State(Game* game) : game(game){
         commandFactory = new CommandFactory(game);       
     };
 

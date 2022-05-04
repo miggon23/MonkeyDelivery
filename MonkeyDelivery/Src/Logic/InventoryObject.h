@@ -24,7 +24,6 @@ protected:
 	TypeObjectInventory typeObject;
 public:
 	
-	//InventoryObject() {};
 	InventoryObject(Texture* tex, Game* game,Player* player);
 	~InventoryObject();
 	
