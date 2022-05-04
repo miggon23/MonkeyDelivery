@@ -523,7 +523,7 @@ void Game::drawMap()
 
     /*if (isMapPointerPut) 
         mapPoint->draw();*/
-
+    scalePlayerIcon();
     pIcon->draw();
 }
 
@@ -566,8 +566,8 @@ void Game::scalePlayerIcon(){
 
     pIcon->setDimension(smallDimension, smallDimension);
 
-    double x = minimapinfo_.xOrigin + (minimapinfo_.w / 2) +smallDimension*1.5;
-    double y = minimapinfo_.yOrigin + (minimapinfo_.h / 2) + smallDimension;
+    double x = minimapinfo_.xOrigin + minimapinfo_.w / 2 - smallDimension+5;
+    double y = minimapinfo_.yOrigin + minimapinfo_.h / 2 - offset;
 
     pIcon->setPosition(x*relative.getX(), y*relative.getY());
 }
