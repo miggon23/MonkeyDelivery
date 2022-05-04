@@ -6,7 +6,6 @@ bool InventoryCommand::parse(SDL_Event& event) {
 	if (event.type == SDL_MOUSEWHEEL) {
 		ruedaRton = true;
 		id = event.wheel.y;
-		//std::cout << id << std::endl;
 		return true;
 	}
 
@@ -37,7 +36,6 @@ bool InventoryCommand::parse(SDL_Event& event) {
 			if (id == 0) id = 5;
 		}
 		if (ihdlr.getButtonState(0, 2))use = true;
-		//cout << id;
 		if (id != -1 || use)
 			return true;
 
@@ -50,7 +48,6 @@ void InventoryCommand::execute() {
 
 		if (use) { game->getPlayer()->useSelectedObject(); use = false; return; }
 		else if (ruedaRton) { 
-			//std::cout << "entra" << std::endl;
 			game->getPlayer()->mouseWheelSelectedObject(-id); ruedaRton = false; return; }
 		game->getPlayer()->selectObject(id);
 	}
