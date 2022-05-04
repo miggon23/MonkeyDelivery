@@ -62,7 +62,7 @@ Game::~Game() {
 
     delete textureContainer_;
     animationManager_->DestroyInstance();
-    delete animationManager_;
+   
     delete font_;
     delete moneyFont_;
 
@@ -111,7 +111,7 @@ void Game::start()
 {
     inGame = true;
   
-    animationManager_ = new AnimationManager(this);
+    
    if(player_==nullptr) player_ = new Player(this); //Creacion del jugadorIn
  
     // Cámara:
