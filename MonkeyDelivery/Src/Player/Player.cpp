@@ -30,9 +30,9 @@ Player::Player(Game* game, AnimationManager* animation) :GameObject(game), anima
 	orientation_ = "";
 	runningSpeedFactor_ = 1.5;
 
-	walkingEnergy_ = 0.05;
+	walkingEnergy_ = 0.025;
 	runningEnergy_ = walkingEnergy_ * 1.5;
-	decreasingEnergyLevel_ = walkingEnergy_; // Cambiar esto despu�s a un m�todo set <---
+	decreasingEnergyLevel_ = walkingEnergy_; 
 	reducedSpeed_ = false;
 	reduceFactor_ = 2.2;
 	maxEnergyPercent_ = 20;

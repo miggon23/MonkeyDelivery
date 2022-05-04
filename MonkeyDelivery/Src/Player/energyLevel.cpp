@@ -13,6 +13,7 @@ energyLevel::energyLevel(Game* game) :GameObject(game) {
 	x = (int)(game->getWindowWidth() / 8);
 	y = (int)(game->getWindowHeight() / 23);
 	h = (int)(game->getWindowHeight() / 60);
+
 	scale_ = (1.83 / 1800) * game->getWindowWidth();
 
 	setPosition(x, y);
@@ -21,8 +22,10 @@ energyLevel::energyLevel(Game* game) :GameObject(game) {
 
 // Drena energía y devuelve true si se queda a 0
 bool energyLevel::drain(double energyDrained){
+
 	energy_ -= energyDrained;
-	if (energy_ > maxEnergy_)energy_ = maxEnergy_;
+	if (energy_ > maxEnergy_)
+		energy_ = maxEnergy_;
 	if (energy_ > 0) {
 		setDimension((energy_) * scale_, h);
 		setPosition(x - (energyDrained / 2), y);
@@ -30,11 +33,11 @@ bool energyLevel::drain(double energyDrained){
 	}
 	else {
 		energy_ = 0;
-		// avisa al player de que está sin energía
-		//cout << "ME DUERMO" << endl;
 		return true;
 	}
-	cout << energy_ << endl;
+	
+
+
 	return true;
 }
 
