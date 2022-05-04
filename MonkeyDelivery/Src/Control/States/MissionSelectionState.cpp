@@ -25,19 +25,19 @@ MissionSelectionState::MissionSelectionState(Game* game, vector<pair<string,stri
 		}else if (a.second == "Mission02") {
 			tex = game->getTexture(Mission02);
 		}else if (a.second == "Mission03") {
-			tex = game->getTexture(Mission07);
+			tex = game->getTexture(Mission03);
 		}else if (a.second == "Mission04") {
-			tex = game->getTexture(Mission07);
+			tex = game->getTexture(Mission04);
 		}else if (a.second == "Mission05") {
-			tex = game->getTexture(Mission07);
+			tex = game->getTexture(Mission05);
 		}else if (a.second == "Mission06") {
-			tex = game->getTexture(Mission07);
+			tex = game->getTexture(Mission06);
 		}else if (a.second == "Mission07") {
 			tex = game->getTexture(Mission07);
 		}else if (a.second == "Mission08") {
-			tex = game->getTexture(Mission07);
+			tex = game->getTexture(Mission08);
 		}else if (a.second == "Mission09") {
-			tex = game->getTexture(Mission07);
+			tex = game->getTexture(Mission09);
 		}
 		if (tex != nullptr)
 			currentTextures_.push_back(tex);

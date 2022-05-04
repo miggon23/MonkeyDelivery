@@ -13,8 +13,8 @@ bool PauseCommand::parse(SDL_Event& event)
 		if (key == SDLK_ESCAPE)
 			return true;
 	}
-	else if (ihld.getButtonState(0, 1)) {
-		return true;
+	else if (ihld.getButtonState(0, 7)) {
+  		return true;
 	}
 	return false;
 }

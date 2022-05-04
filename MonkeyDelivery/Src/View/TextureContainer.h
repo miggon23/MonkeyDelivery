@@ -87,13 +87,19 @@ enum TextureName
 		playerIconTex,
 		minimapOverlay02,
 	
-	//7-Missions - 6
+	//7-Missions - 13
 		mission_UI_Helper,
 		mission_UI_Panel,
 		mission_UI_Selector,
 		Mission01,
 		Mission02,
+		Mission03,
+		Mission04,
+		Mission05,
+		Mission06,
 		Mission07,
+		Mission08,
+		Mission09,
 		MissionPanel_Interact,
 	
 	//8-Monkey SpriteSheets - 3
@@ -163,7 +169,7 @@ enum TextureName
 		transitionTex
 };
 
-const int NUM_TEXTURES = 116;
+const int NUM_TEXTURES = 122;
 
 typedef struct {
 	string filename;
@@ -252,7 +258,13 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
 	{"missions/mission_UI_Selector.png",1,1},
 	{"missions/Mission01.png",1,1},
 	{"missions/Mission02.png",1,1},
+	{"missions/Mission03.png",1,1},
+	{"missions/Mission04.png",1,1},
+	{"missions/Mission05.png",1,1},
+	{"missions/Mission06.png",1,1},
 	{"missions/Mission07.png",1,1},
+	{"missions/Mission08.png",1,1},
+	{"missions/Mission09.png",1,1},
 	{"missions/MissionPanel_Interact.png",1,1},
 
 	//8-Monkey SpriteSheets

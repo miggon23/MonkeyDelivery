@@ -12,7 +12,7 @@ bool CommandRun::parse(SDL_Event& event)
 			return true;
 		}
 	}
-	if (ihl.getButtonState(0, 0)) {
+	if (ihl.getButtonState(0, 0) != isRunning) {
 		if (!isRunning) { //Para que la velocidad no se acumule
 			isRunning = true;
 			return true;
