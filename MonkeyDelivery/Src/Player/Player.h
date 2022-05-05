@@ -101,6 +101,10 @@ private:
 	AnimationManager* animationManager;
 	SDL_Rect textureRect;
 	float timerAnimation;
+	Texture* scaredIcon;
+	SDL_Rect scaredRect;
+	Texture* tiredIcon;
+	SDL_Rect tiredRect;
 
 	//LINTERNAS
 	string orientation_;
