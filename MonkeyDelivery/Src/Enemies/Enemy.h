@@ -33,6 +33,7 @@ protected:
 	vector<Point2D<double>> checkpoints;
 	Point2D<double> offsetCamera; //movimiento enemigos respecto a camara
 	
+	const int deathReward_ = 5; // dinero que te da matar al enemigo  
 
 public:
 

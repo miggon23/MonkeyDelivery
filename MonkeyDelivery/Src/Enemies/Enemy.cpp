@@ -67,6 +67,7 @@ void Enemy::die()
 		// si pasa Xs en la luz, se muere
 		if (timeOnFlash_ + resistence_ < SDL_GetTicks() && collide(game->getPlayer()->lightZoneFL()) && collided) {
 			setAlive(false);
+			game->getPlayer()->addMoney(deathReward_);
 			collided = false;
 		}
 	}
@@ -87,9 +88,11 @@ void Enemy::die()
 		// si pasa Xs en la luz, se muere
 		if (timeOnFlash_ + resistence_ < SDL_GetTicks() && collide(game->getPlayer()->lightZoneL()) && collided) {
 			setAlive(false);
+			game->getPlayer()->addMoney(deathReward_);
 			collided = false;
 		}
 	}
+
 }
 
 void Enemy::spawn()
