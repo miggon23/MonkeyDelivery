@@ -183,7 +183,7 @@ enum TextureName
 		fox_Icon
 };
 
-const int NUM_TEXTURES = 135;
+const int NUM_TEXTURES = 136;
 
 typedef struct {
 	string filename;
