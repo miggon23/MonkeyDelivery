@@ -366,6 +366,20 @@ void Player::FadeOut()
 	}
 }
 
+Point2D<double> Player::getClosestBed()
+{
+	int min = INT_MAX;
+	Point2D<double> p;
+	for (auto b : game->getBeds())
+	{
+		int x = std::abs(b->getX() - getX());
+		int y = std::abs(b->getY() - getY());
+		int val = x + y;
+		if (val < min) { min = val; p.setX(b->getX()); p.setY(b->getY()); }
+	}
+	return p;
+}
+
 void Player::sendToBed()
 {
 	fade = false;
@@ -376,20 +390,15 @@ void Player::sendToBed()
 	sdlutils().soundEffects().at("scary").setVolume((int)(game->getSoundEfectsVolume() * game->getGeneralVolume()));
 	sdlutils().soundEffects().at("scary").play(0, 1);
 
-	int min=INT_MAX;
 	Point2D<double> p;
-	for (auto b: game->getBeds())
-	{
-		int x = std::abs(b->getX() - getX());
-		int y = std::abs(b->getY() - getY());
-		int val = x + y;
-		if (val < min) { min = val; p.setX(b->getX()); p.setY(b->getY()); }
-	}
+	p=getClosestBed();
 
 	setPosition(p.getX() , p.getY() + 60.0);//colocar en la cama
 
 	game->resetInitialTransition();
 }
+
+
 
 /// <summary>
 /// Manejar velocidad al chocar con una pared

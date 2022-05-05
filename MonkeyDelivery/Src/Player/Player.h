@@ -218,6 +218,7 @@ public:
 
 	// FADEOUT
 	void FadeOut(); // Realiza un fadeout sobre la pantalla
+	Point2D<double> getClosestBed(); //obtener cama mas cercana
 	void sendToBed(); // Establece la posici�n en la cama m�s cercana despu�s del fadeout
 
 	// COLLISIONS
