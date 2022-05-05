@@ -1,7 +1,7 @@
 #include "Bike.h"
 #include "../Player/Player.h"
 #include "../Logic/Game.h"
-Bike::Bike(Texture* tex, Game* game,Player* player) : speedMult(1.7), InventoryObject(tex, game,player)
+Bike::Bike(Texture* tex, Game* game,Player* player) : speedMult(1.4), InventoryObject(tex, game,player)
 {
 	active = false;
 	setTypeObject(BOOTS);
@@ -16,5 +16,5 @@ bool Bike::useObject() {
 }
 
 void Bike::setCorrectTexture(){
-	setMyTexture(game_->getTexture(Item_Boots01));
+	setMyTexture(game_->getTexture(Item_Boots02));
 }
