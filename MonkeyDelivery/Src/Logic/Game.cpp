@@ -219,7 +219,10 @@ void Game::draw()
 
     
     for (auto enemy : enemyContainer_)
+    {
         enemy->draw();
+        enemy->drawPopUp();
+    }
 
     // Dibujar colliders
     //for (auto c : collisions_) {

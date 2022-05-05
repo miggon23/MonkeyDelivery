@@ -14,6 +14,10 @@ Enemy::Enemy(Game* game, int radio, Point2D<int>centroRadio) : GameObject(game, 
 	nearLimit_ = 2;
 	timeLimit_ = 250;
 	setMaxFearPercent(30);
+	popupTexture = game->getTexture(fearPopUp);
+	popUpTexRect = {0, 0, 22, 6};
+	popUpActive = false;
+	popUpTimer = 160;
 }
 
 void Enemy::patrol(double speed)
@@ -139,8 +143,22 @@ void Enemy::checkDistance()
 				game->scare(scariness_);
 				lastUpdate_ = SDL_GetTicks();
 			}
+			popUpActive = true;
 		}
+		else popUpActive = false;
 	}
+}
+
+void Enemy::drawPopUp()
+{
+	if (!popUpActive) return;
+
+	auto pos = getCollider();
+	pos.x -= (int)game->getCamera()->getCameraPosition().getX() - 10;
+	pos.y -= (int)game->getCamera()->getCameraPosition().getY() - 5;
+
+	SDL_Rect oRect = { pos.x, pos.y, 21 * 3, 6 * 3};
+	animationManager->getFrameImage(oRect, popUpTexRect, popupTexture, popUpTimer, SDL_FLIP_NONE, 22*3, 6*3, 154, 1, time_);
 }
 
 bool Enemy::inPoint()

@@ -21,6 +21,7 @@ Bat::Bat(Game* game, int Aleatorio, Point2D<int> centroRadio, int nLoop) : Enemy
 	
 	createCheckPoints();
 	setResistance(2000);
+	
 }
 
 void Bat::update()

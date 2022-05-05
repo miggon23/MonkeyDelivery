@@ -35,6 +35,12 @@ protected:
 	
 	const int deathReward_ = 5; // dinero que te da matar al enemigo  
 
+	//PopUp
+	Texture* popupTexture;
+	SDL_Rect popUpTexRect;
+	bool popUpActive;
+	float popUpTimer;
+
 public:
 
 	Enemy(Game* game, int radio, Point2D<int>centroRadio);
@@ -60,4 +66,6 @@ public:
 	inline void changeOffset(Point2D<double> newMove) { offsetCamera = offsetCamera + newMove; }
 
 	bool inPoint();
+
+	void drawPopUp();
 };
