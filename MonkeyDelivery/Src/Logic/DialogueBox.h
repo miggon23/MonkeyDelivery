@@ -37,7 +37,7 @@ private:
 		wIcon = 125,
 		hIcon = 125,
 		iconId=-1,
-		letterPerLine_ = 50,
+		letterPerLine_ = 45,
 		sizeBtwLines_ = 40,
 		normalUpdateTime_ = 75,
 		fastUpdateTime_ = 5,
