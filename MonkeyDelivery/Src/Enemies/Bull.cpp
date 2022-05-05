@@ -85,7 +85,7 @@ void Bull::checkDistance()
 				double minDis = min(distanceX, distanceY);
 				setScariness(range / (minDis * 3));
 				if (scariness_ > maxFearPercent_) setScariness(maxFearPercent_); //Como mximo quita un 10% cada vez
-				game->scare(scariness_);
+				game->scare(scariness_/2);
 				lastUpdate_ = SDL_GetTicks();
 			}
 		}
