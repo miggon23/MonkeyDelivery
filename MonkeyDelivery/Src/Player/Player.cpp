@@ -410,6 +410,10 @@ void Player::onCollisionExit() {
 	bottomCollision = false;
 }
 
+bool Player::getFadeOut(){
+	return fade;
+}
+
 //se le pasa una cantidad de dinero al player
 //si la cantidad es negativa se entiende que es para una compra y se devuelve un bool como confirmacion
 //en caso contrario solo se le a�ade el dinero al actual del jugador

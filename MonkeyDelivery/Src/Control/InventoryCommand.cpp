@@ -44,7 +44,7 @@ bool InventoryCommand::parse(SDL_Event& event) {
 }
 
 void InventoryCommand::execute() {
-	if (!game->getPlayer()->isTalking()) {
+	if (!game->getPlayer()->isTalking()&& !game->getPlayer()->getFadeOut()) {
 
 		if (use) { game->getPlayer()->useSelectedObject(); use = false; return; }
 		else if (ruedaRton) { 

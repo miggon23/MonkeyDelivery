@@ -150,7 +150,7 @@ public:
 	inline void recoverFear(double amount) { fearLevel_->getScared(-amount); };
 	inline double getFear() { return fearLevel_->getFear(); };
 	inline double getFearPercent() { return fearLevel_->percentFear(); };
-
+	bool getFadeOut();
 	// MOVEMENT
 	void move();
 	void setIsRunning(bool run);
