@@ -176,31 +176,31 @@
   "dialogues": [
     {
       "id": "DialogueBox1",
-      "text": "Buenisimas tardes monos y senioras, bienvenido a DocTocs"
+      "text": "Buenísimas tardes monos y señoras, bienvenidos a DocTocs"
     },
     {
       "id": "Mission1Text",
-       "text": "¡Muchas gracias! Debes ser el nuevo repartidor, buen trabajo. Si sigues asi te aseguro que te iran las cosas genial en Todesfall.", 
+       "text": "¡Muchas gracias! Debes ser el nuevo repartidor, buen trabajo. Si sigues así te aseguro que te irán las cosas genial en Todesfall.", 
        "icon": 1
     },
     {
         "id": "Mission2Text",
-        "text": "¡Menos mal que has encontrado mis chocolatinas! Las ultimas Flappy Hippo que comi estaban mas crujientes de lo normal... El ultimo tu nunca me las traia a tiempo y ya estaba harta.",
+        "text": "¡Menos mal que has encontrado mis chocolatinas! Las últimas Flappy Hippo que comí estaban mas crujientes de lo normal... El último tú nunca me las traía a tiempo y ya estaba harta.",
         "icon": 2
     },
     {
         "id": "Mission3Text",
-        "text": "¡Por fin! Ahora podre volver a lucir mi pluma- esto, mis plumas. Tengo que admitir que tu eres mas agradable a la vista que el anterior repartidor... Espero que tu dures mas.",
+        "text": "¡Por fin! Ahora podré volver a lucir mi pluma (...) esto..., mis plumas. Tengo que admitir que tu eres mas agradable a la vista que el anterior repartidor... Espero que tu dures más.",
         "icon": 3
     },
     {
         "id": "Mission4Text",
-        "text": "¡¡¡Wilson!!! ¡Como te he echado de menos! Muchas gracias amigo, sin ti, a saber que le habria pasado a Wilson. ¡Hasta la proxima! ... si sigues haciendo bien tu trabajo claro, de lo contrario, acabaras como Wilson...",
+        "text": "¡¡¡Wilson!!! ¡Cómo te he echado de menos! Muchas gracias amigo, sin ti, a saber que le habría pasado a Wilson. ¡Hasta la próxima! ... si sigues haciendo bien tu trabajo claro, de lo contrario, acabarás como Wilson...",
         "icon": 4
     },
     {
         "id": "Mission5Text",
-        "text": "Muchas gracias por el paquete, ahora podran atacar mi cuerpo pero mi mente estara a salvo. No se como tienes el valor para lidiar con los vecinos, con las cosas horribles que hiciceron... Solo te dire que tengas cuidado.",
+        "text": "Muchas gracias por el paquete, ahora podrán atacar mi cuerpo, pero mi mente estará a salvo. No sé cómo tienes el valor para lidiar con los vecinos, con las cosas horribles que hiciceron... Solo te diré que tengas cuidado.",
         "icon": 5
     },
     {
@@ -210,17 +210,17 @@
     },
     {
         "id": "Mission7Text",
-        "text": "¡Vaya, vaya! Veo que has encontrado mi producto... Mis pacientes lo echaban en falta. ¿Estaban en el cementerio? ¿al lado de la tumba? Jaja, ¡tranquilo!, estaba enterrando a la ultima victi- digo, al ultimo paciente, cuando las perdi.",
+        "text": "¡Vaya, vaya! Veo que has encontrado mi producto... Mis pacientes lo echaban en falta. ¿Estaban en el cementerio? ¿al lado de la tumba? Jaja, ¡tranquilo!, estaba enterrando a la ultima victi- digo, al ultimo paciente, cuando las perdí.",
         "icon": 7
     },
     {
       "id": "Mission8Text",
-      "text": "Gracias... No sabes cuanta falta me hace salir de aqui... ¡¡¡Estan todos locos!!! Me tengo que ocupar yo mismo antes de que ellos acaben conmigo... En fin, muchas gracias por el reparto... hasta mas ver. Ah, y ten mucho cuidado, no quiero que acabes igual que el anterior repartidor.",
+      "text": "Gracias... No sabes cuanta falta me hace salir de aquí... ¡¡¡Están todos locos!!! Me tengo que ocupar yo mismo antes de que ellos acaben conmigo... En fin, muchas gracias por el reparto... hasta más ver. Ah, y ten mucho cuidado, no quiero que acabes igual que el anterior repartidor.",
       "icon": 8
     },
     {
         "id": "Mission9Text",
-        "text": "Al fin llegas, necesitaba esto urgentemente... ¡Esa maldita coneja se va a enterar! Es ella la que empezo esta guerra, a pesar de que habiamos acordado mantener la paz.",
+        "text": "Al fin llegas, necesitaba esto urgentemente... ¡Esa maldita coneja se va a enterar! Es ella la que empezó esta guerra, a pesar de que habíamos acordado mantener la paz.",
         "icon": 9
     },
     {
@@ -233,7 +233,7 @@
     },
     {
       "id": "MissionAlreadySelected",
-      "text": "Tienes un pedido pendiente. Completalo antes de comenzar otro. El cliente espera."
+      "text": "Tienes un pedido pendiente. Complétalo antes de comenzar otro. El cliente espera."
     },
     {
       "id": "Upgrade",
@@ -241,7 +241,7 @@
     },
     {
       "id": "WaitingPackage",
-      "text": "He perdido algo, ¿a que esperas para traermelo?"
+      "text": "He perdido algo, ¿a qué esperas para traermelo?"
     }
   ],
 
