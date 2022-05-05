@@ -32,6 +32,7 @@ private:
 	MissionsPanel* missionsPanel_;
 	bool active_;
 	string textPath_;
+	string name_;
 	
 	AnimationManager* animationManager;
 };

@@ -38,7 +38,13 @@ void Target::onPlayerInteraction(Player* player)
 		}
 		else {
 			// activar un dialogo que diga que busques su paquete
-			game->newDialogue("WaitingPackage");
+			if (name_ == "Hipo") {
+				game->newDialogue("HipoWaitingPackage");
+			}
+			else if (name_ == "Frog") {
+				game->newDialogue("FrogWaitingPackage");
+			}else if (name_ == "Fish")
+				game->newDialogue("FishWaitingPackage");
 		}
 	}
 }
@@ -60,21 +66,39 @@ void Target::setTexture(string tex)
 {
 	if (tex == "NPC_Tucan") {
 		texture = game->getTexture(npc_Tucan);
+		name_ = "Tucan";
+
 	}else if (tex == "NPC_Coco") {
 		texture = game->getTexture(npc_Coco);
+		name_ = "Coco";
+
 	}else if (tex == "NPC_Eagle") {
 		texture = game->getTexture(npc_Eagle);
+		name_ = "Eagle";
+
 	}else if (tex == "NPC_Fish") {
 		texture = game->getTexture(npc_Fish);
+		name_ = "Fish";
+
 	}else if (tex == "NPC_Fox") {
 		texture = game->getTexture(npc_Fox);
+		name_ = "Fox";
+
 	}else if (tex == "NPC_Frog") {
 		texture = game->getTexture(npc_Frog);
+		name_ = "Frog";
+
 	}else if (tex == "NPC_Hipo") {
 		texture = game->getTexture(npc_Hipo);
+		name_ = "Hipo";
+
 	}else if (tex == "NPC_Pavo") {
 		texture = game->getTexture(npc_Pavo);
+		name_ = "Pavo";
+
 	}else if (tex == "NPC_Rabbit") {
 		texture = game->getTexture(npc_Rabbit);
+		name_ = "Rabbit";
+
 	}
 }

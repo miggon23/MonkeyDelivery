@@ -240,8 +240,16 @@
       "text": "¡Has conseguido un pico! Pulsa E para utilizarlo y romper algunas rocas."
     },
     {
-      "id": "WaitingPackage",
-      "text": "He perdido algo, ¿a qué esperas para traermelo?"
+      "id": "HipoWaitingPackage",
+      "text": "Perdi mis Flappy Hippo cuando estaba jugando en el barro, al sur de la oficina de correos. ¡Encuentralos por favor!"
+    },
+    {
+      "id": "FishWaitingPackage",
+      "text": "Wilson se tiro al rio... no se donde esta... ¡encuentralo por favor!"
+    },
+    {
+      "id": "FrogWaitingPackage",
+      "text": "Croac, ¿encontraste mis hierbas medicinales? Croac, creo que estaba paseando por el cementerio cuando se me cayeron, ¡croac!"
     }
   ],
 
