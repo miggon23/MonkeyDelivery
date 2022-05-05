@@ -230,7 +230,8 @@ bool JSON::ExtractString(const char **data, std::string &str)
 
 bool JSON::esValida(char c)
 {
-	return (c == '¿' || c == '¡' || c == '!' || c == '?' || c == 'ñ');
+	return (c == '¿' || c == '¡' || c == '!' || c == '?' || c == 'ñ'||
+		c=='ó' || c == 'í' || c == 'á' || c == 'é' || c == 'ú' || c=='(' || c==')');
 }
 
 /**

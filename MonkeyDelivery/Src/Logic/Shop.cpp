@@ -64,7 +64,7 @@ void Shop::addElements(int level)
 		objects.push_back({ new Repel(game->getTexture(Item_Spray), game,game->getPlayer()), 0, 0, 3, 40 });
 		break;
 	case 3:
-		objects.push_back({ new Repel(game->getTexture(Item_Spray), game,game->getPlayer()), 0, 0, 3, 40 });
+		objects.push_back({ new Repel(game->getTexture(shop_Spray), game,game->getPlayer()), 0, 0, 3, 40 });
 		objects.push_back({ new EnergyDrink(game->getTexture(shop_Soda), game,game->getPlayer()), 0, 0, 3, 20 });
 		objects.push_back({ new Banana(game->getTexture(shop_Banana), game,game->getPlayer()), 1, 0, 1, 20 });
 		objects.push_back({ new Lantern(game->getTexture(Item_Lantern01), game,game->getPlayer()), 0, 0, 1, 10 });
