@@ -89,6 +89,7 @@ enum TextureName
 	minimapBorder,
 	playerIconTex,
 	minimapOverlay02,
+	leyendaMapa,
 
 	//7-Missions - 13
 	mission_UI_Helper,
@@ -361,6 +362,7 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
 	{"map/minimapBorder.png",1,1},
 	{"map/playerIcon.png",1,1},
 	{"map/minimapOverlay02.png",1,1},
+	{"map/leyendaMapa.png",1,1},
 
 	//7-Missions
 	{"missions/mission01_UI_Helper.png",1,1},

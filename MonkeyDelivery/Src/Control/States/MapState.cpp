@@ -9,6 +9,7 @@ MapState::MapState(Game* game) : State(game)
 	registerCommands();
 	string path = "Images/map/minimapOverlay.png";
 	backgroundTex_ = new Texture(game->getRenderer(), path);
+	leyendaTex_ = game->getTexture(leyendaMapa);
 }
 
 MapState::~MapState()
@@ -23,6 +24,8 @@ void MapState::draw()
 	//Mapa
 	SDL_Rect rectPanel = { 0,0,(int)game->getWindowWidth()-CUT_OFF, (int)game->getWindowHeight() };
 	backgroundTex_->render(rectPanel);
+	rectPanel = { (int)game->getWindowWidth() - CUT_OFF,0,(int)CUT_OFF, (int)game->getWindowHeight() };
+	leyendaTex_->render(rectPanel);
 	
 	//Baliza
 	game->MapPoint()->setDimension(24, 24);
@@ -33,14 +36,15 @@ void MapState::draw()
 	if (ihdlr.mouseButtonEvent()) {
 		
 		if (ihdlr.getMouseButtonState(InputHandler::MOUSEBUTTON::LEFT)==1) {
+
 			SDL_GetMouseState(&x_, &y_);
-			
-			game->setPointerMapPut(true);
-			
-			game->MapPoint()->setPosition((double)x_ - 12, (double)y_ - 12);//actualizo la pos
-			
-			game->minimapinfo_.X = (double)x_ - 12;
-			game->minimapinfo_.Y = (double)y_ - 12;
+			if (x_ < (int)game->getWindowWidth() - CUT_OFF)
+			{
+				game->setPointerMapPut(true);
+				game->MapPoint()->setPosition((double)x_ - 12, (double)y_ - 12);//actualizo la pos
+				game->minimapinfo_.X = (double)x_ - 12;
+				game->minimapinfo_.Y = (double)y_ - 12;
+			}
 		}
 	}
 

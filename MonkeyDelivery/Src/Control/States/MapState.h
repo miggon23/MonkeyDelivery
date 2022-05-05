@@ -21,6 +21,7 @@ public:
 private:
 
 	Texture* backgroundTex_;
+	Texture* leyendaTex_;
 	
 	int x_, y_;
 };

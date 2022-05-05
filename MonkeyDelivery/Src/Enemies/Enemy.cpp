@@ -155,7 +155,7 @@ void Enemy::drawPopUp()
 
 	auto pos = getCollider();
 	pos.x -= (int)game->getCamera()->getCameraPosition().getX() - 10;
-	pos.y -= (int)game->getCamera()->getCameraPosition().getY() - 5;
+	pos.y -= (int)game->getCamera()->getCameraPosition().getY() - 15;
 
 	SDL_Rect oRect = { pos.x, pos.y, 21 * 3, 12 * 3};
 	animationManager->getFrameImage(oRect, popUpTexRect, popupTexture, popUpTimer, SDL_FLIP_NONE, 22*3, 12*3, 154, 1, time_);
