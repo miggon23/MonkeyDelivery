@@ -10,7 +10,7 @@ FearLevel::FearLevel(Game* game) :GameObject(game), w(0) {
 	setTexture(UI_fearLevel);
 
 	x = (int)(game->getWindowWidth() / 7.5);
-	y = (int)(game->getWindowHeight() / 23);
+	y = (int)(game->getWindowHeight() / 13.3);
 	h = (int)(game->getWindowHeight() / 60);
 
 	scale_ = (1.76 / 1800) * game->getWindowWidth();
