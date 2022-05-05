@@ -52,9 +52,12 @@ void DialogueBox::changeText(string id)
 	reiniciateText();
 
 	// cambiar icono
-	iconId = iconList_.at(id);
-	//cambio a la nueva textura de icono
-	getIcon(iconId);
+	if (iconList_.count(id)) {
+		iconId = iconList_.at(id);
+		//cambio a la nueva textura de icono
+		getIcon(iconId);
+	}
+	
 }
 
 void DialogueBox::changeMissionText(string id) {

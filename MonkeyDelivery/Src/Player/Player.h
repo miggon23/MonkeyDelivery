@@ -101,6 +101,10 @@ private:
 	AnimationManager* animationManager;
 	SDL_Rect textureRect;
 	float timerAnimation;
+	Texture* scaredIcon;
+	SDL_Rect scaredRect;
+	Texture* tiredIcon;
+	SDL_Rect tiredRect;
 
 	//LINTERNAS
 	string orientation_;
@@ -153,11 +157,11 @@ public:
 	inline void setVel(double x) { vel_ = x; };
 	inline void resetVelocity() { setVel(INIT_VEL_); }; // Resetea la velocidad del jugador a la de por defecto (sin modificaciones)
 	inline double getVel() { return vel_; };
+	inline double getInitVel() { return INIT_VEL_; };
 	inline int getMoney() { return money_; };
 	inline void setDirX(int x) { dirX_ = x; };
 	inline void setDirY(int y) { dirY_ = y; };
 	inline void setDir(int x, int y) { dirX_ = x; dirY_ = y; };
-	inline MovState getMovState() { return movState_; };
 	inline void setMovState(MovState m) { movState_ = m; };
 	inline void savePosBeforeSleep() { posBeforeSleep.setX(getX()); posBeforeSleep.setY(getY()); };
 

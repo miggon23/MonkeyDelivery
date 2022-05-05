@@ -104,6 +104,8 @@ enum TextureName
 	
 	//8-Monkey SpriteSheets - 3
 		monkeySS_Default,
+		monkeyTired_Icon,
+		monkeyScared_Icon,
 	
 	//9-NPCS SpriteSheets - 10
 		npc_Coco,
@@ -116,6 +118,7 @@ enum TextureName
 		npc_Tucan,
 		npc_Rabbit,
 		npc_Kangaroo,
+		npc_Seller,
 
 	//10-Shop - 7
 		shop_Banana,
@@ -127,6 +130,7 @@ enum TextureName
 		shop_UI_Selector,
 		ShopPanel_Interact,
 		shop_UI_Controls,
+		shop_Items,
 	
 	//11-UI Overlay (InGame) - 7
 		UI_dialogueBox,
@@ -144,6 +148,7 @@ enum TextureName
 		UI_energyBuff,
 		UI_fearBuff,
 		UI_speedBuff,
+		UI_speedDebuff,
 
    //13-UI Overlay (Menu) - 21
 		UI_Black,
@@ -178,7 +183,7 @@ enum TextureName
 		fox_Icon
 };
 
-const int NUM_TEXTURES = 131;
+const int NUM_TEXTURES = 136;
 
 typedef struct {
 	string filename;
@@ -193,9 +198,6 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
 	{"background/bckg_Image.png",1,1},
 	{"background/bckg_WoodPanneling.png",1,1},
 	{"background/bckg_woodWall.webp",1,1},
-
-	//2-Buttons (UI Menu)
-	
 	
 	//3-Decorations (House)
 	{"decor/Trohpy_Coco.png",1,1},
@@ -278,6 +280,8 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
 
 	//8-Monkey SpriteSheets
 	{"monkeyAnims/monkeySS_Default.png",1,1},
+	{"ui/tiredIcon.png",1,1},
+	{"ui/scaredIcon.png",1,1},
 
 	//9-NPCS SpriteSheets
 	{"npcs/NPC_Coco.png",1,1},
@@ -290,6 +294,7 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
 	{"NPCs/NPC_Tucan.png",1,1},
 	{"npcs/NPC_Rabbit.png",1,1},
 	{"npcs/NPC_Kangaroo.png",1,1},
+	{"npcs/NPC_Seller.png",1,1 },
 
 	//10-Shop
 	{"shop/shop_Banana.png",1,1},
@@ -301,6 +306,7 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
 	{"shop/shop_UI_Selector.png",1,1},
 	{"shop/ShopPanel_Interact.png",1,1},
 	{"shop/shopControls.png",1,1},
+	{"shop/items.png",1,1 },
 
 	//UI Overlay (InGame)
 	{"ui/InGame/dialoguebox.png",1,1},
@@ -318,6 +324,7 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
 	{"ui/InGame/UI_energyBuff.png",1,1 },
 	{"ui/InGame/UI_fearBuff.png",1,1 },
 	{"ui/InGame/UI_speedBuff.png",1,1 },
+	{"ui/InGame/UI_speedDebuff.png",1,1 },
 		
 	//UI Overlay (Menu)
 	{"ui/Menu/black.png",1,1},

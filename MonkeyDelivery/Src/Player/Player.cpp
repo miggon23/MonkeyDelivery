@@ -69,6 +69,12 @@ Player::Player(Game* game) :GameObject(game), animationManager(AnimationManager:
 	xMoney = (int)(game->getWindowWidth() / 10.91);
 	yMoney = yChests = (int)(game->getWindowHeight() / 7.30);
 	xChest = (int)(game->getWindowWidth() / 5.625);
+
+	// Iconos sobre el player
+	scaredIcon = game->getTexture(monkeyScared_Icon);
+	tiredIcon = game->getTexture(monkeyTired_Icon);
+ 	scaredRect = { (int)game->getWindowWidth() / 2, (int)game->getWindowHeight() / 2 - 60, 60, 60 };
+	tiredRect = { (int)game->getWindowWidth() / 2, (int)game->getWindowHeight() / 2 - 60, 70, 70 };
 	
 }
 
@@ -116,8 +122,6 @@ void Player::update()
 
 void Player::move()
 {
-	cout << vel_ << "\n";
-
 	Vector2D<double> speed = { (double)dirX_, (double)dirY_ };
 	
 	//Normalizamos el vector para que no se desplaze m�s en diagonal
@@ -262,15 +266,21 @@ void Player::draw()
 			if (fearLevel_->percentFear() >= 50 && isStopped_) {
 				animationManager->setIsScared(true);
 				animationManager->setState(AnimationManager::PlayerState::Idle);
+				scaredIcon->render(scaredRect);
 			}
-			else if(fearLevel_->percentFear() >= 50)
+			else if (fearLevel_->percentFear() >= 50) {
 				animationManager->setState(AnimationManager::PlayerState::Scared);
+				scaredIcon->render(scaredRect);
+			}
 			else if (energyLevel_->percentEnergy() <= 20 && isStopped_) { 
 				animationManager->setIsTired(true); 
 				animationManager->setState(AnimationManager::PlayerState::Idle);
+				tiredIcon->render(tiredRect);
 			}
-			else if (energyLevel_->percentEnergy() <= 20)
+			else if (energyLevel_->percentEnergy() <= 20) {
 				animationManager->setState(AnimationManager::PlayerState::GoToSleep);
+				tiredIcon->render(tiredRect);
+			}
 			else if (isStopped_)
 				animationManager->setState(AnimationManager::PlayerState::Idle);
 			else animationManager->setState(AnimationManager::PlayerState::Running);
@@ -283,14 +293,11 @@ void Player::draw()
 
 		animationManager->getFrameImagePlayer(pos, textureRect, texture, timerAnimation, AnimationManager::LastDir{ (int)dirX_, (int)dirY_ });
 
-
 		playerHUD_->drawFillHUD();		
 		energyLevel_->draw();
 		fearLevel_->draw();
 		playerHUD_->drawOverHUD();
 		
-		
-
 		game->renderMoney(to_string(money_), xMoney, yMoney, SDL_Color{255,255,255,255});
 		game->renderMoney(to_string(chestsOpened), xChest, yChests);
 		powerUpsManager->draw();

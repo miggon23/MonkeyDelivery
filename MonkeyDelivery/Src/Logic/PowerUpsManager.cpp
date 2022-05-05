@@ -9,6 +9,7 @@ activatedAntiBanana(false), timerAntiBanana_(new VirtualTimer()){
 	texEnergyBuff_ = game->getTexture(UI_energyBuff);
 	texFearBuff_ = game->getTexture(UI_fearBuff);
 	texSpeedBuff_ = game->getTexture(UI_speedBuff);
+	texSpeedDebuff_ = game->getTexture(UI_speedDebuff);
 }
 
 PowerUpsManager::~PowerUpsManager(){
@@ -21,6 +22,7 @@ PowerUpsManager::~PowerUpsManager(){
 	texEnergyBuff_ = nullptr;
 	texFearBuff_ = nullptr;
 	texSpeedBuff_ = nullptr;
+	texSpeedDebuff_ = nullptr;
 }
 
 void PowerUpsManager::update(){
@@ -57,6 +59,13 @@ void PowerUpsManager::draw(){
 		//MOSTAR EL ICONO FEAR
 		SDL_Rect rect = { (int)(game_->getWindowWidth() * aux / 3),(int)(game_->getWindowHeight() * 3.5 / 4 - 20) ,texSpeedBuff_->getW() * 5,texSpeedBuff_->getH() * 5 };
 		texFearBuff_->render(rect);
+	}
+	aux += 0.2;
+	if (player_->getVel() < player_->getInitVel() - 0.05)
+	{
+		//Mostrar SPEED Debuff
+		SDL_Rect rect = { (int)(game_->getWindowWidth() * aux / 3),(int)(game_->getWindowHeight() * 3.5 / 4 - 20),texSpeedBuff_->getW() * 5,texSpeedBuff_->getH() * 5 };
+		texSpeedDebuff_->render(rect);
 	}
 }
 void PowerUpsManager::ActivatePowerUp(PowerUps x){
