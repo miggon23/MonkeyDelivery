@@ -27,6 +27,7 @@ Plant::Plant(Game* game, int Aleatorio, Point2D<int> centroRadio):Enemy(game, Al
 	maxX_ = 56;
 	maxY_ = 0;
 	textureRect = { 0, 0, width_, height_ };
+	popupTexture = game->getTexture(enerPopUp);
 }
 
 void Plant::update()

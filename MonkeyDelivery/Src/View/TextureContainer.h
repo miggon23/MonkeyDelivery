@@ -149,6 +149,8 @@ enum TextureName
 	UI_playerHUD_BackFill,
 	UI_timer,
 	fearPopUp,
+	coinPopUp,
+	enerPopUp,
 
 	//12-UI Overlay (InGame Buffs) - 3
 	UI_energyBuff,
@@ -275,7 +277,7 @@ enum TextureName
 
 };
 
-const int NUM_TEXTURES = 225;
+const int NUM_TEXTURES = 227;
 
 typedef struct {
 	string filename;
@@ -417,6 +419,8 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
 	{"ui/InGame/UI_playerHUD_BackFill.png",1,1},
 	{"ui/InGame/timer.png",1,1},
 	{"ui/InGame/fearPopUp.png",1,1},
+	{"ui/InGame/coinPopUp.png",1,1},
+	{"ui/InGame/enerPopUp.png",1,1},
 
 	//UI Overlay (InGame Buffs)
 	{"ui/InGame/UI_energyBuff.png",1,1 },
