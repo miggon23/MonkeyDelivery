@@ -16,5 +16,5 @@ bool Bike::useObject() {
 }
 
 void Bike::setCorrectTexture(){
-	setMyTexture(game_->getTexture(Item_Boots02));
+	setMyTexture(game_->getTexture(Item_Boots03));
 }

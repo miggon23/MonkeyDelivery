@@ -8,17 +8,12 @@ EnergyDrink::EnergyDrink(Texture* tex,  Game* game,Player* player) : InventoryOb
 }
 
 void EnergyDrink::setCorrectTexture(){
-    setMyTexture(game_->getTexture(Item_Soda02));
+    setMyTexture(game_->getTexture(Item_Soda01));
 }
 
 bool EnergyDrink::useObject()
 {
-    /*player_->recoverEnergy(player_->getMaxEnergy() * energyBonus_);
-    double newVel = player_->getVel();
-    newVel *= speedBonus_;
-    player_->setVel(newVel);
-    player_->setBonusSpending(energyBonus_);*/
-    std::cout << "energydrink activado: NO GASTA ENERGIA EL JUGADOR Y VA MAS RAPIDO" << std::endl;
+    
     player_->initPowerUp(energyDrink);
     sdlutils().soundEffects().at("soda").setVolume((int)(game_->getSoundEfectsVolume()*game_->getGeneralVolume()));
     sdlutils().soundEffects().at("soda").play(0, 1);

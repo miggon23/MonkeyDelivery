@@ -83,14 +83,14 @@ void PowerUpsManager::ActivatePowerUp(PowerUps x){
 	case boots:
 		if (!activateBoots_) {
 			player_->setVel(player_->getVel() * speedNormalBootsMult_);
+			activateBoots_ = true;
 		}
 		else {
-			player_->setVel(player_->getVel() / speedNormalBootsMult_);
-		}
-		activateBoots_ = !activateBoots_;
+			desactivateBoots();
+		}	
 		break;
 	case banana:
-		//Si es menor que el 10%
+		//Si es menor que el 10%, recupera más energía
 		if(player_->getEnergy() / player_->getMaxEnergy() < 0.1)
 			player_->drainEnergy(-(player_->getMaxEnergy() * bananaBuffHigh_)); //sobre el total de enería
 		else
@@ -152,13 +152,11 @@ void PowerUpsManager::desactivate(PowerUps x)
 		player_->setVel(player_->getVel() / energyDrinkSpeedBonus_);
 		activatedEnergyDrink_ = false;
 		timerEnergyDrink_->pause();
-		std::cout << "energydrink desactivado" << std::endl;
 		break;
 	case repelente:
 		player_->setFearBonusFactor(1);
 		activatedAntiBanana = false;
 		timerAntiBanana_->pause();
-		std::cout << "antibanana desactivado" << std::endl;
 		break;
 	case boots:
 		if(activateBoots_)

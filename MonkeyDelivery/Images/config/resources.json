@@ -44,7 +44,7 @@
       "completed": false,
       "image": "Mission03",
       "helperImage": "./Images/missions/mission03_UI_Helper.png",
-      "maxmoney": 100,
+      "maxmoney": 110,
       "minmoney": 0,
       "mintime": 45000,
       "express": true,
@@ -63,8 +63,8 @@
       "completed": false,
       "image": "Mission04",
       "helperImage": "./Images/missions/mission01_UI_Helper.png",
-      "maxmoney": 150,
-      "minmoney": 100,
+      "maxmoney": 90,
+      "minmoney": 60,
       "mintime": 120000,
       "express": false,
       "special": true,
@@ -82,7 +82,7 @@
       "completed": false,
       "image": ".Mission05",
       "helperImage": "./Images/missions/mission01_UI_Helper.png",
-      "maxmoney": 160,
+      "maxmoney": 150,
       "minmoney": 0,
       "mintime": 150000,
       "express": true,
@@ -102,7 +102,7 @@
       "image": "Mission06",
       "helperImage": "./Images/missions/mission01_UI_Helper.png",
       "maxmoney": 120,
-      "minmoney": 100,
+      "minmoney": 80,
       "mintime": 120000,
       "express": false,
       "special": false,
@@ -120,8 +120,8 @@
       "completed": false,
       "image": "Mission07",
       "helperImage": "./Images/missions/mission01_UI_Helper.png",
-      "maxmoney": 200,
-      "minmoney": 150,
+      "maxmoney": 150,
+      "minmoney": 80,
       "mintime": 160000,
       "express": false,
       "special": true,
@@ -139,7 +139,7 @@
       "completed": false,
       "image": "Mission08",
       "helperImage": "./Images/missions/mission01_UI_Helper.png",
-      "maxmoney": 150,
+      "maxmoney": 160,
       "minmoney": 0,
       "mintime": 90000,
       "express": true,
@@ -158,7 +158,7 @@
       "completed": false,
       "image": "Mission09",
       "helperImage": "./Images/missions/mission01_UI_Helper.png",
-      "maxmoney": 150,
+      "maxmoney": 130,
       "minmoney": 100,
       "mintime": 180000,
       "express": false,
@@ -408,7 +408,7 @@
   "credits":
   [
     {
-      "name": "Elisa Todd         Miguel Gonzales"
+      "name": "Elisa Todd         Miguel Gonzalez"
     },
     {
       "name": "Antonio Povedano   Adrian Montero"
