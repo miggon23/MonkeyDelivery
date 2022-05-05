@@ -16,15 +16,15 @@ Game::Game(string n, double w, double h) : name(n), width(w), height(h), doExit(
       SDL_GetDesktopDisplayMode(0, desktop);*/
 
 
-    SDLUtils::init("Monkey Delivery", 100, 100,
+    SDLUtils::init("Monkey Delivery", /*100, 100,*/1800, 1000,
         "Images/config/resources.json");
 
-    SDL_DisplayMode DM;
+   /* SDL_DisplayMode DM;
     SDL_GetCurrentDisplayMode(0, &DM);
     width = DM.w;
     height = DM.h;
 
-    SDL_SetWindowSize(window_, (int)width, (int)height);
+    SDL_SetWindowSize(window_, (int)width, (int)height);*/
 
     setRenderer(sdlutils().renderer());
 
@@ -108,9 +108,8 @@ void Game::removeGameObject(GameObject* gameObject){
 void Game::start()
 {
     inGame = true;
-  
     
-   if(player_==nullptr) player_ = new Player(this); //Creacion del jugadorIn
+    if(player_==nullptr) player_ = new Player(this); //Creacion del jugadorIn
  
     // Cámara:
     Vector2D<double> vJug = { (player_->getPosition().getX() - width / 2), (player_->getPosition().getY() - height / 2) };
@@ -127,17 +126,16 @@ void Game::start()
 
     Point2D<double> relative = { (double)(getWindowWidth() / 1800), (double)(getWindowHeight() / 1000) };
 
-
     add(new IntectuableShop(this, (int)(3700*relative.getX()), (int)(1600*relative.getY())));
     shop_ = new Shop(player_, this);
     shop_->actualice(1);
     tutorialBook_ = new TutorialBook(this, (int)(4000*relative.getX()), (int)(1660*relative.getY()), 100, 75);
 
-    GameObjectGenerator::generateLevel(this);
-
     dialogueBox_ = new DialogueBox(this);
 
     info = new UI_Info(this);
+
+    GameObjectGenerator::generateLevel(this);
 
     //banco principal
     auto cama = new Bed(this);

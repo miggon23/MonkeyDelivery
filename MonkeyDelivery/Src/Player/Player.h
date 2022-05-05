@@ -84,7 +84,7 @@ private:
 	int money_;
 	double fieldOfView_;
 	//CHEST
-	int chestsOpened;
+	int totalChest;
 	int xChest, xMoney, yChests, yMoney;
 
 	//ENERGIA
@@ -170,7 +170,7 @@ public:
 	inline void addMoney(int amount) { money_ += amount; };
 	void removeMoney(int amount);
 	//CHEST
-	inline void addChestCount() { chestsOpened++; };
+	inline void decreaseChestCount() { totalChest--; };
 
 	// INVENTORY
 	inline void useObject(int index) { inventory_->useObject(index);};

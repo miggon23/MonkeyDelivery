@@ -46,7 +46,7 @@ class GameObjectGenerator
 	void createRocks();
 
 public:
-	static void generateLevel(Game* game) //Lo llamas en las rocas
+	static void generateLevel(Game* game)
 	{
 		gOGenerator.createChest();
 		gOGenerator.creteBulls();

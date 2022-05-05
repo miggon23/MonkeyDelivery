@@ -53,13 +53,15 @@ void InteractuableChest::selectReward(int reward, Player* player)
 	//int randMoney = sdlutils().rand().nextInt(5, 20);
 	int randMoney = sdlutils().rand().nextInt(5, 20);
 	string s = "ChestMoneyText";
-	player->addChestCount();
+	player->decreaseChestCount();
 	switch (reward)
 	{
 	case 0:
 		player->addMoney(randMoney);
 		game->newDialogue(s);
 		rewardT_ = game->getTexture(Item_Coins);
+		sdlutils().soundEffects().at("moneyBag").setVolume((int)(game->getSoundEfectsVolume() * game->getGeneralVolume()));
+		sdlutils().soundEffects().at("moneyBag").play(0, 1);
 		break;
 	case 1:
 		//Elementos de la narrativa

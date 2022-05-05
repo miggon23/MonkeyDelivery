@@ -338,8 +338,12 @@
       "file": "./Sounds/missionLost.wav"
     },
     {
-      "id": "countdown",
-      "file": "./Sounds/ten_seconds_left.wav"
+        "id": "countdown",
+        "file": "./Sounds/ten_seconds_left.wav"
+    },
+    {
+        "id": "moneyBag",
+        "file": "./Sounds/money2.wav"
     }
   ],
 

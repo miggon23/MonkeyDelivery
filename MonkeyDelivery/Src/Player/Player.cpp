@@ -76,6 +76,7 @@ Player::Player(Game* game) :GameObject(game), animationManager(AnimationManager:
  	scaredRect = { (int)game->getWindowWidth() / 2, (int)game->getWindowHeight() / 2 - 60, 60, 60 };
 	tiredRect = { (int)game->getWindowWidth() / 2, (int)game->getWindowHeight() / 2 - 60, 70, 70 };
 	
+	totalChest = 8;
 }
 
 Player::~Player()
@@ -310,7 +311,7 @@ void Player::draw()
 		playerHUD_->drawOverHUD();
 		
 		game->renderMoney(to_string(money_), xMoney, yMoney, SDL_Color{255,255,255,255});
-		game->renderMoney(to_string(chestsOpened), xChest, yChests);
+		game->renderMoney(to_string(totalChest), xChest, yChests);
 		powerUpsManager->draw();
 
 		if (boolrenderSleepText) NoSleepText();
