@@ -148,6 +148,7 @@ enum TextureName
 		UI_energyBuff,
 		UI_fearBuff,
 		UI_speedBuff,
+		UI_speedDebuff,
 
    //13-UI Overlay (Menu) - 21
 		UI_Black,
@@ -323,6 +324,7 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
 	{"ui/InGame/UI_energyBuff.png",1,1 },
 	{"ui/InGame/UI_fearBuff.png",1,1 },
 	{"ui/InGame/UI_speedBuff.png",1,1 },
+	{"ui/InGame/UI_speedDebuff.png",1,1 },
 		
 	//UI Overlay (Menu)
 	{"ui/Menu/black.png",1,1},
