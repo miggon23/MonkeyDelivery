@@ -1,4 +1,6 @@
 #include "Player.h"
+#include <math.h>
+#include <climits>
 #include "../Items/Bike.h"
 #include "../Items/Flashlight.h"
 #include "../Items/Lantern.h"
@@ -373,7 +375,18 @@ void Player::sendToBed()
 	inventory_->desactivateUseSelectedObject();
 	sdlutils().soundEffects().at("scary").setVolume((int)(game->getSoundEfectsVolume() * game->getGeneralVolume()));
 	sdlutils().soundEffects().at("scary").play(0, 1);
-	setPosition(bedX_ , bedY_ + 60.0);//colocar en la cama
+
+	int min=INT_MAX;
+	Point2D<double> p;
+	for (auto b: game->getBeds())
+	{
+		int x = std::abs(b->getX() - getX());
+		int y = std::abs(b->getY() - getY());
+		int val = x + y;
+		if (val < min) { min = val; p.setX(b->getX()); p.setY(b->getY()); }
+	}
+
+	setPosition(p.getX() , p.getY() + 60.0);//colocar en la cama
 
 	game->resetInitialTransition();
 }

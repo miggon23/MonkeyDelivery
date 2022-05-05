@@ -116,6 +116,7 @@ private:
     Player* player_ = nullptr;
     InteractiveEntity* iE_ = nullptr;
     vector<GameObject*> gameObjects_;
+    vector<Bed*> beds_;
     vector<ColliderTile*> collisions_;
     vector<Enemy*>enemyContainer_;//vector enemigos
     MissionsPanel* missionsPanel_= nullptr;
@@ -161,6 +162,7 @@ public:
 
     void add(GameObject* gameObject);
     vector<GameObject*> getGameObjects() { return gameObjects_; };
+    vector<Bed*>getBeds() { return beds_; }
     void removeGameObject(GameObject* gameObject);
     void start();
     void restart(); // llamado cuando salimos al menú, y luego volvemos
