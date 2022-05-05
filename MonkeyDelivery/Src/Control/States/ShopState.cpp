@@ -127,6 +127,7 @@ void ShopState::registerCommands()
 void ShopState::onEnterState()
 {
 	game->getPlayer()->desactivatePowerUp(boots);
+	game->getPlayer()->setIsWearingBoots(false);
 }
 
 void ShopState::moveSelectedX(int to)

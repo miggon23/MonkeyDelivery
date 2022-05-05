@@ -10,6 +10,7 @@ Bike::Bike(Texture* tex, Game* game,Player* player) : speedMult(1.7), InventoryO
 bool Bike::useObject() {
 	
 	player_->initPowerUp(boots, speedMult);
+	player_->setIsWearingBoots(true);
 	active = !active;
 	return false; //devolvemos false indicando que el objeto no debe destruirse tras ser usado
 }

@@ -125,6 +125,8 @@ private:
 	//INFORMACION 
 	Vector2D<int> posBeforeSleep;
 
+	bool isWearingBoots=false;
+
 public:
 
 	Player(Game* game);
@@ -186,6 +188,8 @@ public:
 	void pausePowerUps();
 	void resumePowerUps();
 	void desactivatePowerUp(PowerUps p);
+	inline bool getIsWearingBoots() { return isWearingBoots; }
+	inline void setIsWearingBoots(bool b) { isWearingBoots = b; }
 
 	
 	inline void selectObject(int index) {
