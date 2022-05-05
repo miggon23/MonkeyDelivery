@@ -67,6 +67,7 @@ enum TextureName
 		lanternLeft,
 		lanternUp,
 		lightGeneric,
+		Item_Coins,
 
 	//5,1-Items (Light)
 		worldObject_Bed,
@@ -183,7 +184,7 @@ enum TextureName
 		fox_Icon
 };
 
-const int NUM_TEXTURES = 136;
+const int NUM_TEXTURES = 137;
 
 typedef struct {
 	string filename;
@@ -245,6 +246,7 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
 	{"items/light/lightGeneric.png",1,1},
 
 	//Items World
+	{"items/world/Item_Coins.png",1,1},
 	{"items/world/worldObject_Bed.png",1,1},
 	{"items/world/worldObject_blockRock01.png",1,1},
 	{"items/world/worldObject_blockRock02.png",1,1},

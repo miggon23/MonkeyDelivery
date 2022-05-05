@@ -2,12 +2,10 @@
 #include "GameObject.h"
 class InteractuableChest : public GameObject
 {
-	const int x = 100,
-		y = 50,
-		w = 600,
-		h = 800;
-
+	double x_, y_, w_, h_;
+	float timer_;
 	bool active = false;
+	float limit = 4000, semiLimit=(limit/2.0);
 	Texture* rewardT_;
 public:
 	InteractuableChest(Game* game, int x, int y, int w, int h);
