@@ -225,7 +225,6 @@ void Game::draw()
     dialogueBox_->draw();
 
     //partSystem->draw();
-    missionsPanel_->draw();
 
     tutorialBook_->draw();
 
@@ -233,6 +232,7 @@ void Game::draw()
     scalePlayerIcon();
 
     player_->draw();
+    missionsPanel_->draw();
     
 
     if (!initialTransition->isComplete()) {

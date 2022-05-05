@@ -30,6 +30,7 @@ class PowerUpsManager{
 	Texture* texFearBuff_;
 	Texture* texEnergyBuff_;
 	Texture* texSpeedBuff_;
+	Texture* texSpeedDebuff_;
 	bool activateBoots_;
 
 	double speedNormalBootsMult_ = 1.2;
