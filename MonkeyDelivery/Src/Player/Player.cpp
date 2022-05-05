@@ -73,8 +73,8 @@ Player::Player(Game* game) :GameObject(game), animationManager(AnimationManager:
 	// Iconos sobre el player
 	scaredIcon = game->getTexture(monkeyScared_Icon);
 	tiredIcon = game->getTexture(monkeyTired_Icon);
- 	scaredRect = { 960, 540 - 60, 60, 60 };
-	tiredRect = { 960, 540 - 60, 70, 70 };
+ 	scaredRect = { (int)game->getWindowWidth() / 2, (int)game->getWindowHeight() / 2 - 60, 60, 60 };
+	tiredRect = { (int)game->getWindowWidth() / 2, (int)game->getWindowHeight() / 2 - 60, 70, 70 };
 	
 }
 
