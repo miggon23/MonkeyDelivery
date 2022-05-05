@@ -8,9 +8,7 @@ Menu::Menu(int x, int y, double w, double h, Game* game) :Button(game, w, h, x, 
 	setTexture(button_Back);
 }
 
-void Menu::onCursorCollision()
-{
-	
+void Menu::onCursorCollision(){
 	game->clearSavedState();
 	ChangeToNewState(new MenuState(game),false);
 }

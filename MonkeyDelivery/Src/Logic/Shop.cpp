@@ -49,7 +49,7 @@ void Shop::clearElements()
 
 void Shop::addElements(int level)
 {
-	switch (level)
+	switch (2)
 	{
 	case 1:
 		objects.push_back({ new EnergyDrink(game->getTexture(shop_Soda), game,game->getPlayer()), 0, 0, 3, 20 });
