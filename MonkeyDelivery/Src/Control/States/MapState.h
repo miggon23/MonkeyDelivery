@@ -3,6 +3,7 @@
 
 class MapState : public State
 {
+	const int CUT_OFF = 300;
 public:
 	MapState(Game* game);
 	~MapState();

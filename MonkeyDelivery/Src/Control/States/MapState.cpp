@@ -21,7 +21,7 @@ void MapState::update() {}
 void MapState::draw()
 {
 	//Mapa
-	SDL_Rect rectPanel = { 0,0,(int)game->getWindowWidth(), (int)game->getWindowHeight() };
+	SDL_Rect rectPanel = { 0,0,(int)game->getWindowWidth()-CUT_OFF, (int)game->getWindowHeight() };
 	backgroundTex_->render(rectPanel);
 	
 	//Baliza
@@ -54,7 +54,7 @@ void MapState::draw()
 
 	game->playerIcon()->setDimension(dimension, dimension);
 
-	double x = game->getPlayer()->getX() * (game->getWindowWidth() / game->minimapinfo_.realW) - offset;
+	double x = game->getPlayer()->getX() * ((game->getWindowWidth()-CUT_OFF) / game->minimapinfo_.realW) - offset;
 	double y = game->getPlayer()->getY() * (game->getWindowHeight() / game->minimapinfo_.realH) - offset;
 	
 	game->playerIcon()->setPosition(x, y);
