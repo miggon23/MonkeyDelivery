@@ -346,7 +346,7 @@
   "musics": [
     {
       "id": "gamemusic",
-      "file": "./Sounds/menumusic.wav"
+      "file": "./Sounds/gamemusic.wav"
     },
     {
         "id": "creditsmusic",
