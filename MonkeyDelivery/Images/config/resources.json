@@ -242,6 +242,10 @@
     {
       "id": "Upgrade",
       "text": "¡Has conseguido un pico! Pulsa E para utilizarlo y romper algunas rocas."
+    },
+    {
+      "id": "WaitingPackage",
+      "text": "He perdido algo, ¿a que esperas para traermelo?"
     }
   ],
 

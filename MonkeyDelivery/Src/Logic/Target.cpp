@@ -38,6 +38,7 @@ void Target::onPlayerInteraction(Player* player)
 		}
 		else {
 			// activar un dialogo que diga que busques su paquete
+			game->newDialogue("WaitingPackage");
 		}
 	}
 }
