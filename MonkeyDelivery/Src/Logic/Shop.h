@@ -26,9 +26,10 @@ public:
 
 	Shop(Player* player, Game* game);
 	~Shop();
-
+	
 	void actualice(int level);
 	void clearElements();
+	bool stock(int selected) { return objects[selected].stock > 0; };
 	void addElements(int level);
 	bool buyObject(int id, int price);
 	bool inventoryFull(int selected); 
