@@ -57,7 +57,7 @@ void DialogueBox::changeText(string id)
 		//cambio a la nueva textura de icono
 		getIcon(iconId);
 	}
-	
+	else { iconId = -1; currentIcon_ = nullptr; }
 }
 
 void DialogueBox::changeMissionText(string id) {
