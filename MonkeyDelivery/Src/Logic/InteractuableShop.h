@@ -3,6 +3,7 @@
 class IntectuableShop:public GameObject
 {
 	Texture* itemsTex_;
+	Texture* sellerTex_;
 public:
 	IntectuableShop(Game* game,int x, int y);
 	~IntectuableShop();

@@ -16,9 +16,10 @@ IntectuableShop::IntectuableShop(Game* game,int x , int y) : GameObject(game, tr
 	timerAnimation_ = 0; // ¿puede ser const?
 
 	itemsTex_= game->getTexture(shop_Items);
+	sellerTex_ = game->getTexture(npc_Seller);
 }
 
-IntectuableShop::~IntectuableShop() { itemsTex_ = nullptr; }
+IntectuableShop::~IntectuableShop() { itemsTex_ = nullptr; sellerTex_ = nullptr; }
 
 void IntectuableShop::update() {}
 
@@ -28,7 +29,11 @@ void IntectuableShop::draw()
 	pos.x -= (int)game->getCamera()->getCameraPosition().getX();
 	pos.y -= (int)game->getCamera()->getCameraPosition().getY();
 
+	SDL_Rect rect = { pos.x,pos.y+100,60,60 };
+	SDL_Rect dest = {0,0,20,20};
+
 	animationManager->getFrameImage(pos, textureRect, texture, timerAnimation_, flip, width_, height_, maxX_, maxY_, time_);
+	animationManager->getFrameImage(rect, dest, sellerTex_, timerAnimation_, SDL_FLIP_NONE, 20, 20, 40, 0, time_);
 
 	itemsTex_->render({ pos.x-60, pos.y+30, 210, 40 });
 }
