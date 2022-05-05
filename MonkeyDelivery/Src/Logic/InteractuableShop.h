@@ -2,6 +2,7 @@
 #include "GameObject.h"
 class IntectuableShop:public GameObject
 {
+	Texture* itemsTex_;
 public:
 	IntectuableShop(Game* game,int x, int y);
 	~IntectuableShop();

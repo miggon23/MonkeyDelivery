@@ -14,9 +14,11 @@ IntectuableShop::IntectuableShop(Game* game,int x , int y) : GameObject(game, tr
 	maxY_ = 0;
 	textureRect = { 0, 0, width_, height_ };
 	timerAnimation_ = 0; // ¿puede ser const?
+
+	itemsTex_= game->getTexture(shop_Items);
 }
 
-IntectuableShop::~IntectuableShop() {}
+IntectuableShop::~IntectuableShop() { itemsTex_ = nullptr; }
 
 void IntectuableShop::update() {}
 
@@ -27,6 +29,8 @@ void IntectuableShop::draw()
 	pos.y -= (int)game->getCamera()->getCameraPosition().getY();
 
 	animationManager->getFrameImage(pos, textureRect, texture, timerAnimation_, flip, width_, height_, maxX_, maxY_, time_);
+
+	itemsTex_->render({ pos.x-60, pos.y+30, 210, 45 });
 }
 
 //llamo al metodo para ver si puede dromir

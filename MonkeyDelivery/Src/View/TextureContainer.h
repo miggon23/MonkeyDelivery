@@ -127,6 +127,7 @@ enum TextureName
 		shop_UI_Selector,
 		ShopPanel_Interact,
 		shop_UI_Controls,
+		shop_Items,
 	
 	//11-UI Overlay (InGame) - 7
 		UI_dialogueBox,
@@ -178,7 +179,7 @@ enum TextureName
 		fox_Icon
 };
 
-const int NUM_TEXTURES = 131;
+const int NUM_TEXTURES = 132;
 
 typedef struct {
 	string filename;
@@ -301,6 +302,7 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
 	{"shop/shop_UI_Selector.png",1,1},
 	{"shop/ShopPanel_Interact.png",1,1},
 	{"shop/shopControls.png",1,1},
+	{"shop/items.png",1,1 },
 
 	//UI Overlay (InGame)
 	{"ui/InGame/dialoguebox.png",1,1},
