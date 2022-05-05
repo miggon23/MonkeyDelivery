@@ -12,7 +12,7 @@ Cat::Cat(Game* game,int Aleatorio, Point2D<int>centroRadio):Enemy(game, Aleatori
 	setDimension(52, 70);
 	createCheckPoints();
 	setResistance(1000);
-	setMaxFearPercent(25);
+	setMaxFearPercent(10);
 	width_ = 16;
 	height_ = 20;
 	time_ = 250;
