@@ -180,22 +180,22 @@
     },
     {
       "id": "Mission1Text",
-       "text": "Muchas gracias. Debes ser el nuevo repartidor, buen trabajo. Si sigues asi te aseguro que te iran las cosas genial en Todesfall.", 
+       "text": "¡Muchas gracias! Debes ser el nuevo repartidor, buen trabajo. Si sigues asi te aseguro que te iran las cosas genial en Todesfall.", 
        "icon": 1
     },
     {
         "id": "Mission2Text",
-        "text": "Menos mal que has encontrado mis chocolatinas. Las ultimas Flappy Hippo que comi estaban mas crujientes de lo normal... El ultimo tu nunca me las traia a tiempo y ya estaba harta.",
+        "text": "¡Menos mal que has encontrado mis chocolatinas! Las ultimas Flappy Hippo que comi estaban mas crujientes de lo normal... El ultimo tu nunca me las traia a tiempo y ya estaba harta.",
         "icon": 2
     },
     {
         "id": "Mission3Text",
-        "text": "Por fin. Ahora podre volver a lucir mi pluma- esto, mis plumas. Tengo que admitir que tu eres mas agradable a la vista que el anterior repartidor... Espero que tu dures mas.",
+        "text": "¡Por fin! Ahora podre volver a lucir mi pluma- esto, mis plumas. Tengo que admitir que tu eres mas agradable a la vista que el anterior repartidor... Espero que tu dures mas.",
         "icon": 3
     },
     {
         "id": "Mission4Text",
-        "text": "Wilson. Como te he echado de menos. Muchas gracias amigo, sin ti, a saber que le habria pasado a Wilson. Hasta la proxima... si sigues haciendo bien tu trabajo claro, de lo contrario, acabaras como Wilson...",
+        "text": "¡¡¡Wilson!!! ¡Como te he echado de menos! Muchas gracias amigo, sin ti, a saber que le habria pasado a Wilson. ¡Hasta la proxima! ... si sigues haciendo bien tu trabajo claro, de lo contrario, acabaras como Wilson...",
         "icon": 4
     },
     {
@@ -205,31 +205,27 @@
     },
     {
         "id": "Mission6Text",
-        "text": "Gracias. Estoy harta de ese maldito zorro y su acoso constante, parece que no sabe de lo que soy capaz. Tranquilo, no voy a hacerle dano, siempre que no se me acerque claro...",
+        "text": "¡Gracias! Estoy harta de ese maldito zorro y su acoso constante, parece que no sabe de lo que soy capaz. Tranquilo, ¡no voy a hacerle daño!, siempre que no se me acerque claro...",
         "icon": 6
     },
     {
         "id": "Mission7Text",
-        "text": "Vaya, vaya. Veo que has encontrado mi producto... Mis pacientes lo echaban en falta. Estaban en el cementerio, al lado de la tumba. Jaja, tranquilo, estaba enterrando a la ultima victi- digo, al ultimo paciente, cuando las perdi.",
+        "text": "¡Vaya, vaya! Veo que has encontrado mi producto... Mis pacientes lo echaban en falta. ¿Estaban en el cementerio? ¿al lado de la tumba? Jaja, ¡tranquilo!, estaba enterrando a la ultima victi- digo, al ultimo paciente, cuando las perdi.",
         "icon": 7
     },
     {
-        "id": "Mission8Text",
-        "text": "Zorro",
-        "icon": 8
+      "id": "Mission8Text",
+      "text": "Gracias... No sabes cuanta falta me hace salir de aqui... ¡¡¡Estan todos locos!!! Me tengo que ocupar yo mismo antes de que ellos acaben conmigo... En fin, muchas gracias por el reparto... hasta mas ver. Ah, y ten mucho cuidado, no quiero que acabes igual que el anterior repartidor.",
+      "icon": 8
     },
     {
         "id": "Mission9Text",
-        "text": "Cocodrilo",
+        "text": "Al fin llegas, necesitaba esto urgentemente... ¡Esa maldita coneja se va a enterar! Es ella la que empezo esta guerra, a pesar de que habiamos acordado mantener la paz.",
         "icon": 9
     },
     {
-      "id": "Mission1Text",
-      "text": "¡¡¡Muchas gracias!!. Debes ser el nuevo repartidor, buen trabajo. Si sigues asi te aseguro que te iran las cosas genial en Todesfall."
-    },
-    {
       "id": "MissionsFinished",
-      "text": "Has terminado todas las misiones, enhorabuena."
+      "text": "'Ven al puerto que hay frente a mi casa, ¡¡URGENTE!!' - Cleon el Cocodrilo"
     },
     {
       "id": "ChestMoneyText",
