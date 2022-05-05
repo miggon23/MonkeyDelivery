@@ -147,7 +147,10 @@ public:
 	
 
 	// FEAR
-	inline void getScared(double amount) { fearLevel_->getScared(amount / fearBonusFactor); }; //Por defecto fearBonusFactor = 1
+	inline void getScared(double amount) { 
+		if(getDistanceXToClosestBed()>500 || getDistanceYToClosestBed()>500 )
+		fearLevel_->getScared(amount / fearBonusFactor); 
+	} //Por defecto fearBonusFactor = 1
 	inline void setFearBonusFactor(double d = 1) { fearBonusFactor = d; };
 	inline void recoverFear(double amount) { fearLevel_->getScared(-amount); };
 	inline double getFear() { return fearLevel_->getFear(); };
@@ -218,7 +221,11 @@ public:
 
 	// FADEOUT
 	void FadeOut(); // Realiza un fadeout sobre la pantalla
+	//relativo a la cama
 	Point2D<double> getClosestBed(); //obtener cama mas cercana
+	double getDistanceXToClosestBed();//obtener distancia (X) del primate a la cama más cercana
+	double getDistanceYToClosestBed();//obtener distancia (Y) del primate a la cama más cercana
+
 	void sendToBed(); // Establece la posici�n en la cama m�s cercana despu�s del fadeout
 
 	// COLLISIONS

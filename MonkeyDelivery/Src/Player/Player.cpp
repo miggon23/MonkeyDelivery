@@ -397,6 +397,17 @@ Point2D<double> Player::getClosestBed()
 	return p;
 }
 
+double Player::getDistanceXToClosestBed()
+{
+	return std::abs(getPosition().getX() - getClosestBed().getX());
+	
+}
+double Player::getDistanceYToClosestBed()
+{
+	return std::abs(getPosition().getY() - getClosestBed().getY());
+
+}
+
 void Player::sendToBed()
 {
 	fade = false;
@@ -409,7 +420,7 @@ void Player::sendToBed()
 
 	Point2D<double> p;
 	p=getClosestBed();
-
+	
 	setPosition(p.getX() , p.getY() + 60.0);//colocar en la cama
 
 	game->resetInitialTransition();
