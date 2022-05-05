@@ -79,6 +79,8 @@ enum TextureName
 		worldObject_Tutorial,
 		worldObject_TutorialComplete,
 		worldObject_HappyHippo,
+		worldObject_Hierbas,
+		worldObject_Pez,
 	
 	//6-Map - 4
 		mapMarker,
@@ -184,7 +186,7 @@ enum TextureName
 		fox_Icon
 };
 
-const int NUM_TEXTURES = 137;
+const int NUM_TEXTURES = 139;
 
 typedef struct {
 	string filename;
@@ -256,6 +258,8 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
 	{"items/world/worldObject_Tutorial.png",1,1},
 	{"items/world/worldObject_TutorialDone.png",1,1},
 	{"items/world/Item_HappyHippo.png",1,1},
+	{"items/world/Item_Hierbas.png",1,1},
+	{"decor/Trohpy_Fish02.png",1,1},
 
 	//6-Map
 	{"map/mapMarker.png",1,1},
