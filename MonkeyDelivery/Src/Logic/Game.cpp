@@ -147,6 +147,8 @@ void Game::start()
     add(new Bed(this, (int)(8000 * relative.getX()), (int)(1970 * relative.getY())));
     add(new Bed(this, (int)(7050 * relative.getX()), (int)(5820 * relative.getY())));
     add(new Bed(this, (int)(2450 * relative.getX()), (int)(4565 * relative.getY())));
+    add(new Bed(this, (int)(4830 * relative.getX()), (int)(3775 * relative.getY())));
+    add(new Bed(this, (int)(5750 * relative.getX()), (int)(3625 * relative.getY())));
 
     partSystem = new ParticleExample();
     partSystem->setRenderer(renderer);             // set the renderer
