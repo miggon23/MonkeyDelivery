@@ -18,18 +18,18 @@ ShopState::ShopState(Game* game) : State(game){
 	yObj = game->getWindowHeight()/1.95;
 	wObj = (int)(game->getWindowWidth() / 2.5);
 	hObj = (int)game->getWindowHeight() / 2;
-	xOffset = (int)game->getWindowWidth() / 10;
-	yOffset = (int)game->getWindowHeight() / 4;
+	xOffset = (int)game->getWindowWidth() / 20;
+	yOffset = (int)game->getWindowHeight() / 5;
 	xText = (int)(game->getWindowWidth() / 2.65);
 	yText = (int)(game->getWindowHeight() / 1.2);
 
 	buttonsX_ = (int)(game->getWindowWidth() / 1.3);
 	buttonsY_ = (int)(game->getWindowHeight() / 1.3);
-	buttonsW_ = game->getWindowWidth()/2.22;
-	buttonsH_ = game->getWindowHeight()/5;
+	buttonsW_ = game->getWindowWidth()/5;
+	buttonsH_ = game->getWindowHeight()/6;
 
 	coinsX_ = (int)(game->getWindowWidth() / 2.25);
-	coinsY_ = (int)(game->getWindowHeight() / 1.26);
+	coinsY_ = (int)(game->getWindowHeight() / 1.3);
 	coinsW_ = (int)(game->getWindowWidth() / 35.0);
 	double d = game->getWindowWidth() / game->getWindowHeight(); // para que tengan el mismo W y H
 	coinsH_ = (int)(game->getWindowHeight() / 35.0 * d);
@@ -89,10 +89,10 @@ void ShopState::draw()
 	
 	game->getTexture(shop_UI_Selector)->render(rectPanel);
 	// current money
-	font_->render(game->getRenderer(), "Monedas: " + std::to_string(game->getMoney()), (int)game->getWindowWidth() - 800, (int)game->getWindowHeight() - 200, BLACK);
+	font_->render(game->getRenderer(), "Monedas: " + std::to_string(game->getMoney()), (int)game->getWindowWidth()/1.75, (int)game->getWindowHeight()/1.3, BLACK);
 	//renderizado del texto
 	if (shop_->objects.size()>selected_&&shop_->objects[selected_].stock > 0) {
-		font_->render(game->getRenderer(), "Coste: " + std::to_string(shop_->objects[selected_].price), 600, (int)game->getWindowHeight() - 200, BLACK);
+		font_->render(game->getRenderer(), "Coste: " + std::to_string(shop_->objects[selected_].price), (int)game->getWindowWidth()/3, (int)game->getWindowHeight()/1.3, BLACK);
 	}
 	else {
 		font_->render(game->getRenderer(), " ", xText, yText, BLACK);
