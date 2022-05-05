@@ -18,10 +18,10 @@ DialogueBox::DialogueBox(Game* game) : GameObject(game)
 	color_ = BLACK;
 
 	yPos_ = (int)(game->getWindowHeight()/1.43);
-	width_ = (int)(game->getWindowWidth() / 16 * 10);
+	width_ = (int)(game->getWindowWidth() / 1.8);
 	xPos_ = (int)(game->getWindowWidth() / 2 - width_ / 2);
 	height_ = (int)(game->getWindowHeight()/9 * 2);
-	xText_ = (int)(game->getWindowWidth()/120.0);
+	xText_ = (int)(game->getWindowWidth()/35);
 	yText_ = (int)(game->getWindowHeight()/50.0);
 	xIcon = -(int)(game->getWindowWidth()/36.0);
 	yIcon = -(int)(game->getWindowHeight()/17.24);
