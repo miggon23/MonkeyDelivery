@@ -13,7 +13,7 @@ DialogueBox::DialogueBox(Game* game) : GameObject(game)
 
 	currentIcon_ = nullptr;
 
-	font_ = new Font("Images/fonts/Pixellari.ttf", 40);
+	font_ = new Font("Images/fonts/Pixellari.ttf", 35);
 	texture = game->getTexture(UI_dialogueBox);
 	color_ = BLACK;
 

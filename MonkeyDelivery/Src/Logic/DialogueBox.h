@@ -39,7 +39,7 @@ private:
 		iconId=-1,
 		letterPerLine_ = 50,
 		sizeBtwLines_ = 40,
-		normalUpdateTime_ = 50,
+		normalUpdateTime_ = 75,
 		fastUpdateTime_ = 5,
 		maxLines_ = 2;
 
