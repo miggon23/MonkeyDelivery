@@ -181,7 +181,7 @@ enum TextureName
 		fox_Icon
 };
 
-const int NUM_TEXTURES = 133;
+const int NUM_TEXTURES = 134;
 
 typedef struct {
 	string filename;
@@ -196,9 +196,6 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
 	{"background/bckg_Image.png",1,1},
 	{"background/bckg_WoodPanneling.png",1,1},
 	{"background/bckg_woodWall.webp",1,1},
-
-	//2-Buttons (UI Menu)
-	
 	
 	//3-Decorations (House)
 	{"decor/Trohpy_Coco.png",1,1},

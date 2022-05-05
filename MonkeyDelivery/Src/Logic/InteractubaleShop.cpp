@@ -30,7 +30,7 @@ void IntectuableShop::draw()
 
 	animationManager->getFrameImage(pos, textureRect, texture, timerAnimation_, flip, width_, height_, maxX_, maxY_, time_);
 
-	itemsTex_->render({ pos.x-60, pos.y+30, 210, 45 });
+	itemsTex_->render({ pos.x-60, pos.y+30, 210, 40 });
 }
 
 //llamo al metodo para ver si puede dromir
