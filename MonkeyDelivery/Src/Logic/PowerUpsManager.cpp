@@ -127,11 +127,11 @@ void PowerUpsManager::ActivatePowerUp(PowerUps p, double value)
 		speedNormalBootsMult_ = value;
 		if (!activateBoots_) {
 			player_->setVel(player_->getVel() * speedNormalBootsMult_);
+			activateBoots_ = true;
 		}
 		else {
-			player_->setVel(player_->getVel() / speedNormalBootsMult_);
+			desactivateBoots();
 		}
-		activateBoots_ = !activateBoots_;
 		break;
 	case banana:
 		break;
