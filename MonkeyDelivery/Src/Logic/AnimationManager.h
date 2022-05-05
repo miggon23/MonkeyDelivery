@@ -19,6 +19,7 @@ private:
 	int playerLimit = 64;
 	bool isTired_;
 	bool isScared_;
+	bool boots_;
 
 	int wPlayer_ = 16,
 		hPlayer_ = 18,

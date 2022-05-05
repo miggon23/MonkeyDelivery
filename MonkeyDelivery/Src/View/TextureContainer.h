@@ -109,6 +109,7 @@ enum TextureName
 		monkeySS_Default,
 		monkeyTired_Icon,
 		monkeyScared_Icon,
+		monkeySS_GreenBoots,
 	
 	//9-NPCS SpriteSheets - 10
 		npc_Coco,
@@ -186,7 +187,7 @@ enum TextureName
 		fox_Icon
 };
 
-const int NUM_TEXTURES = 139;
+const int NUM_TEXTURES = 140;
 
 typedef struct {
 	string filename;
@@ -288,6 +289,7 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
 	{"monkeyAnims/monkeySS_Default.png",1,1},
 	{"ui/tiredIcon.png",1,1},
 	{"ui/scaredIcon.png",1,1},
+	{"monkeyAnims/monkeySS_Green_Boots.png",1,1},
 
 	//9-NPCS SpriteSheets
 	{"npcs/NPC_Coco.png",1,1},

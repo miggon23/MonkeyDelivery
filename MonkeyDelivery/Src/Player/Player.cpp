@@ -226,7 +226,6 @@ void Player::changeSleep()
 
 void Player::NoSleepText()
 {
-	
 	int x = 80;
 	int y = 200;
 	//Textos q renderiza
@@ -245,7 +244,6 @@ void Player::removeMoney(int amount)
 	money_ -= amount;
 	if (money_ < 0) money_ = 0;
 }
-
 
 void Player::pausePowerUps()
 {
@@ -275,6 +273,9 @@ void Player::draw()
 	if (!isInTutorial_) { // no dibujamos nada si estamos en el tutorial
 
 		if (!sleeping) {
+			if (isWearingBoots) setTexture(monkeySS_GreenBoots);
+			else setTexture(monkeySS_Default);
+
 			if (fearLevel_->percentFear() >= 50 && isStopped_) {
 				animationManager->setIsScared(true);
 				animationManager->setState(AnimationManager::PlayerState::Idle);
