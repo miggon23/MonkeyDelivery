@@ -60,6 +60,7 @@ void PowerUpsManager::draw(){
 		SDL_Rect rect = { (int)(game_->getWindowWidth() * aux / 3),(int)(game_->getWindowHeight() * 3.5 / 4 - 20) ,texSpeedBuff_->getW() * 5,texSpeedBuff_->getH() * 5 };
 		texFearBuff_->render(rect);
 	}
+	aux += 0.2;
 	if (player_->getVel() < player_->getInitVel() - 0.05)
 	{
 		//Mostrar SPEED Debuff
