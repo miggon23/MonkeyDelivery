@@ -8,7 +8,6 @@ Options::Options(int x, int y, double w, double h, Game* game, int num) :Button(
 }
 
 void Options::onCursorCollision(){	
-	//game->setState(new OptionsState(game, num_));	
-	//ChangeToNewState(new OptionsState(game, num_),true);
+	//sdlutils().musics().at("menumusic").pauseMusic();
 	ChangeToOptionsState();
 }

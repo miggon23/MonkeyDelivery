@@ -26,6 +26,7 @@ MenuState::MenuState(Game* game) : State(game) {
 	titleTexture = game->getTexture(bckg_GameTitle);
 	selectorTexture = game->getTexture(button_Selector);
 	game->clearSavedState();
+	sdlutils().musics().at("menumusic").play(-1);
 }
 
 void MenuState::registerCommands()
@@ -35,9 +36,8 @@ void MenuState::registerCommands()
 	commandFactory->add(new SelectButtonCommand(this));
 }
 
-void MenuState::onEnterState()
-{
-	sdlutils().musics().at("menumusic").play(-1);
+void MenuState::onEnterState(){
+	//sdlutils().musics().at("menumusic").play(-1);
 }
 
 void MenuState::update() {
