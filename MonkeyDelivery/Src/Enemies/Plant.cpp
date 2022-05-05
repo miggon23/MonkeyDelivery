@@ -44,9 +44,10 @@ void Plant::checkDistance()
 	double distanceX = abs(dirX); //distancia en valor absoluto en las x
 	double distanceY = abs(getPosition().getY() - game->getPosisitionPlayer().getY()); //distacia en valor absoluto en las y
 
-	if (distanceX <= range && distanceY <= range) {
+	if (distanceX <= range && distanceY <= range)
+	{
 		//flip
-		if(dirX<0) setFlip(SDL_FLIP_HORIZONTAL);
+		if (dirX < 0) setFlip(SDL_FLIP_HORIZONTAL);
 		else setFlip(SDL_FLIP_NONE);
 
 		game->drainPlayerEnergy(0.2);
@@ -59,7 +60,9 @@ void Plant::checkDistance()
 			sdlutils().soundEffects().at("plant").play(0, 1);
 		}
 		lastUpdate_ = SDL_GetTicks();
+		popUpActive = true;
 	}
+	else popUpActive = false;
 }
 
 void Plant::draw()
