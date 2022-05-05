@@ -10,11 +10,11 @@ energyLevel::energyLevel(Game* game) :GameObject(game) {
 	setTexture(UI_energyLevel);
 	
 
-	x = (int)(game->getWindowWidth() / 8);
+	x = (int)(game->getWindowWidth() / 7.5);
 	y = (int)(game->getWindowHeight() / 23);
 	h = (int)(game->getWindowHeight() / 60);
 
-	scale_ = (1.83 / 1800) * game->getWindowWidth();
+	scale_ = (1.76 / 1800) * game->getWindowWidth();
 
 	setPosition(x, y);
 	setDimension(100*scale_, h);
