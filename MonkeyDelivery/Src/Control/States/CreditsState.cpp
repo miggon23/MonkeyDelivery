@@ -8,6 +8,10 @@
 
 CreditsState::CreditsState(Game* game) : State(game)
 {
+
+	buttonW = game->getWindowWidth() / 6;
+	buttonH = game->getWindowHeight() / 7.143;
+
 	addButton(new Back1((int)game->getWindowWidth() / 2 - buttonW/2, (int)game->getWindowHeight() - 250, buttonW, buttonH, game));
 	backgroundTexture = game->getTexture(bckg_options);
 	selectorTexture = game->getTexture(mission_UI_Selector);

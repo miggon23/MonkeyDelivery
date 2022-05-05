@@ -5,7 +5,7 @@ class PauseState : public State
 {
 	Texture* backgroundTexture;
 	Texture* selectorTexture;
-	const int buttonW = 300, buttonH = 140;
+	int buttonW = 300, buttonH = 140;
 
 	int currentSelection = 0; // boton seleccionado (en el array buttonsUI)
 public:

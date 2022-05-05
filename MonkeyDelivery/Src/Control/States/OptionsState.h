@@ -7,7 +7,7 @@ class OptionsState : public State
 	Texture* selectorTexture;	
 	Texture* backgroundTexture;
 	Texture* signsTexture;
-	const int buttonW = 300, buttonH = 140;
+	int buttonW = 300, buttonH = 140;
 
 	int currentSelection = 0; // slider seleccionado (en el array slidersUI)
 public:

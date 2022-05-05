@@ -28,7 +28,7 @@ private:
 	Texture* backgroundTexture;
 	Texture* selectorTexture;
 
-	const int buttonW = 300, buttonH = 140;
+	int buttonW = 300, buttonH = 140;
 	vector<std::string> credits_; 
 	const int xOffset_ = 400, yOffset_ = 100, ySize_ = 50;
 	const int timeNewName_ = 1000;

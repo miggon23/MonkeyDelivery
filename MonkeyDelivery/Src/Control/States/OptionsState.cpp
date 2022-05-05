@@ -12,6 +12,10 @@
 #include "../UI/Sliders/BrightnessSlider.h"
 
 OptionsState::OptionsState(Game* game) : State(game){
+
+	buttonW = game->getWindowWidth() / 6;
+	buttonH = game->getWindowHeight() / 7.143;
+
 	registerCommands();
 	
 	addButton(new Back((int)game->getWindowWidth() / 2 - buttonW/2, (int)game->getWindowHeight() - 250, buttonW, buttonH, game));
