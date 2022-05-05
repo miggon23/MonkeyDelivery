@@ -9,6 +9,7 @@
 
 #include "../Items/Package.h"
 #include "DialogueBox.h"
+#include "EndGameTarget.h"
 
 #include "../Utils/Timer.h"
 
@@ -45,7 +46,6 @@ MissionsPanel::MissionsPanel(Game* game, AnimationManager* anim) : GameObject(ga
 
 	missionObject_ = new MissionObject(this, game);
 	game->add(missionObject_);
-
 }
 
 MissionsPanel::~MissionsPanel()
@@ -87,12 +87,12 @@ void MissionsPanel::onPlayerInteraction(Player* player)
 		}
 		else {
 			// mostrar mensaje de que ya no quedan más misiones
-			string a = "MissionsFinished";
-			game->newDialogue(a);
+			game->newDialogue("MissionsFinished");
+			auto endTarget = new EndGameTarget( game, animationManager);
+			game->add(endTarget);
 		}
 	}
 }
-
 
 void MissionsPanel::update()
 {
@@ -140,7 +140,6 @@ void MissionsPanel::onMissionSelected(string missionId)
 			game->getPlayer()->addMissionObject(new Package(game->getTexture(Item_Package), game, game->getPlayer()));
 		}
 	
-
 		// spawn Vecino
 		activeTarget_->changeActive();
 		activeTarget_->setDimension(m.width, m.height);

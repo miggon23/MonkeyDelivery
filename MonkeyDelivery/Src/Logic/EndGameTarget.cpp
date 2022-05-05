@@ -2,9 +2,12 @@
 #include "Game.h"
 EndGameTarget::EndGameTarget(Game* g, AnimationManager* animation) : GameObject(g, true)
 {
-	setTexture(npc_Coco);
-	// setPosition(); // en la playa
+	texture = game->getTexture(npc_Coco);
+	Point2D<double> relative = { (double)(game->getWindowWidth() / 1800), (double)(game->getWindowHeight() / 1000) };
+	setPosition(1800*relative.getX(), 6500*relative.getY()); // en la playa
 	setDimension(60, 60);
+
+	textureRect = { 0, 0, 60, 60 };
 }
 
 EndGameTarget::~EndGameTarget()

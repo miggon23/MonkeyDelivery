@@ -11,5 +11,6 @@ public:
 	void onPlayerInteraction(Player* player) override;
 	void draw() override;
 
+	void update() override {};
 };
 
