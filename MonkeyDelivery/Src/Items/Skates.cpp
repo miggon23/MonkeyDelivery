@@ -20,7 +20,7 @@ bool Skates::useObject()
 	else {
 		player_->setVel(player_->getVel() / speedMult);
 	}*/
-	player_->initPowerUp(boots);
+	player_->initPowerUp(boots, speedMult);
 	//active = !active;
 	return false;
 }

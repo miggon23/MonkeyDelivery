@@ -17,6 +17,7 @@ public:
 	};
 
 	void registerCommands()override;
+	void onEnterState() override;
 
 	void moveSelectedX(int to);
 	void moveSelectedY(int to);

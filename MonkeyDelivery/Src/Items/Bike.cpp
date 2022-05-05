@@ -1,20 +1,15 @@
 #include "Bike.h"
 #include "../Player/Player.h"
 #include "../Logic/Game.h"
-Bike::Bike(Texture* tex, Game* game,Player* player) : speedMult(1.6), InventoryObject(tex, game,player)
+Bike::Bike(Texture* tex, Game* game,Player* player) : speedMult(1.7), InventoryObject(tex, game,player)
 {
 	active = false;
 	setTypeObject(BOOTS);
 }
 
 bool Bike::useObject() {
-	if ( !active ) {
-		player_->setVel(player_->getVel() * speedMult);
-	}
-	else {
-		player_->setVel(player_->getVel() / speedMult);
-	}
-	player_->initPowerUp(boots);
+	
+	player_->initPowerUp(boots, speedMult);
 	active = !active;
 	return false; //devolvemos false indicando que el objeto no debe destruirse tras ser usado
 }

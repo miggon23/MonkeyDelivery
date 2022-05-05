@@ -55,7 +55,7 @@ Player::Player(Game* game) :GameObject(game), animationManager(AnimationManager:
 	inventory_ = new Inventory(game, this, game->getRenderer());
 	powerUpsManager = new PowerUpsManager(this->game, this);
 	//Objetos de inventario
-	inventory_->addObject(new Skates(game->getTexture(Item_Boots01), game, this));
+	inventory_->addObject(new Skates(game->getTexture(Item_Boots02), game, this));
 	inventory_->addObject(new Flashlight(game->getTexture(Item_Lantern01), game, this));
 	inventory_->addObject(new EnergyDrink(game->getTexture(Item_Soda02), game, this));
 	
@@ -90,6 +90,7 @@ Player::~Player()
 
 void Player::update()
 {
+	cout << vel_ << endl;
 	if (!fade && !isTalking_ && !isInTutorial_) {
 
 		powerUpsManager->update();
@@ -254,8 +255,18 @@ void Player::resumePowerUps()
 	powerUpsManager->onPauseExit();
 }
 
+void Player::desactivatePowerUp(PowerUps p)
+{
+	powerUpsManager->desactivate(p);
+}
+
 void Player::initPowerUp(PowerUps x) {
 	powerUpsManager->ActivatePowerUp(x);
+}
+
+void Player::initPowerUp(PowerUps x, double value)
+{
+	powerUpsManager->ActivatePowerUp(x, value);
 }
 
 void Player::draw()

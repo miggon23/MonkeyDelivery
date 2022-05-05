@@ -175,6 +175,7 @@ public:
 	// INVENTORY
 	inline void useObject(int index) { inventory_->useObject(index);};
 	void initPowerUp(PowerUps x);
+	void initPowerUp(PowerUps x, double value);
 	inline void setInventoryVisibility(bool visible) { inventoryVisibility = visible; };
 	inline bool hasMissionObject() { return inventory_->hasMissionObject(); };
 	inline void addMissionObject(InventoryObject* p) { inventory_->addMisionObject(p); };
@@ -184,6 +185,7 @@ public:
 	inline void addObjectToInventory(InventoryObject* p) { inventory_->addObject(p); };
 	void pausePowerUps();
 	void resumePowerUps();
+	void desactivatePowerUp(PowerUps p);
 
 	
 	inline void selectObject(int index) {

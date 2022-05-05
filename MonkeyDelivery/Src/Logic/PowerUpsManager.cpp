@@ -117,6 +117,33 @@ void PowerUpsManager::ActivatePowerUp(PowerUps x){
 	}
 }
 
+void PowerUpsManager::ActivatePowerUp(PowerUps p, double value)
+{
+	switch (p)
+	{
+	case energyDrink:
+		break;
+	case boots:
+		speedNormalBootsMult_ = value;
+		if (!activateBoots_) {
+			player_->setVel(player_->getVel() * speedNormalBootsMult_);
+		}
+		else {
+			player_->setVel(player_->getVel() / speedNormalBootsMult_);
+		}
+		activateBoots_ = !activateBoots_;
+		break;
+	case banana:
+		break;
+	case monkeycola:
+		break;
+	case repelente:
+		break;
+	default:
+		break;
+	}
+}
+
 void PowerUpsManager::desactivate(PowerUps x)
 {
 	switch (x){
@@ -139,6 +166,11 @@ void PowerUpsManager::desactivate(PowerUps x)
 	default:
 		break;
 	}
+}
+
+void PowerUpsManager::desactivateBoots()
+{
+	desactivate(boots);
 }
 
 void PowerUpsManager::desactivateAllPowerUps(){

@@ -40,7 +40,9 @@ public:
 	void update();
 	void draw();
 	void ActivatePowerUp(PowerUps x);
+	void ActivatePowerUp(PowerUps p, double value);
 	void desactivate(PowerUps x);
+	void desactivateBoots();
 	void desactivateAllPowerUps();
 	
 	void onPauseEnter();

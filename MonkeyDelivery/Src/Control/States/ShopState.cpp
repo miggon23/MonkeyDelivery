@@ -124,6 +124,11 @@ void ShopState::registerCommands()
 	commandFactory->add(new ShopCommand(this));
 }
 
+void ShopState::onEnterState()
+{
+	game->getPlayer()->desactivatePowerUp(boots);
+}
+
 void ShopState::moveSelectedX(int to)
 {
 	if (selected_ + to < maxSelected && selected_ + to >= 0)
