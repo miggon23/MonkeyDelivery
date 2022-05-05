@@ -30,14 +30,14 @@ void IntectuableShop::draw()
 {
 	auto pos = getCollider();
 	pos.x -= (int)game->getCamera()->getCameraPosition().getX();
-	pos.y -= (int)game->getCamera()->getCameraPosition().getY();
+	pos.y -= ((int)game->getCamera()->getCameraPosition().getY()+50);
 
-	SDL_Rect rect = { pos.x,pos.y+100,60,60 };
+	SDL_Rect rect = { pos.x,pos.y+150,60,60 };
 
 	animationManager->getFrameImage(pos, textureRect, texture, timerAnimation_, flip, width_, height_, maxX_, maxY_, time_);
 	animationManager->getFrameImage(rect, dest, sellerTex_, timerAnimation2_, SDL_FLIP_NONE, 20, 20, 40, 0, time2_);
 
-	itemsTex_->render({ pos.x-60, pos.y+30, 210, 40 });
+	itemsTex_->render({ pos.x-60, pos.y+80, 230, 45 });
 }
 
 //llamo al metodo para ver si puede dromir
