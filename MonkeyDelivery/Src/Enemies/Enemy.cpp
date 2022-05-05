@@ -15,7 +15,7 @@ Enemy::Enemy(Game* game, int radio, Point2D<int>centroRadio) : GameObject(game, 
 	timeLimit_ = 250;
 	setMaxFearPercent(30);
 	popupTexture = game->getTexture(fearPopUp);
-	popUpTexRect = {0, 0, 22, 6};
+	popUpTexRect = {0, 0, 22, 12};
 	popUpActive = false;
 	popUpTimer = 160;
 }
@@ -157,8 +157,8 @@ void Enemy::drawPopUp()
 	pos.x -= (int)game->getCamera()->getCameraPosition().getX() - 10;
 	pos.y -= (int)game->getCamera()->getCameraPosition().getY() - 5;
 
-	SDL_Rect oRect = { pos.x, pos.y, 21 * 3, 6 * 3};
-	animationManager->getFrameImage(oRect, popUpTexRect, popupTexture, popUpTimer, SDL_FLIP_NONE, 22*3, 6*3, 154, 1, time_);
+	SDL_Rect oRect = { pos.x, pos.y, 21 * 3, 12 * 3};
+	animationManager->getFrameImage(oRect, popUpTexRect, popupTexture, popUpTimer, SDL_FLIP_NONE, 22*3, 12*3, 154, 1, time_);
 }
 
 bool Enemy::inPoint()
