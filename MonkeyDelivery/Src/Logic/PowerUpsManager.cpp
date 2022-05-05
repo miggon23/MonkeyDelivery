@@ -128,6 +128,7 @@ void PowerUpsManager::ActivatePowerUp(PowerUps p, double value)
 		if (!activateBoots_) {
 			player_->setVel(player_->getVel() * speedNormalBootsMult_);
 			activateBoots_ = true;
+			player_->setIsWearingBoots(activateBoots_);
 		}
 		else {
 			desactivateBoots();
@@ -163,6 +164,7 @@ void PowerUpsManager::desactivate(PowerUps x)
 		if(activateBoots_)
 			player_->setVel(player_->getVel() / speedNormalBootsMult_);
 		activateBoots_ = false;
+		player_->setIsWearingBoots(activateBoots_);
 	default:
 		break;
 	}
