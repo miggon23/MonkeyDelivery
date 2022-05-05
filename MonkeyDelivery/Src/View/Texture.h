@@ -28,6 +28,7 @@ public:
 
     void load(string filename, uint numRows = 1, uint numCols = 1);
     void render(const SDL_Rect& rect, SDL_RendererFlip flip = SDL_FLIP_NONE) const;
+    void render(const SDL_Rect& rect, double angle, SDL_RendererFlip flip = SDL_FLIP_NONE) const;
     // This rendering method corresponds to method SDL_RenderCopyEx.
     //
     // Renders part of the texture (src) to a destination rectangle (dest)
@@ -60,6 +61,10 @@ public:
     inline void render(const SDL_Rect& dest) {
         SDL_Rect src = { 0, 0, w, h };
         render(src, dest);
+    }
+
+    inline void render() {
+
     }
 
     // renders the complete texture at a destination rectangle (dest),

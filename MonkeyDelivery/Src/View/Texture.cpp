@@ -33,3 +33,11 @@ void Texture::render(const SDL_Rect& destRect, SDL_RendererFlip flip) const {
 	srcRect.w = w; srcRect.h = h;
 	SDL_RenderCopyEx(renderer, texture, &srcRect, &destRect, 0, 0, flip);
 }
+
+void Texture::render(const SDL_Rect& rect, double angle, SDL_RendererFlip flip) const
+{
+	SDL_Rect srcRect;
+	srcRect.x = 0; srcRect.y = 0;
+	srcRect.w = w; srcRect.h = h;
+	SDL_RenderCopyEx(renderer, texture, &srcRect, &rect, angle, 0, flip);
+}

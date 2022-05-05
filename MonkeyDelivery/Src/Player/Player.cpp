@@ -155,7 +155,6 @@ void Player::move()
 
 		drainEnergy(decreasingEnergyLevel_);
 	}
-
 	setPosition(getPosition().getX() + speed.getX(), getPosition().getY() + speed.getY());
 }
 
@@ -326,7 +325,25 @@ void Player::draw()
 			auto a = lightZoneFL();
 			a.x -= (int)game->getCamera()->getCameraPosition().getX();
 			a.y -= (int)game->getCamera()->getCameraPosition().getY();
-			flashlightTex_->render(a);
+
+			//SDL_Rect hitZone = { int(getX()),
+			//					int(getY()),
+			//					getWidth(),
+			//					getHeight() };
+
+			//hitZone.x -= (int)game->getCamera()->getCameraPosition().getX();
+			//hitZone.y -= (int)game->getCamera()->getCameraPosition().getY();
+
+			if (orientation_ == "right") // dcha
+				flashlightTex_->render(a);
+			else if (orientation_ == "left") // izqda
+				flashlightTex_->render(a, SDL_FLIP_HORIZONTAL);
+			else if (orientation_ == "up") // arriba
+				flashlightTex_->render(a, -90.0);
+			else // abajo y por defecto
+				flashlightTex_->render(a, 90.0);
+
+			
 		}
 
 		if (usingLantern) {
@@ -485,18 +502,17 @@ const SDL_Rect Player::lightZoneFL()
 	}
 	else if (dirY_ == -1)
 	{
-		hitZone = { int(getX()),
-					int(getY() - 100),
-					getWidth(),
-					getHeight() + 50 };
+		hitZone = { int(getX() - 25),
+					int(getY() - 75),
+					getHeight() + 50 , getWidth() };
 		setOrientation("up");
 	}
 	else if (dirY_ == 1)
 	{
-		hitZone = { int(getX()),
-					int(getY() + 50),
-					getWidth(),
-					getHeight() + 50 };
+		hitZone = { int(getX() - 25),
+					int(getY() + 75),
+					getHeight() + 50,
+					getWidth() };
 		setOrientation("down");
 
 	}
@@ -516,17 +532,16 @@ const SDL_Rect Player::lightZoneFL()
 		}
 
 		else if (getOrientation() == "up") {
-			hitZone = { int(getX()),
-					int(getY() - 100),
-					getWidth(),
-					getHeight() + 50 };
+			hitZone = { int(getX() - 25),
+					int(getY() - 75),
+					getHeight() + 50 , getWidth() };
 		}
 
 		else if (getOrientation() == "down") {
-			hitZone = { int(getX()),
-					int(getY() + 50),
-					getWidth(),
-					getHeight() + 50 };
+			hitZone = { int(getX() - 25),
+			int(getY() + 75),
+			getHeight() + 50,
+			getWidth() };
 		}
 		else {
 			hitZone = getCollider();

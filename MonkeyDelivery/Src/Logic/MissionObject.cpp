@@ -53,8 +53,8 @@ void MissionObject::setTexture(string tex)
 		this->texture = game->getTexture(worldObject_HappyHippo);
 	}
 	else if (tex == "NPC_Fish") {
-		this->texture = game->getTexture(worldObject_Hierbas);
-	}else if (tex == "NPC_Frog") {
 		this->texture = game->getTexture(worldObject_Pez);
+	}else if (tex == "NPC_Frog") {
+		this->texture = game->getTexture(worldObject_Hierbas);
 	}
 }
