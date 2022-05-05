@@ -79,6 +79,7 @@ private:
 	//MIEDO
 	double fear_;
 	double fearBonusFactor = 1;
+	int safeFactor = 500;
 
 	//MISION ACTIVA
 	int money_;
@@ -148,7 +149,7 @@ public:
 
 	// FEAR
 	inline void getScared(double amount) { 
-		if(getDistanceXToClosestBed()>500 || getDistanceYToClosestBed()>500 )
+		if(safeDistance())
 		fearLevel_->getScared(amount / fearBonusFactor); 
 	} //Por defecto fearBonusFactor = 1
 	inline void setFearBonusFactor(double d = 1) { fearBonusFactor = d; };
@@ -225,6 +226,9 @@ public:
 	Point2D<double> getClosestBed(); //obtener cama mas cercana
 	double getDistanceXToClosestBed();//obtener distancia (X) del primate a la cama más cercana
 	double getDistanceYToClosestBed();//obtener distancia (Y) del primate a la cama más cercana
+	inline bool safeDistance() {
+		return (getDistanceXToClosestBed() > safeFactor || getDistanceYToClosestBed() > safeFactor);
+	}
 
 	void sendToBed(); // Establece la posici�n en la cama m�s cercana despu�s del fadeout
 
