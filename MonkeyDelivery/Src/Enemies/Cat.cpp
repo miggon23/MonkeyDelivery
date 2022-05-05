@@ -64,7 +64,8 @@ void Cat::checkDistance()
 		double distanceX = abs(dirX);
 		double distanceY = abs(getPosition().getY() - game->getPosisitionPlayer().getY());
 
-		if (distanceX <= range && distanceY <= range) {
+		if (distanceX <= range && distanceY <= range) 
+		{
 			//flip
 			if (dirX < 0) setFlip(SDL_FLIP_HORIZONTAL);
 			else setFlip(SDL_FLIP_NONE);
@@ -77,8 +78,10 @@ void Cat::checkDistance()
 				setScariness(range / (minDis * 3));
 				if (scariness_ > maxFearPercent_) setScariness(maxFearPercent_); //Como mximo quita un 30% cada vez
 				game->scare(scariness_);
-				lastUpdate_ = SDL_GetTicks();
+				lastUpdate_ = SDL_GetTicks(); 
 			}
+			popUpActive = true;
 		}
+		else popUpActive = false;
 	}
 }

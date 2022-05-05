@@ -148,6 +148,7 @@ enum TextureName
 	UI_playerHUD,
 	UI_playerHUD_BackFill,
 	UI_timer,
+	fearPopUp,
 
 	//12-UI Overlay (InGame Buffs) - 3
 	UI_energyBuff,
@@ -187,7 +188,7 @@ enum TextureName
 	tucan_Icon,
 	fox_Icon,
 
-	// Cinemática
+	// Cinemï¿½tica
 	frame001,
 	frame002,
 	frame003,
@@ -274,7 +275,7 @@ enum TextureName
 
 };
 
-const int NUM_TEXTURES = 224;
+const int NUM_TEXTURES = 225;
 
 typedef struct {
 	string filename;
@@ -415,6 +416,7 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
 	{"ui/InGame/UI_playerHUD.png",1,1},
 	{"ui/InGame/UI_playerHUD_BackFill.png",1,1},
 	{"ui/InGame/timer.png",1,1},
+	{"ui/InGame/fearPopUp.png",1,1},
 
 	//UI Overlay (InGame Buffs)
 	{"ui/InGame/UI_energyBuff.png",1,1 },
@@ -455,7 +457,7 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
 	{ "ui/tucanIcon.png",1,1 },
 	{ "ui/foxIcon.png",1,1 },
 
-	// Cinemática final
+	// Cinemï¿½tica final
 	{ "cinematic/001.jpg",1,1 },
 	{ "cinematic/002.jpg",1,1 },
 	{ "cinematic/003.jpg",1,1 },

@@ -150,6 +150,8 @@ private:
 
     Transition* initialTransition;
 
+    
+
 public:
 
     Game(string name, double width, double height);
