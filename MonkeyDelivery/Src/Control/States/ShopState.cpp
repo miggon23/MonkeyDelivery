@@ -14,8 +14,8 @@ ShopState::ShopState(Game* game) : State(game){
 
 	font_ = new Font("Images/fonts/Pixellari.ttf", 40);
 
-	xObj = 405;
-	yObj = 512;
+	xObj = game->getWindowWidth()/4.44;
+	yObj = game->getWindowHeight()/1.95;
 	wObj = (int)(game->getWindowWidth() / 2.5);
 	hObj = (int)game->getWindowHeight() / 2;
 	xOffset = (int)game->getWindowWidth() / 10;
@@ -25,8 +25,8 @@ ShopState::ShopState(Game* game) : State(game){
 
 	buttonsX_ = (int)(game->getWindowWidth() / 1.3);
 	buttonsY_ = (int)(game->getWindowHeight() / 1.3);
-	buttonsW_ = 450;
-	buttonsH_ = 200;
+	buttonsW_ = game->getWindowWidth()/2.22;
+	buttonsH_ = game->getWindowHeight()/5;
 
 	coinsX_ = (int)(game->getWindowWidth() / 2.25);
 	coinsY_ = (int)(game->getWindowHeight() / 1.26);
