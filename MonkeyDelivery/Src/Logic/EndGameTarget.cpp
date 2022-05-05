@@ -16,7 +16,7 @@ EndGameTarget::~EndGameTarget()
 
 void EndGameTarget::onPlayerInteraction(Player* player)
 {
-	// game->endGameCinematic();
+	//cinematica
 }
 
 void EndGameTarget::draw()
