@@ -60,7 +60,7 @@ Player::Player(Game* game) :GameObject(game), animationManager(AnimationManager:
 	//Objetos de inventario
 	inventory_->addObject(new Skates(game->getTexture(Item_Boots01), game, this));
 	inventory_->addObject(new Flashlight(game->getTexture(Item_Lantern01), game, this));
-	inventory_->addObject(new EnergyDrink(game->getTexture(Item_Soda02), game, this));
+	inventory_->addObject(new EnergyDrink(game->getTexture(Item_Soda01), game, this));
 	
 	inventory_->addObject(new Repel(game->getTexture(Item_Spray), game,this));
 	setInventoryVisibility(true);
