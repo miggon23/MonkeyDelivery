@@ -5,10 +5,8 @@
 #include "../../json/JSON.h"
 
 
-
 CreditsState::CreditsState(Game* game) : State(game)
 {
-
 	buttonW = (int)game->getWindowWidth() / 6;
 	buttonH = (int)(game->getWindowHeight() / 7.143);
 
@@ -20,7 +18,6 @@ CreditsState::CreditsState(Game* game) : State(game)
 
 	registerCommands();
 }
-
 
 void CreditsState::draw()
 {
@@ -79,7 +76,6 @@ void CreditsState::loadCredits(std::string filename)
 		}
 	}
 }
-
 
 void CreditsState::onEnterState()
 {

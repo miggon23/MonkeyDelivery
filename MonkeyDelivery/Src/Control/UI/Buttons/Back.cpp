@@ -9,6 +9,5 @@ Back::Back(int x, int y, double w, double h, Game* game):Button(game,w,h,x,y){
 }
 
 void Back::onCursorCollision(){
-	//sdlutils().musics().at("menumusic").pauseMusic();
 	ChangeToLastaStateNO_DELETE_LAST();
 }

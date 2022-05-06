@@ -104,7 +104,7 @@ void MissionsPanel::update()
 			dialogueEnd();
 		}
 		else if (getTime()/1000 == 10 ) { // cuando queden 10 s
-			sdlutils().soundEffects().at("countdown").setVolume(game->getSoundEfectsVolume() * 2);
+			sdlutils().soundEffects().at("countdown").setVolume(game->getSoundEfectsVolume() * 2 * game->getGeneralVolume());
 			sdlutils().soundEffects().at("countdown").play(0, 2);
 		}
 	}
@@ -189,7 +189,7 @@ void MissionsPanel::onMissionCompleted()
 		reward = m.minMoney;
 
 		// sonido de ganar
-		sdlutils().soundEffects().at("reward").setVolume(game->getSoundEfectsVolume() * 2);
+		sdlutils().soundEffects().at("reward").setVolume(game->getSoundEfectsVolume() * 2 * game->getGeneralVolume());
 		sdlutils().soundEffects().at("reward").play(0, 1);
 	}
 

@@ -42,7 +42,6 @@ void ViewController::clearBackground() {
     SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
 }
 
-
 vector<SDL_Event>& ViewController::GetFrameEvents()
 {
     static vector<SDL_Event> frame_events;

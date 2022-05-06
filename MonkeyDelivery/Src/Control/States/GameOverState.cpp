@@ -1,18 +1,17 @@
 #include "GameOverState.h"
-#include "../../Player/Player.h"
 
 GameOverState::GameOverState(Game* game) : State(game)
 {
 	registerCommands();
 	textureMap.insert({
-		{1, TextureName::frame001},
-		{2, TextureName::frame002},
-		{3, TextureName::frame003},
-		{4, TextureName::frame004},
-		{5, TextureName::frame005},
-		{6, TextureName::frame006},
-		{7, TextureName::frame007},
-		{8, TextureName::frame008},
+		{ 1, TextureName::frame001 },
+		{ 2, TextureName::frame002 },
+		{ 3, TextureName::frame003 },
+		{ 4, TextureName::frame004 },
+		{ 5, TextureName::frame005 },
+		{ 6, TextureName::frame006 },
+		{ 7, TextureName::frame007 },
+		{ 8, TextureName::frame008 },
 		{ 9, TextureName::frame009 },
 		{ 10, TextureName::frame010 },
 		{ 11, TextureName::frame011 },
@@ -88,17 +87,13 @@ GameOverState::GameOverState(Game* game) : State(game)
 		{ 81, TextureName::frame081 },
 		{ 82, TextureName::frame082 },
 		{ 83, TextureName::frame083 },
-
 		});
 
-
 	game->renderText("GAME OVER", (int)game->getWindowWidth() / 2, (int)game->getWindowHeight() / 2, BLACK);
-	//renderCinematic(i);
 
 	startTicks = SDL_GetTicks();
 }
 void GameOverState::update() {
-	//game->renderText("GAME OVER", (int)game->getWindowWidth() / 2, (int)game->getWindowHeight() / 2, BLACK);
 
 	if (i < NUM_ELEMS + 1 && (startTicks + interval) < SDL_GetTicks())
 	{
@@ -107,32 +102,7 @@ void GameOverState::update() {
 		renderCinematic(i);
 		i++;
 	}
-	//else if (i >= NUM_ELEMS + 1 && !completed)
-	//{
-	//	renderCinematic(i-2);
-	//	// Efecto final
-	//	if ((startTicks + interval) < SDL_GetTicks()) {
-
-	//		/*2- Calculate the size of mask texture. Increment size each frame by a fitting amount.
-	//		 You would then use this value to calculate the destination rectangle for the sprite. */
-	//		size -= decrease;
-	//		SDL_Rect dest = { (int)(game->getWindowWidth() / 2) - (size / 2), (int)(game->getWindowHeight() / 2) - (size / 2), size, size };
-
-	//		/*3- Before rendering your actual game objects, call SDL_RenderSetClipRect(renderer, &dest);
-	//		This assures that nothing is rendered outside of the(square) circle texture area. That way everything outside of the texture should stay black.*/
-	//		SDL_RenderSetClipRect(game->getRenderer(), &dest);
-
-	//		/*4- Finally, simply render your mask texture onto the screen : SDL_RenderCopy(renderer, maskTexture, NULL, &dest);*/
-	//		game->getTexture(transitionTex)->render(dest, SDL_FLIP_NONE);
-	//		//SDL_RenderCopy(game->getRenderer(), maskTexture, NULL, &dest);
-
-	//	  /*5- Figure out when the effect has finished. */
-	//		if (size == 0) { // offset para que la animacion sea más fluida
-
-	//			completed = true;
-	//		}
-	//	}
-	//}
+	
 	else {
 		renderCinematic(i-1);
 		if (i >= NUM_ELEMS + 1) {
@@ -149,8 +119,4 @@ void GameOverState::renderCinematic(int i)
 	{
 		game->getTexture(it->second)->render(rectPanel);
 	}
-}
-
-void GameOverState::registerCommands() {
-
 }

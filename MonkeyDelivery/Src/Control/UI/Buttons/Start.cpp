@@ -7,7 +7,6 @@ Start::Start(int x, int y, double w, double h, Game* game):Button(game,w,h,x,y){
 }
 
 void Start::onCursorCollision(){
-	//game->setState(new PlayingState(game));
 	sdlutils().musics().at("menumusic").pauseMusic();
 	ChangeToNewState(new PlayingState(game),false);
 }

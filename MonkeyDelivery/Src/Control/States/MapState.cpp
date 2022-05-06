@@ -20,8 +20,6 @@ MapState::~MapState()
 	delete missionTex_;  missionTex_ = nullptr;
 }
 
-void MapState::update() {}
-
 void MapState::draw()
 {
 	//Mapa
@@ -72,8 +70,6 @@ void MapState::draw()
 	game->playerIcon()->setPosition(x, y);
 	game->playerIcon()->draw();
 }
-
-void MapState::next() {}
 
 void MapState::registerCommands()
 {

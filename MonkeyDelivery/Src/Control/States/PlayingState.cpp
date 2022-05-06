@@ -9,11 +9,11 @@
 #include "../CommandClick.h"
 #include "../InventoryCommand.h"
 #include "../InteractDialogueBoxCommand.h"
-#include "../UI/Buttons/Back.h"
-#include "../UI/Buttons/Pause.h"
 #include "../MapCommand.h"
 #include "../PauseCommand.h"
 
+#include "../UI/Buttons/Back.h"
+#include "../UI/Buttons/Pause.h"
 
 #include "../States/MenuState.h"
 

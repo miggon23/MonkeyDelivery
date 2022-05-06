@@ -1,9 +1,11 @@
 #include "ShopState.h"
+#include <string>
+
 #include "../PauseCommand.h"
 #include "../CommandExit.h"
 #include "../ShopCommand.h"
+
 #include "../../Logic/Shop.h"
-#include <string>
 
 ShopState::ShopState(Game* game) : State(game){
 	registerCommands();
@@ -42,8 +44,7 @@ ShopState::~ShopState()
 {
 	panelTexture = nullptr;
 	shop_ = nullptr;
-	delete font_;
-	font_ = nullptr;
+	delete font_;  font_ = nullptr;
 }
 
 void ShopState::draw()
@@ -57,17 +58,6 @@ void ShopState::draw()
 	//renderizado de los objetos	
 	while (i < shop_->getSize())
 	{
-		
-	/*	if (shop_->objects[i].stock > 0) {
-			if (i>=4) {
-				shop_->objects[i].inventoryObject->getTexture()->render(
-					{ xOffset + xObj * (shop_->objects[i].positionRectX-4) - 50 * (i-4),(int)( yOffset *(shop_->objects[i].positionRectY +0.75)+20), wObj, hObj });
-			}
-			else {
-				shop_->objects[i].inventoryObject->getTexture()->render(
-					{ xOffset + xObj * shop_->objects[i].positionRectX - 50 * i, yOffset + (shop_->objects[i].positionRectY * 3), wObj, hObj });
-			}*/
-
 		if (shop_->objects[i].stock > 0) {
 			if (i >= 4) {
 				shop_->objects[i].inventoryObject->getTexture()->render(
@@ -144,7 +134,6 @@ void ShopState::moveSelectedY(int to)
 
 void ShopState::buySelected()
 {
-	
 	if (shop_->getSize()>selected_&&!shop_->buyObject(selected_, shop_->objects[selected_].price))
 	{
 		lastClicked_ = SDL_GetTicks();

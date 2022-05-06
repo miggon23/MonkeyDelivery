@@ -8,9 +8,9 @@ public:
 	MapState(Game* game);
 	~MapState();
 
-	void update()override;
+	void update()override {};
 	void draw()override;
-	void next()override;
+	void next()override {};
 
 	string getStateName() const {
 		return "Map state";

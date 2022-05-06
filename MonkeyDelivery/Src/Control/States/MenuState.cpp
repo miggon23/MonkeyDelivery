@@ -1,8 +1,6 @@
 #include "MenuState.h"
 #include "../../Logic/Game.h"
 
-//#include "../../utils/Music.h"
-
 #include "../NextStateCommand.h"
 #include "../CommandExit.h"
 #include "../CommandClick.h"
@@ -36,9 +34,6 @@ void MenuState::registerCommands()
 	commandFactory->add(new SelectButtonCommand(this));
 }
 
-void MenuState::onEnterState(){
-	//sdlutils().musics().at("menumusic").play(-1);
-}
 
 void MenuState::update() {
 	sdlutils().musics().at("menumusic").setMusicVolume((int)(game->getMusicVolume()*game->getGeneralVolume()));

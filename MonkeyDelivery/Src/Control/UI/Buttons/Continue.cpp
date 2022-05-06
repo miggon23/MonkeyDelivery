@@ -10,15 +10,5 @@ Continue::Continue(int x, int y, double w, double h, Game* game) :Button(game, w
 
 void Continue::onCursorCollision()
 {
-	//game->setState(new PlayingState(game));
-	/*if (game->getSavedState() != nullptr) {
-		State* tmp = game->getState();
-		State* saved = game->getSavedState();
-		saved->resetInitTime();
-		saved->registerCommands();
-		game->setState(saved);
-		game->clearSavedState();
-		delete tmp;
-	}*/
 	ChangeToLastState();
 }

@@ -33,7 +33,7 @@ void InteractuableChest::draw()
 void InteractuableChest::onPlayerInteraction(Player* player)
 {
 	if (active) {
-		sdlutils().soundEffects().at("chest").setVolume(game->getSoundEfectsVolume()*2);
+		sdlutils().soundEffects().at("chest").setVolume(game->getSoundEfectsVolume()* 2 * game->getGeneralVolume());
 		sdlutils().soundEffects().at("chest").play(0, 1);
 		
 		selectReward(selection_, player);

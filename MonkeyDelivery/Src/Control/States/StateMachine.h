@@ -11,18 +11,18 @@ protected:
 	State* optionsState=nullptr;
 	std::vector<State*> savedStates;	
 public:
-	~StateMachine();
+	~StateMachine() {};
 
 	void setState(State* state);
 	void setSaveState(State* state);
-	void setOptionsState(State* state);
+	inline void setOptionsState(State* state) { optionsState = state; };
 
-	State* getState();
+	inline State* getState() { return this->state; };
 	State* getSavedState();
-	State* getOptionsState();
+	inline State* getOptionsState() { return optionsState; };
 
 	void removeSavedState();
 	inline bool saveStateEmpty() { return savedStates.empty(); };
 	void clearSavedState();
-	void ClearState() { state = nullptr; };
+	inline void ClearState() { state = nullptr; };
 };

@@ -471,7 +471,7 @@ bool Player::moneyChange(int money)
 
 	if (money > 0)
 	{
-		sdlutils().soundEffects().at("getMoney").setVolume(game->getSoundEfectsVolume());
+		sdlutils().soundEffects().at("getMoney").setVolume((int)(game->getSoundEfectsVolume() * game->getGeneralVolume()));
 		sdlutils().soundEffects().at("getMoney").play(0, 1);
 	}
 
