@@ -10,7 +10,7 @@ private:
 	std::map< int, TextureName> textureMap;
 	int NUM_ELEMS = 83;
 	int i = 1;
-	Uint32 interval = 70000;
+	Uint32 interval = 200;
 
 	Uint32 startTicks;
 public:

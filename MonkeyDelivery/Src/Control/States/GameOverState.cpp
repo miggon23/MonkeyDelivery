@@ -91,21 +91,24 @@ GameOverState::GameOverState(Game* game) : State(game)
 
 		});
 
-	cout << "gameOVER";
+	
 	game->renderText("GAME OVER", (int)game->getWindowWidth() / 2, (int)game->getWindowHeight() / 2, BLACK);
 	//renderCinematic(i);
 
 	startTicks = SDL_GetTicks();
 }
 void GameOverState::update() {
-	cout << "gameOVER";
-	game->renderText("GAME OVER", (int)game->getWindowWidth() / 2, (int)game->getWindowHeight() / 2, BLACK);
+	//game->renderText("GAME OVER", (int)game->getWindowWidth() / 2, (int)game->getWindowHeight() / 2, BLACK);
 
-	if (i < NUM_ELEMS + 1 && (startTicks + interval) > SDL_GetTicks())
+	if (i < NUM_ELEMS + 1 && (startTicks + interval) < SDL_GetTicks())
 	{
+		cout << "gameOVER";
 		startTicks = SDL_GetTicks();
 		renderCinematic(i);
 		i++;
+	}
+	else {
+		renderCinematic(i);
 	}
 }
 
@@ -113,13 +116,11 @@ void GameOverState::renderCinematic(int i)
 {
 	SDL_Rect rectPanel = { 0,0,(int)game->getWindowWidth(), (int)game->getWindowHeight() };
 
-	auto it = textureMap.find(i);
+	auto it = textureMap.find(i); 
 	if (it != textureMap.end())
 	{
 		game->getTexture(it->second)->render(rectPanel);
 	}
-
-	game->renderText("GAME OVER", (int)game->getWindowWidth() / 2 - 100, (int)game->getWindowHeight() / 2);
 }
 
 void GameOverState::registerCommands() {
