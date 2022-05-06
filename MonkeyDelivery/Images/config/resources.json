@@ -80,7 +80,7 @@
       "id": "Mission5",
       "level": 2,
       "completed": false,
-      "image": ".Mission05",
+      "image": "Mission05",
       "helperImage": "./Images/missions/mission01_UI_Helper.png",
       "maxmoney": 150,
       "minmoney": 0,

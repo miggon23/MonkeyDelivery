@@ -132,7 +132,7 @@ enum TextureName
 	shop_Boots02,
 	shop_Boots03,
 	shop_Soda1,
-	Shop_Soda2,
+	shop_Soda2,
 	shop_UI_PanelShop,
 	shop_UI_Selector,
 	ShopPanel_Interact,
