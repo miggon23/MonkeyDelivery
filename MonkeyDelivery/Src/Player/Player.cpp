@@ -50,6 +50,7 @@ Player::Player(Game* game) :GameObject(game), animationManager(AnimationManager:
 
 	lastUpdate = timer.currTime();
 	flashlightTex_ = game->getTexture(lightGeneric);
+	lanternTex_ = game->getTexture(lanternCircular);
 	energyLevel_ = new energyLevel(game);
 	fearLevel_ = new FearLevel(game);
 	playerHUD_ = new playerHUD(game);
@@ -326,14 +327,6 @@ void Player::draw()
 			a.x -= (int)game->getCamera()->getCameraPosition().getX();
 			a.y -= (int)game->getCamera()->getCameraPosition().getY();
 
-			//SDL_Rect hitZone = { int(getX()),
-			//					int(getY()),
-			//					getWidth(),
-			//					getHeight() };
-
-			//hitZone.x -= (int)game->getCamera()->getCameraPosition().getX();
-			//hitZone.y -= (int)game->getCamera()->getCameraPosition().getY();
-
 			if (orientation_ == "right") // dcha
 				flashlightTex_->render(a);
 			else if (orientation_ == "left") // izqda
@@ -342,17 +335,15 @@ void Player::draw()
 				flashlightTex_->render(a, -90.0);
 			else // abajo y por defecto
 				flashlightTex_->render(a, 90.0);
-
-			
 		}
 
-		if (usingLantern) {
+		//if (usingLantern) {
 
 			auto b = lightZoneL();
 			b.x -= (int)game->getCamera()->getCameraPosition().getX();
 			b.y -= (int)game->getCamera()->getCameraPosition().getY();
 			lanternTex_->render(b);
-		}
+		//}
 
 		if (fade)
 		{
@@ -566,10 +557,10 @@ const SDL_Rect Player::lightZoneL()
 	if (isAsleep()) {
 		return{ 0,0,0, 0 };
 	}
-	SDL_Rect hitZone{ int(getX()),
-					int(getY()),
-					getWidth(),
-					getHeight()
+	SDL_Rect hitZone{ int(getX() - 75),
+					int(getY() - 75),
+					getWidth()*4,
+					getHeight()*4
 	};
 	return hitZone;
 }
