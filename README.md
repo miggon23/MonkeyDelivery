@@ -10,7 +10,7 @@ gamesmoonkey@gmail.com
 WEB: https://miggon23.github.io/MonkeyDelivery/
 
 Integrantes:
-- JAcobo Alonso
+- Jacobo Alonso
 - Simona Antonova
 - Javier Comas
 - Sara Isabel García
@@ -421,7 +421,12 @@ Además, cada enemigo cuenta con una spritesheet secundaria, que parpadea en bla
 - Memes de monos (especialmente)
 
 
-# UML
+# Arquitectura
+Hemos utilizado un sistema de herencia de clases para el desarrollo del juego. Usamos material aprendido en TPV1, como el sistema de estados de juego, contenedor de texturas y comandos, mezclado con TPV2, con elementos como el InputHandler y sdlUtils. 
+En general la partida se basa en torno a la clase Game, que trata con las entidades que declaramos como GameObjects (enemigos, panel de misiones, jugador, tienda, colliders, etc.)
+Cabe destacar el uso de TileMap para el mapa del juego, y la creación y colocación de colliders.
+
+En el UML no están reflejados todos los Estados que heredan de State, ni todos los Comandos, para evitar exceso de información.
 ![UML_Monkey_Delivery drawio](https://user-images.githubusercontent.com/82326243/152699560-aa794a2b-cd24-4e00-90fa-4dad823b08a2.png)
 
 
