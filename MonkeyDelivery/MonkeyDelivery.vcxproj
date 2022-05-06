@@ -303,15 +303,6 @@
     <ClCompile Include="Src\Control\States\ShopState.cpp" />
     <ClCompile Include="Src\Control\States\State.cpp" />
     <ClCompile Include="Src\Control\States\StateMachine.cpp" />
-    <ClCompile Include="Src\Control\UI\Buttons\Back.cpp" />
-    <ClCompile Include="Src\Control\UI\Buttons\Back1.cpp" />
-    <ClCompile Include="Src\Control\UI\Buttons\Continue.cpp" />
-    <ClCompile Include="Src\Control\UI\Buttons\Credits.cpp" />
-    <ClCompile Include="Src\Control\UI\Buttons\Menu.cpp" />
-    <ClCompile Include="Src\Control\UI\Buttons\Options.cpp" />
-    <ClCompile Include="Src\Control\UI\Buttons\Pause.cpp" />
-    <ClCompile Include="Src\Control\UI\Buttons\ExitButton.cpp" />
-    <ClCompile Include="Src\Control\UI\Buttons\Start.cpp" />
     <ClCompile Include="Src\Control\UI\ElementsUI\Brightness.cpp" />
     <ClCompile Include="Src\Control\UI\Sliders\BrightnessSlider.cpp" />
     <ClCompile Include="Src\Control\UI\Sliders\GeneralMusicSlider.cpp" />

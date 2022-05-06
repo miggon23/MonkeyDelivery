@@ -2,12 +2,6 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="MonkeyDelivery.cpp" />
-    <ClCompile Include="Src\Control\UI\Buttons\Back.cpp">
-      <Filter>Source\Control\UI\Buttons</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\UI\Buttons\Back1.cpp">
-      <Filter>Source\Control\UI\Buttons</Filter>
-    </ClCompile>
     <ClCompile Include="Src\Enemies\Bat.cpp">
       <Filter>Source\Logic\Enemies</Filter>
     </ClCompile>
@@ -50,12 +44,6 @@
     <ClCompile Include="Src\Control\CommandRun.cpp">
       <Filter>Source\Control\Commands</Filter>
     </ClCompile>
-    <ClCompile Include="Src\Control\UI\Buttons\Continue.cpp">
-      <Filter>Source\Control\UI\Buttons</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\UI\Buttons\Credits.cpp">
-      <Filter>Source\Control\UI\Buttons</Filter>
-    </ClCompile>
     <ClCompile Include="Src\Logic\DialogueBox.cpp">
       <Filter>Source\View</Filter>
     </ClCompile>
@@ -70,9 +58,6 @@
     </ClCompile>
     <ClCompile Include="Src\Player\energyLevel.cpp">
       <Filter>Source\Logic\Player</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\UI\Buttons\ExitButton.cpp">
-      <Filter>Source\Control\UI\Buttons</Filter>
     </ClCompile>
     <ClCompile Include="Src\Player\FearBar.cpp">
       <Filter>Source\Logic\Player</Filter>
@@ -137,9 +122,6 @@
     <ClCompile Include="Src\Control\States\MapState.cpp">
       <Filter>Source\Control\States</Filter>
     </ClCompile>
-    <ClCompile Include="Src\Control\UI\Buttons\Menu.cpp">
-      <Filter>Source\Control\UI\Buttons</Filter>
-    </ClCompile>
     <ClCompile Include="Src\Control\States\MenuState.cpp">
       <Filter>Source\Control\States</Filter>
     </ClCompile>
@@ -158,9 +140,6 @@
     <ClCompile Include="Src\Control\NextStateCommand.cpp">
       <Filter>Source\Control\Commands</Filter>
     </ClCompile>
-    <ClCompile Include="Src\Control\UI\Buttons\Options.cpp">
-      <Filter>Source\Control\UI\Buttons</Filter>
-    </ClCompile>
     <ClCompile Include="Src\Items\Package.cpp">
       <Filter>Source\Logic\InventoryObjects</Filter>
     </ClCompile>
@@ -172,9 +151,6 @@
     </ClCompile>
     <ClCompile Include="Src\Utils\Particles\ParticleSystem.cpp">
       <Filter>Source\Utils\Particles</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\UI\Buttons\Pause.cpp">
-      <Filter>Source\Control\UI\Buttons</Filter>
     </ClCompile>
     <ClCompile Include="Src\Control\PauseCommand.cpp">
       <Filter>Source\Control\Commands</Filter>
@@ -241,9 +217,6 @@
     </ClCompile>
     <ClCompile Include="Src\Logic\SpawnZone.cpp">
       <Filter>Source\Logic\BasicElements</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Control\UI\Buttons\Start.cpp">
-      <Filter>Source\Control\UI\Buttons</Filter>
     </ClCompile>
     <ClCompile Include="Src\Control\States\State.cpp">
       <Filter>Source\Control</Filter>
@@ -1125,9 +1098,6 @@
     </Filter>
     <Filter Include="Source\Control\UI">
       <UniqueIdentifier>{b2d5bc56-93b4-46ba-84af-ae779c9addac}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source\Control\UI\Buttons">
-      <UniqueIdentifier>{10dedced-721d-4fd4-a58a-932bf0a83846}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Control\UI\Sliders">
       <UniqueIdentifier>{c10af61d-5ccf-40e0-84ec-07a010471f27}</UniqueIdentifier>
