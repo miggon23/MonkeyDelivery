@@ -109,7 +109,24 @@ void Game::removeGameObject(GameObject* gameObject){
 void Game::start()
 {
     inGame = true;
-    
+    //banco principal
+    Point2D<double> relative = { (double)(getWindowWidth() / 1800), (double)(getWindowHeight() / 1000) };
+    auto cama = new Bed(this);
+
+    cama->setPosition((int)(3280 * relative.getX()), (int)(1090 * relative.getY()));
+    add(cama); beds_.push_back(cama);
+    auto cama2 = new Bed(this, (int)(8000 * relative.getX()), (int)(1970 * relative.getY()));
+    auto cama3 = new Bed(this, (int)(7050 * relative.getX()), (int)(5820 * relative.getY()));
+    auto cama4 = new Bed(this, (int)(2450 * relative.getX()), (int)(4565 * relative.getY()));
+    auto cama5 = new Bed(this, (int)(4830 * relative.getX()), (int)(3775 * relative.getY()));
+    auto cama6 = new Bed(this, (int)(5750 * relative.getX()), (int)(3625 * relative.getY()));
+    //bancos secundarios
+    add(cama2); beds_.push_back(cama2);
+    add(cama3); beds_.push_back(cama3);
+    add(cama4); beds_.push_back(cama4);
+    add(cama5); beds_.push_back(cama5);
+    add(cama6); beds_.push_back(cama6);
+
     if(player_==nullptr) player_ = new Player(this); //Creacion del jugadorIn
  
     // Cámara:
@@ -125,7 +142,7 @@ void Game::start()
     mapPoint = new MAPPoint(this);
     pIcon = new PlayerIcon(this);
 
-    Point2D<double> relative = { (double)(getWindowWidth() / 1800), (double)(getWindowHeight() / 1000) };
+    
 
     add(new IntectuableShop(this, (int)(3700*relative.getX()), (int)(1600*relative.getY())));
     shop_ = new Shop(player_, this);
@@ -138,23 +155,9 @@ void Game::start()
 
     GameObjectGenerator::generateLevel(this);
 
-    //banco principal
-    auto cama = new Bed(this);
-   
-    cama->setPosition((int)(3280 * relative.getX()), (int)(1090 * relative.getY()));
+    
     player_->bedPos((int)cama->getX(), (int)cama->getY());
-    add(cama); beds_.push_back(cama);
-    auto cama2 = new Bed(this, (int)(8000 * relative.getX()), (int)(1970 * relative.getY()));
-    auto cama3 = new Bed(this, (int)(7050 * relative.getX()), (int)(5820 * relative.getY()));
-    auto cama4 = new Bed(this, (int)(2450 * relative.getX()), (int)(4565 * relative.getY()));
-    auto cama5 = new Bed(this, (int)(4830 * relative.getX()), (int)(3775 * relative.getY()));
-    auto cama6 = new Bed(this, (int)(5750 * relative.getX()), (int)(3625 * relative.getY()));
-    //bancos secundarios
-    add(cama2); beds_.push_back(cama2);
-    add(cama3); beds_.push_back(cama3);
-    add(cama4); beds_.push_back(cama4);
-    add(cama5); beds_.push_back(cama5);
-    add(cama6); beds_.push_back(cama6);
+    
 
     partSystem = new ParticleExample();
     partSystem->setRenderer(renderer);             // set the renderer

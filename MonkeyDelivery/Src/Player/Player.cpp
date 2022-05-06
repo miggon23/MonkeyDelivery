@@ -80,6 +80,8 @@ Player::Player(Game* game) :GameObject(game), animationManager(AnimationManager:
 	tiredRect = { (int)game->getWindowWidth() / 2, (int)game->getWindowHeight() / 2 - 60, 70, 70 };
 	
 	totalChest = 8;
+	lastBed.setX(game->getBeds()[0]->getX());
+	lastBed.setY(game->getBeds()[0]->getY()+60);
 }
 
 Player::~Player()
