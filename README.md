@@ -9,6 +9,19 @@ gamesmoonkey@gmail.com
 
 WEB: https://miggon23.github.io/MonkeyDelivery/
 
+Integrantes:
+- JAcobo Alonso
+- Simona Antonova
+- Javier Comas
+- Sara Isabel García
+- Miguel González
+- Adrián Montero
+- Antonio Povedano
+- Raúl Saavedra
+- Alejandro Segarra
+- Elisa Todd
+
+
 ## Datos generales:
 
 ![MenuMonkeyDelivery](https://user-images.githubusercontent.com/81906237/167201212-f09e7f67-3524-47cc-b67d-751f2bfffd32.png)
