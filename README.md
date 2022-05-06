@@ -8,6 +8,10 @@ gamesmoonkey@gmail.com
 
 ## Datos generales:
 
+![MenuMonkeyDelivery](https://user-images.githubusercontent.com/81906237/167201212-f09e7f67-3524-47cc-b67d-751f2bfffd32.png)
+
+![JuegoBase](https://user-images.githubusercontent.com/81906237/167201218-8938fa44-572f-455e-b853-53592e363186.png)
+
 **Género**: Aventura
 
 **Subgéneros**: Exploración, Gestión, Aventura gráfica, Simulador y Mundo abierto
