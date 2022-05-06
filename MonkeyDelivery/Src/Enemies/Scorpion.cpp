@@ -27,7 +27,7 @@ Scorpion::Scorpion(Game* game, int Aleatorio, Point2D<int> centroRadio) : Enemy(
 void Scorpion::update()
 {
 	patrol(1);
-	checkDistance();
+	if (isAlive()) checkDistance();
 	die();
 	respawn();
 }

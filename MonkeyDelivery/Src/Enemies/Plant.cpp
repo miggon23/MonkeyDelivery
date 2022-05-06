@@ -34,7 +34,7 @@ Plant::Plant(Game* game, int Aleatorio, Point2D<int> centroRadio):Enemy(game, Al
 
 void Plant::update()
 {
-	checkDistance();
+	if(isAlive()) checkDistance();
 	die();
 	respawn();
 }
