@@ -18,7 +18,7 @@ OptionsState::OptionsState(Game* game) : State(game){
 
 	registerCommands();
 	
-	addButton(new Back((int)game->getWindowWidth() / 2 - buttonW/2, (int)game->getWindowHeight() - 250, buttonW, buttonH, game));
+	addButton(new Back((int)game->getWindowWidth() / 2 - buttonW/2, (int)game->getWindowHeight() - 200, buttonW, buttonH, game));
 	
 	addSlider(new GeneralVolumeSlider(game, game->getWindowWidth()/2 - 450, game->getWindowHeight()/4 - 50));
 	addSlider(new BrightnessSlider(game, game->getWindowWidth() / 2 - 450, 450));
@@ -39,6 +39,11 @@ void OptionsState::update(){
 void OptionsState::draw(){
 	SDL_Rect rectPanel = { 0,0,(int)game->getWindowWidth(),(int)game->getWindowHeight() };
 	backgroundTexture->render(rectPanel);
+
+	game->renderText("VOLUMEN", game->getWindowWidth() / 2 - 450, game->getWindowHeight() / 4 - 100);
+	game->renderText("BRILLO", game->getWindowWidth() / 2 - 450, 400);
+	game->renderText("MUSICA", game->getWindowWidth() / 2, game->getWindowHeight() / 4 - 100);
+	game->renderText("EFECTOS", game->getWindowWidth() / 2, 400);
 	
 	for (auto b : getButtonsUI()) {
 		b->draw();

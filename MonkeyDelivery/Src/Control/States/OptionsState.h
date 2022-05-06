@@ -10,6 +10,8 @@ class OptionsState : public State
 	int buttonW = 300, buttonH = 140;
 
 	int currentSelection = 0; // slider seleccionado (en el array slidersUI)
+
+	int index_ = 0;
 public:
 	OptionsState(Game* game);
 	~OptionsState() = default;
