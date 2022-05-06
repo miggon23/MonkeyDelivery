@@ -9,7 +9,7 @@ Monkeycola::Monkeycola(Texture* tex, Game* game, Player* player) : InventoryObje
 }
 
 void Monkeycola::setCorrectTexture(){
-	setMyTexture(game_->getTexture(Item_Soda02));
+	setMyTexture(game_->getTexture(Item_Soda01));
 }
 
 bool Monkeycola::useObject()

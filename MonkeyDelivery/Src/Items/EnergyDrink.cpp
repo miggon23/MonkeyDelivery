@@ -8,7 +8,7 @@ EnergyDrink::EnergyDrink(Texture* tex,  Game* game,Player* player) : InventoryOb
 }
 
 void EnergyDrink::setCorrectTexture(){
-    setMyTexture(game_->getTexture(Item_Soda01));
+    setMyTexture(game_->getTexture(Item_Soda02));
 }
 
 bool EnergyDrink::useObject()

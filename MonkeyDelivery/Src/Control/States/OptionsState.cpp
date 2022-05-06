@@ -13,8 +13,8 @@
 
 OptionsState::OptionsState(Game* game) : State(game){
 
-	buttonW = game->getWindowWidth() / 6;
-	buttonH = game->getWindowHeight() / 7.143;
+	buttonW = (int)(game->getWindowWidth() / 6);
+	buttonH = (int)(game->getWindowHeight() / 7.143);
 
 	registerCommands();
 	
