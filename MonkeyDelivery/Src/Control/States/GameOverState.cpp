@@ -91,7 +91,8 @@ GameOverState::GameOverState(Game* game) : State(game)
 
 		});
 	int i = 1;
-	Uint32 interval = 100; Uint32 startTicks;
+	renderCinematic(i);
+	/*Uint32 interval = 1000; Uint32 startTicks;
 	startTicks = SDL_GetTicks();
 	while (i < NUM_ELEMS + 1)
 	{
@@ -102,23 +103,22 @@ GameOverState::GameOverState(Game* game) : State(game)
 			renderCinematic(i);
 			startTicks -= interval;
 		}
-	}
+	}*/
 }
 
 void GameOverState::renderCinematic(int i)
 {
-	SDL_Rect rectPanel = { 0,0,(int)game->getWindowWidth(), (int)game->getWindowHeight() };
+	/*SDL_Rect rectPanel = { 0,0,(int)game->getWindowWidth(), (int)game->getWindowHeight() };
 
 	auto it = textureMap.find(i);
 	if (it != textureMap.end())
 	{
 		game->getTexture(it->second)->render(rectPanel);
-	}
+	}*/
 
 	game->renderText("GAME OVER", (int)game->getWindowWidth() / 2 - 100, (int)game->getWindowHeight() / 2);
 }
 
-void GameOverState::registerCommands()
-{
+void GameOverState::registerCommands() {
 
 }
