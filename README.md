@@ -330,16 +330,60 @@ En este momento saldrá una cinemática en la que se ve a ambos huyendo en el ba
 **Personajes y enemigos:**
 
 Vecinos:
+- Tucana Aitana
+![NPC_Tucan](https://user-images.githubusercontent.com/81906237/167198516-2781e3fd-cab7-41c3-b293-2effbb04731d.png)
 
+- Hipopótamo Hipo
+![NPC_Hipo](https://user-images.githubusercontent.com/81906237/167198624-d81c197c-8dac-44fb-80e5-2b194c659e9b.png)
+
+- Pavo Raúl
+![NPC_Pavo](https://user-images.githubusercontent.com/81906237/167198635-dc797efa-768f-4320-8aa9-9e6ca894b8b9.png)
+
+- Ajolote Julián
+![NPC_Fish](https://user-images.githubusercontent.com/81906237/167198659-e6b118cd-c00a-4d0d-bfde-b5337050c3fa.png)
+
+- Águila Francisco
+![NPC_Eagle](https://user-images.githubusercontent.com/81906237/167198675-8732b919-9544-4512-81a8-4a26519066d5.png)
+
+- Conejo Carlos
+![NPC_Rabbit](https://user-images.githubusercontent.com/81906237/167198684-599ffa6e-3783-4b44-9dbb-5456eb52f328.png)
+
+- Rana Kermit
+![NPC_Frog](https://user-images.githubusercontent.com/81906237/167198697-79859310-d712-4f59-a9f3-599b81fa66fa.png)
+
+- Cocodrilo Cleon
+![NPC_Coco](https://user-images.githubusercontent.com/81906237/167198717-52ae0690-91b3-44b0-826a-a99f9283a859.png)
+
+- Zorro Zacarías
+![NPC_Fox](https://user-images.githubusercontent.com/81906237/167198721-75f2c045-1999-485a-8bd2-e1a6b80f3436.png)
 
 Enemigos:
+- Toro:
+![bullSS_Default](https://user-images.githubusercontent.com/81906237/167198872-27b94cdf-d29d-4105-96cd-82aa687ca2ef.png)
+
+- Murciélago:
+![batSS_Default](https://user-images.githubusercontent.com/81906237/167198866-1babe4e0-322f-41c8-888e-9ae7eb654a99.png)
+
+- Planta:
+![plantSS_Orange](https://user-images.githubusercontent.com/81906237/167198943-0c8522d3-0da7-4cb7-a6ca-9c43e00a219a.png)
+![plantSS_Purple](https://user-images.githubusercontent.com/81906237/167198947-003a3ac9-7b8d-47d7-8055-351699a201a6.png)
+![plantSS_Red](https://user-images.githubusercontent.com/81906237/167198950-feab4102-b3ce-46ca-a316-a6f29b62ab9c.png)
+![plantSS_Yellow](https://user-images.githubusercontent.com/81906237/167198953-97f15e09-6410-464a-9baa-8593a22a94e3.png)
+
+- Escorpión:
+- ![scorpionSS_Default](https://user-images.githubusercontent.com/81906237/167198918-ed0a173a-15ed-401b-8755-f0b74e81313e.png)
+
+- Gato/Mapache:
+![catSS_Default](https://user-images.githubusercontent.com/81906237/167198892-a0635e81-c60c-4a26-881a-fa46e7513ce1.png)
 
 
+Además, cada enemigo cuenta con una spritesheet secundaria, que parpadea en blanco, para cuando están siento apuntados con la linterna.
 
 # 5 Referencias
 
 - Pokemon (juegos antiguos)
 - Animal Crossing
+
 - Stardew Valley
 - 
 
