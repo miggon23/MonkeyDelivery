@@ -87,10 +87,6 @@ Descripción
 
 En Monkey Delivery tomarás el papel de Monkey, un pequeño mono que se dedica a repartir paquetes a los vecinos de Selva Banana, su localidad natal. Simultáneamente, deberás mantener tu sueño a raya, durmiendo cuando sea necesario. En tu misión habrá enemigos que asustarán a Monkey, por lo que tendrás que evitarlos. Al completar trabajos recibirás dinero, que te será útil para comprar diferentes materiales y objetos en las tiendas.
 
-Logotipo y portada del juego
-
-Índice para el GDD:
-
 Versiones del documento
 
 Histórico de versiones y control de cambios
@@ -104,29 +100,12 @@ Cada sección de este documento, debidamente numerada
 Aspectos generales
 
 Es un juego que se basará fundamentalmente en la exploración: conociendo las ubicaciones tanto de los vecinos como de los enemgios, obteniendo recompensas escondidas por el mapa y descubriendo el rico mundo donde se encuentra la aldea de nuestro protagonista.  
-El segundo elemento que más relevancia cobra será el de la gestión. La principal recompensa de las misiones, además de conocer la historia del pueblo donde has llegado, es la de monedas con la que adquirir objetos en la tienda que te ayudarán en las futuras misiones.
+El segundo elemento que más relevancia cobra será el de la gestión. La principal recompensa de las misiones, además de conocer la historia del pueblo donde has llegado, es la de monedas con la que adquirir objetos en la tienda que te ayudarán en las futuras misiones. Permitiendote llegar más lejos y desenvolverte mucho más hábilmente por el mundo; ya sea mediante consumibles o mejoras mediante el equipamiento de objetos como botas.
 Con esto buscamos que el jugador pase una experiencia agradable descubriendo un mundo colorido mientras juega y experimenta con las diferentes mecánicas y situaciones que se le brindarán en este mundo abierto.
 
-Vista general
-
-
-
-
-
-
-
-Relato breve y parcial de una partida típica
-
-Párrafos e ilustraciones donde se describe el comienzo del juego, o cinco minutos de juego típico, para transmitir cuál es la experiencia característica que deseamos que viva el jugador.
-
-El jugador se dirige a hablar con la cebra a recibir la siguiente misión(la misión de la cebra ceci), si el jugador completa la misión con éxito recibirá una buena recompensa(monedas y objetos), pero en el caso en el que pierda no recibirá recompensa alguna.
-
 Jugabilidad
-
-Párrafos e ilustraciones donde se describe toda la jugabilidad del juego, toda la mecánica, dinámica y estética, aunque sin entrar a hablar de todos los elementos posibles que aparecen en el juego sino sólo sus “familias” o tipologías, clasificadas según su comportamiento.
-
-En Monkey Delivery te encargarás del reparto de envíos en un pueblo al que acabas de llegar. El gran impedimento y core del juego será llegar entregar estos paquetes en peligrosos recorridos llenos de enemigos donde el cansancio y el miedo te pueden suponer una mala pasada. Al completar estos repartos ganarás dinero con el que podrás comprar diferentes objetos en las tiendas, mejorando tus habilidades de reparto o consumbiles con los que salir de una situación peliaguda.  
-Explorar también será un gran aliciente que se verá recompensado con recompensas y caminos secundarios que facilitarán la llegada a las lejanas casas de los vecinos.  
+ 
+ Estarás moviendote continuamente por el mapa, desplazarte será tu fundamental herramienta para llegar a todos los paquetes. La otras mas relevantes son el uso d elas linternas para eliminar a los enemigos con ellas y despejarte el camino así como el uso de objetos ya sea el mapa para ver el mejor camino a tu objetivo o equiparte las botas para llegar máa rápido a tu destino.
 
 ### 2.1 Mecánica
 
