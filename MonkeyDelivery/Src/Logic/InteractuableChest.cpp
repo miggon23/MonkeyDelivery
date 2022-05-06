@@ -1,8 +1,8 @@
 #include "InteractuableChest.h"
 #include "../Logic/Game.h"
 
-InteractuableChest::InteractuableChest(Game* game, int x, int y, int w, int h) : GameObject(game, true), w_(0), h_(0),
-																				 rewardT_(nullptr), x_(0), y_(0), timer_(0)
+InteractuableChest::InteractuableChest(Game* game, int x, int y, int w, int h, int select) : GameObject(game, true), w_(0), h_(0),
+																				 rewardT_(nullptr), x_(0), y_(0), timer_(0), selection_(select)
 {	
 	setTexture(worldObject_Chest_Closed);
 	setDimension(w, h);
@@ -35,12 +35,8 @@ void InteractuableChest::onPlayerInteraction(Player* player)
 	if (active) {
 		sdlutils().soundEffects().at("chest").setVolume(game->getSoundEfectsVolume()*2);
 		sdlutils().soundEffects().at("chest").play(0, 1);
-
-		//0 --> dinero
-		//1 --> elementos de la narrativa
-		auto rand = sdlutils().rand().nextInt(0, 1);
-	
-		selectReward(rand, player);
+		
+		selectReward(selection_, player);
 
 		active = false;
 		timer_ = sdlutils().currRealTime();
@@ -52,22 +48,32 @@ void InteractuableChest::selectReward(int reward, Player* player)
 {
 	//int randMoney = sdlutils().rand().nextInt(5, 20);
 	int randMoney = sdlutils().rand().nextInt(5, 20);
-	string s = "ChestMoneyText";
+	
 	player->decreaseChestCount();
 	switch (reward)
 	{
 	case 0:
+		game->newDialogue("Story1");
+		rewardT_ = game->getTexture(worldObject_Note);
+		break;
+	case 1:
+		game->newDialogue("Story2");
+		rewardT_ = game->getTexture(worldObject_Note);
+		break;
+	case 2:
+		game->newDialogue("Story3");
+		rewardT_ = game->getTexture(worldObject_Note);
+		break;
+	case 3:
+		game->newDialogue("Story4");
+		rewardT_ = game->getTexture(worldObject_Note);
+		break;
+	default:
 		player->addMoney(randMoney);
-		game->newDialogue(s);
+		game->newDialogue("ChestMoneyText");
 		rewardT_ = game->getTexture(Item_Coins);
 		sdlutils().soundEffects().at("moneyBag").setVolume((int)(game->getSoundEfectsVolume() * game->getGeneralVolume()));
 		sdlutils().soundEffects().at("moneyBag").play(0, 1);
-		break;
-	case 1:
-		//Elementos de la narrativa
-		rewardT_ = game->getTexture(UI_Coin);
-		break;
-	default:
 		break;
 	}
 }

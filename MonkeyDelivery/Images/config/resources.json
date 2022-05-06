@@ -248,8 +248,24 @@
       "text": "Wilson se tiro al rio... no se donde esta... ¡encuentralo por favor!"
     },
     {
-      "id": "FrogWaitingPackage",
-      "text": "Croac, ¿encontraste mis hierbas medicinales? Croac, creo que estaba paseando por el cementerio cuando se me cayeron, ¡croac!"
+        "id": "FrogWaitingPackage",
+        "text": "Croac, ¿encontraste mis hierbas medicinales? Croac, creo que estaba paseando por el cementerio cuando se me cayeron, ¡croac!"
+    },
+    {
+        "id": "Story1",
+        "text": "¡Has encontrado una nota! Dice:  Parece que cerca del cementerio hay tierra removida, como si alguien hubiera enterrado algo ahí..."
+    },
+    {
+        "id": "Story2",
+        "text": "¡Has encontrado una nota! Dice:  A veces siento que me observan y que me siguen, presiento que algo malo puede sucederme -W"
+    },
+    {
+        "id": "Story3",
+        "text": "¡Has encontrado una nota! Dice:  Todesfall... que nombre tan curioso, quizás signifique algo en algún idioma..."
+    },
+    {
+        "id": "Story4",
+        "text": "¡Has encontrado una nota! Dice:  Se rumorea que antes se producían reuniones sospechosas en los turnos libres del repartidor"
     }
   ],
 

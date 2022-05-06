@@ -61,7 +61,7 @@ public:
 		for (int i = 0; i < gOGenerator.nChest; i++)
 		{
 			game->add(new InteractuableChest(game, (int)((gOGenerator.posChest[i].first + mapOffset.getX())*relative.getX()), 
-				(int)((gOGenerator.posChest[i].second + mapOffset.getY()) * relative.getY()), gOGenerator.chestDimension_.w, gOGenerator.chestDimension_.h));
+				(int)((gOGenerator.posChest[i].second + mapOffset.getY()) * relative.getY()), gOGenerator.chestDimension_.w, gOGenerator.chestDimension_.h, i));
 
 		}
 

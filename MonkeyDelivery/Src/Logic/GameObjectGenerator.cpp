@@ -4,10 +4,10 @@ GameObjectGenerator GameObjectGenerator::gOGenerator;
 
 void GameObjectGenerator::createChest()
 {
-	posChest.push_back({ 400, 150 });		posChest.push_back({ 6400, 250 });
-	posChest.push_back({ 4300, 1150 });		posChest.push_back({ 2060, 2500 });
-	posChest.push_back({ 2320, 3320 });		posChest.push_back({ 6700, 4220 });
-	posChest.push_back({ 6720, 5250 });		posChest.push_back({ 3530, 5900 });
+	posChest.push_back({ 400, 250 });		posChest.push_back({ 3530, 5900 });
+	posChest.push_back({ 4300, 1150 });		posChest.push_back({ 2320, 3320 });
+	posChest.push_back({ 2060, 2500 });		posChest.push_back({ 6700, 4220 });
+	posChest.push_back({ 6720, 5250 });		posChest.push_back({ 6400, 250 });
 }
 
 void GameObjectGenerator::creteBulls()
@@ -31,7 +31,7 @@ void GameObjectGenerator::createPlants()
 {
 	posPlants.push_back({ 310, 2200 });			posPlants.push_back({ 2400, 1900 });
 	posPlants.push_back({ 3400, 2800 });		posPlants.push_back({ 800, 5700 });
-	posPlants.push_back({ 1300, 440 });			posPlants.push_back({ 1600, 4800 });
+	posPlants.push_back({ 1400, 415 });			posPlants.push_back({ 1600, 4800 });
 	posPlants.push_back({ 7250, 2950 });		posPlants.push_back({ 7100, 800 });
 	posPlants.push_back({ 6100, 1000 });		posPlants.push_back({ 4150, 750 });
 	posPlants.push_back({ 4850, 5600 });		posPlants.push_back({ 6400, 5600 });
