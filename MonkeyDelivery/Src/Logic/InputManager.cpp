@@ -38,11 +38,11 @@ void InputManager::run()
 		state->handleEvents();
 
 		if (timer_->DeltaTime() >= 1.0f / FRAME_RATE) {
-			timer_->Reset();
 			clearBackground();
 			game->getState()->update();
 			game->getState()->draw();
 			SDL_RenderPresent(renderer);
+			timer_->Reset();
 		}
 	}
 }

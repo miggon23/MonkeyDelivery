@@ -142,7 +142,8 @@ void Player::move()
 	}
 	else isStopped_ = false;
 
-	speed = speed * vel_ * (timer.currTime() - lastUpdate);
+	//speed = speed * vel_ * (timer.currTime() - lastUpdate);
+	speed = speed * vel_ * (game->getTimer()->DeltaTime()*1000);
 
 	if (dirX_ != 0 || dirY_ != 0) {
 
