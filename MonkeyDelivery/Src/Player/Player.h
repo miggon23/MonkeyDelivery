@@ -79,6 +79,7 @@ private:
 	//MIEDO
 	double fear_;
 	double fearBonusFactor = 1;
+	int safeFactor = 500;
 
 	//MISION ACTIVA
 	int money_;
@@ -148,46 +149,46 @@ public:
 
 	// FEAR
 	inline void getScared(double amount) { 
-		if(getDistanceXToClosestBed()>500 || getDistanceYToClosestBed()>500 )
+		if(safeDistance())
 		fearLevel_->getScared(amount / fearBonusFactor); 
 	} //Por defecto fearBonusFactor = 1
-	inline void setFearBonusFactor(double d = 1) { fearBonusFactor = d; };
-	inline void recoverFear(double amount) { fearLevel_->getScared(-amount); };
-	inline double getFear() { return fearLevel_->getFear(); };
-	inline double getFearPercent() { return fearLevel_->percentFear(); };
+	inline void setFearBonusFactor(double d = 1) { fearBonusFactor = d; }
+	inline void recoverFear(double amount) { fearLevel_->getScared(-amount); }
+	inline double getFear() { return fearLevel_->getFear(); }
+	inline double getFearPercent() { return fearLevel_->percentFear(); }
 	bool getFadeOut();
 	// MOVEMENT
 	void move();
 	void setIsRunning(bool run);
-	inline void setVel(double x) { vel_ = x; };
-	inline void resetVelocity() { setVel(INIT_VEL_); }; // Resetea la velocidad del jugador a la de por defecto (sin modificaciones)
+	inline void setVel(double x) { vel_ = x; }
+	inline void resetVelocity() { setVel(INIT_VEL_); } // Resetea la velocidad del jugador a la de por defecto (sin modificaciones)
 	inline double getVel() { return vel_; };
-	inline double getInitVel() { return INIT_VEL_; };
-	inline int getMoney() { return money_; };
-	inline void setDirX(int x) { dirX_ = x; };
-	inline void setDirY(int y) { dirY_ = y; };
-	inline void setDir(int x, int y) { dirX_ = x; dirY_ = y; };
-	inline void setMovState(MovState m) { movState_ = m; };
-	inline void savePosBeforeSleep() { posBeforeSleep.setX(getX()); posBeforeSleep.setY(getY()); };
+	inline double getInitVel() { return INIT_VEL_; }
+	inline int getMoney() { return money_; }
+	inline void setDirX(int x) { dirX_ = x; }
+	inline void setDirY(int y) { dirY_ = y; }
+	inline void setDir(int x, int y) { dirX_ = x; dirY_ = y; }
+	inline void setMovState(MovState m) { movState_ = m; }
+	inline void savePosBeforeSleep() { posBeforeSleep.setX(getX()); posBeforeSleep.setY(getY()); }
 
 	// ECONOMY
 	bool moneyChange(int money);
-	inline void addMoney(int amount) { money_ += amount; };
+	inline void addMoney(int amount) { money_ += amount; }
 	void removeMoney(int amount);
 	//CHEST
-	inline void decreaseChestCount() { totalChest--; };
+	inline void decreaseChestCount() { totalChest--; }
 
 	// INVENTORY
-	inline void useObject(int index) { inventory_->useObject(index);};
+	inline void useObject(int index) { inventory_->useObject(index);}
 	void initPowerUp(PowerUps x);
 	void initPowerUp(PowerUps x, double value);
-	inline void setInventoryVisibility(bool visible) { inventoryVisibility = visible; };
-	inline bool hasMissionObject() { return inventory_->hasMissionObject(); };
-	inline void addMissionObject(InventoryObject* p) { inventory_->addMisionObject(p); };
+	inline void setInventoryVisibility(bool visible) { inventoryVisibility = visible; }
+	inline bool hasMissionObject() { return inventory_->hasMissionObject(); }
+	inline void addMissionObject(InventoryObject* p) { inventory_->addMisionObject(p); }
 	inline void removeMissionObject() { inventory_->removeMisionObject(); };
 	//inline bool inventoryFull() { return inventory_->inventoryFull(); };
-	inline bool inventoryFull(InventoryObject* x) { return inventory_->inventoryFull(x); };
-	inline void addObjectToInventory(InventoryObject* p) { inventory_->addObject(p); };
+	inline bool inventoryFull(InventoryObject* x) { return inventory_->inventoryFull(x); }
+	inline void addObjectToInventory(InventoryObject* p) { inventory_->addObject(p); }
 	void pausePowerUps();
 	void resumePowerUps();
 	void desactivatePowerUp(PowerUps p);
@@ -225,6 +226,9 @@ public:
 	Point2D<double> getClosestBed(); //obtener cama mas cercana
 	double getDistanceXToClosestBed();//obtener distancia (X) del primate a la cama más cercana
 	double getDistanceYToClosestBed();//obtener distancia (Y) del primate a la cama más cercana
+	inline bool safeDistance() {
+		return (getDistanceXToClosestBed() > safeFactor || getDistanceYToClosestBed() > safeFactor);
+	}
 
 	void sendToBed(); // Establece la posici�n en la cama m�s cercana despu�s del fadeout
 
@@ -235,10 +239,10 @@ public:
 	// PICKAXE
 	void addPickaxe(int level);
 
-	inline void changeTalking(bool a) { isTalking_ = a; };
-	inline bool isTalking() { return isTalking_; };
+	inline void changeTalking(bool a) { isTalking_ = a; }
+	inline bool isTalking() { return isTalking_; }
 	
-	inline void changeTutorial(bool a) { isInTutorial_ = a; };
-	inline bool isInTutorial() { return isInTutorial_; };
+	inline void changeTutorial(bool a) { isInTutorial_ = a; }
+	inline bool isInTutorial() { return isInTutorial_; }
 
 };

@@ -3,7 +3,7 @@
 
 class MapState : public State
 {
-	const int CUT_OFF = 300;
+	const int CUT_OFF = 402;
 public:
 	MapState(Game* game);
 	~MapState();
@@ -22,6 +22,7 @@ private:
 
 	Texture* backgroundTex_;
 	Texture* leyendaTex_;
+	Texture* missionTex_;
 	
 	int x_, y_;
 };

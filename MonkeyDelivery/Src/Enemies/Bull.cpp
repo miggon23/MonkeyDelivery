@@ -72,7 +72,7 @@ void Bull::checkDistance()
 		double distanceY = abs(dirY); //distacia en valor absoluto en las y
 
 		//Si esta en el rango
-		if (distanceX <= range && distanceY <= range) //Si esta en el rango
+		if (distanceX <= range && distanceY <= range && game->getPlayer()->safeDistance()) //Si esta en el rango, pero player no esta en cama
 		{
 			stop = false; //Dejo de patrullar
 			timer_ = SDL_GetTicks();
@@ -89,7 +89,7 @@ void Bull::checkDistance()
 				lastUpdate_ = SDL_GetTicks();
 			}
 		}
-		else if ((int)SDL_GetTicks() <= timer_ + 3000) //Si no esta en el rango y no han pasado los 3 segundos 
+		else if ((int)SDL_GetTicks() <= timer_ + 3000 && game->getPlayer()->safeDistance()) //Si no esta en el rango y no han pasado los 3 segundos, pero player no esta en cama
 			chase(dirX, dirY); //Persigo
 
 		else  //Si no esta en el rango y han pasado los 3 segundos

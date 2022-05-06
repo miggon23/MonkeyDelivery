@@ -10,11 +10,14 @@ MapState::MapState(Game* game) : State(game)
 	string path = "Images/map/minimapOverlay.png";
 	backgroundTex_ = new Texture(game->getRenderer(), path);
 	leyendaTex_ = game->getTexture(leyendaMapa);
+	if (game->getMissionsPanel()->getCurrentMission() != nullptr)
+		missionTex_ = new Texture(game->getRenderer(), "Images/missions/" + game->getMissionsPanel()->getMissionPaper() + ".png");
 }
 
 MapState::~MapState()
 {
 	delete backgroundTex_;  backgroundTex_ = nullptr;
+	delete missionTex_;  missionTex_ = nullptr;
 }
 
 void MapState::update() {}
@@ -26,7 +29,12 @@ void MapState::draw()
 	backgroundTex_->render(rectPanel);
 	rectPanel = { (int)game->getWindowWidth() - CUT_OFF,0,(int)CUT_OFF, (int)game->getWindowHeight() };
 	leyendaTex_->render(rectPanel);
-	
+	if (missionTex_ != nullptr)
+	{
+		rectPanel = { (int)game->getWindowWidth() - CUT_OFF + 15, (int)game->getWindowHeight() / 2, (int)CUT_OFF - 15, (int)game->getWindowHeight()/2 };
+		missionTex_->render(rectPanel);
+	}
+
 	//Baliza
 	game->MapPoint()->setDimension(24, 24);
 	game->MapPoint()->setPosition(game->minimapinfo_.X, game->minimapinfo_.Y);
