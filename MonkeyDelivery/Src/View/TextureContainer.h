@@ -193,7 +193,7 @@ enum TextureName
 	tucan_Icon,
 	fox_Icon,
 
-	// Cinem�tica
+	// Cinematica
 	frame001,
 	frame002,
 	frame003,
@@ -467,7 +467,7 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
 	{ "ui/tucanIcon.png",1,1 },
 	{ "ui/foxIcon.png",1,1 },
 
-	// Cinem�tica final
+	// Cinematica final
 	{ "cinematic/001.jpg",1,1 },
 	{ "cinematic/002.jpg",1,1 },
 	{ "cinematic/003.jpg",1,1 },
