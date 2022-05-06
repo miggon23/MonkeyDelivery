@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.8" tiledversion="1.8.2" orientation="orthogonal" renderorder="right-down" width="180" height="150" tilewidth="16" tileheight="16" infinite="0" nextlayerid="9" nextobjectid="853">
+<map version="1.8" tiledversion="1.8.2" orientation="orthogonal" renderorder="right-down" width="180" height="150" tilewidth="16" tileheight="16" infinite="0" nextlayerid="9" nextobjectid="854">
  <editorsettings>
   <export target="MainMap.tmx" format="tmx"/>
  </editorsettings>
@@ -1836,5 +1836,6 @@
   <object id="839" x="2052" y="1043.33" width="86" height="19.3333"/>
   <object id="840" x="2144.67" y="1024" width="31.3333" height="28.6667"/>
   <object id="852" x="848.75" y="427.25" width="14.75" height="20.5"/>
+  <object id="853" x="1657.33" y="967.333" width="80.6667" height="20.6667"/>
  </objectgroup>
 </map>
