@@ -111,37 +111,63 @@ Jugabilidad
 
 ## 2.1.1. Mecánicas del personaje
 
-**Energía**: Esta es limitada y se irá gastando con el movimiento, en caso de que se reduzca a 0, su velocidad se verá muy reducida haciendole mucho más complicado el reparto. Se verá reflejada en la esquina izquierda en forma de barra y s epodrá recuperar tanto durmiendo como con consumibles. A su vez se podrá regenerar un 45% si se queda quieto.
+**Moverse**: Se podrá desplazar en 8 direcciones, desplazandose de forma libre en el eje x e y. Se podrá esprintar para aumentar la velocidad del movimiento a costa de gastar más energía.
 
-**Miedo:** El sentimiento que siente Monkey cuando ve a los enemigos. or norma general estos rellenan la barra al estar cerca del jugador y si llega al máximo, el jugador se desmayará y reaparecerá en el centro del pueblo. Se puede reducir con consumibles o durmiendo.
+**Energía**: Esta es limitada y se irá gastando con el movimiento, en caso de que llegue a 0, su velocidad se verá muy reducida haciendole mucho más complicado el reparto. Se verá reflejada en la esquina izquierda en forma de barra y se podrá recuperar tanto durmiendo como con consumibles, o un porcentaje pequeño si te quedas quieto. A su vez se podrá regenerar un 45% si se queda quieto.
 
-Inventario: El jugador tiene 6 slots de inventario para guardar los objetos que compre y  otro más para el paquete u objeto de la misión. Con este slot no se puede interactuar. . Estos se colocan automáticamente en el primer slot disponible al ser comprados. Cuando se utilicen se eliminan, en caso de ser consumibles.
+**Miedo:** El sentimiento que siente Monkey cuando ve a los enemigos. Por norma general estos rellenan la barra al estar cerca del jugador y si llega al máximo, el jugador se desmayará y reaparecerá en el centro del pueblo. Se puede reducir con consumibles o durmiendo.
 
-Andar: Al pulsar las teclas WASD, el jugador se mueve por el mapa. Se moverá en 8 direcciones a velocidad constante. Esta acción causa desgaste en la energía, la cual disminuye a razón de 0.001% puntos de energía por frame.
+**Inventario**: El jugador tiene 6 slots de inventario para guardar los objetos que compre y  otro más para el paquete u objeto de la misión, este último slot no es inderactuable. Los demás slots podrán ser seleccionados por el jugador y usados, ya sea tomando el consumible o equipandose y desequipandose el objeto marcado.
 
-Correr: Al pulsar SHIFT, la velocidad que lleva al caminar aumenta. Si ahora la energía disminuye a razón de 0.05% por segundo.
+## 2.1.1. Mecánicas de los objetos
 
-Montar en patines  / patinete: equivale a correr, pero el sprite del jugador cambia, su velocidad aumenta aún más y se cansa más rápido.
+**Interactuar**: Mecánica general de todos los objetos, en el caso de aquellos no consumibles los equipo o desequipa. En el caso de los consumible estos son gastados y las estadísticas del jugador modificadas. Hay casos especiales.
 
-Dormir: Al interactuar con el objeto cama, el jugador duerme, recargando su energía al máximo y restableciendo el miedo. Antes de despertar hay un fade out de la pantalla a negro. Mientras duerme, el input está bloqueado.
+**Botas viejas/botas**: Objetos equipables que te permiten desplazarte a mayor velocidad sin suponer un gasto extra de energía. EL porcentaje de velocidad extra de las segundas es mayor que el de las primeras.
 
-Interactuar con objetos: Al posicionarse al lado de un objeto interactivo (overlap de colliders), y pulsar la tecla E, se produce una interacción, cambiando dependiendo de qué objeto sea. El control del input se bloquea si esta interacción lo requiere (ej: diálogos).
+**Linterna cónica y circular**: Objetos equipables que crearán un halo de luz frente al jugador y alrededor de él respectivamente. Este halo acabará con los enemigos que se queden un tiempo determinado bajo él, habriendo el camino al jugador.
 
-Economía: Al completar un pedido, se da una cantidad determinada de dinero al jugador. Esta cantidad se acumula internamente y se muestra por pantalla en todo momento. Se podrá usar en las tiendas para adquirir diversos productos.
+**MonkeyCola**: Consumible que reduce el miedo un 20% al jugador si esta se encuentra por debajo del 80% del máximo u otro porcentaje si supera este.
 
-Desmayarse: Cuando la barra de energía llega a 0 o la de miedo llega al tope, el jugador se desmaya. Ocurre un fade out, y aparece en su casa. Cuando despierte, los valores de sus barras serán los predeterminados: energía al 80% y miedo al 0%.
+**Banana**: Consumible que recupera energía al jugador, siendo un porcentaje del 10% y un 25% si estas en minimos.
 
-Asustarse: El jugador se asusta cuando está cerca de los enemigos. Tiene un rango dentro del que, si hay un enemigo, le provoca miedo. Dependiendo de la distancia a la que esté el enemigo dentro de ese rango, y el tipo de enemigo que sea, provocará una cantidad de miedo mayor o menor. La forma en que aumenta el miedo es: miedo actual + distancia al enemigo \* miedo que provoca. Se tendrán que añadir algunos valores para ajustar las cantidades ( % o  \* 100 por ejemplo).
+**Repelente**: Consumible que reduce el factor de miedo proveniente de los enemigos durante un tiempo.
 
-Cansarse: Se especifica en cada mecánica si llevarla a cabo consume energía. Al comienzo del juego la barra de energía está al 80%. El 100% sólo podrá alcanzarse con bebidas energéticas.
+**Mapa**: Objeto especial que se puede desplegar, muestra una vista general del mapa y se puede poner un puntero para ubicar el objetivo de la ruta con mayor facilidad.
 
-Ahuyentar fantasmas con la linterna: Al tener activa una linterna, si dentro de su rango (marcado visualmente) se sitúa un enemigo durante X segundos, le debilitará, haciéndole desaparecer con una animación de parpadeo. (Como en el minijuego de wii party))
+**Pico**: Elemento que se te da tras completa la primera tanda de misiones y que sirve para romper rocas y acceder a nuevas zonas del mapa.
 
-### 2.1.2. Mecánicas de escenario
+### 2.1.3. Mecánicas de escenario
 
-El mapa está creado mediante tiles y delimitado por objetos de la naturaleza como árboles, arbustos, mares o ríos. El jugador no podrá sobrepasar estos límites. A lo largo del mapa se distribuyen las casas y tiendas en núcleos urbanos y habrá zonas de bosque con árboles y zonas más amplias donde estarán los enemigos, objetos y que el jugador deberá recorrer para llevar a cabo las misiones
+**Minimapa**: Muestra en la esquina inferior izquierda una visión general de la zona donde se encuentra el mono en tiempo real para ubicarse adecuadamente.
 
-Misiones: Las misiones son la base de la experiencia jugable. El jugador puede ir a la oficina de correos para ver las misiones que hay disponibles. Para que la misión comience, el jugador debe aceptarla. Las misiones se componen de:
+**Bancos**: Dormir en ellos te permitirá recuperar la energía y el miedo. Estan ubicados en zonas seguras para que puedas descansar tranquilo.
+
+**Panel de misiones**: Selector de misiones que las muestra de forma gráfica con una breve descripción y detalles. Es el lugar donde se cogen los nuevos encargos.
+
+**Tienda**: Lugar interactuable en la zona central del pueblo donde podrás adquirir productos.
+
+**Objetos de misión**: Objetos sueltos por el mapa que al recogerlos permiten realizar misiones de encargo.
+
+**Casas de vecinos**: Diferentes ubicaciones donde se encuentran los vecinos al seleccionar sus misiones.
+
+**Rocas**: Elementos por el mapa que bloquean caminos y deberán ser rotos con el pico para poder pasarlos.
+
+### 2.1.4 Mecánicas de enemigos
+
+**Patrullar -- Común**: los enemigos con esta mecánica se moverán dentro de una zona, escogiendo un punto aleatorio dentro de esta. Este movimiento comienza cuando spawnean. No se detienen nunca, salvo en el caso de que además tengan la mecánica de perseguir al jugador.
+
+***Efecto del enemigo***: Cada enemigo provocará un efecto distinto en el jugador. Ver apartado 4.3 parte de los enemigos.
+
+**Ver y perseguir al jugador -- Toro**: Los enemigos que persiguen al jugador tendrán un campo de visión. Si el jugador entra, comienzan una persecución que dura 3 segundos. Si cuando pasen los 3 segundos, el jugador sigue en el campo de visión (el actual) la persecución continúa. Esto ocurre hasta que el jugador salga del campo de visión o el enemigo se aleje x distancia de la posición en la que estaba cuando empezó la persecución. Cuando esta acabe, vuelve a ese punto y sigue el recorrido.
+
+**Somnolencia -- Planta**: Cuando el jugador entra en el rango del enemigo su nivel de sueño aumentará x.
+
+**Robo -- Múrcielago**: Cuando el jugador entre en el rango del enemigo  y mientras esté en contacto con este, le quitará una moneda por segundo.
+
+**Ralentización -- Escorpión**: Cuando el jugador entre en el rango del enemigo y mientras esté en contacto con él, el jugador reducirá su velocidad  ⅓.
+
+
 
 Descripción del encargo
 
@@ -175,19 +201,7 @@ Spawn de enemigos: Se determinan zonas en las que pueden aparecer enemigos y una
 
 Diálogos con los vecinos:  Cuando el protagonista entrega el pedido salta un diálogo con el vecino, en relación con el paquete. Si el paquete no es el correcto, no ocurre nada. Únicamente se abre el diálogo al completar la misión correctamente.
 
-### 2.1.3 Mecánicas de enemigos
 
-Patrullar: los enemigos con esta mecánica se moverán dentro de una zona, escogiendo un punto aleatorio dentro de esta. Este movimiento comienza cuando spawnean. No se detienen nunca, salvo en el caso de que además tengan la mecánica de perseguir al jugador.
-
-Efecto del enemigo: Cada enemigo provocará un efecto distinto en el jugador. Ver apartado 4.3 parte de los enemigos.
-
-Ver y perseguir al jugador: Los enemigos que persiguen al jugador tendrán un campo de visión. Si el jugador entra, comienzan una persecución que dura 3 segundos. Si cuando pasen los 3 segundos, el jugador sigue en el campo de visión (el actual) la persecución continúa. Esto ocurre hasta que el jugador salga del campo de visión o el enemigo se aleje x distancia de la posición en la que estaba cuando empezó la persecución. Cuando esta acabe, vuelve a ese punto y sigue el recorrido.
-
-Somnolencia: Cuando el jugador entra en el rango del enemigo su nivel de sueño aumentará x.
-
-Robo: Cuando el jugador entre en el rango del enemigo  y mientras esté en contacto con este, le quitará una moneda por segundo.
-
-Ralentización: Cuando el jugador entre en el rango del enemigo y mientras esté en contacto con él, el jugador reducirá su velocidad  ⅓.
 
 
 ### 2.1.4 Controles
@@ -352,19 +366,7 @@ Fantasmas:
 
 Fantasma que persigue (toro): Provoca 15% del total miedo y tiene la mecánica de patrullar y perseguir
 
-Fantasma estático (batpatt): Provoca un 10% del total de miedo y tiene la mecánica de patrullar.
-
-Objetos
-
-Párrafos e ilustraciones donde se describe en detalle todas las armas, el equipamiento (los bonus y malus con los que podamos interactuar), las trampas y obstáculos y cualquier otro objeto utilizados en el juego, incluso los meramente decorativos. Sus características también deben detallarse en tablas uniformes.
-
-- Linterna (Objeto No Consumible): Cuando el jugador la tiene equipada,se activa el sprite de luz de la linterna (para simular que es una linterna) y repele a los fantasmas que se encuentran a menos de 250 pixeles del jugador.
-- Bebida Energética (Objeto Consumible): Cuando el jugador lo consume este adquiere un 15% más  velocidad de movimiento durante 30 segundos, pasado el tiempo dicho incremento desaparece. Además aumenta la energía un 20% .
-- Repelente anti bananas (Objeto Consumible): Cuando el jugador lo consume, el miedo que provocan los enemigos disminuye un 30% durante 1 minuto, pasado este minuto dicha reducción desaparece.
-- Patines (Objeto No Consumible): Cuando el jugador le da a la tecla numérica en la que se encuentra el objeto en el inventario lo activa y se lo equipa, si el jugador presiona esa tecla otra vez se desequipa. Cuando está equipado aumenta la velocidad del jugador 40% y cada vez que se mueve el jugador consume 0.2% de energía.
-- Monopatín (Objeto No Consumible): Cuando el jugador le da a la tecla numérica en la que se encuentra el objeto en el inventario lo activa y se lo equipa, si el jugador presiona esa tecla otra vez se desequipa. Cuando está equipado aumenta la velocidad del jugador 55% y cada vez que se mueve el jugador consume 0.8% de energía.
-- Banana (Objecto Consumible): Cuando el jugador lo consume aumenta un 10% la energía que tiene actualmente. En caso de que la energía sea inferior a un 10%, se recupera a un 25% de la energía total.
-- Cafe (Objecto Consumible): Cuando el jugador lo consume disminuye un 20% el miedo que tenga. Si el miedo acumulado es mayor a 80% este se decrementa un 30%.
+Fantasma estático (batpatt): Provoca un 10% del total de miedo y tiene la mecánica de patrullar
 
 Referencias
 
