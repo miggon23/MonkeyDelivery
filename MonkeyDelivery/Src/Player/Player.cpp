@@ -30,7 +30,7 @@ Player::Player(Game* game) :GameObject(game), animationManager(AnimationManager:
 	money_ = 0;
 	vel_ = 0;
 	orientation_ = "";
-	runningSpeedFactor_ = 1.5;
+	runningSpeedFactor_ = 1.3;
 
 	walkingEnergy_ = 0.025;
 	runningEnergy_ = walkingEnergy_ * 1.5;
@@ -94,7 +94,6 @@ Player::~Player()
 
 void Player::update()
 {
-	cout << vel_ << endl;
 	if (!fade && !isTalking_ && !isInTutorial_) {
 
 		powerUpsManager->update();

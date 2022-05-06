@@ -3,7 +3,7 @@
 #include "../Player/Player.h"
 #include "../Logic/Game.h"
 
-Skates::Skates(Texture* tex, Game* game,Player* player) : speedMult(1.2), InventoryObject(tex, game,player){
+Skates::Skates(Texture* tex, Game* game,Player* player) : speedMult(1.25), InventoryObject(tex, game,player){
 	setTypeObject(BOOTS);
 	active = false;
 }
