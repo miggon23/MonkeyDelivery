@@ -5,6 +5,9 @@
 ### MoonKey Studios
 
 gamesmoonkey@gmail.com
+(Grupo 02 de Proyectos 2)
+
+WEB: https://miggon23.github.io/MonkeyDelivery/
 
 ## Datos generales:
 
@@ -399,7 +402,7 @@ Enemigos:
 
 Además, cada enemigo cuenta con una spritesheet secundaria, que parpadea en blanco, para cuando están siento apuntados con la linterna.
 
-# 5 Referencias
+# Referencias
 
 - Pokemon (juegos antiguos)
 - Animal Crossing
@@ -407,5 +410,25 @@ Además, cada enemigo cuenta con una spritesheet secundaria, que parpadea en bla
 - Memes de monos (especialmente)
 
 
-##UML
+# UML
 ![UML_Monkey_Delivery drawio](https://user-images.githubusercontent.com/82326243/152699560-aa794a2b-cd24-4e00-90fa-4dad823b08a2.png)
+
+
+# Comunicación
+Para la comunicación del equipo se usa un servidor de discord, con varios canales dedicados a diferentes partes del proyecto.
+Además, se aprovechan las 4 horas semanales en clase presencial, para hacer una organización semanal del proyecto, y hacer un seguimiento de lo que cada uno está trabajando esa semana. 
+![discord](https://user-images.githubusercontent.com/81906237/167201855-9c759f29-d37b-458c-b050-188b050764db.png)
+
+# Pruebas
+
+Para el testing del juego, buscábamos analizar cómo el jugador afrontaba las mecánicas y dinámicas básicas (moverse, aceptar misiones, interactuar con objetos, llegar al punto donde tiene que entregar la misión, etc) de la forma esperada: supiese manejarse dentro del juego con lo que nosotros le aportamos. Por otro lado era importante balancear los precios de los ítems de la tienda, y el dinero que ganas al hacer misiones, considerando la habilidad del jugador: si muere muchas veces y tarda mucho en hacer las misiones, ganará menos dinero que un jugador mejor.
+Para ello realizamos un informe de pruebas, y un cuestionario que el tester rellenaría al acabar la prueba.
+
+1- https://docs.google.com/document/d/1Bbtbw0Fj29UlRprhrWuNLlqLL6jAQiksbfh3qCFxdPg/edit?usp=sharing
+Documento interno, que usamos para guiarnos en los cambios que deberíamos hacer según lo que observásemos del jugador.
+
+2- https://docs.google.com/forms/d/e/1FAIpQLSdGS9mTBw7j24lcMTLKJwUnG7dSUgctUyDXw4PyPq_TqlKJzA/viewform
+Formulario que los jugadores rellenaban, para dar feedback adicional.
+
+
+
