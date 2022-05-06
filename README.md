@@ -426,9 +426,9 @@ Hemos utilizado un sistema de herencia de clases para el desarrollo del juego. U
 En general la partida se basa en torno a la clase Game, que trata con las entidades que declaramos como GameObjects (enemigos, panel de misiones, jugador, tienda, colliders, etc.)
 Cabe destacar el uso de TileMap para el mapa del juego, y la creación y colocación de colliders.
 
-En el UML no están reflejados todos los Estados que heredan de State, ni todos los Comandos, para evitar exceso de información.
-![UML_Monkey_Delivery drawio](https://user-images.githubusercontent.com/82326243/152699560-aa794a2b-cd24-4e00-90fa-4dad823b08a2.png)
-
+En el UML no están reflejados todos los Estados que heredan de State, ni todos los Comandos. Faltan algunas clases, como objetos específicos del inventario, o clases secundarias que hemos utilizado para funciones más concretas. De las clases del UML, se han puesto los métodos más representativos para no sobrecargar de información.
+![UML](https://user-images.githubusercontent.com/81906237/167220998-6339981d-3e69-4f09-aca7-b58cf1c475e7.png)
+Enlace al UML: https://drive.google.com/file/d/1aRPSuOkXBV_ypeuzcZlZIELnKU2zhF-j/view?usp=sharing
 
 # Comunicación
 Para la comunicación del equipo se usa un servidor de discord, con varios canales dedicados a diferentes partes del proyecto.
