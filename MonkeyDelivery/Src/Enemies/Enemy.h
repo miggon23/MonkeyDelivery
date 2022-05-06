@@ -38,6 +38,8 @@ protected:
 	//PopUp
 	Texture* popupTexture;
 	SDL_Rect popUpTexRect;
+	int plusH;
+	int plusW;
 	bool popUpActive;
 	float popUpTimer;
 
@@ -68,4 +70,5 @@ public:
 	bool inPoint();
 
 	void drawPopUp();
+	inline void setRectPopPup(int plsW, int plsH) { plusW = plsW; plusH = plsH; };
 };

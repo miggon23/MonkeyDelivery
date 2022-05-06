@@ -18,6 +18,9 @@ Scorpion::Scorpion(Game* game, int Aleatorio, Point2D<int> centroRadio) : Enemy(
 	time_ = 200;
 	maxX_ = 144;
 	maxY_ = 0;
+
+	plusW = 5;
+	plusH = -25;
 	textureRect = { 0, 0, width_, height_ };
 }
 
@@ -49,10 +52,10 @@ void Scorpion::checkDistance()
 	//Si esta en el rango
 	if (distanceX <= range && distanceY <= range)
 	{
+		
 		//flip
 		if (dirX > 0) setFlip(SDL_FLIP_HORIZONTAL);
 		else setFlip(SDL_FLIP_NONE);
-
 		//Si la velocidad del jugador no ha sido reducida, es decir, no había entrado en el rango
 		if (!inRange) { 
 			game->setVel(playerVel / 2.0);
@@ -67,12 +70,14 @@ void Scorpion::checkDistance()
 			game->scare(scariness_);
 			lastUpdate_ = SDL_GetTicks();
 		}
+		popUpActive = true;
 	}
 	//Si no esta en el rango la velocidad sera normal
 	else if (inRange) //<-- En rango aún
 	{
 		game->getPlayer()->setVel(playerVel * 2.0);
 		inRange = false;
+		popUpActive = false;
 	}
 }
 

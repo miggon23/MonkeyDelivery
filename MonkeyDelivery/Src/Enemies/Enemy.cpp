@@ -17,6 +17,7 @@ Enemy::Enemy(Game* game, int radio, Point2D<int>centroRadio) : GameObject(game, 
 	popupTexture = game->getTexture(fearPopUp);
 	popUpTexRect = {0, 0, 22, 12};
 	popUpActive = false;
+	plusH = 0; plusW = 0;
 	popUpTimer = 160;
 }
 
@@ -157,7 +158,7 @@ void Enemy::drawPopUp()
 	pos.x -= (int)game->getCamera()->getCameraPosition().getX() - 10;
 	pos.y -= (int)game->getCamera()->getCameraPosition().getY() - 15;
 
-	SDL_Rect oRect = { pos.x, pos.y, 21 * 3, 12 * 3};
+	SDL_Rect oRect = { pos.x+plusW, pos.y+plusH, 21 * 3, 12 * 3};
 	animationManager->getFrameImage(oRect, popUpTexRect, popupTexture, popUpTimer, SDL_FLIP_NONE, 22*3, 12*3, 154, 1, time_);
 }
 

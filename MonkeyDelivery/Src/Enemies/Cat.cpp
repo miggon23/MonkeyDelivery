@@ -18,6 +18,7 @@ Cat::Cat(Game* game,int Aleatorio, Point2D<int>centroRadio):Enemy(game, Aleatori
 	time_ = 250;
 	maxX_ = 64;
 	maxY_ = 0;
+	plusH = -40; plusW = -20;
 	textureRect = { 0, 0, width_, height_ };
 }
 

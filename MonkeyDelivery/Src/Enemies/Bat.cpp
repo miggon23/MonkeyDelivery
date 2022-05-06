@@ -19,6 +19,9 @@ Bat::Bat(Game* game, int Aleatorio, Point2D<int> centroRadio, int nLoop) : Enemy
 	maxY_ = 0;
 	textureRect = { 0, 0, width_, height_ };
 	
+	plusW = 10;
+	plusH = -25;
+
 	createCheckPoints();
 	setResistance(2000);
 	popupTexture = game->getTexture(coinPopUp);

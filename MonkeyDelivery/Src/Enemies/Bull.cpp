@@ -18,6 +18,7 @@ Bull::Bull(Game* game, int radio, Point2D<int> centroRadio) : Enemy(game, radio,
 	time_ = 200;
 	maxX_ = 100;
 	maxY_ = 0;
+	plusH = -50; plusW = 10;
 	textureRect = { 0, 0, width_, height_ };
 }
 
@@ -88,12 +89,15 @@ void Bull::checkDistance()
 				game->scare(scariness_/2);
 				lastUpdate_ = SDL_GetTicks();
 			}
+			popUpActive = true;
 		}
 		else if ((int)SDL_GetTicks() <= timer_ + 3000 && game->getPlayer()->safeDistance()) //Si no esta en el rango y no han pasado los 3 segundos, pero player no esta en cama
 			chase(dirX, dirY); //Persigo
 
-		else  //Si no esta en el rango y han pasado los 3 segundos
+		else { //Si no esta en el rango y han pasado los 3 segundos
 			stop = true; //Dejo de perseguir
+			popUpActive = false;
+		}
 	}
 }
 
