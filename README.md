@@ -29,8 +29,6 @@ WEB: https://miggon23.github.io/MonkeyDelivery/
 
 **Nota:** Durante el desarrollo del juego, la bici y patines pasaron a ser botas (de diferentes calidades), y el pico pasó a ser una pala. Estos cambios son meramente visuales, ya que la funcionalidad la hemos mantenido. Cualquier referencia en este documento a estos elementos se puede sustituir por el sustituto.
 
-# 1. Datos generales
-
 ### Escenarios disponibles: 
 
 Un solo nivel de 10.000x10.000 píxeles divido en diferentes biomas.
