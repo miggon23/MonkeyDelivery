@@ -207,7 +207,8 @@ void Inventory::removeObject(InventoryObject* x){
 }
 
 void Inventory::changeSelectedObject(int x){
-	if (selectedInventoryObject < inventory_.size() && inventory_[selectedInventoryObject] != nullptr &&inventory_[selectedInventoryObject]->getActive()) { useSelectedObject(); };
+	if (selectedInventoryObject < inventory_.size() && inventory_[selectedInventoryObject] != nullptr &&inventory_[selectedInventoryObject]->getActive()) {
+		useSelectedObject(); };
 	selectedInventoryObject += x;
 	selectedInventoryObject %= INVENTORY_SIZE;
 	//std::cout << selectedInventoryObject << std::endl;

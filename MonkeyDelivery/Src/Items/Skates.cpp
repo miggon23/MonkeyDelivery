@@ -12,16 +12,8 @@ void Skates::setCorrectTexture(){
 	setMyTexture(game_->getTexture(Item_Boots01));
 }
 
-bool Skates::useObject()
-{
-	/*if (!active) {
-		player_->setVel(player_->getVel() * speedMult);
-	}
-	else {
-		player_->setVel(player_->getVel() / speedMult);
-	}*/
+bool Skates::useObject(){
 	player_->initPowerUp(boots, speedMult);
-	//player_->setIsWearingOrangeBoots(true);
-	//active = !active;
+	active = !active;
 	return false;
 }

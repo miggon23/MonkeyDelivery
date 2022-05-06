@@ -203,6 +203,7 @@ void Player::changeSleep()
 			}
 			sdlutils().soundEffects().at("sleep").setVolume((int)(game->getGeneralVolume() * game->getSoundEfectsVolume()));
 			sdlutils().soundEffects().at("sleep").play(-1, 1);
+			inventory_->changeSelectedObject(0);
 		}
 		else {
 			//recoloca al player en su posición anterior
