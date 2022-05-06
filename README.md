@@ -6,45 +6,23 @@
 
 gamesmoonkey@gmail.com
 
-Versión 1.4 – 30 de abril de 2022
-
 ## Datos generales:
 
 **Género**: Aventura
 
-**Subgéneros**: Exploración, Gestión y Mundo abierto
+**Subgéneros**: Exploración, Gestión, Aventura gráfica, Simulador y Mundo abierto
 
 **Público objetivo*:
-- Edad: +10 años
-- Sexo: Hombre/Mujer
+- Edad: +13 años
 - Idioma: Español
 
 **Plataformas disponibles**: PC
 
 **Requisitos mínimos y recomendamos**: Que tu ordenador mueva el buscaminas online
 
-## Hitos y objetivos:
-
-**Fecha de propuesta del concepto**  
-a  
-Lograr concebir una idea atractiva tanto para el equipo como el consumidor que pueda ser llevada a cabo.
-
-**Fechas de pre-producción**  
-a  
-Haber desarrollado la idea, teniendo todos los puntos importantes de la experiencia definidos para poder realizar la producción sin tener a penas que tocar el diseño y con una hoja de ruta que permita a cualquier mieembro del equipo saber que tiene que realizar en su tarea sin dpeender de tiempos de reuniones extra.
-
-**Fechas de producción**  
-a  
-Tener un juego completamente jugable, con la mayor parte del contenido disponible. Con toda la arquitectura completada para poder añadir y realizar las modificaciones necesarias rápidamente y sin dificultades.
-
-**Fecha de lanzamiento**  
-06/05/2022  
-Tener un juego completamente jugable, con todo el contenido disponible y estructurado en una historia. Sin bugs que afecten a la experiencia de forma relevante.
-
+**Nota:** Durante el desarrollo del juego, la bici y patines pasaron a ser botas (de diferentes calidades), y el pico pasó a ser una pala. Estos cambios son meramente visuales, ya que la funcionalidad la hemos mantenido. Cualquier referencia en este documento a estos elementos se puede sustituir por el sustituto.
 
 # 1. Datos generales
-
-## Alcance del proyecto:
 
 ### Escenarios disponibles: 
 
@@ -68,37 +46,41 @@ Un solo nivel de 10.000x10.000 píxeles divido en diferentes biomas.
 -Cafe
 
 **De la historia**:
--Diferentes paquetes a entregar, uno para cada misión
+- Diferentes paquetes a entregar, uno para cada misión.
+- Algunos de estos se buscarán en el mapa.
 
 **Personajes**:
--Erizo PatasLargas
--Cocodrilo Croki
--Hipopótamo Pepi
--Cebra Ceci
--Wallaby Willy
--Capitán Pescaniva
--Tucana Aitana
--Rana
--Tortuga
+- Tucana Aitana
+- Hipopótamo Hipo
+- Pavo Raúl
+- Ajolote Julián
+- Águila Francisco
+- Conejo Carlos
+- Rana Kermit
+- Cocodrilo Cleon
+- Zorro Zacarías
 
 **Especiales**:
--Mapa
--Bancos
--Tienda
+- Mapa
+- Bancos
+- Tienda
+- Panel de misiones
+- Rocas
+- Cofres
 
 ### Descripción
 
-En Monkey Delivery tomarás el papel de Monkey, un pequeño mono que se dedica a repartir paquetes a los vecinos de Selva Banana, su localidad natal. Simultáneamente, deberás mantener tu sueño a raya, durmiendo cuando sea necesario. En tu misión habrá enemigos que asustarán a Monkey, por lo que tendrás que evitarlos. Al completar trabajos recibirás dinero, que te será útil para comprar diferentes materiales y objetos en las tiendas.
+En Monkey Delivery tomarás el papel de Monkey, un pequeño mono que se dedica a repartir paquetes a los vecinos de Todesfall, pueblo al que se ha mudado para trabajar. Simultáneamente, deberás mantener tu sueño a raya, durmiendo cuando sea necesario. En tu misión habrá enemigos que asustarán a Monkey, por lo que tendrás que evitarlos. Al completar trabajos recibirás dinero, que te será útil para comprar diferentes materiales y objetos en las tiendas. Mientras cumples tu trabajo, irás descubriendo el misterio que ocurrió en Todesfall, con lo que tus vecinos te contarán.
 
 ### Aspectos generales
 
-Es un juego que se basará fundamentalmente en la exploración: conociendo las ubicaciones tanto de los vecinos como de los enemgios, obteniendo recompensas escondidas por el mapa y descubriendo el rico mundo donde se encuentra la aldea de nuestro protagonista.  
+ Es un juego que se basará fundamentalmente en la exploración: conociendo las ubicaciones tanto de los vecinos como de los enemgios, obteniendo recompensas escondidas por el mapa y descubriendo el rico mundo donde se encuentra la aldea de nuestro protagonista.  
 El segundo elemento que más relevancia cobra será el de la gestión. La principal recompensa de las misiones, además de conocer la historia del pueblo donde has llegado, es la de monedas con la que adquirir objetos en la tienda que te ayudarán en las futuras misiones. Permitiendote llegar más lejos y desenvolverte mucho más hábilmente por el mundo; ya sea mediante consumibles o mejoras mediante el equipamiento de objetos como botas.
 Con esto buscamos que el jugador pase una experiencia agradable descubriendo un mundo colorido mientras juega y experimenta con las diferentes mecánicas y situaciones que se le brindarán en este mundo abierto.
 
 ### Jugabilidad
  
- Estarás moviendote continuamente por el mapa, desplazarte será tu fundamental herramienta para llegar a todos los paquetes. La otras mas relevantes son el uso d elas linternas para eliminar a los enemigos con ellas y despejarte el camino así como el uso de objetos ya sea el mapa para ver el mejor camino a tu objetivo o equiparte las botas para llegar máa rápido a tu destino.
+ Estarás moviendote continuamente por el mapa, desplazarte será tu fundamental herramienta para llegar a todos los paquetes. La otras mas relevantes son el uso de las linternas para eliminar a los enemigos con ellas y despejarte el camino así como el uso de objetos, ya sea el mapa para ver el mejor camino a tu objetivo, equiparte las botas para llegar más rápido a tu destino, o usar consumibles para obtener mejoras puntuales.
 
 
 ## 2.1 Mecánica
@@ -213,7 +195,6 @@ La economía será un pilar fundamental en el peligroso mundo por el que te move
 -*Playa del sur*: zona más al sur del mapa que deja de lado la vegetación y presenta una playa de arena con acantilados ante ella, peligrosa y con enemigos. Una isla y una choza se encuentran en este área tan distante.
 
 ## 2.4 Misiones
-
 
 Descripción del encargo
 
@@ -334,85 +315,25 @@ Menú que se puede acceder desde el menu principal donde irán mostrándose los 
 
 # 4 Historia
 
-Contenido
+**Contenido**:
+EL juego cuenta con 3 niveles de 3 misiones cada uno. Cada misión está dirigida a un vecino (que cuenta con su spritesheet individual), y tiene una descripción distinta. Hay una misión de cada tipo por nivel. 
+Al finalizar cada nivel, la tienda sube de nivel, es decir, muestra nuevos objetos. EL jugador obtiene un pico mejorado.
 
-Mencionar el tipo de elementos que se van a necesitar (imágenes, sonidos, música…)
+Los diálogos, tipos, y otros datos específicos de las misiones, pueden consultarte en resources.json (Dentro de /Images/config/), dentro del apartado "Missions" y "Dialogues".
 
-Historia
+**Historia**
 
-Párrafos e ilustraciones donde se describe todo el trasfondo narrativo del juego, los antecedentes que no llegamos a jugar y también la parte de la historia que sí se cubre con la jugabilidad. Se puede enumerar los personajes desde un punto de vista dramático, aunque si hay información jugable asociada a ellos, es mejor tenerlos en una lista aparte (sección 8).
+Monkey se traslada al pueblo de Todesfall para trabajar como repartidor. Cuando llega todo parece normal, un pueblo muy agradable. Lo que no sabe, es que el anterior repartidor desapareció bajo misteriosas circunstancias mientras trabajaba en el pueblo. Comenzará a hacer misiones y cuando hable con los vecinos, al entregarles sus pedidos, éstos se irán de la lengua poco a poco, contando detalles curiosos sobre la historia, que el jugador podrá ir hilando para descubrir qué le paso al repartidor. La realidad es que los vecinos de Todesfall lo asesinaron a sangre fría porque estaban descontentos con el trabajo que hacía. Todos los vecinos, salvo el Águila y el Cocodrilo estuvieron implicados. El cocodrilo tiene miedo de sufrir el mismo destino, y está planeando su huída.
+Cuando Monkey acabe todas sus misiones disponibles, aparece una nota en el tablón de misiones, dejada por Cleon el cocodrilo. Le dice que vaya al puerto, donde le está esperando con una barca lista para huir de allí.
+En este momento saldrá una cinemática en la que se ve a ambos huyendo en el barco.
 
-Si hay cinemáticas o grandes fragmentos de texto, puede incluirse una lista completa en una sección aparte, o tener alguna base de datos u hoja de cálculo que luego será utilizado por los traductores y revisores de textos.
-
-Nota en el libro explica tu origen.
-
-Cuando acabas todos los pedidos y vuelves a la oficina, te dicen que una puerta se ha abierto. Puedes cruzarla, y al hacerlo te encuentras a Jeff Bezos sentado en un váter dorado y te da un discurso de que es el mejor. Pulsas un botón y sale volando. Te sientas en su trono. Ahora eres tú el rey.
-
-El repartidor de tu pueblo ha enfermado, por lo que el dueño te pide ayuda para repartir los paquetes a los vecinos. Esto se te explicará con un tutorial al inicio (despiertas en tu casa y te desplazas hasta la oficina). Cuando acabes las rondas predeterminadas, volverás a la oficina y acabará la historia principal.
-
-Niveles
-
-Párrafos e ilustraciones donde se describe en detalle todos los niveles o misiones del juego, numerados como 6.1, 6.2, 6.3, etc. Si se reutiliza una misma localización para varios niveles o misiones distintos, se podría tener una lista aparte únicamente de localizaciones.
-
-El juego consta de un mapa en el cual, se encuentran repartidas todas las misiones:
-
-- Misión Erizo (Dificultad Difícil): El jugador ha de llevarle una pata de un sillón y un sombrero de copa , estos se encontraran en distintas localizaciones del mapa y se dispondrá 3 minutos para poder coger los objetos y llevarselos.
-- Historia: Al erizo PatasLargas se le ha roto el sillón debido a que está muy gordo , de modo que se ha comprado una pata de sillón para poder arreglarlo y poder calentar su tremendo trasero en el sillon. Además a tan tremenda tragedia se le suma que no encuentra el sombrero de copa que tanto le gusta de modo que ha decidido que su primo el erizo PatasCortas le preste el suyo.
-- Diálogo Final De La Misión(Lo dice el erizo): Muchas gracias por traerme la pata del sillón ahora podré sentarme y relajarme en mi querido sillón, de hecho voy a hablar con Ikea para conseguir un sillón a ti tambien y te puedas relajar.
-- Misión de Ceci: El jugador tendrá 3 minutos para buscar por el camino de casa de Ceci a la oficina el rotulador y devolverselo. Como recompensa recibirás un bote con rotuladores.
-- Descripción: La cebra Ceci ha perdido un rotulador negro de camino de su casa a la oficina de correos que es muy importante para ella debido a su terrible secreto que no quiere desvelar. Ayúdala a encontrarlo, quizás te desvele su secreto…
-
-`	`-Diálogo final:  Hola, muchas gracias por devolverme mi rotulador. Ah, que por que lo necesito, bueno supongo que te puedo decir mi secreto, pero no se lo cuentes a nadie, ¿me oyes? Resulta que en verdad soy un caballo blanco pero siempre quise ser una cebra, así que me pinto las rayas. Pero tu shhhh. Toma esto por ayudarme a mantener mi secreto a salvo.
-
-- Misión de Willy: El jugador tendrá 4 minutos para llegar al bosque, buscar los guantes (que estarán relativamente escondidos) y llevarselos de vuelta a Willy. Recibe un trofeo de ...el último puesto?!
-- Descripción: El ualabí Willy es el boxeador más famoso de selva-sabana. Normalmente va a entrenar al bosque a darle unos puños al saco de boxeo que colgó del árbol más grande. Ha participado en numerosos combates (todos contra el árbol y en todos perdió…). Pero hoy no ha podido ir a entrenar porque no encuentra sus guantes, se los debió dejar en el bosque. ¿Podrías encontrarlos y devolvérselos?
-
-`	`-Diálogo: Muchas gracias por encontrar mis guantes, sin ellos no podría ir a entrenar para ganar más combates (...). Toma esto en agradecimiento.
-
-- Mision del Capitan Pescaniva: El jugador tendrá 5 minutos para buscar el chubasquero alrededor del lago y llevárselo. Recibes un barco en una botella de decoración.
-- Descripción: El capitán Pescaniva suele ir a navegar a lo que él llama el gran mar, (que en verdad es un lago al lado de su casa). A pesar de ser un pez le da un miedo terrible el agua y mojarse por ello necesita llevar puesto su chubasquero, pero no lo encuentra. Seguramente lo perdió cerca del lago (porque tampoco se mueve mucho). Encuentralo y devuelveselo.
-
-`	`-Diálogo:  Buenos días, oh, muchas gracias por encontrar mi chubasquero, toma esto como recompensa.
-
-Personajes y enemigos
-
-Párrafos e ilustraciones donde se describe en detalle todos los personajes del juego, tanto avatares del jugador, como enemigos u otros personajes no-jugables, hasta secundarios. Con todas sus características convenientemente recogidas en tablas uniformes..
-
-Puede ayudar incluir retratos y arte conceptual de los personajes
+**Personajes y enemigos:**
 
 Vecinos:
 
-Erizo PatasLargas
-
-Cocodrilo Croki
-
-Hipopótama Pepi
-
-Cebra Ceci
-
-Wallaby Willy
-
-Capitán Pescaniva
-
-Tucana Aitana
-
-Ranae
-
-Tortuga
-
-Pavo Real
 
 Enemigos:
 
-Planta Piraña (nombre provisional): Si el jugador se encuentra en su rango esta lanzará unas esporas que provocarán somnolencia (ver apartado 2.1.3 Mecanicas de enemigos).
-
-Escorpión: Cuando el jugador entre en su rango ralentizará al jugador (ver apartado 2.1.3 Mecanicas de enemigos). Provoca 5% del total  miedo. Tiene la mecánica de patrullar.
-
-Fantasmas:
-
-Fantasma que persigue (toro): Provoca 15% del total miedo y tiene la mecánica de patrullar y perseguir
-
-Fantasma estático (batpatt): Provoca un 10% del total de miedo y tiene la mecánica de patrullar
 
 
 # 5 Referencias
@@ -420,6 +341,7 @@ Fantasma estático (batpatt): Provoca un 10% del total de miedo y tiene la mecá
 - Pokemon (juegos antiguos)
 - Animal Crossing
 - Stardew Valley
+- 
 
 
 ##UML
