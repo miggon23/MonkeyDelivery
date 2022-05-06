@@ -3,6 +3,7 @@
 #include "../Control/States/MenuState.h"
 #include "../Control/States/PlayingState.h"
 #include "../Control/States/OptionsState.h"
+#include "../Control/States/GameOverState.h"
 #include "../sdlutils/InputHandler.h"
 
 
@@ -13,11 +14,10 @@ InputManager::InputManager(Game* _game)
 	IMG_Init(IMG_INIT_PNG);
 	renderer = game->getRenderer();
 	game->loadTextures();
-	
+	//game->setState(new GameOverState(game));
 	game->setState(new MenuState(game));
 	game->initOptionsState();
 	timer_ = Timer::Instance();
-
 }
 
 InputManager::~InputManager()
