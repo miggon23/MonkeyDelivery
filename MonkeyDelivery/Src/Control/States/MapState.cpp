@@ -31,7 +31,7 @@ void MapState::draw()
 	leyendaTex_->render(rectPanel);
 	if (missionTex_ != nullptr)
 	{
-		rectPanel = { (int)game->getWindowWidth() - CUT_OFF + 15, (int)game->getWindowHeight() / 2, (int)CUT_OFF - 15, (int)game->getWindowHeight()/2 };
+		rectPanel = { (int)game->getWindowWidth() - CUT_OFF + 20, (int)game->getWindowHeight() / 2, (int)CUT_OFF - 20, (int)game->getWindowHeight()/2 };
 		missionTex_->render(rectPanel);
 	}
 
