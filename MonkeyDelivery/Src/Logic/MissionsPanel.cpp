@@ -73,7 +73,7 @@ void MissionsPanel::onPlayerInteraction(Player* player)
 			string b = "Mission";
 
 			missionsSent.reserve(levels_[currentLevel_]);
-			for (int i = levelsCompleted_[currentLevel_ - 1.0] + 1; i <= levelsCompleted_[currentLevel_ - 1.0] + levels_[currentLevel_]; ++i) {
+			for (int i = 3*(currentLevel_-1) + 1; i <= 3*(currentLevel_); ++i) {
 				b += to_string(i);
 				if (!missions_.at(b).completed) {
 					missionsSent.push_back(make_pair(b, missions_.at(b).imgRoute));
