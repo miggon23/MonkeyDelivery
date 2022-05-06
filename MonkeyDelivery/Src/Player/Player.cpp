@@ -276,7 +276,8 @@ void Player::draw()
 	if (!isInTutorial_) { // no dibujamos nada si estamos en el tutorial
 
 		if (!sleeping) {
-			if (isWearingBoots) setTexture(monkeySS_GreenBoots);
+			if (isWearingGreenBoots) setTexture(monkeySS_GreenBoots);
+			else if (isWearingOrangeBoots) setTexture(monkeySS_OrangeBoots);
 			else setTexture(monkeySS_Default);
 
 			if (fearLevel_->percentFear() >= 50 && isStopped_) {

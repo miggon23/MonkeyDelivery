@@ -128,7 +128,8 @@ void PowerUpsManager::ActivatePowerUp(PowerUps p, double value)
 		if (!activateBoots_) {
 			player_->setVel(player_->getVel() * speedNormalBootsMult_);
 			activateBoots_ = true;
-			player_->setIsWearingBoots(activateBoots_);
+			if (value == 1.2) player_->setIsWearingOrangeBoots(activateBoots_);
+			else player_->setIsWearingBoots(activateBoots_);
 		}
 		else {
 			desactivateBoots();
@@ -163,6 +164,7 @@ void PowerUpsManager::desactivate(PowerUps x)
 			player_->setVel(player_->getVel() / speedNormalBootsMult_);
 		activateBoots_ = false;
 		player_->setIsWearingBoots(activateBoots_);
+		player_->setIsWearingOrangeBoots(activateBoots_);
 	default:
 		break;
 	}

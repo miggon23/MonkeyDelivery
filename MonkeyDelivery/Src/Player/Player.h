@@ -126,7 +126,8 @@ private:
 	//INFORMACION 
 	Vector2D<int> posBeforeSleep;
 
-	bool isWearingBoots=false;
+	bool isWearingGreenBoots = false;
+	bool isWearingOrangeBoots = false;
 
 public:
 
@@ -192,8 +193,10 @@ public:
 	void pausePowerUps();
 	void resumePowerUps();
 	void desactivatePowerUp(PowerUps p);
-	inline bool getIsWearingBoots() { return isWearingBoots; }
-	inline void setIsWearingBoots(bool b) { isWearingBoots = b; }
+	inline bool getIsWearingBoots() { return isWearingGreenBoots; }
+	inline void setIsWearingBoots(bool b) { isWearingGreenBoots = b; }
+	inline bool getIsWearingOrangeBoots() { return isWearingOrangeBoots; }
+	inline void setIsWearingOrangeBoots(bool b) { isWearingOrangeBoots = b; }
 
 	
 	inline void selectObject(int index) {

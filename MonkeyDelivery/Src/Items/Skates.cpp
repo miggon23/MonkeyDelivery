@@ -21,7 +21,7 @@ bool Skates::useObject()
 		player_->setVel(player_->getVel() / speedMult);
 	}*/
 	player_->initPowerUp(boots, speedMult);
-	player_->setIsWearingBoots(true);
+	//player_->setIsWearingOrangeBoots(true);
 	//active = !active;
 	return false;
 }
