@@ -14,9 +14,9 @@ InputManager::InputManager(Game* _game)
 	IMG_Init(IMG_INIT_PNG);
 	renderer = game->getRenderer();
 	game->loadTextures();
-	game->setState(new GameOverState(game));
-	/*game->setState(new MenuState(game));
-	game->initOptionsState();*/
+	//game->setState(new GameOverState(game));
+	game->setState(new MenuState(game));
+	game->initOptionsState();
 	timer_ = Timer::Instance();
 }
 
