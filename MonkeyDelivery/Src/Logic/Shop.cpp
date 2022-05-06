@@ -49,24 +49,24 @@ void Shop::clearElements()
 
 void Shop::addElements(int level)
 {
-	switch (3)
+	switch (level)
 	{
 	case 1:
-		objects.push_back({ new EnergyDrink(game->getTexture(shop_Soda1), game,game->getPlayer()), 0, 0, 3, 30 });
+		objects.push_back({ new EnergyDrink(game->getTexture(shop_Soda1), game,game->getPlayer()), 0, 0, 3, 25 });
 		objects.push_back({ new Skates(game->getTexture(shop_Boots01), game,game->getPlayer()), 2, 0, 1, 45 });		
 		objects.push_back({ new Banana(game->getTexture(shop_Banana), game,game->getPlayer()), 1, 0, 3, 15 });
 		objects.push_back({ new Flashlight(game->getTexture(shop_Boots02), game,game->getPlayer()), 3, 0, 1, 20});
 		break;
 	case 2:
-		objects.push_back({ new EnergyDrink(game->getTexture(shop_Soda1), game,game->getPlayer()), 0, 0, 3, 30 });
+		objects.push_back({ new EnergyDrink(game->getTexture(shop_Soda1), game,game->getPlayer()), 0, 0, 3, 25 });
 		objects.push_back({ new Banana(game->getTexture(shop_Banana), game,game->getPlayer()), 1, 0, 3, 15 });
 		objects.push_back({ new Repel(game->getTexture(shop_Spray), game,game->getPlayer()), 0, 0, 1, 40 });
 		objects.push_back({ new Lantern(game->getTexture(Item_Lantern01), game,game->getPlayer()), 0, 0, 1, 50 });
 		break;
 	case 3:
-		objects.push_back({ new EnergyDrink(game->getTexture(shop_Soda1), game,game->getPlayer()), 0, 0, 3, 30 });
+		objects.push_back({ new EnergyDrink(game->getTexture(shop_Soda1), game,game->getPlayer()), 0, 0, 3, 25 });
 		objects.push_back({ new Repel(game->getTexture(shop_Spray), game,game->getPlayer()), 0, 0, 3, 40 });
-		objects.push_back({ new Monkeycola(game->getTexture(Shop_Soda2), game,game->getPlayer()), 1, 0, 1, 20 });
+		objects.push_back({ new Monkeycola(game->getTexture(shop_Soda2), game,game->getPlayer()), 1, 0, 1, 20 });
 		objects.push_back({ new Bike(game->getTexture(shop_Boots02), game,game->getPlayer()), 1, 0, 1, 90});
 		break;
 	default:
@@ -104,14 +104,15 @@ void Shop::CreateNewObject(InventoryObject* O){
 	possible = nullptr;
 
 	EnergyDrink* possible2 = dynamic_cast<EnergyDrink*>(O);
-	if (possible2 != nullptr) { player->addObjectToInventory(new Banana(game->getTexture(Item_Soda02), game, player)); return; }
+	if (possible2 != nullptr) { player->addObjectToInventory(new EnergyDrink(game->getTexture(Item_Soda01), game, player)); return; }
 	possible2 = nullptr;
 
-	Monkeycola* possible3 = dynamic_cast<Monkeycola*>(O);
-	if (possible2 != nullptr) { player->addObjectToInventory(new Banana(game->getTexture(Item_Soda01), game, player)); return; }
-	possible3 = nullptr;
+	Repel* possible3 = dynamic_cast<Repel*>(O);
+	if (possible3 != nullptr) { player->addObjectToInventory(new Repel(game->getTexture(Item_Spray), game, player)); return; }
 
-	Repel* possible4 = dynamic_cast<Repel*>(O);
-	if (possible2 != nullptr) { player->addObjectToInventory(new Banana(game->getTexture(Item_Spray), game, player)); return; }
+	Monkeycola* possible4 = dynamic_cast<Monkeycola*>(O);
+	if (possible4 != nullptr) { player->addObjectToInventory(new Monkeycola(game->getTexture(Item_Soda02), game, player)); return; }
+	possible4 = nullptr;
+
 }
 

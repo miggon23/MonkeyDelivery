@@ -1,5 +1,6 @@
 #pragma once
 #include "GameObject.h"
+#include "../Control/States/GameOverState.h"
 #include "AnimationManager.h"
 
 class EndGameTarget : public GameObject

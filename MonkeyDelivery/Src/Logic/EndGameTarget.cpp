@@ -17,6 +17,7 @@ EndGameTarget::~EndGameTarget()
 void EndGameTarget::onPlayerInteraction(Player* player)
 {
 	//cinematica
+	game->setState(new GameOverState(game));
 }
 
 void EndGameTarget::draw()
