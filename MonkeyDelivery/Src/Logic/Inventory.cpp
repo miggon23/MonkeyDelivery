@@ -217,7 +217,7 @@ void Inventory::changeSelectedObject(int x){
 }
 
 void Inventory::selectObject(int index){	
-	if ( selectedInventoryObject<inventory_.size()&& inventory_[selectedInventoryObject] != nullptr &&inventory_[selectedInventoryObject]->getActive()) { useSelectedObject(); };
+	//if ( selectedInventoryObject<inventory_.size()&& inventory_[selectedInventoryObject] != nullptr &&inventory_[selectedInventoryObject]->getActive()) { useSelectedObject(); };
 	//selectedInventoryObject = index % inventory_.size();
 	selectedInventoryObject = index % INVENTORY_SIZE;
 }
