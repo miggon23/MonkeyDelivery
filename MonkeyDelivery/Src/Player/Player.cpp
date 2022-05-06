@@ -37,7 +37,7 @@ Player::Player(Game* game) :GameObject(game), animationManager(AnimationManager:
 	decreasingEnergyLevel_ = walkingEnergy_; 
 	reducedSpeed_ = false;
 	reduceFactor_ = 2;
-	maxEnergyPercent_ = 20;
+	maxEnergyPercent_ = 40;
 	reduceEnergyFactor_ = 0.025;
 	isStopped_ = false;
 
