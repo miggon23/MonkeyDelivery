@@ -60,8 +60,8 @@ public:
 		Point2D<double> relative = { (double)(game->getWindowWidth() / 1800), (double)(game->getWindowHeight() / 1000) };
 		for (int i = 0; i < gOGenerator.nChest; i++)
 		{
-			game->add(new InteractuableChest(game, (int)((gOGenerator.posChest[i].first + mapOffset.getX())*relative.getX()), (int)((gOGenerator.posChest[i].second + mapOffset.getY()) * relative.getY()),
-				gOGenerator.chestDimension_.w, gOGenerator.chestDimension_.h));
+			game->add(new InteractuableChest(game, (int)((gOGenerator.posChest[i].first + mapOffset.getX())*relative.getX()), 
+				(int)((gOGenerator.posChest[i].second + mapOffset.getY()) * relative.getY()), gOGenerator.chestDimension_.w, gOGenerator.chestDimension_.h));
 
 		}
 
@@ -114,8 +114,10 @@ public:
 
 		for (int i = 0; i < gOGenerator.nRocks; i++)
 		{
-			game->add(new Rock(game, (int)((gOGenerator.posRock[i].first + mapOffset.getX()) * relative.getX()), (int)((gOGenerator.posRock[i].second + mapOffset.getY()) * relative.getY()),
-				sdlutils().rand().nextInt(1, 2)));
+			if(i%2==0) game->add(new Rock(game, (int)((gOGenerator.posRock[i].first + mapOffset.getX()) * relative.getX()), 
+				(int)((gOGenerator.posRock[i].second + mapOffset.getY()) * relative.getY()), 1));
+			else game->add(new Rock(game, (int)((gOGenerator.posRock[i].first + mapOffset.getX()) * relative.getX()), 
+				(int)((gOGenerator.posRock[i].second + mapOffset.getY()) * relative.getY()), 2));
 		}
 	}
 	static GameObjectGenerator gOGenerator;

@@ -2,7 +2,7 @@
 #include "../Logic/game.h"
 
 Rock::Rock(Game* game, int x, int y,int levelToDestroy) : ColliderTile(game,Vector2D<double>(x,y), 75.0, 75.0) {
-	levelToDestroy_ = levelToDestroy % 2;
+	levelToDestroy_ = levelToDestroy;
 	switch (levelToDestroy_){
 	case 1:
 		setTexture(worldObject_blockRock01);

@@ -16,15 +16,15 @@ Game::Game(string n, double w, double h) : name(n), width(w), height(h), doExit(
       SDL_GetDesktopDisplayMode(0, desktop);*/
 
 
-    SDLUtils::init("Monkey Delivery", 100, 100,
+    SDLUtils::init("Monkey Delivery", /*100, 100,*/1800, 1000,
         "Images/config/resources.json");
 
-    SDL_DisplayMode DM;
+    /*SDL_DisplayMode DM;
     SDL_GetCurrentDisplayMode(0, &DM);
     width = DM.w;
     height = DM.h;
 
-    SDL_SetWindowSize(window_, (int)width, (int)height);
+    SDL_SetWindowSize(window_, (int)width, (int)height);*/
 
     setRenderer(sdlutils().renderer());
 

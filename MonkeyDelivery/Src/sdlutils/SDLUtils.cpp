@@ -83,7 +83,7 @@ void SDLUtils::initWindow() {
 	// Create window
 	window_ = SDL_CreateWindow(windowTitle_.c_str(),
 	SDL_WINDOWPOS_UNDEFINED,
-	SDL_WINDOWPOS_UNDEFINED, width_, height_, SDL_WINDOW_FULLSCREEN_DESKTOP);
+	SDL_WINDOWPOS_UNDEFINED, width_, height_, /*SDL_WINDOW_FULLSCREEN_DESKTOP)*/SDL_WINDOW_SHOWN);
 	assert(window_ != nullptr);
 
 #ifdef _DEBUG
