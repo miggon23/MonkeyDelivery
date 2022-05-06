@@ -151,7 +151,7 @@ void Enemy::checkDistance()
 
 void Enemy::drawPopUp()
 {
-	if (!popUpActive) return;
+	if (!popUpActive||!isAlive()) return;
 
 	auto pos = getCollider();
 	pos.x -= (int)game->getCamera()->getCameraPosition().getX() - 10;
