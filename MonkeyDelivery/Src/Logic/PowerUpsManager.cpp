@@ -84,6 +84,8 @@ void PowerUpsManager::ActivatePowerUp(PowerUps x){
 		if (!activateBoots_) {
 			player_->setVel(player_->getVel() * speedNormalBootsMult_);
 			activateBoots_ = true;
+			/*if (value == 1.2) player_->setIsWearingOrangeBoots(activateBoots_);
+			else player_->setIsWearingBoots(activateBoots_);*/
 		}
 		else {
 			desactivateBoots();
