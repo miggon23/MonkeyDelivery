@@ -337,13 +337,13 @@ void Player::draw()
 				flashlightTex_->render(a, 90.0);
 		}
 
-		//if (usingLantern) {
+		if (usingLantern) {
 
 			auto b = lightZoneL();
 			b.x -= (int)game->getCamera()->getCameraPosition().getX();
 			b.y -= (int)game->getCamera()->getCameraPosition().getY();
 			lanternTex_->render(b);
-		//}
+		}
 
 		if (fade)
 		{
@@ -558,7 +558,7 @@ const SDL_Rect Player::lightZoneL()
 		return{ 0,0,0, 0 };
 	}
 	SDL_Rect hitZone{ int(getX() - 75),
-					int(getY() - 75),
+ 					int(getY() - 75),
 					getWidth()*4,
 					getHeight()*4
 	};
