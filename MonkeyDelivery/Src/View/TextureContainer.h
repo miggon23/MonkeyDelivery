@@ -183,6 +183,8 @@ enum TextureName
 
 	missingTex,
 	transitionTex,
+	overlay,
+
 	coco_Icon,
 	eagle_Icon,
 	fish_Icon,
@@ -280,7 +282,7 @@ enum TextureName
 
 };
 
-const int NUM_TEXTURES = 230;
+const int NUM_TEXTURES = 231;
 
 typedef struct {
 	string filename;
@@ -456,6 +458,7 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
 
 	{"missingTex.png",1,1},
 	{"transition.png",1,1},
+	{"overlay.png",1,1},
 
 	{ "ui/cocoIcon.png",1,1 },
 	{ "ui/eagleIcon.png",1,1 },
