@@ -204,6 +204,8 @@ void Player::changeSleep()
 			sdlutils().soundEffects().at("sleep").setVolume((int)(game->getGeneralVolume() * game->getSoundEfectsVolume()));
 			sdlutils().soundEffects().at("sleep").play(-1, 1);
 			inventory_->changeSelectedObject(0);
+
+			lastBed = { getX(), getY() };
 		}
 		else {
 			//recoloca al player en su posición anterior
@@ -412,10 +414,7 @@ void Player::sendToBed()
 	sdlutils().soundEffects().at("scary").setVolume((int)(game->getSoundEfectsVolume() * game->getGeneralVolume()));
 	sdlutils().soundEffects().at("scary").play(0, 1);
 
-	Point2D<double> p;
-	p=getClosestBed();
-	
-	setPosition(p.getX() , p.getY() + 60.0);//colocar en la cama
+	setPosition(lastBed.getX() , lastBed.getY() /*+ 60.0*/);//colocar en la cama
 
 	game->resetInitialTransition();
 }

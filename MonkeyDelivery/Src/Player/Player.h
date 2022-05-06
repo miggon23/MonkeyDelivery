@@ -125,6 +125,7 @@ private:
 
 	//INFORMACION 
 	Vector2D<int> posBeforeSleep;
+	Point2D<int>lastBed;
 
 	bool isWearingGreenBoots = false;
 	bool isWearingOrangeBoots = false;
