@@ -2,26 +2,26 @@
 
 ## Documento de diseño de videojuego
 
-MoonKey Studios
+### MoonKey Studios
 
 gamesmoonkey@gmail.com
 
 Versión 1.4 – 30 de abril de 2022
 
-Datos generales:
+## Datos generales:
 
-Género: Aventura
+**Género**: Aventura
 
-Subgéneros: Exploración, Gestión y Mundo abierto
+**Subgéneros**: Exploración, Gestión y Mundo abierto
 
-Público objetivo:
+**Público objetivo*:
 - Edad: +10 años
 - Sexo: Hombre/Mujer
 - Idioma: Español
 
-Plataformas disponibles: PC
+**Plataformas disponibles**: PC
 
-Requisitos mínimos y recomendamos: Que tu ordenador mueva el buscaminas online
+**Requisitos mínimos y recomendamos**: Que tu ordenador mueva el buscaminas online
 
 ## Hitos y objetivos:
 
@@ -42,17 +42,17 @@ Tener un juego completamente jugable, con la mayor parte del contenido disponibl
 Tener un juego completamente jugable, con todo el contenido disponible y estructurado en una historia. Sin bugs que afecten a la experiencia de forma relevante.
 
 
-### 1. Datos generales
+# 1. Datos generales
 
 ## Alcance del proyecto:
 
-Escenarios disponibles: 
+### Escenarios disponibles: 
 
 Un solo nivel de 10.000x10.000 píxeles divido en diferentes biomas.
 
-Objetos:
+### Objetos:
 
-No consumibles: 
+**No consumibles**: 
 -Linterna cónica
 -Linterna circular
 -Botas viejas
@@ -61,16 +61,16 @@ No consumibles:
 -Patines
 -Monopatin
 
-Consumibles:
+**Consumibles**:
 -Bebida Energética
 -Repelente Anti Bananas
 -Banana
 -Cafe
 
-De la historia:
+**De la historia**:
 -Diferentes paquetes a entregar, uno para cada misión
 
-Personajes:
+**Personajes**:
 -Erizo PatasLargas
 -Cocodrilo Croki
 -Hipopótamo Pepi
@@ -81,39 +81,29 @@ Personajes:
 -Rana
 -Tortuga
 
-Especiales:
+**Especiales**:
 -Mapa
 -Bancos
 -Tienda
 
-Descripción
+### Descripción
 
 En Monkey Delivery tomarás el papel de Monkey, un pequeño mono que se dedica a repartir paquetes a los vecinos de Selva Banana, su localidad natal. Simultáneamente, deberás mantener tu sueño a raya, durmiendo cuando sea necesario. En tu misión habrá enemigos que asustarán a Monkey, por lo que tendrás que evitarlos. Al completar trabajos recibirás dinero, que te será útil para comprar diferentes materiales y objetos en las tiendas.
 
-Versiones del documento
-
-Histórico de versiones y control de cambios
-
-- Primera versión 07/02/2022
-
-Tabla de contenidos
-
-Cada sección de este documento, debidamente numerada
-
-Aspectos generales
+### Aspectos generales
 
 Es un juego que se basará fundamentalmente en la exploración: conociendo las ubicaciones tanto de los vecinos como de los enemgios, obteniendo recompensas escondidas por el mapa y descubriendo el rico mundo donde se encuentra la aldea de nuestro protagonista.  
 El segundo elemento que más relevancia cobra será el de la gestión. La principal recompensa de las misiones, además de conocer la historia del pueblo donde has llegado, es la de monedas con la que adquirir objetos en la tienda que te ayudarán en las futuras misiones. Permitiendote llegar más lejos y desenvolverte mucho más hábilmente por el mundo; ya sea mediante consumibles o mejoras mediante el equipamiento de objetos como botas.
 Con esto buscamos que el jugador pase una experiencia agradable descubriendo un mundo colorido mientras juega y experimenta con las diferentes mecánicas y situaciones que se le brindarán en este mundo abierto.
 
-Jugabilidad
+### Jugabilidad
  
  Estarás moviendote continuamente por el mapa, desplazarte será tu fundamental herramienta para llegar a todos los paquetes. La otras mas relevantes son el uso d elas linternas para eliminar a los enemigos con ellas y despejarte el camino así como el uso de objetos ya sea el mapa para ver el mejor camino a tu objetivo o equiparte las botas para llegar máa rápido a tu destino.
 
 
-### 2.1 Mecánica
+## 2.1 Mecánica
 
-## 2.1.1. Mecánicas del personaje
+### 2.1.1. Mecánicas del personaje
 
 **Moverse**: Se podrá desplazar en 8 direcciones, desplazandose de forma libre en el eje x e y. Se podrá esprintar para aumentar la velocidad del movimiento a costa de gastar más energía.
 
@@ -123,7 +113,7 @@ Jugabilidad
 
 **Inventario**: El jugador tiene 6 slots de inventario para guardar los objetos que compre y  otro más para el paquete u objeto de la misión, este último slot no es inderactuable. Los demás slots podrán ser seleccionados por el jugador y usados, ya sea tomando el consumible o equipandose y desequipandose el objeto marcado.
 
-## 2.1.1. Mecánicas de los objetos
+### 2.1.2. Mecánicas de los objetos
 
 **Interactuar**: Mecánica general de todos los objetos, en el caso de aquellos no consumibles los equipo o desequipa. En el caso de los consumible estos son gastados y las estadísticas del jugador modificadas. Hay casos especiales.
 
@@ -141,7 +131,7 @@ Jugabilidad
 
 **Pico**: Elemento que se te da tras completa la primera tanda de misiones y que sirve para romper rocas y acceder a nuevas zonas del mapa.
 
-## 2.1.3. Mecánicas de escenario
+### 2.1.3. Mecánicas de escenario
 
 **Minimapa**: Muestra en la esquina inferior izquierda una visión general de la zona donde se encuentra el mono en tiempo real para ubicarse adecuadamente.
 
@@ -159,7 +149,7 @@ Jugabilidad
 
 **Cofres**: Repartidos por el mapa, los abrirás para conseguir recompensas. Fomentarán la exploración.
 
-## 2.1.4 Mecánicas de enemigos
+### 2.1.4 Mecánicas de enemigos
 
 **Patrullar -- Común**: los enemigos con esta mecánica se moverán dentro de una zona, escogiendo un punto aleatorio dentro de esta. Este movimiento comienza cuando spawnean. No se detienen nunca, salvo en el caso de que además tengan la mecánica de perseguir al jugador.
 
@@ -174,27 +164,55 @@ Jugabilidad
 **Ralentización -- Escorpión**: Cuando el jugador entre en el rango del enemigo y mientras esté en contacto con él, el jugador reducirá su velocidad  ⅓.
 
 
-### 2.2 Dinámicas
+## 2.2 Dinámicas
 
-## 2.2.1 Entrega de paquetes
+### 2.2.1 Entrega de paquetes
 
 Las misiones del juego. Serán el centro de la experiencia. LLegar a los vecinos en sus ubicaciones dispersas por el mapa para entregar un paquete será el principal desafío que se encontrará Moneky en esta aventura. Siendo de 3 tipos : Normales, express y Paquetes perdidos. Darán tanto recompensas monetarias como información sobre el pueblo, lo que conformará el eje de la trama. 
 
-## 2.2.2 Enfrentamientos con enemigos
+### 2.2.2 Enfrentamientos con enemigos
 
 Los enemigos se encontrarán por todo el mapa y cuánto más te alejes del pueblo mayor será el desafío que supondrán. Acabar a ellos con las linternas, esquivarlos, controlar la estamina que te harán gastar y el miedo que te harán pasar será clave para poder viajar por el mundo que se nos presenta.
 
-## 2.2.3 Exploración
+### 2.2.3 Exploración
 
 Se nos da un mundo abierto amplioo y lleno de secretos. Conocerlo, los caminos más rápidos como donde hay más enemigos, te permitirán moverte. A su vez, encontrar los cofres que oculta en mundo o las casas de los vecinos te darán beneficios tanto económicos como estrátegicos a la hora de arontar los nuevos encargos.
 
-## 2.2.4 Gestión de recursos
+### 2.2.4 Gestión de recursos
 
 La economía será un pilar fundamental en el peligroso mundo por el que te moverás. Saber en que objetos permanentes invertir para aumentar tus posiiblidades a la vez que adquirir consumibles para salir de situación peliagudas será la diferencia entre triunfar y fracasar en esta aventura.
 
+### 2.2.5 Enemigos
 
-### 2.3 Mapa
+**Toro**: Persigue al jugador cuando entra en su rango. Es rápido y peligroso.
 
+**Gato**: Asusta al jugador cuándo apsa cerca suya, resiste más.
+
+**Escorpión**: Frena al jugador al pasar junto a él.
+
+**Murciélago**: Al pasar junto al él te roba monedas.
+
+## 2.3 Mapa
+
+**Dimensiones**: El mapa será construido en Tiled, contará con unas dimensiones lo suficientemente amplias para colocar los personajes de todas las misiones de manera realista y que el viaje de un punto a otro pueda suponer realmente un desafío.
+
+**Zonas**: El mapa se dividirá en 7 zonas principales, cada una con elementos diferentes y característicos tanto a nivel jugable como visual:
+
+-*Zona del pueblo*: zona inicial, con la menor densidad de enemigos. Tanto la base como la tienda y el panel de misiones se encuentran aquí.
+
+-*Praderas y huerto del norte*: zona abierta en la parte noreste del mapa donde se encontrará una cantidad de enemigos reducida y bastante espacio para moverte.
+
+-*Río*: zona que cruza el centro del mapa de este a oeste, para cruzar de un lado al otro se usarán los puentes y habrá varias islas con casa. Con una cantidad de enemgios moderada.
+
+-*Casas gemelas y alrededores*: zona al sureste del mapa con dos casas solitarias y pequeñas praderas. Las casas supondrán una zona segura de los enemigos que habitan la zona.
+
+-*Cementerio*: zona peligrosa en la zona sur del mapa, mucho más tenebrosa que el resto de lugares que conforman el pueblo.
+
+-*Praderas del sureste*: zona abierta con alta presencia de enemigos y una pequeña casa en las zonas más bajas.
+
+-*Playa del sur*: zona más al sur del mapa que deja de lado la vegetación y presenta una playa de arena con acantilados ante ella, peligrosa y con enemigos. Una isla y una choza se encuentran en este área tan distante.
+
+## 2.4 Misiones
 
 
 Descripción del encargo
@@ -231,8 +249,9 @@ Diálogos con los vecinos:  Cuando el protagonista entrega el pedido salta un di
 
 
 
+# 3 Datos técnicos y estéticos
 
-### 2.1.4 Controles
+## 3.1 Controles
 
 - A,W,S,D : Para moverse hacia los lados
 - Shift: Para correr
@@ -241,80 +260,79 @@ Diálogos con los vecinos:  Cuando el protagonista entrega el pedido salta un di
 - 1, 2, 3, 4, 5, 6: utilizar objeto del inventario
 
 
-### 2.1.5 Cámara
+## 3.2 Cámara
 
-Qué se ve, a qué distancia, tamaño del viewport, qué se va a mostrar…
+Monkey Delivery es un juego con vista top down, el jugador se presenta siempre en el centro de la pantalla. Con un rango amplio podemos ver un gran área al rededor dl jugador con lo que podemos evitar enemigos y encontrar ubicaciones más fácilmente.
 
-Monkey Delivery es un juego con vista top down, en el jugador que se controla se ve siempre en el centro de la pantalla. En la parte inferior está el inventario, en la superior izquierda las estadísticas, y en la superior derecha el mapa. (Explicado en la IU).
-
-La cámara tiene tamaño x \* y.
-
-Dinámica
-
-Importante explicar cómo se gana o pierde en el juego, incluyendo el sistema de puntuación o de logros (con sus correspondientes listados, aunque a veces estos van ligados a los niveles y es mejor llevarlos allí) y las estrategias típicas que esperamos desarrollen los jugadores.
-
-En Monkey Delivery, el jugador siempre gana una vez complete todos los pedidos. La diferencia en la experiencia de juego está en la gestión que haga de la economía conseguida.
-
-Se podrá conseguir una cantidad máxima de X dinero, en caso de completar todas las misiones en el mejor tiempo, y un mínimo de X, si consiguiera el peor resultado posible siempre.
-
-TUTORIAL
-
-Estética
-
-### 2.3.1 Gráficos
+## 3.3 Gráficos
 
 El estilo utilizado en Monkey Delivery será Pixel Art. Se tratará de un entorno colorido, para darle un ambiente frenético.
 
-Mapa:  será delimitado por árboles que impedirán al jugador salir de él, además de dar sensación de que el mundo no tiene límites. El resto será un poblado en la selva. La acción ocurre por la noche, por lo que se usarán colores más fríos.
+Con un número de píxeles reducido tanto en personajes como escenario consiguiendo un apartado gráfico llamativo y simple que agrade y no canse al jugador.
 
-Los principales edificios serán: las casas de los vecinos, las  tiendas, el  edificio de correos, y otros para decorar.
+La paleta utilizada será de colores claros y llamativos para dar una ambientación alegre y desenfadada. Dando contrastes con la historia planteada y el cementerio, que debido a su naturaleza girará en torno a colores más oscuros.
 
-Los enemigos, vecinos y protagonista tendrán sprites de 100x100 pixeles (como máximo) en proporción al mapa.
+## 3.4 Música y Sonido
 
-### 2.3.2 Música y Sonido
+-Habrá música constante en el juego. Diferente en los menús e ingame.
+
+-Todos los enemigos tendrán un sonido específico y reconocible para el jugador.
+
+-Las diferentes acciones como completar una misión, caminar... Contarán con efectos de sonido.
+
+## 3.3 Interfaz
+
+### 3.3.1 Hud InGame
+
+-Tendremos en la zona superior izquierda un panel que mostrará la información general del jugador: energía, miedo, monedas actuales y cofres restantes. En el lado opuesto tendremos un panel texto cuando estemos en una misión que nos informará de la dirección a seguir.
+
+-En la parte inferior, ocupando los 2/3 centrales de la pantalla tendremos el inventario repartido en 7 slots. A la derecha de este encontramos un minimapa que se puede desplegar pàra ocupar toda la pantalla y mostrar de forma más detallada el mundo del juego.
+
+-En la zona superior derecha tendremos el botón de pausa.
+
+#### 3.3.1.1 Tienda
+
+Se mostrará al interactuar con la tienda y donde mostrará en la zona inferior izquierda los controles de esta. En la zona central inferior las monedas actuales y el coste de cada objeto y en la zona central ocupando casi toda la pantalla los objetos disponibles para comprar organizados horizontalmente. 
+Dentendrá la acción y se creará sobre un marco que ocupa toda la pantalla.
+
+#### 3.3.1.2 Panel de Misiones
+
+Se mostrará al interactuar con el panel de misiones y mostrará las misiones disponibles en paneles organziados horizontalmente, en la parte inferior izquierda estarán los controles.
+Al seleccionar una misión esta desaparecerá y dejará su hueco vacío.
+Se dibujará sobre un panel que ocupará toda la pantalla y detendrá el tiempo.
+
+#### 3.3.1.3 Text Box
+
+Se mostrará cuando se dispare un evento de diálogo. Ocupará la parte central de la zona inferior e irá mostrando el texto progresivamente sobre un panel. Se podrá acelerar y una vez concluido cerrar. El jugador quedará inmovilizado mientras este este desplegado.
+
+### 3.3.2 Menús
+
+**Menú principal**:
+
+Menú que se muestra al abrir el juego y desde donde podremos acceder a una partida, las opciones o volver a salir. Contará con estos 3 botones en la zona central, de arriba a abajo. El título del jeugo se encontrará sobre ellos y un fondo que ocupe tod la pantalla.
+
+**Menú de opciones**:
+
+Menú que se accede desde el de pasua o el principal. En el encontramos un botón de volver atrás. en la zona central encontramos 4 sliders que se pueden ajustar a decisión del jugadoor.
+Estarán ubicados dos a dos y sus funciones serán, empezando por el de la zona superior izquierda: 
+-Volumen general
+-Música
+-Brillo
+-Efectos
+
+**Menú de pausa**:
+
+Menú que see podrá desplegar desde el juego y dentendrá toda la acción. Con una distribución similar al menú principal y con un fondo que ocupa toda la pantalla dará las siguientes opciones:
+-Reanudar
+-Ajustes, que abre el menú de ajustes
+-Volver, para regresar al menú principal
+
+**Créditos**:
+
+Menú que se puede acceder desde el menu principal donde irán mostrándose los créditos de forma continua de todos los integrantes y con un botón de volver atrás en la zona inferior izquierda.
 
 
-Menús y modos de juego
-
-Menús:
-
-Menú principal con acceso a los controles y ajuste de volumen. En el menú principal el jugador tiene las siguientes opciones:
-
-Jugar
-
-Opciones
-
-Salir del juego
-
-
-
-
-
-Menú de pausa con opciones de reanudar la partida, acceder a la configuración y salir del juego
-
-
-
-
-
-Configuración
-
-Volumen: Slider Para controlar el volumen del juego
-
-Controles: Para ver los controles del juego, definidos en el apartado de Controles
-
-Pantalla completa: Para poner o no el juego a pantalla completa
-
-Tamaño de Pantalla: Para modificar el tamaño de la pantalla
-
-Volver: Salir de la configuración
-
-
-
-
-Interfaz y control
-
-Párrafos e ilustraciones donde se describe los controles que se pueden usar en el juego, los distintos menús “in-game” que encontramos, el head-up display (HUD) que pueda mostrarse durante la partida, etc.
-
+# 4 Historia
 
 Contenido
 
@@ -396,19 +414,12 @@ Fantasma que persigue (toro): Provoca 15% del total miedo y tiene la mecánica d
 
 Fantasma estático (batpatt): Provoca un 10% del total de miedo y tiene la mecánica de patrullar
 
-Referencias
+
+# 5 Referencias
 
 - Pokemon (juegos antiguos)
 - Animal Crossing
 - Stardew Valley
-
-
-
-
-
-
-
-
 
 
 ##UML
