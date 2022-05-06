@@ -305,9 +305,6 @@
     <ClCompile Include="Src\Logic\AnimationManager.cpp">
       <Filter>Source\Logic\Managers/Game</Filter>
     </ClCompile>
-    <ClCompile Include="Src\Logic\InteractuableCarrot.cpp">
-      <Filter>Source\Logic\InteractuableObjectsMap</Filter>
-    </ClCompile>
     <ClCompile Include="Src\View\Transition.cpp">
       <Filter>Source\View</Filter>
     </ClCompile>
@@ -670,9 +667,6 @@
     </ClInclude>
     <ClInclude Include="Src\Control\SelectButtonCommand.h">
       <Filter>Header\Control\Commands</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Logic\InteractuableCarrot.h">
-      <Filter>Header\Logic\InteractuableObjectsMap</Filter>
     </ClInclude>
     <ClInclude Include="Src\View\Transition.h">
       <Filter>Header\View</Filter>

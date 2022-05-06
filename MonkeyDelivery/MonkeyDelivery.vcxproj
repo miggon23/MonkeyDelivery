@@ -222,7 +222,6 @@
     <ClInclude Include="Src\Logic\GameObjectGenerator.h" />
     <ClInclude Include="Src\Logic\InputManager.h" />
     <ClInclude Include="Src\Logic\InteractiveEntity.h" />
-    <ClInclude Include="Src\Logic\InteractuableCarrot.h" />
     <ClInclude Include="Src\Logic\InteractuableChest.h" />
     <ClInclude Include="Src\Logic\InteractuableShop.h" />
     <ClInclude Include="Src\Logic\Inventory.h" />
@@ -342,7 +341,6 @@
     <ClCompile Include="Src\Logic\GameObjectGenerator.cpp" />
     <ClCompile Include="Src\Logic\InputManager.cpp" />
     <ClCompile Include="Src\Logic\InteractiveEntity.cpp" />
-    <ClCompile Include="Src\Logic\InteractuableCarrot.cpp" />
     <ClCompile Include="Src\Logic\InteractuableChest.cpp" />
     <ClCompile Include="Src\Logic\InteractubaleShop.cpp" />
     <ClCompile Include="Src\Logic\Inventory.cpp" />
