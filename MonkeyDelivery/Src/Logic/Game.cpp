@@ -243,10 +243,6 @@ void Game::draw()
     player_->draw();
     missionsPanel_->draw();
 
-    // Habia puesto un overlay para que se viese de noche - Eli
-    //SDL_Rect rendR = {0, 0, getWindowWidth(), getWindowHeight()};
-    //getTexture(overlay)->render(rendR);
-
     if (!initialTransition->isComplete()) {
         initialTransition->draw();
     }
