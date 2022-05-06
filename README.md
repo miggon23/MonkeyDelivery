@@ -41,6 +41,9 @@ Tener un juego completamente jugable, con la mayor parte del contenido disponibl
 06/05/2022  
 Tener un juego completamente jugable, con todo el contenido disponible y estructurado en una historia. Sin bugs que afecten a la experiencia de forma relevante.
 
+
+### 1. Datos generales
+
 ## Alcance del proyecto:
 
 Escenarios disponibles: 
@@ -107,6 +110,7 @@ Jugabilidad
  
  Estarás moviendote continuamente por el mapa, desplazarte será tu fundamental herramienta para llegar a todos los paquetes. La otras mas relevantes son el uso d elas linternas para eliminar a los enemigos con ellas y despejarte el camino así como el uso de objetos ya sea el mapa para ver el mejor camino a tu objetivo o equiparte las botas para llegar máa rápido a tu destino.
 
+
 ### 2.1 Mecánica
 
 ## 2.1.1. Mecánicas del personaje
@@ -137,7 +141,7 @@ Jugabilidad
 
 **Pico**: Elemento que se te da tras completa la primera tanda de misiones y que sirve para romper rocas y acceder a nuevas zonas del mapa.
 
-### 2.1.3. Mecánicas de escenario
+## 2.1.3. Mecánicas de escenario
 
 **Minimapa**: Muestra en la esquina inferior izquierda una visión general de la zona donde se encuentra el mono en tiempo real para ubicarse adecuadamente.
 
@@ -153,7 +157,9 @@ Jugabilidad
 
 **Rocas**: Elementos por el mapa que bloquean caminos y deberán ser rotos con el pico para poder pasarlos.
 
-### 2.1.4 Mecánicas de enemigos
+**Cofres**: Repartidos por el mapa, los abrirás para conseguir recompensas. Fomentarán la exploración.
+
+## 2.1.4 Mecánicas de enemigos
 
 **Patrullar -- Común**: los enemigos con esta mecánica se moverán dentro de una zona, escogiendo un punto aleatorio dentro de esta. Este movimiento comienza cuando spawnean. No se detienen nunca, salvo en el caso de que además tengan la mecánica de perseguir al jugador.
 
@@ -166,6 +172,28 @@ Jugabilidad
 **Robo -- Múrcielago**: Cuando el jugador entre en el rango del enemigo  y mientras esté en contacto con este, le quitará una moneda por segundo.
 
 **Ralentización -- Escorpión**: Cuando el jugador entre en el rango del enemigo y mientras esté en contacto con él, el jugador reducirá su velocidad  ⅓.
+
+
+### 2.2 Dinámicas
+
+## 2.2.1 Entrega de paquetes
+
+Las misiones del juego. Serán el centro de la experiencia. LLegar a los vecinos en sus ubicaciones dispersas por el mapa para entregar un paquete será el principal desafío que se encontrará Moneky en esta aventura. Siendo de 3 tipos : Normales, express y Paquetes perdidos. Darán tanto recompensas monetarias como información sobre el pueblo, lo que conformará el eje de la trama. 
+
+## 2.2.2 Enfrentamientos con enemigos
+
+Los enemigos se encontrarán por todo el mapa y cuánto más te alejes del pueblo mayor será el desafío que supondrán. Acabar a ellos con las linternas, esquivarlos, controlar la estamina que te harán gastar y el miedo que te harán pasar será clave para poder viajar por el mundo que se nos presenta.
+
+## 2.2.3 Exploración
+
+Se nos da un mundo abierto amplioo y lleno de secretos. Conocerlo, los caminos más rápidos como donde hay más enemigos, te permitirán moverte. A su vez, encontrar los cofres que oculta en mundo o las casas de los vecinos te darán beneficios tanto económicos como estrátegicos a la hora de arontar los nuevos encargos.
+
+## 2.2.4 Gestión de recursos
+
+La economía será un pilar fundamental en el peligroso mundo por el que te moverás. Saber en que objetos permanentes invertir para aumentar tus posiiblidades a la vez que adquirir consumibles para salir de situación peliagudas será la diferencia entre triunfar y fracasar en esta aventura.
+
+
+### 2.3 Mapa
 
 
 
