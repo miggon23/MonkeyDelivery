@@ -133,6 +133,7 @@ enum TextureName
 	shop_Boots03,
 	shop_Soda1,
 	shop_Soda2,
+	shop_Farol,
 	shop_UI_PanelShop,
 	shop_UI_Selector,
 	ShopPanel_Interact,
@@ -282,7 +283,7 @@ enum TextureName
 
 };
 
-const int NUM_TEXTURES = 231;
+const int NUM_TEXTURES = 232;
 
 typedef struct {
 	string filename;
@@ -408,6 +409,7 @@ const TextureAttributes TEXTURE_ATTRIBUTES[NUM_TEXTURES] =
 	{"shop/shop_Boots03.png",1,1},
 	{"shop/shop_Soda.png",1,1},
 	{"shop/Shop_Soda02.png",1,1},
+	{"shop/Shop_Farol.png",1,1},
 	{"shop/shop_UI_PanelShop.png",1,1},
 	{"shop/shop_UI_Selector.png",1,1},
 	{"shop/ShopPanel_Interact.png",1,1},

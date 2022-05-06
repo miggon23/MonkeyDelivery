@@ -9,7 +9,7 @@ MissionObject::MissionObject(MissionsPanel* mp, Game* g) : GameObject(g, true), 
 {
 	active_ = false;
 
-	setDimension(50, 50);
+	setDimension(80, 80);
 	setPosition(0, 0);
 
 	this->texture = game->getTexture(missingTex);

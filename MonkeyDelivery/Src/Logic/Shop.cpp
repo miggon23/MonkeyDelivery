@@ -55,14 +55,13 @@ void Shop::addElements(int level)
 		objects.push_back({ new EnergyDrink(game->getTexture(shop_Soda2), game,game->getPlayer()), 0, 0, 2, 25 });
 		objects.push_back({ new Skates(game->getTexture(shop_Boots01), game,game->getPlayer()), 2, 0, 1, 45 });		
 		objects.push_back({ new Banana(game->getTexture(shop_Banana), game,game->getPlayer()), 1, 0, 3, 15 });
-		objects.push_back({ new Monkeycola(game->getTexture(shop_Soda1), game,game->getPlayer()), 1, 0, 3, 20 });
-		//objects.push_back({ new Flashlight(game->getTexture(Item_Lantern01), game,game->getPlayer()), 3, 0, 1, 20});
+		objects.push_back({ new Flashlight(game->getTexture(shop_Farol), game,game->getPlayer()), 3, 0, 1, 20});
 		break;
 	case 2:
 		objects.push_back({ new EnergyDrink(game->getTexture(shop_Soda2), game,game->getPlayer()), 0, 0, 3, 25 });
 		objects.push_back({ new Banana(game->getTexture(shop_Banana), game,game->getPlayer()), 1, 0, 3, 15 });
 		objects.push_back({ new Repel(game->getTexture(shop_Spray), game,game->getPlayer()), 0, 0, 1, 40 });
-		objects.push_back({ new Lantern(game->getTexture(Item_Lantern01), game,game->getPlayer()), 0, 0, 1, 50 });
+		objects.push_back({ new Lantern(game->getTexture(shop_Farol), game,game->getPlayer()), 0, 0, 1, 50 });
 		break;
 	case 3:
 		objects.push_back({ new EnergyDrink(game->getTexture(shop_Soda2), game,game->getPlayer()), 0, 0, 3, 25 });
