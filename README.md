@@ -196,14 +196,14 @@ La economía será un pilar fundamental en el peligroso mundo por el que te move
 
 ## 2.4 Misiones
 
+![PanelMisiones](https://user-images.githubusercontent.com/81906237/167200881-98c7eace-c91c-4ecb-950c-22baf8333cb2.png)
+
+Cada misión cuenta con:
+
 Descripción del encargo
-
 Objeto a entregar
-
 Punto de entrega
-
 Recompensa
-
 Tiempo
 
 Toda esta información se verá por pantalla, en una nota.
@@ -239,6 +239,10 @@ Diálogos con los vecinos:  Cuando el protagonista entrega el pedido salta un di
 - E: Para interactuar con objetos
 - M: Abrir el mapa
 - 1, 2, 3, 4, 5, 6: utilizar objeto del inventario
+
+Imagen de tutorial que se mostrará al jugador:
+![Tutorial](https://user-images.githubusercontent.com/81906237/167200313-03971fee-54fa-4445-ad1a-b7e923991056.png)
+
 
 
 ## 3.2 Cámara
@@ -276,11 +280,17 @@ La paleta utilizada será de colores claros y llamativos para dar una ambientaci
 Se mostrará al interactuar con la tienda y donde mostrará en la zona inferior izquierda los controles de esta. En la zona central inferior las monedas actuales y el coste de cada objeto y en la zona central ocupando casi toda la pantalla los objetos disponibles para comprar organizados horizontalmente. 
 Dentendrá la acción y se creará sobre un marco que ocupa toda la pantalla.
 
+![SantiagoTienda](https://user-images.githubusercontent.com/81906237/167200218-945683ae-d4f9-4de0-8d89-2d244f871b4d.png)
+
+
 #### 3.3.1.2 Panel de Misiones
 
 Se mostrará al interactuar con el panel de misiones y mostrará las misiones disponibles en paneles organziados horizontalmente, en la parte inferior izquierda estarán los controles.
 Al seleccionar una misión esta desaparecerá y dejará su hueco vacío.
 Se dibujará sobre un panel que ocupará toda la pantalla y detendrá el tiempo.
+
+![PanelMisiones](https://user-images.githubusercontent.com/81906237/167200192-64cfb819-243d-4fe3-8e46-9b59541af813.png)
+
 
 #### 3.3.1.3 Text Box
 
@@ -290,7 +300,9 @@ Se mostrará cuando se dispare un evento de diálogo. Ocupará la parte central 
 
 **Menú principal**:
 
-Menú que se muestra al abrir el juego y desde donde podremos acceder a una partida, las opciones o volver a salir. Contará con estos 3 botones en la zona central, de arriba a abajo. El título del jeugo se encontrará sobre ellos y un fondo que ocupe tod la pantalla.
+Menú que se muestra al abrir el juego y desde donde podremos acceder a una partida, las opciones o volver a salir. Contará con estos 3 botones en la zona central, de arriba a abajo. El título del juego se encontrará sobre ellos y un fondo que ocupe toda la pantalla.
+
+![MenuMonkeyDelivery](https://user-images.githubusercontent.com/81906237/167200126-fe3e3489-af2d-43d4-b409-a4ec975468b0.png)
 
 **Menú de opciones**:
 
@@ -299,11 +311,15 @@ Estarán ubicados dos a dos y sus funciones serán, empezando por el de la zona 
 -Volumen general
 -Música
 -Brillo
--Efectos
+-Efectos de sonido
+
+![Ajustes](https://user-images.githubusercontent.com/81906237/167199969-3a4b299e-0e98-4914-baf8-fc5cc658d96a.png)
+
 
 **Menú de pausa**:
 
 Menú que see podrá desplegar desde el juego y dentendrá toda la acción. Con una distribución similar al menú principal y con un fondo que ocupa toda la pantalla dará las siguientes opciones:
+
 -Reanudar
 -Ajustes, que abre el menú de ajustes
 -Volver, para regresar al menú principal
@@ -371,7 +387,7 @@ Enemigos:
 ![plantSS_Yellow](https://user-images.githubusercontent.com/81906237/167198953-97f15e09-6410-464a-9baa-8593a22a94e3.png)
 
 - Escorpión:
-- ![scorpionSS_Default](https://user-images.githubusercontent.com/81906237/167198918-ed0a173a-15ed-401b-8755-f0b74e81313e.png)
+![scorpionSS_Default](https://user-images.githubusercontent.com/81906237/167198918-ed0a173a-15ed-401b-8755-f0b74e81313e.png)
 
 - Gato/Mapache:
 ![catSS_Default](https://user-images.githubusercontent.com/81906237/167198892-a0635e81-c60c-4a26-881a-fa46e7513ce1.png)
@@ -383,9 +399,8 @@ Además, cada enemigo cuenta con una spritesheet secundaria, que parpadea en bla
 
 - Pokemon (juegos antiguos)
 - Animal Crossing
-
 - Stardew Valley
-- 
+- Memes de monos (especialmente)
 
 
 ##UML
