@@ -57,6 +57,7 @@ Player::Player(Game* game) :GameObject(game), animationManager(AnimationManager:
 
 	inventory_ = new Inventory(game, this, game->getRenderer());
 	powerUpsManager = new PowerUpsManager(this->game, this);
+	inventory_->addObject(new Pickaxe(game->getTexture(Item_pickaxe01), game,1, this));
 	//Objetos de inventario
 	/*inventory_->addObject(new Skates(game->getTexture(Item_Boots01), game, this));
 	inventory_->addObject(new Flashlight(game->getTexture(Item_Lantern01), game, this));

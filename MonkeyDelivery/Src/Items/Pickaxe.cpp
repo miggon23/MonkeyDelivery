@@ -6,11 +6,12 @@
 
 Pickaxe::Pickaxe(Texture* tex, Game* game,int level,Player* player):InventoryObject(tex, game,player) {
 	isConsumable_ = true;
-	level_ = level % 2;
+	level_ = level;
+	//level_ = level % 2;
 	setTypeObject(PICKAXE);
 }
 void Pickaxe::setCorrectTexture(){
-	if(level_==0)setMyTexture(game_->getTexture(Item_pickaxe01));
+	if(level_==1)setMyTexture(game_->getTexture(Item_pickaxe01));
 	else setMyTexture(game_->getTexture(Item_pickaxe02));
 }
 bool Pickaxe::useObject(){
@@ -20,7 +21,7 @@ bool Pickaxe::useObject(){
 	std::cout << "widthPickaxeCollider: " << player_->getWidth() + 20 << " heightPickaxeCollider: " << player_->getHeight() + 20 << std::endl;
 	for (auto x:game_->getGameObjects()){
 		Rock* possibleRock = dynamic_cast<Rock*>(x);//Cacheao para ver si es una roca o no
-		if (possibleRock!=nullptr &&possibleRock->collide(rect)&&possibleRock->seeLevelToDestroy()<=level_) {
+ 		if (possibleRock!=nullptr &&possibleRock->collide(rect)&&possibleRock->seeLevelToDestroy()<=level_) {
 			game_->removeGameObject(x);			
 		}		
 	}
