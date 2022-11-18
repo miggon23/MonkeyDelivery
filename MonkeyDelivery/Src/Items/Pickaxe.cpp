@@ -24,6 +24,10 @@ bool Pickaxe::useObject(){
  		if (possibleRock!=nullptr &&possibleRock->collide(rect)&&possibleRock->seeLevelToDestroy()<=level_) {
 			game_->removeGameObject(x);			
 		}		
+		/*else { 
+			if(possibleRock)
+			game_->newDialogue("NotPossibleToBreak"); 
+		}*/
 	}
 	return false;
 }

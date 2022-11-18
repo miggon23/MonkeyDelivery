@@ -5,8 +5,8 @@ bool CommandExit::parse(SDL_Event& event) {
         return true;
     if (event.type == SDL_KEYDOWN) {
         SDL_Keycode key = event.key.keysym.sym;
-        if (key == SDLK_p)
-            return true;
+       /* if (key == SDLK_p)
+            return true;*/
     }
     return false;
 }

@@ -11,7 +11,7 @@
 
 class GameObjectGenerator
 {
-	int nBulls = 4, nCats = 13, nPlants = 14, nBats = 10, nScorpions = 8, nChest = 8, nRocks = 16;
+	int nBulls = 4, nCats = 13, nPlants = 14, nBats = 10, nScorpions = 8, nChest = 8, nRocks = 15;
 
 	struct ChestDimension
 	{

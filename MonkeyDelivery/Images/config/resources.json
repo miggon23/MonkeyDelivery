@@ -185,7 +185,7 @@
     },
     {
         "id": "Mission2Text",
-        "text": "¡Menos mal que has encontrado mis chocolatinas! Las últimas Flappy Hippo que comí estaban mas crujientes de lo normal... El último tú nunca me las traía a tiempo y ya estaba harta.",
+        "text": "¡Menos mal que has encontrado mis chocolatinas! Las últimas Flappy Hippo que comí estaban mas crujientes de lo normal... El último repartidor nunca me las traía a tiempo y ya estaba harta.",
         "icon": 2
     },
     {
@@ -230,6 +230,10 @@
     {
       "id": "ChestMoneyText",
       "text": "¡Has encontrado unas monedas! ¿Te lo vas a gastar todo ahora?"
+    },
+    {
+      "id": "NotPossibleToBreak",
+      "text": "¡No puedes romper esto con esta herramienta!"
     },
     {
       "id": "MissionAlreadySelected",

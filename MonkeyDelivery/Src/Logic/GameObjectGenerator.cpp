@@ -57,7 +57,7 @@ void GameObjectGenerator::createScorpions()
 
 void GameObjectGenerator::createRocks()
 {
-	posRock.push_back({ 1000, 1590 });		posRock.push_back({ 950, 2500 });
+	/*posRock.push_back({ 1000, 1590 });*/		posRock.push_back({ 950, 2500 });
 	posRock.push_back({ 1425, 2980 });		posRock.push_back({ 1325, 3000 });
 	posRock.push_back({ 4200, 2450 });		posRock.push_back({ 5770, 2180 });
 	posRock.push_back({ 5850, 2200 });		posRock.push_back({ 6960, 2100 });
