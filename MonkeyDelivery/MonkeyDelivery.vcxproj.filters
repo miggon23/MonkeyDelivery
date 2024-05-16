@@ -284,6 +284,18 @@
     <ClCompile Include="Src\Logic\EndGameTarget.cpp">
       <Filter>Source\Logic\InteractuableObjectsMap</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Tracker\Tracker.cpp">
+      <Filter>Source\Tracker</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Tracker\Persistence.cpp">
+      <Filter>Source\Tracker</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Tracker\Serializer.cpp">
+      <Filter>Source\Tracker</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Tracker\TrackerEvent.cpp">
+      <Filter>Source\Tracker</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MonkeyDelivery.h" />
@@ -646,6 +658,18 @@
     </ClInclude>
     <ClInclude Include="Src\Logic\EndGameTarget.h">
       <Filter>Header\Logic\InteractuableObjectsMap</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Tracker\Tracker.h">
+      <Filter>Header\Tracker</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Tracker\Persistence.h">
+      <Filter>Header\Tracker</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Tracker\Serializer.h">
+      <Filter>Header\Tracker</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Tracker\TrackerEvent.h">
+      <Filter>Header\Tracker</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -1185,6 +1209,12 @@
     </Filter>
     <Filter Include="Source\Logic\Map">
       <UniqueIdentifier>{d03959b5-a3ef-4363-9acf-bc5463db7f1d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Tracker">
+      <UniqueIdentifier>{88d72f4f-6719-49b1-bbb6-516adde38b12}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header\Tracker">
+      <UniqueIdentifier>{8c9a0ecc-07b4-4c14-bbe5-6e07999bd082}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
